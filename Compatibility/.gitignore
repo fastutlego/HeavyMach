@@ -1,0 +1,11 @@
+compat-source/
+/toolchain
+originals/*
+!originals/README.md
+build/
+DerivedData/
+*.log
+**/xcuserdata/
+*.xcuserstate
+*.mobileprovision
+*.p12
