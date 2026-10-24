@@ -1,0 +1,5532 @@
+[
+  {
+    "class": "HeavyMachAppDelegate",
+    "kind": "-",
+    "selector": "setWindow:",
+    "address": "0x234c",
+    "implementation_raw": "0x234d",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)setWindow:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "HeavyMachAppDelegate",
+    "kind": "-",
+    "selector": "window",
+    "address": "0x2340",
+    "implementation_raw": "0x2341",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)window;",
+    "executable_implementation": false
+  },
+  {
+    "class": "HeavyMachAppDelegate",
+    "kind": "-",
+    "selector": "setGlView:",
+    "address": "0x2320",
+    "implementation_raw": "0x2321",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)setGlView:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "HeavyMachAppDelegate",
+    "kind": "-",
+    "selector": "glView",
+    "address": "0x2314",
+    "implementation_raw": "0x2315",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)glView;",
+    "executable_implementation": false
+  },
+  {
+    "class": "HeavyMachAppDelegate",
+    "kind": "-",
+    "selector": "onTap:State:",
+    "address": "0x22c8",
+    "implementation_raw": "0x22c9",
+    "type_encoding": "v20@0:4{CGPoint=ff}8i16",
+    "native_declaration": "- (void)onTap:(CGPoint)arg0 State:(int32_t)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "HeavyMachAppDelegate",
+    "kind": "-",
+    "selector": "dealloc",
+    "address": "0x2260",
+    "implementation_raw": "0x2261",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)dealloc;",
+    "executable_implementation": false
+  },
+  {
+    "class": "HeavyMachAppDelegate",
+    "kind": "-",
+    "selector": "applicationDidBecomeActive:",
+    "address": "0x225e",
+    "implementation_raw": "0x225f",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)applicationDidBecomeActive:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "HeavyMachAppDelegate",
+    "kind": "-",
+    "selector": "applicationWillResignActive:",
+    "address": "0x225c",
+    "implementation_raw": "0x225d",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)applicationWillResignActive:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "HeavyMachAppDelegate",
+    "kind": "-",
+    "selector": "renderScene",
+    "address": "0x21e0",
+    "implementation_raw": "0x21e1",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)renderScene;",
+    "executable_implementation": false
+  },
+  {
+    "class": "HeavyMachAppDelegate",
+    "kind": "-",
+    "selector": "applicationDidFinishLaunching:",
+    "address": "0x20b8",
+    "implementation_raw": "0x20b9",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)applicationDidFinishLaunching:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "EAGLView",
+    "kind": "-",
+    "selector": "setDelegate:",
+    "address": "0x2ec0",
+    "implementation_raw": "0x2ec1",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)setDelegate:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "EAGLView",
+    "kind": "-",
+    "selector": "delegate",
+    "address": "0x2eb4",
+    "implementation_raw": "0x2eb5",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)delegate;",
+    "executable_implementation": false
+  },
+  {
+    "class": "EAGLView",
+    "kind": "-",
+    "selector": "setAutoresizesSurface:",
+    "address": "0x2ea8",
+    "implementation_raw": "0x2ea9",
+    "type_encoding": "v12@0:4c8",
+    "native_declaration": "- (void)setAutoresizesSurface:(int8_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "EAGLView",
+    "kind": "-",
+    "selector": "autoresizesSurface",
+    "address": "0x2e9c",
+    "implementation_raw": "0x2e9d",
+    "type_encoding": "c8@0:4",
+    "native_declaration": "- (int8_t)autoresizesSurface;",
+    "executable_implementation": false
+  },
+  {
+    "class": "EAGLView",
+    "kind": "-",
+    "selector": "surfaceSize",
+    "address": "0x2e88",
+    "implementation_raw": "0x2e89",
+    "type_encoding": "{CGSize=ff}8@0:4",
+    "native_declaration": "- (CGSize)surfaceSize;",
+    "executable_implementation": false
+  },
+  {
+    "class": "EAGLView",
+    "kind": "-",
+    "selector": "framebuffer",
+    "address": "0x2e7c",
+    "implementation_raw": "0x2e7d",
+    "type_encoding": "I8@0:4",
+    "native_declaration": "- (uint32_t)framebuffer;",
+    "executable_implementation": false
+  },
+  {
+    "class": "EAGLView",
+    "kind": "-",
+    "selector": "pixelFormat",
+    "address": "0x2e70",
+    "implementation_raw": "0x2e71",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)pixelFormat;",
+    "executable_implementation": false
+  },
+  {
+    "class": "EAGLView",
+    "kind": "-",
+    "selector": "depthFormat",
+    "address": "0x2e64",
+    "implementation_raw": "0x2e65",
+    "type_encoding": "I8@0:4",
+    "native_declaration": "- (uint32_t)depthFormat;",
+    "executable_implementation": false
+  },
+  {
+    "class": "EAGLView",
+    "kind": "-",
+    "selector": "context",
+    "address": "0x2e58",
+    "implementation_raw": "0x2e59",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)context;",
+    "executable_implementation": false
+  },
+  {
+    "class": "EAGLView",
+    "kind": "-",
+    "selector": "touchesEnded:withEvent:",
+    "address": "0x2d44",
+    "implementation_raw": "0x2d45",
+    "type_encoding": "v16@0:4@8@12",
+    "native_declaration": "- (void)touchesEnded:(id)arg0 withEvent:(id)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "EAGLView",
+    "kind": "-",
+    "selector": "touchesMoved:withEvent:",
+    "address": "0x2c30",
+    "implementation_raw": "0x2c31",
+    "type_encoding": "v16@0:4@8@12",
+    "native_declaration": "- (void)touchesMoved:(id)arg0 withEvent:(id)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "EAGLView",
+    "kind": "-",
+    "selector": "touchesBegan:withEvent:",
+    "address": "0x2b1c",
+    "implementation_raw": "0x2b1d",
+    "type_encoding": "v16@0:4@8@12",
+    "native_declaration": "- (void)touchesBegan:(id)arg0 withEvent:(id)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "EAGLView",
+    "kind": "-",
+    "selector": "convertRectFromViewToSurface:",
+    "address": "0x2a54",
+    "implementation_raw": "0x2a55",
+    "type_encoding": "{CGRect={CGPoint=ff}{CGSize=ff}}24@0:4{CGRect={CGPoint=ff}{CGSize=ff}}8",
+    "native_declaration": "- (CGRect)convertRectFromViewToSurface:(CGRect)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "EAGLView",
+    "kind": "-",
+    "selector": "convertPointFromViewToSurface:",
+    "address": "0x29c8",
+    "implementation_raw": "0x29c9",
+    "type_encoding": "{CGPoint=ff}16@0:4{CGPoint=ff}8",
+    "native_declaration": "- (CGPoint)convertPointFromViewToSurface:(CGPoint)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "EAGLView",
+    "kind": "-",
+    "selector": "swapBuffers",
+    "address": "0x2920",
+    "implementation_raw": "0x2921",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)swapBuffers;",
+    "executable_implementation": false
+  },
+  {
+    "class": "EAGLView",
+    "kind": "-",
+    "selector": "clearCurrentContext",
+    "address": "0x28ec",
+    "implementation_raw": "0x28ed",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)clearCurrentContext;",
+    "executable_implementation": false
+  },
+  {
+    "class": "EAGLView",
+    "kind": "-",
+    "selector": "isCurrentContext",
+    "address": "0x28bc",
+    "implementation_raw": "0x28bd",
+    "type_encoding": "c8@0:4",
+    "native_declaration": "- (int8_t)isCurrentContext;",
+    "executable_implementation": false
+  },
+  {
+    "class": "EAGLView",
+    "kind": "-",
+    "selector": "setCurrentContext",
+    "address": "0x287c",
+    "implementation_raw": "0x287d",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)setCurrentContext;",
+    "executable_implementation": false
+  },
+  {
+    "class": "EAGLView",
+    "kind": "-",
+    "selector": "setAutoresizesEAGLSurface:",
+    "address": "0x2858",
+    "implementation_raw": "0x2859",
+    "type_encoding": "v12@0:4c8",
+    "native_declaration": "- (void)setAutoresizesEAGLSurface:(int8_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "EAGLView",
+    "kind": "-",
+    "selector": "layoutSubviews",
+    "address": "0x27dc",
+    "implementation_raw": "0x27dd",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)layoutSubviews;",
+    "executable_implementation": false
+  },
+  {
+    "class": "EAGLView",
+    "kind": "-",
+    "selector": "dealloc",
+    "address": "0x278c",
+    "implementation_raw": "0x278d",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)dealloc;",
+    "executable_implementation": false
+  },
+  {
+    "class": "EAGLView",
+    "kind": "-",
+    "selector": "initWithCoder:",
+    "address": "0x2658",
+    "implementation_raw": "0x2659",
+    "type_encoding": "@12@0:4@8",
+    "native_declaration": "- (id)initWithCoder:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "EAGLView",
+    "kind": "-",
+    "selector": "_destroySurface",
+    "address": "0x25a0",
+    "implementation_raw": "0x25a1",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)_destroySurface;",
+    "executable_implementation": false
+  },
+  {
+    "class": "EAGLView",
+    "kind": "-",
+    "selector": "_createSurface",
+    "address": "0x2388",
+    "implementation_raw": "0x2389",
+    "type_encoding": "c8@0:4",
+    "native_declaration": "- (int8_t)_createSurface;",
+    "executable_implementation": false
+  },
+  {
+    "class": "EAGLView",
+    "kind": "+",
+    "selector": "layerClass",
+    "address": "0x236c",
+    "implementation_raw": "0x236d",
+    "type_encoding": "#8@0:4",
+    "native_declaration": "+ (Class)layerClass;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Collider",
+    "kind": "-",
+    "selector": "init",
+    "address": "0x6324",
+    "implementation_raw": "0x6325",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)init;",
+    "executable_implementation": false
+  },
+  {
+    "class": "ColVector",
+    "kind": "-",
+    "selector": "origin",
+    "address": "0x6318",
+    "implementation_raw": "0x6319",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)origin;",
+    "executable_implementation": false
+  },
+  {
+    "class": "ColVector",
+    "kind": "-",
+    "selector": "dir",
+    "address": "0x630c",
+    "implementation_raw": "0x630d",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)dir;",
+    "executable_implementation": false
+  },
+  {
+    "class": "ColVector",
+    "kind": "-",
+    "selector": "normal",
+    "address": "0x6300",
+    "implementation_raw": "0x6301",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)normal;",
+    "executable_implementation": false
+  },
+  {
+    "class": "ColVector",
+    "kind": "-",
+    "selector": "length",
+    "address": "0x62f4",
+    "implementation_raw": "0x62f5",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)length;",
+    "executable_implementation": false
+  },
+  {
+    "class": "ColVector",
+    "kind": "-",
+    "selector": "prev",
+    "address": "0x62e8",
+    "implementation_raw": "0x62e9",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)prev;",
+    "executable_implementation": false
+  },
+  {
+    "class": "ColVector",
+    "kind": "-",
+    "selector": "next",
+    "address": "0x62dc",
+    "implementation_raw": "0x62dd",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)next;",
+    "executable_implementation": false
+  },
+  {
+    "class": "ColVector",
+    "kind": "-",
+    "selector": "draw",
+    "address": "0x61bc",
+    "implementation_raw": "0x61bd",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)draw;",
+    "executable_implementation": false
+  },
+  {
+    "class": "ColVector",
+    "kind": "-",
+    "selector": "checkCollide:Vel:ColRadius:",
+    "address": "0x6010",
+    "implementation_raw": "0x6011",
+    "type_encoding": "@20@0:4@8@12f16",
+    "native_declaration": "- (id)checkCollide:(id)arg0 Vel:(id)arg1 ColRadius:(float)arg2;",
+    "executable_implementation": false
+  },
+  {
+    "class": "ColVector",
+    "kind": "-",
+    "selector": "checkCollide:Dir:ColRadius:",
+    "address": "0x5e18",
+    "implementation_raw": "0x5e19",
+    "type_encoding": "@20@0:4@8@12f16",
+    "native_declaration": "- (id)checkCollide:(id)arg0 Dir:(id)arg1 ColRadius:(float)arg2;",
+    "executable_implementation": false
+  },
+  {
+    "class": "ColVector",
+    "kind": "-",
+    "selector": "checkCollide:Vel:",
+    "address": "0x5c34",
+    "implementation_raw": "0x5c35",
+    "type_encoding": "B16@0:4@8@12",
+    "native_declaration": "- (bool)checkCollide:(id)arg0 Vel:(id)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "ColVector",
+    "kind": "-",
+    "selector": "checkCollide:ColRadius:",
+    "address": "0x5a88",
+    "implementation_raw": "0x5a89",
+    "type_encoding": "@16@0:4@8f12",
+    "native_declaration": "- (id)checkCollide:(id)arg0 ColRadius:(float)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "ColVector",
+    "kind": "-",
+    "selector": "setNext:",
+    "address": "0x5a7c",
+    "implementation_raw": "0x5a7d",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)setNext:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "ColVector",
+    "kind": "-",
+    "selector": "setPrev:",
+    "address": "0x5a70",
+    "implementation_raw": "0x5a71",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)setPrev:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "ColVector",
+    "kind": "-",
+    "selector": "setOrigin:Second:",
+    "address": "0x59a0",
+    "implementation_raw": "0x59a1",
+    "type_encoding": "v16@0:4@8@12",
+    "native_declaration": "- (void)setOrigin:(id)arg0 Second:(id)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "ColVector",
+    "kind": "-",
+    "selector": "dealloc",
+    "address": "0x5944",
+    "implementation_raw": "0x5945",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)dealloc;",
+    "executable_implementation": false
+  },
+  {
+    "class": "ColVector",
+    "kind": "-",
+    "selector": "initWithOrigin:Second:",
+    "address": "0x5918",
+    "implementation_raw": "0x5919",
+    "type_encoding": "@16@0:4@8@12",
+    "native_declaration": "- (id)initWithOrigin:(id)arg0 Second:(id)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "ColVector",
+    "kind": "-",
+    "selector": "init",
+    "address": "0x5874",
+    "implementation_raw": "0x5875",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)init;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Texture2D",
+    "kind": "-",
+    "selector": "contentSize",
+    "address": "0x660c",
+    "implementation_raw": "0x660d",
+    "type_encoding": "{CGSize=ff}8@0:4",
+    "native_declaration": "- (CGSize)contentSize;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Texture2D",
+    "kind": "-",
+    "selector": "pixelFormat",
+    "address": "0x6600",
+    "implementation_raw": "0x6601",
+    "type_encoding": "i8@0:4",
+    "native_declaration": "- (int32_t)pixelFormat;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Texture2D",
+    "kind": "-",
+    "selector": "width",
+    "address": "0x65f4",
+    "implementation_raw": "0x65f5",
+    "type_encoding": "I8@0:4",
+    "native_declaration": "- (uint32_t)width;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Texture2D",
+    "kind": "-",
+    "selector": "height",
+    "address": "0x65e8",
+    "implementation_raw": "0x65e9",
+    "type_encoding": "I8@0:4",
+    "native_declaration": "- (uint32_t)height;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Texture2D",
+    "kind": "-",
+    "selector": "name",
+    "address": "0x65dc",
+    "implementation_raw": "0x65dd",
+    "type_encoding": "I8@0:4",
+    "native_declaration": "- (uint32_t)name;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Texture2D",
+    "kind": "-",
+    "selector": "maxS",
+    "address": "0x65d0",
+    "implementation_raw": "0x65d1",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)maxS;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Texture2D",
+    "kind": "-",
+    "selector": "maxT",
+    "address": "0x65c4",
+    "implementation_raw": "0x65c5",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)maxT;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Texture2D",
+    "kind": "-",
+    "selector": "description",
+    "address": "0x652c",
+    "implementation_raw": "0x652d",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)description;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Texture2D",
+    "kind": "-",
+    "selector": "dealloc",
+    "address": "0x64f0",
+    "implementation_raw": "0x64f1",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)dealloc;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Texture2D",
+    "kind": "-",
+    "selector": "initWithData:pixelFormat:pixelsWide:pixelsHigh:contentSize:",
+    "address": "0x634c",
+    "implementation_raw": "0x634d",
+    "type_encoding": "@32@0:4r^v8i12I16I20{CGSize=ff}24",
+    "native_declaration": "- (id)initWithData:(void *)arg0 pixelFormat:(int32_t)arg1 pixelsWide:(uint32_t)arg2 pixelsHigh:(uint32_t)arg3 contentSize:(CGSize)arg4;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Tile2D",
+    "kind": "-",
+    "selector": "tileWidth",
+    "address": "0x7244",
+    "implementation_raw": "0x7245",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)tileWidth;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Tile2D",
+    "kind": "-",
+    "selector": "tileHeight",
+    "address": "0x7238",
+    "implementation_raw": "0x7239",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)tileHeight;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Tile2D",
+    "kind": "-",
+    "selector": "drawTile:x:y:rotate:",
+    "address": "0x7208",
+    "implementation_raw": "0x7209",
+    "type_encoding": "v24@0:4i8f12f16f20",
+    "native_declaration": "- (void)drawTile:(int32_t)arg0 x:(float)arg1 y:(float)arg2 rotate:(float)arg3;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Tile2D",
+    "kind": "-",
+    "selector": "drawTile:x:y:scaleX:scaleY:",
+    "address": "0x71d0",
+    "implementation_raw": "0x71d1",
+    "type_encoding": "v28@0:4i8f12f16f20f24",
+    "native_declaration": "- (void)drawTile:(int32_t)arg0 x:(float)arg1 y:(float)arg2 scaleX:(float)arg3 scaleY:(float)arg4;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Tile2D",
+    "kind": "-",
+    "selector": "drawTile:x:y:scaleX:scaleY:rotate:",
+    "address": "0x719c",
+    "implementation_raw": "0x719d",
+    "type_encoding": "v32@0:4i8f12f16f20f24f28",
+    "native_declaration": "- (void)drawTile:(int32_t)arg0 x:(float)arg1 y:(float)arg2 scaleX:(float)arg3 scaleY:(float)arg4 rotate:(float)arg5;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Tile2D",
+    "kind": "-",
+    "selector": "drawTile:x:y:blendType:alpha:",
+    "address": "0x7168",
+    "implementation_raw": "0x7169",
+    "type_encoding": "v28@0:4i8f12f16i20f24",
+    "native_declaration": "- (void)drawTile:(int32_t)arg0 x:(float)arg1 y:(float)arg2 blendType:(int32_t)arg3 alpha:(float)arg4;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Tile2D",
+    "kind": "-",
+    "selector": "drawTile:x:y:",
+    "address": "0x7134",
+    "implementation_raw": "0x7135",
+    "type_encoding": "v20@0:4i8f12f16",
+    "native_declaration": "- (void)drawTile:(int32_t)arg0 x:(float)arg1 y:(float)arg2;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Tile2D",
+    "kind": "-",
+    "selector": "drawTile:x:y:blendType:alpha:scaleX:scaleY:rotate:",
+    "address": "0x6f28",
+    "implementation_raw": "0x6f29",
+    "type_encoding": "v40@0:4i8f12f16i20f24f28f32f36",
+    "native_declaration": "- (void)drawTile:(int32_t)arg0 x:(float)arg1 y:(float)arg2 blendType:(int32_t)arg3 alpha:(float)arg4 scaleX:(float)arg5 scaleY:(float)arg6 rotate:(float)arg7;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Tile2D",
+    "kind": "-",
+    "selector": "tileSplitX:splitY:",
+    "address": "0x6d9c",
+    "implementation_raw": "0x6d9d",
+    "type_encoding": "v16@0:4i8i12",
+    "native_declaration": "- (void)tileSplitX:(int32_t)arg0 splitY:(int32_t)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Vector2",
+    "kind": "-",
+    "selector": "setX:",
+    "address": "0x7694",
+    "implementation_raw": "0x7695",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setX:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Vector2",
+    "kind": "-",
+    "selector": "x",
+    "address": "0x7688",
+    "implementation_raw": "0x7689",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)x;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Vector2",
+    "kind": "-",
+    "selector": "setY:",
+    "address": "0x767c",
+    "implementation_raw": "0x767d",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setY:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Vector2",
+    "kind": "-",
+    "selector": "y",
+    "address": "0x7670",
+    "implementation_raw": "0x7671",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)y;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Vector2",
+    "kind": "-",
+    "selector": "copyFrom:",
+    "address": "0x7634",
+    "implementation_raw": "0x7635",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)copyFrom:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Vector2",
+    "kind": "-",
+    "selector": "normalize",
+    "address": "0x75d4",
+    "implementation_raw": "0x75d5",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)normalize;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Vector2",
+    "kind": "-",
+    "selector": "angle",
+    "address": "0x759c",
+    "implementation_raw": "0x759d",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)angle;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Vector2",
+    "kind": "-",
+    "selector": "squereLength",
+    "address": "0x7568",
+    "implementation_raw": "0x7569",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)squereLength;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Vector2",
+    "kind": "-",
+    "selector": "length",
+    "address": "0x7530",
+    "implementation_raw": "0x7531",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)length;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Vector2",
+    "kind": "-",
+    "selector": "crossProduct:",
+    "address": "0x74c8",
+    "implementation_raw": "0x74c9",
+    "type_encoding": "f12@0:4@8",
+    "native_declaration": "- (float)crossProduct:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Vector2",
+    "kind": "-",
+    "selector": "dotProduct:",
+    "address": "0x7460",
+    "implementation_raw": "0x7461",
+    "type_encoding": "f12@0:4@8",
+    "native_declaration": "- (float)dotProduct:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Vector2",
+    "kind": "-",
+    "selector": "reverse",
+    "address": "0x743c",
+    "implementation_raw": "0x743d",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)reverse;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Vector2",
+    "kind": "-",
+    "selector": "div:",
+    "address": "0x7408",
+    "implementation_raw": "0x7409",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)div:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Vector2",
+    "kind": "-",
+    "selector": "mul:",
+    "address": "0x73d4",
+    "implementation_raw": "0x73d5",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)mul:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Vector2",
+    "kind": "-",
+    "selector": "sub:",
+    "address": "0x7378",
+    "implementation_raw": "0x7379",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)sub:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Vector2",
+    "kind": "-",
+    "selector": "add:",
+    "address": "0x731c",
+    "implementation_raw": "0x731d",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)add:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Vector2",
+    "kind": "-",
+    "selector": "setAngle:Len:",
+    "address": "0x72d4",
+    "implementation_raw": "0x72d5",
+    "type_encoding": "v16@0:4f8f12",
+    "native_declaration": "- (void)setAngle:(float)arg0 Len:(float)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Vector2",
+    "kind": "-",
+    "selector": "setX:Y:",
+    "address": "0x72bc",
+    "implementation_raw": "0x72bd",
+    "type_encoding": "v16@0:4f8f12",
+    "native_declaration": "- (void)setX:(float)arg0 Y:(float)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Vector2",
+    "kind": "-",
+    "selector": "initFromVector:",
+    "address": "0x7294",
+    "implementation_raw": "0x7295",
+    "type_encoding": "@12@0:4@8",
+    "native_declaration": "- (id)initFromVector:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "Vector2",
+    "kind": "-",
+    "selector": "init",
+    "address": "0x7250",
+    "implementation_raw": "0x7251",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)init;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "setVisual:",
+    "address": "0x82ac",
+    "implementation_raw": "0x82ad",
+    "type_encoding": "v12@0:4B8",
+    "native_declaration": "- (void)setVisual:(bool)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "visual",
+    "address": "0x82a0",
+    "implementation_raw": "0x82a1",
+    "type_encoding": "B8@0:4",
+    "native_declaration": "- (bool)visual;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "setLayer:",
+    "address": "0x8294",
+    "implementation_raw": "0x8295",
+    "type_encoding": "v12@0:4i8",
+    "native_declaration": "- (void)setLayer:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "layer",
+    "address": "0x8288",
+    "implementation_raw": "0x8289",
+    "type_encoding": "i8@0:4",
+    "native_declaration": "- (int32_t)layer;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "setZ:",
+    "address": "0x827c",
+    "implementation_raw": "0x827d",
+    "type_encoding": "v12@0:4i8",
+    "native_declaration": "- (void)setZ:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "z",
+    "address": "0x8270",
+    "implementation_raw": "0x8271",
+    "type_encoding": "i8@0:4",
+    "native_declaration": "- (int32_t)z;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "removeThis",
+    "address": "0x8264",
+    "implementation_raw": "0x8265",
+    "type_encoding": "B8@0:4",
+    "native_declaration": "- (bool)removeThis;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "pos",
+    "address": "0x8258",
+    "implementation_raw": "0x8259",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)pos;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "setAlpha:",
+    "address": "0x824c",
+    "implementation_raw": "0x824d",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setAlpha:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "alpha",
+    "address": "0x8240",
+    "implementation_raw": "0x8241",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)alpha;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "setScaleX:",
+    "address": "0x8234",
+    "implementation_raw": "0x8235",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setScaleX:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "scaleX",
+    "address": "0x8228",
+    "implementation_raw": "0x8229",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)scaleX;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "setScaleY:",
+    "address": "0x821c",
+    "implementation_raw": "0x821d",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setScaleY:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "scaleY",
+    "address": "0x8210",
+    "implementation_raw": "0x8211",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)scaleY;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "setRotate:",
+    "address": "0x8204",
+    "implementation_raw": "0x8205",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setRotate:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "rotate",
+    "address": "0x81f8",
+    "implementation_raw": "0x81f9",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)rotate;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "boundRect",
+    "address": "0x81c4",
+    "implementation_raw": "0x81c5",
+    "type_encoding": "{CGRect={CGPoint=ff}{CGSize=ff}}8@0:4",
+    "native_declaration": "- (CGRect)boundRect;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "isInScreen",
+    "address": "0x81b8",
+    "implementation_raw": "0x81b9",
+    "type_encoding": "B8@0:4",
+    "native_declaration": "- (bool)isInScreen;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "onTap:State:",
+    "address": "0x81b4",
+    "implementation_raw": "0x81b5",
+    "type_encoding": "B20@0:4{CGPoint=ff}8i16",
+    "native_declaration": "- (bool)onTap:(CGPoint)arg0 State:(int32_t)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "setUiReceiver:",
+    "address": "0x8164",
+    "implementation_raw": "0x8165",
+    "type_encoding": "v12@0:4B8",
+    "native_declaration": "- (void)setUiReceiver:(bool)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "setParent:",
+    "address": "0x8158",
+    "implementation_raw": "0x8159",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)setParent:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "setZOrder:",
+    "address": "0x814c",
+    "implementation_raw": "0x814d",
+    "type_encoding": "v12@0:4i8",
+    "native_declaration": "- (void)setZOrder:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "remove",
+    "address": "0x80d8",
+    "implementation_raw": "0x80d9",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)remove;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "childAtIndex:",
+    "address": "0x80bc",
+    "implementation_raw": "0x80bd",
+    "type_encoding": "@12@0:4i8",
+    "native_declaration": "- (id)childAtIndex:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "childCount",
+    "address": "0x80a0",
+    "implementation_raw": "0x80a1",
+    "type_encoding": "i8@0:4",
+    "native_declaration": "- (int32_t)childCount;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "addChild:",
+    "address": "0x800c",
+    "implementation_raw": "0x800d",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)addChild:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "isCollideBound:",
+    "address": "0x7e18",
+    "implementation_raw": "0x7e19",
+    "type_encoding": "B12@0:4@8",
+    "native_declaration": "- (bool)isCollideBound:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "isInPtX:Y:",
+    "address": "0x7d78",
+    "implementation_raw": "0x7d79",
+    "type_encoding": "B16@0:4f8f12",
+    "native_declaration": "- (bool)isInPtX:(float)arg0 Y:(float)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "isInCam",
+    "address": "0x7c78",
+    "implementation_raw": "0x7c79",
+    "type_encoding": "B8@0:4",
+    "native_declaration": "- (bool)isInCam;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "setCam:",
+    "address": "0x7c1c",
+    "implementation_raw": "0x7c1d",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)setCam:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "isShow",
+    "address": "0x7be8",
+    "implementation_raw": "0x7be9",
+    "type_encoding": "B8@0:4",
+    "native_declaration": "- (bool)isShow;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "setShow:",
+    "address": "0x7bdc",
+    "implementation_raw": "0x7bdd",
+    "type_encoding": "v12@0:4B8",
+    "native_declaration": "- (void)setShow:(bool)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "screenPosY",
+    "address": "0x7b00",
+    "implementation_raw": "0x7b01",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)screenPosY;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "screenPosX",
+    "address": "0x7a28",
+    "implementation_raw": "0x7a29",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)screenPosX;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "getPos",
+    "address": "0x7a1c",
+    "implementation_raw": "0x7a1d",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)getPos;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "posY",
+    "address": "0x79d4",
+    "implementation_raw": "0x79d5",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)posY;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "posX",
+    "address": "0x798c",
+    "implementation_raw": "0x798d",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)posX;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "setPosX:Y:",
+    "address": "0x7958",
+    "implementation_raw": "0x7959",
+    "type_encoding": "v16@0:4f8f12",
+    "native_declaration": "- (void)setPosX:(float)arg0 Y:(float)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "setScale:",
+    "address": "0x7940",
+    "implementation_raw": "0x7941",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setScale:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "setFixedPos:",
+    "address": "0x7932",
+    "implementation_raw": "0x7933",
+    "type_encoding": "v12@0:4B8",
+    "native_declaration": "- (void)setFixedPos:(bool)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "draw",
+    "address": "0x7930",
+    "implementation_raw": "0x7931",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)draw;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "tick",
+    "address": "0x7830",
+    "implementation_raw": "0x7831",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)tick;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "dealloc",
+    "address": "0x77e4",
+    "implementation_raw": "0x77e5",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)dealloc;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobBase",
+    "kind": "-",
+    "selector": "init",
+    "address": "0x76a0",
+    "implementation_raw": "0x76a1",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)init;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobButton",
+    "kind": "-",
+    "selector": "tile",
+    "address": "0x8afc",
+    "implementation_raw": "0x8afd",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)tile;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobButton",
+    "kind": "-",
+    "selector": "setButtonId:",
+    "address": "0x8af0",
+    "implementation_raw": "0x8af1",
+    "type_encoding": "v12@0:4I8",
+    "native_declaration": "- (void)setButtonId:(uint32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobButton",
+    "kind": "-",
+    "selector": "buttonId",
+    "address": "0x8ae4",
+    "implementation_raw": "0x8ae5",
+    "type_encoding": "I8@0:4",
+    "native_declaration": "- (uint32_t)buttonId;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobButton",
+    "kind": "-",
+    "selector": "setPushDepth:",
+    "address": "0x8ad8",
+    "implementation_raw": "0x8ad9",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setPushDepth:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobButton",
+    "kind": "-",
+    "selector": "pushDepth",
+    "address": "0x8acc",
+    "implementation_raw": "0x8acd",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)pushDepth;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobButton",
+    "kind": "-",
+    "selector": "setPushDelay:",
+    "address": "0x8ac0",
+    "implementation_raw": "0x8ac1",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setPushDelay:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobButton",
+    "kind": "-",
+    "selector": "pushDelay",
+    "address": "0x8ab4",
+    "implementation_raw": "0x8ab5",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)pushDelay;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobButton",
+    "kind": "-",
+    "selector": "setReleaseHeight:",
+    "address": "0x8aa8",
+    "implementation_raw": "0x8aa9",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setReleaseHeight:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobButton",
+    "kind": "-",
+    "selector": "releaseHeight",
+    "address": "0x8a9c",
+    "implementation_raw": "0x8a9d",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)releaseHeight;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobButton",
+    "kind": "-",
+    "selector": "setReleaseDelay:",
+    "address": "0x8a90",
+    "implementation_raw": "0x8a91",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setReleaseDelay:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobButton",
+    "kind": "-",
+    "selector": "releaseDelay",
+    "address": "0x8a84",
+    "implementation_raw": "0x8a85",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)releaseDelay;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobButton",
+    "kind": "-",
+    "selector": "onTap:State:",
+    "address": "0x87f8",
+    "implementation_raw": "0x87f9",
+    "type_encoding": "B20@0:4{CGPoint=ff}8i16",
+    "native_declaration": "- (bool)onTap:(CGPoint)arg0 State:(int32_t)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobButton",
+    "kind": "-",
+    "selector": "draw",
+    "address": "0x850c",
+    "implementation_raw": "0x850d",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)draw;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobButton",
+    "kind": "-",
+    "selector": "tick",
+    "address": "0x84d8",
+    "implementation_raw": "0x84d9",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)tick;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobButton",
+    "kind": "-",
+    "selector": "setReleaseAction",
+    "address": "0x8494",
+    "implementation_raw": "0x8495",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)setReleaseAction;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobButton",
+    "kind": "-",
+    "selector": "setDeactiveTileNo:",
+    "address": "0x8488",
+    "implementation_raw": "0x8489",
+    "type_encoding": "v12@0:4s8",
+    "native_declaration": "- (void)setDeactiveTileNo:(int16_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobButton",
+    "kind": "-",
+    "selector": "setReleaseTileNo:",
+    "address": "0x847c",
+    "implementation_raw": "0x847d",
+    "type_encoding": "v12@0:4s8",
+    "native_declaration": "- (void)setReleaseTileNo:(int16_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobButton",
+    "kind": "-",
+    "selector": "setDefaultTileNo:",
+    "address": "0x8470",
+    "implementation_raw": "0x8471",
+    "type_encoding": "v12@0:4s8",
+    "native_declaration": "- (void)setDefaultTileNo:(int16_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobButton",
+    "kind": "-",
+    "selector": "setActive:",
+    "address": "0x8464",
+    "implementation_raw": "0x8465",
+    "type_encoding": "v12@0:4B8",
+    "native_declaration": "- (void)setActive:(bool)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobButton",
+    "kind": "-",
+    "selector": "dealloc",
+    "address": "0x8440",
+    "implementation_raw": "0x8441",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)dealloc;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobButton",
+    "kind": "-",
+    "selector": "initWithTile:TileNo:ID:",
+    "address": "0x841c",
+    "implementation_raw": "0x841d",
+    "type_encoding": "@20@0:4@8s12I16",
+    "native_declaration": "- (id)initWithTile:(id)arg0 TileNo:(int16_t)arg1 ID:(uint32_t)arg2;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobButton",
+    "kind": "-",
+    "selector": "initWithTile:TileNo:",
+    "address": "0x82b8",
+    "implementation_raw": "0x82b9",
+    "type_encoding": "@16@0:4@8s12",
+    "native_declaration": "- (id)initWithTile:(id)arg0 TileNo:(int16_t)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobImage",
+    "kind": "-",
+    "selector": "setBlendType:",
+    "address": "0x8da8",
+    "implementation_raw": "0x8da9",
+    "type_encoding": "v12@0:4i8",
+    "native_declaration": "- (void)setBlendType:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobImage",
+    "kind": "-",
+    "selector": "blendType",
+    "address": "0x8d9c",
+    "implementation_raw": "0x8d9d",
+    "type_encoding": "i8@0:4",
+    "native_declaration": "- (int32_t)blendType;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobImage",
+    "kind": "-",
+    "selector": "draw",
+    "address": "0x8cf0",
+    "implementation_raw": "0x8cf1",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)draw;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobImage",
+    "kind": "-",
+    "selector": "setTileNo:",
+    "address": "0x8ce4",
+    "implementation_raw": "0x8ce5",
+    "type_encoding": "v12@0:4s8",
+    "native_declaration": "- (void)setTileNo:(int16_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobImage",
+    "kind": "-",
+    "selector": "setTile:tileNo:",
+    "address": "0x8c2c",
+    "implementation_raw": "0x8c2d",
+    "type_encoding": "v16@0:4@8s12",
+    "native_declaration": "- (void)setTile:(id)arg0 tileNo:(int16_t)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobImage",
+    "kind": "-",
+    "selector": "tileWidth",
+    "address": "0x8c04",
+    "implementation_raw": "0x8c05",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)tileWidth;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobImage",
+    "kind": "-",
+    "selector": "initWithTile:tileNo:",
+    "address": "0x8b08",
+    "implementation_raw": "0x8b09",
+    "type_encoding": "@16@0:4@8s12",
+    "native_declaration": "- (id)initWithTile:(id)arg0 tileNo:(int16_t)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobImageFont",
+    "kind": "-",
+    "selector": "num",
+    "address": "0x9210",
+    "implementation_raw": "0x9211",
+    "type_encoding": "i8@0:4",
+    "native_declaration": "- (int32_t)num;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobImageFont",
+    "kind": "-",
+    "selector": "setPitch:",
+    "address": "0x9204",
+    "implementation_raw": "0x9205",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setPitch:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobImageFont",
+    "kind": "-",
+    "selector": "pitch",
+    "address": "0x91f8",
+    "implementation_raw": "0x91f9",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)pitch;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobImageFont",
+    "kind": "-",
+    "selector": "setBlendType:",
+    "address": "0x91ec",
+    "implementation_raw": "0x91ed",
+    "type_encoding": "v12@0:4i8",
+    "native_declaration": "- (void)setBlendType:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobImageFont",
+    "kind": "-",
+    "selector": "blendType",
+    "address": "0x91e0",
+    "implementation_raw": "0x91e1",
+    "type_encoding": "i8@0:4",
+    "native_declaration": "- (int32_t)blendType;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobImageFont",
+    "kind": "-",
+    "selector": "draw",
+    "address": "0x9054",
+    "implementation_raw": "0x9055",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)draw;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobImageFont",
+    "kind": "-",
+    "selector": "setBoundCheck:",
+    "address": "0x9048",
+    "implementation_raw": "0x9049",
+    "type_encoding": "v12@0:4B8",
+    "native_declaration": "- (void)setBoundCheck:(bool)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobImageFont",
+    "kind": "-",
+    "selector": "setText:",
+    "address": "0x8f80",
+    "implementation_raw": "0x8f81",
+    "type_encoding": "v12@0:4*8",
+    "native_declaration": "- (void)setText:(char *)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobImageFont",
+    "kind": "-",
+    "selector": "setNumber:",
+    "address": "0x8ef0",
+    "implementation_raw": "0x8ef1",
+    "type_encoding": "v12@0:4i8",
+    "native_declaration": "- (void)setNumber:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobImageFont",
+    "kind": "-",
+    "selector": "setAlignRate:",
+    "address": "0x8ee4",
+    "implementation_raw": "0x8ee5",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setAlignRate:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobImageFont",
+    "kind": "-",
+    "selector": "initWithTile:",
+    "address": "0x8db4",
+    "implementation_raw": "0x8db5",
+    "type_encoding": "@12@0:4@8",
+    "native_declaration": "- (id)initWithTile:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobParticle",
+    "kind": "-",
+    "selector": "pos",
+    "address": "0x9c8c",
+    "implementation_raw": "0x9c8d",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)pos;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobParticle",
+    "kind": "-",
+    "selector": "vel",
+    "address": "0x9c80",
+    "implementation_raw": "0x9c81",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)vel;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobParticle",
+    "kind": "-",
+    "selector": "setG:",
+    "address": "0x9c74",
+    "implementation_raw": "0x9c75",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setG:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobParticle",
+    "kind": "-",
+    "selector": "g",
+    "address": "0x9c68",
+    "implementation_raw": "0x9c69",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)g;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobParticle",
+    "kind": "-",
+    "selector": "setRadius:",
+    "address": "0x9c5c",
+    "implementation_raw": "0x9c5d",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setRadius:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobParticle",
+    "kind": "-",
+    "selector": "radius",
+    "address": "0x9c50",
+    "implementation_raw": "0x9c51",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)radius;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobParticle",
+    "kind": "-",
+    "selector": "setRotVel:",
+    "address": "0x9c44",
+    "implementation_raw": "0x9c45",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setRotVel:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobParticle",
+    "kind": "-",
+    "selector": "rotVel",
+    "address": "0x9c38",
+    "implementation_raw": "0x9c39",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)rotVel;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobParticle",
+    "kind": "-",
+    "selector": "setScaleVel:",
+    "address": "0x9c2c",
+    "implementation_raw": "0x9c2d",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setScaleVel:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobParticle",
+    "kind": "-",
+    "selector": "scaleVel",
+    "address": "0x9c20",
+    "implementation_raw": "0x9c21",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)scaleVel;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobParticle",
+    "kind": "-",
+    "selector": "setGroundPos:",
+    "address": "0x9c14",
+    "implementation_raw": "0x9c15",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setGroundPos:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobParticle",
+    "kind": "-",
+    "selector": "groundPos",
+    "address": "0x9c08",
+    "implementation_raw": "0x9c09",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)groundPos;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobParticle",
+    "kind": "-",
+    "selector": "setVelAdd:",
+    "address": "0x9bfc",
+    "implementation_raw": "0x9bfd",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setVelAdd:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobParticle",
+    "kind": "-",
+    "selector": "velAdd",
+    "address": "0x9bf0",
+    "implementation_raw": "0x9bf1",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)velAdd;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobParticle",
+    "kind": "-",
+    "selector": "setVelX:Y:",
+    "address": "0x9bbc",
+    "implementation_raw": "0x9bbd",
+    "type_encoding": "v16@0:4f8f12",
+    "native_declaration": "- (void)setVelX:(float)arg0 Y:(float)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobParticle",
+    "kind": "-",
+    "selector": "setPosX:Y:",
+    "address": "0x9b88",
+    "implementation_raw": "0x9b89",
+    "type_encoding": "v16@0:4f8f12",
+    "native_declaration": "- (void)setPosX:(float)arg0 Y:(float)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobParticle",
+    "kind": "-",
+    "selector": "setColVector:",
+    "address": "0x9b7c",
+    "implementation_raw": "0x9b7d",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)setColVector:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobParticle",
+    "kind": "-",
+    "selector": "setBound:",
+    "address": "0x9a14",
+    "implementation_raw": "0x9a15",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)setBound:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobParticle",
+    "kind": "-",
+    "selector": "setSelfRemove:",
+    "address": "0x9a08",
+    "implementation_raw": "0x9a09",
+    "type_encoding": "v12@0:4B8",
+    "native_declaration": "- (void)setSelfRemove:(bool)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobParticle",
+    "kind": "-",
+    "selector": "processFly",
+    "address": "0x968c",
+    "implementation_raw": "0x968d",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)processFly;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobParticle",
+    "kind": "-",
+    "selector": "draw",
+    "address": "0x95dc",
+    "implementation_raw": "0x95dd",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)draw;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobParticle",
+    "kind": "-",
+    "selector": "tick",
+    "address": "0x94a8",
+    "implementation_raw": "0x94a9",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)tick;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobParticle",
+    "kind": "-",
+    "selector": "dealloc",
+    "address": "0x945c",
+    "implementation_raw": "0x945d",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)dealloc;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobParticle",
+    "kind": "-",
+    "selector": "start",
+    "address": "0x942c",
+    "implementation_raw": "0x942d",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)start;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobParticle",
+    "kind": "-",
+    "selector": "setLiveTime:",
+    "address": "0x9420",
+    "implementation_raw": "0x9421",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setLiveTime:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobParticle",
+    "kind": "-",
+    "selector": "setTileAni:",
+    "address": "0x9408",
+    "implementation_raw": "0x9409",
+    "type_encoding": "v12@0:4i8",
+    "native_declaration": "- (void)setTileAni:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobParticle",
+    "kind": "-",
+    "selector": "reset",
+    "address": "0x92b4",
+    "implementation_raw": "0x92b5",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)reset;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobParticle",
+    "kind": "-",
+    "selector": "init",
+    "address": "0x921c",
+    "implementation_raw": "0x921d",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)init;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobBullet",
+    "kind": "-",
+    "selector": "draw",
+    "address": "0xab04",
+    "implementation_raw": "0xab05",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)draw;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobBullet",
+    "kind": "-",
+    "selector": "isInCam",
+    "address": "0xab00",
+    "implementation_raw": "0xab01",
+    "type_encoding": "B8@0:4",
+    "native_declaration": "- (bool)isInCam;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobBullet",
+    "kind": "-",
+    "selector": "tick",
+    "address": "0xa444",
+    "implementation_raw": "0xa445",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)tick;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobBullet",
+    "kind": "-",
+    "selector": "setCollide:",
+    "address": "0xa198",
+    "implementation_raw": "0xa199",
+    "type_encoding": "v12@0:4B8",
+    "native_declaration": "- (void)setCollide:(bool)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobBullet",
+    "kind": "-",
+    "selector": "setFire:angle:x:y:",
+    "address": "0x9dc4",
+    "implementation_raw": "0x9dc5",
+    "type_encoding": "v24@0:4@8f12f16f20",
+    "native_declaration": "- (void)setFire:(id)arg0 angle:(float)arg1 x:(float)arg2 y:(float)arg3;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobBullet",
+    "kind": "-",
+    "selector": "setToPlayer:",
+    "address": "0x9db8",
+    "implementation_raw": "0x9db9",
+    "type_encoding": "v12@0:4B8",
+    "native_declaration": "- (void)setToPlayer:(bool)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobBullet",
+    "kind": "-",
+    "selector": "dealloc",
+    "address": "0x9d6c",
+    "implementation_raw": "0x9d6d",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)dealloc;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobBullet",
+    "kind": "-",
+    "selector": "init",
+    "address": "0x9c9c",
+    "implementation_raw": "0x9c9d",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)init;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "time",
+    "address": "0xe9bc",
+    "implementation_raw": "0xe9bd",
+    "type_encoding": "d8@0:4",
+    "native_declaration": "- (double)time;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "setPause:",
+    "address": "0xe9b0",
+    "implementation_raw": "0xe9b1",
+    "type_encoding": "v12@0:4B8",
+    "native_declaration": "- (void)setPause:(bool)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "pause",
+    "address": "0xe9a4",
+    "implementation_raw": "0xe9a5",
+    "type_encoding": "B8@0:4",
+    "native_declaration": "- (bool)pause;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "myMach",
+    "address": "0xe998",
+    "implementation_raw": "0xe999",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)myMach;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "setBossCount:",
+    "address": "0xe98c",
+    "implementation_raw": "0xe98d",
+    "type_encoding": "v12@0:4i8",
+    "native_declaration": "- (void)setBossCount:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "bossCount",
+    "address": "0xe980",
+    "implementation_raw": "0xe981",
+    "type_encoding": "i8@0:4",
+    "native_declaration": "- (int32_t)bossCount;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "setBossEncount:",
+    "address": "0xe974",
+    "implementation_raw": "0xe975",
+    "type_encoding": "v12@0:4i8",
+    "native_declaration": "- (void)setBossEncount:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "bossEncount",
+    "address": "0xe968",
+    "implementation_raw": "0xe969",
+    "type_encoding": "i8@0:4",
+    "native_declaration": "- (int32_t)bossEncount;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "backLine",
+    "address": "0xe95c",
+    "implementation_raw": "0xe95d",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)backLine;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "frontLine",
+    "address": "0xe950",
+    "implementation_raw": "0xe951",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)frontLine;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "left",
+    "address": "0xe944",
+    "implementation_raw": "0xe945",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)left;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "top",
+    "address": "0xe938",
+    "implementation_raw": "0xe939",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)top;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "right",
+    "address": "0xe92c",
+    "implementation_raw": "0xe92d",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)right;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "bottom",
+    "address": "0xe920",
+    "implementation_raw": "0xe921",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)bottom;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "bgScale",
+    "address": "0xe914",
+    "implementation_raw": "0xe915",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)bgScale;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "objectBase",
+    "address": "0xe908",
+    "implementation_raw": "0xe909",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)objectBase;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "handleButton:",
+    "address": "0xe7e0",
+    "implementation_raw": "0xe7e1",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)handleButton:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "tileResMgr",
+    "address": "0xe7d4",
+    "implementation_raw": "0xe7d5",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)tileResMgr;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "colVector:",
+    "address": "0xe798",
+    "implementation_raw": "0xe799",
+    "type_encoding": "@12@0:4i8",
+    "native_declaration": "- (id)colVector:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "colCount",
+    "address": "0xe77c",
+    "implementation_raw": "0xe77d",
+    "type_encoding": "i8@0:4",
+    "native_declaration": "- (int32_t)colCount;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "openMap:",
+    "address": "0xe3f4",
+    "implementation_raw": "0xe3f5",
+    "type_encoding": "B12@0:4@8",
+    "native_declaration": "- (bool)openMap:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "readChunk:Pos:",
+    "address": "0xe2cc",
+    "implementation_raw": "0xe2cd",
+    "type_encoding": "i16@0:4*8i12",
+    "native_declaration": "- (int32_t)readChunk:(char *)arg0 Pos:(int32_t)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "readEnemy:Data:Size:",
+    "address": "0xe1b4",
+    "implementation_raw": "0xe1b5",
+    "type_encoding": "v20@0:4i8*12i16",
+    "native_declaration": "- (void)readEnemy:(int32_t)arg0 Data:(char *)arg1 Size:(int32_t)arg2;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "readEnemyList:Data:Size:Cnt:",
+    "address": "0xe158",
+    "implementation_raw": "0xe159",
+    "type_encoding": "v24@0:4i8*12i16i20",
+    "native_declaration": "- (void)readEnemyList:(int32_t)arg0 Data:(char *)arg1 Size:(int32_t)arg2 Cnt:(int32_t)arg3;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "readBGName:Data:Size:",
+    "address": "0xdfa8",
+    "implementation_raw": "0xdfa9",
+    "type_encoding": "v20@0:4i8*12i16",
+    "native_declaration": "- (void)readBGName:(int32_t)arg0 Data:(char *)arg1 Size:(int32_t)arg2;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "readObject:Data:Size:",
+    "address": "0xde40",
+    "implementation_raw": "0xde41",
+    "type_encoding": "v20@0:4i8*12i16",
+    "native_declaration": "- (void)readObject:(int32_t)arg0 Data:(char *)arg1 Size:(int32_t)arg2;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "readObjectList:Data:Size:Cnt:",
+    "address": "0xdda8",
+    "implementation_raw": "0xdda9",
+    "type_encoding": "v24@0:4i8*12i16i20",
+    "native_declaration": "- (void)readObjectList:(int32_t)arg0 Data:(char *)arg1 Size:(int32_t)arg2 Cnt:(int32_t)arg3;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "readJoint:Data:Size:",
+    "address": "0xdbfc",
+    "implementation_raw": "0xdbfd",
+    "type_encoding": "v20@0:4i8*12i16",
+    "native_declaration": "- (void)readJoint:(int32_t)arg0 Data:(char *)arg1 Size:(int32_t)arg2;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "readJointList:Data:Size:",
+    "address": "0xdbe4",
+    "implementation_raw": "0xdbe5",
+    "type_encoding": "v20@0:4i8*12i16",
+    "native_declaration": "- (void)readJointList:(int32_t)arg0 Data:(char *)arg1 Size:(int32_t)arg2;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "readMapSize:Data:Size:",
+    "address": "0xda80",
+    "implementation_raw": "0xda81",
+    "type_encoding": "v20@0:4i8*12i16",
+    "native_declaration": "- (void)readMapSize:(int32_t)arg0 Data:(char *)arg1 Size:(int32_t)arg2;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "getMapHeight:",
+    "address": "0xd958",
+    "implementation_raw": "0xd959",
+    "type_encoding": "f12@0:4f8",
+    "native_declaration": "- (float)getMapHeight:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "onTap:State:",
+    "address": "0xd92c",
+    "implementation_raw": "0xd92d",
+    "type_encoding": "B20@0:4{CGPoint=ff}8i16",
+    "native_declaration": "- (bool)onTap:(CGPoint)arg0 State:(int32_t)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "getColListFromX:",
+    "address": "0xd8dc",
+    "implementation_raw": "0xd8dd",
+    "type_encoding": "@12@0:4f8",
+    "native_declaration": "- (id)getColListFromX:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "getFreeParticle",
+    "address": "0xd898",
+    "implementation_raw": "0xd899",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)getFreeParticle;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "killBoss",
+    "address": "0xd848",
+    "implementation_raw": "0xd849",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)killBoss;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "addEnemyMach:",
+    "address": "0xd824",
+    "implementation_raw": "0xd825",
+    "type_encoding": "@12@0:4^{TEnemyRegenInfo=BB[24c]{CGPoint=ff}}8",
+    "native_declaration": "- (id)addEnemyMach:(TEnemyRegenInfo *)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "addEnemyMach:X:Y:Boss:",
+    "address": "0xd6b8",
+    "implementation_raw": "0xd6b9",
+    "type_encoding": "@24@0:4*8f12f16B20",
+    "native_declaration": "- (id)addEnemyMach:(char *)arg0 X:(float)arg1 Y:(float)arg2 Boss:(bool)arg3;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "addMyMachX:Y:",
+    "address": "0xd474",
+    "implementation_raw": "0xd475",
+    "type_encoding": "@16@0:4f8f12",
+    "native_declaration": "- (id)addMyMachX:(float)arg0 Y:(float)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "checkEnemyBulletCollideX:Y:",
+    "address": "0xd44c",
+    "implementation_raw": "0xd44d",
+    "type_encoding": "@16@0:4f8f12",
+    "native_declaration": "- (id)checkEnemyBulletCollideX:(float)arg0 Y:(float)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "checkBulletCollideX:Y:",
+    "address": "0xd3c8",
+    "implementation_raw": "0xd3c9",
+    "type_encoding": "@16@0:4f8f12",
+    "native_declaration": "- (id)checkBulletCollideX:(float)arg0 Y:(float)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "removeTrashObject:",
+    "address": "0xd2f4",
+    "implementation_raw": "0xd2f5",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)removeTrashObject:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "clearTileResMgr",
+    "address": "0xd2d8",
+    "implementation_raw": "0xd2d9",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)clearTileResMgr;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "clearAllObject",
+    "address": "0xd27c",
+    "implementation_raw": "0xd27d",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)clearAllObject;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "processSurvivalMode",
+    "address": "0xd06a",
+    "implementation_raw": "0xd06b",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)processSurvivalMode;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "processScenarioMode",
+    "address": "0xd068",
+    "implementation_raw": "0xd069",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)processScenarioMode;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "processObjectRegen",
+    "address": "0xcd00",
+    "implementation_raw": "0xcd01",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)processObjectRegen;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "processCamera",
+    "address": "0xc8b8",
+    "implementation_raw": "0xc8b9",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)processCamera;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "processMyMach",
+    "address": "0xc830",
+    "implementation_raw": "0xc831",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)processMyMach;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "processStageClear",
+    "address": "0xc228",
+    "implementation_raw": "0xc229",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)processStageClear;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "setGameOver",
+    "address": "0xbf74",
+    "implementation_raw": "0xbf75",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)setGameOver;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "setNextStage",
+    "address": "0xb8f0",
+    "implementation_raw": "0xb8f1",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)setNextStage;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "removeLoadingScreen",
+    "address": "0xb8c4",
+    "implementation_raw": "0xb8c5",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)removeLoadingScreen;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "setSurvival",
+    "address": "0xb840",
+    "implementation_raw": "0xb841",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)setSurvival;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "setMission:Stage:",
+    "address": "0xb780",
+    "implementation_raw": "0xb781",
+    "type_encoding": "v16@0:4i8i12",
+    "native_declaration": "- (void)setMission:(int32_t)arg0 Stage:(int32_t)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "setGameState:",
+    "address": "0xb754",
+    "implementation_raw": "0xb755",
+    "type_encoding": "v12@0:4s8",
+    "native_declaration": "- (void)setGameState:(int16_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "tick",
+    "address": "0xb658",
+    "implementation_raw": "0xb659",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)tick;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "accelerometer:didAccelerate:",
+    "address": "0xb55c",
+    "implementation_raw": "0xb55d",
+    "type_encoding": "v16@0:4@8@12",
+    "native_declaration": "- (void)accelerometer:(id)arg0 didAccelerate:(id)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "dealloc",
+    "address": "0xb484",
+    "implementation_raw": "0xb485",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)dealloc;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobWorld",
+    "kind": "-",
+    "selector": "init",
+    "address": "0xb0a4",
+    "implementation_raw": "0xb0a5",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)init;",
+    "executable_implementation": false
+  },
+  {
+    "class": "ResMgr_Tile",
+    "kind": "-",
+    "selector": "removeTile:",
+    "address": "0xec64",
+    "implementation_raw": "0xec65",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)removeTile:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "ResMgr_Tile",
+    "kind": "-",
+    "selector": "removeAllTiles",
+    "address": "0xec48",
+    "implementation_raw": "0xec49",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)removeAllTiles;",
+    "executable_implementation": false
+  },
+  {
+    "class": "ResMgr_Tile",
+    "kind": "-",
+    "selector": "getTile:",
+    "address": "0xeb14",
+    "implementation_raw": "0xeb15",
+    "type_encoding": "@12@0:4@8",
+    "native_declaration": "- (id)getTile:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "ResMgr_Tile",
+    "kind": "-",
+    "selector": "dealloc",
+    "address": "0xead8",
+    "implementation_raw": "0xead9",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)dealloc;",
+    "executable_implementation": false
+  },
+  {
+    "class": "ResMgr_Tile",
+    "kind": "-",
+    "selector": "init",
+    "address": "0xea7c",
+    "implementation_raw": "0xea7d",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)init;",
+    "executable_implementation": false
+  },
+  {
+    "class": "ResMgr_Tile",
+    "kind": "+",
+    "selector": "sharedMgr",
+    "address": "0xe9cc",
+    "implementation_raw": "0xe9cd",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "+ (id)sharedMgr;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobCamera",
+    "kind": "-",
+    "selector": "halfScr",
+    "address": "0xef8c",
+    "implementation_raw": "0xef8d",
+    "type_encoding": "{CGSize=ff}8@0:4",
+    "native_declaration": "- (CGSize)halfScr;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobCamera",
+    "kind": "-",
+    "selector": "offset",
+    "address": "0xef5c",
+    "implementation_raw": "0xef5d",
+    "type_encoding": "{CGPoint=ff}8@0:4",
+    "native_declaration": "- (CGPoint)offset;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobCamera",
+    "kind": "-",
+    "selector": "setQuake:Count:Delay:",
+    "address": "0xeef8",
+    "implementation_raw": "0xeef9",
+    "type_encoding": "v20@0:4f8i12f16",
+    "native_declaration": "- (void)setQuake:(float)arg0 Count:(int32_t)arg1 Delay:(float)arg2;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobCamera",
+    "kind": "-",
+    "selector": "setScreenWidth:Height:",
+    "address": "0xeeb8",
+    "implementation_raw": "0xeeb9",
+    "type_encoding": "v16@0:4f8f12",
+    "native_declaration": "- (void)setScreenWidth:(float)arg0 Height:(float)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobCamera",
+    "kind": "-",
+    "selector": "tick",
+    "address": "0xed80",
+    "implementation_raw": "0xed81",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)tick;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobCamera",
+    "kind": "-",
+    "selector": "dealloc",
+    "address": "0xed5c",
+    "implementation_raw": "0xed5d",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)dealloc;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobCamera",
+    "kind": "-",
+    "selector": "init",
+    "address": "0xecf8",
+    "implementation_raw": "0xecf9",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)init;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiTitle",
+    "kind": "-",
+    "selector": "onTap:State:",
+    "address": "0xf934",
+    "implementation_raw": "0xf935",
+    "type_encoding": "B20@0:4{CGPoint=ff}8i16",
+    "native_declaration": "- (bool)onTap:(CGPoint)arg0 State:(int32_t)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiTitle",
+    "kind": "-",
+    "selector": "processTitle",
+    "address": "0xf464",
+    "implementation_raw": "0xf465",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)processTitle;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiTitle",
+    "kind": "-",
+    "selector": "tick",
+    "address": "0xf414",
+    "implementation_raw": "0xf415",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)tick;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiTitle",
+    "kind": "-",
+    "selector": "dealloc",
+    "address": "0xf3c8",
+    "implementation_raw": "0xf3c9",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)dealloc;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiTitle",
+    "kind": "-",
+    "selector": "init",
+    "address": "0xefbc",
+    "implementation_raw": "0xefbd",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)init;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobManager",
+    "kind": "-",
+    "selector": "onTap:State:",
+    "address": "0xfc18",
+    "implementation_raw": "0xfc19",
+    "type_encoding": "B20@0:4{CGPoint=ff}8i16",
+    "native_declaration": "- (bool)onTap:(CGPoint)arg0 State:(int32_t)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobManager",
+    "kind": "-",
+    "selector": "removeUiReceiver:",
+    "address": "0xfbfc",
+    "implementation_raw": "0xfbfd",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)removeUiReceiver:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobManager",
+    "kind": "-",
+    "selector": "addUiReceiver:",
+    "address": "0xfbe0",
+    "implementation_raw": "0xfbe1",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)addUiReceiver:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobManager",
+    "kind": "-",
+    "selector": "drawVisual",
+    "address": "0xfbac",
+    "implementation_raw": "0xfbad",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)drawVisual;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobManager",
+    "kind": "-",
+    "selector": "addVisual:Layer:",
+    "address": "0xfb7c",
+    "implementation_raw": "0xfb7d",
+    "type_encoding": "v16@0:4@8i12",
+    "native_declaration": "- (void)addVisual:(id)arg0 Layer:(int32_t)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobManager",
+    "kind": "-",
+    "selector": "setMainCam:",
+    "address": "0xfb70",
+    "implementation_raw": "0xfb71",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)setMainCam:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobManager",
+    "kind": "-",
+    "selector": "dealloc",
+    "address": "0xfae4",
+    "implementation_raw": "0xfae5",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)dealloc;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobManager",
+    "kind": "-",
+    "selector": "init",
+    "address": "0xfa58",
+    "implementation_raw": "0xfa59",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)init;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QobManager",
+    "kind": "+",
+    "selector": "sharedMgr",
+    "address": "0xf9a8",
+    "implementation_raw": "0xf9a9",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "+ (id)sharedMgr;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "setGameMode:",
+    "address": "0x11338",
+    "implementation_raw": "0x11339",
+    "type_encoding": "v12@0:4i8",
+    "native_declaration": "- (void)setGameMode:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "gameMode",
+    "address": "0x1132c",
+    "implementation_raw": "0x1132d",
+    "type_encoding": "i8@0:4",
+    "native_declaration": "- (int32_t)gameMode;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "setMission:",
+    "address": "0x11320",
+    "implementation_raw": "0x11321",
+    "type_encoding": "v12@0:4i8",
+    "native_declaration": "- (void)setMission:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "mission",
+    "address": "0x11314",
+    "implementation_raw": "0x11315",
+    "type_encoding": "i8@0:4",
+    "native_declaration": "- (int32_t)mission;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "setStage:",
+    "address": "0x11308",
+    "implementation_raw": "0x11309",
+    "type_encoding": "v12@0:4i8",
+    "native_declaration": "- (void)setStage:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "stage",
+    "address": "0x112fc",
+    "implementation_raw": "0x112fd",
+    "type_encoding": "i8@0:4",
+    "native_declaration": "- (int32_t)stage;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "setSlotData:",
+    "address": "0x112f0",
+    "implementation_raw": "0x112f1",
+    "type_encoding": "v12@0:4^{TSaveSlotData=iiBiiiiiifiCCCCi[32{TWeaponItem=[24c]i}]s[64i]}8",
+    "native_declaration": "- (void)setSlotData:(TSaveSlotData *)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "slotData",
+    "address": "0x112e4",
+    "implementation_raw": "0x112e5",
+    "type_encoding": "^{TSaveSlotData=iiBiiiiiifiCCCCi[32{TWeaponItem=[24c]i}]s[64i]}8@0:4",
+    "native_declaration": "- (TSaveSlotData *)slotData;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "selWeapon",
+    "address": "0x112d8",
+    "implementation_raw": "0x112d9",
+    "type_encoding": "s8@0:4",
+    "native_declaration": "- (int16_t)selWeapon;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "selWeaponItem",
+    "address": "0x112cc",
+    "implementation_raw": "0x112cd",
+    "type_encoding": "^{TWeaponItem=[24c]i}8@0:4",
+    "native_declaration": "- (TWeaponItem *)selWeaponItem;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "getWeaponInfo:",
+    "address": "0x112b0",
+    "implementation_raw": "0x112b1",
+    "type_encoding": "@12@0:4@8",
+    "native_declaration": "- (id)getWeaponInfo:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "openWeaponInfo:",
+    "address": "0x111f8",
+    "implementation_raw": "0x111f9",
+    "type_encoding": "B12@0:4@8",
+    "native_declaration": "- (bool)openWeaponInfo:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "readWeaponChunk:Pos:",
+    "address": "0x10e00",
+    "implementation_raw": "0x10e01",
+    "type_encoding": "i16@0:4*8i12",
+    "native_declaration": "- (int32_t)readWeaponChunk:(char *)arg0 Pos:(int32_t)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "getMachInfo:",
+    "address": "0x10de4",
+    "implementation_raw": "0x10de5",
+    "type_encoding": "@12@0:4@8",
+    "native_declaration": "- (id)getMachInfo:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "openMachInfo:",
+    "address": "0x10d28",
+    "implementation_raw": "0x10d29",
+    "type_encoding": "B12@0:4@8",
+    "native_declaration": "- (bool)openMachInfo:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "readMachChunk:Pos:Length:",
+    "address": "0x10c58",
+    "implementation_raw": "0x10c59",
+    "type_encoding": "i20@0:4*8i12i16",
+    "native_declaration": "- (int32_t)readMachChunk:(char *)arg0 Pos:(int32_t)arg1 Length:(int32_t)arg2;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "getPartsInfo:",
+    "address": "0x10c3c",
+    "implementation_raw": "0x10c3d",
+    "type_encoding": "@12@0:4@8",
+    "native_declaration": "- (id)getPartsInfo:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "openPartsInfo:",
+    "address": "0x10b84",
+    "implementation_raw": "0x10b85",
+    "type_encoding": "B12@0:4@8",
+    "native_declaration": "- (bool)openPartsInfo:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "readPartsChunk:Pos:",
+    "address": "0x10a54",
+    "implementation_raw": "0x10a55",
+    "type_encoding": "i16@0:4*8i12",
+    "native_declaration": "- (int32_t)readPartsChunk:(char *)arg0 Pos:(int32_t)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "updateLastStage",
+    "address": "0x10a0c",
+    "implementation_raw": "0x10a0d",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)updateLastStage;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "getCurrentStage",
+    "address": "0x109d4",
+    "implementation_raw": "0x109d5",
+    "type_encoding": "i8@0:4",
+    "native_declaration": "- (int32_t)getCurrentStage;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "getStageIndex:",
+    "address": "0x109bc",
+    "implementation_raw": "0x109bd",
+    "type_encoding": "i12@0:4i8",
+    "native_declaration": "- (int32_t)getStageIndex:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "getStageCount:",
+    "address": "0x109a4",
+    "implementation_raw": "0x109a5",
+    "type_encoding": "i12@0:4i8",
+    "native_declaration": "- (int32_t)getStageCount:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "regenItemInfo:",
+    "address": "0x10984",
+    "implementation_raw": "0x10985",
+    "type_encoding": "^{TItemInfo=ss[24c]}12@0:4i8",
+    "native_declaration": "- (TItemInfo *)regenItemInfo:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "removeWeapon:",
+    "address": "0x10944",
+    "implementation_raw": "0x10945",
+    "type_encoding": "v12@0:4i8",
+    "native_declaration": "- (void)removeWeapon:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "selectWeapon:",
+    "address": "0x108ec",
+    "implementation_raw": "0x108ed",
+    "type_encoding": "v12@0:4i8",
+    "native_declaration": "- (void)selectWeapon:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "addWeaponItem:Charge:",
+    "address": "0x1082c",
+    "implementation_raw": "0x1082d",
+    "type_encoding": "v16@0:4*8i12",
+    "native_declaration": "- (void)addWeaponItem:(char *)arg0 Charge:(int32_t)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "addExp:",
+    "address": "0x106e0",
+    "implementation_raw": "0x106e1",
+    "type_encoding": "v12@0:4i8",
+    "native_declaration": "- (void)addExp:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "levelUpExp",
+    "address": "0x106c4",
+    "implementation_raw": "0x106c5",
+    "type_encoding": "i8@0:4",
+    "native_declaration": "- (int32_t)levelUpExp;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "calcLevelUpExp",
+    "address": "0x105f8",
+    "implementation_raw": "0x105f9",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)calcLevelUpExp;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "sfxID:",
+    "address": "0x105e0",
+    "implementation_raw": "0x105e1",
+    "type_encoding": "L12@0:4i8",
+    "native_declaration": "- (uint32_t)sfxID:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "dealloc",
+    "address": "0x10584",
+    "implementation_raw": "0x10585",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)dealloc;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "-",
+    "selector": "init",
+    "address": "0xfd44",
+    "implementation_raw": "0xfd45",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)init;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GlobalInfo",
+    "kind": "+",
+    "selector": "sharedInfo",
+    "address": "0xfc94",
+    "implementation_raw": "0xfc95",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "+ (id)sharedInfo;",
+    "executable_implementation": false
+  },
+  {
+    "class": "PartsInfo",
+    "kind": "-",
+    "selector": "name",
+    "address": "0x114cc",
+    "implementation_raw": "0x114cd",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)name;",
+    "executable_implementation": false
+  },
+  {
+    "class": "PartsInfo",
+    "kind": "-",
+    "selector": "setPartsType:",
+    "address": "0x114c0",
+    "implementation_raw": "0x114c1",
+    "type_encoding": "v12@0:4C8",
+    "native_declaration": "- (void)setPartsType:(uint8_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "PartsInfo",
+    "kind": "-",
+    "selector": "partsType",
+    "address": "0x114b4",
+    "implementation_raw": "0x114b5",
+    "type_encoding": "C8@0:4",
+    "native_declaration": "- (uint8_t)partsType;",
+    "executable_implementation": false
+  },
+  {
+    "class": "PartsInfo",
+    "kind": "-",
+    "selector": "setTileCnt:",
+    "address": "0x114a8",
+    "implementation_raw": "0x114a9",
+    "type_encoding": "v12@0:4C8",
+    "native_declaration": "- (void)setTileCnt:(uint8_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "PartsInfo",
+    "kind": "-",
+    "selector": "tileCnt",
+    "address": "0x1149c",
+    "implementation_raw": "0x1149d",
+    "type_encoding": "C8@0:4",
+    "native_declaration": "- (uint8_t)tileCnt;",
+    "executable_implementation": false
+  },
+  {
+    "class": "PartsInfo",
+    "kind": "-",
+    "selector": "socketCnt",
+    "address": "0x11490",
+    "implementation_raw": "0x11491",
+    "type_encoding": "C8@0:4",
+    "native_declaration": "- (uint8_t)socketCnt;",
+    "executable_implementation": false
+  },
+  {
+    "class": "PartsInfo",
+    "kind": "-",
+    "selector": "getSocket:",
+    "address": "0x11468",
+    "implementation_raw": "0x11469",
+    "type_encoding": "^{CGPoint=ff}12@0:4C8",
+    "native_declaration": "- (CGPoint *)getSocket:(uint8_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "PartsInfo",
+    "kind": "-",
+    "selector": "setSocket:X:Y:",
+    "address": "0x11438",
+    "implementation_raw": "0x11439",
+    "type_encoding": "v20@0:4C8f12f16",
+    "native_declaration": "- (void)setSocket:(uint8_t)arg0 X:(float)arg1 Y:(float)arg2;",
+    "executable_implementation": false
+  },
+  {
+    "class": "PartsInfo",
+    "kind": "-",
+    "selector": "setSocketCnt:",
+    "address": "0x11408",
+    "implementation_raw": "0x11409",
+    "type_encoding": "v12@0:4C8",
+    "native_declaration": "- (void)setSocketCnt:(uint8_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "PartsInfo",
+    "kind": "-",
+    "selector": "getTileName",
+    "address": "0x113fc",
+    "implementation_raw": "0x113fd",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)getTileName;",
+    "executable_implementation": false
+  },
+  {
+    "class": "PartsInfo",
+    "kind": "-",
+    "selector": "setPartsName:",
+    "address": "0x11380",
+    "implementation_raw": "0x11381",
+    "type_encoding": "v12@0:4*8",
+    "native_declaration": "- (void)setPartsName:(char *)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "PartsInfo",
+    "kind": "-",
+    "selector": "dealloc",
+    "address": "0x11344",
+    "implementation_raw": "0x11345",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)dealloc;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobMachParts",
+    "kind": "-",
+    "selector": "baseSocket",
+    "address": "0x11d64",
+    "implementation_raw": "0x11d65",
+    "type_encoding": "C8@0:4",
+    "native_declaration": "- (uint8_t)baseSocket;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobMachParts",
+    "kind": "-",
+    "selector": "rotPos",
+    "address": "0x11d34",
+    "implementation_raw": "0x11d35",
+    "type_encoding": "{CGPoint=ff}8@0:4",
+    "native_declaration": "- (CGPoint)rotPos;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobMachParts",
+    "kind": "-",
+    "selector": "draw",
+    "address": "0x11a48",
+    "implementation_raw": "0x11a49",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)draw;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobMachParts",
+    "kind": "-",
+    "selector": "refreshRotationPos",
+    "address": "0x118fc",
+    "implementation_raw": "0x118fd",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)refreshRotationPos;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobMachParts",
+    "kind": "-",
+    "selector": "getSocketPos:",
+    "address": "0x11818",
+    "implementation_raw": "0x11819",
+    "type_encoding": "{CGPoint=ff}12@0:4C8",
+    "native_declaration": "- (CGPoint)getSocketPos:(uint8_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobMachParts",
+    "kind": "-",
+    "selector": "setBaseParts:Socket:",
+    "address": "0x11798",
+    "implementation_raw": "0x11799",
+    "type_encoding": "v16@0:4@8C12",
+    "native_declaration": "- (void)setBaseParts:(id)arg0 Socket:(uint8_t)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobMachParts",
+    "kind": "-",
+    "selector": "setChildParts:Socket:",
+    "address": "0x11748",
+    "implementation_raw": "0x11749",
+    "type_encoding": "v16@0:4@8C12",
+    "native_declaration": "- (void)setChildParts:(id)arg0 Socket:(uint8_t)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobMachParts",
+    "kind": "-",
+    "selector": "getPartsInfo",
+    "address": "0x1173c",
+    "implementation_raw": "0x1173d",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)getPartsInfo;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobMachParts",
+    "kind": "-",
+    "selector": "setPartsInfo:",
+    "address": "0x11554",
+    "implementation_raw": "0x11555",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)setPartsInfo:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobMachParts",
+    "kind": "-",
+    "selector": "setHvMach:",
+    "address": "0x11548",
+    "implementation_raw": "0x11549",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)setHvMach:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobMachParts",
+    "kind": "-",
+    "selector": "init",
+    "address": "0x114d8",
+    "implementation_raw": "0x114d9",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)init;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobMachWeapon",
+    "kind": "-",
+    "selector": "muzzlePos",
+    "address": "0x13a24",
+    "implementation_raw": "0x13a25",
+    "type_encoding": "{CGPoint=ff}8@0:4",
+    "native_declaration": "- (CGPoint)muzzlePos;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobMachWeapon",
+    "kind": "-",
+    "selector": "draw",
+    "address": "0x13874",
+    "implementation_raw": "0x13875",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)draw;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobMachWeapon",
+    "kind": "-",
+    "selector": "refreshRotationPos",
+    "address": "0x13530",
+    "implementation_raw": "0x13531",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)refreshRotationPos;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobMachWeapon",
+    "kind": "-",
+    "selector": "refreshMuzzlePos",
+    "address": "0x1335c",
+    "implementation_raw": "0x1335d",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)refreshMuzzlePos;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobMachWeapon",
+    "kind": "-",
+    "selector": "fireWeapon",
+    "address": "0x13214",
+    "implementation_raw": "0x13215",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)fireWeapon;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobMachWeapon",
+    "kind": "-",
+    "selector": "setFire:X:Y:",
+    "address": "0x131f4",
+    "implementation_raw": "0x131f5",
+    "type_encoding": "v20@0:4B8f12f16",
+    "native_declaration": "- (void)setFire:(bool)arg0 X:(float)arg1 Y:(float)arg2;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobMachWeapon",
+    "kind": "-",
+    "selector": "setAimDir:",
+    "address": "0x13168",
+    "implementation_raw": "0x13169",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setAimDir:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobMachWeapon",
+    "kind": "-",
+    "selector": "setPartsInfo:",
+    "address": "0x1304c",
+    "implementation_raw": "0x1304d",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)setPartsInfo:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobMachWeapon",
+    "kind": "-",
+    "selector": "processAI",
+    "address": "0x12a40",
+    "implementation_raw": "0x12a41",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)processAI;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobMachWeapon",
+    "kind": "-",
+    "selector": "tick",
+    "address": "0x11e64",
+    "implementation_raw": "0x11e65",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)tick;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobMachWeapon",
+    "kind": "-",
+    "selector": "init",
+    "address": "0x11d70",
+    "implementation_raw": "0x11d71",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)init;",
+    "executable_implementation": false
+  },
+  {
+    "class": "SoundManager",
+    "kind": "-",
+    "selector": "playBGM:",
+    "address": "0x13d2c",
+    "implementation_raw": "0x13d2d",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)playBGM:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "SoundManager",
+    "kind": "-",
+    "selector": "play:X:Y:",
+    "address": "0x13d0c",
+    "implementation_raw": "0x13d0d",
+    "type_encoding": "v20@0:4L8f12f16",
+    "native_declaration": "- (void)play:(uint32_t)arg0 X:(float)arg1 Y:(float)arg2;",
+    "executable_implementation": false
+  },
+  {
+    "class": "SoundManager",
+    "kind": "-",
+    "selector": "play:",
+    "address": "0x13cee",
+    "implementation_raw": "0x13cef",
+    "type_encoding": "v12@0:4L8",
+    "native_declaration": "- (void)play:(uint32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "SoundManager",
+    "kind": "-",
+    "selector": "removeSound:",
+    "address": "0x13cec",
+    "implementation_raw": "0x13ced",
+    "type_encoding": "v12@0:4L8",
+    "native_declaration": "- (void)removeSound:(uint32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "SoundManager",
+    "kind": "-",
+    "selector": "removeAllSounds",
+    "address": "0x13cd0",
+    "implementation_raw": "0x13cd1",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)removeAllSounds;",
+    "executable_implementation": false
+  },
+  {
+    "class": "SoundManager",
+    "kind": "-",
+    "selector": "getSound:",
+    "address": "0x13c08",
+    "implementation_raw": "0x13c09",
+    "type_encoding": "L12@0:4@8",
+    "native_declaration": "- (uint32_t)getSound:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "SoundManager",
+    "kind": "-",
+    "selector": "setMaxDistance:",
+    "address": "0x13bfc",
+    "implementation_raw": "0x13bfd",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setMaxDistance:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "SoundManager",
+    "kind": "-",
+    "selector": "setListnerPosX:Y:",
+    "address": "0x13bd0",
+    "implementation_raw": "0x13bd1",
+    "type_encoding": "v16@0:4f8f12",
+    "native_declaration": "- (void)setListnerPosX:(float)arg0 Y:(float)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "SoundManager",
+    "kind": "-",
+    "selector": "dealloc",
+    "address": "0x13b90",
+    "implementation_raw": "0x13b91",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)dealloc;",
+    "executable_implementation": false
+  },
+  {
+    "class": "SoundManager",
+    "kind": "-",
+    "selector": "init",
+    "address": "0x13b1c",
+    "implementation_raw": "0x13b1d",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)init;",
+    "executable_implementation": false
+  },
+  {
+    "class": "SoundManager",
+    "kind": "+",
+    "selector": "sharedMgr",
+    "address": "0x13a6c",
+    "implementation_raw": "0x13a6d",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "+ (id)sharedMgr;",
+    "executable_implementation": false
+  },
+  {
+    "class": "SoundID",
+    "kind": "-",
+    "selector": "setSoundID:",
+    "address": "0x13a60",
+    "implementation_raw": "0x13a61",
+    "type_encoding": "v12@0:4L8",
+    "native_declaration": "- (void)setSoundID:(uint32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "SoundID",
+    "kind": "-",
+    "selector": "soundID",
+    "address": "0x13a54",
+    "implementation_raw": "0x13a55",
+    "type_encoding": "L8@0:4",
+    "native_declaration": "- (uint32_t)soundID;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QVisualLayer",
+    "kind": "-",
+    "selector": "setZSort:",
+    "address": "0x14f78",
+    "implementation_raw": "0x14f79",
+    "type_encoding": "v12@0:4B8",
+    "native_declaration": "- (void)setZSort:(bool)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QVisualLayer",
+    "kind": "-",
+    "selector": "zSort",
+    "address": "0x14f6c",
+    "implementation_raw": "0x14f6d",
+    "type_encoding": "B8@0:4",
+    "native_declaration": "- (bool)zSort;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QVisualLayer",
+    "kind": "-",
+    "selector": "visualCnt",
+    "address": "0x14f60",
+    "implementation_raw": "0x14f61",
+    "type_encoding": "i8@0:4",
+    "native_declaration": "- (int32_t)visualCnt;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QVisualLayer",
+    "kind": "-",
+    "selector": "drawVisual",
+    "address": "0x14f10",
+    "implementation_raw": "0x14f11",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)drawVisual;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QVisualLayer",
+    "kind": "-",
+    "selector": "clearAllVisual",
+    "address": "0x14f00",
+    "implementation_raw": "0x14f01",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)clearAllVisual;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QVisualLayer",
+    "kind": "-",
+    "selector": "extendPool",
+    "address": "0x14e8c",
+    "implementation_raw": "0x14e8d",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)extendPool;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QVisualLayer",
+    "kind": "-",
+    "selector": "getObject:",
+    "address": "0x14e54",
+    "implementation_raw": "0x14e55",
+    "type_encoding": "@12@0:4i8",
+    "native_declaration": "- (id)getObject:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QVisualLayer",
+    "kind": "-",
+    "selector": "addObject:",
+    "address": "0x14dfc",
+    "implementation_raw": "0x14dfd",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)addObject:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QVisualLayer",
+    "kind": "-",
+    "selector": "insertObject:",
+    "address": "0x14c5c",
+    "implementation_raw": "0x14c5d",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)insertObject:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QVisualLayer",
+    "kind": "-",
+    "selector": "dealloc",
+    "address": "0x14c28",
+    "implementation_raw": "0x14c29",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)dealloc;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QVisualLayer",
+    "kind": "-",
+    "selector": "initWithUnitSize:",
+    "address": "0x14bc0",
+    "implementation_raw": "0x14bc1",
+    "type_encoding": "@12@0:4i8",
+    "native_declaration": "- (id)initWithUnitSize:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "setWpnType:",
+    "address": "0x15194",
+    "implementation_raw": "0x15195",
+    "type_encoding": "v12@0:4s8",
+    "native_declaration": "- (void)setWpnType:(int16_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "wpnType",
+    "address": "0x15188",
+    "implementation_raw": "0x15189",
+    "type_encoding": "s8@0:4",
+    "native_declaration": "- (int16_t)wpnType;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "setDmg:",
+    "address": "0x1517c",
+    "implementation_raw": "0x1517d",
+    "type_encoding": "v12@0:4s8",
+    "native_declaration": "- (void)setDmg:(int16_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "dmg",
+    "address": "0x15170",
+    "implementation_raw": "0x15171",
+    "type_encoding": "s8@0:4",
+    "native_declaration": "- (int16_t)dmg;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "setPierce:",
+    "address": "0x15164",
+    "implementation_raw": "0x15165",
+    "type_encoding": "v12@0:4B8",
+    "native_declaration": "- (void)setPierce:(bool)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "pierce",
+    "address": "0x15158",
+    "implementation_raw": "0x15159",
+    "type_encoding": "B8@0:4",
+    "native_declaration": "- (bool)pierce;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "setShotCnt:",
+    "address": "0x1514c",
+    "implementation_raw": "0x1514d",
+    "type_encoding": "v12@0:4C8",
+    "native_declaration": "- (void)setShotCnt:(uint8_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "shotCnt",
+    "address": "0x15140",
+    "implementation_raw": "0x15141",
+    "type_encoding": "C8@0:4",
+    "native_declaration": "- (uint8_t)shotCnt;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "setShotDly:",
+    "address": "0x15134",
+    "implementation_raw": "0x15135",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setShotDly:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "shotDly",
+    "address": "0x15128",
+    "implementation_raw": "0x15129",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)shotDly;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "setDelay:",
+    "address": "0x1511c",
+    "implementation_raw": "0x1511d",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setDelay:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "delay",
+    "address": "0x15110",
+    "implementation_raw": "0x15111",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)delay;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "setSpd:",
+    "address": "0x15104",
+    "implementation_raw": "0x15105",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setSpd:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "spd",
+    "address": "0x150f8",
+    "implementation_raw": "0x150f9",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)spd;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "setSpdRand:",
+    "address": "0x150ec",
+    "implementation_raw": "0x150ed",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setSpdRand:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "spdRand",
+    "address": "0x150e0",
+    "implementation_raw": "0x150e1",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)spdRand;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "setAimRand:",
+    "address": "0x150d4",
+    "implementation_raw": "0x150d5",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setAimRand:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "aimRand",
+    "address": "0x150c8",
+    "implementation_raw": "0x150c9",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)aimRand;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "setG:",
+    "address": "0x150bc",
+    "implementation_raw": "0x150bd",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setG:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "g",
+    "address": "0x150b0",
+    "implementation_raw": "0x150b1",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)g;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "setCharge:",
+    "address": "0x150a4",
+    "implementation_raw": "0x150a5",
+    "type_encoding": "v12@0:4s8",
+    "native_declaration": "- (void)setCharge:(int16_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "charge",
+    "address": "0x15098",
+    "implementation_raw": "0x15099",
+    "type_encoding": "s8@0:4",
+    "native_declaration": "- (int16_t)charge;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "setLiveTm:",
+    "address": "0x1508c",
+    "implementation_raw": "0x1508d",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setLiveTm:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "liveTm",
+    "address": "0x15080",
+    "implementation_raw": "0x15081",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)liveTm;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "setRotWpn:",
+    "address": "0x15074",
+    "implementation_raw": "0x15075",
+    "type_encoding": "v12@0:4B8",
+    "native_declaration": "- (void)setRotWpn:(bool)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "rotWpn",
+    "address": "0x15068",
+    "implementation_raw": "0x15069",
+    "type_encoding": "B8@0:4",
+    "native_declaration": "- (bool)rotWpn;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "setUiTile:",
+    "address": "0x1505c",
+    "implementation_raw": "0x1505d",
+    "type_encoding": "v12@0:4C8",
+    "native_declaration": "- (void)setUiTile:(uint8_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "uiTile",
+    "address": "0x15050",
+    "implementation_raw": "0x15051",
+    "type_encoding": "C8@0:4",
+    "native_declaration": "- (uint8_t)uiTile;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "bulletTile",
+    "address": "0x15044",
+    "implementation_raw": "0x15045",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)bulletTile;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "setBulletTileNo:",
+    "address": "0x15038",
+    "implementation_raw": "0x15039",
+    "type_encoding": "v12@0:4s8",
+    "native_declaration": "- (void)setBulletTileNo:(int16_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "bulletTileNo",
+    "address": "0x1502c",
+    "implementation_raw": "0x1502d",
+    "type_encoding": "s8@0:4",
+    "native_declaration": "- (int16_t)bulletTileNo;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "setEffectType:",
+    "address": "0x15020",
+    "implementation_raw": "0x15021",
+    "type_encoding": "v12@0:4s8",
+    "native_declaration": "- (void)setEffectType:(int16_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "effectType",
+    "address": "0x15014",
+    "implementation_raw": "0x15015",
+    "type_encoding": "s8@0:4",
+    "native_declaration": "- (int16_t)effectType;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "effectTile",
+    "address": "0x15008",
+    "implementation_raw": "0x15009",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)effectTile;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "setEffectTileNo:",
+    "address": "0x14ffc",
+    "implementation_raw": "0x14ffd",
+    "type_encoding": "v12@0:4s8",
+    "native_declaration": "- (void)setEffectTileNo:(int16_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "effectTileNo",
+    "address": "0x14ff0",
+    "implementation_raw": "0x14ff1",
+    "type_encoding": "s8@0:4",
+    "native_declaration": "- (int16_t)effectTileNo;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "setShell:",
+    "address": "0x14fe4",
+    "implementation_raw": "0x14fe5",
+    "type_encoding": "v12@0:4s8",
+    "native_declaration": "- (void)setShell:(int16_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "shell",
+    "address": "0x14fd8",
+    "implementation_raw": "0x14fd9",
+    "type_encoding": "s8@0:4",
+    "native_declaration": "- (int16_t)shell;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "fireSFX",
+    "address": "0x14fcc",
+    "implementation_raw": "0x14fcd",
+    "type_encoding": "L8@0:4",
+    "native_declaration": "- (uint32_t)fireSFX;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "setFireSFX:",
+    "address": "0x14fc0",
+    "implementation_raw": "0x14fc1",
+    "type_encoding": "v12@0:4L8",
+    "native_declaration": "- (void)setFireSFX:(uint32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "setEffectType:Tile:TileNo:",
+    "address": "0x14f9c",
+    "implementation_raw": "0x14f9d",
+    "type_encoding": "v20@0:4s8@12s16",
+    "native_declaration": "- (void)setEffectType:(int16_t)arg0 Tile:(id)arg1 TileNo:(int16_t)arg2;",
+    "executable_implementation": false
+  },
+  {
+    "class": "WeaponInfo",
+    "kind": "-",
+    "selector": "setBulletTile:TileNo:",
+    "address": "0x14f84",
+    "implementation_raw": "0x14f85",
+    "type_encoding": "v16@0:4@8s12",
+    "native_declaration": "- (void)setBulletTile:(id)arg0 TileNo:(int16_t)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiGame",
+    "kind": "-",
+    "selector": "handleButton:",
+    "address": "0x17c4c",
+    "implementation_raw": "0x17c4d",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)handleButton:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiGame",
+    "kind": "-",
+    "selector": "changeWeapon",
+    "address": "0x178f0",
+    "implementation_raw": "0x178f1",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)changeWeapon;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiGame",
+    "kind": "-",
+    "selector": "setChargeCnt:",
+    "address": "0x178b8",
+    "implementation_raw": "0x178b9",
+    "type_encoding": "v12@0:4i8",
+    "native_declaration": "- (void)setChargeCnt:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiGame",
+    "kind": "-",
+    "selector": "setWeaponInfo:",
+    "address": "0x17888",
+    "implementation_raw": "0x17889",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)setWeaponInfo:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiGame",
+    "kind": "-",
+    "selector": "isActivePassive:",
+    "address": "0x17870",
+    "implementation_raw": "0x17871",
+    "type_encoding": "B12@0:4i8",
+    "native_declaration": "- (bool)isActivePassive:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiGame",
+    "kind": "-",
+    "selector": "addPassiveItem:",
+    "address": "0x1778c",
+    "implementation_raw": "0x1778d",
+    "type_encoding": "v12@0:4*8",
+    "native_declaration": "- (void)addPassiveItem:(char *)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiGame",
+    "kind": "-",
+    "selector": "processPassiveSlot",
+    "address": "0x176b8",
+    "implementation_raw": "0x176b9",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)processPassiveSlot;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiGame",
+    "kind": "-",
+    "selector": "setReloadComplete",
+    "address": "0x1767c",
+    "implementation_raw": "0x1767d",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)setReloadComplete;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiGame",
+    "kind": "-",
+    "selector": "setReloadGauge:",
+    "address": "0x1762c",
+    "implementation_raw": "0x1762d",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setReloadGauge:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiGame",
+    "kind": "-",
+    "selector": "setHPGauge:",
+    "address": "0x17620",
+    "implementation_raw": "0x17621",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setHPGauge:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiGame",
+    "kind": "-",
+    "selector": "setExpGauge:",
+    "address": "0x1755c",
+    "implementation_raw": "0x1755d",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setExpGauge:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiGame",
+    "kind": "-",
+    "selector": "refreshUpgradeGauge:",
+    "address": "0x17280",
+    "implementation_raw": "0x17281",
+    "type_encoding": "v12@0:4B8",
+    "native_declaration": "- (void)refreshUpgradeGauge:(bool)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiGame",
+    "kind": "-",
+    "selector": "setUpgrade",
+    "address": "0x16a98",
+    "implementation_raw": "0x16a99",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)setUpgrade;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiGame",
+    "kind": "-",
+    "selector": "setGameStart",
+    "address": "0x169b0",
+    "implementation_raw": "0x169b1",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)setGameStart;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiGame",
+    "kind": "-",
+    "selector": "tick",
+    "address": "0x161d0",
+    "implementation_raw": "0x161d1",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)tick;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiGame",
+    "kind": "-",
+    "selector": "dealloc",
+    "address": "0x16188",
+    "implementation_raw": "0x16189",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)dealloc;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiGame",
+    "kind": "-",
+    "selector": "init",
+    "address": "0x151a0",
+    "implementation_raw": "0x151a1",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)init;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiSelectSlot",
+    "kind": "-",
+    "selector": "handleButton:",
+    "address": "0x18fc0",
+    "implementation_raw": "0x18fc1",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)handleButton:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiSelectSlot",
+    "kind": "-",
+    "selector": "refreshSlot:",
+    "address": "0x186d8",
+    "implementation_raw": "0x186d9",
+    "type_encoding": "v12@0:4i8",
+    "native_declaration": "- (void)refreshSlot:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiSelectSlot",
+    "kind": "-",
+    "selector": "dealloc",
+    "address": "0x18668",
+    "implementation_raw": "0x18669",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)dealloc;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiSelectSlot",
+    "kind": "-",
+    "selector": "init",
+    "address": "0x18158",
+    "implementation_raw": "0x18159",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)init;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiSelectMission",
+    "kind": "-",
+    "selector": "handleButton:",
+    "address": "0x1a05c",
+    "implementation_raw": "0x1a05d",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)handleButton:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiSelectMission",
+    "kind": "-",
+    "selector": "setTop:",
+    "address": "0x19ea4",
+    "implementation_raw": "0x19ea5",
+    "type_encoding": "v12@0:4i8",
+    "native_declaration": "- (void)setTop:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiSelectMission",
+    "kind": "-",
+    "selector": "refreshStageImg",
+    "address": "0x19d18",
+    "implementation_raw": "0x19d19",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)refreshStageImg;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiSelectMission",
+    "kind": "-",
+    "selector": "tick",
+    "address": "0x19ba0",
+    "implementation_raw": "0x19ba1",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)tick;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiSelectMission",
+    "kind": "-",
+    "selector": "dealloc",
+    "address": "0x19b30",
+    "implementation_raw": "0x19b31",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)dealloc;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiSelectMission",
+    "kind": "-",
+    "selector": "init",
+    "address": "0x192ec",
+    "implementation_raw": "0x192ed",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)init;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiSelectMode",
+    "kind": "-",
+    "selector": "handleButton:",
+    "address": "0x1a900",
+    "implementation_raw": "0x1a901",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)handleButton:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiSelectMode",
+    "kind": "-",
+    "selector": "dealloc",
+    "address": "0x1a890",
+    "implementation_raw": "0x1a891",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)dealloc;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GuiSelectMode",
+    "kind": "-",
+    "selector": "init",
+    "address": "0x1a55c",
+    "implementation_raw": "0x1a55d",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)init;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobTrailEffect",
+    "kind": "-",
+    "selector": "setWindEffect:",
+    "address": "0x1ba00",
+    "implementation_raw": "0x1ba01",
+    "type_encoding": "v12@0:4B8",
+    "native_declaration": "- (void)setWindEffect:(bool)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobTrailEffect",
+    "kind": "-",
+    "selector": "windEffect",
+    "address": "0x1b9f4",
+    "implementation_raw": "0x1b9f5",
+    "type_encoding": "B8@0:4",
+    "native_declaration": "- (bool)windEffect;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobTrailEffect",
+    "kind": "-",
+    "selector": "setDiffuseEffect:",
+    "address": "0x1b9e8",
+    "implementation_raw": "0x1b9e9",
+    "type_encoding": "v12@0:4B8",
+    "native_declaration": "- (void)setDiffuseEffect:(bool)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobTrailEffect",
+    "kind": "-",
+    "selector": "diffuseEffect",
+    "address": "0x1b9dc",
+    "implementation_raw": "0x1b9dd",
+    "type_encoding": "B8@0:4",
+    "native_declaration": "- (bool)diffuseEffect;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobTrailEffect",
+    "kind": "-",
+    "selector": "draw",
+    "address": "0x1b8dc",
+    "implementation_raw": "0x1b8dd",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)draw;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobTrailEffect",
+    "kind": "-",
+    "selector": "isInCam",
+    "address": "0x1b8d8",
+    "implementation_raw": "0x1b8d9",
+    "type_encoding": "B8@0:4",
+    "native_declaration": "- (bool)isInCam;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobTrailEffect",
+    "kind": "-",
+    "selector": "tick",
+    "address": "0x1b5c0",
+    "implementation_raw": "0x1b5c1",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)tick;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobTrailEffect",
+    "kind": "-",
+    "selector": "addTrailPosX:Y:",
+    "address": "0x1b438",
+    "implementation_raw": "0x1b439",
+    "type_encoding": "v16@0:4f8f12",
+    "native_declaration": "- (void)addTrailPosX:(float)arg0 Y:(float)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobTrailEffect",
+    "kind": "-",
+    "selector": "addValidPosX:Y:IsAdd:",
+    "address": "0x1acd0",
+    "implementation_raw": "0x1acd1",
+    "type_encoding": "v20@0:4f8f12B16",
+    "native_declaration": "- (void)addValidPosX:(float)arg0 Y:(float)arg1 IsAdd:(bool)arg2;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobTrailEffect",
+    "kind": "-",
+    "selector": "dealloc",
+    "address": "0x1ac60",
+    "implementation_raw": "0x1ac61",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)dealloc;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobTrailEffect",
+    "kind": "-",
+    "selector": "setTrailWidth:Len:BlockCnt:FadeDelay:FadeTime:",
+    "address": "0x1ab60",
+    "implementation_raw": "0x1ab61",
+    "type_encoding": "v28@0:4f8f12i16f20f24",
+    "native_declaration": "- (void)setTrailWidth:(float)arg0 Len:(float)arg1 BlockCnt:(int32_t)arg2 FadeDelay:(float)arg3 FadeTime:(float)arg4;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobTrailEffect",
+    "kind": "-",
+    "selector": "init",
+    "address": "0x1ab20",
+    "implementation_raw": "0x1ab21",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)init;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QList",
+    "kind": "-",
+    "selector": "size",
+    "address": "0x1bb78",
+    "implementation_raw": "0x1bb79",
+    "type_encoding": "i8@0:4",
+    "native_declaration": "- (int32_t)size;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QList",
+    "kind": "-",
+    "selector": "extendPool",
+    "address": "0x1bb0c",
+    "implementation_raw": "0x1bb0d",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)extendPool;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QList",
+    "kind": "-",
+    "selector": "getData:",
+    "address": "0x1bae4",
+    "implementation_raw": "0x1bae5",
+    "type_encoding": "^v12@0:4i8",
+    "native_declaration": "- (void *)getData:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QList",
+    "kind": "-",
+    "selector": "addData:",
+    "address": "0x1baa0",
+    "implementation_raw": "0x1baa1",
+    "type_encoding": "v12@0:4^v8",
+    "native_declaration": "- (void)addData:(void *)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QList",
+    "kind": "-",
+    "selector": "dealloc",
+    "address": "0x1ba6c",
+    "implementation_raw": "0x1ba6d",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)dealloc;",
+    "executable_implementation": false
+  },
+  {
+    "class": "QList",
+    "kind": "-",
+    "selector": "initWithUnitSize:",
+    "address": "0x1ba0c",
+    "implementation_raw": "0x1ba0d",
+    "type_encoding": "@12@0:4i8",
+    "native_declaration": "- (id)initWithUnitSize:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobItemBox",
+    "kind": "-",
+    "selector": "tick",
+    "address": "0x1d6c8",
+    "implementation_raw": "0x1d6c9",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)tick;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobItemBox",
+    "kind": "-",
+    "selector": "dealloc",
+    "address": "0x1d67c",
+    "implementation_raw": "0x1d67d",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)dealloc;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobItemBox",
+    "kind": "-",
+    "selector": "init",
+    "address": "0x1d538",
+    "implementation_raw": "0x1d539",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)init;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GameMain",
+    "kind": "-",
+    "selector": "screen",
+    "address": "0x3fc4",
+    "implementation_raw": "0x3fc5",
+    "type_encoding": "i8@0:4",
+    "native_declaration": "- (int32_t)screen;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GameMain",
+    "kind": "-",
+    "selector": "getGameUI",
+    "address": "0x3fb8",
+    "implementation_raw": "0x3fb9",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)getGameUI;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GameMain",
+    "kind": "-",
+    "selector": "getWorld",
+    "address": "0x3fac",
+    "implementation_raw": "0x3fad",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)getWorld;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GameMain",
+    "kind": "-",
+    "selector": "saveDataFile",
+    "address": "0x3f44",
+    "implementation_raw": "0x3f45",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)saveDataFile;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GameMain",
+    "kind": "-",
+    "selector": "openDataFile",
+    "address": "0x3ea0",
+    "implementation_raw": "0x3ea1",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)openDataFile;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GameMain",
+    "kind": "-",
+    "selector": "slotData:",
+    "address": "0x3e7c",
+    "implementation_raw": "0x3e7d",
+    "type_encoding": "^{TSaveSlotData=iiBiiiiiifiCCCCi[32{TWeaponItem=[24c]i}]s[64i]}12@0:4i8",
+    "native_declaration": "- (TSaveSlotData *)slotData:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GameMain",
+    "kind": "-",
+    "selector": "selectSlot:",
+    "address": "0x3b20",
+    "implementation_raw": "0x3b21",
+    "type_encoding": "v12@0:4i8",
+    "native_declaration": "- (void)selectSlot:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GameMain",
+    "kind": "-",
+    "selector": "setScreen_Game",
+    "address": "0x3a1c",
+    "implementation_raw": "0x3a1d",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)setScreen_Game;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GameMain",
+    "kind": "-",
+    "selector": "setScreen_SelectMission",
+    "address": "0x39d8",
+    "implementation_raw": "0x39d9",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)setScreen_SelectMission;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GameMain",
+    "kind": "-",
+    "selector": "setScreen_SelectSlot",
+    "address": "0x3994",
+    "implementation_raw": "0x3995",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)setScreen_SelectSlot;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GameMain",
+    "kind": "-",
+    "selector": "setScreen_SelectMode",
+    "address": "0x3950",
+    "implementation_raw": "0x3951",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)setScreen_SelectMode;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GameMain",
+    "kind": "-",
+    "selector": "setScreen_Title",
+    "address": "0x390c",
+    "implementation_raw": "0x390d",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)setScreen_Title;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GameMain",
+    "kind": "-",
+    "selector": "refreshScreen",
+    "address": "0x38b0",
+    "implementation_raw": "0x38b1",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)refreshScreen;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GameMain",
+    "kind": "-",
+    "selector": "changeScreen:",
+    "address": "0x3890",
+    "implementation_raw": "0x3891",
+    "type_encoding": "v12@0:4i8",
+    "native_declaration": "- (void)changeScreen:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GameMain",
+    "kind": "-",
+    "selector": "clearAllScreen",
+    "address": "0x3778",
+    "implementation_raw": "0x3779",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)clearAllScreen;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GameMain",
+    "kind": "-",
+    "selector": "tick",
+    "address": "0x3374",
+    "implementation_raw": "0x3375",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)tick;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GameMain",
+    "kind": "-",
+    "selector": "dealloc",
+    "address": "0x3320",
+    "implementation_raw": "0x3321",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)dealloc;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GameMain",
+    "kind": "-",
+    "selector": "init",
+    "address": "0x2ecc",
+    "implementation_raw": "0x2ecd",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)init;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvMach",
+    "kind": "-",
+    "selector": "setMachType:",
+    "address": "0x5868",
+    "implementation_raw": "0x5869",
+    "type_encoding": "v12@0:4C8",
+    "native_declaration": "- (void)setMachType:(uint8_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvMach",
+    "kind": "-",
+    "selector": "machType",
+    "address": "0x585c",
+    "implementation_raw": "0x585d",
+    "type_encoding": "C8@0:4",
+    "native_declaration": "- (uint8_t)machType;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvMach",
+    "kind": "-",
+    "selector": "setSpeed:",
+    "address": "0x5850",
+    "implementation_raw": "0x5851",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setSpeed:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvMach",
+    "kind": "-",
+    "selector": "speed",
+    "address": "0x5844",
+    "implementation_raw": "0x5845",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)speed;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvMach",
+    "kind": "-",
+    "selector": "setState:",
+    "address": "0x5838",
+    "implementation_raw": "0x5839",
+    "type_encoding": "v12@0:4s8",
+    "native_declaration": "- (void)setState:(int16_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvMach",
+    "kind": "-",
+    "selector": "state",
+    "address": "0x582c",
+    "implementation_raw": "0x582d",
+    "type_encoding": "s8@0:4",
+    "native_declaration": "- (int16_t)state;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvMach",
+    "kind": "-",
+    "selector": "setUseEngineBounce:",
+    "address": "0x5820",
+    "implementation_raw": "0x5821",
+    "type_encoding": "v12@0:4B8",
+    "native_declaration": "- (void)setUseEngineBounce:(bool)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvMach",
+    "kind": "-",
+    "selector": "useEngineBounce",
+    "address": "0x5814",
+    "implementation_raw": "0x5815",
+    "type_encoding": "B8@0:4",
+    "native_declaration": "- (bool)useEngineBounce;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvMach",
+    "kind": "-",
+    "selector": "engineBounce",
+    "address": "0x5808",
+    "implementation_raw": "0x5809",
+    "type_encoding": "f8@0:4",
+    "native_declaration": "- (float)engineBounce;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvMach",
+    "kind": "-",
+    "selector": "draw",
+    "address": "0x57c0",
+    "implementation_raw": "0x57c1",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)draw;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvMach",
+    "kind": "-",
+    "selector": "setMoveVel:",
+    "address": "0x5704",
+    "implementation_raw": "0x5705",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setMoveVel:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvMach",
+    "kind": "-",
+    "selector": "onDestroy",
+    "address": "0x55fc",
+    "implementation_raw": "0x55fd",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)onDestroy;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvMach",
+    "kind": "-",
+    "selector": "onDamage:",
+    "address": "0x54b8",
+    "implementation_raw": "0x54b9",
+    "type_encoding": "v12@0:4i8",
+    "native_declaration": "- (void)onDamage:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvMach",
+    "kind": "-",
+    "selector": "processFly",
+    "address": "0x5240",
+    "implementation_raw": "0x5241",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)processFly;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvMach",
+    "kind": "-",
+    "selector": "processLand",
+    "address": "0x4c10",
+    "implementation_raw": "0x4c11",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)processLand;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvMach",
+    "kind": "-",
+    "selector": "processModel",
+    "address": "0x4b5c",
+    "implementation_raw": "0x4b5d",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)processModel;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvMach",
+    "kind": "-",
+    "selector": "setCurrentCol:",
+    "address": "0x4ab0",
+    "implementation_raw": "0x4ab1",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)setCurrentCol:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvMach",
+    "kind": "-",
+    "selector": "tick",
+    "address": "0x479c",
+    "implementation_raw": "0x479d",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)tick;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvMach",
+    "kind": "-",
+    "selector": "addParts:BaseParts:BaseSocket:",
+    "address": "0x428c",
+    "implementation_raw": "0x428d",
+    "type_encoding": "@20@0:4@8@12C16",
+    "native_declaration": "- (id)addParts:(id)arg0 BaseParts:(id)arg1 BaseSocket:(uint8_t)arg2;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvMach",
+    "kind": "-",
+    "selector": "addParts:",
+    "address": "0x4214",
+    "implementation_raw": "0x4215",
+    "type_encoding": "@12@0:4@8",
+    "native_declaration": "- (id)addParts:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvMach",
+    "kind": "-",
+    "selector": "insertPartsToLayer:",
+    "address": "0x41f8",
+    "implementation_raw": "0x41f9",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)insertPartsToLayer:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvMach",
+    "kind": "-",
+    "selector": "isPlayer",
+    "address": "0x41b8",
+    "implementation_raw": "0x41b9",
+    "type_encoding": "B8@0:4",
+    "native_declaration": "- (bool)isPlayer;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvMach",
+    "kind": "-",
+    "selector": "dealloc",
+    "address": "0x415c",
+    "implementation_raw": "0x415d",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)dealloc;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvMach",
+    "kind": "-",
+    "selector": "init",
+    "address": "0x3fd0",
+    "implementation_raw": "0x3fd1",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)init;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvM_Enemy",
+    "kind": "-",
+    "selector": "setIsBoss:",
+    "address": "0x14bb4",
+    "implementation_raw": "0x14bb5",
+    "type_encoding": "v12@0:4B8",
+    "native_declaration": "- (void)setIsBoss:(bool)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvM_Enemy",
+    "kind": "-",
+    "selector": "isBoss",
+    "address": "0x14ba8",
+    "implementation_raw": "0x14ba9",
+    "type_encoding": "B8@0:4",
+    "native_declaration": "- (bool)isBoss;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvM_Enemy",
+    "kind": "-",
+    "selector": "setGiveItem:",
+    "address": "0x14b9c",
+    "implementation_raw": "0x14b9d",
+    "type_encoding": "v12@0:4i8",
+    "native_declaration": "- (void)setGiveItem:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvM_Enemy",
+    "kind": "-",
+    "selector": "giveItem",
+    "address": "0x14b90",
+    "implementation_raw": "0x14b91",
+    "type_encoding": "i8@0:4",
+    "native_declaration": "- (int32_t)giveItem;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvM_Enemy",
+    "kind": "-",
+    "selector": "setGiveExp:",
+    "address": "0x14b84",
+    "implementation_raw": "0x14b85",
+    "type_encoding": "v12@0:4i8",
+    "native_declaration": "- (void)setGiveExp:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvM_Enemy",
+    "kind": "-",
+    "selector": "giveExp",
+    "address": "0x14b78",
+    "implementation_raw": "0x14b79",
+    "type_encoding": "i8@0:4",
+    "native_declaration": "- (int32_t)giveExp;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvM_Enemy",
+    "kind": "-",
+    "selector": "makeMachFromName:",
+    "address": "0x14918",
+    "implementation_raw": "0x14919",
+    "type_encoding": "B12@0:4*8",
+    "native_declaration": "- (bool)makeMachFromName:(char *)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvM_Enemy",
+    "kind": "-",
+    "selector": "decodeChunk:Data:Pos:",
+    "address": "0x147e8",
+    "implementation_raw": "0x147e9",
+    "type_encoding": "i20@0:4@8*12i16",
+    "native_declaration": "- (int32_t)decodeChunk:(id)arg0 Data:(char *)arg1 Pos:(int32_t)arg2;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvM_Enemy",
+    "kind": "-",
+    "selector": "setHPGauge:",
+    "address": "0x14778",
+    "implementation_raw": "0x14779",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setHPGauge:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvM_Enemy",
+    "kind": "-",
+    "selector": "onDestroy",
+    "address": "0x14418",
+    "implementation_raw": "0x14419",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)onDestroy;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvM_Enemy",
+    "kind": "-",
+    "selector": "onDamage:",
+    "address": "0x143b8",
+    "implementation_raw": "0x143b9",
+    "type_encoding": "v12@0:4i8",
+    "native_declaration": "- (void)onDamage:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvM_Enemy",
+    "kind": "-",
+    "selector": "tick",
+    "address": "0x13e04",
+    "implementation_raw": "0x13e05",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)tick;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvM_Enemy",
+    "kind": "-",
+    "selector": "init",
+    "address": "0x13d80",
+    "implementation_raw": "0x13d81",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)init;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvM_Player",
+    "kind": "-",
+    "selector": "setTap:State:",
+    "address": "0x1d300",
+    "implementation_raw": "0x1d301",
+    "type_encoding": "v20@0:4{CGPoint=ff}8i16",
+    "native_declaration": "- (void)setTap:(CGPoint)arg0 State:(int32_t)arg1;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvM_Player",
+    "kind": "-",
+    "selector": "setHPGauge:",
+    "address": "0x1d278",
+    "implementation_raw": "0x1d279",
+    "type_encoding": "v12@0:4f8",
+    "native_declaration": "- (void)setHPGauge:(float)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvM_Player",
+    "kind": "-",
+    "selector": "onDestroy",
+    "address": "0x1d230",
+    "implementation_raw": "0x1d231",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)onDestroy;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvM_Player",
+    "kind": "-",
+    "selector": "onDamage:",
+    "address": "0x1d140",
+    "implementation_raw": "0x1d141",
+    "type_encoding": "v12@0:4i8",
+    "native_declaration": "- (void)onDamage:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvM_Player",
+    "kind": "-",
+    "selector": "refreshMoveSpeed",
+    "address": "0x1d0dc",
+    "implementation_raw": "0x1d0dd",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)refreshMoveSpeed;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvM_Player",
+    "kind": "-",
+    "selector": "refreshMaxHp",
+    "address": "0x1cf58",
+    "implementation_raw": "0x1cf59",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)refreshMaxHp;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvM_Player",
+    "kind": "-",
+    "selector": "setBooster:",
+    "address": "0x1cc70",
+    "implementation_raw": "0x1cc71",
+    "type_encoding": "v12@0:4B8",
+    "native_declaration": "- (void)setBooster:(bool)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvM_Player",
+    "kind": "-",
+    "selector": "pickupItem:",
+    "address": "0x1c64c",
+    "implementation_raw": "0x1c64d",
+    "type_encoding": "v12@0:4@8",
+    "native_declaration": "- (void)pickupItem:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvM_Player",
+    "kind": "-",
+    "selector": "removeCurWeapon",
+    "address": "0x1c408",
+    "implementation_raw": "0x1c409",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)removeCurWeapon;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvM_Player",
+    "kind": "-",
+    "selector": "changeWeapon:",
+    "address": "0x1c25c",
+    "implementation_raw": "0x1c25d",
+    "type_encoding": "v12@0:4i8",
+    "native_declaration": "- (void)changeWeapon:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvM_Player",
+    "kind": "-",
+    "selector": "upgradeParts:",
+    "address": "0x1bfdc",
+    "implementation_raw": "0x1bfdd",
+    "type_encoding": "v12@0:4i8",
+    "native_declaration": "- (void)upgradeParts:(int32_t)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvM_Player",
+    "kind": "-",
+    "selector": "setPartsToMyMach:",
+    "address": "0x1be84",
+    "implementation_raw": "0x1be85",
+    "type_encoding": "@12@0:4@8",
+    "native_declaration": "- (id)setPartsToMyMach:(id)arg0;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvM_Player",
+    "kind": "-",
+    "selector": "refreshMyMachLayer",
+    "address": "0x1be0c",
+    "implementation_raw": "0x1be0d",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)refreshMyMachLayer;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvM_Player",
+    "kind": "-",
+    "selector": "tick",
+    "address": "0x1bd04",
+    "implementation_raw": "0x1bd05",
+    "type_encoding": "v8@0:4",
+    "native_declaration": "- (void)tick;",
+    "executable_implementation": false
+  },
+  {
+    "class": "GobHvM_Player",
+    "kind": "-",
+    "selector": "init",
+    "address": "0x1bb84",
+    "implementation_raw": "0x1bb85",
+    "type_encoding": "@8@0:4",
+    "native_declaration": "- (id)init;",
+    "executable_implementation": false
+  }
+]

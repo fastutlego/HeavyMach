@@ -1,0 +1,48 @@
+# 데미지와 게임 수치 계산 정책
+
+정본: [canonical](canonical.md). 값의 출처는 원작1.13 데이터와 원본 함수다. 구현은 `GameData.cpp`, `Combat.cpp`, `Player.cpp`, `Enemy.cpp`, `GlobalInfo.cpp`, `Motion.cpp`, `World.cpp`. 보기 좋은 새 수식·난이도·상한을 임의 도입하지 않는다.
+
+## 데이터와 연산
+
+WeaponInfo의 dmg/spd/spdRand/aimRand/shotCnt/g/liveTm, MachDefinition의 hpMax/giveExp와 부품은 원본 MCH에서 읽는다. 적 HP/EXP를 플레이어 레벨에 맞춰 새로 스케일하지 않는다. float/double 승격, 연산 순서, 정수 나눗셈·절삭, ARM32 wrap은 동작의 일부다. float 상수를 double 리터럴로 치환하거나 FMA로 합치지 않는다. 코드의 `-ffp-contract=off`와 주소별 근거를 보존한다.
+
+## 탄환 데미지 — tickBullet 0xa444
+
+기본값 `D=WeaponInfo.dmg`, 무기 등급 `G=slot[0x2d]`다.
+
+1. 플레이어가 적에게 발사한 탄환: `damage=D+(D/8)*G`. `/8`은 먼저 실행하는 정수 나눗셈이다.
+2. Attack 활성일 때 위 결과를 float로 바꿔 `1.5f`를 곱한 후 int32로 절삭한다.
+3. 적이 플레이어에게 발사한 탄환: 무기 강화/Attack 증폭을 적용하지 않는다. Defense 활성일 때 `D/2` 정수 나눗셈을 적용한다.
+4. 충돌 처리 뒤 대상에게 해당 값을 전달한다. 관통 여부·파티클 풀·폭발음·이벤트 순서는 별도 원본 분기를 유지한다. 방어 처리를 Player.onDamage에서 다시 적용하지 않는다.
+
+예: D=15,G=2이면 적에게17, Attack이면25다. `D*(1+G/8)`로 바꾸면 다른 값이 된다. 적탄15를 Defense로 받으면7이다. 이는 식 설명 예시이며 실제 무기의 dmg 표를 대체하지 않는다.
+
+HP는 원본32비트 뺄셈 결과로 갱신한다. HP<1이면0과 사망 이벤트를 적용한다. 플레이어 피해>10의 흔들림은 `max(float(damage)/5,10)`, count4, delay0.3f다. 낙하 등 비탄환 피해에 탄환 방어 공식을 임의 재사용하지 않는다.
+
+## HP·속도·강화
+
+- 부품 등급: weapon0x2d, top0x2e, body0x2f, 정상 범위0..6. 화면 이미지 번호는 grade+1이다.
+- 최대 HP: hp=256에서 `i=1 .. grade−1`마다 `hp=int(hp+50*pow(double(1.3f),i))`. 매 반복 정수 변환한다. 한 번의 최종 절삭으로 바꾸지 않는다.
+- 이동 기본값: `((float(bodyGrade)*0.5f)*0.3f)+1.3f`. 실제 이동에는 틸트 입력·지형·dash가 추가된다. 이를 곧바로 초당 월드 이동거리로 부르지 않는다.
+- Speed 패시브는 이동 speed에1.3f를 곱한다. top 강화는 최대 HP를 다시 계산하고 전량 회복한다. body 강화는 이동속도를 갱신한다.
+- 강화 선택과 마감 애니메이션의 pause 해제 순서를 보존한다. 0x2c를 임의의 소비 포인트로 간주하여 차감하지 않는다.
+
+## 경험치 — 0x105f8 / 0x106e0
+
+내부 레벨은0..99이고 화면은 내부값+1이다. 임계치는 `base=1.5f,sum=0`에서 i=0..level을 반복해 `sum=armVFPInt(double(sum)+300*pow(double(base),double(i)))`로 누적한다. 매 반복 뒤 base>1.25f이면0.01f를 뺀다. armVFPInt는0방향 절삭과 int32 포화, NaN→0을 보존한다.
+
+EXP는 int32 wrap 합산한다. 임계치를 넘고 level<99일 때 한 번의 호출당 최대 한 레벨만 올린다. 남는 EXP는 유지한다. EXP gauge는 원본 previous/next 차이로 계산하고 위쪽1만 제한한다. 이 함수 자체는 파일 저장을 호출하지 않는다.
+
+EXP 아이템은 해당 레벨 필요 구간의1/4,1/2, 또는 `int(float(interval)/1.5f)`를 지급한다. 이름 `EXP_Qurter` 등 원본 오자를 정정해 자원 키를 바꾸지 않는다.
+
+## 탄약·패시브·난수
+
+중복 무기 탄약은 기존값과 획득량을32비트로 합하고, 이번 획득량×6을 상한으로 쓴다. 원본 burst 종료 시 소모·기본 무기 예외·선택/삭제 순서를 유지한다. charge preview와 실제 저장 값을 혼동하지 않는다.
+
+패시브는 Defense/Attack/Booster/Speed이며 획득 때60초를 누적한다. GUI tick마다 원본 float `0x3c888889`만큼 줄이고 정수 표시는 절삭한다. pause와 화면 전환 수명은 [수명 근거](session-lifecycle.md)를 따른다. 임의 wall-clock 만료를 추가하지 않는다.
+
+메뉴·타이틀·전투·아이템은 공통 xorshift32 RNG를 사용한다. `state=max(state,1); state^=state<<13; state^=state>>17; state^=state<<5; result=state&0x7fffffff`. 시드가 같아도 호출 횟수/순서가 다르면 결과가 달라진다. 전투마다 별도 RNG를 만들지 않는다. 탄환 속도는 독립 난수2회, 조준 오차는1회를 사용하며 원본 조준 오차 범위는[-aimRand,0]이다.
+
+## 검증과 미확인
+
+수식 변경은 경계·정수절삭·강화/패시브 조합과 실제 피해 경로를 검사한다. `CombatTests`, `PlayerTests`, `CoreTests`, `AmmoSyncTests`, `GameSessionTests`가 현재 소비 검사다. 원본 주소/데이터 필드/증거 없이 새 값을 채우지 않는다. 데이터 파싱이나 원본 대응의 미확인은 [소스 범위](source-coverage.md)에 남긴다. 이 문서가 전체 원본 함수 동등성 인증을 뜻하지 않는다.

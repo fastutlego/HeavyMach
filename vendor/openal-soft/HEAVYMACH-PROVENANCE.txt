@@ -1,0 +1,15 @@
+OpenAL Soft 1.22.2, copied without source modifications from the working HeavyMach
+IPA compatibility host's vendor/openal-soft directory on 2026-10-24.
+Original host: touchHLE fresh-port/20-touchHLE-src/touchHLE
+Original source tree: 8e25297d247bda5636193c3d5cd128618fa48bd2
+Upstream: https://github.com/kcat/openal-soft
+License: GNU Library General Public License v2 or later; see COPYING and each
+source file. BSD-3Clause is retained for files under that license.
+
+Build: ../../tools/build_openal.sh iphonesimulator (or iphoneos).
+Static output: ../../build/openal/<sdk>/libopenal.a, arm64.
+Link with AudioToolbox, CoreAudio, CoreFoundation and libc++; do not link Apple's
+OpenAL framework at the same time. Both app and test bundle must resolve AL calls
+against the app's same library instance. Preserve source and license materials
+with distribution and provide relinkable application objects when distributing
+a statically linked binary under the library's license requirements.

@@ -1,0 +1,39 @@
+# 그래픽 렌더링 정책
+
+정본: [canonical](canonical.md). 제품 경로는 `HMGameView → HMMedia → HMGLRenderer`다. 이전 CPU raster/UIImage 합성은 비교·검사 경로로 남아 있으며 일반 게임의 정상 렌더 경로로 복귀시키지 않는다.
+
+사용자의 2026-10-25 전체 캔버스·시야 확장 요청은 [확장 계획](wide-canvas-plan.md)에 따른다. 아래 480×320 규칙은 현재 제품 기준이며 확장 구현을 금지하는 조건이 아니다. 확장을 구현할 때 관련 정책·입력·검사를 함께 갱신한다.
+
+## 고정할 경로
+
+- 게임 장면은 OpenGL ES1.1. UIKit은 창·수명주기·검증 조작부를 담당한다.
+- 480×320 RGBA8 renderbuffer에 원본 순서로 그린다. 장면을 재사용 화면 텍스처로 복사하고 drawable에 최종 확대한다.
+- 원본 이미지695개를 보존된 stb 코드로 해석한다. POT 패딩, premultiplied 픽셀, RGB565 변환, UV와 타일 순서를 임의 보정하지 않는다.
+- sprite 텍스처는 LINEAR/REPEAT, 최종 화면 텍스처는 LINEAR/CLAMP_TO_EDGE다. 두 텍스처의 규칙을 섞지 않는다.
+- drawable은 nativeScale과 RGB565 요청을 사용한다. 실제 드라이버 보고 형식은 별도 기록한다. 요청이 실제 RGB565 할당을 증명하지 않는다.
+- 마지막 확대는 전체 화면 비율 맞춤 NDC quad, 검정 여백, DITHER 비활성·blend 비활성 후 원래 상태 복원이다. viewport와 터치는 [좌표 정책](coordinate-policy.md)을 함께 따른다.
+
+## 합성과 순서
+
+| Sprite blend 값 | GL source | GL destination |
+|---|---|---|
+| 0,3 | SRC_ALPHA | ONE_MINUS_SRC_ALPHA |
+| 1 | SRC_COLOR | ONE_MINUS_SRC_ALPHA |
+| 2 | SRC_ALPHA | ONE |
+| 그 외 | 기존 상태 유지 | 기존 상태 유지 |
+
+텍스처 환경은 원본 GL_REPLACE를 보존한다. Trail의 blend3는 sprite와 같다고 가정하지 않는다. `Trail.cpp`가 만든 setBlend/sourceFactor/destinationFactor를 renderer가 소비한다. 원본의 계층·등록·z순서·숨김 상태를 유지하고 최적화를 이유로 투명 sprite 순서를 임의 재배치하지 않는다.
+
+## 자원 수명과 프레임 비용
+
+공유·화면·월드 scope가 소유자다. GPU 업로드 후 CPU 이미지 픽셀을 해제하고 크기/형식 정보를 보관한다. 새 화면 준비 뒤 이전 전용 scope를 해제하며 맵 ClearTileResources에서 월드 텍스처를 해제한다. 동일 이름도 원본 소유자가 다르면 분리한다.
+
+프레임마다 파일 읽기·이미지 재해석·UIImage 생성·부품 벡터 정렬을 추가하지 않는다. layoutSubviews/drawRect에서 게임 tick/draw를 중복 호출하지 않는다. 수명이 끝난 탄흔은 그 프레임에 그리지 않는다. 새 자원의 최초 준비 비용과 반복 프레임 비용을 따로 측정한다.
+
+## 검사와 변경 판정
+
+GL 오류, 논리 화면 픽셀, 최종 표시 배치, 자원 해제, 실제 표시 간격을 각각 확인한다. 완전 픽셀 일치가 실패하면 차이를 보존한다. 평균 FPS만으로 긴 프레임을 지우지 않는다. 장면·기기·OS·빌드·계측 구간·열 상태를 기록한다.
+
+시뮬레이터 Apple Software Renderer의 수치를 아이폰 GPU 성능으로 환산하지 않는다. 같은 환경 포팅판과의 비교는 회귀 분리에 사용한다. 16.67ms 기존 검사 실패 기준을 낮추지 않는다. API 변경·저해상도화·확대 필터 변경을 성능 해결의 기본 처방으로 삼지 않는다.
+
+원본/호환판 주소와 최종 비교 근거: [직접 비교](compat-source-comparison-20261024.md), [OpenGL 전환](opengl-migration-20261024.md), `HMGLRenderer.mm`, `HMCompatibilityPixels.hpp`, `SpriteRaster.cpp`, `Trail.cpp`.

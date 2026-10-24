@@ -1,0 +1,126 @@
+[
+  {
+    "tool": "open_binary",
+    "arguments": {
+      "path": "/Users/sokol/Documents/Codex/2026-10-24/rea-ready/HeavyMach-1.13-extracted/Payload/HeavyMach.app/HeavyMach"
+    },
+    "output": "menus-open.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x151a0"
+    },
+    "output": "hud-0x151a0.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x161d0"
+    },
+    "output": "hud-0x161d0.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x169b0"
+    },
+    "output": "hud-0x169b0.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x16a98"
+    },
+    "output": "hud-0x16a98.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x17280"
+    },
+    "output": "hud-0x17280.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x1755c"
+    },
+    "output": "hud-0x1755c.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x17620"
+    },
+    "output": "hud-0x17620.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x1762c"
+    },
+    "output": "hud-0x1762c.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x1767c"
+    },
+    "output": "hud-0x1767c.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x176b8"
+    },
+    "output": "hud-0x176b8.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x1778c"
+    },
+    "output": "hud-0x1778c.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x17870"
+    },
+    "output": "hud-0x17870.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x17888"
+    },
+    "output": "hud-0x17888.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x178b8"
+    },
+    "output": "hud-0x178b8.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x178f0"
+    },
+    "output": "hud-0x178f0.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x17c4c"
+    },
+    "output": "hud-0x17c4c.json"
+  },
+  {
+    "tool": "close_binary",
+    "arguments": {},
+    "output": "hud-close.json"
+  }
+]
