@@ -144,8 +144,8 @@ int glyph(unichar c) {return c>='0'&&c<='9'?c-'0':c=='.'?10:c=='/'?11:c==':'?12:
     const auto& p=*s.presentation;
     if(!p.loadingAsset.empty()){
         NSString *asset=[NSString stringWithUTF8String:p.loadingAsset.c_str()];
-        // JPEG resources keep the original extension before the PNG suffix.
-        if([asset.pathExtension.lowercaseString isEqualToString:@"jpg"])asset=[asset stringByAppendingString:@".png"];
+        // 0xb8f0 / 0xbf74 pass the original JPEG name to ResMgr_Tile.
+        // HMMedia reads OriginalImages directly; no derived PNG suffix.
         [self sprite:asset x:240 y:160 columns:1 rows:1 tile:0 sx:1 sy:1 rotation:0 alpha:p.alpha blend:0];
     }
     [self sprite:@"ResultTypo.png" x:180 y:280 columns:1 rows:5 tile:p.typoFrame sx:p.scale sy:p.scale rotation:p.rotation alpha:p.typoAlpha blend:2];
