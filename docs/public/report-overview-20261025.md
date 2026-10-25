@@ -4,7 +4,7 @@
 
 제품 코드 `72e8c68e` · 2026년 10월 25일 기준
 
-## 사용자 지시가 바꾼 구현 {#retrospective}
+## 수정 내역 {#retrospective}
 
 정상 IPA 호환 실행판과 비교해 렌더링·음향·시간 진행·저장·좌표를 고쳤다. 이후 넓은 게임 화면, 자동 일시정지, 검증용 조작과 메뉴 배경 확장을 추가했다. 회고에는 사용자 지시별 판단 근거, 잘못된 접근, 수정 결과를 정리했다.
 
@@ -12,7 +12,7 @@
 
 [기술 회고 전문](retrospective.html) · [GitHub용 원고](engineering-retrospective.md)
 
-## REA로 원본을 읽고 소스로 복원한 방법 {#rea}
+## REA 분석·복원 기록 {#rea}
 
 REA의 `reverse-engineer-anything` 스킬로 IPA와 실행파일을 조사했다. 함수의 의사 코드·어셈블리·Objective-C 정보를 대조하고, 원본 자원 형식과 호출 순서를 복원 코드에 연결했다. 디컴파일만으로 부족한 부분은 원본 실행 관측과 비교 검사로 보완했다.
 
@@ -20,15 +20,15 @@ REA의 `reverse-engineer-anything` 스킬로 IPA와 실행파일을 조사했다
 
 [REA 활용 기록과 전체 부록](rea.html) · [GitHub용 원고](rea-restoration-method-20261025.md)
 
-## 기획·정책·코드·검사를 함께 읽는 문서 체계 {#documentation}
+## 문서 관리 {#documentation}
 
 게임 기획, 문서 위계, 업무 8종의 문서·코드·검사 연결표를 추가했다. 초기 UIKit 메뉴 설명과 과거 성능 실패는 당시 기록으로 표시하고 현재 구현으로 연결했다.
 
-작업은 사용자 요구와 원본에서 시작한다. 기획을 바꾸면 관련 설계·정책·코드·검사도 갱신한다. 구현 오류는 요구를 유지하며 고치고, 문서 오류는 실제 코드와 실행 근거로 바로잡는다. 연결 도구는 경로와 링크를 검사하며, 기능의 의미는 관련 코드와 앱 관측으로 대조한다.
+기획을 바꾸면 관련 설계·정책·코드·검사도 갱신한다. 구현 오류는 요구를 유지하며 고치고, 문서 오류는 실제 코드와 실행 근거로 바로잡는다. 연결 도구는 경로와 링크를 검사하며, 기능의 의미는 관련 코드와 앱 관측으로 대조한다.
 
 [발견한 문제와 보완 결과](documentation.html) · [게임 기획](game-design.md) · [문서 위계](document-governance.md) · [업무 연결표](document-map.json)
 
-## 모드·미션 배경을 연결하고 타이틀 검은줄을 제거했다 {#menu-joins}
+## 메뉴 배경·타이틀 검은줄 수정 {#menu-joins}
 
 모드와 미션 선택에 원본별 좌우 배경을 만들었다. 중앙 그림·글자·버튼은 원본을 쓰고, 철판과 레일의 높이·밝기·질감을 맞췄다.
 
@@ -42,7 +42,7 @@ Simulator와 실제 iPhone Air에서 각각 26개 검사가 통과했다. 타이
 
 [수정 원인·검사·빌드 기록](menu-joins.md)
 
-## 원본을 유지하며 넓힌 타이틀과 슬롯 {#menu-result}
+## 타이틀·슬롯 메뉴 확장 {#menu-result}
 
 첫 확장에서는 imagegen으로 타이틀 후보 2개와 금속 배경을 만들었다. 원본의 왼쪽 광원과 오른쪽 폐허에 가까운 후보 A의 좌우를 채택했다. 중앙 전차·로고·슬롯 카드·버튼·문구는 원본을 사용했다. 원본 이미지 695개는 IPA와 바이트가 같다.
 
@@ -58,7 +58,7 @@ Simulator와 실제 iPhone Air에서 각각 26개 검사가 통과했다. 타이
 
 [첫 적용의 생성·선택·검사 기록](menu-extension.md)
 
-## 실제 아이폰에서 검사한 조작과 무기 {#phone}
+## 아이폰 조작·무기 검사 {#phone}
 
 iPhone Air(iOS 27.0.1)의 치트 앱에서 전진·후진·점프·사격·무기 전환과 오른쪽 확장 영역의 폭격을 직접 관측했다. 기능 검사 8개가 통과했다.
 
@@ -73,7 +73,7 @@ iPhone Air(iOS 27.0.1)의 치트 앱에서 전진·후진·점프·사격·무�
 
 [무기별 결과와 실기기 검사 범위](physical-test.md)
 
-## 적 이동은 원본 거리를 유지하며 예방 점검한다 {#ai}
+## 화면 확장 후 적 이동 점검 {#ai}
 
 미션 3-5의 항공기 보스는 넓어진 시야에서 일찍 생성되면서 이동·공격도 먼저 시작했다. 원작 접근 조건에서 전투를 시작하도록 표시 준비와 AI 활성을 분리했다. 이후 사용자의 전체 미션 플레이에서는 적 이동 이상이 관측되지 않았다.
 
@@ -92,7 +92,7 @@ iPhone Air(iOS 27.0.1)의 치트 앱에서 전진·후진·점프·사격·무�
 
 참고한 설계 사례: [Godot 다중 해상도](https://docs.godotengine.org/en/stable/tutorials/rendering/multiple_resolutions.html), [화면 기반 활성화](https://docs.godotengine.org/en/stable/classes/class_visibleonscreenenabler2d.html), [Camera2D](https://docs.godotengine.org/en/stable/classes/class_camera2d.html), [Epic AI Perception](https://dev.epicgames.com/documentation/en-us/unreal-engine/ai-perception-in-unreal-engine). 조사 당시 자료와 HeavyMach 적용 후보는 [조사 원문](research.md)에 있다.
 
-## 양쪽 가로 방향에서 화면과 입력을 맞춘다 {#rotation}
+## 가로 화면 회전 지원 {#rotation}
 
 일반·치트 앱에는 양쪽 가로 방향이 등록돼 있고 방향별 센서 보정과 레이아웃 갱신 코드가 있다. 실제 OS의 180도 회전, 틸트, HUD·터치가 함께 맞는지는 추가 검사가 필요하다. 세로 플레이는 지원하지 않는다.
 
@@ -102,13 +102,13 @@ iPhone Air(iOS 27.0.1)의 치트 앱에서 전진·후진·점프·사격·무�
 
 API 조사: [effectiveGeometry](https://developer.apple.com/documentation/uikit/uiwindowscene/effectivegeometry), [지원 방향](https://developer.apple.com/documentation/BundleResources/Information-Property-List/UISupportedInterfaceOrientations), [크기 변화 통지](https://developer.apple.com/documentation/uikit/uicontentcontainer/viewwilltransition(to:with:)). 조사안은 iOS 16+ 조회, iOS 26+ 변경 통지와 최소 지원 iOS 15의 경로를 구분했다.
 
-## 남은 화면은 요소 재배치와 주변 그림을 조합한다 {#screens}
+## 나머지 메뉴의 전체 화면 지원 {#screens}
 
 타이틀·슬롯·모드·미션의 배경 확장을 적용했다. 첫 실행 전체 경로, 게임 메뉴·업그레이드, 로딩·전환 등 나머지 화면은 실제 경로별로 확인하고 설계를 보완한다.
 
 버튼·문구·로고는 원본 비율을 유지해 안전영역 안에 배치한다. 큰 배경은 원본 옆에 별도 그림을 붙인다. 늘이거나 잘라서 원본 구성을 바꾸는 대신 화면별로 필요한 주변 공간을 만든다.
 
-### 배경을 제작하고 연결하는 방법 {#asset-plan}
+### 배경 제작 방법 {#asset-plan}
 
 원본을 참조해 imagegen으로 좌우 확장 후보를 만든다. 원근·수평선·광원·색·질감·정보 밀도를 맞추고 글자와 버튼은 생성하지 않는다. 게임은 중앙 원본과 채택한 좌우를 별도 자원으로 그린다. 배경 이동·확대·회전에는 같은 변환을 사용한다.
 
@@ -116,7 +116,7 @@ API 조사: [effectiveGeometry](https://developer.apple.com/documentation/uikit/
 
 [전체 화면 조사·구현 후보](research.md)
 
-## 남은 작업과 근거 {#evidence}
+## 남은 작업 {#evidence}
 
 | 과제 | 현재 상태 | 다음 검사·구현 |
 |---|---|---|
