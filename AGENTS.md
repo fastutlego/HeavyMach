@@ -17,3 +17,5 @@
 
 - 문서·코드·앱 기능은 서로 모순 없이 설명되어야 한다. [업무 연결표](docs/document-map.json)의 관련 문서·소스·검사를 읽고 요구→정책→소비 코드→검사/앱 관측을 대조한다. `python3 HeavyMach/tools/document_contract.py plan --task <업무>` 또는 `plan --files <경로>`는 읽기 목록을 출력한다. 실제 읽기나 검사를 대신하지 않는다.
 - HeavyMach 변경을 마감할 때 `python3 HeavyMach/tools/document_contract.py check`로 구조 연결을 검사한다. 상위 요구가 바뀌면 기획→설계/정책→코드/검사를 함께 반영하고 최신 결과를 current-status·TODO·보고에 갱신한다. 의미 일치와 실제 기능은 관련 실행 증거로 확인한다. 문서만의 변경에 게임 재빌드나 실기기 재검사를 요구하지 않는다.
+
+- 보고서·GitHub 문서·게임 안의 텍스트·진행/최종 답변은 루트 `.agents/skills/write-project-text/SKILL.md`를 먼저 읽고 적용한다. 보고 사이트와 다운로드는 같은 원고에서 만들며 최신 상태와 과거 계측 시점을 구분한다.

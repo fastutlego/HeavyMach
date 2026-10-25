@@ -1,5 +1,19 @@
 # HeavyMach 보고 사이트
 
+## 최신 게시 — 2026-10-25 REA 기록과 보고서 전면 개정
+
+기존 첫 화면의 모든 보고 절, 기술 회고, 문서 체계 보고를 `write-project-text` 스킬로 개정했다. REA 복원 전문과 8개 메타데이터 부록을 추가했다. 현재 설치·사용자 플레이 결과를 먼저 두고 과거 계측·대기 상태와 구분했다. 기존 URL·절 앵커와 이미지 13개를 보존했다.
+
+- 소스: `c2e59324507f3467ad3783d9e069171294a97778`.
+- 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_40ff16f5c2e0819180a060b8bee4a631`.
+- 배포: `appgdep_6addff1e90288191ba025c2a748bd98f`, `succeeded`, 2026-10-25T13:07:56.316275+00:00. 소유자 전용 유지.
+- 전문: `/retrospective.html`, `/documentation.html`, `/rea.html`. Markdown 다운로드는 저장소 원고와 바이트 일치.
+- 정적 검사: 로컬 링크 108개, 기존 앵커, 이미지 바이트, 원고/다운로드, REA 목록 수, 복사 스킬 원본 14개 해시 통과.
+- Chrome 좁은 창에서 첫 화면·REA 전문·표를 확인했다. Markdown 표에 thead/tbody가 생기면서 첫 데이터 행까지 숨던 기존 CSS를 고치고 실제 표시를 확인했다.
+- 공식 배포 API가 성공과 URL을 반환했다. 게시 후 Chrome 이동은 `cgWindowNotFound`로 실패했다. 이전 Chrome의 게시 주소는 로그인 화면까지 확인한 상태이며 이번 인증 후 게시 화면은 직접 확인하지 못했다.
+- 제작 도구: `tools/build_report_site.py` (Python Markdown·beautifulsoup4 필요). 기존 Sites checkout의 이미지와 스타일을 재사용한다. 증거 부록은 `tools/export_rea_public_report.py`로 별도 생성한다.
+
+
 ## 최신 게시 — 2026-10-25 문서·코드·앱 일치 체계
 
 `/documentation.html`에 발견·보완·업무별 읽기·실제 대조 표본·검사 범위를 게시했다. 기획/위계/연결표 다운로드도 제공한다. 문구와 링크 구조를 검사했고 기존 기사 레이아웃을 재사용했다.

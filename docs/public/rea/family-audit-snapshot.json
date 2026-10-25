@@ -1,0 +1,1272 @@
+{
+  "scope": "Historical source-coverage audit; consult current report for later changes.",
+  "original_sha256": "97166198d701dd929243196a85e81182d7716915cdd50dec2acdc1918d10deeb",
+  "families": [
+    {
+      "id": "geometry",
+      "original_classes": [
+        "Vector2",
+        "ColVector",
+        "Collider"
+      ],
+      "editable_sources": [
+        "Core/Geometry.cpp"
+      ],
+      "test_sources": [
+        "GeometryTests.cpp"
+      ],
+      "ported": "ported main vector/segment methods",
+      "wired": "GameSession -> World/Motion/ItemBox/Visuals",
+      "tested": "host unit and Session sanitizer tests",
+      "remaining": "Collider selector and every degenerate input are not separately certified",
+      "representative_original_addresses": [
+        "0x5874",
+        "0x7250"
+      ],
+      "inventory_body_addresses": [
+        "0x5874",
+        "0x5918",
+        "0x5944",
+        "0x59a0",
+        "0x5a70",
+        "0x5a7c",
+        "0x5a88",
+        "0x5c34",
+        "0x5e18",
+        "0x6010",
+        "0x61bc",
+        "0x62dc",
+        "0x62e8",
+        "0x62f4",
+        "0x6300",
+        "0x630c",
+        "0x6318",
+        "0x6324",
+        "0x7250",
+        "0x7294",
+        "0x72bc",
+        "0x72d4",
+        "0x731c",
+        "0x7378",
+        "0x73d4",
+        "0x7408",
+        "0x743c",
+        "0x7460",
+        "0x74c8",
+        "0x7530",
+        "0x7568",
+        "0x759c",
+        "0x75d4",
+        "0x7634",
+        "0x7670",
+        "0x767c",
+        "0x7688",
+        "0x7694"
+      ]
+    },
+    {
+      "id": "data_records",
+      "original_classes": [
+        "WeaponInfo",
+        "PartsInfo"
+      ],
+      "editable_sources": [
+        "Core/GameData.cpp"
+      ],
+      "test_sources": [
+        "GameDataTests.cpp"
+      ],
+      "ported": "ported semantic fields and original readers; ObjC accessors replaced by native fields",
+      "wired": "all gameplay consumers",
+      "tested": "parser and resource tests",
+      "remaining": "original ObjC allocation/accessor ABI is declaration-only, not separately implemented",
+      "representative_original_addresses": [],
+      "inventory_body_addresses": [
+        "0x11344",
+        "0x11380",
+        "0x113fc",
+        "0x11408",
+        "0x11438",
+        "0x11468",
+        "0x11490",
+        "0x1149c",
+        "0x114a8",
+        "0x114b4",
+        "0x114c0",
+        "0x114cc",
+        "0x14f84",
+        "0x14f9c",
+        "0x14fc0",
+        "0x14fcc",
+        "0x14fd8",
+        "0x14fe4",
+        "0x14ff0",
+        "0x14ffc",
+        "0x15008",
+        "0x15014",
+        "0x15020",
+        "0x1502c",
+        "0x15038",
+        "0x15044",
+        "0x15050",
+        "0x1505c",
+        "0x15068",
+        "0x15074",
+        "0x15080",
+        "0x1508c",
+        "0x15098",
+        "0x150a4",
+        "0x150b0",
+        "0x150bc",
+        "0x150c8",
+        "0x150d4",
+        "0x150e0",
+        "0x150ec",
+        "0x150f8",
+        "0x15104",
+        "0x15110",
+        "0x1511c",
+        "0x15128",
+        "0x15134",
+        "0x15140",
+        "0x1514c",
+        "0x15158",
+        "0x15164",
+        "0x15170",
+        "0x1517c",
+        "0x15188",
+        "0x15194"
+      ]
+    },
+    {
+      "id": "global_progress_save",
+      "original_classes": [
+        "GlobalInfo"
+      ],
+      "editable_sources": [
+        "Core/GlobalInfo.cpp",
+        "Core/SaveData.cpp",
+        "Core/GameData.cpp",
+        "iOS/HMGameView.mm"
+      ],
+      "test_sources": [
+        "CoreTests.cpp",
+        "GameDataTests.cpp"
+      ],
+      "ported": "ported EXP, inventory, stage rules, explicit ARM32 disk layout",
+      "wired": "menus/session/atomic native save",
+      "tested": "host layout/threshold/roundtrip; Air normal EXP304 level1 weapon grade1 save then same-slot Stage3 relaunch; validation save isolation and non-reinjected resume",
+      "remaining": "all-mission and physical-device save/lifecycle journeys not certified",
+      "representative_original_addresses": [
+        "0x105f8",
+        "0x106e0",
+        "0x1082c",
+        "0x10a0c",
+        "0x3ea0",
+        "0x3f44"
+      ],
+      "inventory_body_addresses": [
+        "0xfc94",
+        "0xfd44",
+        "0x10584",
+        "0x105e0",
+        "0x105f8",
+        "0x106c4",
+        "0x106e0",
+        "0x1082c",
+        "0x108ec",
+        "0x10944",
+        "0x10984",
+        "0x109a4",
+        "0x109bc",
+        "0x109d4",
+        "0x10a0c",
+        "0x10a54",
+        "0x10b84",
+        "0x10c3c",
+        "0x10c58",
+        "0x10d28",
+        "0x10de4",
+        "0x10e00",
+        "0x111f8",
+        "0x112b0",
+        "0x112cc",
+        "0x112d8",
+        "0x112e4",
+        "0x112f0",
+        "0x112fc",
+        "0x11308",
+        "0x11314",
+        "0x11320",
+        "0x1132c",
+        "0x11338"
+      ]
+    },
+    {
+      "id": "machine_motion",
+      "original_classes": [
+        "GobHvMach"
+      ],
+      "editable_sources": [
+        "Core/Motion.cpp",
+        "Core/GameSession.cpp"
+      ],
+      "test_sources": [
+        "MotionTests.cpp",
+        "GameSessionTests.cpp"
+      ],
+      "ported": "ported ground/air/model/booster/exit and part graph",
+      "wired": "Session",
+      "tested": "host tests and actual-resource Session run",
+      "remaining": "original nil BaseParts stret bytes unresolved; no whole-original differential replay",
+      "representative_original_addresses": [
+        "0x479c",
+        "0x428c"
+      ],
+      "inventory_body_addresses": [
+        "0x3fd0",
+        "0x415c",
+        "0x41b8",
+        "0x41f8",
+        "0x4214",
+        "0x428c",
+        "0x479c",
+        "0x4ab0",
+        "0x4b5c",
+        "0x4c10",
+        "0x5240",
+        "0x54b8",
+        "0x55fc",
+        "0x5704",
+        "0x57c0",
+        "0x5808",
+        "0x5814",
+        "0x5820",
+        "0x582c",
+        "0x5838",
+        "0x5844",
+        "0x5850",
+        "0x585c",
+        "0x5868"
+      ]
+    },
+    {
+      "id": "player",
+      "original_classes": [
+        "GobHvM_Player"
+      ],
+      "editable_sources": [
+        "Core/Player.cpp",
+        "Core/GameSession.cpp"
+      ],
+      "test_sources": [
+        "PlayerTests.cpp",
+        "GameSessionTests.cpp",
+        "AmmoSyncTests.cpp",
+        "PassiveContinuityTests.cpp",
+        "iOS/HMPassiveLifecycleTests.mm"
+      ],
+      "ported": "ported damage/loot/EXP/upgrades/touch/passives and safe-backline",
+      "wired": "Session and HUD callbacks",
+      "tested": "unit/Session; Air natural level-up and attack upgrade; validation 18 actual upgrades, tile changes, movement/HP/collision damage and save restoration; grade6 rejection",
+      "remaining": "all native grade UI journeys and original differential comparison not certified",
+      "representative_original_addresses": [
+        "0x1bd04",
+        "0x1be84",
+        "0x1c64c",
+        "0x1cc70"
+      ],
+      "inventory_body_addresses": [
+        "0x1bb84",
+        "0x1bd04",
+        "0x1be0c",
+        "0x1be84",
+        "0x1bfdc",
+        "0x1c25c",
+        "0x1c408",
+        "0x1c64c",
+        "0x1cc70",
+        "0x1cf58",
+        "0x1d0dc",
+        "0x1d140",
+        "0x1d230",
+        "0x1d278",
+        "0x1d300"
+      ]
+    },
+    {
+      "id": "enemy",
+      "original_classes": [
+        "GobHvM_Enemy"
+      ],
+      "editable_sources": [
+        "Core/Enemy.cpp",
+        "Core/GameSession.cpp"
+      ],
+      "test_sources": [
+        "EnemyTests.cpp",
+        "GameSessionTests.cpp"
+      ],
+      "ported": "ported definition/AI/damage/destruction/drop/EXP",
+      "wired": "Session",
+      "tested": "unit/Session; Air validation MBoss01; latest v6 single48/48 boss kills after camera fixes; earlier failures preserved; scoped Enemy REA audit and ASan/UBSan pass",
+      "remaining": "all stage/mission journeys and original runtime equivalence; boss-only scenario success does not establish these",
+      "representative_original_addresses": [
+        "0x14918"
+      ],
+      "inventory_body_addresses": [
+        "0x13d80",
+        "0x13e04",
+        "0x143b8",
+        "0x14418",
+        "0x14778",
+        "0x147e8",
+        "0x14918",
+        "0x14b78",
+        "0x14b84",
+        "0x14b90",
+        "0x14b9c",
+        "0x14ba8",
+        "0x14bb4"
+      ]
+    },
+    {
+      "id": "combat",
+      "original_classes": [
+        "GobBullet",
+        "GobMachWeapon"
+      ],
+      "editable_sources": [
+        "Core/Combat.cpp",
+        "Core/BulletVisual.cpp",
+        "Core/GameSession.cpp"
+      ],
+      "test_sources": [
+        "CombatTests.cpp",
+        "BulletVisualTests.cpp",
+        "GameSessionTests.cpp"
+      ],
+      "ported": "ported bullets, fire/reload/AI and all visual effect-type branches",
+      "wired": "Session -> native renderItems/audio/HUD",
+      "tested": "unit/sanitizer; validation all20 original player weapons fire/ammo/effects/save restore/reselect/refire, trails8; Air Canon03 depletion and Canon01 reload-from-save refire; offscreen BulletVisual Session regression fails before fix, passes after in Debug and ASan/UBSan; separate visual registration and collision visibility gates preserved",
+      "remaining": "original-device full weapon/output comparison and whole-game RNG equivalence remain; latest regression is bounded to actual Session offscreen visual side effects",
+      "representative_original_addresses": [
+        "0x9dc4",
+        "0xa198",
+        "0xa444",
+        "0xab04",
+        "0x11e64",
+        "0x12a40",
+        "0x13214"
+      ],
+      "inventory_body_addresses": [
+        "0x9c9c",
+        "0x9d6c",
+        "0x9db8",
+        "0x9dc4",
+        "0xa198",
+        "0xa444",
+        "0xab00",
+        "0xab04",
+        "0x11d70",
+        "0x11e64",
+        "0x12a40",
+        "0x1304c",
+        "0x13168",
+        "0x131f4",
+        "0x13214",
+        "0x1335c",
+        "0x13530",
+        "0x13874",
+        "0x13a24"
+      ]
+    },
+    {
+      "id": "particles_parts",
+      "original_classes": [
+        "QobParticle",
+        "GobMachParts"
+      ],
+      "editable_sources": [
+        "Core/Visuals.cpp",
+        "Core/GameSession.cpp"
+      ],
+      "test_sources": [
+        "VisualsTests.cpp",
+        "GameSessionTests.cpp"
+      ],
+      "ported": "ported particle reset/start/tick/bounce and part transforms/atlas animation",
+      "wired": "Session",
+      "tested": "unit + integration",
+      "remaining": "native visual equivalence across particle definitions not certified; renderer upper-frame clamp now restored",
+      "representative_original_addresses": [
+        "0x92b4",
+        "0x94a8",
+        "0x968c",
+        "0x11818",
+        "0x118fc",
+        "0x11a48"
+      ],
+      "inventory_body_addresses": [
+        "0x921c",
+        "0x92b4",
+        "0x9408",
+        "0x9420",
+        "0x942c",
+        "0x945c",
+        "0x94a8",
+        "0x95dc",
+        "0x968c",
+        "0x9a08",
+        "0x9a14",
+        "0x9b7c",
+        "0x9b88",
+        "0x9bbc",
+        "0x9bf0",
+        "0x9bfc",
+        "0x9c08",
+        "0x9c14",
+        "0x9c20",
+        "0x9c2c",
+        "0x9c38",
+        "0x9c44",
+        "0x9c50",
+        "0x9c5c",
+        "0x9c68",
+        "0x9c74",
+        "0x9c80",
+        "0x9c8c",
+        "0x114d8",
+        "0x11548",
+        "0x11554",
+        "0x1173c",
+        "0x11748",
+        "0x11798",
+        "0x11818",
+        "0x118fc",
+        "0x11a48",
+        "0x11d34",
+        "0x11d64"
+      ]
+    },
+    {
+      "id": "trails",
+      "original_classes": [
+        "GobTrailEffect"
+      ],
+      "editable_sources": [
+        "Core/Trail.cpp",
+        "Core/TrailRaster.cpp",
+        "Core/GameSession.cpp",
+        "iOS/HMMedia.mm"
+      ],
+      "test_sources": [
+        "TrailTests.cpp",
+        "TrailRasterTests.cpp",
+        "GameSessionTests.cpp"
+      ],
+      "ported": "ported trail mesh/fade/wind plus native raster bridge; original maxS/maxT from POT sizes, GL_REPLACE RGBA vertex color/alpha handling, shared original texture sampler and Trail blend3 additive",
+      "wired": "Session renderItems -> HMMedia drawTrail",
+      "tested": "sanitizer/unit and RaderLsr mesh integration; regressions failed before fix and passed after, actual CGL fixture full RGB difference0; Core/Session ASan/UBSan pass",
+      "remaining": "full original gameplay visuals and whole-game RNG equivalence not certified",
+      "representative_original_addresses": [
+        "0x1ab20",
+        "0x1ac60",
+        "0x1acd0"
+      ],
+      "inventory_body_addresses": [
+        "0x1ab20",
+        "0x1ab60",
+        "0x1ac60",
+        "0x1acd0",
+        "0x1b438",
+        "0x1b5c0",
+        "0x1b8d8",
+        "0x1b8dc",
+        "0x1b9dc",
+        "0x1b9e8",
+        "0x1b9f4",
+        "0x1ba00"
+      ]
+    },
+    {
+      "id": "items",
+      "original_classes": [
+        "GobItemBox"
+      ],
+      "editable_sources": [
+        "Core/ItemBox.cpp",
+        "Core/GameSession.cpp"
+      ],
+      "test_sources": [
+        "ItemBoxTests.cpp",
+        "GameSessionTests.cpp"
+      ],
+      "ported": "ported bounce/pickup/survival attraction",
+      "wired": "Enemy spawn -> Session -> Player pickup",
+      "tested": "unit and source wiring; integrated pickup not separately asserted",
+      "remaining": "native loot collection acceptance remains",
+      "representative_original_addresses": [],
+      "inventory_body_addresses": [
+        "0x1d538",
+        "0x1d67c",
+        "0x1d6c8"
+      ]
+    },
+    {
+      "id": "world",
+      "original_classes": [
+        "GobWorld"
+      ],
+      "editable_sources": [
+        "Core/World.cpp",
+        "Core/GameSession.cpp"
+      ],
+      "test_sources": [
+        "WorldTests.cpp",
+        "GameSessionTests.cpp"
+      ],
+      "ported": "ported map/camera-follow/regen/boss borders/results/game-over/survival",
+      "wired": "Session -> HUD/native screens",
+      "tested": "unit/Session; normal Air simulator Stage1/2 and validation Stage3 clear; single48/48 boss kills; independent41 map journeys19 clears/21 deaths/1 timeout; actual native survival HP0/slot return/progress preservation; baseline19 reproduced, full close-slide controller18/41 with23 deaths, no core fix from Stage18 investigation; later selected-35 single run27 clears/8 deaths with original upgrade-close delay, independent starts; separate35 normal+6 direct transition contracts and820 Motion gates including actual next-map open callbacks, ASan/UBSan pass; not extra journeys",
+      "remaining": "All35 natural-progression maps have condition-specific journey evidence (25 non-cheat +10 explicit cheat). Continuous campaign, full native UI and original runtime equivalence remain; physical Air scope limited. Do not label the10 cheat maps untested.",
+      "representative_original_addresses": [
+        "0xe3f4",
+        "0xc8b8",
+        "0xcd00",
+        "0xb8f0",
+        "0xbf74",
+        "0xc228"
+      ],
+      "inventory_body_addresses": [
+        "0xb0a4",
+        "0xb484",
+        "0xb55c",
+        "0xb658",
+        "0xb754",
+        "0xb780",
+        "0xb840",
+        "0xb8c4",
+        "0xb8f0",
+        "0xbf74",
+        "0xc228",
+        "0xc830",
+        "0xc8b8",
+        "0xcd00",
+        "0xd068",
+        "0xd06a",
+        "0xd27c",
+        "0xd2d8",
+        "0xd2f4",
+        "0xd3c8",
+        "0xd44c",
+        "0xd474",
+        "0xd6b8",
+        "0xd824",
+        "0xd848",
+        "0xd898",
+        "0xd8dc",
+        "0xd92c",
+        "0xd958",
+        "0xda80",
+        "0xdbe4",
+        "0xdbfc",
+        "0xdda8",
+        "0xde40",
+        "0xdfa8",
+        "0xe158",
+        "0xe1b4",
+        "0xe2cc",
+        "0xe3f4",
+        "0xe77c",
+        "0xe798",
+        "0xe7d4",
+        "0xe7e0",
+        "0xe908",
+        "0xe914",
+        "0xe920",
+        "0xe92c",
+        "0xe938",
+        "0xe944",
+        "0xe950",
+        "0xe95c",
+        "0xe968",
+        "0xe974",
+        "0xe980",
+        "0xe98c",
+        "0xe998",
+        "0xe9a4",
+        "0xe9b0",
+        "0xe9bc"
+      ]
+    },
+    {
+      "id": "title",
+      "original_classes": [
+        "GuiTitle"
+      ],
+      "editable_sources": [
+        "Core/TitleState.cpp",
+        "iOS/HMGameView.mm"
+      ],
+      "test_sources": [
+        "CoreTests.cpp"
+      ],
+      "ported": "ported title timing/transforms/tap skip and lazy shared RNG conditional0/1/2 calls",
+      "wired": "native title branch",
+      "tested": "TitleState counted RNG boundary tests and original0xf464 audit; Air earlier visual evidence",
+      "remaining": "no separate attract/demo mode confirmed; full original/native visual and whole-game RNG equivalence not certified",
+      "representative_original_addresses": [
+        "0xf464",
+        "0xf934"
+      ],
+      "inventory_body_addresses": [
+        "0xefbc",
+        "0xf3c8",
+        "0xf414",
+        "0xf464",
+        "0xf934"
+      ]
+    },
+    {
+      "id": "menus",
+      "original_classes": [
+        "GuiSelectSlot",
+        "GuiSelectMode",
+        "GuiSelectMission"
+      ],
+      "editable_sources": [
+        "iOS/HMMenus.mm"
+      ],
+      "test_sources": [],
+      "ported": "ported slot/mode/mission previews, original weapon-constructor RNG at showSlots, model0/1/2 draw gate, retained World time/pause",
+      "wired": "HMGameView menu callbacks",
+      "tested": "SDK syntax; source/original audit; Motion model RNG counted tests; Air menu journeys",
+      "remaining": "all menu timing/render-frame equivalence not certified",
+      "representative_original_addresses": [
+        "0x18158",
+        "0x18fc0",
+        "0x19ba0",
+        "0x1a05c",
+        "0x1a900"
+      ],
+      "inventory_body_addresses": [
+        "0x18158",
+        "0x18668",
+        "0x186d8",
+        "0x18fc0",
+        "0x192ec",
+        "0x19b30",
+        "0x19ba0",
+        "0x19d18",
+        "0x19ea4",
+        "0x1a05c",
+        "0x1a55c",
+        "0x1a890",
+        "0x1a900"
+      ]
+    },
+    {
+      "id": "hud",
+      "original_classes": [
+        "GuiGame"
+      ],
+      "editable_sources": [
+        "iOS/HMGameHUD.mm",
+        "iOS/HMGameView.mm"
+      ],
+      "test_sources": [],
+      "ported": "ported HUD/menu/upgrade/result presentation",
+      "wired": "Session events and snapshot",
+      "tested": "SDK syntax/assets checks; live acceptance in parent task",
+      "remaining": "website103 original URL now wired, actual web dispatch/content not tested; full UI regression matrix incomplete",
+      "representative_original_addresses": [
+        "0x151a0",
+        "0x161d0",
+        "0x16a98",
+        "0x17280"
+      ],
+      "inventory_body_addresses": [
+        "0x151a0",
+        "0x16188",
+        "0x161d0",
+        "0x169b0",
+        "0x16a98",
+        "0x17280",
+        "0x1755c",
+        "0x17620",
+        "0x1762c",
+        "0x1767c",
+        "0x176b8",
+        "0x1778c",
+        "0x17870",
+        "0x17888",
+        "0x178b8",
+        "0x178f0",
+        "0x17c4c"
+      ]
+    },
+    {
+      "id": "screen_routing",
+      "original_classes": [
+        "GameMain"
+      ],
+      "editable_sources": [
+        "Core/LoadingTransition.cpp",
+        "iOS/HMGameView.mm"
+      ],
+      "test_sources": [
+        "LoadingTransitionTests.cpp"
+      ],
+      "ported": "ported state0..6 close/refresh/open original float recurrence and sound order",
+      "wired": "HMGameView tick and layer6 draw; synchronous pending screen application",
+      "tested": "ASan/UBSan LoadingTransition; CTest7/7; Air simulator panel transitions documented verification.md",
+      "remaining": "full original pixel/input equivalence not certified",
+      "representative_original_addresses": [
+        "0x3374",
+        "0x3778",
+        "0x3890",
+        "0x38b0"
+      ],
+      "inventory_body_addresses": [
+        "0x2ecc",
+        "0x3320",
+        "0x3374",
+        "0x3778",
+        "0x3890",
+        "0x38b0",
+        "0x390c",
+        "0x3950",
+        "0x3994",
+        "0x39d8",
+        "0x3a1c",
+        "0x3b20",
+        "0x3e7c",
+        "0x3ea0",
+        "0x3f44",
+        "0x3fac",
+        "0x3fb8",
+        "0x3fc4"
+      ]
+    },
+    {
+      "id": "camera_quake",
+      "original_classes": [
+        "QobCamera"
+      ],
+      "editable_sources": [
+        "Core/CameraShake.cpp",
+        "iOS/HMGameView.mm"
+      ],
+      "test_sources": [
+        "CameraShakeTests.cpp"
+      ],
+      "ported": "ported original quake waveform and screen coordinate helper",
+      "wired": "CameraShake -> GameSession visibility/AI/aim/fixed images; HMMedia subtracts offset before raster, HMGameView logical framebuffer",
+      "tested": "host regression and UIKit fractional camera-offset probe; latest whole native scene/physical inspection remains unverified",
+      "remaining": "native visual amplitude/timing equivalence requires original comparison",
+      "representative_original_addresses": [
+        "0xed80",
+        "0xeef8"
+      ],
+      "inventory_body_addresses": [
+        "0xecf8",
+        "0xed5c",
+        "0xed80",
+        "0xeeb8",
+        "0xeef8",
+        "0xef5c",
+        "0xef8c"
+      ]
+    },
+    {
+      "id": "base_visual_font",
+      "original_classes": [
+        "QobBase",
+        "QobImage",
+        "QobImageFont"
+      ],
+      "editable_sources": [
+        "Core/GameSession.cpp",
+        "Core/ItemBox.cpp",
+        "iOS/HMMenus.mm",
+        "iOS/HMGameHUD.mm"
+      ],
+      "test_sources": [
+        "ItemBoxTests.cpp",
+        "GameSessionTests.cpp",
+        "PlayerGaugeTests.cpp",
+        "EnemyGaugeTests.cpp"
+      ],
+      "ported": "partial equivalent behavior: bounds, child ordering, image draw, numeric glyphs",
+      "wired": "specific native consumers",
+      "tested": "unit/integration for selected behavior",
+      "remaining": "general-purpose ObjC node system, all text/font operations not separately restored",
+      "representative_original_addresses": [],
+      "inventory_body_addresses": [
+        "0x76a0",
+        "0x77e4",
+        "0x7830",
+        "0x7930",
+        "0x7932",
+        "0x7940",
+        "0x7958",
+        "0x798c",
+        "0x79d4",
+        "0x7a1c",
+        "0x7a28",
+        "0x7b00",
+        "0x7bdc",
+        "0x7be8",
+        "0x7c1c",
+        "0x7c78",
+        "0x7d78",
+        "0x7e18",
+        "0x800c",
+        "0x80a0",
+        "0x80bc",
+        "0x80d8",
+        "0x814c",
+        "0x8158",
+        "0x8164",
+        "0x81b4",
+        "0x81b8",
+        "0x81c4",
+        "0x81f8",
+        "0x8204",
+        "0x8210",
+        "0x821c",
+        "0x8228",
+        "0x8234",
+        "0x8240",
+        "0x824c",
+        "0x8258",
+        "0x8264",
+        "0x8270",
+        "0x827c",
+        "0x8288",
+        "0x8294",
+        "0x82a0",
+        "0x82ac",
+        "0x8b08",
+        "0x8c04",
+        "0x8c2c",
+        "0x8ce4",
+        "0x8cf0",
+        "0x8d9c",
+        "0x8da8",
+        "0x8db4",
+        "0x8ee4",
+        "0x8ef0",
+        "0x8f80",
+        "0x9048",
+        "0x9054",
+        "0x91e0",
+        "0x91ec",
+        "0x91f8",
+        "0x9204",
+        "0x9210"
+      ]
+    },
+    {
+      "id": "buttons",
+      "original_classes": [
+        "QobButton"
+      ],
+      "editable_sources": [
+        "iOS/HMButtonState.hpp",
+        "iOS/HMMenus.mm",
+        "iOS/HMGameHUD.mm"
+      ],
+      "test_sources": [
+        "HMButtonStateTests.cpp"
+      ],
+      "ported": "ported push/release displacement and semantic input state",
+      "wired": "native menu and HUD button records",
+      "tested": "CTest HMButtonState passed; Air upgrade selection/confirm journey",
+      "remaining": "full original input timing and all native button paths not certified",
+      "representative_original_addresses": [
+        "0x84d8",
+        "0x850c",
+        "0x87f8"
+      ],
+      "inventory_body_addresses": [
+        "0x82b8",
+        "0x841c",
+        "0x8440",
+        "0x8464",
+        "0x8470",
+        "0x847c",
+        "0x8488",
+        "0x8494",
+        "0x84d8",
+        "0x850c",
+        "0x87f8",
+        "0x8a84",
+        "0x8a90",
+        "0x8a9c",
+        "0x8aa8",
+        "0x8ab4",
+        "0x8ac0",
+        "0x8acc",
+        "0x8ad8",
+        "0x8ae4",
+        "0x8af0",
+        "0x8afc"
+      ]
+    },
+    {
+      "id": "containers_dispatch",
+      "original_classes": [
+        "QList",
+        "QVisualLayer",
+        "QobManager"
+      ],
+      "editable_sources": [
+        "Core/GameSession.cpp",
+        "iOS/HMGameView.mm"
+      ],
+      "test_sources": [
+        "GameSessionTests.cpp"
+      ],
+      "ported": "partial replacements by std containers/stable layers/touch routing",
+      "wired": "native game",
+      "tested": "integration selected paths",
+      "remaining": "full generic object receiver ordering/reentrant mutation cases not selector-for-selector restored",
+      "representative_original_addresses": [],
+      "inventory_body_addresses": [
+        "0xf9a8",
+        "0xfa58",
+        "0xfae4",
+        "0xfb70",
+        "0xfb7c",
+        "0xfbac",
+        "0xfbe0",
+        "0xfbfc",
+        "0xfc18",
+        "0x14bc0",
+        "0x14c28",
+        "0x14c5c",
+        "0x14dfc",
+        "0x14e54",
+        "0x14e8c",
+        "0x14f00",
+        "0x14f10",
+        "0x14f60",
+        "0x14f6c",
+        "0x14f78",
+        "0x1ba0c",
+        "0x1ba6c",
+        "0x1baa0",
+        "0x1bae4",
+        "0x1bb0c",
+        "0x1bb78"
+      ]
+    },
+    {
+      "id": "graphics_resources",
+      "original_classes": [
+        "Texture2D",
+        "Texture2D(Drawing)",
+        "Texture2D(Text)",
+        "Texture2D(Image)",
+        "Tile2D",
+        "ResMgr_Tile"
+      ],
+      "editable_sources": [
+        "Core/SpriteRaster.cpp",
+        "Core/TrailRaster.cpp",
+        "iOS/HMMedia.mm",
+        "iOS/HMGameView.mm"
+      ],
+      "test_sources": [
+        "TrailRasterTests.cpp"
+      ],
+      "ported": "original GL_REPLACE, whole POT texture GL_REPEAT/linear sampling, RGB565 normalization and Tile quad transform; 480x320 logical framebuffer then final viewport scale",
+      "wired": "native renderer",
+      "tested": "7 independent actual CGL full-frame RGB fixtures max difference <=1 byte; real UIKit4/4; CTest14/14; Mac O0/O2 workload timings",
+      "remaining": "whole original scenes/audio and physical performance unverified; generic SRC_COLOR/inherited states unsupported but no active original game path found; >1024 downscale outside current assets",
+      "representative_original_addresses": [
+        "0x69b0",
+        "0x6f28"
+      ],
+      "inventory_body_addresses": [
+        "0x634c",
+        "0x64f0",
+        "0x652c",
+        "0x65c4",
+        "0x65d0",
+        "0x65dc",
+        "0x65e8",
+        "0x65f4",
+        "0x6600",
+        "0x660c",
+        "0x6620",
+        "0x6768",
+        "0x6830",
+        "0x69b0",
+        "0x6d9c",
+        "0x6f28",
+        "0x7134",
+        "0x7168",
+        "0x719c",
+        "0x71d0",
+        "0x7208",
+        "0x7238",
+        "0x7244",
+        "0xe9cc",
+        "0xea7c",
+        "0xead8",
+        "0xeb14",
+        "0xec48",
+        "0xec64"
+      ]
+    },
+    {
+      "id": "audio",
+      "original_classes": [
+        "SoundManager",
+        "SoundID"
+      ],
+      "editable_sources": [
+        "Core/AudioContract.hpp",
+        "iOS/HMMedia.mm"
+      ],
+      "test_sources": [
+        "AudioContractTests.cpp"
+      ],
+      "ported": "31 original initial sound names/order, eager decode/prepare, same-source ready-preserving restart, distance gain/maxDistance; AVAudioPlayer pan remains approximation",
+      "wired": "Session audio events -> HMMedia; title/menu/loading direct sound calls",
+      "tested": "AudioContract sanitizer; actual iOS3 audio tests with real URL decode/prepare and play interception, init order/identity/positive-time rewind; independent original/SDK audit",
+      "remaining": "original/native stereo/mix/latency output, interruptions/routes and failure injection; tests do not emit/capture actual speaker sound",
+      "representative_original_addresses": [
+        "0x13bd0",
+        "0x13d0c",
+        "0x13d2c"
+      ],
+      "inventory_body_addresses": [
+        "0x13a54",
+        "0x13a60",
+        "0x13a6c",
+        "0x13b1c",
+        "0x13b90",
+        "0x13bd0",
+        "0x13bfc",
+        "0x13c08",
+        "0x13cd0",
+        "0x13cec",
+        "0x13cee",
+        "0x13d0c",
+        "0x13d2c"
+      ]
+    },
+    {
+      "id": "ios_platform",
+      "original_classes": [
+        "EAGLView",
+        "HeavyMachAppDelegate"
+      ],
+      "editable_sources": [
+        "iOS/Application.mm",
+        "iOS/HMGameView.mm",
+        "Core/Viewport.hpp",
+        "Core/TiltState.hpp"
+      ],
+      "test_sources": [
+        "CoreTests.cpp"
+      ],
+      "ported": "modern platform replacement: UIScene/CADisplayLink/CoreMotion/UIKit",
+      "wired": "application entry",
+      "tested": "build/syntax + viewport/tilt unit; parent native play ongoing",
+      "remaining": "deprecated EAGL/Objective-C ownership plumbing intentionally replaced, not game algorithm coverage",
+      "representative_original_addresses": [],
+      "inventory_body_addresses": [
+        "0x20b8",
+        "0x21e0",
+        "0x225c",
+        "0x225e",
+        "0x2260",
+        "0x22c8",
+        "0x2314",
+        "0x2320",
+        "0x2340",
+        "0x234c",
+        "0x236c",
+        "0x2388",
+        "0x25a0",
+        "0x2658",
+        "0x278c",
+        "0x27dc",
+        "0x2858",
+        "0x287c",
+        "0x28bc",
+        "0x28ec",
+        "0x2920",
+        "0x29c8",
+        "0x2a54",
+        "0x2b1c",
+        "0x2c30",
+        "0x2d44",
+        "0x2e58",
+        "0x2e64",
+        "0x2e70",
+        "0x2e7c",
+        "0x2e88",
+        "0x2e9c",
+        "0x2ea8",
+        "0x2eb4",
+        "0x2ec0"
+      ]
+    },
+    {
+      "id": "linked_runtime_audio",
+      "original_classes": [],
+      "editable_sources": [
+        "iOS/HMMedia.mm"
+      ],
+      "test_sources": [],
+      "ported": "not a game-code port: bundled C++ SoundEngine/OpenAL/AudioQueue and STL runtime",
+      "wired": "modern system services",
+      "tested": "not source-equivalence tested",
+      "remaining": "retain inventory/evidence; exclude only runtime implementation from game-logic restoration target",
+      "representative_original_addresses": [],
+      "inventory_body_addresses": [
+        "0x1db50",
+        "0x1dba0",
+        "0x1dbfc",
+        "0x1dc74",
+        "0x1dd48",
+        "0x1dee4",
+        "0x1df14",
+        "0x1df50",
+        "0x1df80",
+        "0x1e03c",
+        "0x1e094",
+        "0x1e0cc",
+        "0x1e0f0",
+        "0x1e1d8",
+        "0x1e2a8",
+        "0x1e2f4",
+        "0x1e430",
+        "0x1e494",
+        "0x1e50c",
+        "0x1e544",
+        "0x1e5e2",
+        "0x1e664",
+        "0x1e6ea",
+        "0x1e720",
+        "0x1e74e",
+        "0x1e8b4",
+        "0x1e97c",
+        "0x1e9e0",
+        "0x1eba8",
+        "0x1ebc4",
+        "0x1ebe0",
+        "0x1ebea",
+        "0x1ebfc",
+        "0x1ec14",
+        "0x1ec1c",
+        "0x1ec2c",
+        "0x1ec34",
+        "0x1ec42",
+        "0x1ec48",
+        "0x1ec52",
+        "0x1ec74",
+        "0x1ece4",
+        "0x1ecea",
+        "0x1ed1e",
+        "0x1ed2e",
+        "0x1ed4c",
+        "0x1ed58",
+        "0x1ed98",
+        "0x1edba",
+        "0x1edca",
+        "0x1ede8",
+        "0x1ee08",
+        "0x1ee68",
+        "0x1ee78",
+        "0x1ee8a",
+        "0x1ee94",
+        "0x1ee9e",
+        "0x1ef2c",
+        "0x1f098",
+        "0x1f0b0",
+        "0x1f0c0",
+        "0x1f15c",
+        "0x1f178",
+        "0x1f1cc",
+        "0x1f1fc",
+        "0x1f284",
+        "0x1f2b8",
+        "0x1f37c",
+        "0x1f398",
+        "0x1f3c8",
+        "0x1f400",
+        "0x1f428",
+        "0x1f458",
+        "0x1f49c",
+        "0x1f5a4",
+        "0x1f65c",
+        "0x1f748",
+        "0x1f774",
+        "0x1f7bc",
+        "0x1f7d0",
+        "0x1f8bc",
+        "0x1f8e8",
+        "0x1f98c",
+        "0x1fd38",
+        "0x1fea0",
+        "0x1ff8c",
+        "0x2005c"
+      ]
+    },
+    {
+      "id": "compiler_entry_helpers",
+      "original_classes": [],
+      "editable_sources": [
+        "iOS/Application.mm"
+      ],
+      "test_sources": [],
+      "ported": "compiler/platform entry replaced",
+      "wired": "native toolchain",
+      "tested": "native builds",
+      "remaining": "switch8/16/32 and ARM entry are compiler mechanics, not gameplay",
+      "representative_original_addresses": [],
+      "inventory_body_addresses": [
+        "0x2000",
+        "0x206c",
+        "0x200b0",
+        "0x200c8",
+        "0x200e8"
+      ]
+    },
+    {
+      "id": "analysis_fragments",
+      "original_classes": [],
+      "editable_sources": [
+        "Core/Combat.cpp",
+        "Core/Enemy.cpp"
+      ],
+      "test_sources": [
+        "CombatTests.cpp",
+        "EnemyTests.cpp"
+      ],
+      "ported": "partial: known split reload/AI and enemy blocks represented in owning logic",
+      "wired": "owning cores",
+      "tested": "owning tests",
+      "remaining": "anonymous fragments require owner mapping, not independent feature counts",
+      "representative_original_addresses": [],
+      "inventory_body_addresses": [
+        "0x128ec",
+        "0x129c6",
+        "0x129f8",
+        "0x14c50",
+        "0x14ef0",
+        "0x14f4c",
+        "0x14f68",
+        "0x14f74",
+        "0x14f80"
+      ]
+    }
+  ]
+}

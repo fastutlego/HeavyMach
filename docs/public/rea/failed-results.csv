@@ -1,0 +1,5 @@
+artifact,sha256,evidence_count
+analysis/metadata/inspect_macho.json,bc79de0eee36b7cf4ccb333867298cb3a4d26372a4ba92dd00819ce1f84bb3af,0
+archive-evidence/comparison/core/assault-function-10.json,0c580edd3ae237f1439a671b2eeedc57d429bfc9b001a687d7f4ef5004f75934,0
+archive-evidence/heavy-mach-macho.json,2ac3bdcae93007c0b1c99ed04e3bd6d2c458bbd94879110a5bb5c39d72602ae7,0
+archive-evidence/probe-decompile.json,ad6ea6f2a281cfc06b3f58a8a1d8712cc283abe3e359353f1255375f0a6d0546,0

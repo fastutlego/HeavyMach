@@ -25,7 +25,8 @@
     "docs/restoration-contract.md",
     "docs/current-status.md",
     "docs/design.md",
-    "docs/usability-todo.md"
+    "docs/usability-todo.md",
+    "../.agents/skills/write-project-text/SKILL.md"
   ],
   "domains": {
     "planning": {
@@ -204,7 +205,10 @@
         "docs/*",
         "AGENTS.md",
         "README.md",
-        "tools/document_contract.py"
+        "tools/document_contract.py",
+        "tools/export_rea_public_report.py",
+        "docs/public/*",
+        "tools/build_report_site.py"
       ],
       "tests": [],
       "evidence": [
