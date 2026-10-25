@@ -1,0 +1,6 @@
+#!/bin/sh
+if ! command -v gitleaks >/dev/null 2>&1; then
+  echo 'gitleaks is required for staged secret scanning.' >&2
+  exit 2
+fi
+exec gitleaks protect --staged --no-banner --redact

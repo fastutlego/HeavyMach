@@ -13,3 +13,11 @@ Analysis/
 *.ipa
 *.app/
 *.trace/
+
+.DS_Store
+.env
+.env.*
+account.md
+.ops/
+
+*.log

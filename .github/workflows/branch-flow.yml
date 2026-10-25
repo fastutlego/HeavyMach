@@ -1,0 +1,18 @@
+name: Branch flow
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  develop-only:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require develop from this repository
+        env:
+          SOURCE_BRANCH: ${{ github.head_ref }}
+          SOURCE_REPOSITORY: ${{ github.event.pull_request.head.repo.full_name }}
+          TARGET_REPOSITORY: ${{ github.repository }}
+        run: |
+          test "$SOURCE_BRANCH" = develop
+          test "$SOURCE_REPOSITORY" = "$TARGET_REPOSITORY"

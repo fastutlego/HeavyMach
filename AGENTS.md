@@ -1,6 +1,6 @@
 # HeavyMach 작업 지침
 
-상위 AGENTS.md와 `.agents/policy.md`를 따른다. 작업 전에 [정본](docs/canonical.md), [문서 위계](docs/document-governance.md), [게임 기획](docs/game-design.md), [복원 계약](docs/restoration-contract.md), [현재 상태](docs/current-status.md), [설계](docs/design.md)를 반드시 읽는다. 수정 영역에 따라 [좌표계](docs/coordinate-policy.md), [그래픽 렌더링](docs/rendering-policy.md), [데미지·수치 계산](docs/game-calculation-policy.md), [시간·저장·음향](docs/runtime-policy.md)을 읽고 실제 소비 코드와 대조한다. 이 폴더는 HeavyMach 1.13의 소스 복원 범위다. 기존 `game/` Unity 제작과 `iOS Proj/HeavyMachRecovery/` 호환 실행본을 보존한다.
+이 저장소의 `.agents/policy.md`와 `.agents/project.md`를 따른다. 작업 전에 [정본](docs/canonical.md), [문서 위계](docs/document-governance.md), [게임 기획](docs/game-design.md), [복원 계약](docs/restoration-contract.md), [현재 상태](docs/current-status.md), [설계](docs/design.md)를 반드시 읽는다. 수정 영역에 따라 [좌표계](docs/coordinate-policy.md), [그래픽 렌더링](docs/rendering-policy.md), [데미지·수치 계산](docs/game-calculation-policy.md), [시간·저장·음향](docs/runtime-policy.md)을 읽고 실제 소비 코드와 대조한다. 이 저장소는 HeavyMach 1.13의 소스 복원 범위다. 원본 호환 실행판은 `Compatibility/`이며 Unity는 별도 저장소다.
 
 - 최신 사용자 확인을 [현재 상태](docs/current-status.md)에 반영한다. 정적 분석, 추정, 에이전트 직접 실행, 사용자 보고를 구분한다.
 - REA 함수 주소·입력 SHA·Evidence 또는 원본 출력 경로를 복원 코드와 연결한다. 디컴파일 문장을 원본 소스라고 부르지 않는다. ARM ABI 때문에 어긋난 타입·인수는 어셈블리와 호출부로 확인한다.
@@ -15,7 +15,9 @@
 
 - 사용자 지시(2026-10-25): 작업 보고는 Sites 스킬로 보고 사이트에 게시하고 링크를 제공한다. 기존 HeavyMach 보고 사이트를 갱신하며 정본 문서·TODO도 함께 유지한다. 사이트 식별자와 업데이트 경로는 [보고 사이트](docs/report-site.md)를 따른다.
 
-- 문서·코드·앱 기능은 서로 모순 없이 설명되어야 한다. [업무 연결표](docs/document-map.json)의 관련 문서·소스·검사를 읽고 요구→정책→소비 코드→검사/앱 관측을 대조한다. `python3 HeavyMach/tools/document_contract.py plan --task <업무>` 또는 `plan --files <경로>`는 읽기 목록을 출력한다. 실제 읽기나 검사를 대신하지 않는다.
-- HeavyMach 변경을 마감할 때 `python3 HeavyMach/tools/document_contract.py check`로 구조 연결을 검사한다. 상위 요구가 바뀌면 기획→설계/정책→코드/검사를 함께 반영하고 최신 결과를 current-status·TODO·보고에 갱신한다. 의미 일치와 실제 기능은 관련 실행 증거로 확인한다. 문서만의 변경에 게임 재빌드나 실기기 재검사를 요구하지 않는다.
+- 문서·코드·앱 기능은 서로 모순 없이 설명되어야 한다. [업무 연결표](docs/document-map.json)의 관련 문서·소스·검사를 읽고 요구→정책→소비 코드→검사/앱 관측을 대조한다. `python3 tools/document_contract.py plan --task <업무>` 또는 `plan --files <경로>`는 읽기 목록을 출력한다. 실제 읽기나 검사를 대신하지 않는다.
+- HeavyMach 변경을 마감할 때 `python3 tools/document_contract.py check`로 구조 연결을 검사한다. 상위 요구가 바뀌면 기획→설계/정책→코드/검사를 함께 반영하고 최신 결과를 current-status·TODO·보고에 갱신한다. 의미 일치와 실제 기능은 관련 실행 증거로 확인한다. 문서만의 변경에 게임 재빌드나 실기기 재검사를 요구하지 않는다.
 
-- 보고서·GitHub 문서·게임 안의 텍스트·진행/최종 답변은 루트 `.agents/skills/write-project-text/SKILL.md`를 먼저 읽고 적용한다. 보고 사이트와 다운로드는 같은 원고에서 만들며 최신 상태와 과거 계측 시점을 구분한다.
+- 보고서·GitHub 문서·게임 안의 텍스트·진행/최종 답변은 `.agents/skills/write-project-text/SKILL.md`를 먼저 읽고 적용한다. 보고 사이트와 다운로드는 같은 원고에서 만들며 최신 상태와 과거 계측 시점을 구분한다.
+
+- 개발 브랜치는 develop에 병합하고 main에는 develop만 병합한다. v0.9 등 릴리스 태그는 main의 병합 커밋에 붙이며 재지정하지 않는다. [저장소 관리](docs/repository-management.md)를 따른다.

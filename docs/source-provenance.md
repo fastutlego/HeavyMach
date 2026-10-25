@@ -41,4 +41,4 @@ Clutch-2.0.4는 아카이브 이름의 도구 표기다. Assault 앱 버전은 I
 
 원작 일반 파일 776개 중 이미지 695개, WAV 31개, 맵 43개와 MCH 3개를 확인했다. 두 판본의 같은 경로·바이트 일치 파일은 744개다. 원작 이미지 674개와 WAV 31개는 Assault와 동일하지만 Stage01·Stage36~41과 Boss08 부품 등에는 차이가 있다. 원작 복원에 Assault 파일을 일괄 대체하지 않는다.
 
-기존 상세 보고: [판본 분석](../../docs/heavy-mach-113-assault-analysis-20261024.md), [분석 인계](../../docs/handoff-20261024-rea-install.md), [호환 실행 검증](../../docs/heavymach-recovery-20261024.md). 과거 보고의 미착수 표기는 당시 상태다. 현재 판정은 [current-status](current-status.md)를 따른다.
+기존 상세 보고: [판본 분석](heavy-mach-113-assault-analysis-20261024.md), [분석 인계](handoff-20261024-rea-install.md), [호환 실행 검증](heavymach-recovery-20261024.md). 과거 보고의 미착수 표기는 당시 상태다. 현재 판정은 [current-status](current-status.md)를 따른다.

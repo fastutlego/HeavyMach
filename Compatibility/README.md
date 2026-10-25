@@ -30,4 +30,4 @@ Rust 실행기만 빌드하려면 `./build-heavy.sh aarch64-apple-ios-sim` 또�
 
 원본 게임의 메뉴·조작·성장 규칙을 보존한다. 시뮬레이터는 Device Hub에서 Capture Keyboard를 켜고 방향키를 누르면 기울기 입력을 대신한다. 키를 놓으면 중립으로 돌아간다. 실기기는 원래 기울기 센서를 사용한다. 시뮬레이터 창 방향이 반대면 Device Hub의 Rotate Left를 사용한다. 앱 프레임 캡처와 창 방향을 구별해서 확인한다.
 
-검증 결과와 남은 문제는 허브의 `docs/heavymach-recovery-20261024.md`에 기록한다. 빌드 성공만으로 플레이 완료를 주장하지 않는다.
+검증 결과와 남은 문제는 `../docs/heavymach-recovery-20261024.md`에 기록한다. 빌드 성공만으로 플레이 완료를 주장하지 않는다.

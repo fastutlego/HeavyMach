@@ -1,6 +1,6 @@
 # HeavyMach 정본과 작업 기준
 
-현행 기준: 2026-10-25. 적용 범위는 `HeavyMach/`다. Unity `game/`과 원본 IPA 호환 실행기는 별도 제품/비교 기준으로 보존한다.
+현행 기준: 2026-10-25. 적용 범위는 이 독립 저장소다. Unity는 별도 저장소이며 IPA 호환 실행기는 `Compatibility/`에 보존한다.
 
 ## 읽는 순서와 우선순위
 
@@ -21,7 +21,7 @@
 ## 비교 대상
 
 - 원작: HeavyMach 1.13 ARMv6 IPA. 식별 SHA와 원본 위치는 [출처](source-provenance.md).
-- 정상 비교 실행본: `iOS Proj/HeavyMachRecovery/compat-source/fresh-port/20-touchHLE-src/touchHLE` 및 보존된 앱. 사용자가 같은 아이폰에서 프레임 드랍 없이 동작했다고 확인했다.
+- 정상 비교 실행본: `Compatibility/compat-source/fresh-port/20-touchHLE-src/touchHLE` 및 보존된 앱. 사용자가 같은 아이폰에서 프레임 드랍 없이 동작했다고 확인했다.
 - 복원 제품: `Sources/Core/` C++20, `Sources/iOS/` Objective-C++. 원본 개발 소스를 확보한 것으로 표현하지 않는다.
 - 일반 앱: `HeavyMachRestored`, `com.gelb2.heavymach.restored`, 표시 이름 Heavy Mach 1, `HM_VALIDATION=0`.
 - 치트 검증 앱: `HeavyMachValidation`, `com.gelb2.heavymach.validation`, `HM_VALIDATION=1`. 저장·조건 설정·방향 버튼을 일반 앱과 분리한다.
@@ -42,3 +42,5 @@
 
 - [REA 분석·복원 방법과 전체 증거 색인](public/rea-restoration-method-20261025.md): 사용한 스킬·도구, 25개 함수군, 실패 수정, 구현·검증 기록.
 - [IPA 포팅과 네이티브 앱 복원](public/ipa-port-and-native-app-20261026.md): 두 판본의 제작·비교·수정과 최종 설치를 정리한 기술 블로그 원고. 현행 정책은 위 문서들을 따른다.
+
+- [저장소 관리·v0.9 복원](repository-management.md): develop→main 병합, 태그 고정, 별도 worktree와 저장 보존.
