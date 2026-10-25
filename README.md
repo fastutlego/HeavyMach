@@ -53,3 +53,4 @@ python3 HeavyMach/tools/document_contract.py check
 이 명령은 문서 연결을 검사한다. 기능 의미와 앱 실행의 정상 여부는 관련 정책·코드·실행 증거를 대조한다.
 
 - [REA 분석·복원 방법과 전체 증거 색인](docs/public/rea-restoration-method-20261025.md): 사용한 스킬·도구, 25개 함수군, 실패 수정, 구현·검증 기록.
+- [IPA 포팅과 네이티브 앱 복원](docs/public/ipa-port-and-native-app-20261026.md): 호환판 제작, 새 앱의 성능 문제와 비교·수정 순서, 치트·일반 앱 설치를 설명한 기술 블로그 원고.
