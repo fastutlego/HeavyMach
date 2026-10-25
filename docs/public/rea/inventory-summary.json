@@ -1,0 +1,36 @@
+{
+  "original_sha256": "97166198d701dd929243196a85e81182d7716915cdd50dec2acdc1918d10deeb",
+  "original_inventory": 1133,
+  "classification_counts": {
+    "file_backed_function": 658,
+    "file_backed_thunk": 186,
+    "provider_synthetic_external_thunk": 56,
+    "external_import": 233
+  },
+  "export_failures": 56,
+  "metadata_failures": 1,
+  "assault_inventory": 1802,
+  "families": 25,
+  "retained_json_artifacts": 2067,
+  "unique_evidence_ids": 1872,
+  "operations": {
+    "analyze_function": 1,
+    "binary_overview": 2,
+    "extract_artifact": 2,
+    "get_objc_classes": 1,
+    "get_objc_protocols": 1,
+    "inspect_artifact": 2,
+    "inspect_plist": 1,
+    "inventory_artifact": 2,
+    "list_procedures": 2,
+    "list_strings": 2,
+    "procedure_assembly": 902,
+    "procedure_pseudo_code": 951,
+    "read_binary_inventory_summary": 1,
+    "search_procedures": 1,
+    "search_strings": 1
+  },
+  "failed_top_level_results": 4,
+  "documents_indexed": 86,
+  "scope": "Retained records in four declared roots. Unique IDs are not tool call counts. Indexes include summaries and failures; original source/runtime completeness is not inferred."
+}

@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-25",
+  "tool": "image_gen built-in",
+  "purpose": "Screen-specific extensions connected to the original mode and mission menu backgrounds",
+  "assets": [
+    {
+      "path": "Art/Extensions/ModeWide.png",
+      "reference": "Resources/Images/SelMode_BG.png",
+      "prompt": "Use case: compositing. Asset type: a production 2D game menu background extension. Input image 1 is the original 480x320 Heavy Mach SELECT MODE background and is the immutable central reference. Outpaint ONLY to the LEFT and RIGHT. Output one ultra-wide 3:1 image, ideally 1920x640. The original image must occupy EXACTLY the middle 50% of the output width and the full height, unaltered in composition. Extend each side by half the original width. At x=25% and x=75% the original edges must join continuously to new side panels: continue every horizontal beam, top pale gray metal panels, mid-height dark machinery rails, lower pipes, bottom pale sill at exactly the corresponding height. Same muted gray olive brown industrial metal, tiny rivets, worn low-resolution 2009 game texture, same contrast and grain. No new dramatic lighting, no new beveled framing around original, no vertical dividing seam, no doubled copy, no gap. Match edge brightness and metal color precisely. Keep original SELECT MODE title in central area only; NO new text, buttons, labels or logos in extensions. Side panels are quiet believable continuation of the same single industrial machine wall, not a separate illustration. Do not change original artwork. Output image only.",
+      "path_sha256": "234b9a4b714e93cc84fd7b8e77f0ae8a946350b5fa6f7d6b7b8514ae3010ef97",
+      "reference_sha256": "ef6815550620a045c551159f7ed99ddb54dcdc0cba49942e52f6add1a618534b"
+    },
+    {
+      "path": "Art/Extensions/MissionWide.png",
+      "reference": "Resources/Images/SelMission_BG.png",
+      "prompt": "Use case: compositing. Asset type: a production 2D game menu background extension. Input image 1 is original 480x320 Heavy Mach SELECT MISSION background and immutable central reference. Outpaint ONLY LEFT and RIGHT. Output ultra-wide 3:1, ideally 1920x640. Original image occupies EXACT middle 50% width and full height, unchanged composition. Each extension is half original width. Join original edges at x25% and x75% continuously: left pale narrow vertical machinery housing continues into new matching side machinery; right dark olive steel horizontal bolted plates and horizontal dark rails continue at EXACT original y heights. Across right edge: top olive riveted plate and dark band below around y55/320, middle olive plate y124-156/320, dark intricate rail cavity below, lower olive plate from y260/320 to bottom. Keep each horizontal band at exact same height in generated right area. Preserve original bright gray left border and original dark olive right edge luminance. Same muted gray olive brown industrial metal, tiny rivets, worn low-resolution 2009 game texture, same contrast grain and flat lighting. No new dramatic lighting, no frame, no hard seam, no gap, no duplicated center. Keep original SELECT MISSION in center only; NO text, buttons, logos, pictures or labels on added sides. Quiet seamless extension of same machine wall. Do not redesign central original. Output image only.",
+      "path_sha256": "a48312661ba3e27104cf50cbdc105c516f1b2a5f9e6c4f90f8eb8a92f2a7c457",
+      "reference_sha256": "39d45949d2272a4167715ab0df10a7183ba4df3c288fb96aefc719ffa4385d39"
+    }
+  ],
+  "composition": "Only outer quarters are drawn, original centre remains original texture. Screen-specific original edge continuation outside 480px bounds over 24 logical pixels. Both side pieces and original use the menu safe-area centre."
+}

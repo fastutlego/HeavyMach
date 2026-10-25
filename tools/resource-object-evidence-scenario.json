@@ -1,0 +1,21 @@
+[
+  {
+    "tool": "open_binary",
+    "arguments": {
+      "path": "/Users/sokol/Documents/Codex/2026-10-24/rea-ready/HeavyMach-1.13-extracted/Payload/HeavyMach.app/HeavyMach"
+    },
+    "output": "resource-open.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0xcd00"
+    },
+    "output": "map-object-regen.json"
+  },
+  {
+    "tool": "close_binary",
+    "arguments": {},
+    "output": "resource-close.json"
+  }
+]

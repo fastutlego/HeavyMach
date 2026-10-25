@@ -1,0 +1,59 @@
+[
+  {
+    "tool": "open_binary",
+    "arguments": {
+      "path": "/tmp/HeavyMach-bullet-case2"
+    },
+    "output": "bullet-case2-open.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0xab04"
+    },
+    "output": "bullet-case2-pseudo.json"
+  },
+  {
+    "tool": "close_binary",
+    "arguments": {},
+    "output": "bullet-case2-close.json"
+  },
+  {
+    "tool": "open_binary",
+    "arguments": {
+      "path": "/tmp/HeavyMach-bullet-case3"
+    },
+    "output": "bullet-case3-open.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0xab04"
+    },
+    "output": "bullet-case3-pseudo.json"
+  },
+  {
+    "tool": "close_binary",
+    "arguments": {},
+    "output": "bullet-case3-close.json"
+  },
+  {
+    "tool": "open_binary",
+    "arguments": {
+      "path": "/tmp/HeavyMach-bullet-case4"
+    },
+    "output": "bullet-case4-open.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0xab04"
+    },
+    "output": "bullet-case4-pseudo.json"
+  },
+  {
+    "tool": "close_binary",
+    "arguments": {},
+    "output": "bullet-case4-close.json"
+  }
+]

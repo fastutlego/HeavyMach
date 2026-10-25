@@ -1,0 +1,23 @@
+build/
+DerivedData/
+DerivedDataDevice/
+**/xcuserdata/
+*.xcuserstate
+*.mobileprovision
+*.p12
+__pycache__/
+
+# User originals and local analysis are preserved outside version control.
+Resources/
+Analysis/
+*.ipa
+*.app/
+*.trace/
+
+.DS_Store
+.env
+.env.*
+account.md
+.ops/
+
+*.log

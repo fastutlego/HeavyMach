@@ -1,0 +1,70 @@
+[
+  {
+    "tool": "open_binary",
+    "arguments": {
+      "path": "/Users/sokol/Documents/Codex/2026-10-24/rea-ready/HeavyMach-1.13-extracted/Payload/HeavyMach.app/HeavyMach"
+    },
+    "output": "resource-open.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x10a54"
+    },
+    "output": "parts-reader.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x10e00"
+    },
+    "output": "weapon-reader.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x10c58"
+    },
+    "output": "mach-reader.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0xda80"
+    },
+    "output": "map-size-reader.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0xdbfc"
+    },
+    "output": "map-joint-reader.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0xde40"
+    },
+    "output": "map-object-reader.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0xdfa8"
+    },
+    "output": "map-background-reader.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0xe1b4"
+    },
+    "output": "map-enemy-reader.json"
+  },
+  {
+    "tool": "close_binary",
+    "arguments": {},
+    "output": "resource-close.json"
+  }
+]

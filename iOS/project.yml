@@ -1,0 +1,203 @@
+name: HeavyMachRestored
+options:
+  deploymentTarget:
+    iOS: '15.0'
+fileGroups:
+  - ../docs
+  - ../README.md
+schemes:
+  HeavyMachRestored:
+    build:
+      targets:
+        HeavyMachRestored: all
+    run:
+      config: Debug
+  HeavyMachValidation:
+    build:
+      targets:
+        HeavyMachValidation: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - HeavyMachRenderTests
+targets:
+  HeavyMachRestored:
+    type: application
+    platform: iOS
+    preBuildScripts:
+      - name: Build preserved OpenAL Soft
+        script: 'bash "$SRCROOT/../tools/build_openal.sh" "$PLATFORM_NAME"'
+        basedOnDependencyAnalysis: false
+    dependencies:
+      - sdk: UIKit.framework
+      - sdk: QuartzCore.framework
+      - sdk: AVFoundation.framework
+      - sdk: CoreMotion.framework
+      - sdk: CoreGraphics.framework
+      - sdk: OpenGLES.framework
+      - sdk: AudioToolbox.framework
+      - sdk: CoreAudio.framework
+    sources:
+      - path: ../Sources/Core
+        excludes: [SpriteRaster.cpp, TrailRaster.cpp]
+      # CPU pixel loops must also meet the frame budget in Debug. Keep gameplay
+      # debuggable and retain -ffp-contract=off / -fno-fast-math for these files.
+      - path: ../Sources/Core/SpriteRaster.cpp
+        compilerFlags: -O2
+      - path: ../Sources/Core/TrailRaster.cpp
+        compilerFlags: -O2
+      - path: ../Sources/iOS
+      - path: ../Sources/OriginalInterfaces
+        buildPhase: none
+      - path: ../Art/Extensions
+        type: folder
+        buildPhase: resources
+      - path: ../Resources/OriginalImages
+        type: folder
+        buildPhase: resources
+      - path: ../Resources/Images
+        type: folder
+        buildPhase: resources
+      - path: ../Resources/Audio
+        type: folder
+        buildPhase: resources
+      - path: ../Resources/RawData
+        type: folder
+        buildPhase: resources
+      - path: ../Resources/Assets.xcassets
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.gelb2.heavymach.restored
+        OTHER_LDFLAGS: ['$(inherited)', '-force_load', '$(SRCROOT)/../build/openal/$(PLATFORM_NAME)/libopenal.a']
+        PRODUCT_NAME: HeavyMachRestored
+        DEVELOPMENT_TEAM: PDF8XXXYH9
+        CODE_SIGN_STYLE: Automatic
+        TARGETED_DEVICE_FAMILY: '1,2'
+        CLANG_CXX_LANGUAGE_STANDARD: c++20
+        CLANG_ENABLE_OBJC_ARC: YES
+        GCC_PREPROCESSOR_DEFINITIONS: ['$(inherited)', 'HM_VALIDATION=0']
+        OTHER_CPLUSPLUSFLAGS: ['$(inherited)', '-ffp-contract=off', '-fno-fast-math']
+        HEADER_SEARCH_PATHS: ['$(inherited)', '$(SRCROOT)/../Sources/Core']
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+    info:
+      path: Info.plist
+      properties:
+        CFBundleDisplayName: Heavy Mach 1
+        CFBundleShortVersionString: '1.13'
+        CFBundleVersion: '1'
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UILaunchScreen: {}
+        UIStatusBarHidden: true
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UIFileSharingEnabled: true
+        UIRequiresFullScreen: true
+        LSRequiresIPhoneOS: true
+        LSSupportsOpeningDocumentsInPlace: true
+  HeavyMachValidation:
+    type: application
+    platform: iOS
+    preBuildScripts:
+      - name: Build preserved OpenAL Soft
+        script: 'bash "$SRCROOT/../tools/build_openal.sh" "$PLATFORM_NAME"'
+        basedOnDependencyAnalysis: false
+    dependencies:
+      - sdk: UIKit.framework
+      - sdk: QuartzCore.framework
+      - sdk: AVFoundation.framework
+      - sdk: CoreMotion.framework
+      - sdk: CoreGraphics.framework
+      - sdk: OpenGLES.framework
+      - sdk: AudioToolbox.framework
+      - sdk: CoreAudio.framework
+    sources:
+      - path: ../Sources/Core
+        excludes: [SpriteRaster.cpp, TrailRaster.cpp]
+      # CPU pixel loops must also meet the frame budget in Debug. Keep gameplay
+      # debuggable and retain -ffp-contract=off / -fno-fast-math for these files.
+      - path: ../Sources/Core/SpriteRaster.cpp
+        compilerFlags: -O2
+      - path: ../Sources/Core/TrailRaster.cpp
+        compilerFlags: -O2
+      - path: ../Sources/iOS
+      - path: ../Sources/OriginalInterfaces
+        buildPhase: none
+      - path: ../Resources/Validation
+        type: folder
+        buildPhase: resources
+      - path: ../Art/Extensions
+        type: folder
+        buildPhase: resources
+      - path: ../Resources/OriginalImages
+        type: folder
+        buildPhase: resources
+      - path: ../Resources/Images
+        type: folder
+        buildPhase: resources
+      - path: ../Resources/Audio
+        type: folder
+        buildPhase: resources
+      - path: ../Resources/RawData
+        type: folder
+        buildPhase: resources
+      - path: ../Resources/Assets.xcassets
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.gelb2.heavymach.validation
+        OTHER_LDFLAGS: ['$(inherited)', '-force_load', '$(SRCROOT)/../build/openal/$(PLATFORM_NAME)/libopenal.a']
+        PRODUCT_NAME: HeavyMachValidation
+        DEVELOPMENT_TEAM: PDF8XXXYH9
+        CODE_SIGN_STYLE: Automatic
+        TARGETED_DEVICE_FAMILY: '1,2'
+        CLANG_CXX_LANGUAGE_STANDARD: c++20
+        CLANG_ENABLE_OBJC_ARC: YES
+        GCC_PREPROCESSOR_DEFINITIONS: ['$(inherited)', 'HM_VALIDATION=1']
+        OTHER_CPLUSPLUSFLAGS: ['$(inherited)', '-ffp-contract=off', '-fno-fast-math']
+        HEADER_SEARCH_PATHS: ['$(inherited)', '$(SRCROOT)/../Sources/Core']
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+    info:
+      path: Validation-Info.plist
+      properties:
+        CFBundleDisplayName: HM Validation
+        CFBundleShortVersionString: '1.13'
+        CFBundleVersion: '1'
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UILaunchScreen: {}
+        UIStatusBarHidden: true
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UIFileSharingEnabled: true
+        UIRequiresFullScreen: true
+        LSRequiresIPhoneOS: true
+        LSSupportsOpeningDocumentsInPlace: true
+
+  HeavyMachRenderTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: ../Tests/iOS
+    dependencies:
+      - target: HeavyMachValidation
+      - sdk: UIKit.framework
+      - sdk: CoreGraphics.framework
+      - sdk: OpenGLES.framework
+      - sdk: AudioToolbox.framework
+      - sdk: CoreAudio.framework
+      - sdk: CoreFoundation.framework
+      - sdk: QuartzCore.framework
+      - sdk: AVFoundation.framework
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.gelb2.heavymach.render-tests
+        GENERATE_INFOPLIST_FILE: YES
+        CLANG_CXX_LANGUAGE_STANDARD: c++20
+        CLANG_ENABLE_OBJC_ARC: YES
+        HEADER_SEARCH_PATHS: ['$(inherited)', '$(SRCROOT)/../Sources/Core', '$(SRCROOT)/../Sources/iOS']
+        DEVELOPMENT_TEAM: PDF8XXXYH9
+        CODE_SIGN_STYLE: Automatic

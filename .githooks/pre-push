@@ -1,0 +1,6 @@
+#!/bin/sh
+set -eu
+command -v git-lfs >/dev/null 2>&1 || { echo 'git-lfs is required.' >&2; exit 2; }
+push_updates=$(cat)
+printf '%s\n' "$push_updates" | python3 "$(git rev-parse --show-toplevel)/.githooks/check-branch-flow.py"
+printf '%s\n' "$push_updates" | git lfs pre-push "$@"

@@ -1,0 +1,87 @@
+document,title,sha256
+docs/audio-fidelity.md,HeavyMach 1.13 음향 계약,6d4dc813e4053b9c2f16443586911f0a07ba7e1ed63fcbe5850f3bfabec29482
+docs/audio-preload.md,원본 음원 초기 로드 시점 복원,9c17011f0a088ccece782d91c9d3a15dc0d22d69892916efabc67cf886606315
+docs/blend-reachability.md,blend1·상태 상속의 실제 도달 경로 조사,b3782ca79fe393038b87d06f832d066378c288f9a33231468b96ad68d7d44899
+docs/boss-battles-v1.md,HeavyMach boss combat experiment,3424d76fb92e0324ebf7c71de39b2ec93315c3e0208d9fcd1b9eb8da19b4e689
+docs/boss-battles-v5.md,보스 실제 전투 v5 — 2026-10-24,1dad71a479e6d08a5d2d303cd9efe4e659ddfba4534e887a6cc222b4ff16ba98
+docs/boss-battles-v6.md,보스 전투 v6 — 남은14개 배치 검증,e520f73884ad941618fe83641fabc5b42beb0904b4039a5e2520e575ca733b21
+docs/boss-motion-fix-20261025.md,미션 3-5 항공기 조기 이동 수정 · 2026-10-25,7bd100826cb2db660103a8cd1304b2245de2c8d2fa94dfcac6e887acfd4a22e7
+docs/camera-integration.md,World camera offset 연결 복원,b6603e065643e5e10419df12b69fbe121981960c8faddc3f9f842c50cde218d0
+docs/canonical.md,HeavyMach 정본과 작업 기준,9ebc761ea4a7caa1b337b39e3bcb0bab951708ff25fe624d12c7e0b24fbd48c2
+docs/canvas-ai-and-rotation-research-20261025.md,전체 화면의 전투 보정·양방향 가로 회전 조사,f1facf6136f322c1809b61dbf34af064452d99ba47d6fc041c1cfe473fb4d862
+docs/cheat-stage-check.md,남은 스테이지 치트 검증,74521450af0192333d48ea8c263847b404b6a6a7f00e598d60b4cb4ade460190
+docs/clear-illustration-fix-20261025.md,미션 클리어 일러스트 누락 수정,07da80ce288c43c2d02a279c424a5a733849d47f8203af2647555e86f58ebdb1
+docs/compat-source-comparison-20261024.md,정상 IPA 호환판과 소스 복원판 직접 비교 — 2026-10-24,fc3098860e872563be82208f7658252243df750499be61f23f78e14a89f5c7fe
+docs/coordinate-policy.md,좌표계와 입력 정책,b317ebc8041239c177ab630833ecbe9da1739669d147d01accdab0307601be76
+docs/core-bullet-visual.md,GobBullet draw 복원,21d3e652d0c3334432ad6ec2e3421e3d5fa9dd2698620782d2ca6841cd8d17cf
+docs/core-camera.md,QobCamera 흔들림 복원,c98daa5fb4625475c89af96adac5d9062bcd8a2c95427f9ff83ec1bb6abe4b93
+docs/core-enemy.md,GobHvM_Enemy 소스 복원,c1fb1da614c732b81170ca7fa34f3a767734e556b27296c849b8699ada96c7f2
+docs/core-geometry.md,Vector2·ColVector 소스 복원,5268e4afc691fcbb565f8628b452e50e5f4b106edfba2e602a9bf968ce015c61
+docs/core-items.md,ItemBox와 객체 획득 경계,77b2e83c3d0fcaae36b7999aa09e89d84f4b72c48b42c40537c4b109eb1693bc
+docs/core-loading-transition.md,GameMain loading shutter 복원,14dbc6c6d6080ae83333f6d3ac44494281b2ca5b2ac5610b0b4d01b002b05301
+docs/core-motion.md,GobHvMach 이동·점프 소스 복원,2f749921f6b2ff347795cfb778e8e530e656106f45a8ce1294e0294f82577477
+docs/core-player.md,Player 규칙 복원,516ae29baacabd875de96c49f792684bb030f003e4bdbce506b7f0324243cdd3
+docs/core-session.md,Native stage session integration,448fb51f9cd72d5a732c0e9611b11c47a66a5aab2ec85e90900309d67529d4ce
+docs/core-title.md,Native title and original website action,3dd48e3c9e61ee434c7af30571463cd2126e4f2e5930a7a7a18a6b1666c173e3
+docs/core-trail-raster.md,Trail CPU rasterizer와 native 합성 계약,b06896f1962decb536027edeaacfdff96b75cba00eb4f743fd10db15da398ed4
+docs/core-trail.md,GobTrailEffect 복원,5337f4aa540b50c3cacdebb039647003fd564b6882f82f58a939c9f5cca70b0b
+docs/core-visuals.md,Native particle and machine-part visuals,d05d32fab4860b92e282999a99e8eab6cdfc5b4668a4849da35eaafea793b601
+docs/core-world.md,GobWorld native state,be7003d7ded34a6f009d747a63769c7d477e3eaa8935ee5658147c787394c882
+docs/current-status.md,2026-10-25 문서·코드·앱 일치 체계 점검 및 보완,ee2a12caa41aaef6eb0ca56c7642f7a40411612adbec77c95505b8ac124aa972
+docs/design.md,소스 복원 설계와 원작 근거,ca3b91de8d3cb0a4724b39d34ed464a6216224a4ac0193152177cff85520f0ec
+docs/device-validation-ready.md,실제 iPhone 검증 준비,208aae3728a3fa422348fd22bbdf9e6518ddf9e95f9972b9d314fdd76213de67
+docs/document-governance.md,문서·코드·앱의 일치 규칙,4e8b22c9930dd10a850c26dd2da900f0717c5561f193a4c4544bed4a9924434f
+docs/documentation-audit-20261025.md,HeavyMach 문서·코드·앱 일치 체계 점검,ef4fce26ae061e690341acd6650a0bc3bf91aa52d6011e3cfe61eb36777fda22
+docs/frame-drop-investigation-20261024.md,아이폰 프레임 드랍 조사 · 2026-10-24,555cf0ae9c09e752c650e4034847b3b60ae7f0c7e4281593e9ed9a5842cad0a4
+docs/game-calculation-policy.md,데미지와 게임 수치 계산 정책,f2691e469119759f0fff782f06dd12ee9f799a5f91ba6bdd3a656cfe69869cd9
+docs/game-design.md,HeavyMach 게임 기획,eabfd6c6eb3c25bafbac3dc1a62cb9d8508ce454c903fb3566aea90cbd397bf8
+docs/gauge-registration.md,HP 막대의 좌표와 표시 등록,d8ddec4857b10e14e45934a28c54a29925f273a557636cdbb2ad7522384c7dff
+docs/handover-20261024.md,HeavyMach 복원 핸드오버 — 2026-10-24,7c8ff1ae910ffb48330102fc488978b5af210c0ef0c19cbc54b003993f617e05
+docs/hud-event-order.md,HUD 이벤트 순서 수정,b04529871207ea628eda3526e0d2e706f58726d8d3355939f25893b40271701e
+docs/instruments-validation-20261024.md,Instruments 시뮬레이터 검증 — 2026-10-24,0641d190ac813aa15cd7f8cd96bd66e53d688c9e78ba3ced04281a1c4405a909
+docs/menu-art-extension-20261025.md,메뉴 재배치·배경 확장 적용 — 2026-10-25,573e661d4a8b54ab865dd382d0dcce6114ae23183c4fb68939634add3b49e190
+docs/menu-joins-20261025.md,모드·미션 배경 연결과 타이틀 검은줄 수정,08097bbae5d6bfa37a578f3713c53ec7c4d961e148c02d3d0a18a21f9264f6e6
+docs/named-machine-bounds.md,이름별 기체 생성 경계 비교,74e5f2150fb733ed3570f2b759d93f7e71ea9903163b5a1da2d4d37258f4f528
+docs/native-hud.md,Native GuiGame HUD,3a5c3c5ba8509b7b23498f249ecb1a40dc4f090b4d26455f6a1ce6ded575dda0
+docs/native-menus.md,원본 메뉴 복원 당시 기록,2ca3d5667fd8a361b731594cd15e8d0b9cdfbe1d55f7a001fab98333442ba768
+docs/nil-parts-boundary.md,nil BaseParts와 ARM32 구조체 반환 경계,2f0fea1578e553cacd270203c1ae648571cf441ec80730740294f89ddbd27d0d
+docs/nil-parts-observation.md,nil BaseParts 런타임 관측,ef19c0ebd271ede885bb1d8af1e1237b055bf56333ef9c0ecae2e282ffa29f78
+docs/nil-parts-runtime-analysis.md,nil BaseParts runtime buffer analysis,300fc1502a5848b6ad66739e96b7c6f306f5e3f410c6b04b3dbff62542162f5f
+docs/normal-fidelity-ui-check.md,최신 일반 빌드의 Air 시뮬레이터 UI 검사,37e30ab5586cab55ec9cd7f6fbe7c0d92ccce75e94215e7caa1351f5ad80ae7c
+docs/objc-reconstruction.md,Original Objective-C declarations,7e564da98da7de1ecb779d4971c02db37f5cf27300d3c5c756ecf7714662af31
+docs/opengl-migration-20261024.md,OpenGL 복원·시뮬레이터 성능 검증 · 2026-10-24,cf86dc1a5db7df5c3fa86231ee06d5ac3fc1ff8a106e45935de7609f1a409a8c
+docs/physical-edge-check-20261025.md,2026-10-25 일반 앱 설치와 확장 가장자리 실기기 검사,83a79c0da07a58d83523ccbc2da8a3b2c68c47c43028f88ffeeb1ecc11a5dfa7
+docs/physical-self-test-20261025.md,실기기 자체 검사와 후속 과제 — 2026-10-25,7c692c9fab079baab5719144dad4a333fa55ccf26b1019336104fe9ca679ca00
+docs/player-gauge.md,플레이어 머리 위 HP 막대,0d0d9150e834adebb2f81d03b994b48783c44cf12b2f71d3cfed9c088d475e9b
+docs/presentation-ab-20261024.md,화면 표시 차이 A/B 검증 — 2026-10-24,f25b72192f0fc0d3673b85f449b4b4eadff7ed50cf139ad4a2ab7f6fc653ad47
+docs/public/engineering-retrospective-20261025.md,HeavyMach 복원: 사용자 검증을 기준으로 설계를 바로잡은 기록,9b61cd520b075086954933cf151edca217e28bf38f60a84d1147e07043e7445e
+docs/public/rea-restoration-method-20261025.md,REA로 HeavyMach를 분석하고 현재 아이폰에서 실행하기까지,de7ef42d3fdd4c2dd88f923f59d7634774c8b813d72b365a8222f1951520c0af
+docs/public/report-overview-20261025.md,HeavyMach 복원과 아이폰 검증,17896edd6ebce1c37f8daa458d1d341b14010b22a1c5cb017f669b81e29c7bd0
+docs/release-review-20261025.md,2026-10-25 완료 상태 고정·두 앱 설치·회고 원고,caf3823b6fb53f28260467cb847afbb8c2ac4c7d1541b3cf7aa63d9c8e91f4b0
+docs/render-fidelity-audit.md,렌더 출력 대조 — 2026-10-24,9fd1264dca4bf6a096fca5a27e45689f4e03b512db738a2a457f4ee81ff0519a
+docs/render-performance.md,Renderer CPU benchmark,05defcb761980a89e73fac9a3717aadd199ad10e3a12046303badc1e1e1e2ca8
+docs/rendering-policy.md,그래픽 렌더링 정책,fa5ec62f76473e476350156501baa45dfef9bdb3b856e1b5f5e2cab2e4931694
+docs/report-site.md,HeavyMach 보고 사이트,22f6c8fc21693876a038145f8741be6153abee95ebeec10275d0588251983d9e
+docs/resource-formats.md,HeavyMach 1.13 리소스 복원,e0a360298ae557e9b4275ab04c5a6e81e62a2ca05aada0d9c423cd50593d6440
+docs/restoration-contract.md,복원 요구와 완료 기준,3d3a3cb64d54c47c7fc9d8d149fe3c926b8094ed80a5fc0ad4fb74cc2c37903e
+docs/runtime-policy.md,시간·저장·음향 정책,a371d813a42b24d6fe055833617a4a996eebbbe097dbace494a7aabe9e122839
+docs/same-save-comparison.md,동일 저장으로 원본·복원 슬롯 비교,abf9b79654f75463694b8c462dca3fe63a282dc7f43dace42d2de04748c83c81
+docs/scene-render-comparison.md,Frozen scene composition comparison,3d85b6437b09b102181b18edda0db4622c0a240837d656c06b4e9f441c59e0e2
+docs/session-lifecycle.md,무기 소진과 시간제 효과의 수명,7a81a2bfcd7acf39bb89bf72b27792a2f63bf8d9da072d65c2bea99a7dfa5cfe
+docs/source-coverage.md,HeavyMach 1.13 source coverage audit,fd39413459591abc3a9d88ca796361fce935fb5a728cc2cc6a3d7c4f86044268
+docs/source-provenance.md,원본과 증거 출처,8580ad9195e03112e2329fda3de76ba313031ec7aa44cc0426a33802288ad8da
+docs/sprite-gl-reference.md,Original fixed GL reference,067b461d9abf8f5bcbc057088919d1613b598f0e08a7e4628ab920d3f5b6b210
+docs/sprite-native-integration.md,원본 렌더 규칙의 iOS 연결,4484c9f03202d5a15cfaeabe967336298d2a2fc3bc478320f3e248b2accb2347
+docs/sprite-raster.md,SpriteRaster — 원본 texture sampling과 blend 복원,64a722a831868b04e580e088a7ce13067ef7a3024bd57336c049e6dcd648b487
+docs/stage-journeys.md,Original map journeys,1ebefac75bce0657268e40cd3807722020c9deebc878459596061e0965e8b741
+docs/stage-transition-contract.md,Stage transition contracts,4c6c233e958a839ae25576343d36a8d6a61d536e20baec3527716e8c37d3f8ba
+docs/status-history-20261024.md,2026-10-24 조사·실행 이력,6b4d8a1ad56e1eb2196985eff59c616b37799123b5d9c123d35cc03420a2aa69
+docs/survival-audit.md,Survival 원본·소비자 독립 대조,86ef852dee33190905c6cad7ed3dc23ded4c8d23d3e0ea2bc9cb112824baea5f
+docs/survival-native-check.md,서바이벌 시뮬레이터 직접 검사,f521ae88181e17cbd1f2b9d05e61672cb1f0340822b472936d5f8fbc42c8a12b
+docs/texture-sampling-diagnosis.md,Texture sampling diagnosis,e5b31a1a7085b8e23ec066f748bd6974b29ab52557f095f6e91c87631888e24e
+docs/usability-todo.md,버그 수정·사용성 개선 과제,bcc57fbbb7ea1e62e06adba29fe5b88217c3d5e77d85a9dab7304c7be02aa151
+docs/validation-mode.md,조건별 검증 모드,14f129ffbddeb1a4e11f9390139b6859d3e9f56b35c902dfd31c8cb8b63e94e7
+docs/verification.md,검증 기준과 현재 증거,17d232a637ebbae5eb17906192ee9c7c2ed45d3a1061cfb36276d7f07163e2d4
+docs/weapon-result-fix-20261025.md,클리어 전체 화면·필살기 목표점 수정 — 2026-10-25,cb91bc645c92b6365e571fcef36d2447f827302b6438560fc46cc72a3c11947e
+docs/weapon-validation-procedure.md,치트 빌드 전체 무기 검증 절차,45f07217d137fddb21836e9303f0c963a043c9e0b65e887fec25b5e3bb123bc3
+docs/wide-canvas-plan.md,게임 플레이 캔버스 확장 조사와 구현 계획,570fdce1538d4ea1c62d0384ccfbf8becc7eb16599960ce3d1f893a982de697c
