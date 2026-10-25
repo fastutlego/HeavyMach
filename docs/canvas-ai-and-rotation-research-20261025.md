@@ -1,0 +1,63 @@
+# 전체 화면의 전투 보정·양방향 가로 회전 조사
+
+기록: 2026-10-25. 사용자 요청은 두 과제의 조사와 TODO 등록이다. 이 변경은 문서만 수정한다. 아래 구현안은 아직 적용하거나 실행 검증하지 않았다.
+
+## TODO A. 고정된 적 이동 규칙과 확장 화면의 간섭
+
+**목표:** 모든 적 계열의 이동·공격·생성·전투 경계가 확장된 카메라와 일관되게 작동하도록 보정 방법을 결정한다. 미션3-5 항공기 하나의 조기 활성 수정으로 이 과제를 완료하지 않는다. 기존 `acfae6f8`은 생성과 보스 AI 시작을 분리한 부분 수정이며, 이 정책 자체도 전투 전체 관점에서 평가한다.
+
+### 공개 개발 자료에서 확인한 방법
+
+| 방법 | 공개 근거 | HeavyMach에 적용할 때 판단할 점 |
+|---|---|---|
+| 기준 해상도와 표시 영역을 구분하고, 비율 유지 또는 추가 시야 중 정책을 선택 | [Godot 다중 해상도](https://docs.godotengine.org/en/stable/tutorials/rendering/multiple_resolutions.html)는 base size와 stretch/expand 방식을 구분한다. | 사용자가 선택한 전체 화면·추가 시야를 유지한다. 물리 단위와 화면에 보이는 범위를 혼동하지 않는다. |
+| 화면 진입으로 적을 활성화하는 방식은 명시적으로 선택 | [Godot VisibleOnScreenEnabler2D](https://docs.godotengine.org/en/stable/classes/class_visibleonscreenenabler2d.html)는 화면 가시성으로 노드 실행을 켜고 끈다. | 이 방식을 쓰면 넓은 화면에서 활성 시점이 바뀐다. 화면 준비, AI 실행, 피격, 발사, 제거 조건을 각각 조사한다. 생성만 앞당기는 수정도 이 연결 전체를 검사해야 한다. |
+| AI 인식 범위와 인식 해제 범위를 별도로 설정 | [Epic AI Perception](https://dev.epicgames.com/documentation/en-us/unreal-engine/ai-perception-in-unreal-engine)은 Sight Radius와 Lose Sight Radius를 따로 제공한다. | 표시 폭과 전투 접근 조건을 별도 값으로 관리하는 참고 구조다. 경계에서 활성/비활성이 반복되면 진입·이탈 조건을 구분하는 방법을 비교한다. 현재 원작에 없는 인식 시스템을 곧바로 넣는다는 뜻은 아니다. |
+| 카메라의 월드 경계와 화면 내 추적 여백을 구분 | [Godot Camera2D](https://docs.godotengine.org/en/stable/classes/class_camera2d.html)는 월드 limit와 비율형 drag margin을 따로 제공하고 실제 화면 중심 조회도 제공한다. | 이동 가능한 전장, 카메라 제한, 화면 안 목표 위치를 각각 구한다. 카메라 목표점과 보간·제한을 적용한 실제 화면을 혼동하지 않는다. |
+
+위 자료는 실제 엔진이 제공하는 설계 방법이다. 모든 상용 게임이 하나의 방식으로 해결한다는 증거는 아니다. 아래 보정안은 이 자료와 현재 코드에서 도출한 프로젝트 적용 후보다.
+
+### 현재 코드에서 찾은 조사 출발점
+
+| 소비 코드 | 현재 값·조건 | 조사할 간섭 |
+|---|---|---|
+| Enemy.cpp 지상 이동 | 플레이어+50, 거리400, 맵 오른쪽−30 | 좁은 전장에서 만든 거리 선택이 추가 시야에서 접근·후퇴 비율을 바꾸는가 |
+| Enemy.cpp 비행 이동 | 플레이어+120, 높이80~130, 목표 속도±0.5,1/30 보간 | 후퇴할 공간과 선택 빈도, 화면 오른쪽까지 가지 않는 원작 행동과 새 회귀를 구분 |
+| World.cpp 생성·보스 | 원작500/10, 확장 준비 여유128, 보스 배치+150 | 표시·생성·활동·잠금의 시작이 서로 맞는가; 공격받지만 반응하지 않는 선행 보스도 평가 |
+| Motion.cpp 이동 제한 | backLine+30 / frontLine−30 | 실제 전장의 가용 폭과 기체 크기·화면상 여유가 맞는가 |
+| Combat.cpp 무기AI | 부호 있는 dx+dy가0..520, 곡사 조준식의400 | 보이는 적의 사격 가능 여부와 이동 목표가 충돌하는가. 이520은 원형 사거리도 순수 X거리도 아니다. |
+| World.cpp / GameSession.cpp | 카메라 추종+(140,70),W/2,가시 범위+60,후방 정리240/320 | 카메라·컬링·후방 진행·월드 경계가 서로 다른 기준을 소비하는가 |
+| World.cpp Survival | 초기 위치right−480, 생성right+30 | 일반 캠페인과 다른 생성 방식에도 확장 영향이 있는가 |
+
+이 표는 전체 상수 감사의 완료 목록이 아니다. 부품 무기·탄환·충돌·모델별 데이터까지 사용처를 추적해 목록을 완성한다. 하드코딩 자체만으로 오류라고 판정하지 않는다. 값이 원작 월드 단위인지, 화면 폭을 대신하던 값인지, 난이도 값인지 먼저 구분한다.
+
+### 비교할 보정안과 진행 순서
+
+1. 원작480, 현행 확장, 보정 후보를 같은 맵·플레이어 입력·초기 상태·여러 시드로 기록한다. 단일 시드의 전체 궤적 일치는 요구하지 않는다. 확장된 활성 객체 수가 공통 난수 소비 순서를 바꿀 수 있다.
+2. **월드 규칙 보존안:** 이동 속도·유효 사거리·전장 경계는 월드 단위로 유지하고 카메라·표시 준비·입력만 가변폭으로 처리한다. 넓게 보이는 구간에서 전투 불일치가 남는지 측정한다. 지금 보스 활성 수정도 이 후보의 일부이지 전체 완료가 아니다.
+3. **화면 기준 규칙 보정안:** 조사에서 화면 내 배치 의도가 확인된 값만 정규화한다. 예를 들어 목표 화면 비율u는 `cameraX−W/2+u×W`로 월드 좌표로 변환하고 실제 전장·기체 범위로 제한한다. 화면의 일부가 전장 밖이면 가용 구간의 교집합을 사용하며, 빈 구간·좁은 구간의 대체 동작을 정의한다. 이 식을 원작의120·400·520 전부에 적용하지 않는다.
+4. 원래 전장이 너무 좁아 원하는 행동이 불가능하다면 전장 데이터 변경과 카메라 연출 변경을 별도 후보로 비교한다. 모든 값에W/480을 곱하면 이동 시간·사거리·난이도까지 바뀌므로 일괄 확대는 채택하지 않는다. 원작과 달라질 게임 규칙은 변경 이유와 측정 결과를 명시한다.
+5. 미션3-5 항공기로 재현 경로를 먼저 검증하고 지상·비행·고정형 적, 다중 보스, 좁은 맵, Survival까지 확대한다. 치트 앱에는 월드 경계·카메라 영역·생성 범위·AI 이동 목표·공격 가능 범위를 겹쳐 보는 진단 후보를 둔다. 이 진단은 일반 앱의 UI로 넣지 않는다.
+
+완료 조건: 480, Air, Pro Max 비율에서 최초 가시/활성/공격 시각, 플레이어와 최소 거리, 좌우 이동량·체류 시간, 경계에 막힌 시간, 보이지만 공격하지 못하는 시간, 동시 공격 수를 비교한다. 접근·후퇴·맵끝·추가 영역 터치 사격과 피해를 직접 확인한다. 확장 시야를 보존하면서 의도하지 않은 동작 차이를 고친 근거를 남긴다. 어떤 차이를 유지하고 보정했는지 적 계열별로 기록한 뒤 완료 처리한다. **현재 상태: 조사 근거·작업안 등록, 전체 감사·보정·플레이 검증 대기.**
+
+## TODO B. OS 방향을 따르는 양방향 가로 플레이
+
+**요구:** iPhone을 어느 쪽으로 눕혀도 OS가 정한 가로 방향으로 게임·HUD·터치·틸트가 함께 동작한다. 세로 플레이는 지원하지 않는다.
+
+### 현재 사실
+
+- 일반·치트 Info.plist에는 LandscapeLeft와 LandscapeRight만 등록돼 있다. Application.mm의 루트 컨트롤러도 `UIInterfaceOrientationMaskLandscape`를 반환한다.
+- HMGameView는 `windowScene.interfaceOrientation`을 읽고 LandscapeRight에서 센서X/Y를 반전한 뒤 원작 필터에 넣는다. `layoutSubviews`에서 캔버스·HUD·검증 버튼 위치를 갱신한다.
+- 위 정적 설정과 기존 두 방향 센서 표본 검사는 실제 OS의180도 방향 전환 전체가 정상이라는 증거가 아니다. 현재 Application.mm에는 scene 방향 변경을 받는 별도 처리도 없다. 이것만으로 실패 원인을 확정하지 않는다.
+
+### Apple 권장 API와 구현 후보
+
+- 지원 방향은 [UISupportedInterfaceOrientations](https://developer.apple.com/documentation/BundleResources/Information-Property-List/UISupportedInterfaceOrientations)와 컨트롤러의 가로 마스크를 유지한다. 한쪽 방향을 강제하지 않는다. iOS27의 scene 지원 방향 재정의가 추가되면 여기에도 같은 가로 마스크를 유지한다. 현재는 그 메서드를 구현하지 않아 plist를 사용한다.
+- 현재 Apple 문서는 [effectiveGeometry](https://developer.apple.com/documentation/uikit/uiwindowscene/effectivegeometry)의 변경 관측을 안내한다. [scene.interfaceOrientation](https://developer.apple.com/documentation/uikit/uiwindowscene/interfaceorientation)은 deprecated이며 `effectiveGeometry.interfaceOrientation`으로 대체한다. 기존 API 사용 자체가 회전 실패의 증거는 아니다.
+- 설치된 iOS27.1 SDK 헤더에서 effectiveGeometry는 iOS16+, `windowScene:didUpdateEffectiveGeometry:`는 iOS26+, `supportedInterfaceOrientationsForWindowScene:`은 iOS27+임을 확인했다. 현재 앱 최소 버전은15.0이다. 구현 때 availability 분기와 iOS15의 기존 scene 방향 조회·변경 통지를 보존한다.
+- [viewWillTransition(to:with:)](https://developer.apple.com/documentation/uikit/uicontentcontainer/viewwilltransition(to:with:))은 크기 변화 통지다. 가로↔가로180도에서는 폭·높이가 같으므로 크기 변경만으로 방향 전환을 감지하지 않는다. scene의 실제 방향 변경을 확인하고 safe area·HUD·월드 터치 변환·센서 기준을 함께 갱신하는 경로를 검증한다.
+- 전환 중 누르고 있던 월드 사격·HUD 누름·치트 방향 입력의 취소 시점을 정한다. 가짜 좌표를 보내지 않고 기존 releaseFire 경로를 사용한다. 틸트 필터에 이전 방향 값이 남아 순간 역주행하는지도 검사하고 필요할 때 방향 전환 경계에서 필터를 재설정한다. 화면 회전 때문에 게임 세션·저장·진행을 초기화하거나 레이아웃에서 추가 tick을 실행하지 않는다.
+- 실제 UI 방향을 사용한다. 물리 기기 방향 값이나 수동 화면 transform으로 OS 회전을 흉내 내지 않는다. 회전 잠금 상태는 별도 조건으로 기록하고 OS가 결정한 방향을 따른다. 가로 지원 여부와 사용자 회전 잠금 해제를 혼동하지 않는다.
+
+완료 조건: 일반·치트 앱에서 두 방향 콜드 실행, 플레이 중좌↔우180도 전환20회, 사격·틸트 유지 중 전환, 메뉴·결과·치트 패널·백그라운드 복귀를 검사한다. 각 방향의 좌우 끝 터치가 같은 월드 목표점으로 변환되고, 화면 오른쪽을 내리면 탱크가 오른쪽으로 이동해야 한다. 노치·안전영역·HUD가 가려지지 않고 입력 잔류·순간 역주행·세로 플레이가 없어야 한다. 시뮬레이터 OS 회전과 실제 폰 센서·회전 검사를 구분한다. **현재 상태: 방법 조사·TODO 등록, 수정·실제 OS 전환 검증 대기.**
