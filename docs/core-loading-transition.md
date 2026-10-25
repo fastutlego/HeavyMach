@@ -1,5 +1,7 @@
 # GameMain loading shutter 복원
 
+> **원본480 코어 분석·검사 이력.** 아래 입력 gate 설명은 원본 코어 범위다. 현행 확장 앱은 HMGameView에서 로딩/모달 동안 월드 입력을 막고 메뉴 셔터를 중앙·좌·우로 반복한다. [좌표 정책](coordinate-policy.md), [렌더 정책](rendering-policy.md)을 함께 따른다. 전체 화면 단일 문은 [기획 HM-DOOR](game-design.md)의 승인·미구현 요구다.
+
 `LoadingTransition.hpp/.cpp`는 원본 GameMain의 화면 전환 상태를 실행 가능한 C++로 복원한다. 원본 증거는 `Analysis/functions/0x2ecc.{pseudo.c,asm}`(초기화), `0x3374`(tick), `0x3890`(changeScreen), `0x3778`(clearAllScreen), `0x38b0`(refreshScreen)이다. 화면 생성·삭제는 host의 책임이다. 이 모듈만으로 iOS 연결 완료를 뜻하지 않는다.
 
 ## 원본 상태와 수치

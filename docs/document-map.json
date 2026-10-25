@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "current_documents": [
+    "AGENTS.md",
+    "README.md",
+    "docs/canonical.md",
+    "docs/document-governance.md",
+    "docs/game-design.md",
+    "docs/restoration-contract.md",
+    "docs/design.md",
+    "docs/coordinate-policy.md",
+    "docs/rendering-policy.md",
+    "docs/game-calculation-policy.md",
+    "docs/runtime-policy.md",
+    "docs/weapon-validation-procedure.md",
+    "docs/stage-transition-contract.md",
+    "docs/source-provenance.md",
+    "docs/report-site.md"
+  ],
+  "base_read": [
+    "AGENTS.md",
+    "docs/canonical.md",
+    "docs/document-governance.md",
+    "docs/game-design.md",
+    "docs/restoration-contract.md",
+    "docs/current-status.md",
+    "docs/design.md",
+    "docs/usability-todo.md"
+  ],
+  "domains": {
+    "planning": {
+      "label": "기획·규칙·진행",
+      "read": [
+        "docs/game-calculation-policy.md",
+        "docs/stage-transition-contract.md"
+      ],
+      "sources": [
+        "Sources/Core/GameSession.cpp",
+        "Sources/Core/GameData.cpp",
+        "Sources/Core/GlobalInfo.cpp"
+      ],
+      "tests": [
+        "Tests/GameSessionTests.cpp",
+        "Tests/CoreTests.cpp"
+      ],
+      "evidence": [
+        "docs/current-status.md",
+        "docs/stage-journeys.md"
+      ]
+    },
+    "input": {
+      "label": "입력·좌표·회전",
+      "read": [
+        "docs/coordinate-policy.md",
+        "docs/runtime-policy.md",
+        "docs/weapon-validation-procedure.md"
+      ],
+      "sources": [
+        "Sources/Core/Viewport.hpp",
+        "Sources/Core/CanvasGeometry.hpp",
+        "Sources/Core/Player.cpp",
+        "Sources/iOS/HMGameView.*",
+        "Sources/iOS/HMValidationControls.*",
+        "Sources/iOS/Application.mm"
+      ],
+      "tests": [
+        "Tests/iOS/HMFramePerformanceTests.mm",
+        "Tests/PlayerTests.cpp"
+      ],
+      "evidence": [
+        "docs/physical-edge-check-20261025.md",
+        "docs/physical-self-test-20261025.md"
+      ]
+    },
+    "rendering": {
+      "label": "그래픽·아트·표시",
+      "read": [
+        "docs/rendering-policy.md",
+        "docs/coordinate-policy.md",
+        "docs/weapon-validation-procedure.md"
+      ],
+      "sources": [
+        "Sources/iOS/HMGLRenderer.*",
+        "Sources/iOS/HMMedia.*",
+        "Sources/Core/Visuals.*",
+        "Sources/Core/Trail.*",
+        "Art/Extensions/*"
+      ],
+      "tests": [
+        "Tests/iOS/HMGLReferenceTests.mm",
+        "Tests/iOS/HMResourceLifecycleTests.mm",
+        "Tests/iOS/HMFramePerformanceTests.mm"
+      ],
+      "evidence": [
+        "docs/menu-joins-20261025.md",
+        "docs/weapon-result-fix-20261025.md"
+      ]
+    },
+    "menus": {
+      "label": "메뉴·결과·화면 전환",
+      "read": [
+        "docs/coordinate-policy.md",
+        "docs/rendering-policy.md",
+        "docs/runtime-policy.md"
+      ],
+      "sources": [
+        "Sources/iOS/HMMenus.*",
+        "Sources/iOS/HMGameHUD.*",
+        "Sources/iOS/HMGameView.*",
+        "Sources/Core/LoadingTransition.*"
+      ],
+      "tests": [
+        "Tests/iOS/HMMenuParityTests.mm",
+        "Tests/LoadingTransitionTests.cpp",
+        "Tests/iOS/HMFramePerformanceTests.mm"
+      ],
+      "evidence": [
+        "docs/menu-joins-20261025.md",
+        "docs/core-loading-transition.md"
+      ]
+    },
+    "combat": {
+      "label": "무기·적·계산",
+      "read": [
+        "docs/game-calculation-policy.md",
+        "docs/coordinate-policy.md",
+        "docs/weapon-validation-procedure.md"
+      ],
+      "sources": [
+        "Sources/Core/Combat.*",
+        "Sources/Core/Enemy.*",
+        "Sources/Core/Player.*",
+        "Sources/Core/World.*",
+        "Sources/Core/Motion.*",
+        "Sources/Core/GameSession.*"
+      ],
+      "tests": [
+        "Tests/CombatTests.cpp",
+        "Tests/PlayerTests.cpp",
+        "Tests/WorldTests.cpp",
+        "Tests/iOS/HMFramePerformanceTests.mm"
+      ],
+      "evidence": [
+        "docs/boss-motion-fix-20261025.md",
+        "docs/weapon-result-fix-20261025.md",
+        "docs/current-status.md"
+      ]
+    },
+    "runtime": {
+      "label": "음향·저장·생명주기·성능",
+      "read": [
+        "docs/runtime-policy.md",
+        "docs/rendering-policy.md",
+        "docs/game-calculation-policy.md"
+      ],
+      "sources": [
+        "Sources/iOS/HMGameView.*",
+        "Sources/iOS/Application.mm",
+        "Sources/iOS/HMOpenALAudio.*",
+        "Sources/Core/SaveData.*",
+        "Sources/Core/GlobalInfo.*"
+      ],
+      "tests": [
+        "Tests/iOS/HMSaveParityTests.mm",
+        "Tests/iOS/HMOpenALAudioTests.mm",
+        "Tests/iOS/HMFramePerformanceTests.mm",
+        "Tests/iOS/HMPassiveLifecycleTests.mm"
+      ],
+      "evidence": [
+        "docs/instruments-validation-20261024.md",
+        "docs/compat-source-comparison-20261024.md",
+        "docs/current-status.md"
+      ]
+    },
+    "validation": {
+      "label": "빌드·설치·실기기 검사",
+      "read": [
+        "docs/weapon-validation-procedure.md",
+        "docs/runtime-policy.md",
+        "docs/source-provenance.md"
+      ],
+      "sources": [
+        "iOS/project.yml",
+        "iOS/HeavyMachRestored.xcodeproj/*",
+        "Sources/iOS/HMValidation*",
+        "tools/prepare_device_validation.py"
+      ],
+      "tests": [
+        "Tests/iOS/HMFramePerformanceTests.mm",
+        "Tests/iOS/HMSaveParityTests.mm"
+      ],
+      "evidence": [
+        "docs/device-validation-ready.md",
+        "docs/release-review-20261025.md",
+        "docs/physical-self-test-20261025.md"
+      ]
+    },
+    "documentation": {
+      "label": "문서·보고",
+      "read": [
+        "docs/report-site.md"
+      ],
+      "sources": [
+        "docs/*",
+        "AGENTS.md",
+        "README.md",
+        "tools/document_contract.py"
+      ],
+      "tests": [],
+      "evidence": [
+        "docs/current-status.md"
+      ]
+    }
+  }
+}

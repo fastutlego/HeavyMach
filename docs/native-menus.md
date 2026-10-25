@@ -1,4 +1,6 @@
-# 원본 메뉴 복원
+# 원본 메뉴 복원 당시 기록
+
+> **초기 구현 이력.** 아래 UIKit/CoreGraphics·변환 PNG 설명은 당시 경로다. 현행 메뉴는 HMMenus → HMMedia → HMGLRenderer의 OpenGL 경로이며 OriginalImages와 별도 Extensions 자원을 소비한다. 현재 좌표·입력은 [좌표 정책](coordinate-policy.md), 배경·UV는 [렌더 정책](rendering-policy.md), 화면별 결과는 [메뉴 연결 보고](menu-joins-20261025.md)를 따른다.
 
 `Sources/iOS/HMMenus.h/.mm`은 GuiSelectSlot, GuiSelectMode, GuiSelectMission의 원본 데이터·좌표·선택 분기를 UIKit/CoreGraphics로 옮긴다. 원본 실행 파일이나 호환 실행기는 사용하지 않는다. 그림은 원본에서 변환한 PNG, 글자는 원본 NumSet01 16열 atlas다.
 

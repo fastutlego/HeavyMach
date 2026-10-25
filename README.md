@@ -8,11 +8,14 @@
 
 | 문서 | 내용 |
 | --- | --- |
+| [game-design](docs/game-design.md) | 게임 기획·화면 의도·요구 ID·승인/미구현 범위 |
+| [document-governance](docs/document-governance.md) | 문서 위계·업무별 읽기·변경 전파·문서/코드/앱 대조 |
+| [document-map](docs/document-map.json) | 현행 문서와 업무별 소스·검사·증거 연결 |
 | [source-provenance](docs/source-provenance.md) | 사용자 제공 링크, 원본 식별·해시, REA 증거 위치 |
 | [current-status](docs/current-status.md) | 정적 분석·사용자 관측·남은 검증 |
 | [restoration-contract](docs/restoration-contract.md) | 보존 요구와 소스 복원 완료 기준 |
 | [design](docs/design.md) | 확인한 함수·데이터와 복원 설계 |
-| [verification](docs/verification.md) | 빌드·동작 비교·저장 검사 기준 |
+| [verification](docs/verification.md) | 과거 빌드·동작 비교·저장 실행 이력. 현행은 current-status와 분야 정책 |
 | [validation-mode](docs/validation-mode.md) | 조건 설정 패널·실제 레벨업·외형·저장 검사 결과 |
 | [source-coverage](docs/source-coverage.md) | 원본 함수와 복원 소스 대응·남은 범위 |
 | [boss-battles-v6](docs/boss-battles-v6.md) | 최신 코어의 보스 48개 실제 처치 검사 |
@@ -39,3 +42,12 @@ ctest --test-dir HeavyMach/build/core --output-on-failure
 프로젝트 구성 변경 후 생성은 `xcodegen generate --spec HeavyMach/iOS/project.yml`이다. 원본 IPA·추출본·사용자 저장·검증된 호환 실행본을 덮어쓰지 않는다. 최신 빌드·실행 성공 범위와 미확인 항목은 위 문서에서 확인한다.
 
 원본과 추출 자원 `Resources/`, 로컬 분석 `Analysis/`, `build/`는 Git에서 제외한다. 새 checkout은 원본 없이 앱을 빌드할 수 없다. [출처](docs/source-provenance.md)의 동일 SHA 원본을 별도 보관하고 `python3 HeavyMach/tools/export_resources.py --source <원본-추출-앱-폴더> --output HeavyMach/Resources`로 파생 자원을 준비한다. 입력 폴더 구조는 `--help`와 출처 기록을 확인한다. 기존 자원과 사용자 저장을 덮어쓰지 않는다. vendor의 라이선스를 유지한다.
+
+업무별 읽기 목록과 문서 연결 검사:
+
+```sh
+python3 HeavyMach/tools/document_contract.py plan --task rendering
+python3 HeavyMach/tools/document_contract.py check
+```
+
+이 명령은 문서 연결을 검사한다. 기능 의미와 앱 실행의 정상 여부는 관련 정책·코드·실행 증거를 대조한다.

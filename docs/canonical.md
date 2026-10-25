@@ -5,12 +5,18 @@
 ## 읽는 순서와 우선순위
 
 1. 최신 사용자 지시와 사용자 제공 원본을 먼저 확인한다.
-2. 이 문서, [복원 계약](restoration-contract.md), [현재 상태](current-status.md), [설계](design.md)를 읽는다.
-3. 수정할 경로의 [좌표·입력](coordinate-policy.md), [그래픽](rendering-policy.md), [게임 수치](game-calculation-policy.md), [시간·저장·음향](runtime-policy.md)을 읽고 실제 소비 코드와 대조한다.
+2. 이 문서, [문서 위계](document-governance.md), [게임 기획](game-design.md), [복원 계약](restoration-contract.md), [현재 상태](current-status.md), [설계](design.md)를 읽는다.
+3. [업무 연결표](document-map.json)로 업무/파일에 맞는 필수 문서·소스·검사를 고른다. 수정할 경로의 [좌표·입력](coordinate-policy.md), [그래픽](rendering-policy.md), [게임 수치](game-calculation-policy.md), [시간·저장·음향](runtime-policy.md)을 읽고 실제 소비 코드와 대조한다.
 4. 사용자 후속 요구는 [사용성 TODO](usability-todo.md)와 [전체 캔버스 계획](wide-canvas-plan.md)에서 확인한다. 현행 정책과 변경 예정 정책을 구분한다.
 5. 과거 인계·실험 보고는 증거다. 과거의 UIKit/AVAudioPlayer/CADisplayLink 구현 설명을 현행 정책으로 사용하지 않는다.
 
 제품 요구는 사용자 지시와 원본 동작이 소유한다. 이 정책들은 확인한 요구를 코드에 연결한다. 코드가 정책과 다르면 어느 쪽이 원본과 일치하는지 조사한다. 정책을 현재 버그에 맞춰 바꾸거나 코드에 적혀 있다는 이유만으로 정상 판정하지 않는다.
+
+## 요구와 구현의 일치
+
+문서·소스·앱 기능은 서로를 설명해야 한다. 기획은 플레이어 경험과 승인 범위, 설계·정책은 구현 계약, 코드는 소비 경로, 검사·앱 관측은 실행 근거를 소유한다. [위계와 갱신 절차](document-governance.md)를 적용한다. 단순 링크 존재나 검사 개수로 의미 일치를 대신하지 않는다.
+
+현행 문서 목록은 document-map의 current_documents다. 나머지 조사·과거 구현·회고는 증거로 읽는다. 과거 기록에 “최신”이라고 쓰여 있어도 current-status의 후속 소스·기기·날짜 확인을 대신하지 않는다.
 
 ## 비교 대상
 
