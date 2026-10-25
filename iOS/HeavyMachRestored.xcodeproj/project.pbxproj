@@ -32,6 +32,7 @@
 		3549F8743EC5CB5DC2333AE1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 468052086D7E83CA9082C781 /* AudioToolbox.framework */; };
 		36B87DB646094149B91FC32E /* HMPresentationComparisonTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 75D4A147C89FD559D4F2FAFE /* HMPresentationComparisonTests.mm */; };
 		38A50FAFBCFD92D199E3FC53 /* GameData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BD535D00E62855E25AAF25F6 /* GameData.cpp */; };
+		3AB881ED7DDE952986DABF4A /* Extensions in Resources */ = {isa = PBXBuildFile; fileRef = CFE8A38F6A1D264107395B6C /* Extensions */; };
 		3AE92446C260CA4E3A9A556B /* HMGLReferenceTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = A9CA1558485D3C2302CA7538 /* HMGLReferenceTests.mm */; };
 		3D6EE7E93504266D3442585E /* Combat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75CBCE252A516BE6D3C4B60D /* Combat.cpp */; };
 		41FD3F04B56388665E1E4960 /* HMOpenALAudioTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = BFA9C0EA840375E3AA9D6457 /* HMOpenALAudioTests.mm */; };
@@ -76,6 +77,7 @@
 		A64B626868764051A1CBFE12 /* ValidationScenario.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FBE6CF977C10B2548DBB245 /* ValidationScenario.cpp */; };
 		A7DFA04F9BA10C33CB1CF24B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0E3F23BC796185FFA68D58 /* UIKit.framework */; };
 		A80B127AE3A11F4B8A2C7778 /* CameraShake.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 937A11CD2CE965794FFE8D1E /* CameraShake.cpp */; };
+		AC3866B3AEE33D7A50AEC7F4 /* Extensions in Resources */ = {isa = PBXBuildFile; fileRef = CFE8A38F6A1D264107395B6C /* Extensions */; };
 		B3303F184860EB435918CDE3 /* BulletVisual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ABFBD7103A57A910CAAD8075 /* BulletVisual.cpp */; };
 		B532FAE688D3AAD6E11228EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F004D6E34EDF564EF4BB5AE /* Assets.xcassets */; };
 		B5E6185DF6FC5425138BAF0E /* ItemBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF3A5210BEE49DC5CBA64B45 /* ItemBox.cpp */; };
@@ -153,10 +155,14 @@
 		28395D016CD926BE352FCB23 /* Application.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Application.mm; sourceTree = "<group>"; };
 		28753B5A5C5D07136C518D1F /* validation-mode.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "validation-mode.md"; sourceTree = "<group>"; };
 		2C3BDB2E129A9E44548E2A49 /* stage-transition-contract.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "stage-transition-contract.md"; sourceTree = "<group>"; };
+		2D45BB164B71C7D6B4A1A4DD /* weapon-validation-procedure.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "weapon-validation-procedure.md"; sourceTree = "<group>"; };
 		2E643F9C22E5FA4672DE3280 /* core-player.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "core-player.md"; sourceTree = "<group>"; };
 		326ADA81CEF8AD70460634EF /* verification.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = verification.md; sourceTree = "<group>"; };
+		32C17D64DAC4FC4E65AE60F6 /* coordinate-policy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "coordinate-policy.md"; sourceTree = "<group>"; };
 		336B28E4FD9D946A8A413417 /* boss-battles-v1.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "boss-battles-v1.md"; sourceTree = "<group>"; };
+		3370A35BF1B15BAE7F834631 /* usability-todo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "usability-todo.md"; sourceTree = "<group>"; };
 		3442B5CFF5DCE295233C3CF3 /* World.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = World.cpp; sourceTree = "<group>"; };
+		348FB844DFE09A2B2FBF1D73 /* physical-edge-check-20261025.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "physical-edge-check-20261025.md"; sourceTree = "<group>"; };
 		3522F0209DDEC113BE30C1BE /* camera-integration.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "camera-integration.md"; sourceTree = "<group>"; };
 		36C91BD13C30DCFCC76905D3 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		371911921620889755DC4314 /* Player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
@@ -173,10 +179,13 @@
 		40B5BBD1408F95F15D983471 /* HMAudioTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMAudioTests.mm; sourceTree = "<group>"; };
 		410ADE42E28C6C78D1BF8E06 /* HeavyMachRestored.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = HeavyMachRestored.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4175F25694C612B77B0BF495 /* nil-parts-boundary.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "nil-parts-boundary.md"; sourceTree = "<group>"; };
+		41F9D1278B5C5F0CAF8B9047 /* rendering-policy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "rendering-policy.md"; sourceTree = "<group>"; };
 		43D13F901C96A2E5889D5B3F /* Player.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
 		4665447F7C51390B2EDF19F3 /* TitleState.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TitleState.cpp; sourceTree = "<group>"; };
 		468052086D7E83CA9082C781 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		477670E2EB9D0943464767BB /* physical-self-test-20261025.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "physical-self-test-20261025.md"; sourceTree = "<group>"; };
 		486909B41A4C258717D510AD /* Motion.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Motion.cpp; sourceTree = "<group>"; };
+		4B96C5E574626EE4EECE8BCE /* wide-canvas-plan.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "wide-canvas-plan.md"; sourceTree = "<group>"; };
 		4BA1701AF56F5AABF1C13DF8 /* core-loading-transition.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "core-loading-transition.md"; sourceTree = "<group>"; };
 		4F37507E6DFEC50B21BA3F45 /* scene-render-comparison.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "scene-render-comparison.md"; sourceTree = "<group>"; };
 		5190300C1A59AEF507E4679C /* HMGameHUD.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMGameHUD.mm; sourceTree = "<group>"; };
@@ -209,10 +218,13 @@
 		77847EF65DD7629DBD23D5D0 /* core-trail.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "core-trail.md"; sourceTree = "<group>"; };
 		78337F678A716FD48171D145 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		7889339C9E809ED8B58B09DC /* Combat.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Combat.hpp; sourceTree = "<group>"; };
+		797C960A51D9D63C910A96BB /* runtime-policy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "runtime-policy.md"; sourceTree = "<group>"; };
 		7A31FE2665B96448515EEE06 /* HMOpenALAudio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMOpenALAudio.h; sourceTree = "<group>"; };
 		7CD899817C62F8E38FEE5AE1 /* core-title.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "core-title.md"; sourceTree = "<group>"; };
+		7D0DB01D3E25BDB027FD1FB5 /* boss-motion-fix-20261025.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "boss-motion-fix-20261025.md"; sourceTree = "<group>"; };
 		85F6D98D330E6DB6AC9F4BEC /* OriginalTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OriginalTypes.h; sourceTree = "<group>"; };
 		86C15F435CA15B9B70063669 /* GameSession.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameSession.cpp; sourceTree = "<group>"; };
+		873AF8B5832718C3BD3A1C28 /* report-site.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "report-site.md"; sourceTree = "<group>"; };
 		89B16328BFC2E9FFEA2C48DB /* HMResourceLifecycleTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMResourceLifecycleTests.mm; sourceTree = "<group>"; };
 		8AADFC1117F5DC5B0122FD9D /* audio-preload.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "audio-preload.md"; sourceTree = "<group>"; };
 		8E74F76EA57F3C2606331405 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -230,10 +242,12 @@
 		A1CE72CBB857247C9F80FCC7 /* Geometry.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Geometry.cpp; sourceTree = "<group>"; };
 		A2E598C85C26B839AE180293 /* method-address-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "method-address-map.json"; sourceTree = "<group>"; };
 		A403317FD1BF90855CFB564C /* RawData */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RawData; path = ../Resources/RawData; sourceTree = SOURCE_ROOT; };
+		A6CB4A553495F4B6F8EE8DAF /* device-validation-ready.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "device-validation-ready.md"; sourceTree = "<group>"; };
 		A91F953B1703AB174F0C23B0 /* HMGameView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMGameView.h; sourceTree = "<group>"; };
 		A9CA1558485D3C2302CA7538 /* HMGLReferenceTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMGLReferenceTests.mm; sourceTree = "<group>"; };
 		AACB612D08366230690E6ACE /* core-world.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "core-world.md"; sourceTree = "<group>"; };
 		AB2B83C0AFA0601BE600779D /* core-bullet-visual.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "core-bullet-visual.md"; sourceTree = "<group>"; };
+		ABDF5F1AA41594D5026EF226 /* CanvasGeometry.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CanvasGeometry.hpp; sourceTree = "<group>"; };
 		ABFBD7103A57A910CAAD8075 /* BulletVisual.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BulletVisual.cpp; sourceTree = "<group>"; };
 		AC604AAB654EE3345C901005 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		ADF6F29FF2087EC17C84AE43 /* core-motion.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "core-motion.md"; sourceTree = "<group>"; };
@@ -255,24 +269,30 @@
 		C7E6ABAC1DA3D6188B74393C /* Trail.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Trail.hpp; sourceTree = "<group>"; };
 		CBA5D6DFB4E6F36DD46C9562 /* compat-source-comparison-20261024.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "compat-source-comparison-20261024.md"; sourceTree = "<group>"; };
 		CD19D44EB582868D2C335E72 /* Enemy.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy.cpp; sourceTree = "<group>"; };
+		CE0895004A718D9473CE2A69 /* canonical.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = canonical.md; sourceTree = "<group>"; };
+		CFE8A38F6A1D264107395B6C /* Extensions */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Extensions; path = ../Art/Extensions; sourceTree = SOURCE_ROOT; };
 		D1F50286C06B858877C3A946 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Images; path = ../Resources/Images; sourceTree = SOURCE_ROOT; };
 		D4DB0812856CF552EC502E0D /* HMCompatibilityPixelsTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMCompatibilityPixelsTests.mm; sourceTree = "<group>"; };
 		D5C84524B4CA6737D6FA809A /* stage-journeys.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "stage-journeys.md"; sourceTree = "<group>"; };
 		D5DA7F293333D0073AC3F1DA /* HMValidationPanel.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMValidationPanel.mm; sourceTree = "<group>"; };
 		D689A4A51729CAE4C1E7D983 /* HMOpenALAudio.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMOpenALAudio.mm; sourceTree = "<group>"; };
+		D735C213C78FA6E56456FD24 /* clear-illustration-fix-20261025.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "clear-illustration-fix-20261025.md"; sourceTree = "<group>"; };
 		D8BAC91FF954AAC24023E519 /* GameSession.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameSession.hpp; sourceTree = "<group>"; };
 		DB38E0AB6F171CAF66399D6D /* SaveData.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SaveData.cpp; sourceTree = "<group>"; };
 		DC0E3F23BC796185FFA68D58 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DCF39ED8C3A4048A2F7947BD /* Visuals.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Visuals.hpp; sourceTree = "<group>"; };
 		DDE16D89BAF35E6A7913B4D8 /* GameData.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameData.hpp; sourceTree = "<group>"; };
+		DEF3A9AFC6A532C841FB1313 /* weapon-result-fix-20261025.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "weapon-result-fix-20261025.md"; sourceTree = "<group>"; };
 		DF5B74B06F0F05701EB3027A /* survival-native-check.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "survival-native-check.md"; sourceTree = "<group>"; };
 		DFEC29D6DA7CE11F4F7B1592 /* core-geometry.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "core-geometry.md"; sourceTree = "<group>"; };
 		E0799D413AD7EE1F1281AD75 /* SpriteRaster.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SpriteRaster.cpp; sourceTree = "<group>"; };
 		E30EBDF1118EE457533D871C /* source-provenance.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "source-provenance.md"; sourceTree = "<group>"; };
 		E36255097F0F39E7A9867CD0 /* LoadingTransition.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LoadingTransition.hpp; sourceTree = "<group>"; };
 		E36806D61F2AE81865D1CF89 /* CameraShake.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CameraShake.hpp; sourceTree = "<group>"; };
+		E78A123DED194A1CD126DC33 /* canvas-ai-and-rotation-research-20261025.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "canvas-ai-and-rotation-research-20261025.md"; sourceTree = "<group>"; };
 		E8432EED144FFE452F8B6904 /* handover-20261024.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "handover-20261024.md"; sourceTree = "<group>"; };
 		E963F8D2FAFCEF1D80EB3403 /* GlobalInfo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GlobalInfo.cpp; sourceTree = "<group>"; };
+		E98970B311A0BFCE501D0899 /* game-calculation-policy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "game-calculation-policy.md"; sourceTree = "<group>"; };
 		EC5A4726B46F9E01D381071A /* audio-fidelity.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "audio-fidelity.md"; sourceTree = "<group>"; };
 		EEF173AB49983E4525BCF020 /* sprite-gl-reference.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "sprite-gl-reference.md"; sourceTree = "<group>"; };
 		EF023FE8F1206DB6CDC7CC31 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -339,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				38C21211420BDCCDE964F3F8 /* Audio */,
+				CFE8A38F6A1D264107395B6C /* Extensions */,
 				D1F50286C06B858877C3A946 /* Images */,
 				9D1F41F01FF462B3521CE73C /* OriginalImages */,
 				A403317FD1BF90855CFB564C /* RawData */,
@@ -425,6 +446,7 @@
 				6EB8405D5A300A44CA95FF93 /* BulletVisual.hpp */,
 				937A11CD2CE965794FFE8D1E /* CameraShake.cpp */,
 				E36806D61F2AE81865D1CF89 /* CameraShake.hpp */,
+				ABDF5F1AA41594D5026EF226 /* CanvasGeometry.hpp */,
 				75CBCE252A516BE6D3C4B60D /* Combat.cpp */,
 				7889339C9E809ED8B58B09DC /* Combat.hpp */,
 				CD19D44EB582868D2C335E72 /* Enemy.cpp */,
@@ -478,9 +500,14 @@
 				336B28E4FD9D946A8A413417 /* boss-battles-v1.md */,
 				98F439444AA54CC19AA4B9D0 /* boss-battles-v5.md */,
 				246630478B515E6581CC3F6F /* boss-battles-v6.md */,
+				7D0DB01D3E25BDB027FD1FB5 /* boss-motion-fix-20261025.md */,
 				3522F0209DDEC113BE30C1BE /* camera-integration.md */,
+				CE0895004A718D9473CE2A69 /* canonical.md */,
+				E78A123DED194A1CD126DC33 /* canvas-ai-and-rotation-research-20261025.md */,
 				22777839507DB25AB4AF3506 /* cheat-stage-check.md */,
+				D735C213C78FA6E56456FD24 /* clear-illustration-fix-20261025.md */,
 				CBA5D6DFB4E6F36DD46C9562 /* compat-source-comparison-20261024.md */,
+				32C17D64DAC4FC4E65AE60F6 /* coordinate-policy.md */,
 				AB2B83C0AFA0601BE600779D /* core-bullet-visual.md */,
 				7637A54CE17ECE74B7B615B9 /* core-camera.md */,
 				C494426FBB8D5336C00815DC /* core-enemy.md */,
@@ -497,7 +524,9 @@
 				AACB612D08366230690E6ACE /* core-world.md */,
 				2584106093F1DF4FEF43B5C9 /* current-status.md */,
 				C63D82DEF048E11F9598C173 /* design.md */,
+				A6CB4A553495F4B6F8EE8DAF /* device-validation-ready.md */,
 				9D8DF3657E31249D9890236E /* frame-drop-investigation-20261024.md */,
+				E98970B311A0BFCE501D0899 /* game-calculation-policy.md */,
 				3DB19E4A0D6282EF80468101 /* gauge-registration.md */,
 				E8432EED144FFE452F8B6904 /* handover-20261024.md */,
 				02C082E687D3B99D11B31AE3 /* hud-event-order.md */,
@@ -511,12 +540,17 @@
 				72C1B5E41727ECC6F9E816D9 /* normal-fidelity-ui-check.md */,
 				BC1E09CFCBB560DCCFEAC832 /* objc-reconstruction.md */,
 				390607579E2C3B74E55BE0D4 /* opengl-migration-20261024.md */,
+				348FB844DFE09A2B2FBF1D73 /* physical-edge-check-20261025.md */,
+				477670E2EB9D0943464767BB /* physical-self-test-20261025.md */,
 				6EB9EABE72CF2DFD14B6DE71 /* player-gauge.md */,
 				3ADB54D9B5A9A03B6B9A51DB /* presentation-ab-20261024.md */,
 				6EDD756A4457CA734779347C /* render-fidelity-audit.md */,
 				3F81E2D1CF48A6BDCECF1B4C /* render-performance.md */,
+				41F9D1278B5C5F0CAF8B9047 /* rendering-policy.md */,
+				873AF8B5832718C3BD3A1C28 /* report-site.md */,
 				9121E88C559982D938156650 /* resource-formats.md */,
 				A00E4CAC3EA41FD587F8CA92 /* restoration-contract.md */,
+				797C960A51D9D63C910A96BB /* runtime-policy.md */,
 				94B9B0CC2CD8415CE10F3C52 /* same-save-comparison.md */,
 				4F37507E6DFEC50B21BA3F45 /* scene-render-comparison.md */,
 				B5866A9FFEABA7138AD89FDF /* session-lifecycle.md */,
@@ -531,8 +565,12 @@
 				6082A90FC44E17D31BC6877E /* survival-audit.md */,
 				DF5B74B06F0F05701EB3027A /* survival-native-check.md */,
 				FF08AC79BBEC4688A18F9F99 /* texture-sampling-diagnosis.md */,
+				3370A35BF1B15BAE7F834631 /* usability-todo.md */,
 				28753B5A5C5D07136C518D1F /* validation-mode.md */,
 				326ADA81CEF8AD70460634EF /* verification.md */,
+				DEF3A9AFC6A532C841FB1313 /* weapon-result-fix-20261025.md */,
+				2D45BB164B71C7D6B4A1A4DD /* weapon-validation-procedure.md */,
+				4B96C5E574626EE4EECE8BCE /* wide-canvas-plan.md */,
 			);
 			name = docs;
 			path = ../docs;
@@ -692,6 +730,7 @@
 			files = (
 				B532FAE688D3AAD6E11228EB /* Assets.xcassets in Resources */,
 				6FF91D0E62513EC8EBC2E064 /* Audio in Resources */,
+				AC3866B3AEE33D7A50AEC7F4 /* Extensions in Resources */,
 				F98E56E2762D2FAB50646C01 /* Images in Resources */,
 				098E836B70C01DADE64446A2 /* OriginalImages in Resources */,
 				E69BCF04E3AB135948A7754B /* RawData in Resources */,
@@ -704,6 +743,7 @@
 			files = (
 				FB14C7D9822E8DCA3BCA5768 /* Assets.xcassets in Resources */,
 				EDEE07FEC98E954E0CDD8B19 /* Audio in Resources */,
+				3AB881ED7DDE952986DABF4A /* Extensions in Resources */,
 				E3D5DD3E5C7C16EB9F725226 /* Images in Resources */,
 				17069EED8DB9E5BE7AE010E1 /* OriginalImages in Resources */,
 				1FB65BE455B73C2EB49C3493 /* RawData in Resources */,

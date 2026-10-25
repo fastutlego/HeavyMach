@@ -79,7 +79,9 @@ template<class Raster> static void HMDrawRaster(Raster& raster,CGPoint offset,CG
 - (UIImage *)image:(NSString *)name {
     NSString *key=[self resourceKey:name];
     UIImage *image=_images[key];if(image)return image;
-    NSString *path=[NSBundle.mainBundle pathForResource:name ofType:nil inDirectory:@"OriginalImages"];
+    // Generated extensions are separate resources; never replace OriginalImages.
+    BOOL extension=[name hasPrefix:@"Extensions/"];
+    NSString *path=[NSBundle.mainBundle pathForResource:extension?name.lastPathComponent:name ofType:nil inDirectory:extension?@"Extensions":@"OriginalImages"];
     NSData *file=path?[NSData dataWithContentsOfFile:path]:nil;
     if(!file.length||file.length>INT_MAX){NSLog(@"Missing original image %@",name);return nil;}
     // Same stb revision/options and float truncation as touchHLE src/image.rs.
@@ -176,6 +178,11 @@ template<class Raster> static void HMDrawRaster(Raster& raster,CGPoint offset,CG
     HMDrawRaster(raster,_drawingOffset,_drawingScale,_hasClip,_clipRect);
 }
 
+- (void)drawEdgeContinuation:(NSString*)name x:(CGFloat)x y:(CGFloat)y scale:(CGFloat)scale rotation:(CGFloat)rotation width:(CGFloat)width {
+    if(!self.glRenderer||![self prepareTexture:name renderer:self.glRenderer])return;
+    NSString* key=[self resourceKey:name];
+    [self.glRenderer drawEdgeContinuation:key position:CGPointMake(x-_cameraOffset.x,y-_cameraOffset.y) scale:scale rotation:rotation width:width rgb565:[_rgb565Images containsObject:key]];
+}
 - (void)drawTrail:(const heavymach::TrailMesh&)mesh {
     if (self.glRenderer) {
         NSString *name=[NSString stringWithUTF8String:mesh.tile.c_str()];

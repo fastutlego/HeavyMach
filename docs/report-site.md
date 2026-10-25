@@ -32,3 +32,12 @@
 - 사이트 소스: `32c458ac0657156dfa9d072ec39dec9a4bb01f13`.
 - 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_12b03a40fb2c819196e6440a7b021623`.
 - 배포: `appgdep_6addc5d8fe5481918ce33c096ecc38fa`, API `succeeded`. HTML 파싱·절 식별자·원문 파일 확인. 이번 문구 추가의 새 브라우저 시각 검수는 하지 않았다.
+
+## 2026-10-25 18:37 메뉴·배경 첫 적용 보고
+
+- `#menu-result`: 타이틀·슬롯·모드·미션의 실제 GL 캡처, 생성 후보A/B, 원본 보존, 터치 검사, 자원 비용을 게시했다. 첫 적용과 나머지 화면의 TODO를 구분했다.
+- 사이트 소스: `51e0d4ef3e7470248f729170df014daacdf354a7`.
+- 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_2036c2456db0819198df71b88048b4f3`.
+- 배포: `appgdep_6addcdb603a48191855e52d73a06dbf6`, API `succeeded`, 소유자 전용 유지.
+- 관련27개 검사와 후속 경로·타이머 검사 통과를 기록했다. Simulator의 타이틀·슬롯 약27~30ms는 60Hz 통과로 표시하지 않았다. 새 치트 앱은 아이폰 설치 성공, 잠금 때문에 실행 검사 대기다.
+- HTML 파싱과 이미지 참조 파일을 확인했다. 새 보고서의 브라우저 시각 검수는 `cgWindowNotFound`로 완료하지 못했다. 현재 앱 목록 조회는 성공했고 서비스/CLI 버전·서명 일치 및 최근 인증 거절0을 확인했다. 근거 없이 서버를 재시작하지 않았다. 진단은 `build/menu-extension-20261025/cua-window-diagnostic.json`에 남겼다.

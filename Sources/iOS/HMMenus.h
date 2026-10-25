@@ -12,9 +12,11 @@
 // Called only at LoadingTransition RefreshScreen for screen6.
 - (void)startSelectedGame;
 - (void)showMissions:(int)mission stage:(int)stage;
+// Expanded presentation only; 480 preserves the original layout and hit order.
+- (void)setCanvasWidth:(CGFloat)width safeRect:(CGRect)safeRect;
 - (void)draw;
 - (void)tick:(double)time;
-// Logical 480x320, y-up. state: 0 began, 1 moved, 2 ended, 3 cancelled.
+// Logical canvas coordinates, y-up. state: 0 began, 1 moved, 2 ended, 3 cancelled.
 - (void)touch:(CGPoint)logical state:(int)state;
 @property(nonatomic,copy) int32_t(^random31)(void);
 @property(nonatomic,copy) void(^changeScreen)(int screen);

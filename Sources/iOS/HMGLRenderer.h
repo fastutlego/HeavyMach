@@ -17,6 +17,9 @@
 - (void)releaseTextureScope:(NSString *)scope;
 - (void)endFrame;
 - (void)drawImage:(UIImage *)image name:(NSString *)name columns:(NSInteger)columns rows:(NSInteger)rows tile:(NSInteger)tile position:(CGPoint)position scale:(CGSize)scale rotation:(CGFloat)rotation alpha:(CGFloat)alpha blend:(NSInteger)blend rgb565:(BOOL)rgb565;
+// Presentation-only seam: reflect a narrow edge OUTSIDE the original rectangle
+// and fade toward the generated scenery. Original pixels/rectangle stay untouched.
+- (void)drawEdgeContinuation:(NSString*)name position:(CGPoint)position scale:(CGFloat)scale rotation:(CGFloat)rotation width:(CGFloat)width rgb565:(BOOL)rgb565;
 - (void)drawTrail:(const heavymach::TrailMesh&)mesh image:(UIImage *)image name:(NSString *)name rgb565:(BOOL)rgb565 cameraOffset:(CGPoint)offset;
 // viewport uses UIKit points measured in layer.bounds, with a top-left origin.
 - (BOOL)presentToLayer:(CAEAGLLayer *)layer viewport:(CGRect)viewport;

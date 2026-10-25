@@ -51,6 +51,9 @@ targets:
       - path: ../Sources/iOS
       - path: ../Sources/OriginalInterfaces
         buildPhase: none
+      - path: ../Art/Extensions
+        type: folder
+        buildPhase: resources
       - path: ../Resources/OriginalImages
         type: folder
         buildPhase: resources
@@ -124,6 +127,9 @@ targets:
       - path: ../Sources/OriginalInterfaces
         buildPhase: none
       - path: ../Resources/Validation
+        type: folder
+        buildPhase: resources
+      - path: ../Art/Extensions
         type: folder
         buildPhase: resources
       - path: ../Resources/OriginalImages

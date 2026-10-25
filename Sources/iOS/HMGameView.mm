@@ -58,6 +58,7 @@
     CGFloat _canvasWidth, _hudScale;
     CGPoint _hudOffset;
     BOOL _wideCanvasEnabled;
+    CGRect _menuSafeRect;
     NSHashTable<UITouch*> *_worldTouches, *_hudTouches;
     double _time, _retainedWorldTime;
     uint32_t _randomState;
@@ -266,6 +267,8 @@
         for(int i=1;i<=6;++i)[names addObject:[NSString stringWithFormat:@"SelMission_Stage%02d",i]];
     }
     for(NSString *name in names)@autoreleasepool{[_media imageSize:[name stringByAppendingPathExtension:@"png"] scope:_screenResourceScope];}
+    if(screen==1)[_media imageSize:@"Extensions/TitleWide.png" scope:_screenResourceScope];
+    if(screen>=2&&screen<=4)[_media imageSize:@"Extensions/MenuMetal.png" scope:_screenResourceScope];
 }
 - (void)refreshScreen:(int)screen {
 #if defined(HM_VALIDATION) && HM_VALIDATION
@@ -289,7 +292,15 @@
     if(oldScope)[_media releaseScope:oldScope];
 }
 - (void)drawLoading {
-    for(const auto& sprite:_loading.sprites())
+    if(_canvasWidth>480&&!_session){
+        CGFloat center=(_canvasWidth-480)/2;
+        for(int side=-1;side<=1;++side){
+            CGRect clip=side<0?CGRectMake(0,0,center,320):side>0?CGRectMake(center+480,0,center,320):CGRectMake(center,0,480,320);
+            [_media setClipRect:clip];[_media setDrawingOffset:CGPointMake(center+side*480,0)];
+            for(const auto& sprite:_loading.sprites())[_media draw:[NSString stringWithUTF8String:sprite.tile.c_str()] x:sprite.position.x y:sprite.position.y columns:sprite.cols rows:sprite.rows tile:sprite.frame scaleX:sprite.scale.x scaleY:sprite.scale.y rotation:sprite.rotation alpha:sprite.alpha blend:sprite.blend];
+        }
+        [_media resetClip];[_media setDrawingOffset:CGPointZero];
+    }else for(const auto& sprite:_loading.sprites())
         [_media draw:[NSString stringWithUTF8String:sprite.tile.c_str()] x:sprite.position.x y:sprite.position.y columns:sprite.cols rows:sprite.rows tile:sprite.frame scaleX:sprite.scale.x scaleY:sprite.scale.y rotation:sprite.rotation alpha:sprite.alpha blend:sprite.blend];
 }
 - (void)finishUpgrade {
@@ -551,7 +562,7 @@
     CGRect bounds=self.bounds;
     const int dw=int(std::lround(bounds.size.width*self.contentScaleFactor));
     const int dh=int(std::lround(bounds.size.height*self.contentScaleFactor));
-    auto canvas=heavymach::CanvasGeometry::forDrawable(dw,dh,_wideCanvasEnabled&&bool(_session)&&!_showMenu);
+    auto canvas=heavymach::CanvasGeometry::forDrawable(dw,dh,_wideCanvasEnabled);
     // A paused scene keeps its cached draw commands; apply mode changes before
     // the next simulation tick, never by collecting stateful visuals twice.
     if(_session&&_session->world().paused)canvas.width=float(_canvasWidth);
@@ -559,15 +570,21 @@
     _viewport=heavymach::Viewport::drawable(dw,dh,self.contentScaleFactor,_canvasWidth);
     _viewport.x+=bounds.origin.x;_viewport.y+=bounds.origin.y;
     _hudScale=1;_hudOffset=CGPointMake((_canvasWidth-480)/2,0);
+    _menuSafeRect=CGRectMake(0,0,_canvasWidth,320);
     if(_canvasWidth>480 && _viewport.scale>0){
         CGRect safe=UIEdgeInsetsInsetRect(bounds,self.safeAreaInsets);
         const CGFloat left=std::max(CGFloat(0),(CGRectGetMinX(safe)-_viewport.x)/_viewport.scale);
         const CGFloat right=std::min(_canvasWidth,(CGRectGetMaxX(safe)-_viewport.x)/_viewport.scale);
         const CGFloat bottom=std::max(CGFloat(0),320-(CGRectGetMaxY(safe)-_viewport.y)/_viewport.verticalScale());
         const CGFloat top=std::min(CGFloat(320),320-(CGRectGetMinY(safe)-_viewport.y)/_viewport.verticalScale());
+        _menuSafeRect=CGRectMake(left,bottom,right-left,top-bottom);
         _hudScale=std::max(CGFloat(.01),std::min({CGFloat(1),(right-left)/480,(top-bottom)/320}));
         _hudOffset=CGPointMake((left+right-480*_hudScale)/2,(bottom+top-320*_hudScale)/2);
     }
+    [_menus setCanvasWidth:_canvasWidth safeRect:_menuSafeRect];
+#if defined(HM_VALIDATION) && HM_VALIDATION
+    _validationControls.hidden=!_session||_showMenu;
+#endif
     if(_session&&_session->canvasWidth()!=float(_canvasWidth))_session->setCanvasWidth(float(_canvasWidth));
 }
 - (BOOL)worldInputBlocked {
@@ -717,13 +734,29 @@
         [_hud draw:snapshot];[self drawLoading];[_media resetClip];[_media setDrawingOffset:CGPointZero];[_media setDrawingScale:1];if(ctx)CGContextRestoreGState(ctx);return;
     }
     _media.resourceScope=_screenResourceScope;
+    if(_canvasWidth>480) {
+        CGSize size=[_media imageSize:@"Extensions/TitleWide.png"];
+        // Draw only the two OUTER quarters of the generated candidate. Its center
+        // never enters the frame; the original owns that moving rectangle.
+        [_media setCameraOffset:CGPointMake(_titleShake.offset.x,_titleShake.offset.y)];
+        CGFloat extensionScale=320/size.height;
+        CGFloat distance=240+size.width/8*extensionScale;
+        for(int side:{-1,1}) {
+            CGFloat dx=side*distance*_title.bgScale;
+            [_media draw:@"Extensions/TitleWide.png" x:_canvasWidth/2+_title.camX+std::cos(_title.bgRotate)*dx y:160+_title.camY+std::sin(_title.bgRotate)*dx columns:4 rows:1 tile:side<0?0:3 scaleX:extensionScale*_title.bgScale scaleY:extensionScale*_title.bgScale rotation:_title.bgRotate alpha:1];
+        }
+        [_media setDrawingOffset:CGPointMake((_canvasWidth-480)/2,0)];
+        [_media drawEdgeContinuation:@"Main_BG.png" x:240+_title.camX y:160+_title.camY scale:_title.bgScale rotation:_title.bgRotate width:20];
+    }
     [_media setCameraOffset:CGPointMake(_titleShake.offset.x,_titleShake.offset.y)];
     [_media draw:@"Main_BG.png" x:240+_title.camX y:160+_title.camY columns:1 rows:1 tile:0 scaleX:_title.bgScale scaleY:_title.bgScale rotation:_title.bgRotate alpha:1];
+    if(_canvasWidth>480)[_media setDrawingOffset:CGPointMake(CGRectGetMidX(_menuSafeRect)-240,0)];
     if (_title.showTitle) [_media draw:@"Main_Title.png" x:240 y:80 columns:1 rows:1 tile:0 scaleX:_title.titleScale scaleY:_title.titleScale rotation:0 alpha:1];
     if (_title.showEpisode) [_media draw:@"Main_Episode.png" x:240 y:290 columns:1 rows:1 tile:0 scaleX:_title.episodeScale scaleY:_title.episodeScale rotation:0 alpha:1];
-    [_media draw:@"Main_Copyright.png" x:240 y:12];
+    [_media draw:@"Main_Copyright.png" x:240 y:_canvasWidth>480?std::max(CGFloat(12),CGRectGetMinY(_menuSafeRect)+8):12];
     if (_title.showStart) [_media draw:@"Main_TapToStart.png" x:240 y:140];
     [_media setCameraOffset:CGPointZero];
+    [_media setDrawingOffset:CGPointZero];
     _media.resourceScope=@"shared";[self drawLoading];
     if(ctx)CGContextRestoreGState(ctx);
 }

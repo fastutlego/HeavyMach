@@ -2,6 +2,8 @@
 #import <objc/runtime.h>
 #import <CoreMotion/CoreMotion.h>
 #import "../../Sources/iOS/HMGameView.h"
+#import "../../Sources/iOS/HMMenus.h"
+#include "../../Sources/Core/TitleState.hpp"
 #import "../../Sources/iOS/HMMedia.h"
 #import "../../Sources/iOS/HMGLRenderer.h"
 #import "../../Sources/iOS/HMOpenALAudio.h"
@@ -163,6 +165,58 @@ void emit(NSDictionary* record){NSData* json=[NSJSONSerialization dataWithJSONOb
 @interface HMFramePerformanceTests:XCTestCase
 @end
 @implementation HMFramePerformanceTests
+- (void)testExpandedTitleAndSlotsPreserveOriginalArtAndUseMovedHitTargets {
+ for(NSValue* value in @[[NSValue valueWithCGSize:CGSizeMake(480,320)],[NSValue valueWithCGSize:CGSizeMake(912,420)],[NSValue valueWithCGSize:CGSizeMake(956,440)]])for(int direction=0;direction<2;++direction){@autoreleasepool{
+  CGSize size=value.CGSizeValue;HMCanvasTestView* view=[[HMCanvasTestView alloc]initWithFrame:CGRectMake(0,0,size.width,size.height)];
+  [[view valueForKey:@"frameTimer"]invalidate];[[view valueForKey:@"motionTimer"]invalidate];
+  view.suppliedInsets=size.width>480?(direction?UIEdgeInsetsMake(0,0,21,62):UIEdgeInsetsMake(0,62,21,0)):UIEdgeInsetsZero;
+  [view layoutSubviews];CGFloat width=[[view valueForKey:@"canvasWidth"]doubleValue];
+  auto& title=perfStorage<heavymach::TitleState>(view,"_title");title.bgScale=1;title.bgRotate=0;title.camX=title.camY=0;
+  title.showTitle=title.showEpisode=title.showStart=false;
+  HMGLRenderer* gl=[view valueForKey:@"glRenderer"];HMMedia* media=[view valueForKey:@"media"];
+  XCTAssertTrue([gl setLogicalWidth:width height:320]);media.glRenderer=gl;
+  auto render=[&](){XCTAssertTrue([gl beginFrame]);[view drawLogicalFrame];[gl finish];[gl endFrame];return [gl snapshot];};
+  auto bytes=[](UIImage* image){CFDataRef data=CGDataProviderCopyData(CGImageGetDataProvider(image.CGImage));const uint8_t* p=CFDataGetBytePtr(data);std::vector<uint8_t> out(p,p+CFDataGetLength(data));CFRelease(data);return out;};
+  UIImage* titleImage=render();auto actual=bytes(titleImage);
+  XCTAssertTrue([gl beginFrame]);[media setDrawingOffset:CGPointZero];[media setDrawingScale:1];[media resetClip];[media setCameraOffset:CGPointZero];
+  media.resourceScope=[view valueForKey:@"screenResourceScope"];
+  [media setDrawingOffset:CGPointMake((width-480)/2,0)];[media draw:@"Main_BG.png" x:240 y:160];[gl finish];[gl endFrame];auto expected=bytes([gl snapshot]);
+  int w=int(std::ceil(width)),maxDelta=0;
+  for(int y=45;y<275;++y)for(int x=int(width/2)-225;x<int(width/2)+225;++x)for(int c=0;c<3;++c){size_t i=(y*w+x)*4+c;maxDelta=std::max(maxDelta,std::abs(int(actual[i])-int(expected[i])));}
+  // Same one-channel rasterization rounding contract as the existing GL and
+  // result-image oracles. Original asset bytes are verified separately by SHA.
+  XCTAssertLessThanOrEqual(maxDelta,1,@"Original central artwork changed");
+  if(width>480){int edgeBlack=0;for(int y=10;y<310;++y)for(int x:{4,w-5}){size_t i=(y*w+x)*4;if(actual[i]+actual[i+1]+actual[i+2]==0)++edgeBlack;}XCTAssertEqual(edgeBlack,0);}
+  title.showTitle=title.showEpisode=title.showStart=true;title.titleScale=title.episodeScale=1;
+  UIImage* decorated=render();XCTAttachment* a=[XCTAttachment attachmentWithImage:decorated];a.name=[NSString stringWithFormat:@"wide-title-%g-%d",size.width,direction];a.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:a];
+  auto& save=perfStorage<heavymach::SaveData>(view,"_save");save={};for(auto& slot:save.slots){slot.bytes[8]=1;slot.setInt(4,1);}
+  [view refreshScreen:3];[view updateCanvasGeometry];HMMenus* menus=[view valueForKey:@"menus"];
+  UIImage* slots=render();a=[XCTAttachment attachmentWithImage:slots];a.name=[NSString stringWithFormat:@"wide-slots-%g-%d",size.width,direction];a.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:a];
+  CGRect safe=perfStorage<CGRect>(view,"_menuSafeRect");
+  auto tap=[&](CGPoint p){auto& vp=perfStorage<heavymach::Viewport>(view,"_viewport");HMCanvasTouch* t=[HMCanvasTouch new];t.point=CGPointMake(vp.x+p.x*vp.scale,vp.y+(320-p.y)*vp.verticalScale());NSSet* touches=[NSSet setWithObject:t];[view routeTouches:touches state:0];[view routeTouches:touches state:2];};
+  for(int slot=0;slot<3;++slot){CGFloat x=width>480?CGRectGetMinX(safe)+82+(CGRectGetWidth(safe)-167)*slot/2:85+155*slot;tap(CGPointMake(x,142+(width>480?CGRectGetMinY(safe)+4:0)));XCTAssertEqual([[menus valueForKey:@"slot"]intValue],slot);render();}
+  CGFloat bottom=width>480?std::max(CGFloat(21),CGRectGetMinY(safe)+22):20;
+  tap(CGPointMake(width>480?CGRectGetMinX(safe)+58:332,bottom));XCTAssertTrue([[menus valueForKey:@"deleteConfirmation"]boolValue]);render();
+  tap(CGPointMake((width>480?CGRectGetMidX(safe)-240:0)+307,108));XCTAssertFalse([[menus valueForKey:@"deleteConfirmation"]boolValue]);XCTAssertTrue(save.slots[2].occupied());
+  render();tap(CGPointMake(width>480?CGRectGetMaxX(safe)-58:422,bottom));
+  XCTAssertEqual([[menus valueForKey:@"gameSlot"]intValue],2);
+  NSUInteger decodes=[media.cacheDiagnostics[@"decodeCount"]unsignedIntegerValue];for(int i=0;i<12;++i)render();XCTAssertEqual([media.cacheDiagnostics[@"decodeCount"]unsignedIntegerValue],decodes);
+  XCTAssertEqual([media.cacheDiagnostics[@"decodedBytes"]unsignedIntegerValue],NSUInteger(0));
+  for(int i=0;i<160;++i)[view advanceOriginalFrame];render();
+  CGFloat center=width>480?CGRectGetMidX(safe):240;
+  tap(CGPointMake(center,104));XCTAssertEqual([[menus valueForKey:@"mode"]intValue],1);render();
+  tap(CGPointMake(center,180));XCTAssertEqual([[menus valueForKey:@"mode"]intValue],0);render();
+  a=[XCTAttachment attachmentWithImage:render()];a.name=[NSString stringWithFormat:@"wide-mode-%g-%d",size.width,direction];a.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:a];
+  tap(CGPointMake(center+194,56));for(int i=0;i<160;++i)[view advanceOriginalFrame];render();
+  a=[XCTAttachment attachmentWithImage:render()];a.name=[NSString stringWithFormat:@"wide-mission-%g-%d",size.width,direction];a.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:a];
+  tap(CGPointMake(center+198,width>480?std::max(CGFloat(26),CGRectGetMinY(safe)+22):26));
+  for(int i=0;i<110;++i)[view advanceOriginalFrame];
+  XCTAssertTrue(bool(perfStorage<std::unique_ptr<heavymach::GameSession>>(view,"_session")));
+  XCTAssertEqualObjects([gl diagnostics][@"lastError"],@"");
+  NSLog(@"HM_MENU_EXTENSION width=%g direction=%d centralDelta=%d decodeCount=%lu diagnostics=%@",width,direction,maxDelta,(unsigned long)decodes,[gl diagnostics]);
+  [view setApplicationActive:NO];
+ }}
+}
 // Full burst checks use every original player weapon, including all three sky strikes.
 - (void)testAllWeaponsKeepTargetsAcrossTouchRelease {
  for(NSValue* value in @[[NSValue valueWithCGSize:CGSizeMake(480,320)],[NSValue valueWithCGSize:CGSizeMake(912,420)],[NSValue valueWithCGSize:CGSizeMake(956,440)]]){@autoreleasepool{
@@ -555,8 +609,12 @@ void emit(NSDictionary* record){NSData* json=[NSJSONSerialization dataWithJSONOb
  XCTAssertEqualObjects(((CAEAGLLayer*)view.layer).drawableProperties[kEAGLDrawablePropertyColorFormat],kEAGLColorFormatRGB565);
  [view layoutSubviews];
  auto& viewport=perfStorage<heavymach::Viewport>(view,"_viewport");
+ XCTAssertEqualWithAccuracy(viewport.x,0,1e-6);
+ XCTAssertEqualWithAccuracy(viewport.y,0,1e-6);
+ auto fullEdge=viewport.logical(912,0);XCTAssertTrue(fullEdge.has_value());
+ XCTAssertEqualWithAccuracy(fullEdge->first,[[view valueForKey:@"canvasWidth"]doubleValue],1e-4);
+ [view setWideCanvasEnabled:NO];
  XCTAssertEqualWithAccuracy(viewport.x,141,1e-9);
- XCTAssertEqualWithAccuracy(viewport.y,0,1e-9);
  auto point=viewport.logical(141,420);XCTAssertTrue(point.has_value());
  XCTAssertEqual(point->first,0);XCTAssertEqual(point->second,0);
  [view setApplicationActive:NO];double paused=[[view valueForKey:@"time"] doubleValue];

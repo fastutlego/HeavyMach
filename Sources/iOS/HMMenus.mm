@@ -46,10 +46,41 @@ struct SlotPreview {
     std::array<float,3> _slotGauges;
     double _time, _previewWorldTime;
     BOOL _previewWorldPaused;
+    CGFloat _canvasWidth;
+    CGRect _safeRect;
+    CGPoint _layoutOffset;
+    BOOL _cancelledPressByLayout;
 }
 - (instancetype)initWithMedia:(HMMedia *)media save:(heavymach::SaveData *)save data:(const heavymach::GameData *)data {
-    if ((self=[super init])) { _media=media; _save=save; _data=data; _pressed=-1; _slotTexts=[NSMutableArray arrayWithArray:@[@[],@[],@[]]]; }
+    if ((self=[super init])) { _canvasWidth=480;_safeRect=CGRectMake(0,0,480,320);_media=media; _save=save; _data=data; _pressed=-1; _slotTexts=[NSMutableArray arrayWithArray:@[@[],@[],@[]]]; }
     return self;
+}
+- (void)setCanvasWidth:(CGFloat)width safeRect:(CGRect)safeRect {
+    if(_canvasWidth!=width||!CGRectEqualToRect(_safeRect,safeRect)) {
+        // A resize cannot release an old press onto a newly positioned button.
+        _pressed=-1; for(auto& entry:_buttonStates){if(entry.second.pressed)_cancelledPressByLayout=YES;entry.second.touch(false,3,_time);}
+        _buttons.clear();
+    }
+    _canvasWidth=width;_safeRect=safeRect;
+}
+- (void)layoutOffset:(CGPoint)offset {_layoutOffset=offset;[_media setDrawingOffset:offset];}
+// Reuse exact original pixels through GL clipping; no new crop/bitmap per frame.
+- (void)piece:(NSString*)name source:(CGRect)source offset:(CGPoint)offset {
+    [self layoutOffset:CGPointZero];
+    [_media setClipRect:CGRectOffset(source,offset.x,offset.y)];
+    [_media draw:name x:240+offset.x y:160+offset.y];
+    [_media resetClip];
+}
+- (void)wideBackdrop {
+    [self layoutOffset:CGPointZero];
+    CGSize size=[_media imageSize:@"Extensions/MenuMetal.png"];
+    CGFloat scale=std::max(_canvasWidth/size.width,320/size.height);
+    [_media draw:@"Extensions/MenuMetal.png" x:_canvasWidth/2 y:160 columns:1 rows:1 tile:0 scaleX:scale scaleY:scale rotation:0 alpha:1];
+}
+- (CGFloat)slotOffset:(int)i {
+    if(_canvasWidth<=480)return 0;
+    CGFloat first=CGRectGetMinX(_safeRect)+82,last=CGRectGetMaxX(_safeRect)-85;
+    return first+(last-first)*i/2-(85+155*i);
 }
 - (void)setPreviewWorldTime:(double)time paused:(BOOL)paused {_previewWorldTime=time;_previewWorldPaused=paused;}
 - (void)showSlots {
@@ -125,7 +156,7 @@ struct SlotPreview {
     // Every GuiSelectSlot/Mode/Mission button explicitly disables displacement.
     motion.pushDepth=motion.releaseHeight=motion.releaseDelay=0;
     [self tile:name x:x y:y+motion.yOffset(_time,enabled) columns:1 rows:rows index:enabled && rows>1 && motion.pressed ? 1 : tile sx:1];
-    if (enabled && imageSize.width>0) _buttons.push_back({identifier,CGRectMake(x-imageSize.width/2,y-imageSize.height/rows/2,imageSize.width,imageSize.height/rows)});
+    if (enabled && imageSize.width>0) _buttons.push_back({identifier,CGRectMake(x+_layoutOffset.x-imageSize.width/2,y+_layoutOffset.y-imageSize.height/rows/2,imageSize.width,imageSize.height/rows)});
 }
 - (void)numberText:(NSString *)text x:(double)x y:(double)y pitch:(double)pitch {
     for (NSUInteger i=0;i<text.length;++i) {
@@ -140,11 +171,19 @@ struct SlotPreview {
     return [NSString stringWithUTF8String:text];
 }
 - (void)drawSlots {
-    [_media draw:@"SelSlot_BG.png" x:240 y:160];
-    [self button:@"Common_Btn_OK.png" identifier:1000 x:422 y:21 rows:2 tile:0 enabled:YES];
-    [self button:@"Common_Btn_DEL.png" identifier:1001 x:332 y:20 rows:2 tile:0 enabled:YES];
+    const BOOL wide=_canvasWidth>480;
+    if(wide) {
+        [self wideBackdrop];
+        [self piece:@"SelSlot_BG.png" source:CGRectMake(0,242,480,78) offset:CGPointMake(CGRectGetMidX(_safeRect)-240,12)];
+    } else [_media draw:@"SelSlot_BG.png" x:240 y:160];
+    CGFloat bottom=wide?std::max(CGFloat(21),CGRectGetMinY(_safeRect)+22):21;
+    [self button:@"Common_Btn_OK.png" identifier:1000 x:wide?CGRectGetMaxX(_safeRect)-58:422 y:bottom rows:2 tile:0 enabled:YES];
+    [self button:@"Common_Btn_DEL.png" identifier:1001 x:wide?CGRectGetMinX(_safeRect)+58:332 y:wide?bottom:20 rows:2 tile:0 enabled:YES];
     for (int i=0;i<3;++i) {
         const double dx=i*155;
+        CGPoint offset=CGPointMake([self slotOffset:i],wide?CGRectGetMinY(_safeRect)+4:0);
+        if(wide)[self piece:@"SelSlot_BG.png" source:CGRectMake(7+dx,43,155,199) offset:offset];
+        [self layoutOffset:offset];
         if (!_previews[i].exists) [_media draw:@"SelSlot_Empty.png" x:82+dx y:156 columns:1 rows:1 tile:0 scaleX:0.9 scaleY:0.9 rotation:0 alpha:1];
         else {
             float gauge=_slotGauges[i];
@@ -161,7 +200,9 @@ struct SlotPreview {
         }
         [self button:@"SelSlot_Btn.png" identifier:1100+i x:85+dx y:142 rows:1 tile:0 enabled:YES];
     }
+    [self layoutOffset:CGPointMake([self slotOffset:_slot],wide?CGRectGetMinY(_safeRect)+4:0)];
     [_media draw:@"SelSlot_Sel.png" x:(_slotSelectionMoved?85:83)+155*_slot y:_slotSelectionMoved?142:144 columns:1 rows:1 tile:0 scaleX:1 scaleY:1 rotation:0 alpha:1 blend:2];
+    [self layoutOffset:CGPointMake(wide?CGRectGetMidX(_safeRect)-240:0,0)];
     if (_deleteConfirmation) {
         [_media draw:@"SelSlot_DelSlot.png" x:240 y:140];
         [self button:@"Common_Btn_YES.png" identifier:1300 x:236 y:108 rows:2 tile:0 enabled:YES];
@@ -198,7 +239,7 @@ struct SlotPreview {
 }
 - (void)drawMissions {
     [_media draw:@"SelMission_BG.png" x:240 y:160];
-    [self button:@"Common_Btn_OK.png" identifier:1000 x:438 y:26 rows:2 tile:0 enabled:YES];
+    [self button:@"Common_Btn_OK.png" identifier:1000 x:438 y:_canvasWidth>480?std::max(CGFloat(26),CGRectGetMinY(_safeRect)+22):26 rows:2 tile:0 enabled:YES];
     [self button:@"SelMission_Btn_Up.png" identifier:1001 x:438 y:210 rows:2 tile:0 enabled:YES];
     [self button:@"SelMission_Btn_Dn.png" identifier:1002 x:438 y:110 rows:2 tile:0 enabled:YES];
     const auto& save=_save->slots[_slot]; int lastMission=save.i32(0xc),lastStage=save.i32(0x10);
@@ -220,12 +261,14 @@ struct SlotPreview {
     }
 }
 - (void)draw {
-    _buttons.clear();
+    _buttons.clear();[self layoutOffset:CGPointZero];
+    if(_canvasWidth>480&&_screen!=MenuScreen::slots){[self wideBackdrop];[self layoutOffset:CGPointMake(CGRectGetMidX(_safeRect)-240,0)];}
     switch (_screen) {
         case MenuScreen::slots: [self drawSlots]; break;
         case MenuScreen::mode: [self drawMode]; break;
         case MenuScreen::mission: [self drawMissions]; break;
     }
+    [self layoutOffset:CGPointZero];
 }
 - (void)tick:(double)time {
     _time=time;
@@ -281,6 +324,8 @@ struct SlotPreview {
     [_media sound:sound];
 }
 - (void)touch:(CGPoint)logical state:(int)state {
+    if(state==0)_cancelledPressByLayout=NO;
+    if(_cancelledPressByLayout){if(state>=2)_cancelledPressByLayout=NO;return;}
     // QobManager 0xfc18 stops immediately after the first receiver consumes.
     auto receivers=_buttons;
     std::stable_sort(receivers.begin(),receivers.end(),[&](const auto& a,const auto& b){

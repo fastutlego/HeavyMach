@@ -8,7 +8,7 @@
 
 - 게임 장면은 OpenGL ES1.1. UIKit은 창·수명주기·검증 조작부를 담당한다.
 - 논리W×320, 할당ceil(W)×320 RGBA8 renderbuffer에 원본 순서로 그린다. 기본·원본 비교 모드는W=480이다. 크기가 바뀔 때만 재할당하고 투영·복사·readback이 같은 치수를 사용한다. 장면을 재사용 화면 텍스처로 복사하고 drawable에 최종 확대한다.
-- 모든 제품 소비자는 `OriginalImages`의 원본 파일명과 확장자를 사용한다. 미션/스테이지 클리어의 `GameLoading_XX[E].jpg`, 게임오버의 `StageClear.jpg`에 파생본 접미사 `.png`를 붙이지 않는다. `Images/*.jpg.png`는 변환·비교용 자원이며 현재 제품 로더의 이름 계약이 아니다.
+- 원본 자원의 제품 소비자는 `OriginalImages`의 원본 파일명과 확장자를 사용한다. 미션/스테이지 클리어의 `GameLoading_XX[E].jpg`, 게임오버의 `StageClear.jpg`에 파생본 접미사 `.png`를 붙이지 않는다. `Images/*.jpg.png`는 변환·비교용 자원이며 현재 제품 로더의 이름 계약이 아니다.
 - 원본 이미지695개를 보존된 stb 코드로 해석한다. POT 패딩, premultiplied 픽셀, RGB565 변환, UV와 타일 순서를 임의 보정하지 않는다.
 - sprite 텍스처는 LINEAR/REPEAT, 최종 화면 텍스처는 LINEAR/CLAMP_TO_EDGE다. 두 텍스처의 규칙을 섞지 않는다.
 - drawable은 nativeScale과 RGB565 요청을 사용한다. 실제 드라이버 보고 형식은 별도 기록한다. 요청이 실제 RGB565 할당을 증명하지 않는다.
@@ -47,3 +47,7 @@ GL 오류, 논리 화면 픽셀, 최종 표시 배치, 자원 해제, 실제 표
 일부 원본 배경은 새 폭보다 작다. 확장 모드에서 배경만 `max(1,W/imageWidth,320/imageHeight)`로 균등 확대하고 끝부분 위치를 제한한다. 비율 왜곡·새 에셋·근거 없는 반복 타일은 없다. 탱크·지형·효과 크기는 바뀌지 않는다. 원본480은 배경 크기·parallax 수치도 유지한다.
 
 CPU raster는 원본480 비교 전용이다. 확장 offscreen 진단은 실제GL 버퍼 snapshot을 사용한다. 제품 onscreen 경로는 계속 GL 직접 present이며 readback/UIImage를 매 프레임 만들지 않는다. `HMGLReferenceTests`의 원본8개와 확장/resize/clip4개를 함께 유지한다.
+
+## 생성된 화면 확장 자원
+
+사용자 승인으로 `Art/Extensions`의 별도 생성 이미지를 번들 `Extensions`에서 읽는다. 타이틀은 생성 이미지의 바깥 두 사분면만 원본과 같은 이동·회전·확대 변환으로 그린다. 원본 사각형 바깥20단위에만 가장자리 반사/알파 전환을 적용한다. 이 보조 draw에서만 GL_MODULATE를 쓰고 즉시 GL_REPLACE로 복원한다. 원본 sprite와 전투 렌더 규칙은 유지한다. 메뉴 원본 부분은 텍스처 clip으로 재배치하며 CPU bitmap을 만들지 않는다. 생성 자원도 화면 scope의 업로드·해제 규칙을 따른다. [적용·포맷 비용·증거](menu-art-extension-20261025.md).

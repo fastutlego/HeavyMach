@@ -205,6 +205,24 @@ static NSString *glString(GLenum name){const auto p=glGetString(name);return p?[
     glLoadIdentity();glTranslatef(_drawingOffset.x,_drawingOffset.y,0);glScalef(_drawingScale,_drawingScale,1);glTranslatef(position.x,position.y,0);glScalef(scale.width,scale.height,1);glRotatef(rotation*57.29577951308232,0,0,1);
     glVertexPointer(2,GL_FLOAT,0,positions);glTexCoordPointer(2,GL_FLOAT,0,uv);glColorPointer(4,GL_FLOAT,0,colors);glDrawArrays(GL_TRIANGLE_STRIP,0,4);_drawCalls++;
 }
+- (void)drawEdgeContinuation:(NSString*)name position:(CGPoint)position scale:(CGFloat)scale rotation:(CGFloat)rotation width:(CGFloat)width rgb565:(BOOL)rgb565 {
+    if(!_active||width<=0||!std::isfinite(width)||!std::isfinite(scale)||!std::isfinite(rotation))return;
+    Texture* t=[self textureForImage:nil name:name rgb565:rgb565];if(!t)return;
+    width=std::min(width,CGFloat(t->width/4));GLfloat hw=t->width*.5f,hh=t->height*.5f;
+    glBindTexture(GL_TEXTURE_2D,t->id);glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
+    glTexEnvi(GL_TEXTURE_ENV,GL_TEXTURE_ENV_MODE,GL_MODULATE);
+    glLoadIdentity();glTranslatef(_drawingOffset.x,_drawingOffset.y,0);glScalef(_drawingScale,_drawingScale,1);glTranslatef(position.x,position.y,0);glScalef(scale,scale,1);glRotatef(rotation*57.29577951308232,0,0,1);
+    for(int side:{-1,1}){
+        GLfloat left=side<0?-hw-width:hw,right=side<0?-hw:hw+width;
+        GLfloat u0=side<0?(width+.5f)/t->pw:(t->width-.5f)/t->pw;
+        GLfloat u1=side<0?.5f/t->pw:(t->width-width-.5f)/t->pw;
+        GLfloat v=float(t->height)/t->ph,near=side<0?0:1,far=1-near;
+        GLfloat positions[]={left,-hh,right,-hh,left,hh,right,hh},uv[]={u0,v,u1,v,u0,0,u1,0};
+        GLfloat colors[]={1,1,1,near,1,1,1,far,1,1,1,near,1,1,1,far};
+        glVertexPointer(2,GL_FLOAT,0,positions);glTexCoordPointer(2,GL_FLOAT,0,uv);glColorPointer(4,GL_FLOAT,0,colors);glDrawArrays(GL_TRIANGLE_STRIP,0,4);_drawCalls++;
+    }
+    glTexEnvi(GL_TEXTURE_ENV,GL_TEXTURE_ENV_MODE,GL_REPLACE);
+}
 - (void)drawTrail:(const heavymach::TrailMesh&)mesh image:(UIImage *)image name:(NSString *)name rgb565:(BOOL)rgb565 cameraOffset:(CGPoint)offset {
     if(!_active||mesh.vertices.size()<3)return;
     Texture *t=[self textureForImage:image name:name rgb565:rgb565];if(!t)return;
