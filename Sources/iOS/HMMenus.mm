@@ -77,6 +77,21 @@ struct SlotPreview {
     CGFloat scale=std::max(_canvasWidth/size.width,320/size.height);
     [_media draw:@"Extensions/MenuMetal.png" x:_canvasWidth/2 y:160 columns:1 rows:1 tile:0 scaleX:scale scaleY:scale rotation:0 alpha:1];
 }
+- (void)connectedBackdrop:(NSString*)extension original:(NSString*)original {
+    // Each screen has an outpaint of its own original. Discard the generated
+    // centre; only the two outer quarters join the immutable 480px background.
+    [self layoutOffset:CGPointZero];
+    CGSize size=[_media imageSize:extension];
+    CGFloat center=CGRectGetMidX(_safeRect),scale=320/size.height;
+    CGFloat tileWidth=size.width*scale/4;
+    for(int side:{-1,1}) {
+        CGFloat extent=std::max(tileWidth,side<0?center-240:_canvasWidth-center-240);
+        [_media draw:extension x:center+side*(240+extent/2) y:160 columns:4 rows:1 tile:side<0?0:3 scaleX:extent/(size.width/4) scaleY:scale rotation:0 alpha:1];
+    }
+    // Blend only outside the original bounds, retaining its interior pixels.
+    [_media drawEdgeContinuation:original x:center y:160 scale:1 rotation:0 width:24];
+    [self layoutOffset:CGPointMake(center-240,0)];
+}
 - (CGFloat)slotOffset:(int)i {
     if(_canvasWidth<=480)return 0;
     CGFloat first=CGRectGetMinX(_safeRect)+82,last=CGRectGetMaxX(_safeRect)-85;
@@ -210,7 +225,8 @@ struct SlotPreview {
     }
 }
 - (void)drawMode {
-    [_media draw:@"SelMode_BG.png" x:240 y:160];
+    if(_canvasWidth>480)[_media drawJoinedBackground:@"SelMode_BG.png" x:240 y:160 scale:1 rotation:0];
+    else [_media draw:@"SelMode_BG.png" x:240 y:160];
     [self button:@"Common_Btn_OK.png" identifier:1000 x:434 y:56 rows:2 tile:0 enabled:YES];
     [self button:@"SelMode_Btn_Scenario.png" identifier:1001 x:240 y:180 rows:2 tile:_mode==0 enabled:YES];
     [self button:@"SelMode_Btn_Survival.png" identifier:1002 x:240 y:104 rows:2 tile:_mode==1 enabled:YES];
@@ -238,7 +254,8 @@ struct SlotPreview {
     [self setTop:_mission-1];
 }
 - (void)drawMissions {
-    [_media draw:@"SelMission_BG.png" x:240 y:160];
+    if(_canvasWidth>480)[_media drawJoinedBackground:@"SelMission_BG.png" x:240 y:160 scale:1 rotation:0];
+    else [_media draw:@"SelMission_BG.png" x:240 y:160];
     [self button:@"Common_Btn_OK.png" identifier:1000 x:438 y:_canvasWidth>480?std::max(CGFloat(26),CGRectGetMinY(_safeRect)+22):26 rows:2 tile:0 enabled:YES];
     [self button:@"SelMission_Btn_Up.png" identifier:1001 x:438 y:210 rows:2 tile:0 enabled:YES];
     [self button:@"SelMission_Btn_Dn.png" identifier:1002 x:438 y:110 rows:2 tile:0 enabled:YES];
@@ -262,7 +279,8 @@ struct SlotPreview {
 }
 - (void)draw {
     _buttons.clear();[self layoutOffset:CGPointZero];
-    if(_canvasWidth>480&&_screen!=MenuScreen::slots){[self wideBackdrop];[self layoutOffset:CGPointMake(CGRectGetMidX(_safeRect)-240,0)];}
+    if(_canvasWidth>480&&_screen==MenuScreen::mode)[self connectedBackdrop:@"Extensions/ModeWide.png" original:@"SelMode_BG.png"];
+    if(_canvasWidth>480&&_screen==MenuScreen::mission)[self connectedBackdrop:@"Extensions/MissionWide.png" original:@"SelMission_BG.png"];
     switch (_screen) {
         case MenuScreen::slots: [self drawSlots]; break;
         case MenuScreen::mode: [self drawMode]; break;

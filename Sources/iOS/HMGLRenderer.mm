@@ -205,6 +205,23 @@ static NSString *glString(GLenum name){const auto p=glGetString(name);return p?[
     glLoadIdentity();glTranslatef(_drawingOffset.x,_drawingOffset.y,0);glScalef(_drawingScale,_drawingScale,1);glTranslatef(position.x,position.y,0);glScalef(scale.width,scale.height,1);glRotatef(rotation*57.29577951308232,0,0,1);
     glVertexPointer(2,GL_FLOAT,0,positions);glTexCoordPointer(2,GL_FLOAT,0,uv);glColorPointer(4,GL_FLOAT,0,colors);glDrawArrays(GL_TRIANGLE_STRIP,0,4);_drawCalls++;
 }
+- (void)drawJoinedBackground:(NSString*)name position:(CGPoint)position scale:(CGFloat)scale rotation:(CGFloat)rotation rgb565:(BOOL)rgb565 {
+    if(!_active||!std::isfinite(position.x)||!std::isfinite(position.y)||!std::isfinite(scale)||scale<=0||!std::isfinite(rotation))return;
+    Texture* t=[self textureForImage:nil name:name rgb565:rgb565];if(!t)return;
+    GLfloat hw=t->width*.5f,hh=t->height*.5f;
+    GLfloat xs[]={-hw,-hw+.5f,hw-.5f,hw},ys[]={-hh,-hh+.5f,hh-.5f,hh};
+    GLfloat us[]={.5f/t->pw,.5f/t->pw,(t->width-.5f)/t->pw,(t->width-.5f)/t->pw};
+    GLfloat vs[]={(t->height-.5f)/t->ph,(t->height-.5f)/t->ph,.5f/t->ph,.5f/t->ph};
+    GLfloat positions[108],uv[108],colors[216];int n=0;
+    const int corners[][2]={{0,0},{1,0},{0,1},{0,1},{1,0},{1,1}};
+    for(int y=0;y<3;++y)for(int x=0;x<3;++x)for(auto& corner:corners){
+        int ix=x+corner[0],iy=y+corner[1];positions[n*2]=xs[ix];positions[n*2+1]=ys[iy];uv[n*2]=us[ix];uv[n*2+1]=vs[iy];
+        std::fill_n(colors+n*4,4,1.f);++n;
+    }
+    glBindTexture(GL_TEXTURE_2D,t->id);glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
+    glLoadIdentity();glTranslatef(_drawingOffset.x,_drawingOffset.y,0);glScalef(_drawingScale,_drawingScale,1);glTranslatef(position.x,position.y,0);glScalef(scale,scale,1);glRotatef(rotation*57.29577951308232,0,0,1);
+    glVertexPointer(2,GL_FLOAT,0,positions);glTexCoordPointer(2,GL_FLOAT,0,uv);glColorPointer(4,GL_FLOAT,0,colors);glDrawArrays(GL_TRIANGLES,0,n);_drawCalls++;
+}
 - (void)drawEdgeContinuation:(NSString*)name position:(CGPoint)position scale:(CGFloat)scale rotation:(CGFloat)rotation width:(CGFloat)width rgb565:(BOOL)rgb565 {
     if(!_active||width<=0||!std::isfinite(width)||!std::isfinite(scale)||!std::isfinite(rotation))return;
     Texture* t=[self textureForImage:nil name:name rgb565:rgb565];if(!t)return;

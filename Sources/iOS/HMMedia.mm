@@ -178,6 +178,12 @@ template<class Raster> static void HMDrawRaster(Raster& raster,CGPoint offset,CG
     HMDrawRaster(raster,_drawingOffset,_drawingScale,_hasClip,_clipRect);
 }
 
+- (void)drawJoinedBackground:(NSString*)name x:(CGFloat)x y:(CGFloat)y scale:(CGFloat)scale rotation:(CGFloat)rotation {
+    if(!self.glRenderer){[self draw:name x:x y:y columns:1 rows:1 tile:0 scaleX:scale scaleY:scale rotation:rotation alpha:1];return;}
+    if(![self prepareTexture:name renderer:self.glRenderer])return;
+    NSString* key=[self resourceKey:name];
+    [self.glRenderer drawJoinedBackground:key position:CGPointMake(x-_cameraOffset.x,y-_cameraOffset.y) scale:scale rotation:rotation rgb565:[_rgb565Images containsObject:key]];
+}
 - (void)drawEdgeContinuation:(NSString*)name x:(CGFloat)x y:(CGFloat)y scale:(CGFloat)scale rotation:(CGFloat)rotation width:(CGFloat)width {
     if(!self.glRenderer||![self prepareTexture:name renderer:self.glRenderer])return;
     NSString* key=[self resourceKey:name];

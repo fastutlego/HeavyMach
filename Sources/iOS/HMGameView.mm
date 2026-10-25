@@ -268,7 +268,9 @@
     }
     for(NSString *name in names)@autoreleasepool{[_media imageSize:[name stringByAppendingPathExtension:@"png"] scope:_screenResourceScope];}
     if(screen==1)[_media imageSize:@"Extensions/TitleWide.png" scope:_screenResourceScope];
-    if(screen>=2&&screen<=4)[_media imageSize:@"Extensions/MenuMetal.png" scope:_screenResourceScope];
+    if(screen==2)[_media imageSize:@"Extensions/ModeWide.png" scope:_screenResourceScope];
+    if(screen==3)[_media imageSize:@"Extensions/MenuMetal.png" scope:_screenResourceScope];
+    if(screen==4)[_media imageSize:@"Extensions/MissionWide.png" scope:_screenResourceScope];
 }
 - (void)refreshScreen:(int)screen {
 #if defined(HM_VALIDATION) && HM_VALIDATION
@@ -749,7 +751,8 @@
         [_media drawEdgeContinuation:@"Main_BG.png" x:240+_title.camX y:160+_title.camY scale:_title.bgScale rotation:_title.bgRotate width:20];
     }
     [_media setCameraOffset:CGPointMake(_titleShake.offset.x,_titleShake.offset.y)];
-    [_media draw:@"Main_BG.png" x:240+_title.camX y:160+_title.camY columns:1 rows:1 tile:0 scaleX:_title.bgScale scaleY:_title.bgScale rotation:_title.bgRotate alpha:1];
+    if(_canvasWidth>480)[_media drawJoinedBackground:@"Main_BG.png" x:240+_title.camX y:160+_title.camY scale:_title.bgScale rotation:_title.bgRotate];
+    else [_media draw:@"Main_BG.png" x:240+_title.camX y:160+_title.camY columns:1 rows:1 tile:0 scaleX:_title.bgScale scaleY:_title.bgScale rotation:_title.bgRotate alpha:1];
     if(_canvasWidth>480)[_media setDrawingOffset:CGPointMake(CGRectGetMidX(_menuSafeRect)-240,0)];
     if (_title.showTitle) [_media draw:@"Main_Title.png" x:240 y:80 columns:1 rows:1 tile:0 scaleX:_title.titleScale scaleY:_title.titleScale rotation:0 alpha:1];
     if (_title.showEpisode) [_media draw:@"Main_Episode.png" x:240 y:290 columns:1 rows:1 tile:0 scaleX:_title.episodeScale scaleY:_title.episodeScale rotation:0 alpha:1];

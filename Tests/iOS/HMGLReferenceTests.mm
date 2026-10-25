@@ -8,10 +8,12 @@
 #include <limits>
 #include <vector>
 #include <algorithm>
+#include <cmath>
 namespace {
 UIImage* fixture(int type){
  std::vector<uint8_t> p;int w,h;bool rgb=type==2;
- if(type==3){w=16;h=16;p.assign(w*h*4,255);}
+ if(type==4){w=480;h=320;rgb=true;p.assign(w*h*4,255);}
+ else if(type==3){w=16;h=16;p.assign(w*h*4,255);}
  else if(type==0){w=2;h=1;p={255,255,255,255,0,0,0,0};}
  else if(type==1){w=3;h=3;p={255,0,0,255,0,128,0,128,0,0,64,64,255,255,0,255,128,0,128,128,0,255,255,255,64,64,64,64,255,255,255,255,0,0,0,0};}
  else{w=3;h=1;p={123,45,67,255,17,93,181,255,255,255,255,255};}
@@ -37,6 +39,30 @@ struct Sample{int x,y,r,g,b;};
 @interface HMGLReferenceTests:XCTestCase
 @end
 @implementation HMGLReferenceTests
+- (void)testJoinedBackgroundEliminatesBlackPaddingAtFractionalRotatedEdges {
+ HMGLRenderer* gpu=[HMGLRenderer new];CGFloat width=320.0*912/420;XCTAssertTrue([gpu setLogicalWidth:width height:320]);
+ XCTAssertTrue([gpu prepareImage:fixture(4) name:@"white-non-power-of-two" rgb565:YES]);
+ struct Pose{double offset,scale,angle;};
+ for(auto pose:{Pose{.25,1,0},Pose{.75,1.15,.07},Pose{.3,.8,-.05}}){
+  int minima[2]={255,255};
+  for(int joined=0;joined<2;++joined){
+   CGPoint center=CGPointMake(width/2+pose.offset,160);XCTAssertTrue([gpu beginFrame]);
+   if(joined)[gpu drawJoinedBackground:@"white-non-power-of-two" position:center scale:pose.scale rotation:pose.angle rgb565:YES];
+   else [gpu drawImage:nil name:@"white-non-power-of-two" columns:1 rows:1 tile:0 position:center scale:CGSizeMake(pose.scale,pose.scale) rotation:pose.angle alpha:1 blend:0 rgb565:YES];
+   [gpu finish];[gpu endFrame];auto p=canvasBytes([gpu snapshot]);int w=int(std::ceil(width));
+   for(int y=0;y<320;++y)for(int x=0;x<w;++x){
+    double dx=(x+.5)*width/w-center.x,dy=y+.5-center.y;
+    double lx=(std::cos(pose.angle)*dx+std::sin(pose.angle)*dy)/pose.scale,ly=(-std::sin(pose.angle)*dx+std::cos(pose.angle)*dy)/pose.scale;
+    // Exclude only raster coverage uncertainty, retaining the half-texel border.
+    if(std::abs(lx)<239.9&&std::abs(ly)<159.9)minima[joined]=std::min(minima[joined],redAt(p,w,x,y));
+   }
+  }
+  XCTAssertLessThan(minima[0],240,@"Control must reproduce black POT padding");
+  XCTAssertGreaterThanOrEqual(minima[1],254,@"A white background acquired a dark seam");
+  NSLog(@"HM_JOIN_EDGE offset=%g scale=%g angle=%g originalMinimum=%d joinedMinimum=%d",pose.offset,pose.scale,pose.angle,minima[0],minima[1]);
+ }
+ XCTAssertEqualObjects([gpu diagnostics][@"lastError"],@"");
+}
 // Oracle SHA256 2f453a61c375d1240d7197d736f915ad2b2cf08e841dd169551beccfe75761bb
 - (void)test_alpha_midpoint {
  HMGLRenderer* gpu=[HMGLRenderer new];XCTAssertNotNil(gpu);if(!gpu)return;XCTAssertTrue([gpu beginFrame]);

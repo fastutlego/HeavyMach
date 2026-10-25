@@ -20,6 +20,9 @@
 // Presentation-only seam: reflect a narrow edge OUTSIDE the original rectangle
 // and fade toward the generated scenery. Original pixels/rectangle stay untouched.
 - (void)drawEdgeContinuation:(NSString*)name position:(CGPoint)position scale:(CGFloat)scale rotation:(CGFloat)rotation width:(CGFloat)width rgb565:(BOOL)rgb565;
+// Background joins only: clamp the half-texel border to image pixels without
+// changing interior UVs, original textures, or the default sprite sampler.
+- (void)drawJoinedBackground:(NSString*)name position:(CGPoint)position scale:(CGFloat)scale rotation:(CGFloat)rotation rgb565:(BOOL)rgb565;
 - (void)drawTrail:(const heavymach::TrailMesh&)mesh image:(UIImage *)image name:(NSString *)name rgb565:(BOOL)rgb565 cameraOffset:(CGPoint)offset;
 // viewport uses UIKit points measured in layer.bounds, with a top-left origin.
 - (BOOL)presentToLayer:(CAEAGLLayer *)layer viewport:(CGRect)viewport;

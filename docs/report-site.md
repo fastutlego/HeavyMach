@@ -1,5 +1,14 @@
 # HeavyMach 보고 사이트
 
+## 최신 게시 — 2026-10-25 18:57 배경 연결·검은줄 수정
+
+- `#menu-joins`: 타이틀·모드·미션 수정 전후 실제 GL 이미지, 검은 POT 여백 재현과 수정, 물리 iPhone Air/Simulator26개 통과를 게시했다. 소유자 전용 유지.
+- 사이트 소스: `fc0de67a67bda94112171b898ec96f82a5500b83`.
+- 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_8be97137a5288191a14a01a1a4772f68`.
+- 배포: `appgdep_6addd29490dc8191afb1976f6b13f8fb`, API `succeeded`.
+- 로컬 Chrome 최신 페이지의 문구·전후 이미지·반응형 배치를 직접 확인했다. 게시 주소의 기존 Chrome 로그인 게이트는 유지하며 접근 범위를 넓히지 않았다.
+- 게임 변경 상세는 [모드·미션 연결과 검은줄 수정](menu-joins-20261025.md). 아래 설치 대기/미검사 문장은 과거 게시 당시 기록이다.
+
 2026-10-25 사용자 요청으로 Sites 스킬을 사용해 생성했다. 이후 보고는 이 사이트를 갱신하고 URL을 제공한다. 원본 정본과 TODO는 저장소에 유지한다. 새 사이트를 매번 만들지 않는다.
 
 - URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site

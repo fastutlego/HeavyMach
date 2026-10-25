@@ -21,6 +21,7 @@ FOUNDATION_EXPORT NSData *HMOriginalImageRGBA(UIImage *image);
 - (void)setClipRect:(CGRect)rect;
 - (void)resetClip;
 - (void)drawEdgeContinuation:(NSString*)name x:(CGFloat)x y:(CGFloat)y scale:(CGFloat)scale rotation:(CGFloat)rotation width:(CGFloat)width;
+- (void)drawJoinedBackground:(NSString*)name x:(CGFloat)x y:(CGFloat)y scale:(CGFloat)scale rotation:(CGFloat)rotation;
 - (void)drawTrail:(const heavymach::TrailMesh&)mesh;
 - (UIImage *)image:(NSString *)name;
 // Called during init, before the first title frame. Repeated calls reuse voices.
