@@ -56,3 +56,12 @@ python3 tools/document_contract.py check
 - [IPA 포팅과 네이티브 앱 복원](docs/public/ipa-port-and-native-app-20261026.md): 호환판 제작, 새 앱의 성능 문제와 비교·수정 순서, 치트·일반 앱 설치를 설명한 기술 블로그 원고.
 
 독립 저장소의 브랜치·태그·롤백은 [저장소 관리](docs/repository-management.md)를 따른다. 분리 전 경로와 커밋 해시는 당시 증거이며 [이력 대응](docs/migration/commit-map.txt)에서 새 해시를 찾는다.
+
+Apple Silicon 시뮬레이터에서 새 checkout을 빌드할 때는 먼저 음향 라이브러리를 준비한다.
+
+```sh
+bash tools/build_openal.sh iphonesimulator
+xcodebuild -project iOS/HeavyMachRestored.xcodeproj -scheme HeavyMachRestored -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' ARCHS=arm64 ONLY_ACTIVE_ARCH=YES CODE_SIGNING_ALLOWED=NO build
+```
+
+치트 앱은 같은 명령의 scheme을 HeavyMachValidation으로 바꾼다. 현재 OpenAL 빌드 스크립트의 대상은 arm64다. 최초 일반 generic 명령의 라이브러리 입력 누락 실패는 개편 기록에 보존했다.

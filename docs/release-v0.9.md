@@ -8,7 +8,7 @@
 - 실제 일반·치트 설치와 코드 해시: [설치 기록](release-review-20261025.md).
 - 사용자는 설치본의 전체 미션을 플레이하고 크래시·오동작·적 이동 이상은 없는 것 같다고 보고했다.
 - Sources·iOS·Art·vendor·Tests의 Git tree ID가 기존 제품과 같다. [내용 대조](migration/product-tree-proof.json), [이력 대응](migration/commit-map.txt).
-- 새 경로에서 CMake 코어 검사 17/17과 문서 연결 검사가 통과했다. Xcode 재빌드 결과는 개편 기록에 추가한다.
+- 새 경로에서 CMake 코어 검사 17/17과 문서 연결 검사가 통과했다. 새 경로의 arm64 Simulator 일반·치트 Xcode 빌드도 성공했다. 첫 generic 실행 실패와 준비 명령은 개편 기록에 보존했다.
 
 개발은 feature→develop→main 순서로 병합한다. `v0.9`는 main의 병합 커밋을 가리키며 이후 이동하지 않는다. 실제 태그 SHA는 `git rev-parse v0.9^{}`로 조회한다. [복원 절차](repository-management.md)를 따른다.
 
