@@ -1,0 +1,2 @@
+--landscape-right
+--device-family=iphone

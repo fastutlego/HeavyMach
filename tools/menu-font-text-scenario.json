@@ -1,0 +1,1 @@
+[{"tool": "open_binary", "arguments": {"path": "/Users/sokol/Documents/Codex/2026-10-24/rea-ready/HeavyMach-1.13-extracted/Payload/HeavyMach.app/HeavyMach"}, "output": "menus-open.json"}, {"tool": "procedure_pseudo_code", "arguments": {"procedure": "0x8f80"}, "output": "menu-font-setText.json"}, {"tool": "close_binary", "arguments": {}, "output": "menus-close.json"}]

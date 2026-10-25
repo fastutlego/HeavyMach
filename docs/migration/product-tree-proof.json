@@ -1,0 +1,13 @@
+{
+  "original_product_commit": "72e8c68e57f0a5c51b31481a21528c73f8a48069",
+  "original_document_commit": "90a7fc684571130e4209c86fe83f8f0b17250f3a",
+  "filtered_product_commit": "9c0d7639b2988c94d12d2a7e6220d8d62b596c48",
+  "trees": {
+    "Sources": "30075505aad1f941a78119eac22ea6ebfb5f5357",
+    "iOS": "da028d0f3ed163c95cc7765af89f75e210e2be0a",
+    "Art": "03f390e4dc6a270e780fb017819a1be52f7bddf2",
+    "vendor": "dcd111bd48c368c4c1158a47f5632f18f4f5e51d",
+    "Tests": "f75a457f387fedb98df790f8f0b836a53d2f3d92"
+  },
+  "meaning": "Git tree identities match; independent build checks recorded separately."
+}

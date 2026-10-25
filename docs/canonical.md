@@ -1,0 +1,46 @@
+# HeavyMach 정본과 작업 기준
+
+현행 기준: 2026-10-25. 적용 범위는 이 독립 저장소다. Unity는 별도 저장소이며 IPA 호환 실행기는 `Compatibility/`에 보존한다.
+
+## 읽는 순서와 우선순위
+
+1. 최신 사용자 지시와 사용자 제공 원본을 먼저 확인한다.
+2. 이 문서, [문서 위계](document-governance.md), [게임 기획](game-design.md), [복원 계약](restoration-contract.md), [현재 상태](current-status.md), [설계](design.md)를 읽는다.
+3. [업무 연결표](document-map.json)로 업무/파일에 맞는 필수 문서·소스·검사를 고른다. 수정할 경로의 [좌표·입력](coordinate-policy.md), [그래픽](rendering-policy.md), [게임 수치](game-calculation-policy.md), [시간·저장·음향](runtime-policy.md)을 읽고 실제 소비 코드와 대조한다.
+4. 사용자 후속 요구는 [사용성 TODO](usability-todo.md)와 [전체 캔버스 계획](wide-canvas-plan.md)에서 확인한다. 현행 정책과 변경 예정 정책을 구분한다.
+5. 과거 인계·실험 보고는 증거다. 과거의 UIKit/AVAudioPlayer/CADisplayLink 구현 설명을 현행 정책으로 사용하지 않는다.
+
+제품 요구는 사용자 지시와 원본 동작이 소유한다. 이 정책들은 확인한 요구를 코드에 연결한다. 코드가 정책과 다르면 어느 쪽이 원본과 일치하는지 조사한다. 정책을 현재 버그에 맞춰 바꾸거나 코드에 적혀 있다는 이유만으로 정상 판정하지 않는다.
+
+## 요구와 구현의 일치
+
+문서·소스·앱 기능은 서로를 설명해야 한다. 기획은 플레이어 경험과 승인 범위, 설계·정책은 구현 계약, 코드는 소비 경로, 검사·앱 관측은 실행 근거를 소유한다. [위계와 갱신 절차](document-governance.md)를 적용한다. 단순 링크 존재나 검사 개수로 의미 일치를 대신하지 않는다.
+
+현행 문서 목록은 document-map의 current_documents다. 나머지 조사·과거 구현·회고는 증거로 읽는다. 과거 기록에 “최신”이라고 쓰여 있어도 current-status의 후속 소스·기기·날짜 확인을 대신하지 않는다.
+
+## 비교 대상
+
+- 원작: HeavyMach 1.13 ARMv6 IPA. 식별 SHA와 원본 위치는 [출처](source-provenance.md).
+- 정상 비교 실행본: `Compatibility/compat-source/fresh-port/20-touchHLE-src/touchHLE` 및 보존된 앱. 사용자가 같은 아이폰에서 프레임 드랍 없이 동작했다고 확인했다.
+- 복원 제품: `Sources/Core/` C++20, `Sources/iOS/` Objective-C++. 원본 개발 소스를 확보한 것으로 표현하지 않는다.
+- 일반 앱: `HeavyMachRestored`, `com.gelb2.heavymach.restored`, 표시 이름 Heavy Mach 1, `HM_VALIDATION=0`.
+- 치트 검증 앱: `HeavyMachValidation`, `com.gelb2.heavymach.validation`, `HM_VALIDATION=1`. 저장·조건 설정·방향 버튼을 일반 앱과 분리한다.
+
+## 변경 규칙
+
+원본 근거 없이 렌더 API·좌표계·타이머·수식·저장 시점을 별도 설계로 바꾸지 않는다. 현대 iOS에서 필요한 변환은 플랫폼 경계에 한정하며, 원본이 고정한 조건과 새 앱이 허용하는 조건의 차이를 적는다. 예: 원본의 고정 가로 방향과 새 앱의 양방향 가로 회전은 같은 조건이 아니다.
+
+변경 기록에는 요구, 원본 함수/파일/주소, 현재 소비자, 재현 입력, 변경, 검사 결과와 남은 범위를 남긴다. 틸트는 버튼 대체 입력만으로 통과시키지 않고 양쪽 화면 방향의 실제 센서 축 입력을 검사한다. 저장은 실제 임시 파일의 쓰기 횟수와 기존 저장 보존을 검사한다. 렌더는 논리 버퍼·최종 표시·실기기 계측을 구별한다.
+
+새 실패를 숨기거나 기준을 낮춰 통과시키지 않는다. 유효한 기존 검사 결과는 재사용한다. 정책 변경 시 관련 구현·검사·상태 문서를 같은 변경에 포함한다. 일반 앱과 검증 앱의 공통 경로 수정은 두 산출물을 모두 빌드하며 실제 설치 여부를 각각 기록한다.
+
+## 저장소와 증거 보존
+
+코드·테스트·도구·문서·Xcode 구성·필요한 오픈소스 vendor와 라이선스는 Git으로 관리한다. 원본 IPA/추출 자원 `Resources/`, 로컬 REA 출력 `Analysis/`, `build/`, 사용자 저장, 인증서·프로파일·키는 커밋하지 않는다. 파일은 삭제하지 않고 로컬에 보존한다. 로컬 원본 준비는 README와 출처 문서를 따른다.
+
+최신 결과는 current-status가 소유한다. 시뮬레이터 통과를 실제 폰 통과로, 치트 클리어를 정상 난이도 통과로, 일부 장면 일치를 전체 원본 동등성으로 바꾸어 보고하지 않는다.
+
+- [REA 분석·복원 방법과 전체 증거 색인](public/rea-restoration-method-20261025.md): 사용한 스킬·도구, 25개 함수군, 실패 수정, 구현·검증 기록.
+- [IPA 포팅과 네이티브 앱 복원](public/ipa-port-and-native-app-20261026.md): 두 판본의 제작·비교·수정과 최종 설치를 정리한 기술 블로그 원고. 현행 정책은 위 문서들을 따른다.
+
+- [저장소 관리·v0.9 복원](repository-management.md): develop→main 병합, 태그 고정, 별도 worktree와 저장 보존.

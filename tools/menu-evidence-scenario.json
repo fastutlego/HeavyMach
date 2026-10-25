@@ -1,0 +1,84 @@
+[
+  {
+    "tool": "open_binary",
+    "arguments": {
+      "path": "/Users/sokol/Documents/Codex/2026-10-24/rea-ready/HeavyMach-1.13-extracted/Payload/HeavyMach.app/HeavyMach"
+    },
+    "output": "menus-open.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x18158"
+    },
+    "output": "menu-0x18158.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x186d8"
+    },
+    "output": "menu-0x186d8.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x18fc0"
+    },
+    "output": "menu-0x18fc0.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x192ec"
+    },
+    "output": "menu-0x192ec.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x19ba0"
+    },
+    "output": "menu-0x19ba0.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x19d18"
+    },
+    "output": "menu-0x19d18.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x19ea4"
+    },
+    "output": "menu-0x19ea4.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x1a05c"
+    },
+    "output": "menu-0x1a05c.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x1a55c"
+    },
+    "output": "menu-0x1a55c.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x1a900"
+    },
+    "output": "menu-0x1a900.json"
+  },
+  {
+    "tool": "close_binary",
+    "arguments": {},
+    "output": "menus-close.json"
+  }
+]

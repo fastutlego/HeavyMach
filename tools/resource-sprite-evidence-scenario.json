@@ -1,0 +1,56 @@
+[
+  {
+    "tool": "open_binary",
+    "arguments": {
+      "path": "/Users/sokol/Documents/Codex/2026-10-24/rea-ready/HeavyMach-1.13-extracted/Payload/HeavyMach.app/HeavyMach"
+    },
+    "output": "resource-open.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x11380"
+    },
+    "output": "parts-naming.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x11554"
+    },
+    "output": "parts-sprite.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x6d9c"
+    },
+    "output": "tile-grid.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x8b08"
+    },
+    "output": "image-init.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x8cf0"
+    },
+    "output": "image-draw.json"
+  },
+  {
+    "tool": "procedure_pseudo_code",
+    "arguments": {
+      "procedure": "0x14f9c"
+    },
+    "output": "weapon-effect.json"
+  },
+  {
+    "tool": "close_binary",
+    "arguments": {},
+    "output": "resource-close.json"
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-10-25",
+  "status": "Applied and simulator-verified; physical launch pending device unlock",
+  "titleA": "Edit the provided original HeavyMach title artwork by OUTPAINTING LEFT AND RIGHT. Produce an ultra-wide 3:1 landscape canvas (ideally 1536x512). The supplied 480x320 artwork must occupy EXACTLY the middle 50% of the output width and the full output height, with unchanged composition and aspect ratio. Add equal-width new scenery to its left and right, each 25% of output width. This is a game background extension, not a redesign. Original painting: gritty muted olive and ochre ruined city, painterly military science fiction, hot orange gunfire on the left, dark ruined steel and rubble on the right. Match horizon, perspective, fog, brushwork, restrained detail density and light at both seams. Extend ruined buildings, smoke, ground rubble only. Do not add tanks, characters, aircraft, weapons, lettering, UI, borders or logos. The original tank silhouette, firing barrel and center scene must remain recognizable and in exactly the same centered rectangle. Keep new outer scenery subdued so title UI remains readable. No stretching the existing image. Output only the extended artwork.\nCandidate A: continue the existing skyline and rubble with subtle atmospheric depth, maintaining its warm left light and dark right silhouettes.",
+  "titleB": "Edit the provided original HeavyMach title artwork by OUTPAINTING LEFT AND RIGHT. Produce an ultra-wide 3:1 landscape canvas (ideally 1536x512). The supplied 480x320 artwork must occupy EXACTLY the middle 50% of the output width and the full output height, with unchanged composition and aspect ratio. Add equal-width new scenery to its left and right, each 25% of output width. This is a game background extension, not a redesign. Original painting: gritty muted olive and ochre ruined city, painterly military science fiction, hot orange gunfire on the left, dark ruined steel and rubble on the right. Match horizon, perspective, fog, brushwork, restrained detail density and light at both seams. Extend ruined buildings, smoke, ground rubble only. Do not add tanks, characters, aircraft, weapons, lettering, UI, borders or logos. The original tank silhouette, firing barrel and center scene must remain recognizable and in exactly the same centered rectangle. Keep new outer scenery subdued so title UI remains readable. No stretching the existing image. Output only the extended artwork.\nCandidate B: quieter peripheral ruins, less orange illumination in the newly added outermost left quarter, lower contrast and more smoke than candidate A, but exactly match the light and geometry at the original left and right boundaries. Keep the original image precisely in the center half.",
+  "menuMetal": "Use the supplied HeavyMach metal menu screenshot as a MATERIAL AND STYLE REFERENCE ONLY. Create a seamless-looking empty industrial metal menu backdrop, ultra-wide landscape 3:1 aspect ratio (ideally1536x512). No text whatsoever, no buttons, no slots, no screens, no numbers, no logos. Top quarter and bottom eighth: brushed desaturated gray steel plates, subtle bolts and seams, exact old painted game UI look of the reference, restrained olive/brown wear. Middle: dark recessed horizontal mechanical wall with low detail and black/olive steel, quiet enough behind three original slot panels. Straight front-on orthographic interface, no perspective, no gradients that look modern glossy, no neon. Restrained and utilitarian, preserve the original reference's material scale: rivets and metal grain should be small relative to image. This is a separate filler layer behind untouched original UI fragments.",
+  "selectedTitle": "A",
+  "reason": "A matches the original warm left light and dark right edge more closely. B retained as rejected comparison.",
+  "originalFiles": [
+    "Resources/OriginalImages/Main_BG.png",
+    "Resources/OriginalImages/SelSlot_BG.png"
+  ],
+  "references": [
+    "Resources/Images/Main_BG.png",
+    "Resources/Images/SelSlot_BG.png"
+  ],
+  "compositing": "Only outer quarters of TitleWide are drawn. Original center drawn unchanged. Twenty logical pixels OUTSIDE each original edge use reflected original edge pixels fading into generated art; no blur or fade inside original rectangle. Menu uses original header/card fragments and sprites.",
+  "originalHashes": {
+    "SelSlot_BG.png": "843775a225ecc80c776f51b52fc5ae1e8d767e4278e6cfc51472adb4e3d19119",
+    "Main_BG.png": "049126fd0456b2c1122d9797ca6d80e67b8ff3b9da0a7b1003223bdfa9da8d43"
+  },
+  "outputHashes": {
+    "Art/Extensions/TitleWide.png": "03ce72c951431b7a51d13b329c950b67ee635842e22630f7ec9d61097aefdf6b",
+    "Art/Extensions/MenuMetal.png": "46dcaa0f271fb0126e10c299409d54a6b56b5af76e21e21257d0e2d69f899997",
+    "Art/Candidates/title-20261025/title-a.png": "03ce72c951431b7a51d13b329c950b67ee635842e22630f7ec9d61097aefdf6b",
+    "Art/Candidates/title-20261025/title-b.png": "3b409dc984d732a2c422969d972dc5af98d59e6b5fcd6ce40003ad2ed5a1d674"
+  }
+}
