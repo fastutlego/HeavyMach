@@ -37,3 +37,7 @@
 검사: `HMFramePerformanceTests.testPhysicalTiltMovesTowardLowerScreenEdgeInBothLandscapeOrientations`는 두 방향의 CoreMotion 표본으로 실제 탱크 이동과 수동 입력 부호를 검사한다. 방향 버튼·키 해제 검사도 함께 유지한다. 물리폰을 손으로 기울인 결과는 별도로 기록한다.
 
 방향 정의: [Apple UIInterfaceOrientation](https://developer.apple.com/documentation/uikit/uiinterfaceorientation). 게임 입력 근거: 원본 `processMyMach 0xc830`, 필터 `0xb55c`.
+
+## 보스 접근과 표시 좌표
+
+확장 시야의 보스 선행 생성은 표시·피격 준비다. 이동과 무기AI는 원래 배치가 player+500 안으로 들어오는10단위 진행 샘플에서 시작한다. 화면 위치·이동한 보스 위치로 발동점을 바꾸지 않는다. Stage14 항공기는 map.right1459와 전투 frontLine1330을 두 폭에서 동일하게 사용한다. 화면 오른쪽 끝을 AI 목표점으로 새로 넣지 않는다. [실행 증거](boss-motion-fix-20261025.md).

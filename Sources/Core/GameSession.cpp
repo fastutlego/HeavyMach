@@ -13,7 +13,7 @@ namespace heavymach {
 struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBoxHost,TrailHost,BulletVisualHost {
  struct Part {PartsState visual;WeaponState weapon;bool armed=false;int order=0;ObjectBounds bounds;};
  struct Machine {
-  uintptr_t id=0;size_t mapEnemyIndex=SIZE_MAX;std::unique_ptr<GobHvM_Enemy> enemy;
+  uintptr_t id=0;size_t mapEnemyIndex=SIZE_MAX;bool bossActivationPending=false;std::unique_ptr<GobHvM_Enemy> enemy;
   std::vector<std::unique_ptr<Part>> parts;std::vector<Part*> drawOrder;bool drawOrderDirty=true;ObjectBounds bounds{};bool removed=false,inScreen=true;
   float gauge=1;std::array<bool,2> gaugeQueued{};const MachDefinition* definition=nullptr;
 #if defined(HM_VALIDATION) && HM_VALIDATION
@@ -120,7 +120,7 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
   m.enemy->hasWeapon=std::any_of(m.parts.begin(),m.parts.end(),[](const auto& p){return p&&p->armed;});
  }
  void spawnMapEnemy(const EnemyDefinition& definition,size_t index)override{
-  spawnEnemy(definition);enemies.back().mapEnemyIndex=index;
+  spawnEnemy(definition);enemies.back().mapEnemyIndex=index;enemies.back().bossActivationPending=definition.isBoss;
  }
  bool mapEnemyAlive(size_t index)const override{
   for(const auto& m:enemies)if(m.mapEnemyIndex==index)return !m.removed&&m.enemy->hp>0;
@@ -179,7 +179,13 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
   for(auto& m:enemies)if(m.inScreen&&pointInObject(p,m.enemy->position,m.bounds))return m.id;
   return {};
  }
- EnemyFrame enemyFrame(const Machine& m)const{return {world.motionWorld(m.enemy->position.x,globalTime),player?player->position:Vector2{},stage.mission,slot.level()};}
+ bool waitingForBossEncounter(const Machine& m)const{
+  return m.enemy&&m.enemy->isBoss&&m.mapEnemyIndex<world.bossEncounterActivated.size()&&!world.bossEncounterActivated[m.mapEnemyIndex];
+ }
+ EnemyFrame enemyFrame(const Machine& m)const{
+  EnemyFrame f{world.motionWorld(m.enemy->position.x,globalTime),player?player->position:Vector2{},stage.mission,slot.level()};
+  f.motion.paused=f.motion.paused||waitingForBossEncounter(m);return f;
+ }
  void damage(CombatTarget id,int32_t amount)override{
 #if defined(HM_VALIDATION) && HM_VALIDATION
   if(id==1&&player&&validationCheats&&amount>0){++cheatStats.blockedHits;return;}
@@ -228,7 +234,7 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
   }
  }
  CombatFrame frame(GobHvMach& owner,Machine& graph,Part& p){
-  CombatFrame f;f.time=world.gameTime;f.paused=world.paused;f.playerPos=player?player->position:Vector2{};f.ownerPos=owner.position;f.weaponPos=owner.position;f.rotPos=p.visual.rotatedPosition;f.socket0=socket(p.visual.info,0);f.socket1=socket(p.visual.info,1);f.machType=owner.machType;f.isPlayer=owner.player;f.isMainPlayer=&graph==&playerGraph;f.ownerInScreen=graph.inScreen;f.weaponUpgrade=slot.bytes[0x2d];
+  CombatFrame f;f.time=world.gameTime;f.paused=world.paused||waitingForBossEncounter(graph);f.playerPos=player?player->position:Vector2{};f.ownerPos=owner.position;f.weaponPos=owner.position;f.rotPos=p.visual.rotatedPosition;f.socket0=socket(p.visual.info,0);f.socket1=socket(p.visual.info,1);f.machType=owner.machType;f.isPlayer=owner.player;f.isMainPlayer=&graph==&playerGraph;f.ownerInScreen=graph.inScreen;f.weaponUpgrade=slot.bytes[0x2d];
   if(player){f.damageBoost=player->passives.active(1);f.shield=player->passives.active(0);}f.selectedWeapon=int16_t(selected);f.selectedCharge=&charge;return f;
  }
  void removeExhaustedWeapon(){
@@ -285,7 +291,14 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
   globalTime=time;if(!active)return;playerGraph.gaugeQueued.fill(false);for(auto& m:enemies)m.gaugeQueued.fill(false);
   if(player&&!world.paused&&world.gameState==0)player->setMoveVel(WorldState::moveInput(tilt),player->passives.active(3));
   world.tick(player?std::optional<Vector2>(player->position):std::nullopt,stage,*this,[this]{return random31();});
-  for(auto it=enemies.begin();it!=enemies.end();){if(it->removed){it=enemies.erase(it);continue;}auto& m=*it;current=&m;motionEvents(*m.enemy,m,m.enemy->tick(enemyFrame(m),*this));current=nullptr;++it;}
+  for(auto it=enemies.begin();it!=enemies.end();){if(it->removed){it=enemies.erase(it);continue;}auto& m=*it;
+   if(m.bossActivationPending&&!waitingForBossEncounter(m)&&!world.paused){
+    // Prefetch prepares visuals, not elapsed weapon-AI delay. Keep each
+    // original random delay; begin its clock when the encounter activates.
+    for(auto& p:m.parts)if(p&&p->armed)p->weapon.resetTime=float(world.gameTime);
+    m.bossActivationPending=false;
+   }
+   current=&m;motionEvents(*m.enemy,m,m.enemy->tick(enemyFrame(m),*this));current=nullptr;++it;}
   for(size_t n=0;n<world.particles.size();++n){auto& p=world.particles[n];tickParticle(p,globalTime);particleQueued[n]=p.show;}
   if(player){
    if(world.gameMode==0&&safeBackLine<player->position.x-240){safeBackLine=player->position.x-240;if(safeBackLine>removeBgLine+320){float boundary=removeBgLine;float renderBoundary=world.canvasWidth==480?boundary:std::min(boundary,world.camera.x-world.canvasWidth*.5f-60);std::erase_if(mapSprites,[&](const DrawSprite& d){return renderBoundary>d.position.x+mapTileSize(d.tile).x;});if(world.backLine<boundary)world.backLine=boundary;removeBgLine=safeBackLine;}}

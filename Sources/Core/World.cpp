@@ -103,8 +103,8 @@ void WorldState::processRegen(float x,WorldHost& host){
    const float margin=128.f;
    if(enemy.position.x-x-margin<extent){enemiesSpawned[i]=true;host.spawnMapEnemy(enemy,i);}
   }
-  // Prefetching affects display/combat only. Original placement, not a moving
-  // boss' current position, controls the original 500/10 encounter trigger.
+  // Prefetching prepares display/hit detection. Boss motion and weapon AI
+  // wait for this original placement-based 500/10 encounter trigger.
   if(enemy.isBoss&&enemiesSpawned[i]&&!bossEncounterActivated[i]&&!mapEnemiesDefeated[i]&&originalAdvance&&enemy.position.x-x<500){
    if(host.mapEnemyAlive(i)){bossEncounterActivated[i]=true;activateBossEncounter(enemy);}
    else mapEnemiesDefeated[i]=true;

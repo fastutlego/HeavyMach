@@ -7,7 +7,7 @@
 | 원작 함수 | 주소 | 복원 책임 |
 | --- | --- | --- |
 | init | 0x13d80 | boss=false,type2,giveItem/giveExp/speedDest/gravityDest/gauge 초기화 |
-| tick | 0x13e04 | type0 지상 AI, type1 헬기 AI, 상위 이동 tick 호출 |
+| tick | 0x13e04 | type0 지상 AI, type1 비행 AI, 상위 이동 tick 호출 |
 | onDamage: | 0x143b8 | 상위 HP감소/파괴/피격음 뒤 HP gauge 갱신 |
 | onDestroy | 0x14418 | 보스수 감소·아이템·폭발·경험치·remove·상위 파괴음 순서 |
 | setHPGauge: | 0x14778 | scaleX=fraction, x=−(gaugeSize−fraction×gaugeSize) |
@@ -52,7 +52,7 @@ clang++ -std=c++20 -Wall -Wextra -Werror -ffp-contract=off -fno-fast-math \
 /tmp/heavymach-enemy-tests
 ```
 
-임시main에서 세 run 함수 호출. 2026-10-24 종료0, assertion·sanitizer 오류 없음. 초기/typed data, 랜덤 호출 횟수, 지상 모드, 헬기 높이대역·평활, pause, 피격 gauge, 동기아이템 RNG소비, 사망 순서, 보스 드롭, EXP 감소·생존절반을 확인했다. 원작과 자동 differential 실행, 렌더/음향·세계 통합·기기 플레이는 별도 검증 대상이다.
+임시main에서 세 run 함수 호출. 2026-10-24 종료0, assertion·sanitizer 오류 없음. 초기/typed data, 랜덤 호출 횟수, 지상 모드, 비행형 높이대역·평활, pause, 피격 gauge, 동기아이템 RNG소비, 사망 순서, 보스 드롭, EXP 감소·생존절반을 확인했다. 원작과 자동 differential 실행, 렌더/음향·세계 통합·기기 플레이는 별도 검증 대상이다.
 
 ## 남은14개 보스 계열 독립 대조 — 2026-10-24
 
@@ -87,7 +87,7 @@ clang++ -std=c++20 -Wall -Wextra -Werror -ffp-contract=off -fno-fast-math \
 | E07MB03 | 0 | 15000 | 3 | 80,200,200 | 1~2 |
 | Boss07 | 0 | 60000 | 6 | 120,120,150,150,200,200 | 1~2.5 |
 
-따라서12종은type0 지상 AI, Boss06은type1 헬기 AI, E05MB02는type2로 Enemy 자체 이동 AI가 없다. type2도 상위 tick과 부품 무기 tick을 실행한다. 200피해 type7 무기의 반복 장착과 Boss07의HP60000은 원본 정의에서 확인한 값이다. 이를 임의로 줄이지 않았다.
+따라서12종은type0 지상 AI, Boss06은type1 비행 AI, E05MB02는type2로 Enemy 자체 이동 AI가 없다. type2도 상위 tick과 부품 무기 tick을 실행한다. 200피해 type7 무기의 반복 장착과 Boss07의HP60000은 원본 정의에서 확인한 값이다. 이를 임의로 줄이지 않았다.
 
 ### 발사 주기 호출 경계
 
@@ -103,3 +103,7 @@ Enemy tick에는 발사 주기 조정이 없다. 원본 무기 tick의 공통 �
 ### 실행 결과
 
 기존 Enemy 회귀를 `Geometry.cpp`, `Motion.cpp`, `Enemy.cpp`, `EnemyTests.cpp`와 임시main으로 빌드했다. `-Wall -Wextra -Werror -ffp-contract=off -fno-fast-math -fsanitize=address,undefined`를 사용했다. `/tmp/hm-enemy-review-tests` 종료0, assertion 및 sanitizer 오류 없음. 정의 조회 결과는 `/tmp/hm-enemy-original-boss-audit.txt`에 남겼다. 새 결함이 없어 실패 재현 테스트나 수치 변경을 추가하지 않았다.
+
+## 모델 식별 정정 · 2026-10-25
+
+machType1은 항공기와 헬기가 공유한다. 미션3-5 Stage14의 Boss05는 E_Boss02.png 항공기이며 E_Boss05.png를 사용하는 Boss06과 다르다. 이름의 번호만으로 외형을 판단하지 않는다. 확장 화면의 선행 생성 보스는 GameSession에서 원작 접근 조건까지 이동·무기AI를 기다린다. Enemy.cpp의 원작 속도·거리 분기는 변경하지 않았다. [수정·검사 기록](boss-motion-fix-20261025.md).

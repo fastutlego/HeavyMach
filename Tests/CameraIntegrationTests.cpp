@@ -116,7 +116,7 @@ int main(){
  assert(i.world.backLine==700&&i.mapSprites.size()==1); // Original progression is independent of retention.
  game.setCanvasWidth(480);assert(game.canvasWidth()==480);
 
- // Visible prefetched bosses fight normally, but do not unlock another boss
+ // Visible prefetched bosses can be hit, but do not unlock another boss
  // if destroyed before their ORIGINAL map placement reaches the 500 trigger.
  auto encounterData=data;auto& encounterMap=encounterData.maps.at("Stage01");
  encounterMap.left=0;encounterMap.right=3000;encounterMap.bottom=-160;encounterMap.top=640;
@@ -143,6 +143,37 @@ int main(){
  encounters.start(0,0,0);encounters.setCanvasWidth(480);ei.world.processRegen(111,ei);
  assert(ei.world.bossEncounter==2&&ei.world.frontLine==750);
 
+
+ // Prefetched aircraft stays visible/hittable, but movement and weapon AI
+ // start at the original placement trigger, including a later width switch.
+ auto aircraftData=data;auto& aircraftMap=aircraftData.maps.at("Stage01");
+ aircraftMap.left=0;aircraftMap.right=3000;aircraftMap.bottom=-160;aircraftMap.top=640;
+ aircraftMap.objects.clear();aircraftMap.enemies={{"Boss05",{600,100},true}};
+ assert(data.machines.at("Boss05").parts.front().name=="E_Boss02");
+ for(bool switchWidth:{false,true}){
+  SaveSlot aircraftSlot;GlobalInfo(aircraftSlot).selectSlot(1);
+  GameSession aircraft(aircraftData,aircraftSlot,[](std::string_view){return Vector2{128,128};},[]{return 0;});
+  aircraft.setCanvasWidth(696);aircraft.start(0,0,0);auto& ai=*aircraft.impl_;
+  assert(ai.enemies.size()==1);auto& plane=ai.enemies.front();
+  ai.player->position={90,100};ai.world.camera={350,160};
+  if(switchWidth)aircraft.setCanvasWidth(480);
+  for(int t=1;t<=1800;++t){ai.world.gameTime=double(t)/60;
+   ai.motionEvents(*plane.enemy,plane,plane.enemy->tick(ai.enemyFrame(plane),ai));
+   assert(plane.enemy->position.x==600&&plane.enemy->position.y==100);
+   for(auto& part:plane.parts)if(part->armed)assert(part->weapon.aiStep==0&&part->weapon.fireTime==0);
+  }
+  assert(plane.inScreen&&ai.targetAt(false,plane.enemy->position)==plane.id);
+  ai.damage(plane.id,1);assert(plane.enemy->hp==plane.enemy->hpMax-1);
+  ai.world.processRegen(100,ai);assert(!ai.world.bossEncounterActivated[0]);
+  ai.player->position.x=111;ai.world.processRegen(111,ai);assert(ai.world.bossEncounterActivated[0]);
+  aircraft.tick(31,0);
+  assert(plane.enemy->position.x!=600||plane.enemy->position.y!=100);
+  for(auto& part:plane.parts)if(part->armed){assert(part->weapon.aiStep==0);assert(part->weapon.resetTime==float(ai.world.gameTime));}
+  ai.world.gameTime+=2;ai.motionEvents(*plane.enemy,plane,{{MotionEventKind::TickChildren}});
+  bool aiming=false;for(auto& part:plane.parts)if(part->armed)aiming|=part->weapon.aiStep!=0;assert(aiming);
+  for(int t=0;t<240;++t){ai.world.gameTime+=1./60;ai.motionEvents(*plane.enemy,plane,{{MotionEventKind::TickChildren}});ai.collect();}
+  bool fired=false;for(const auto& object:ai.dynamic)fired|=std::holds_alternative<BulletState>(object.value);assert(fired);
+ }
 
  // Original 480 spawns keep the original unmapped death callback, including
  // two projectiles finding the same removed boss during one original frame.

@@ -274,6 +274,37 @@ void emit(NSDictionary* record){NSData* json=[NSJSONSerialization dataWithJSONOb
  XCTAssertLessThan(session->enemyCount(),size_t(10));
  [view setApplicationActive:NO];
 }
+- (void)testMissionThreeAircraftWaitsForOriginalEncounter {
+ for(NSValue* value in @[[NSValue valueWithCGSize:CGSizeMake(480,320)],[NSValue valueWithCGSize:CGSizeMake(912,420)],[NSValue valueWithCGSize:CGSizeMake(956,440)]]){@autoreleasepool{
+  CGSize size=value.CGSizeValue;HMCanvasTestView* view=[[HMCanvasTestView alloc]initWithFrame:CGRectMake(0,0,size.width,size.height)];
+  [[view valueForKey:@"frameTimer"]invalidate];[[view valueForKey:@"motionTimer"]invalidate];
+  perfStorage<heavymach::SaveData>(view,"_save")={};[view startSlot:0 mode:0 mission:2 stage:4];[view layoutSubviews];
+  auto& session=perfStorage<std::unique_ptr<heavymach::GameSession>>(view,"_session");
+  auto& data=perfStorage<heavymach::GameData>(view,"_data");
+  XCTAssertEqual(heavymach::GlobalInfo::mapNumber({2,4}),14);
+  XCTAssertTrue(data.machines.at("Boss05").parts.front().name=="E_Boss02");
+  heavymach::ValidationScenario scenario;scenario.mission=2;scenario.stage=4;scenario.internalLevel=99;scenario.grades={6,6,0};
+  float x=530,y=session->world().mapHeight(x);scenario.playerPosition=heavymach::Vector2{x,y==10000?180:y+40};
+  session->startValidation(scenario);session->validationSetCheats(true);
+  bool expanded=session->canvasWidth()>480;
+  auto aircraft=[&](){auto enemies=session->validationEnemies();decltype(enemies) result;for(const auto& e:enemies)if(e.boss&&e.name=="Boss05")result.push_back(e);return result;};
+  for(int tick=1;tick<=1800;++tick){session->tick(double(tick)/60,0);session->takeEvents();auto plane=aircraft();
+   XCTAssertEqual(plane.size(),expanded?size_t(1):size_t(0));
+   if(!plane.empty()){XCTAssertEqual(plane[0].position.x,1180);XCTAssertEqual(plane[0].position.y,27.75f);}
+   XCTAssertEqual(session->world().bossEncounter,0);
+  }
+  for(int tick=1801;tick<=2400;++tick){session->tick(double(tick)/60,tick<=2100?.2f:0.f);session->takeEvents();}
+  auto plane=aircraft();XCTAssertEqual(plane.size(),size_t(1));XCTAssertEqual(session->world().bossEncounter,1);
+  if(!plane.empty())XCTAssertTrue(plane[0].position.x!=1180||plane[0].position.y!=27.75f);
+  XCTAssertEqual(session->world().map.right,1459);XCTAssertEqual(session->world().frontLine,1330);
+  bool rendered=false;for(const auto& sprite:session->sprites())rendered|=sprite.tile=="E_Boss02.png";XCTAssertTrue(rendered);
+  HMGLRenderer* gpu=[view valueForKey:@"glRenderer"];HMMedia* media=[view valueForKey:@"media"];
+  XCTAssertTrue([gpu setLogicalWidth:session->canvasWidth() height:320]);XCTAssertTrue([gpu beginFrame]);media.glRenderer=gpu;[view drawLogicalFrame];media.glRenderer=nil;[gpu finish];[gpu endFrame];
+  XCTAssertEqualObjects(gpu.diagnostics[@"lastError"],@"");
+  XCTAttachment* capture=[XCTAttachment attachmentWithImage:[gpu snapshot]];capture.name=[NSString stringWithFormat:@"mission3-stage5-aircraft-%gx%g",size.width,size.height];capture.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:capture];
+  [view setApplicationActive:NO];
+ }}
+}
 - (void)testExpandedAirAndProMaxCanvasPreservesHeightAndKeepsHUDInsideSafeArea {
  for(NSValue* size in @[[NSValue valueWithCGSize:CGSizeMake(912,420)],[NSValue valueWithCGSize:CGSizeMake(956,440)]]){
   for(NSNumber* reversed in @[@NO,@YES]){@autoreleasepool{
