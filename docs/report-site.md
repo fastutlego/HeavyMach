@@ -1,5 +1,16 @@
 # HeavyMach 보고 사이트
 
+## 최신 게시 — 2026-10-25 19:19 기술 회고·두 앱 설치
+
+- `/retrospective.html`: 지시·지적별 타당성, 잘못된 구현, 수정과 결과, 미완료 범위의 전문.
+- `/engineering-retrospective.md`: GitHub·외부 서비스 게시용 Markdown 원고. 저장소 원고와 내용 일치 검사 통과.
+- `#retrospective`: 두 앱 재설치·실행 확인 및 전문/다운로드 진입 링크.
+- 사이트 소스: `e0881a9fcda1c083c4ee6b33efb4edc0f808cab9`.
+- 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_f49a3fa7541c8191bd7dfb94a41cf635`.
+- 배포: `appgdep_6addd792e9b081918f93e8c2302b2678`, API `succeeded`, 2026-10-25 10:19:11 UTC.
+- 소유자 전용 유지. 로컬 Chrome에서 목차와 좁은 화면의 표/본문 배치를 확인했다. 공개 GitHub·외부 서비스 게시를 수행한 것은 아니다.
+- [설치 증거](release-review-20261025.md). 전체 화면 단일 문 전환은 구현 전으로 표시했다.
+
 ## 최신 게시 — 2026-10-25 18:57 배경 연결·검은줄 수정
 
 - `#menu-joins`: 타이틀·모드·미션 수정 전후 실제 GL 이미지, 검은 POT 여백 재현과 수정, 물리 iPhone Air/Simulator26개 통과를 게시했다. 소유자 전용 유지.
