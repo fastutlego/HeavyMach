@@ -1,5 +1,15 @@
 # HeavyMach 보고 사이트
 
+## 최신 게시 — 2026-10-26 독립 저장소·v0.9
+
+첫 화면 `#repositories`에 허브·HeavyMach·Unity 분리, feature→develop→main, v0.9, 보존 및 검사 결과, 복원 방법을 추가했다.
+
+- 소스: `d0a7126cd0aeb0caac58e4fe0728a5e7863020c6`.
+- 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_9e7ed69bcd948191975f7ba21b11fb2e`.
+- 배포: `appgdep_6ade333d0df48191b79bba969b1dbdaf`, `succeeded`, 2026-10-25T16:50:17.525926+00:00. 소유자 전용 유지.
+- Chrome 로컬 미리보기에서 본문·링크·좁은 화면 표시를 확인했다. 로컬 링크 125개, 기존 앵커·이미지, REA 목록 수, 원고와 다운로드 일치, 글쓰기 원본 14개 해시 검사를 통과했다. 배포 API 성공을 확인했으며 인증 후 게시 화면은 별도 검사하지 않았다.
+- 현행 Sites checkout은 `build/sites/heavymach-report/`다. 아래 과거 경로와 커밋은 당시 게시 기록이다.
+
 ## 최신 게시 — 2026-10-26 IPA 포팅·네이티브 앱 기술 블로그
 
 `/port-and-native.html`에 호환 실행판 제작부터 네이티브 앱의 성능 문제, 비교·수정 순서, 치트·일반 앱과 아이폰 설치까지 설명한 원고를 추가했다. 첫 화면에 진입 링크를 추가하고 같은 Markdown을 다운로드로 제공한다.

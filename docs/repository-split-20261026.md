@@ -12,3 +12,7 @@
 - arm64 Simulator의 일반·치트 Xcode 빌드 성공. 서명·재설치·실기기 플레이는 새로 실행하지 않았다.
 - 처음 generic Simulator 빌드는 OpenAL 정적 라이브러리 입력 누락으로 실패했다. 당시 script는 라이브러리 생성을 출력했으므로 로그를 보존했다. 라이브러리 준비 후 기존 스크립트가 지원하는 arm64를 지정한 두 scheme은 성공했다. README에 준비 명령을 추가했고 제품 소스·프로젝트 구성은 바꾸지 않았다.
 - 로그는 build/repository-split-normal.log, repository-split-normal-arm64.log, repository-split-cheat-arm64.log와 repository-split-core/Testing/Temporary/LastTest.log에 보존한다.
+
+## 릴리스
+
+[PR #1](https://github.com/gelb2/HeavyMach/pull/1)에서 작업 브랜치를 develop에, [PR #2](https://github.com/gelb2/HeavyMach/pull/2)에서 develop을 main에 병합했다. `v0.9`는 main 병합 커밋 `4e17f5efd786095dfcd74a7334229908954da930`을 가리킨다. 태그를 원격에서도 확인했다. GitHub Actions는 계정 결제/사용 한도 사유로 실행되지 않았다. 로컬 브랜치 검사와 GitHub PR의 head/base·SHA를 대조했다.

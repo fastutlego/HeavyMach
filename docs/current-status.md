@@ -1,5 +1,11 @@
 # 2026-10-25 문서·코드·앱 일치 체계 점검 및 보완
 
+## 2026-10-26 독립 저장소·v0.9
+
+현재 저장소는 `gelb2/HeavyMach`, 작업 위치는 `/Users/sokol/Git/ProjectGameDev-Hub/HeavyMach`다. 원본 호환 실행판은 `Compatibility/`에 있다. `feat/import-heavymach → develop → main`을 PR로 병합하고 main 병합 커밋 `4e17f5efd786095dfcd74a7334229908954da930`에 `v0.9`를 붙였다. 이후 문서 변경이 main에 들어가도 이 태그는 이동하지 않는다.
+
+Sources·iOS·Art·vendor·Tests는 기존 폰 설치 기준 `72e8c68e`와 같은 Git tree ID다. 새 경로에서 코어 17/17, arm64 Simulator 일반·치트 빌드를 통과했다. 기존 아이폰 설치본과 저장은 변경하지 않았다. [분리 기록](repository-split-20261026.md), [릴리스](release-v0.9.md), [브랜치·복원](repository-management.md)을 따른다. GitHub Actions는 계정 결제/사용 한도 사유로 시작되지 않았고 로컬 검사 및 PR 출발·대상 브랜치를 직접 대조했다.
+
 ## 2026-10-26 IPA 포팅·네이티브 앱 기술 블로그 원고
 
 [새 원고](public/ipa-port-and-native-app-20261026.md)에 IPA 호환판 제작, C++·Objective-C++ 복원, 성능 문제의 비교·수정 순서, 치트·일반 앱 구성, 아이폰 설치와 사용자 전체 미션 확인을 정리했다. 당시 수치와 최종 설치를 구분하고 남은 작업을 명시했다. 구현 언어를 Xcode 구성과 소스로 확인했으며 Swift는 사용하지 않았다.

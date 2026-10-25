@@ -4,6 +4,16 @@
 
 제품 코드 `72e8c68e` · 2026년 10월 25일 기준
 
+## 독립 저장소·v0.9 {#repositories}
+
+HeavyMach를 [GameDev 허브](https://github.com/gelb2/ProjectGameDev) 아래의 [독립 저장소](https://github.com/gelb2/HeavyMach)로 분리했다. Unity는 [별도 저장소](https://github.com/gelb2/ProjectGameDevUnity)에서 관리한다. 허브는 submodule로 두 게임의 커밋을 기록한다.
+
+HeavyMach는 작업 브랜치→develop→main 순서로 병합했다. 정상 플레이가 확인된 소스와 같은 main 병합 커밋 `4e17f5ef`에 [v0.9 태그](https://github.com/gelb2/HeavyMach/tree/v0.9)를 붙였다. 새 경로에서 코어 검사 17개와 arm64 Simulator 일반·치트 빌드가 통과했다. 기존 아이폰 설치본과 저장 데이터는 변경하지 않았다.
+
+태그는 고정하고 이후 작업은 develop에서 분기한다. 문제가 생기면 v0.9를 별도 worktree로 꺼내 빌드·서명하고, 현재 저장을 백업한 뒤 재설치한다. GitHub Actions는 계정 사용 한도/결제 사유로 실행되지 못해 로컬 검사와 PR 출발·대상 브랜치를 직접 대조했다.
+
+[구조·보존·검사 기록](https://github.com/gelb2/ProjectGameDev/blob/main/docs/repository-split-20261026.md) · [브랜치와 복원 절차](https://github.com/gelb2/HeavyMach/blob/main/docs/repository-management.md)
+
 ## IPA 포팅·네이티브 앱 복원 과정 {#port-and-native}
 
 원본 IPA를 호환 실행기로 구동한 뒤 C++·Objective-C++로 수정 가능한 앱을 만들었다. 새 앱에만 나타난 프레임 저하를 정상 호환판과 비교하면서 렌더링·음향·시간 계산·저장을 고쳤다. 치트·일반 앱을 나눈 이유와 화면 확장 후의 수정, 아이폰 설치와 사용자 플레이 확인까지 작업 순서대로 설명한다.
