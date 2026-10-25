@@ -305,7 +305,7 @@
 #endif
     _leftPressed=_rightPressed=_upPressed=_downPressed=_keyboardFire=NO;_hasKeyboardAim=NO;
     [_heldTouches removeAllObjects];[_worldTouches removeAllObjects];[_hudTouches removeAllObjects];[_hud cancelInput];
-    if(_session)_session->touch({470,160},2);
+    if(_session)_session->releaseFire();
     else if(_showMenu)[_menus touch:CGPointMake(-1000,-1000) state:3];
     _tilt={};
 }
@@ -434,7 +434,7 @@
     for (UIPress *press in presses) {
 #if defined(HM_VALIDATION) && HM_VALIDATION
         if (press.key.keyCode==UIKeyboardHIDUsageKeyboardLeftShift || press.key.keyCode==UIKeyboardHIDUsageKeyboardRightShift || press.key.keyCode==UIKeyboardHIDUsageKeyboardF) {
-            _keyboardFire=NO;if(_session)_session->touch({470,160},2);
+            _keyboardFire=NO;if(_session)_session->releaseFire();
         }
 #endif
         if (press.key.keyCode==UIKeyboardHIDUsageKeyboardLeftArrow)_leftPressed=NO;
@@ -451,7 +451,7 @@
 #if defined(HM_VALIDATION) && HM_VALIDATION
     [self stopValidationDirection];
 #endif
-    _leftPressed=NO;_rightPressed=NO;_upPressed=NO;_downPressed=NO;_keyboardFire=NO;if(_session)_session->touch({470,160},2);[super pressesCancelled:presses withEvent:event];
+    _leftPressed=NO;_rightPressed=NO;_upPressed=NO;_downPressed=NO;_keyboardFire=NO;if(_session)_session->releaseFire();[super pressesCancelled:presses withEvent:event];
 }
 - (void)scheduleOriginalMotionTimer:(double)due {
     _nextMotionDue=due;
@@ -697,6 +697,7 @@
         [_media setDrawingOffset:_hudOffset];[_media setDrawingScale:_hudScale];
         [_media setClipRect:CGRectMake(_hudOffset.x,_hudOffset.y,480*_hudScale,320*_hudScale)];
         HMGameHUDSnapshot snapshot;
+        snapshot.canvasWidth=_canvasWidth;snapshot.hudOffset=_hudOffset;snapshot.hudScale=_hudScale;
         snapshot.slot=&_save.slots[_slotIndex];snapshot.data=&_data;snapshot.passives=&_passives;
         snapshot.hpGauge=_hpGauge;snapshot.expGauge=_expGauge;snapshot.reloadGauge=_reloadGauge;
         snapshot.selectedWeapon=_session->selectedWeapon();
@@ -744,7 +745,13 @@
                 [_hud touch:insideHUD?hp:CGPointMake(-1000,-1000) state:state];
                 if(state>=2)[_hudTouches removeObject:touch];
             }else if([_worldTouches containsObject:touch]){
-                if(state>=2){[_worldTouches removeObject:touch];if(!_worldTouches.count)_session->touch({0,0},2);}
+                if(state>=2){
+                    [_worldTouches removeObject:touch];
+                    if(!_worldTouches.count){
+                        if(state==2&&logical)_session->touch({float(p.x),float(p.y)},2);
+                        else _session->releaseFire();
+                    }
+                }
                 else if(logical&&![self worldInputBlocked]){_session->touch({float(p.x),float(p.y)},state);_keyboardAim=p;_hasKeyboardAim=YES;}
             }
             [self consumeGameEvents];continue;
@@ -756,7 +763,8 @@
             // events that no visible HUD button consumed.
             if(![_hud touch:p state:state]) {
                 if(logical){_keyboardAim=p;_hasKeyboardAim=YES;}
-                _session->touch({float(p.x),float(p.y)},state>=2?2:state);
+                if(state>=2&&(state==3||!logical))_session->releaseFire();
+                else _session->touch({float(p.x),float(p.y)},state>=2?2:state);
             }
             [self consumeGameEvents];continue;
         }

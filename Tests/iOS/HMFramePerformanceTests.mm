@@ -163,6 +163,105 @@ void emit(NSDictionary* record){NSData* json=[NSJSONSerialization dataWithJSONOb
 @interface HMFramePerformanceTests:XCTestCase
 @end
 @implementation HMFramePerformanceTests
+// Full burst checks use every original player weapon, including all three sky strikes.
+- (void)testAllWeaponsKeepTargetsAcrossTouchRelease {
+ for(NSValue* value in @[[NSValue valueWithCGSize:CGSizeMake(480,320)],[NSValue valueWithCGSize:CGSizeMake(912,420)],[NSValue valueWithCGSize:CGSizeMake(956,440)]]){@autoreleasepool{
+  CGSize size=value.CGSizeValue;
+  HMCanvasTestView* view=[[HMCanvasTestView alloc]initWithFrame:CGRectMake(0,0,size.width,size.height)];
+  [[view valueForKey:@"frameTimer"]invalidate];[[view valueForKey:@"motionTimer"]invalidate];
+  perfStorage<heavymach::SaveData>(view,"_save")={};[view startSlot:0 mode:0 mission:0 stage:0];[view layoutSubviews];
+  auto& session=perfStorage<std::unique_ptr<heavymach::GameSession>>(view,"_session");
+  auto& data=perfStorage<heavymach::GameData>(view,"_data");
+  auto& slot=perfStorage<heavymach::SaveData>(view,"_save").slots[0];
+  const auto names=heavymach::validationWeapons(data);XCTAssertGreaterThan(names.size(),size_t(3));
+  for(const auto& name:names)for(int mode=0;mode<6;++mode){
+   heavymach::ValidationScenario scenario;scenario.weapons={name};scenario.internalLevel=99;scenario.grades={6,6,0};
+   session->startValidation(scenario);int selected=-1;for(int i=0;i<slot.weaponCount();++i)if(slot.weaponName(i)==name)selected=i;
+   XCTAssertGreaterThanOrEqual(selected,0);session->selectWeapon(selected);
+   for(int tick=0;tick<30;++tick)[view advanceOriginalFrame];
+   const auto& info=data.weapons.at(name);int charge=slot.weaponCharge(selected),shots=0,badTargets=0,badTrajectories=0;
+   heavymach::Vector2 expected{};
+   session->validationObserveShots([&](const heavymach::WeaponInfo& weapon,float angle,heavymach::Vector2 position){
+    ++shots;auto target=session->validationWeaponState().fireTarget;
+    if(std::abs(target.x-expected.x)>.002f||std::abs(target.y-expected.y)>.002f)++badTargets;
+    if(weapon.wpnType==5){
+     if(weapon.spd==0){if(std::abs(position.x-expected.x)>50.001f)++badTrajectories;}
+     else {float aim=std::atan2(expected.y-position.y,expected.x-position.x);if(std::abs(angle-aim)>.10001f)++badTrajectories;}
+    }
+   });
+   HMCanvasTouch* touch=[HMCanvasTouch new];touch.point=CGPointMake(size.width-(mode==0?size.width*.18:12),size.height*.35);
+   NSSet* touches=[NSSet setWithObject:touch];[view routeTouches:touches state:0];expected=session->validationWeaponState().fireTarget;
+   XCTAssertTrue(session->validationWeaponState().isFire,@"%s width%g mode%d",name.c_str(),size.width,mode);
+   // Wait for the first real shot, then release while the original burst continues.
+   for(int tick=0;tick<120&&shots==0;++tick)[view advanceOriginalFrame];
+   XCTAssertGreaterThan(shots,0,@"%s",name.c_str());
+   if(mode==0){touch.point=CGPointMake(touch.point.x,touch.point.y+size.height*.15);[view routeTouches:touches state:1];expected=session->validationWeaponState().fireTarget;}
+   // Real release uses current camera/muzzle; outside/cancel must retain last world target.
+   if(mode<2){auto logical=perfStorage<heavymach::Viewport>(view,"_viewport").logical(touch.point.x,touch.point.y);auto origin=session->validationAimOrigin();auto p=session->player()->position;expected={p.x+float(logical->first)-origin.x,p.y+float(logical->second)-origin.y};}
+   if(mode==2)touch.point=CGPointMake(size.width+30,touch.point.y);
+   if(mode==4){[view gameButton:100 state:2];[view gameButton:101 state:2];}
+   else if(mode==5){HMDirectionTestPress* press=[HMDirectionTestPress new];press.key=[HMDirectionTestKey new];press.key.keyCode=UIKeyboardHIDUsageKeyboardF;[view pressesEnded:(id)[NSSet setWithObject:press] withEvent:nil];[view routeTouches:touches state:3];}
+   else [view routeTouches:touches state:mode==3?3:2];
+   auto released=session->validationWeaponState();
+   XCTAssertFalse(released.isFire);XCTAssertEqualWithAccuracy(released.fireTarget.x,expected.x,.002,@"%s width%g mode%d",name.c_str(),size.width,mode);
+   XCTAssertEqualWithAccuracy(released.fireTarget.y,expected.y,.002);
+   const int ticks=int(std::ceil((info.shotCnt*std::max(.017f,info.shotDly)+info.delay+.5f)*60));
+   for(int tick=0;tick<ticks;++tick)[view advanceOriginalFrame];
+   XCTAssertEqual(shots,info.shotCnt,@"%s width%g mode%d",name.c_str(),size.width,mode);
+   XCTAssertEqual(badTargets,0,@"%s width%g mode%d",name.c_str(),size.width,mode);XCTAssertEqual(badTrajectories,0,@"%s",name.c_str());
+   XCTAssertEqual(slot.weaponCharge(selected),selected?charge-1:charge,@"%s",name.c_str());
+   emit(@{@"check":@"all_weapon_burst",@"weapon":@(name.c_str()),@"width":@(size.width),@"mode":@(mode),@"shots":@(shots),@"expected_shots":@(info.shotCnt),@"bad_targets":@(badTargets),@"bad_trajectories":@(badTrajectories)});
+   session->validationObserveShots({});
+  }
+  [view setApplicationActive:NO];
+ }}
+}
+- (void)testResultIllustrationsCoverExpandedCanvas {
+ for(NSValue* value in @[[NSValue valueWithCGSize:CGSizeMake(480,320)],[NSValue valueWithCGSize:CGSizeMake(912,420)],[NSValue valueWithCGSize:CGSizeMake(956,440)]]){@autoreleasepool{
+  CGSize size=value.CGSizeValue;
+  HMCanvasTestView* view=[[HMCanvasTestView alloc]initWithFrame:CGRectMake(0,0,size.width,size.height)];view.suppliedInsets=UIEdgeInsetsMake(0,62,21,0);
+  [[view valueForKey:@"frameTimer"]invalidate];[[view valueForKey:@"motionTimer"]invalidate];
+  perfStorage<heavymach::SaveData>(view,"_save")={};[view startSlot:0 mode:0 mission:0 stage:0];[view layoutSubviews];
+  for(int tick=0;tick<90;++tick)[view advanceOriginalFrame];
+  auto& session=perfStorage<std::unique_ptr<heavymach::GameSession>>(view,"_session");
+  auto& world=const_cast<heavymach::WorldState&>(session->world());world.paused=true;
+  HMGLRenderer* gl=[view valueForKey:@"glRenderer"];HMMedia* media=[view valueForKey:@"media"];
+  float width=session->canvasWidth();XCTAssertTrue([gl setLogicalWidth:width height:320]);
+  auto pixels=[](UIImage* image){CFDataRef data=CGDataProviderCopyData(CGImageGetDataProvider(image.CGImage));const auto* p=CFDataGetBytePtr(data);std::vector<uint8_t> bytes(p,p+CFDataGetLength(data));CFRelease(data);return bytes;};
+  NSMutableArray* assets=[NSMutableArray arrayWithObject:@"StageClear.jpg"];for(int mission=1;mission<=7;++mission){[assets addObject:[NSString stringWithFormat:@"GameLoading_%02d.jpg",mission]];[assets addObject:[NSString stringWithFormat:@"GameLoading_%02dE.jpg",mission]];}
+  for(NSString* asset in assets){
+   world.presentation={};auto& p=world.presentation;p.step=2;p.alpha=1;p.scale=1;p.rotation=-1;p.buttonY=0;p.loadingAsset=asset.UTF8String;p.typoFrame=4;
+   media.glRenderer=gl;XCTAssertTrue([gl beginFrame]);[view drawLogicalFrame];[gl finish];[gl endFrame];UIImage* actualImage=[gl snapshot];auto actual=pixels(actualImage);
+   [media setCameraOffset:CGPointZero];[media setDrawingOffset:CGPointZero];[media setDrawingScale:1];[media resetClip];
+   CGSize original=[media imageSize:asset];double scale=width>480?std::max(double(width)/(original.width-1),320./(original.height-1)):1;
+   XCTAssertTrue([gl beginFrame]);[media draw:asset x:width/2 y:160 columns:1 rows:1 tile:0 scaleX:scale scaleY:scale rotation:0 alpha:1];[gl finish];[gl endFrame];auto expected=pixels([gl snapshot]);
+   // Same one-channel rounding contract as HMGLReferenceTests' independent CGL oracle.
+   size_t w=std::ceil(width);int maximumDelta=0;
+   for(int y=100;y<220;++y)for(size_t x=4;x<w-4;++x)if(x<35||x>w-36)for(int c=0;c<3;++c){size_t index=(y*w+x)*4+c;maximumDelta=std::max(maximumDelta,std::abs(int(actual[index])-int(expected[index])));}
+   XCTAssertLessThanOrEqual(maximumDelta,1,@"%@ width%g differs from full-canvas image",asset,width);
+   if([asset isEqualToString:@"GameLoading_01E.jpg"]){XCTAttachment* capture=[XCTAttachment attachmentWithImage:actualImage];capture.name=[NSString stringWithFormat:@"result-full-canvas-%g",width];capture.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:capture];}
+   // Exact coverage oracle: same dimensions, opaque constant color has no image interpolation noise.
+   UIGraphicsBeginImageContextWithOptions(original,YES,1);[UIColor.magentaColor setFill];UIRectFill(CGRectMake(0,0,original.width,original.height));UIImage* marker=UIGraphicsGetImageFromCurrentImageContext();UIGraphicsEndImageContext();
+   [gl releaseTextureScope:@"shared"];
+   XCTAssertTrue([gl prepareImage:marker name:[@"shared|" stringByAppendingString:asset] rgb565:YES]);
+   XCTAssertTrue([gl beginFrame]);[view drawLogicalFrame];[gl finish];[gl endFrame];auto covered=pixels([gl snapshot]);
+   CGPoint offset=perfStorage<CGPoint>(view,"_hudOffset");CGFloat hudScale=perfStorage<CGFloat>(view,"_hudScale");
+   size_t uncovered=0,checked=0;
+   for(int y=0;y<320;++y)for(size_t x=0;x<w;++x){double lx=(x+.5)*width/w,ly=319.5-y;
+    bool outside=lx<offset.x||lx>offset.x+480*hudScale||ly<offset.y||ly>offset.y+320*hudScale;
+    if(outside||(y>=100&&y<220&&(x>=4&&x<35||x>w-36&&x<w-4))){++checked;size_t index=(y*w+x)*4;if(covered[index]!=255||covered[index+1]!=0||covered[index+2]!=255)++uncovered;}
+   }
+   XCTAssertGreaterThan(checked,size_t(1000));XCTAssertEqual(uncovered,size_t(0),@"%@ width%g exposes world outside result",asset,width);
+   world.gameState=1;
+   // Existing result button stays at the safe-area HUD coordinate after the image draw.
+   auto viewport=perfStorage<heavymach::Viewport>(view,"_viewport");HMCanvasTouch* button=[HMCanvasTouch new];button.point=CGPointMake(viewport.x+(offset.x+120*hudScale)*viewport.scale,viewport.y+(320-offset.y-26*hudScale)*viewport.verticalScale());
+   NSSet* buttonTouches=[NSSet setWithObject:button];[view routeTouches:buttonTouches state:0];[view routeTouches:buttonTouches state:2];XCTAssertEqual(world.presentation.step,3,@"%@ result button",asset);
+   [gl releaseTextureScope:@"shared"];
+   media.glRenderer=nil;
+  }
+  [view setApplicationActive:NO];
+ }}
+}
 - (void)testNewWideSessionClampsRetainedCameraBeforeOpeningMap {
  HMPerformanceView* view=[[HMPerformanceView alloc]initWithFrame:CGRectMake(0,0,912,420)];
  [[view valueForKey:@"frameTimer"]invalidate];[[view valueForKey:@"motionTimer"]invalidate];

@@ -39,6 +39,10 @@ public:
  struct ValidationEnemySnapshot { uintptr_t id;std::string name;Vector2 position;int32_t hp,hpMax;bool boss,removed;Vector2 spawnPosition;ObjectBounds bounds; };
  std::vector<ValidationEnemySnapshot> validationEnemies()const;
  Vector2 validationAimOrigin()const;
+ WeaponState validationWeaponState()const;
+ // Optional read-only observer. No shot history or per-frame allocation in the app.
+ using ValidationShotObserver=std::function<void(const WeaponInfo&,float,Vector2)>;
+ void validationObserveShots(ValidationShotObserver);
  void startValidation(const ValidationScenario&);
  void validationAddExperience(int32_t amount);
  struct ValidationCheatStats {uint64_t blockedHits=0,refilledRounds=0,bossKills=0,fallRescues=0;};
@@ -57,6 +61,8 @@ public:
  float canvasWidth()const;
  // Canvas-width x 320 logical coordinates with origin bottom-left; state 0/1/2.
  void touch(Vector2 logical,int state);
+ // Cancel/keyboard/outside release has no new aim coordinate. Keep a live burst's target.
+ void releaseFire();
  void booster();void selectWeapon(int index);void cycleWeapon(int delta=1);
  bool selectUpgrade(int part);void confirmUpgrade();void finishUpgradeSlide();
  void resultButton(int id);void setPaused(bool);

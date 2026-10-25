@@ -13,6 +13,8 @@
 
 확장 모드에서는 처음 누른 HUD/월드가 해당 터치를 끝까지 맡는다. 모달·로딩·정지 상태는 바깥 추가 영역에서도 월드 입력을 막는다. 화면 밖에서 종료/취소해도 발사를 해제하며 마지막 월드 터치가 끝날 때 해제한다. 원본480 모드는 기존 버튼 등록·이벤트별 역순 검사 규칙을 보존한다.
 
+월드 터치의 정상 해제는 실제 해제 좌표를 원작 `setTap`에 전달한다. `(0,0)` 같은 가짜 좌표를 보내지 않는다. 취소·화면 밖 해제·정지·키 해제는 `releaseFire`로 새 연사만 중단하고 진행 중 연사의 월드 목표점을 유지한다. 필살기3종은 해제 뒤에도 원작 연사를 마치므로 목표점을 덮어쓰면 남은 탄환이 잘못된 곳으로 간다. [전체 무기 절차](weapon-validation-procedure.md)를 적용한다.
+
 검증 패널에서 확장을 끌 수 있다. 정지 중 변경은 선택만 보관하고 재개 후 정상 tick 직전에 적용한다. 정지 그림을 다시 수집하여 stateful draw를 중복 실행하지 않는다. layout은 기하만 계산하며 tick/draw를 실행하지 않는다.
 
 기하와 원본 모드 비교는 CanvasGeometry/Viewport, CoreTests/CameraIntegrationTests/WorldTests에서 검사한다. 실제 확장 GL과 safeArea는 `HMFramePerformanceTests.testExpandedAirAndProMaxCanvasPreservesHeightAndKeepsHUDInsideSafeArea`가 Air912×420·Pro Max956×440 입력과 좌우 안전영역을 각각 검사한다. 기기 입력값을 이용한 시뮬레이터 검사이며 물리 Pro Max 검사로 표시하지 않는다.

@@ -33,6 +33,7 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
 #if defined(HM_VALIDATION) && HM_VALIDATION
  bool validationCheats=false;
  GameSession::ValidationCheatStats cheatStats{};
+ GameSession::ValidationShotObserver shotObserver;
 #endif
  float safeBackLine=-32000,removeBgLine=-32000;uintptr_t nextID=2;
  Impl(const GameData& d,SaveSlot& s,TileSize t,Random31 r,PlayerPassives* shared,TileSize worldT):data(d),slot(s),sizes(std::move(t)),worldSizes(std::move(worldT)),random(std::move(r)),passives(shared?*shared:ownedPassives){if(!sizes||!random)throw std::invalid_argument("Session requires tile dimensions and original RNG");playerGraph.id=1;}
@@ -194,7 +195,11 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
 #endif
    current=prev;return;}
  }
- void spawnBullet(const WeaponInfo& info,bool toPlayer,float angle,Vector2 p,double time)override{BulletState b;b.toPlayer=toPlayer;pendingTrail.reset();setBulletFire(b,info,angle,p,time,*this);dynamic.emplace_back(b);dynamic.back().trailForBullet=std::move(pendingTrail);}
+ void spawnBullet(const WeaponInfo& info,bool toPlayer,float angle,Vector2 p,double time)override{
+#if defined(HM_VALIDATION) && HM_VALIDATION
+  if(!toPlayer&&shotObserver)shotObserver(info,angle,p);
+#endif
+  BulletState b;b.toPlayer=toPlayer;pendingTrail.reset();setBulletFire(b,info,angle,p,time,*this);dynamic.emplace_back(b);dynamic.back().trailForBullet=std::move(pendingTrail);}
  void event(TrailEventKind)override{}
  ParticleState* acquireBulletParticle()override{return world.freeParticle(globalTime);}
  void addBulletTrailPosition(BulletState& bullet,Vector2 position)override{for(auto& n:dynamic)if(std::get_if<BulletState>(&n.value)==&bullet){if(n.trailForBullet)n.trailForBullet->addTrailPos(position,world.gameTime,*this);return;}}
@@ -369,6 +374,7 @@ void GameSession::setCanvasWidth(float width){impl_->world.setCanvasWidth(width)
 float GameSession::canvasWidth()const{return impl_->world.canvasWidth;}
 void GameSession::setCameraOffset(Vector2 offset){impl_->cameraOffset=offset;}
 void GameSession::touch(Vector2 p,int state){auto& i=*impl_;if(!i.player||(i.world.paused&&state!=2))return;auto weapon=i.playerGraph.parts.size()>2?i.playerGraph.parts[2].get():nullptr;if(weapon)i.player->setTap(p,state,i.cameraPoint(i.player->position),weapon->visual.rotatedPosition,&weapon->weapon);}
+void GameSession::releaseFire(){auto& parts=impl_->playerGraph.parts;if(parts.size()>2&&parts[2])parts[2]->weapon.isFire=false;}
 void GameSession::booster(){auto& i=*impl_;if(i.player&&!i.world.paused)i.motionEvents(*i.player,i.playerGraph,i.player->setBooster(i.slot.bytes[0x2f],i.player->passives.active(2)));}
 void GameSession::selectWeapon(int n){impl_->select(n);}void GameSession::cycleWeapon(int delta){impl_->select(impl_->selected+delta);}
 bool GameSession::selectUpgrade(int part){return impl_->player&&impl_->player->selectUpgrade(part,*impl_);}void GameSession::confirmUpgrade(){if(impl_->player)impl_->player->confirmUpgrade(*impl_);}
@@ -381,6 +387,8 @@ size_t GameSession::enemyCount()const{return impl_->enemies.size();}size_t GameS
 Vector2 GameSession::validationAimOrigin()const{
  if(!impl_->player)return {};auto p=impl_->cameraPoint(impl_->player->position);if(impl_->playerGraph.parts.size()>2&&impl_->playerGraph.parts[2]){auto r=impl_->playerGraph.parts[2]->visual.rotatedPosition;p.x+=r.x;p.y+=r.y;}return p;
 }
+WeaponState GameSession::validationWeaponState()const{return impl_->playerGraph.parts.size()>2&&impl_->playerGraph.parts[2]?impl_->playerGraph.parts[2]->weapon:WeaponState{};}
+void GameSession::validationObserveShots(ValidationShotObserver observer){impl_->shotObserver=std::move(observer);}
 std::vector<GameSession::ValidationEnemySnapshot> GameSession::validationEnemies()const{
  std::vector<ValidationEnemySnapshot> result;for(const auto& m:impl_->enemies)result.push_back({m.id,m.definition->name,m.enemy->position,m.enemy->hp,m.enemy->hpMax,m.enemy->isBoss,m.removed,m.validationSpawnPosition,m.bounds});return result;
 }

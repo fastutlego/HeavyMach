@@ -13,6 +13,8 @@ struct HMGameHUDSnapshot {
     bool paused=false,upgradeVisible=false,menuVisible=false;
     int upgradeSelection=0;
     double time=0;
+    CGFloat canvasWidth=480,hudScale=1;
+    CGPoint hudOffset=CGPointZero;
 };
 @interface HMGameHUD : NSObject
 - (instancetype)initWithMedia:(HMMedia *)media;
