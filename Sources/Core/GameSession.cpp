@@ -13,7 +13,7 @@ namespace heavymach {
 struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBoxHost,TrailHost,BulletVisualHost {
  struct Part {PartsState visual;WeaponState weapon;bool armed=false;int order=0;ObjectBounds bounds;};
  struct Machine {
-  uintptr_t id=0;std::unique_ptr<GobHvM_Enemy> enemy;
+  uintptr_t id=0;size_t mapEnemyIndex=SIZE_MAX;std::unique_ptr<GobHvM_Enemy> enemy;
   std::vector<std::unique_ptr<Part>> parts;std::vector<Part*> drawOrder;bool drawOrderDirty=true;ObjectBounds bounds{};bool removed=false,inScreen=true;
   float gauge=1;std::array<bool,2> gaugeQueued{};const MachDefinition* definition=nullptr;
 #if defined(HM_VALIDATION) && HM_VALIDATION
@@ -41,9 +41,9 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
  Vector2 tileSize(std::string_view key)override{return sizes(key);}
  Vector2 mapTileSize(std::string_view key)override{return worldSizes?worldSizes(key):sizes(key);}
  std::optional<Vector2> cameraTarget(std::optional<Vector2>)const override{return player?std::optional<Vector2>(player->position):std::nullopt;}
- Vector2 screen(Vector2 p)const{return {p.x-world.camera.x+240,p.y-world.camera.y+160};}
- Vector2 cameraPoint(Vector2 p,bool fixed=false)const{return cameraScreenPosition(p,world.camera,{240,160},&cameraOffset,fixed);}
- bool inView(Vector2 pos,ObjectBounds b)const{auto p=cameraPoint(pos);return !(p.x+b.right<0||p.x+b.left>540||p.y+b.top<0||p.y+b.bottom>320);}
+ Vector2 screen(Vector2 p)const{return {p.x-world.camera.x+world.canvasWidth*.5f,p.y-world.camera.y+160};}
+ Vector2 cameraPoint(Vector2 p,bool fixed=false)const{return cameraScreenPosition(p,world.camera,{world.canvasWidth*.5f,160},&cameraOffset,fixed);}
+ bool inView(Vector2 pos,ObjectBounds b)const{auto p=cameraPoint(pos);return !(p.x+b.right<0||p.x+b.left>world.canvasWidth+60||p.y+b.top<0||p.y+b.bottom>320);}
  void unsupportedOnce(std::string text){if(unsupported.insert(text).second){SessionEvent e{SessionEventKind::Unsupported};e.text=std::move(text);events.push_back(std::move(e));}}
  void audio(int n,float pan=0){SessionEvent e{SessionEventKind::AudioIndex};e.index=n;e.pan=pan;events.push_back(e);}
  void audio(std::string_view name,float pan=0){SessionEvent e{SessionEventKind::AudioName};e.text=name;e.pan=pan;events.push_back(std::move(e));}
@@ -118,6 +118,13 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
   m.enemy->position=definition.position;m.enemy->machState=2;m.enemy->isBoss=definition.isBoss;
   m.enemy->hasWeapon=std::any_of(m.parts.begin(),m.parts.end(),[](const auto& p){return p&&p->armed;});
  }
+ void spawnMapEnemy(const EnemyDefinition& definition,size_t index)override{
+  spawnEnemy(definition);enemies.back().mapEnemyIndex=index;
+ }
+ bool mapEnemyAlive(size_t index)const override{
+  for(const auto& m:enemies)if(m.mapEnemyIndex==index)return !m.removed&&m.enemy->hp>0;
+  return false;
+ }
  void spawnItemBox(Vector2 p)override{GobItemBox box(*this);box.position=p;dynamic.emplace_back(box);}
  void event(ItemBoxEventKind e)override{if(e==ItemBoxEventKind::Pickup&&player){player->pickupItem(data,*this);changed();}}
  void event(const WorldEvent& e)override{
@@ -154,7 +161,7 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
  void event(const EnemyEvent& e)override{
   switch(e.kind){
   case EnemyEventKind::PartsDefinition:if(current&&building)enemyParts(*current,building->parts,nullptr,building->machType);break;
-  case EnemyEventKind::KillBoss:world.killBoss();break;
+  case EnemyEventKind::KillBoss:if(current&&current->mapEnemyIndex!=SIZE_MAX)world.killMapBoss(current->mapEnemyIndex);else world.killBoss();break;
   case EnemyEventKind::Remove:if(current)current->removed=true;break;
   case EnemyEventKind::AddExperience:if(player){player->addExperience(e.amount,*this);changed();}break;
   case EnemyEventKind::Sound:audio(e.amount,e.pan);break;
@@ -254,7 +261,7 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
  void open(StagePosition pos){stage=pos;char key[32];if(world.gameMode==1)std::snprintf(key,sizeof(key),"Survival");else std::snprintf(key,sizeof(key),"Stage%02d",GlobalInfo::mapNumber(stage));
   auto it=data.maps.find(key);if(it==data.maps.end())throw std::runtime_error("Missing original map: "+std::string(key));world.openMap(it->second,world.gameMode,*this);active=true;
  }
- void start(int mode,StagePosition pos,double retainedWorldTime){if(!std::isfinite(retainedWorldTime)||retainedWorldTime<0)throw std::invalid_argument("invalid retained World time");events.clear();unsupported.clear();auto retainedCamera=world.camera;world=WorldState{};world.camera=retainedCamera;world.gameTime=retainedWorldTime;world.gameMode=mode;world.configureSurvival(slot.level());enemies.clear();dynamic.clear();mapSprites.clear();player.reset();playerGraph.parts.clear();nextID=2;selected=0;charge=0;replaceWeapon=false;acquired=nullptr;particleQueued.fill(false);open(pos);
+ void start(int mode,StagePosition pos,double retainedWorldTime){if(!std::isfinite(retainedWorldTime)||retainedWorldTime<0)throw std::invalid_argument("invalid retained World time");events.clear();unsupported.clear();auto retainedCamera=world.camera;auto retainedWidth=world.canvasWidth;world=WorldState{};world.setCanvasWidth(retainedWidth);world.camera=retainedCamera;world.gameTime=retainedWorldTime;world.gameMode=mode;world.configureSurvival(slot.level());enemies.clear();dynamic.clear();mapSprites.clear();player.reset();playerGraph.parts.clear();nextID=2;selected=0;charge=0;replaceWeapon=false;acquired=nullptr;particleQueued.fill(false);open(pos);
   // Original openMap0xe3f4 creates objects only. drawVisual follows tick once
   // in renderScene0x21e0; collecting here advances weapon aim/recoil twice.
   draws.clear();render.clear();}
@@ -276,7 +283,7 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
   for(auto it=enemies.begin();it!=enemies.end();){if(it->removed){it=enemies.erase(it);continue;}auto& m=*it;current=&m;motionEvents(*m.enemy,m,m.enemy->tick(enemyFrame(m),*this));current=nullptr;++it;}
   for(size_t n=0;n<world.particles.size();++n){auto& p=world.particles[n];tickParticle(p,globalTime);particleQueued[n]=p.show;}
   if(player){
-   if(world.gameMode==0&&safeBackLine<player->position.x-240){safeBackLine=player->position.x-240;if(safeBackLine>removeBgLine+320){float boundary=removeBgLine;std::erase_if(mapSprites,[&](const DrawSprite& d){return boundary>d.position.x+mapTileSize(d.tile).x;});if(world.backLine<boundary)world.backLine=boundary;removeBgLine=safeBackLine;}}
+   if(world.gameMode==0&&safeBackLine<player->position.x-240){safeBackLine=player->position.x-240;if(safeBackLine>removeBgLine+320){float boundary=removeBgLine;float renderBoundary=world.canvasWidth==480?boundary:std::min(boundary,world.camera.x-world.canvasWidth*.5f-60);std::erase_if(mapSprites,[&](const DrawSprite& d){return renderBoundary>d.position.x+mapTileSize(d.tile).x;});if(world.backLine<boundary)world.backLine=boundary;removeBgLine=safeBackLine;}}
    motionEvents(*player,playerGraph,player->GobHvMach::tick(world.motionWorld(player->position.x,globalTime,[this]{return random31();})));
   }
   for(auto it=dynamic.begin();it!=dynamic.end();){bool remove=std::visit([](const auto& n){if constexpr(std::is_same_v<std::decay_t<decltype(n)>,std::shared_ptr<GobTrailEffect>>)return n->removed;else return n.removed;},it->value);if(remove){it=dynamic.erase(it);continue;}
@@ -304,7 +311,7 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
   // QobBase::tick0x7830 registers each QobImage independently of its parent.
   // Bounds do not shrink with the fill's scaleX (setScale0x8234).
   auto size=tileSize(gaugeTile(graph));auto b=imageBounds(size.x,size.y/2);
-  for(int child=0;child<2;++child){auto p=gaugePoint(owner,graph,child);graph.gaugeQueued[child]=!(p.x+b.right<0||p.x+b.left>540||p.y+b.top<0||p.y+b.bottom>320);}
+  for(int child=0;child<2;++child){auto p=gaugePoint(owner,graph,child);graph.gaugeQueued[child]=!(p.x+b.right<0||p.x+b.left>world.canvasWidth+60||p.y+b.top<0||p.y+b.bottom>320);}
  }
  void machineDraw(GobHvMach& owner,Machine& graph){
   if(!owner.visible)return;
@@ -324,11 +331,11 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
 
  }
  void collect(){
-  draws.clear();render.clear();if(world.hasBackground){DrawSprite d;d.worldTexture=true;d.tile=world.map.background;d.position=world.backgroundPosition;d.z=0;append(d);}
+  draws.clear();render.clear();if(world.hasBackground){DrawSprite d;d.worldTexture=true;d.tile=world.map.background;d.position=world.backgroundPosition;d.scale={world.backgroundDrawScale,world.backgroundDrawScale};d.z=0;append(d);}
   for(const auto& d:mapSprites){
    // processObjectRegen0xcd00 marks map QobImages fixedPos1.
    auto size=mapTileSize(d.tile);auto bounds=imageBounds(size.x,size.y);auto p=cameraPoint(d.position,true);
-   if(p.x+bounds.right<0||p.x+bounds.left>540||p.y+bounds.top<0||p.y+bounds.bottom>320)continue;
+   if(p.x+bounds.right<0||p.x+bounds.left>world.canvasWidth+60||p.y+bounds.top<0||p.y+bounds.bottom>320)continue;
    auto fixed=d;fixed.position={p.x+cameraOffset.x,p.y+cameraOffset.y};append(std::move(fixed),true);
   }
   for(auto& m:enemies)machineDraw(*m.enemy,m);
@@ -352,7 +359,14 @@ GameSession::~GameSession()=default;GameSession::GameSession(GameSession&&)noexc
 void GameSession::start(int m,int mission,int stage){start(m,mission,stage,impl_->world.gameTime);}
 void GameSession::start(int m,int mission,int stage,double retainedWorldTime){impl_->start(m,{mission,stage},retainedWorldTime);}
 void GameSession::tick(double t,float tilt){impl_->tick(t,tilt);}
+void GameSession::prepareInitialPausedFrame(){
+ if(!impl_->world.paused||!impl_->render.empty())return;
+ impl_->world.processCamera(impl_->player?std::optional<Vector2>(impl_->player->position):std::nullopt);
+ impl_->collect();
+}
 void GameSession::restoreWorldCamera(Vector2 position){impl_->world.camera=position;}
+void GameSession::setCanvasWidth(float width){impl_->world.setCanvasWidth(width);}
+float GameSession::canvasWidth()const{return impl_->world.canvasWidth;}
 void GameSession::setCameraOffset(Vector2 offset){impl_->cameraOffset=offset;}
 void GameSession::touch(Vector2 p,int state){auto& i=*impl_;if(!i.player||(i.world.paused&&state!=2))return;auto weapon=i.playerGraph.parts.size()>2?i.playerGraph.parts[2].get():nullptr;if(weapon)i.player->setTap(p,state,i.cameraPoint(i.player->position),weapon->visual.rotatedPosition,&weapon->weapon);}
 void GameSession::booster(){auto& i=*impl_;if(i.player&&!i.world.paused)i.motionEvents(*i.player,i.playerGraph,i.player->setBooster(i.slot.bytes[0x2f],i.player->passives.active(2)));}

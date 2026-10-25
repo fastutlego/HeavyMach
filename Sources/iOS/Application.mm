@@ -16,7 +16,8 @@
     self.window=[[UIWindow alloc] initWithWindowScene:(UIWindowScene *)scene];
     self.window.rootViewController=[HMViewController new]; [self.window makeKeyAndVisible];
 }
-- (void)sceneWillEnterForeground:(UIScene *)scene {[(HMGameView *)self.window.rootViewController.view setApplicationActive:YES];}
+- (void)sceneDidBecomeActive:(UIScene *)scene {[(HMGameView *)self.window.rootViewController.view setApplicationActive:YES];}
+- (void)sceneWillResignActive:(UIScene *)scene {[(HMGameView *)self.window.rootViewController.view setApplicationActive:NO];}
 - (void)sceneDidEnterBackground:(UIScene *)scene {[(HMGameView *)self.window.rootViewController.view setApplicationActive:NO];}
 @end
 @interface HMAppDelegate : UIResponder <UIApplicationDelegate>

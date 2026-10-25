@@ -2,22 +2,20 @@
 
 정본: [canonical](canonical.md). 구현: `Viewport.hpp`, `World.cpp`, `HMGameView.mm`, `HMMedia.mm`, `HMGLRenderer.mm`.
 
-사용자의 2026-10-25 전체 캔버스·시야 확장 요청은 [확장 계획](wide-canvas-plan.md)에 따른다. 아래 480×320 규칙은 현재 제품 기준이며 확장 구현을 금지하는 조건이 아니다. 확장을 구현할 때 관련 정책·입력·검사를 함께 갱신한다.
+2026-10-25 사용자 승인에 따라 게임 플레이는 전체 화면 비율로 시야를 확장한다. 검증 앱에서 먼저 검사한 뒤 일반 앱의 동일 경로를 활성화했다. 타이틀/선택 화면은 원본480×320 비율 맞춤을 유지한다.
 
 ## 공간과 단위
 
-| 공간 | 원점·축·단위 | 변환 책임 |
-|---|---|---|
-| 게임 논리 화면 | 480×320, 왼쪽 아래 원점, +X 오른쪽, +Y 위쪽 | 게임/HUD는 이 공간을 사용 |
-| 월드 | 맵 데이터 원점, +X 오른쪽, +Y 위쪽; 음수 좌표 허용 | World/Geometry/Motion |
-| 카메라 | 월드 좌표의 화면 중심 | 화면 위치는 월드−카메라+(240,160), 흔들림은 기존 CameraShake 경로로 적용 |
-| UIKit 터치 | 뷰의 왼쪽 위 원점, +Y 아래, point | Viewport.logical에서 한 번만 게임 좌표로 변환 |
-| drawable | 실제 픽셀, 화면 크기와 nativeScale 반영 | Viewport.drawable/GLRenderer |
-| CoreMotion | 화면 회전과 무관한 본체 portrait 축, g 단위 | HMGameView.sampleOriginalAcceleration |
+- 게임 월드: 원본 맵 단위, +X 오른쪽·+Y 위쪽. 높이는320, 폭은 `max(480, 320×drawableWidth/drawableHeight)`다. 320은 논리 높이이며 폰의 픽셀 높이 제한이 아니다.
+- 화면 위치: `world−camera+(W/2,160)`. 탱크·지형·탄환 크기는 유지한다. 표시 카메라 반폭만W/2로 제한하며 물리 backLine/frontLine과 보스 접근 규칙은 별도다.
+- HUD: 원본480×320 묶음이다. 가운데 배치하고 실제 safeArea에 들어가지 않으면 HUD만 균등 축소한다. 입력은 동일 offset/scale을 역변환한다. 원본480 비교 모드는 기존 배치를 그대로 쓴다.
+- UIKit 터치: `gx=(px−viewport.x)/scale`, `gy=320−(py−viewport.y)/verticalScale`. [0,W]×[0,320] 외부는 좌표 없음이다. drawable과 터치가 같은 Viewport를 사용한다.
 
-화면 비율은 3:2로 유지한다. 전체 drawable에 맞춘 뒤 남는 공간을 검정 여백으로 둔다. safeArea를 새 게임 캔버스로 사용하거나 맵·HUD 좌표를 화면 크기에 따라 다시 설계하지 않는다. 정수 픽셀 반올림과 홀수 여백은 `Viewport::drawable` 계산을 사용한다. X/Y 유효 배율은 픽셀 반올림 때문에 미세하게 다를 수 있다.
+확장 모드에서는 처음 누른 HUD/월드가 해당 터치를 끝까지 맡는다. 모달·로딩·정지 상태는 바깥 추가 영역에서도 월드 입력을 막는다. 화면 밖에서 종료/취소해도 발사를 해제하며 마지막 월드 터치가 끝날 때 해제한다. 원본480 모드는 기존 버튼 등록·이벤트별 역순 검사 규칙을 보존한다.
 
-UIKit point `(px,py)`에서 `gx=(px−viewport.x)/scale`, `gy=320−(py−viewport.y)/verticalScale`이다. [0,480]×[0,320] 밖은 게임 좌표 없음으로 처리한다. 여백에서 터치를 끝내도 기존 발사를 해제할 수 있어야 한다. renderer와 입력에서 서로 다른 viewport를 계산하지 않는다.
+검증 패널에서 확장을 끌 수 있다. 정지 중 변경은 선택만 보관하고 재개 후 정상 tick 직전에 적용한다. 정지 그림을 다시 수집하여 stateful draw를 중복 실행하지 않는다. layout은 기하만 계산하며 tick/draw를 실행하지 않는다.
+
+기하와 원본 모드 비교는 CanvasGeometry/Viewport, CoreTests/CameraIntegrationTests/WorldTests에서 검사한다. 실제 확장 GL과 safeArea는 `HMFramePerformanceTests.testExpandedAirAndProMaxCanvasPreservesHeightAndKeepsHUDInsideSafeArea`가 Air912×420·Pro Max956×440 입력과 좌우 안전영역을 각각 검사한다. 기기 입력값을 이용한 시뮬레이터 검사이며 물리 Pro Max 검사로 표시하지 않는다.
 
 ## 틸트 방향
 

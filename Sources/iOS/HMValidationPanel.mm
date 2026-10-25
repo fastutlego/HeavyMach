@@ -39,6 +39,7 @@
     _stack=[UIStackView new];_stack.axis=UILayoutConstraintAxisVertical;_stack.spacing=10;_stack.translatesAutoresizingMaskIntoConstraints=NO;[scroll addSubview:_stack];
     [NSLayoutConstraint activateConstraints:@[[scroll.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor constant:20],[scroll.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor constant:-20],[scroll.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor],[scroll.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor],[_stack.leadingAnchor constraintEqualToAnchor:scroll.contentLayoutGuide.leadingAnchor],[_stack.trailingAnchor constraintEqualToAnchor:scroll.contentLayoutGuide.trailingAnchor],[_stack.topAnchor constraintEqualToAnchor:scroll.contentLayoutGuide.topAnchor constant:12],[_stack.bottomAnchor constraintEqualToAnchor:scroll.contentLayoutGuide.bottomAnchor constant:-12],[_stack.widthAnchor constraintEqualToAnchor:scroll.frameLayoutGuide.widthAnchor]]];
     [_stack addArrangedSubview:[self label:@"HM Validation · 별도 저장\n초기 조건 재설정은 검증 슬롯1을 교체합니다. 이어하기는 저장된 경험치·장비·탄약을 유지합니다."]];
+    UISwitch* canvas=[UISwitch new];canvas.on=self.wideCanvas;canvas.accessibilityIdentifier=@"HMValidation.WideCanvas";[canvas addTarget:self action:@selector(canvasSwitch:) forControlEvents:UIControlEventValueChanged];[self addRow:@"게임 시야 확장 (끄면 원본 480)" control:canvas label:nullptr];
     NSUserDefaults *d=NSUserDefaults.standardUserDefaults;
     _mission=[self stepper:1 maximum:8 value:[d integerForKey:@"fixture.mission"]+1];[self addRow:@"미션" control:_mission label:&_missionText];
     _stage=[self stepper:1 maximum:6 value:[d integerForKey:@"fixture.stage"]+1];[self addRow:@"스테이지" control:_stage label:&_stageText];
@@ -94,6 +95,7 @@
 }
 - (void)resume {auto callback=self.resumeSave;[self finish:callback];}
 - (void)experience {auto callback=self.addExperience;[self finish:callback];}
+- (void)canvasSwitch:(UISwitch*)sender {self.wideCanvas=sender.on;if(self.canvasChanged)self.canvasChanged(sender.on);}
 - (void)close {[self finish:nil];}
 @end
 #endif

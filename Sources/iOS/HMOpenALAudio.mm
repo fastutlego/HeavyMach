@@ -64,11 +64,13 @@ bool decodeWAV(NSData *data,PCM& out){
     std::map<std::string,Voice> _voices;
     NSMutableArray<NSString*> *_creationOrder;
     NSString *_error,*_vendor,*_renderer,*_version,*_deviceName;
-    NSUInteger _startCount;
+    NSUInteger _startCount,_stopAllCount;
+    BOOL _applicationActive;
 }
 - (void)recordError:(NSString*)message {_error=message;NSLog(@"HMOpenALAudio: %@",message);}
 - (instancetype)init {
     if(!(self=[super init]))return nil;
+    _applicationActive=YES;
     _creationOrder=[NSMutableArray new];
     ALCcontext *previous=alcGetCurrentContext();
     _device=acquireDevice();
@@ -120,7 +122,7 @@ bool decodeWAV(NSData *data,PCM& out){
     return ready;
 }
 - (void)sound:(NSString*)name pan:(float)sourceX {
-    if(!name.length||!std::isfinite(sourceX))return;
+    if(!_applicationActive||!name.length||!std::isfinite(sourceX))return;
     auto found=_voices.find(name.UTF8String);
     if(found==_voices.end()){
         NSURL *url=[NSBundle.mainBundle URLForResource:name withExtension:@"wav" subdirectory:@"Audio"];
@@ -134,11 +136,22 @@ bool decodeWAV(NSData *data,PCM& out){
     ALenum error=alGetError();if(error!=AL_NO_ERROR){[self recordError:[NSString stringWithFormat:@"OpenAL playback %@ error 0x%x",name,error]];return;}
     voice.starts++;_startCount++;
 }
-// HeavyMach's resign/active callbacks (0x225c/0x225e) are empty.
-// The compatibility host does not add an audio-session observer or source
-// pause/resume policy for this game. Let the same OpenAL backend handle the OS.
+// HeavyMach's original callbacks (0x225c/0x225e) are empty. This is the
+// user's newer lifecycle policy: stop on inactivity, never replay old sounds.
+// Keep the backend's OS session/route handling and the existing AL resources.
+- (void)setApplicationActive:(BOOL)active {
+    if(_applicationActive==active)return;
+    _applicationActive=active;
+    if(active)return;
+    ContextScope scope(_context);
+    if(!scope.valid){[self recordError:@"Cannot activate OpenAL to stop inactive sources"];return;}
+    for(auto& entry:_voices)alSourceStop(entry.second.source);
+    ALenum error=alGetError();
+    if(error!=AL_NO_ERROR){[self recordError:[NSString stringWithFormat:@"OpenAL stop inactive sources error 0x%x",error]];return;}
+    ++_stopAllCount;
+}
 - (NSDictionary*)diagnostics {
-    return @{@"backend":@"OpenAL Soft 1.22.2 static buffers",@"vendor":_vendor?:@"",@"renderer":_renderer?:@"",@"version":_version?:@"",@"device":_deviceName?:@"",@"available":@(_context!=nullptr),@"bufferCount":@(_voices.size()),@"sourceCount":@(_voices.size()),@"startCount":@(_startCount),@"creationOrder":[_creationOrder copy],@"error":_error?:@""};
+    return @{@"backend":@"OpenAL Soft 1.22.2 static buffers",@"vendor":_vendor?:@"",@"renderer":_renderer?:@"",@"version":_version?:@"",@"device":_deviceName?:@"",@"available":@(_context!=nullptr),@"applicationActive":@(_applicationActive),@"stopAllCount":@(_stopAllCount),@"bufferCount":@(_voices.size()),@"sourceCount":@(_voices.size()),@"startCount":@(_startCount),@"creationOrder":[_creationOrder copy],@"error":_error?:@""};
 }
 - (NSDictionary*)soundInfo:(NSString*)name {
     if(!name.length)return @{};

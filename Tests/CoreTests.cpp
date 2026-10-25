@@ -35,6 +35,18 @@ int main(int argc, char** argv) {
     assert(480*odd.scale*3==1809 && 320*odd.verticalScale()*3==1206);
     assert(odd.logical(odd.x,odd.y)==std::pair(0.f,320.f));
     assert(odd.logical(odd.x+480*odd.scale,odd.y+320*odd.verticalScale())==std::pair(480.f,0.f));
+    for(auto size:std::vector<std::pair<int,int>>{{960,640},{1920,1080},{2736,1260},{2868,1320},{2623,1207}}){
+      auto canvas=CanvasGeometry::forDrawable(size.first,size.second,true);
+      assert(canvas.width>=480&&canvas.height==320&&canvas.rasterWidth()>=canvas.width);
+      auto full=Viewport::drawable(size.first,size.second,3,canvas.width);
+      assert(full.x==0&&full.y==0);
+      auto center=full.logical(size.first/6.,size.second/6.);
+      assert(center&&std::fabs(center->first-canvas.centerX())<.001&&std::fabs(center->second-160)<.001);
+      assert(!full.logical(-1,0));
+      auto right=full.logical(full.x+canvas.width*full.scale,full.y+320*full.verticalScale());
+      assert(right&&std::fabs(right->first-canvas.width)<.001&&right->second==0);
+      assert(CanvasGeometry::forDrawable(size.first,size.second,false).width==480);
+    }
     TitleState title;
     assert(!title.released(0));
     assert(title.released(0));

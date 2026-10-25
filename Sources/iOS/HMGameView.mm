@@ -5,6 +5,7 @@
 #import "HMMedia.h"
 #import "HMMenus.h"
 #import "HMGameHUD.h"
+#import "HMOpenALAudio.h"
 #if defined(HM_VALIDATION) && HM_VALIDATION
 #import "HMValidationPanel.h"
 #endif
@@ -17,6 +18,7 @@
 #include "TitleState.hpp"
 #include "LoadingTransition.hpp"
 #include "Viewport.hpp"
+#include "CanvasGeometry.hpp"
 #include "GlobalInfo.hpp"
 #include <ctime>
 
@@ -53,10 +55,16 @@
     heavymach::TitleState _title;
     heavymach::LoadingTransition _loading;
     heavymach::Viewport _viewport;
+    CGFloat _canvasWidth, _hudScale;
+    CGPoint _hudOffset;
+    BOOL _wideCanvasEnabled;
+    NSHashTable<UITouch*> *_worldTouches, *_hudTouches;
     double _time, _retainedWorldTime;
     uint32_t _randomState;
     heavymach::Vector2 _retainedWorldCamera;
-    BOOL _active, _trace;
+    BOOL _active, _trace, _resumeRequired;
+    double _lastInteraction;
+    NSHashTable<UITouch*> *_heldTouches;
     int _traceSecond;
 #if defined(HM_VALIDATION) && HM_VALIDATION
     UIButton *_validationButton;
@@ -77,6 +85,9 @@
         _renderError.textColor=UIColor.whiteColor;_renderError.numberOfLines=0;
         _renderError.userInteractionEnabled=NO;_renderError.hidden=YES;
         [self addSubview:_renderError];
+        _heldTouches=[NSHashTable weakObjectsHashTable];_worldTouches=[NSHashTable weakObjectsHashTable];_hudTouches=[NSHashTable weakObjectsHashTable];_lastInteraction=[self interactionTime];
+        _canvasWidth=480;_hudScale=1;
+        _wideCanvasEnabled=YES;
         _media=[HMMedia new];_media.textureRenderer=_glRenderer; _active=YES;_ammoPreview=-1;
         UIGraphicsImageRendererFormat *format=[UIGraphicsImageRendererFormat defaultFormat];
         format.scale=1;format.opaque=YES;format.preferredRange=UIGraphicsImageRendererFormatRangeStandard;
@@ -153,10 +164,12 @@
     UIViewController *presenter=self.window.rootViewController;if(!presenter||presenter.presentedViewController)return;
     [self stopValidationDirection];
     HMValidationPanel *panel=[[HMValidationPanel alloc] initWithData:&_data];
+    __weak HMGameView *weakSelf=self;
+    panel.wideCanvas=_wideCanvasEnabled;
+    panel.canvasChanged=^(BOOL enabled){[weakSelf setWideCanvasEnabled:enabled];};
     auto pausedSession=_session.get();bool wasPaused=_session&&_session->world().paused;
     if(_session)_session->setPaused(true);
-    __weak HMGameView *weakSelf=self;
-    panel.closed=^{HMGameView *view=weakSelf;if(view&&view->_session.get()==pausedSession&&view->_session)view->_session->setPaused(wasPaused);};
+    panel.closed=^{HMGameView *view=weakSelf;if(view&&view->_session.get()==pausedSession&&view->_session)view->_session->setPaused(wasPaused||view->_resumeRequired);};
     panel.applyFixture=^(const heavymach::ValidationScenario& scenario){
         HMGameView *view=weakSelf;if(!view)return;
         view->_validationFixture=scenario;view->_loadError=nil;view->_loading=heavymach::LoadingTransition{};
@@ -215,6 +228,8 @@
                 return heavymach::Vector2{float(size.width),float(size.height)};
             }, [randomOwner]{return [randomOwner nextOriginalRandom];}, &_passives,
             [media](std::string_view name){NSString* key=[[NSString alloc] initWithBytes:name.data() length:name.size() encoding:NSUTF8StringEncoding];CGSize size=[media imageSize:key scope:@"world"];return heavymach::Vector2{float(size.width),float(size.height)};});
+        // openMap must know the target extent before preparing a new world.
+        _showMenu=NO;[self updateCanvasGeometry];
         _session->restoreWorldCamera(_retainedWorldCamera);
 #if defined(HM_VALIDATION) && HM_VALIDATION
         if(_validationFixture){auto fixture=*_validationFixture;_validationFixture.reset();_session->startValidation(fixture);}
@@ -226,7 +241,9 @@
         [_hud setGameStart:_time]; [self consumeGameEvents];
         // GameMain.setScreen_Game0x3a1c unpauses after setMission/setSurvival,
         // even when openMap's addExp(0) opens an upgrade from leftover EXP.
-        _session->setPaused(false);[self becomeFirstResponder];
+        _session->setPaused(false);[self updateCanvasGeometry];
+        [self noteInteraction];if(_resumeRequired){[self pauseForInterruption];_session->prepareInitialPausedFrame();}
+        [self becomeFirstResponder];
     } catch (const std::exception& error) {_loadError=[NSString stringWithUTF8String:error.what()];}
 }
 - (void)requestScreen:(int)screen {
@@ -257,7 +274,7 @@
     // Called synchronously at loading state3, before this frame's child ticks.
     heavymach::StagePosition stage{};BOOL fromGame=bool(_session);
     if(_session){_originalWeaponSlot=&_save.slots.at(_slotIndex);_originalSelectedWeapon=_session->selectedWeapon();_originalWeaponIndex=_originalSelectedWeapon;stage=_session->stage();_retainedWorldTime=_session->world().gameTime;_retainedWorldCamera=_session->world().camera;[_menus setPreviewWorldTime:_retainedWorldTime paused:_session->world().paused];}
-    _session.reset();[_media releaseScope:@"world"];
+    _session.reset();if(screen!=6)_resumeRequired=NO;[_media releaseScope:@"world"];
     NSString* oldScope=_screenResourceScope;[self prepareScreenResources:screen];
     switch(screen){
         case 1:_showMenu=NO;_titleShake={};_title=heavymach::TitleState{};_title.startTime=float(_time);break;
@@ -275,12 +292,48 @@
     for(const auto& sprite:_loading.sprites())
         [_media draw:[NSString stringWithUTF8String:sprite.tile.c_str()] x:sprite.position.x y:sprite.position.y columns:sprite.cols rows:sprite.rows tile:sprite.frame scaleX:sprite.scale.x scaleY:sprite.scale.y rotation:sprite.rotation alpha:sprite.alpha blend:sprite.blend];
 }
-- (void)finishUpgrade {if (_session) _session->finishUpgradeSlide();}
+- (void)finishUpgrade {
+    if(!_session)return;
+    _session->finishUpgradeSlide();
+    if(_resumeRequired)[self pauseForInterruption];
+}
+- (double)interactionTime {return CACurrentMediaTime();}
+- (void)noteInteraction {_lastInteraction=[self interactionTime];}
+- (void)cancelGameInput {
+#if defined(HM_VALIDATION) && HM_VALIDATION
+    [self stopValidationDirection];
+#endif
+    _leftPressed=_rightPressed=_upPressed=_downPressed=_keyboardFire=NO;_hasKeyboardAim=NO;
+    [_heldTouches removeAllObjects];[_worldTouches removeAllObjects];[_hudTouches removeAllObjects];[_hud cancelInput];
+    if(_session)_session->touch({470,160},2);
+    else if(_showMenu)[_menus touch:CGPointMake(-1000,-1000) state:3];
+    _tilt={};
+}
+- (void)pauseForInterruption {
+    [self cancelGameInput];
+    if(!_session)return;
+    _resumeRequired=YES;
+    const auto* player=_session->player();
+    // Keep result/upgrade panels; never cover them with an ordinary pause menu.
+    const auto& world=_session->world();
+    if((world.gameState==0 && (!player||player->upgradeStep==0)) ||
+       (world.gameState!=0 && world.presentation.step>=3)){
+        _gameMenu=YES;[_hud setMenuVisible:YES];
+    }
+    _session->setPaused(true);
+}
+- (void)checkInactivity {
+    if(!_active||!_session||_session->world().paused||_session->world().gameState!=0||_loading.visible())return;
+    // Foreground inactivity is elapsed real time, not a catch-up game tick.
+    if(_heldTouches.count||_keyboardFire||_leftPressed||_rightPressed||_upPressed||_downPressed||std::fabs(_tilt.y)>.03f){[self noteInteraction];return;}
+    if([self interactionTime]-_lastInteraction>=120.0)[self pauseForInterruption];
+}
 - (void)gameButton:(int)identifier state:(int)state {
-    if (!_session) return;
+    if (!_active || !_session) return;
+    [self noteInteraction];
     const auto& world=_session->world();
     if (world.presentation.step==2 && (identifier==1000 || identifier==1001)) {
-        if (state==2) _session->resultButton(identifier);return;
+        if (state==2) {_resumeRequired=NO;_session->resultButton(identifier);}return;
     }
     if (identifier==1000 && state==0) {
         if(!world.paused){_session->booster();[_media sound:@"UI_Click"];}
@@ -296,9 +349,9 @@
 #if defined(HM_VALIDATION) && HM_VALIDATION
             [self stopValidationDirection];
 #endif
-            _gameMenu=YES;[_hud setMenuVisible:YES];_session->setPaused(true);[_media sound:@"UI_Click"];break;
-        case 101: _gameMenu=NO;[_hud setMenuVisible:NO];_session->setPaused(false);[_media sound:@"UI_Click"];break;
-        case 102: _session->setPaused(false);_gameMenu=NO;[_hud setMenuVisible:NO];[_media sound:@"UI_Click"];[self persistSave];[self requestScreen:3];break;
+            [self cancelGameInput];_gameMenu=YES;[_hud setMenuVisible:YES];_session->setPaused(true);[_media sound:@"UI_Click"];break;
+        case 101: _resumeRequired=NO;_tilt={};[self noteInteraction];_gameMenu=NO;[_hud setMenuVisible:NO];_session->setPaused(world.gameState!=0);[_media sound:@"UI_Click"];break;
+        case 102: _resumeRequired=NO;_session->setPaused(false);_gameMenu=NO;[_hud setMenuVisible:NO];[_media sound:@"UI_Click"];[self persistSave];[self requestScreen:3];break;
         case 103:
             if(world.paused){
                 // 0x17c4c: original CFString bytes at file offset0x24964.
@@ -307,9 +360,9 @@
                     if(!success)NSLog(@"Original website URL could not be opened");
                 }];
             }break;
-        case 1100: _session->cycleWeapon();break;
+        case 1100: _session->cycleWeapon();[_media sound:@"Game_ChangeWeapon"];break; // 0x17c4c: release, then sfxID4.
         case 1200:case 1201:case 1202: _session->selectUpgrade(identifier-1200);break;
-        case 1300: _session->confirmUpgrade();break;
+        case 1300: _resumeRequired=NO;_session->confirmUpgrade();break;
     }
     [self consumeGameEvents];
 }
@@ -357,12 +410,13 @@
 - (BOOL)canBecomeFirstResponder {return YES;}
 - (void)didMoveToWindow {[super didMoveToWindow];if(self.window)[self becomeFirstResponder];}
 - (void)pressesBegan:(NSSet<UIPress *> *)presses withEvent:(UIPressesEvent *)event {
+    if(!_active)return;[self noteInteraction];
     BOOL handled=NO;
     for (UIPress *press in presses) {
 #if defined(HM_VALIDATION) && HM_VALIDATION
         if ((press.key.keyCode==UIKeyboardHIDUsageKeyboardLeftShift || press.key.keyCode==UIKeyboardHIDUsageKeyboardRightShift || press.key.keyCode==UIKeyboardHIDUsageKeyboardF) && _session) {
             _keyboardFire=YES;handled=YES;
-            if (auto p=_session->player()) _session->touch(_hasKeyboardAim?heavymach::Vector2{float(_keyboardAim.x),float(_keyboardAim.y)}:heavymach::Vector2{470,p->position.y-_session->world().camera.y+185},0);
+            if (auto p=_session->player()) _session->touch(_hasKeyboardAim?heavymach::Vector2{float(_keyboardAim.x),float(_keyboardAim.y)}:heavymach::Vector2{float(_canvasWidth-10),p->position.y-_session->world().camera.y+185},0);
         }
 #endif
         if (press.key.keyCode==UIKeyboardHIDUsageKeyboardLeftArrow) {_leftPressed=YES;handled=YES;}
@@ -472,20 +526,57 @@
 }
 - (void)dealloc {[_frameTimer invalidate];[_motionTimer invalidate];[_motion stopAccelerometerUpdates];}
 - (void)setApplicationActive:(BOOL)active {
-#if defined(HM_VALIDATION) && HM_VALIDATION
-    if(!active)[self stopValidationDirection];
-#endif
-    if (!active) {_leftPressed=NO;_rightPressed=NO;_upPressed=NO;_downPressed=NO;_keyboardFire=NO;}
-    _active=active;[_frameTimer invalidate];[_motionTimer invalidate];
-    if(active){[self scheduleOriginalTimer:CACurrentMediaTime()+0.01666666753590107];[self scheduleOriginalMotionTimer:CACurrentMediaTime()+heavymach::TiltState::interval];}
-    if(!active)[_glRenderer finish];
+    // Resign-active happens before background. The duplicate background call
+    // must not issue GL commands after the app has already become inactive.
+    if(_active==active)return;
+    if(!active){
+        if(_loading.visible())_resumeRequired=YES;
+        [self pauseForInterruption];
+        [_frameTimer invalidate];_frameTimer=nil;[_motionTimer invalidate];_motionTimer=nil;
+        [_motion stopAccelerometerUpdates];[_media.audio setApplicationActive:NO];
+        [_glRenderer finish];_active=NO;
+    }else{
+        _active=YES;_tilt={};[self noteInteraction];[_media.audio setApplicationActive:YES];
+        if(_motion.accelerometerAvailable)[_motion startAccelerometerUpdates];
+        [self scheduleOriginalTimer:CACurrentMediaTime()+0.01666666753590107];
+        [self scheduleOriginalMotionTimer:CACurrentMediaTime()+heavymach::TiltState::interval];
+        // Pause/menu state is intentionally retained until an explicit action.
+    }
+}
+- (void)setWideCanvasEnabled:(BOOL)enabled {
+    if(_wideCanvasEnabled==enabled)return;
+    [self cancelGameInput];_wideCanvasEnabled=enabled;[self updateCanvasGeometry];
+}
+- (void)updateCanvasGeometry {
+    CGRect bounds=self.bounds;
+    const int dw=int(std::lround(bounds.size.width*self.contentScaleFactor));
+    const int dh=int(std::lround(bounds.size.height*self.contentScaleFactor));
+    auto canvas=heavymach::CanvasGeometry::forDrawable(dw,dh,_wideCanvasEnabled&&bool(_session)&&!_showMenu);
+    // A paused scene keeps its cached draw commands; apply mode changes before
+    // the next simulation tick, never by collecting stateful visuals twice.
+    if(_session&&_session->world().paused)canvas.width=float(_canvasWidth);
+    _canvasWidth=canvas.width;
+    _viewport=heavymach::Viewport::drawable(dw,dh,self.contentScaleFactor,_canvasWidth);
+    _viewport.x+=bounds.origin.x;_viewport.y+=bounds.origin.y;
+    _hudScale=1;_hudOffset=CGPointMake((_canvasWidth-480)/2,0);
+    if(_canvasWidth>480 && _viewport.scale>0){
+        CGRect safe=UIEdgeInsetsInsetRect(bounds,self.safeAreaInsets);
+        const CGFloat left=std::max(CGFloat(0),(CGRectGetMinX(safe)-_viewport.x)/_viewport.scale);
+        const CGFloat right=std::min(_canvasWidth,(CGRectGetMaxX(safe)-_viewport.x)/_viewport.scale);
+        const CGFloat bottom=std::max(CGFloat(0),320-(CGRectGetMaxY(safe)-_viewport.y)/_viewport.verticalScale());
+        const CGFloat top=std::min(CGFloat(320),320-(CGRectGetMinY(safe)-_viewport.y)/_viewport.verticalScale());
+        _hudScale=std::max(CGFloat(.01),std::min({CGFloat(1),(right-left)/480,(top-bottom)/320}));
+        _hudOffset=CGPointMake((left+right-480*_hudScale)/2,(bottom+top-320*_hudScale)/2);
+    }
+    if(_session&&_session->canvasWidth()!=float(_canvasWidth))_session->setCanvasWidth(float(_canvasWidth));
+}
+- (BOOL)worldInputBlocked {
+    if(!_session)return YES;
+    return _loading.visible()||_gameMenu||_session->world().paused||_session->world().gameState!=0;
 }
 - (void)layoutSubviews {
     [super layoutSubviews];
-    // touchHLE Window::viewport fits the whole drawable, including the unsafe area.
-    CGRect screen=self.bounds;
-    _viewport=heavymach::Viewport::drawable(int(std::lround(screen.size.width*self.contentScaleFactor)),int(std::lround(screen.size.height*self.contentScaleFactor)),self.contentScaleFactor);
-    _viewport.x+=screen.origin.x;_viewport.y+=screen.origin.y;
+    [self updateCanvasGeometry];
 #if defined(HM_VALIDATION) && HM_VALIDATION
     CGRect safe=UIEdgeInsetsInsetRect(self.bounds,self.safeAreaInsets);
     _validationButton.frame=CGRectMake(CGRectGetMaxX(safe)-72,CGRectGetMinY(safe)+8,64,36);
@@ -514,6 +605,8 @@
     if (_loadError) return;
     if (_showMenu) {[_menus tick:_time];_passives.tick();[_hud tick:_time];return;}
     if (_session) {
+        // Pause menus and interrupted upgrades must also freeze passive timers.
+        if(_gameMenu||(_resumeRequired&&_session->world().gameState==0)){[_hud tick:_time];return;}
         try {
             float input=_tilt.y;
             // Samples have already been mapped to the original landscape axes.
@@ -539,6 +632,7 @@
 - (void)frame:(id)sender {
     (void)sender;
     if (!_active) return;
+    [self updateCanvasGeometry];[self checkInactivity];
     [self advanceOriginalFrame];
     [self renderOpenGLFrame];
 }
@@ -549,11 +643,12 @@
     _renderError.text=_loadError ?: (_glRenderer?nil:@"OpenGL ES renderer unavailable");
     _renderError.hidden=(_renderError.text==nil);
     if (!_glRenderer || _loadError) return;
+    if(![_glRenderer setLogicalWidth:_canvasWidth height:320]){_renderError.text=@"Game canvas allocation failed";_renderError.hidden=NO;return;}
     if (![_glRenderer beginFrame]) { _renderError.text=@"OpenGL ES context unavailable";_renderError.hidden=NO;return; }
     _media.glRenderer=_glRenderer;
     @try {
         [self drawLogicalFrame];
-        if(![_glRenderer presentToLayer:(CAEAGLLayer*)self.layer viewport:CGRectMake(_viewport.x,_viewport.y,480*_viewport.scale,320*_viewport.verticalScale())]) {
+        if(![_glRenderer presentToLayer:(CAEAGLLayer*)self.layer viewport:CGRectMake(_viewport.x,_viewport.y,_canvasWidth*_viewport.scale,320*_viewport.verticalScale())]) {
             _renderError.text=@"OpenGL ES presentation failed";_renderError.hidden=NO;
         }
     } @finally { _media.glRenderer=nil;[_glRenderer endFrame]; }
@@ -563,6 +658,14 @@
     if (self.window) return; // The original timer exclusively owns onscreen drawing.
     CGContextRef ctx=UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(ctx,UIColor.blackColor.CGColor); CGContextFillRect(ctx,self.bounds);
+    // Expanded diagnostics use the same GPU scene. CPU raster remains a 480 oracle.
+    if(_canvasWidth>480){
+        if([_glRenderer setLogicalWidth:_canvasWidth height:320]&&[_glRenderer beginFrame]){
+            _media.glRenderer=_glRenderer;[self drawLogicalFrame];_media.glRenderer=nil;[_glRenderer endFrame];
+            [[_glRenderer snapshot]drawInRect:CGRectMake(_viewport.x,_viewport.y,_canvasWidth*_viewport.scale,320*_viewport.verticalScale())];
+        }
+        return;
+    }
     // Compose once at the original framebuffer resolution. Scaling individual
     // translucent sprites before blending changes their overlapping pixels.
     UIImage *frame=[_logicalRenderer imageWithActions:^(UIGraphicsImageRendererContext *rendererContext) {
@@ -575,7 +678,7 @@
 - (void)drawLogicalFrame {
     CGContextRef ctx=_media.glRenderer?nullptr:UIGraphicsGetCurrentContext();
     if(ctx){CGContextSetFillColorWithColor(ctx,UIColor.blackColor.CGColor);CGContextFillRect(ctx,CGRectMake(0,0,480,320));}
-    [_media setCameraOffset:CGPointZero];_media.resourceScope=@"shared";
+    [_media setCameraOffset:CGPointZero];[_media setDrawingOffset:CGPointZero];[_media setDrawingScale:1];[_media resetClip];_media.resourceScope=@"shared";
     if(ctx){CGContextSaveGState(ctx);CGContextClipToRect(ctx,CGRectMake(0,0,480,320));}
     if (_loadError) {
         if(ctx)[_loadError drawInRect:CGRectMake(24,100,432,180) withAttributes:@{NSForegroundColorAttributeName:UIColor.whiteColor,NSFontAttributeName:[UIFont systemFontOfSize:14]}];
@@ -584,13 +687,15 @@
     if (_showMenu) {_media.resourceScope=_screenResourceScope;[_menus draw];_media.resourceScope=@"shared";[self drawLoading];if(ctx)CGContextRestoreGState(ctx);return;}
     if (_session) {
         [_media setCameraOffset:CGPointMake(_worldShake.offset.x,_worldShake.offset.y)];
-        for (const auto& item:_session->renderItems()) {
+        if(!(_canvasWidth>480&&_loading.visible()))for (const auto& item:_session->renderItems()) {
             if (const auto *sprite=std::get_if<heavymach::DrawSprite>(&item)){
                 _media.resourceScope=sprite->worldTexture?@"world":@"shared";
                 [_media draw:[NSString stringWithUTF8String:sprite->tile.c_str()] x:sprite->position.x y:sprite->position.y columns:sprite->cols rows:sprite->rows tile:sprite->frame scaleX:sprite->scale.x scaleY:sprite->scale.y rotation:sprite->rotation alpha:sprite->alpha blend:sprite->blend];}
             else {_media.resourceScope=@"shared";[_media drawTrail:std::get<heavymach::TrailMesh>(item)];}
         }
         [_media setCameraOffset:CGPointZero];_media.resourceScope=@"shared";
+        [_media setDrawingOffset:_hudOffset];[_media setDrawingScale:_hudScale];
+        [_media setClipRect:CGRectMake(_hudOffset.x,_hudOffset.y,480*_hudScale,320*_hudScale)];
         HMGameHUDSnapshot snapshot;
         snapshot.slot=&_save.slots[_slotIndex];snapshot.data=&_data;snapshot.passives=&_passives;
         snapshot.hpGauge=_hpGauge;snapshot.expGauge=_expGauge;snapshot.reloadGauge=_reloadGauge;
@@ -608,7 +713,7 @@
             snapshot.upgradeVisible=player->upgradeStep==1;
             snapshot.upgradeSelection=player->upgradeSelection;
         }
-        [_hud draw:snapshot];[self drawLoading];if(ctx)CGContextRestoreGState(ctx);return;
+        [_hud draw:snapshot];[self drawLoading];[_media resetClip];[_media setDrawingOffset:CGPointZero];[_media setDrawingScale:1];if(ctx)CGContextRestoreGState(ctx);return;
     }
     _media.resourceScope=_screenResourceScope;
     [_media setCameraOffset:CGPointMake(_titleShake.offset.x,_titleShake.offset.y)];
@@ -622,10 +727,28 @@
     if(ctx)CGContextRestoreGState(ctx);
 }
 - (void)routeTouches:(NSSet<UITouch *> *)touches state:(int)state {
-    if (_loadError) return;
+    if (!_active || _loadError) return;
     for (UITouch *touch in touches) {
         CGPoint point=[touch locationInView:self];
         auto logical=_viewport.logical(point.x,point.y);
+        if(state>=2)[_heldTouches removeObject:touch];
+        if(logical){[self noteInteraction];if(state==0)[_heldTouches addObject:touch];}
+        if(_session&&_canvasWidth>480){
+            const CGPoint p=logical?CGPointMake(logical->first,logical->second):CGPointMake(-1000,-1000);
+            const CGPoint hp=CGPointMake((p.x-_hudOffset.x)/_hudScale,(p.y-_hudOffset.y)/_hudScale);
+            const BOOL insideHUD=hp.x>=0&&hp.x<=480&&hp.y>=0&&hp.y<=320;
+            if(state==0){
+                if(insideHUD&&[_hud touch:hp state:0])[_hudTouches addObject:touch];
+                else if(logical&&![self worldInputBlocked]){[_worldTouches addObject:touch];_session->touch({float(p.x),float(p.y)},0);_keyboardAim=p;_hasKeyboardAim=YES;}
+            }else if([_hudTouches containsObject:touch]){
+                [_hud touch:insideHUD?hp:CGPointMake(-1000,-1000) state:state];
+                if(state>=2)[_hudTouches removeObject:touch];
+            }else if([_worldTouches containsObject:touch]){
+                if(state>=2){[_worldTouches removeObject:touch];if(!_worldTouches.count)_session->touch({0,0},2);}
+                else if(logical&&![self worldInputBlocked]){_session->touch({float(p.x),float(p.y)},state);_keyboardAim=p;_hasKeyboardAim=YES;}
+            }
+            [self consumeGameEvents];continue;
+        }
         if (_session) {
             const CGPoint p=logical?CGPointMake(logical->first,logical->second):CGPointMake(-1000,-1000);
             // QobManager @0xfc18 dispatches each event in reverse receiver order.

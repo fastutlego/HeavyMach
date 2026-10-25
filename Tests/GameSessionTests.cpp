@@ -3,6 +3,7 @@
 #include <filesystem>
 #include <fstream>
 #include <iostream>
+#include <set>
 using namespace heavymach;
 int main(int argc,char** argv){
  auto resources=argc>1?std::filesystem::path(argv[1]):std::filesystem::path(__FILE__).parent_path().parent_path()/"Resources";
@@ -28,6 +29,38 @@ int main(int argc,char** argv){
   replacement.tick(500,0);assert(replacement.world().gameTime==retained+double(1.f/60.f));
   GameSession cold(data,clockSlot,dimensions,random);cold.start(1,4,4);assert(cold.world().gameTime==0);
 
+ }
+ // Explicit original mode follows exactly the default mode's state, draw order and RNG.
+ {SaveSlot aSlot=slot,bSlot=slot;uint32_t ar=11,br=11;
+  GameSession a(data,aSlot,dimensions,[&]{ar=ar*1664525u+1013904223u;return int32_t(ar>>1);});
+  GameSession b(data,bSlot,dimensions,[&]{br=br*1664525u+1013904223u;return int32_t(br>>1);});
+  b.setCanvasWidth(480);a.start(0,0,0);b.start(0,0,0);
+  for(int frame=0;frame<120;++frame){
+   a.touch({470,160},frame?1:0);b.touch({470,160},frame?1:0);a.tick((frame+1)/60.,.08f);b.tick((frame+1)/60.,.08f);
+   assert(ar==br&&aSlot.bytes==bSlot.bytes&&a.world().camera.x==b.world().camera.x&&a.world().camera.y==b.world().camera.y);
+   assert(a.sprites().size()==b.sprites().size());
+   for(size_t n=0;n<a.sprites().size();++n){auto& x=a.sprites()[n];auto& y=b.sprites()[n];
+    assert(x.tile==y.tile&&x.frame==y.frame&&x.cols==y.cols&&x.rows==y.rows&&x.z==y.z&&x.blend==y.blend);
+    assert(x.position.x==y.position.x&&x.position.y==y.position.y&&x.scale.x==y.scale.x&&x.scale.y==y.scale.y&&x.rotation==y.rotation&&x.alpha==y.alpha);
+   }
+  }
+ }
+ // Every shipped map background covers the full wide canvas at both map ends.
+ {size_t checked=0;std::set<std::string> playable{"Survival"};
+  for(int mission=0;mission<8;++mission)for(int stage=0;stage<GlobalInfo::stageCount(mission);++stage){char key[32];std::snprintf(key,sizeof(key),"Stage%02d",GlobalInfo::mapNumber({mission,stage}));playable.insert(key);}
+  // Stage42 is an unreferenced original data file with no supplied BG_map15a asset.
+  for(const auto& name:playable){const auto& map=data.maps.at(name);if(map.background.empty())continue;
+   WorldState background;background.map=map;background.center={(map.left+map.right)*.5f,(map.bottom+map.top)*.5f};
+   background.backLine=map.left;background.frontLine=map.right+10;background.hasBackground=true;background.backgroundSize=dimensions(map.background);
+   for(float width:{568.8889f,695.f,696.f}){
+    background.setCanvasWidth(width);
+    for(auto position:{Vector2{map.left,map.bottom},Vector2{map.right,map.top}}){background.processCamera(position);
+     float x=background.backgroundPosition.x-background.camera.x+width*.5f,y=background.backgroundPosition.y-background.camera.y+160;
+     float halfW=background.backgroundSize.x*background.backgroundDrawScale*.5f,halfH=background.backgroundSize.y*background.backgroundDrawScale*.5f;
+     assert(x-halfW<.001f&&x+halfW>=width-.001f&&y-halfH<.001f&&y+halfH>=320-.001f);
+    }
+   }++checked;
+  }assert(checked==42);
  }
  GameSession game(data,slot,dimensions,random);game.start(0,0,0);assert(game.player()&&game.player()->hp==256);assert(game.sprites().empty()); // First draw follows the first tick.
  auto events=game.takeEvents();assert(!events.empty());

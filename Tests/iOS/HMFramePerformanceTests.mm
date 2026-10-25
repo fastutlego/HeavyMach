@@ -25,6 +25,10 @@
 - (void)startSlot:(int)slot mode:(int)mode mission:(int)mission stage:(int)stage;
 - (void)advanceOriginalFrame;
 - (void)gameButton:(int)identifier state:(int)state;
+- (void)checkInactivity;
+- (void)setWideCanvasEnabled:(BOOL)enabled;
+- (void)updateCanvasGeometry;
+- (void)routeTouches:(NSSet<UITouch*>*)touches state:(int)state;
 @end
 namespace {
 template<class T>T& perfStorage(id object,const char* name){
@@ -75,6 +79,7 @@ void emit(NSDictionary* record){NSData* json=[NSJSONSerialization dataWithJSONOb
 - (BOOL)isAccelerometerAvailable {return YES;}
 - (CMAccelerometerData*)accelerometerData {return (CMAccelerometerData*)self.suppliedSample;}
 - (void)stopAccelerometerUpdates {}
+- (void)startAccelerometerUpdates {}
 @end
 @interface HMPhysicalTiltView:HMPerformanceView
 @property(nonatomic)UIInterfaceOrientation suppliedOrientation;
@@ -82,12 +87,31 @@ void emit(NSDictionary* record){NSData* json=[NSJSONSerialization dataWithJSONOb
 @implementation HMPhysicalTiltView
 - (UIInterfaceOrientation)accelerationInterfaceOrientation {return self.suppliedOrientation;}
 @end
+@interface HMLifecycleView:HMPerformanceView
+@property(nonatomic)double suppliedTime;
+@end
+@implementation HMLifecycleView
+- (double)interactionTime {return self.suppliedTime;}
+@end
+@interface HMCanvasTestView:HMPerformanceView
+@property(nonatomic)UIEdgeInsets suppliedInsets;
+@end
+@implementation HMCanvasTestView
+- (UIEdgeInsets)safeAreaInsets {return self.suppliedInsets;}
+@end
+@interface HMCanvasTouch:NSObject
+@property(nonatomic)CGPoint point;
+@end
+@implementation HMCanvasTouch
+- (CGPoint)locationInView:(UIView*)view {return self.point;}
+@end
 @interface HMPerformanceSilentMedia:HMMedia
 @property(nonatomic)NSUInteger soundCalls;
 @property(nonatomic)NSUInteger weaponFireCalls;
+@property(nonatomic,copy)NSString* lastSound;
 @end
 @implementation HMPerformanceSilentMedia
-- (void)sound:(NSString*)name {++self.soundCalls;if([name hasPrefix:@"Wpn_"])++self.weaponFireCalls;}
+- (void)sound:(NSString*)name {self.lastSound=name;++self.soundCalls;if([name hasPrefix:@"Wpn_"])++self.weaponFireCalls;}
 - (void)sound:(NSString*)name pan:(float)pan {++self.soundCalls;if([name hasPrefix:@"Wpn_"])++self.weaponFireCalls;}
 @end
 // Display-link harness runs the actual presentation path and real audio.
@@ -139,6 +163,143 @@ void emit(NSDictionary* record){NSData* json=[NSJSONSerialization dataWithJSONOb
 @interface HMFramePerformanceTests:XCTestCase
 @end
 @implementation HMFramePerformanceTests
+- (void)testNewWideSessionClampsRetainedCameraBeforeOpeningMap {
+ HMPerformanceView* view=[[HMPerformanceView alloc]initWithFrame:CGRectMake(0,0,912,420)];
+ [[view valueForKey:@"frameTimer"]invalidate];[[view valueForKey:@"motionTimer"]invalidate];
+ perfStorage<heavymach::SaveData>(view,"_save")={};
+ perfStorage<heavymach::Vector2>(view,"_retainedWorldCamera")={10000,160};
+ [view startSlot:0 mode:0 mission:0 stage:0];
+ auto& session=perfStorage<std::unique_ptr<heavymach::GameSession>>(view,"_session");
+ XCTAssertGreaterThan(session->canvasWidth(),480);
+ XCTAssertEqualWithAccuracy(session->world().camera.x,session->world().map.left+session->canvasWidth()/2,.001);
+ XCTAssertLessThan(session->enemyCount(),size_t(10));
+ [view setApplicationActive:NO];
+}
+- (void)testExpandedAirAndProMaxCanvasPreservesHeightAndKeepsHUDInsideSafeArea {
+ for(NSValue* size in @[[NSValue valueWithCGSize:CGSizeMake(912,420)],[NSValue valueWithCGSize:CGSizeMake(956,440)]]){
+  for(NSNumber* reversed in @[@NO,@YES]){@autoreleasepool{
+   const CGSize dimensions=size.CGSizeValue;
+   HMCanvasTestView* view=[[HMCanvasTestView alloc]initWithFrame:CGRectMake(0,0,dimensions.width,dimensions.height)];
+   view.suppliedInsets=reversed.boolValue?UIEdgeInsetsMake(0,0,21,62):UIEdgeInsetsMake(0,62,21,0);
+   [[view valueForKey:@"frameTimer"]invalidate];[[view valueForKey:@"motionTimer"]invalidate];
+   perfStorage<heavymach::SaveData>(view,"_save")={};[view startSlot:0 mode:0 mission:0 stage:0];[view layoutSubviews];
+   auto& session=perfStorage<std::unique_ptr<heavymach::GameSession>>(view,"_session");
+   auto& viewport=perfStorage<heavymach::Viewport>(view,"_viewport");
+   XCTAssertEqualWithAccuracy(session->canvasWidth(),320*dimensions.width/dimensions.height,.001);
+   XCTAssertEqualWithAccuracy(viewport.x,0,.001);XCTAssertEqualWithAccuracy(viewport.y,0,.001);
+   XCTAssertEqualWithAccuracy(viewport.logicalWidth*viewport.scale,dimensions.width,.001);
+   XCTAssertEqualWithAccuracy(320*viewport.verticalScale(),dimensions.height,.001);
+   CGPoint offset=perfStorage<CGPoint>(view,"_hudOffset");CGFloat scale=perfStorage<CGFloat>(view,"_hudScale");
+   CGRect safe=UIEdgeInsetsInsetRect(view.bounds,view.safeAreaInsets);
+   CGRect hud=CGRectMake(viewport.x+offset.x*viewport.scale,viewport.y+(320-offset.y-320*scale)*viewport.verticalScale(),480*scale*viewport.scale,320*scale*viewport.verticalScale());
+   XCTAssertTrue(CGRectContainsRect(CGRectInset(safe,-.01,-.01),hud));
+   for(int i=0;i<90;++i)[view advanceOriginalFrame];
+   HMGLRenderer* gpu=[view valueForKey:@"glRenderer"];HMMedia* media=[view valueForKey:@"media"];
+   XCTAssertTrue([gpu setLogicalWidth:session->canvasWidth() height:320]);XCTAssertTrue([gpu beginFrame]);media.glRenderer=gpu;[view drawLogicalFrame];media.glRenderer=nil;[gpu endFrame];
+   UIImage* image=[gpu snapshot];XCTAssertEqual(CGImageGetWidth(image.CGImage),size_t(std::ceil(session->canvasWidth())));XCTAssertEqual(CGImageGetHeight(image.CGImage),size_t(320));
+   XCTAssertEqualObjects(gpu.diagnostics[@"lastError"],@"");
+   XCTAttachment* capture=[XCTAttachment attachmentWithImage:image];capture.name=[NSString stringWithFormat:@"canvas-%gx%g-reversed%@",dimensions.width,dimensions.height,reversed];capture.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:capture];
+   [view setApplicationActive:NO];
+  }}
+ }
+}
+- (void)testExpandedEdgeTouchFiresAndOutsideReleaseAndModalStopIt {
+ HMCanvasTestView* view=[[HMCanvasTestView alloc]initWithFrame:CGRectMake(0,0,912,420)];
+ [[view valueForKey:@"frameTimer"]invalidate];[[view valueForKey:@"motionTimer"]invalidate];
+ perfStorage<heavymach::SaveData>(view,"_save")={};[view startSlot:0 mode:0 mission:0 stage:0];[view layoutSubviews];
+ auto& session=perfStorage<std::unique_ptr<heavymach::GameSession>>(view,"_session");
+ for(int i=0;i<30;++i)[view advanceOriginalFrame];
+ HMCanvasTouch* touch=[HMCanvasTouch new];touch.point=CGPointMake(900,210);NSSet* touches=[NSSet setWithObject:touch];
+ [view routeTouches:touches state:0];
+ size_t maximum=0;for(int i=0;i<40;++i){[view advanceOriginalFrame];maximum=std::max(maximum,session->bulletCount());}
+ XCTAssertGreaterThan(maximum,size_t(0));XCTAssertEqual(((NSHashTable*)[view valueForKey:@"worldTouches"]).count,NSUInteger(1));
+ touch.point=CGPointMake(950,210);[view routeTouches:touches state:2];
+ XCTAssertEqual(((NSHashTable*)[view valueForKey:@"worldTouches"]).count,NSUInteger(0));
+ [view gameButton:100 state:2];touch.point=CGPointMake(900,210);[view routeTouches:touches state:0];
+ XCTAssertEqual(((NSHashTable*)[view valueForKey:@"worldTouches"]).count,NSUInteger(0));
+ const double time=session->world().gameTime;for(int i=0;i<30;++i)[view advanceOriginalFrame];XCTAssertEqual(session->world().gameTime,time);
+ [view routeTouches:touches state:3];[view setApplicationActive:NO];
+}
+- (void)testCanvasComparisonModeChangesOnResumeWithoutExtraTick {
+ HMPerformanceView* view=[[HMPerformanceView alloc]initWithFrame:CGRectMake(0,0,912,420)];
+ [[view valueForKey:@"frameTimer"]invalidate];[[view valueForKey:@"motionTimer"]invalidate];
+ perfStorage<heavymach::SaveData>(view,"_save")={};[view startSlot:0 mode:0 mission:0 stage:0];
+ auto& session=perfStorage<std::unique_ptr<heavymach::GameSession>>(view,"_session");[view advanceOriginalFrame];
+ [view gameButton:100 state:2];double time=session->world().gameTime;float width=session->canvasWidth();
+ [view setWideCanvasEnabled:NO];XCTAssertEqual(session->canvasWidth(),width);XCTAssertEqual(session->world().gameTime,time);
+ [view gameButton:101 state:2];[view updateCanvasGeometry];XCTAssertEqual(session->canvasWidth(),480);XCTAssertEqual(session->world().gameTime,time);
+ [view advanceOriginalFrame];XCTAssertGreaterThan(session->world().gameTime,time);
+ [view setApplicationActive:NO];
+}
+- (void)testWeaponSwitchReleasePlaysOriginalSoundOnlyWhenAllowed {
+ HMPerformanceView* view=[[HMPerformanceView alloc]initWithFrame:CGRectMake(0,0,480,320)];
+ [[view valueForKey:@"frameTimer"]invalidate];[[view valueForKey:@"motionTimer"]invalidate];
+ perfStorage<heavymach::SaveData>(view,"_save")={};[view startSlot:0 mode:0 mission:0 stage:0];
+ HMPerformanceSilentMedia* media=[HMPerformanceSilentMedia new];[view setValue:media forKey:@"media"];
+ [view gameButton:1100 state:0];[view gameButton:1100 state:1];[view gameButton:1100 state:3];
+ XCTAssertEqual(media.soundCalls,NSUInteger(0));
+ [view gameButton:1100 state:2];XCTAssertEqual(media.soundCalls,NSUInteger(1));
+ XCTAssertEqualObjects(media.lastSound,@"Game_ChangeWeapon");
+ [view gameButton:100 state:2];NSUInteger before=media.soundCalls;
+ [view gameButton:1100 state:2];XCTAssertEqual(media.soundCalls,before);
+ [view setApplicationActive:NO];
+}
+- (void)testResignBackgroundAndReturnKeepGameFrozenUntilExplicitResume {
+ HMLifecycleView* view=[[HMLifecycleView alloc]initWithFrame:CGRectMake(0,0,912,420)];
+ [[view valueForKey:@"frameTimer"]invalidate];[[view valueForKey:@"motionTimer"]invalidate];
+ perfStorage<heavymach::SaveData>(view,"_save")={};[view startSlot:0 mode:0 mission:0 stage:0];
+ auto& session=perfStorage<std::unique_ptr<heavymach::GameSession>>(view,"_session");
+ [view advanceOriginalFrame];const double time=session->world().gameTime;
+ const auto position=session->player()->position;
+ [view setValue:@YES forKey:@"keyboardFire"];[view setValue:@YES forKey:@"rightPressed"];
+ [view setApplicationActive:NO];
+ XCTAssertTrue(session->world().paused);XCTAssertTrue([[view valueForKey:@"gameMenu"]boolValue]);
+ XCTAssertFalse([[view valueForKey:@"keyboardFire"]boolValue]);XCTAssertFalse([[view valueForKey:@"rightPressed"]boolValue]);
+ XCTAssertNil([view valueForKey:@"frameTimer"]);XCTAssertNil([view valueForKey:@"motionTimer"]);
+ HMOpenALAudio* audio=((HMMedia*)[view valueForKey:@"media"]).audio;
+ NSUInteger stops=[audio.diagnostics[@"stopAllCount"]unsignedIntegerValue];
+ [view setApplicationActive:NO];XCTAssertEqual([audio.diagnostics[@"stopAllCount"]unsignedIntegerValue],stops);
+ view.suppliedTime=7200;[view setApplicationActive:YES];
+ [[view valueForKey:@"frameTimer"]invalidate];[[view valueForKey:@"motionTimer"]invalidate];
+ XCTAssertTrue(session->world().paused);
+ for(int i=0;i<120;++i)[view advanceOriginalFrame];
+ XCTAssertEqual(session->world().gameTime,time);XCTAssertEqual(session->player()->position.x,position.x);
+ [view gameButton:101 state:2];XCTAssertFalse(session->world().paused);[view advanceOriginalFrame];
+ XCTAssertGreaterThan(session->world().gameTime,time);XCTAssertLessThan(session->world().gameTime,time+.02);
+ [view setApplicationActive:NO];
+}
+- (void)testForegroundInactivityUsesRealTimeAndHeldInputResetsDeadline {
+ HMLifecycleView* view=[[HMLifecycleView alloc]initWithFrame:CGRectMake(0,0,480,320)];
+ [[view valueForKey:@"frameTimer"]invalidate];[[view valueForKey:@"motionTimer"]invalidate];
+ perfStorage<heavymach::SaveData>(view,"_save")={};[view startSlot:0 mode:0 mission:0 stage:0];
+ auto& session=perfStorage<std::unique_ptr<heavymach::GameSession>>(view,"_session");
+ view.suppliedTime=119.99;[view checkInactivity];XCTAssertFalse(session->world().paused);
+ [view setValue:@YES forKey:@"keyboardFire"];view.suppliedTime=180;[view checkInactivity];XCTAssertFalse(session->world().paused);
+ [view setValue:@NO forKey:@"keyboardFire"];view.suppliedTime=299.99;[view checkInactivity];XCTAssertFalse(session->world().paused);
+ view.suppliedTime=300;[view checkInactivity];XCTAssertTrue(session->world().paused);
+ XCTAssertTrue([[view valueForKey:@"gameMenu"]boolValue]);
+ [view gameButton:101 state:2];view.suppliedTime=419;[view checkInactivity];XCTAssertFalse(session->world().paused);
+ [view setApplicationActive:NO];
+}
+- (void)testInterruptedLoadingHasInitialWorldAndStageTransitionCanResume {
+ HMLifecycleView* view=[[HMLifecycleView alloc]initWithFrame:CGRectMake(0,0,480,320)];
+ [[view valueForKey:@"frameTimer"]invalidate];[[view valueForKey:@"motionTimer"]invalidate];
+ perfStorage<heavymach::SaveData>(view,"_save")={};[view setValue:@YES forKey:@"resumeRequired"];
+ [view startSlot:0 mode:0 mission:0 stage:0];
+ auto& session=perfStorage<std::unique_ptr<heavymach::GameSession>>(view,"_session");
+ XCTAssertTrue(session->world().paused);XCTAssertFalse(session->renderItems().empty());XCTAssertEqual(session->world().gameTime,0);
+ [view gameButton:101 state:2];
+ auto& world=const_cast<heavymach::WorldState&>(session->world());
+ world.gameState=1;world.paused=true;world.presentation.step=6;world.presentation.alpha=.001;
+ [view setApplicationActive:NO];[view setApplicationActive:YES];
+ [[view valueForKey:@"frameTimer"]invalidate];[[view valueForKey:@"motionTimer"]invalidate];
+ for(int i=0;i<60;++i)[view advanceOriginalFrame];
+ XCTAssertEqual(world.presentation.step,6);XCTAssertTrue([[view valueForKey:@"gameMenu"]boolValue]);
+ [view gameButton:101 state:2];[view advanceOriginalFrame];
+ XCTAssertEqual(world.gameState,0);XCTAssertFalse(world.paused);XCTAssertFalse([[view valueForKey:@"resumeRequired"]boolValue]);
+ [view advanceOriginalFrame];XCTAssertGreaterThan(world.gameTime,0);
+ [view setApplicationActive:NO];
+}
 - (void)testPhysicalTiltMovesTowardLowerScreenEdgeInBothLandscapeOrientations {
  for(NSNumber* orientation in @[@(UIInterfaceOrientationLandscapeLeft),@(UIInterfaceOrientationLandscapeRight)]){@autoreleasepool{
   HMPhysicalTiltView* view=[[HMPhysicalTiltView alloc]initWithFrame:CGRectMake(0,0,912,420)];
@@ -211,12 +372,12 @@ void emit(NSDictionary* record){NSData* json=[NSJSONSerialization dataWithJSONOb
  UIWindowScene* scene=nil;for(UIScene* s in UIApplication.sharedApplication.connectedScenes)if([s isKindOfClass:UIWindowScene.class]){scene=(UIWindowScene*)s;break;}
  XCTAssertNotNil(scene);if(!scene)return;
  UIWindow* old=scene.keyWindow;HMGameView* host=(HMGameView*)old.rootViewController.view;[host setApplicationActive:NO];
- for(NSString* name in @[@"title",@"menu",@"firing",@"empty_menu"]){@autoreleasepool{
+ for(NSString* name in @[@"title",@"menu",@"firing_original",@"firing",@"empty_menu"]){@autoreleasepool{
   HMProductionTimerView* view=[[HMProductionTimerView alloc]initWithFrame:scene.coordinateSpace.bounds];
   auto& save=perfStorage<heavymach::SaveData>(view,"_save");save={};
   if(![name isEqual:@"empty_menu"])for(auto& slot:save.slots)heavymach::GlobalInfo(slot).selectSlot(1);
   if([name isEqual:@"menu"]||[name isEqual:@"empty_menu"])[view refreshScreen:3];
-  if([name isEqual:@"firing"]){[view startSlot:0 mode:0 mission:0 stage:0];view.firing=YES;}
+  if([name hasPrefix:@"firing"]){if([name isEqual:@"firing_original"])[view setWideCanvasEnabled:NO];[view startSlot:0 mode:0 mission:0 stage:0];view.firing=YES;}
   UIWindow* window=[[UIWindow alloc]initWithWindowScene:scene];UIViewController* vc=[UIViewController new];vc.view=view;window.rootViewController=vc;[window makeKeyAndVisible];[view layoutIfNeeded];
   view.timerDone=[self expectationWithDescription:name];[self waitForExpectations:@[view.timerDone] timeout:20];
   XCTAssertEqual(view->timerWork.size(),size_t(180));
@@ -307,6 +468,7 @@ void emit(NSDictionary* record){NSData* json=[NSJSONSerialization dataWithJSONOb
  for(NSString* scene in @[@"title_animation",@"slot_preview",@"stage01_firing"]){@autoreleasepool{
   double setupStart=CACurrentMediaTime();
   HMPerformanceView* view=[[HMPerformanceView alloc] initWithFrame:CGRectMake(0,0,912,420)];
+  [view setWideCanvasEnabled:NO]; // CPU reference is explicitly the original 480 canvas.
   [[view valueForKey:@"frameTimer"] invalidate];[[view valueForKey:@"motionTimer"] invalidate];
   [(CMMotionManager*)[view valueForKey:@"motion"] stopAccelerometerUpdates];
   NSString* loadError=[view valueForKey:@"loadError"];

@@ -47,11 +47,15 @@ public:
 #endif
  // Exactly one original 60 Hz tick. tilt is already-filtered original accelY.
  void tick(double globalTime,float tilt);
+ // Build a newly loaded paused scene once, without advancing simulation/time.
+ void prepareInitialPausedFrame();
  // Supply current camera quake (+Y up) before tick, without recollecting draws.
  // Fixed HP images subtract this offset before rounding/culling, then add it
  // back to render positions because the host translates all world draws by -offset.
  void setCameraOffset(Vector2 offset);
- // Original 480x320 logical coordinates with origin bottom-left; state 0/1/2.
+ void setCanvasWidth(float width);
+ float canvasWidth()const;
+ // Canvas-width x 320 logical coordinates with origin bottom-left; state 0/1/2.
  void touch(Vector2 logical,int state);
  void booster();void selectWeapon(int index);void cycleWeapon(int delta=1);
  bool selectUpgrade(int part);void confirmUpgrade();void finishUpgradeSlide();

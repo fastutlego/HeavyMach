@@ -15,6 +15,11 @@ FOUNDATION_EXPORT NSData *HMOriginalImageRGBA(UIImage *image);
 - (NSDictionary *)cacheDiagnostics;
 @property(nonatomic,strong,readonly) HMOpenALAudio *audio;
 - (void)setCameraOffset:(CGPoint)offset;
+- (void)setDrawingOffset:(CGPoint)offset;
+- (void)setDrawingScale:(CGFloat)scale;
+// Absolute y-up canvas clip; CPU raster remains a 480x320 comparison path.
+- (void)setClipRect:(CGRect)rect;
+- (void)resetClip;
 - (void)drawTrail:(const heavymach::TrailMesh&)mesh;
 - (UIImage *)image:(NSString *)name;
 // Called during init, before the first title frame. Repeated calls reuse voices.

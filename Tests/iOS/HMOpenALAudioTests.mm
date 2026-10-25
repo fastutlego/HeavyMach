@@ -17,6 +17,64 @@
 @interface HMOpenALAudioTests : XCTestCase
 @end
 @implementation HMOpenALAudioTests
+- (void)testInactivityStopsSourcesAndRejectsPlaybackWithoutReallocatingOrAutoResuming {
+    HMOpenALAudio *audio=[HMOpenALAudio new];XCTAssertTrue([audio prepareOriginalSounds]);
+    NSDictionary *initial=[audio diagnostics];
+    NSDictionary *title=[audio soundInfo:@"Title_TitleIn"],*weapon=[audio soundInfo:@"Game_ChangeWeapon"];
+    ALCcontext *external=[audio validationCreateExternalContext];XCTAssertNotEqual(external,nullptr);
+    if(!external)return;
+    ALCcontext *previous=[HMOpenALAudio validationCurrentContext];
+    XCTAssertTrue([HMOpenALAudio validationMakeContextCurrent:external]);
+    for(NSUInteger cycle=0;cycle<20;++cycle){
+        [audio sound:@"Title_TitleIn" pan:0];
+        [audio sound:@"Game_ChangeWeapon" pan:0];
+        XCTAssertEqual([[audio soundInfo:@"Title_TitleIn"][@"state"] intValue],AL_PLAYING);
+        NSUInteger starts=[[audio diagnostics][@"startCount"] unsignedIntegerValue];
+        [audio setApplicationActive:NO];
+        [audio setApplicationActive:NO]; // resign-active followed by background
+        XCTAssertFalse([[audio diagnostics][@"applicationActive"] boolValue]);
+        XCTAssertEqual([[audio diagnostics][@"stopAllCount"] unsignedIntegerValue],cycle+1);
+        XCTAssertEqual([[audio soundInfo:@"Title_TitleIn"][@"state"] intValue],AL_STOPPED);
+        XCTAssertEqual([[audio soundInfo:@"Game_ChangeWeapon"][@"state"] intValue],AL_STOPPED);
+        [audio sound:@"Title_TitleIn" pan:50];
+        [audio sound:@"Game_ChangeWeapon" pan:50];
+        [audio sound:@"inactive-unloaded-sound" pan:0]; // must not read or allocate
+        XCTAssertEqual([[audio diagnostics][@"startCount"] unsignedIntegerValue],starts);
+        XCTAssertEqualObjects([audio soundInfo:@"Title_TitleIn"][@"position"],(@[@0,@0,@0]));
+        [audio setApplicationActive:YES];
+        [audio setApplicationActive:YES];
+        XCTAssertTrue([[audio diagnostics][@"applicationActive"] boolValue]);
+        XCTAssertEqual([[audio soundInfo:@"Title_TitleIn"][@"state"] intValue],AL_STOPPED);
+        XCTAssertEqual([[audio soundInfo:@"Game_ChangeWeapon"][@"state"] intValue],AL_STOPPED);
+        XCTAssertEqual([[audio diagnostics][@"startCount"] unsignedIntegerValue],starts);
+        XCTAssertEqual([HMOpenALAudio validationCurrentContext],external);
+    }
+    [audio sound:@"Title_TitleIn" pan:0];
+    [audio sound:@"Game_ChangeWeapon" pan:0];
+    XCTAssertEqual([[audio soundInfo:@"Title_TitleIn"][@"state"] intValue],AL_PLAYING);
+    XCTAssertEqual([[audio diagnostics][@"startCount"] unsignedIntegerValue],NSUInteger(42));
+    XCTAssertEqualObjects([audio soundInfo:@"Title_TitleIn"][@"sourceID"],title[@"sourceID"]);
+    XCTAssertEqualObjects([audio soundInfo:@"Title_TitleIn"][@"attachedBufferID"],title[@"bufferID"]);
+    XCTAssertEqualObjects([audio soundInfo:@"Game_ChangeWeapon"][@"sourceID"],weapon[@"sourceID"]);
+    XCTAssertEqualObjects([audio soundInfo:@"Game_ChangeWeapon"][@"attachedBufferID"],weapon[@"bufferID"]);
+    XCTAssertEqualObjects([audio diagnostics][@"bufferCount"],initial[@"bufferCount"]);
+    XCTAssertEqualObjects([audio diagnostics][@"sourceCount"],initial[@"sourceCount"]);
+    XCTAssertEqualObjects([audio diagnostics][@"error"],@"");
+    [HMOpenALAudio validationMakeContextCurrent:previous];[HMOpenALAudio validationDestroyContext:external];
+}
+- (void)testInitiallyInactiveAudioDoesNotLoadRequestedSound {
+    HMOpenALAudio *audio=[HMOpenALAudio new];
+    [audio setApplicationActive:NO];
+    [audio sound:@"Game_ChangeWeapon" pan:0];
+    XCTAssertEqual([[audio diagnostics][@"sourceCount"] intValue],0);
+    XCTAssertEqual([[audio diagnostics][@"startCount"] intValue],0);
+    [audio setApplicationActive:YES];
+    XCTAssertEqual([[audio diagnostics][@"sourceCount"] intValue],0);
+    [audio sound:@"Game_ChangeWeapon" pan:0];
+    XCTAssertEqual([[audio diagnostics][@"sourceCount"] intValue],1);
+    XCTAssertEqual([[audio diagnostics][@"startCount"] intValue],1);
+    XCTAssertEqualObjects([audio diagnostics][@"error"],@"");
+}
 - (void)testRestartResetsSampleOffsetWithoutReplacingSourceOrBuffer {
     HMOpenALAudio *audio=[HMOpenALAudio new];XCTAssertTrue([audio prepareOriginalSounds]);
     [audio sound:@"Title_TitleIn" pan:1000];

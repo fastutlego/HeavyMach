@@ -33,4 +33,48 @@ int main(){
  double before=w.gameTime;w.tick({},s,h);assert(w.gameTime==before+double(1.0f/60.0f));
  w.configureSurvival(0);assert(w.survivalRegenSeed==400);w.configureSurvival(50);assert(w.survivalRegenSeed==100);
  w.openMap(m,0,h);assert(w.objectRegenPosition==20);assert(w.motionWorld(20,0).ground.size()==2);
+ // Expanded visibility does not move physical boundaries or the boss trigger.
+ for(float width:{480.f,568.8889f,695.f,696.f}){
+  Host wideHost;WorldState wide;wide.setCanvasWidth(width);wide.openMap(m,0,wideHost);
+  assert(wide.backLine==0&&wide.frontLine==2010&&wide.motionWorld(20,0).backLine==0);
+  wide.processCamera(Vector2{20,110});assert(wide.camera.x==width*.5f);
+  wide.processRegen(400,wideHost);assert(wide.bossEncounter==0&&wideHost.enemies==(width==480?0:1));
+  wide.processRegen(411,wideHost);assert(wide.bossEncounter==1&&wide.frontLine==1050&&wideHost.enemies==1);
+  wide.backLine=800;wide.frontLine=1100;wide.processCamera(Vector2{900,100});
+  if(width>480)assert(wide.camera.x==950); // Narrow lock is centered; physics keeps its 300-unit gate.
+  assert(wide.motionWorld(900,0).backLine==800&&wide.motionWorld(900,0).frontLine==1100);
+ }
+ // Tiny original backgrounds receive uniform cover scaling only in wide mode.
+ WorldState cover;cover.map=m;cover.hasBackground=true;cover.backgroundSize={554,340};
+ cover.backLine=0;cover.frontLine=2010;cover.setCanvasWidth(696);
+ assert(cover.backgroundDrawScale==696.f/554.f);
+ for(auto position:{Vector2{0,0},Vector2{1000,320},Vector2{2200,900}}){
+  cover.processCamera(position);
+  auto relative=Vector2{cover.backgroundPosition.x-cover.camera.x,cover.backgroundPosition.y-cover.camera.y};
+  assert(relative.x-cover.backgroundSize.x*cover.backgroundDrawScale*.5f<=-348+.001f);
+  assert(relative.x+cover.backgroundSize.x*cover.backgroundDrawScale*.5f>=348-.001f);
+  assert(relative.y-cover.backgroundSize.y*cover.backgroundDrawScale*.5f<=-160+.001f);
+  assert(relative.y+cover.backgroundSize.y*cover.backgroundDrawScale*.5f>=160-.001f);
+ }
+ cover.setCanvasWidth(480);assert(cover.backgroundDrawScale==1);
+ assert(cover.bgScale==std::min((554.f-480)/(2000-480),(340.f-320)/(640-320)));
+ // Objects and ordinary enemies prepare inside the new right edge at map start.
+ auto extended=m;extended.objects={{"A",{680,100},0}};extended.enemies={{"Tank001",{680,100},false},{"Boss01",{900,100},true}};
+ WorldState visible;Host visibleHost;visible.setCanvasWidth(696);visible.openMap(extended,0,visibleHost);
+ visible.tick(visibleHost.player,{0,0},visibleHost);
+ assert(visibleHost.objects==1&&visibleHost.enemies==1&&visible.bossEncounter==0&&visible.frontLine==2010);
+
+ // Map transitions retain the old camera, but may not preactivate the new map.
+ auto nextMap=m;nextMap.objects={{"A",{680,100},0},{"A",{1500,100},0}};
+ nextMap.enemies={{"Tank001",{680,100},false},{"Tank001",{1500,100},false},{"Boss01",{900,100},true}};
+ WorldState transition;Host transitionHost;transition.setCanvasWidth(696);transition.camera={10000,160};
+ transition.openMap(nextMap,0,transitionHost);
+ assert(transition.camera.x==348&&transitionHost.objects==1&&transitionHost.enemies==1);
+ assert(!transition.objectsSpawned[1]&&!transition.enemiesSpawned[1]&&transition.bossEncounter==0);
+ for(int n=0;n<10;++n)transition.tick(transitionHost.player,{0,0},transitionHost);
+ assert(transitionHost.objects==1&&transitionHost.enemies==1&&transition.frontLine==2010);
+ // Once the player actually advances, the same distant definitions become eligible.
+ transition.processRegen(1100,transitionHost);
+ assert(transitionHost.objects==2&&transitionHost.enemies==3&&transition.bossEncounter==1);
+
 }

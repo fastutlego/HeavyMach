@@ -175,8 +175,9 @@ int glyph(unichar c) {return c>='0'&&c<='9'?c-'0':c=='.'?10:c=='/'?11:c==':'?12:
     [self buttonImage:@"Btn_Weapon.png" identifier:1100 x:103 y:31 columns:2 rows:1 tile:0 enabled:YES];
     [self sprite:@"WeaponTile.png" x:106 y:35 columns:7 rows:4 tile:s.weapon?s.weapon->uiTile:0 sx:1 sy:1 rotation:0 alpha:1 blend:0];
     [self font:@"NumSet02b.png" text:[NSString stringWithFormat:@"%02d",s.ammo] x:120 y:26 pitch:6 align:1 columns:16 rows:1 alpha:1];
-    if(_menuStep)for(int i=0;i<3;++i)[self buttonImage:@"GameMenuSub.png" identifier:101+i x:_menuX[i] y:220-50*i columns:1 rows:6 tile:i*2 enabled:YES];
     [self drawUpgrade:s];[self drawPresentation:s];
+    // An interrupted stage transition must leave its resume menu visible.
+    if(_menuStep)for(int i=0;i<3;++i)[self buttonImage:@"GameMenuSub.png" identifier:101+i x:_menuX[i] y:220-50*i columns:1 rows:6 tile:i*2 enabled:YES];
 }
 - (void)tick:(double)time {
     _time=time;_gear+=_gearVelocity;_gearVelocity+=(0-_gearVelocity)/20;
@@ -191,6 +192,7 @@ int glyph(unichar c) {return c>='0'&&c<='9'?c-'0':c=='.'?10:c=='/'?11:c==':'?12:
     if(_upgradeStep){_upgradeX+=((_upgradeStep==1?240:660)-_upgradeX)/5;
         if(_upgradeStep==2&&_upgradeX>659){_upgradeStep=0;if(self.upgradeClosed)self.upgradeClosed();}}
 }
+- (void)cancelInput {_pressed=-1;_buttonStates.clear();}
 - (BOOL)touch:(CGPoint)logical state:(int)state {
     // 0x82b8 registers buttons at construction; 0xfc18 walks that array in
     // reverse and stops at the first hit. Drawing order is not receiver order.

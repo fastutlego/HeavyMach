@@ -22,7 +22,7 @@ NSData *HMOriginalImageRGBA(UIImage *image) { return objc_getAssociatedObject(im
 #include "TextureFormat.hpp"
 #include "SpriteRaster.hpp"
 struct HMTrailTexture {int width=0,height=0;std::vector<uint8_t> pixels;};
-template<class Raster> static void HMDrawRaster(Raster& raster) {
+template<class Raster> static void HMDrawRaster(Raster& raster,CGPoint offset,CGFloat scale,BOOL hasClip,CGRect clip) {
     if(raster.empty())return;
     const size_t stride=size_t(raster.bounds.width)*4;
     // CPU output rows are y-up. CGImage display rows are top-down.
@@ -35,6 +35,8 @@ template<class Raster> static void HMDrawRaster(Raster& raster) {
     CGColorSpaceRelease(space);CGDataProviderRelease(provider);CFRelease(data);
     if(output){
         CGContextRef ctx=UIGraphicsGetCurrentContext();CGContextSaveGState(ctx);
+        if(hasClip)CGContextClipToRect(ctx,CGRectMake(clip.origin.x,320-CGRectGetMaxY(clip),clip.size.width,clip.size.height));
+        CGContextTranslateCTM(ctx,offset.x,320*(1-scale)-offset.y);CGContextScaleCTM(ctx,scale,scale);
         CGContextSetInterpolationQuality(ctx,kCGInterpolationNone);
         [[UIImage imageWithCGImage:output] drawInRect:CGRectMake(raster.bounds.x,320-raster.bounds.y-raster.bounds.height,raster.bounds.width,raster.bounds.height) blendMode:raster.blend==2?kCGBlendModePlusLighter:kCGBlendModeNormal alpha:1];
         CGContextRestoreGState(ctx);CGImageRelease(output);
@@ -48,10 +50,32 @@ template<class Raster> static void HMDrawRaster(Raster& raster) {
     NSMutableDictionary<NSString *,NSValue *> *_sizes;
     NSUInteger _decodeCount;
     HMOpenALAudio *_audio;
-    CGPoint _cameraOffset;
+    CGPoint _cameraOffset,_drawingOffset;
+    CGFloat _drawingScale;
+    BOOL _hasClip;
+    CGRect _clipRect;
 }
-- (instancetype)init {if ((self=[super init])) {_images=[NSMutableDictionary new];_sizes=[NSMutableDictionary new];_resourceScope=@"shared";_rgb565Images=[NSMutableSet new];_audio=[HMOpenALAudio new];if(![self prepareOriginalSounds])NSLog(@"Original OpenAL audio unavailable: %@",[_audio diagnostics]);}return self;}
+- (instancetype)init {if ((self=[super init])) {_drawingScale=1;_images=[NSMutableDictionary new];_sizes=[NSMutableDictionary new];_resourceScope=@"shared";_rgb565Images=[NSMutableSet new];_audio=[HMOpenALAudio new];if(![self prepareOriginalSounds])NSLog(@"Original OpenAL audio unavailable: %@",[_audio diagnostics]);}return self;}
+@synthesize glRenderer=_glRenderer;
+- (void)setGlRenderer:(HMGLRenderer *)renderer {
+    _glRenderer=renderer;
+    [_glRenderer setDrawingOffset:_drawingOffset];[_glRenderer setDrawingScale:_drawingScale];
+    if(_hasClip)[_glRenderer setClipRect:_clipRect];else [_glRenderer resetClip];
+}
 - (void)setCameraOffset:(CGPoint)offset {_cameraOffset=offset;}
+- (void)setDrawingOffset:(CGPoint)offset {
+    if(!std::isfinite(offset.x)||!std::isfinite(offset.y))return;
+    _drawingOffset=offset;[_glRenderer setDrawingOffset:offset];
+}
+- (void)setDrawingScale:(CGFloat)scale {
+    if(!std::isfinite(scale)||scale<=0)return;
+    _drawingScale=scale;[_glRenderer setDrawingScale:scale];
+}
+- (void)setClipRect:(CGRect)rect {
+    if(!std::isfinite(rect.origin.x)||!std::isfinite(rect.origin.y)||!std::isfinite(rect.size.width)||!std::isfinite(rect.size.height)||rect.size.width<0||rect.size.height<0)rect=CGRectZero;
+    _hasClip=YES;_clipRect=rect;[_glRenderer setClipRect:rect];
+}
+- (void)resetClip {_hasClip=NO;[_glRenderer resetClip];}
 - (UIImage *)image:(NSString *)name {
     NSString *key=[self resourceKey:name];
     UIImage *image=_images[key];if(image)return image;
@@ -149,7 +173,7 @@ template<class Raster> static void HMDrawRaster(Raster& raster) {
     input.scale={float(sx),float(sy)};input.rotation=float(r);input.alpha=float(a);input.blend=int(blend);
     auto format=[_rgb565Images containsObject:key]?heavymach::SpriteTextureFormat::RGB565:heavymach::SpriteTextureFormat::PremultipliedRGBA8;
     auto raster=heavymach::rasterizeSprite(input,{texture.width,texture.height,size_t(texture.width)*4,texture.pixels,format});
-    HMDrawRaster(raster);
+    HMDrawRaster(raster,_drawingOffset,_drawingScale,_hasClip,_clipRect);
 }
 
 - (void)drawTrail:(const heavymach::TrailMesh&)mesh {
@@ -173,6 +197,6 @@ template<class Raster> static void HMDrawRaster(Raster& raster) {
     auto adjusted=mesh;
     adjusted.translation.x-=float(_cameraOffset.x);adjusted.translation.y-=float(_cameraOffset.y);
     auto raster=heavymach::rasterizeTrail(adjusted,{texture.width,texture.height,size_t(texture.width)*4,texture.pixels});
-    HMDrawRaster(raster);
+    HMDrawRaster(raster,_drawingOffset,_drawingScale,_hasClip,_clipRect);
 }
 @end

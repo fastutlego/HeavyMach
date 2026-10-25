@@ -4,6 +4,13 @@
 
 // Owns an ES 1.1 context. Use on one thread; bracket drawing with begin/endFrame.
 @interface HMGLRenderer : NSObject
+// Resize between frames. Invalid/unsupported sizes leave the previous canvas intact.
+- (BOOL)setLogicalWidth:(CGFloat)width height:(CGFloat)height;
+// Final drawing transform: local * scale + offset. Clip uses absolute y-up canvas coordinates.
+- (void)setDrawingOffset:(CGPoint)offset;
+- (void)setDrawingScale:(CGFloat)scale;
+- (void)setClipRect:(CGRect)rect;
+- (void)resetClip;
 - (BOOL)beginFrame;
 - (BOOL)prepareImage:(UIImage *)image name:(NSString *)name rgb565:(BOOL)rgb565;
 - (BOOL)hasTexture:(NSString *)name rgb565:(BOOL)rgb565;

@@ -32,6 +32,7 @@ struct HMGameHUDSnapshot {
 - (void)openUpgrade:(const heavymach::SaveSlot&)slot;
 - (void)closeUpgrade;
 - (void)setMenuVisible:(BOOL)visible;
+- (void)cancelInput;
 // Logical y-up. state0 began,1 moved,2 ended,3 cancelled. YES consumes touch.
 - (BOOL)touch:(CGPoint)logical state:(int)state;
 @property(nonatomic,copy) void(^button)(int originalID,int state);

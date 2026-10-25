@@ -4,6 +4,7 @@
 // Call from the app's main thread; each operation restores the prior context.
 @interface HMOpenALAudio : NSObject
 - (BOOL)prepareOriginalSounds;
+- (void)setApplicationActive:(BOOL)active;
 - (void)sound:(NSString *)name pan:(float)sourceX;
 - (NSDictionary *)diagnostics;
 - (NSDictionary *)soundInfo:(NSString *)name;

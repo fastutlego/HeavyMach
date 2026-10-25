@@ -1,5 +1,6 @@
 #pragma once
 #include "GameData.hpp"
+#include "CanvasGeometry.hpp"
 #include "Motion.hpp"
 #include "Visuals.hpp"
 #include "GlobalInfo.hpp"
@@ -15,6 +16,9 @@ struct WorldHost {
  virtual void spawnMapObject(const MapObjectDefinition&,int originalLayer)=0;
  // Host constructs GobHvM_Enemy, sets position, state=2, isBoss, layer=1.
  virtual void spawnEnemy(const EnemyDefinition&)=0;
+ // Stable map indices distinguish prefetched bosses from active encounters.
+ virtual void spawnMapEnemy(const EnemyDefinition& enemy,size_t){spawnEnemy(enemy);}
+ virtual bool mapEnemyAlive(size_t)const{return true;}
  // Host constructs GobHvM_Player, upgrades parts, state=2, engineBounce=true, layer=1.
  virtual void spawnPlayer(Vector2)=0;
  virtual void event(const WorldEvent&)=0;
@@ -37,10 +41,11 @@ public:
  MapDefinition map;
  std::vector<GroundSegment> ground;
  std::vector<std::vector<int>> bins;
- std::vector<bool> objectsSpawned,enemiesSpawned;
+ std::vector<bool> objectsSpawned,enemiesSpawned,bossEncounterActivated,mapEnemiesDefeated;
  std::vector<float> objectHalfWidths;
  std::array<ParticleState,64> particles;
  Vector2 camera{},backgroundPosition{},center{},playerSpawn{};
+ float canvasWidth=480,backgroundDrawScale=1,preparedVisibleRight=-10000;Vector2 backgroundSize{};
  float backLine=-240,frontLine=240,bgScale=.5f,objectRegenPosition=-10000;
  int bossCount=0,bossEncounter=0,gameMode=0,survivalRegenSeed=0;
  int16_t gameState=0;bool paused=false,show=true,hasBackground=false;
@@ -52,9 +57,13 @@ public:
  float mapHeight(float x) const;
  bool sweepTerrain(Vector2& point,const Vector2& delta) const;
  MotionWorld motionWorld(float x,double globalTime,std::function<int32_t()> random={}) const;
+ void setCanvasWidth(float width);
+ void updateBackgroundGeometry();
  void processCamera(std::optional<Vector2> followedPosition);
  void processRegen(float playerX,WorldHost&);
- void spawnEnemy(const EnemyDefinition&,WorldHost&);
+ void spawnEnemy(const EnemyDefinition&,WorldHost&,std::optional<size_t> mapIndex={});
+ void activateBossEncounter(const EnemyDefinition&);
+ void killMapBoss(size_t mapIndex);
  void killBoss();
  void removeTrash(float boundary,std::span<const TargetView> objects,
                   const std::function<bool(uintptr_t,float)>& isBehind,

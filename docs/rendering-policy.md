@@ -2,17 +2,17 @@
 
 정본: [canonical](canonical.md). 제품 경로는 `HMGameView → HMMedia → HMGLRenderer`다. 이전 CPU raster/UIImage 합성은 비교·검사 경로로 남아 있으며 일반 게임의 정상 렌더 경로로 복귀시키지 않는다.
 
-사용자의 2026-10-25 전체 캔버스·시야 확장 요청은 [확장 계획](wide-canvas-plan.md)에 따른다. 아래 480×320 규칙은 현재 제품 기준이며 확장 구현을 금지하는 조건이 아니다. 확장을 구현할 때 관련 정책·입력·검사를 함께 갱신한다.
+2026-10-25 전체 캔버스 확장을 구현했다. 원본480 비교 모드와 확장 게임플레이 모드를 같은 GL 경로로 처리한다. 현재 구현과 검사는 [캔버스 기록](wide-canvas-plan.md)을 따른다.
 
 ## 고정할 경로
 
 - 게임 장면은 OpenGL ES1.1. UIKit은 창·수명주기·검증 조작부를 담당한다.
-- 480×320 RGBA8 renderbuffer에 원본 순서로 그린다. 장면을 재사용 화면 텍스처로 복사하고 drawable에 최종 확대한다.
+- 논리W×320, 할당ceil(W)×320 RGBA8 renderbuffer에 원본 순서로 그린다. 기본·원본 비교 모드는W=480이다. 크기가 바뀔 때만 재할당하고 투영·복사·readback이 같은 치수를 사용한다. 장면을 재사용 화면 텍스처로 복사하고 drawable에 최종 확대한다.
 - 모든 제품 소비자는 `OriginalImages`의 원본 파일명과 확장자를 사용한다. 미션/스테이지 클리어의 `GameLoading_XX[E].jpg`, 게임오버의 `StageClear.jpg`에 파생본 접미사 `.png`를 붙이지 않는다. `Images/*.jpg.png`는 변환·비교용 자원이며 현재 제품 로더의 이름 계약이 아니다.
 - 원본 이미지695개를 보존된 stb 코드로 해석한다. POT 패딩, premultiplied 픽셀, RGB565 변환, UV와 타일 순서를 임의 보정하지 않는다.
 - sprite 텍스처는 LINEAR/REPEAT, 최종 화면 텍스처는 LINEAR/CLAMP_TO_EDGE다. 두 텍스처의 규칙을 섞지 않는다.
 - drawable은 nativeScale과 RGB565 요청을 사용한다. 실제 드라이버 보고 형식은 별도 기록한다. 요청이 실제 RGB565 할당을 증명하지 않는다.
-- 마지막 확대는 전체 화면 비율 맞춤 NDC quad, 검정 여백, DITHER 비활성·blend 비활성 후 원래 상태 복원이다. viewport와 터치는 [좌표 정책](coordinate-policy.md)을 함께 따른다.
+- 마지막 확대는 전체 화면 비율 맞춤 NDC quad, DITHER 비활성·blend 비활성 후 원래 상태 복원이다. 원본480 모드에서는 검정 여백을 유지하고 확장 게임 화면은 전체 drawable을 채운다. viewport와 터치는 [좌표 정책](coordinate-policy.md)을 함께 따른다.
 
 ## 합성과 순서
 
@@ -38,3 +38,12 @@ GL 오류, 논리 화면 픽셀, 최종 표시 배치, 자원 해제, 실제 표
 시뮬레이터 Apple Software Renderer의 수치를 아이폰 GPU 성능으로 환산하지 않는다. 같은 환경 포팅판과의 비교는 회귀 분리에 사용한다. 16.67ms 기존 검사 실패 기준을 낮추지 않는다. API 변경·저해상도화·확대 필터 변경을 성능 해결의 기본 처방으로 삼지 않는다.
 
 원본/호환판 주소와 최종 비교 근거: [직접 비교](compat-source-comparison-20261024.md), [OpenGL 전환](opengl-migration-20261024.md), `HMGLRenderer.mm`, `HMCompatibilityPixels.hpp`, `SpriteRaster.cpp`, `Trail.cpp`.
+
+
+## 확장 장면·중앙 HUD
+
+월드 그림은 전체 폭, HUD/업그레이드/결과 일러스트는 원본480 영역에 같은 transform과 clip을 적용한다. 퇴장 중인 패널이 추가 월드 영역에 다시 보이지 않게 한다. 로딩 중에는 확장 월드를 숨기고 중앙 원본 셔터를 표시한다. 중단된 결과 전환의 재개 메뉴는 일러스트보다 위에 그린다.
+
+일부 원본 배경은 새 폭보다 작다. 확장 모드에서 배경만 `max(1,W/imageWidth,320/imageHeight)`로 균등 확대하고 끝부분 위치를 제한한다. 비율 왜곡·새 에셋·근거 없는 반복 타일은 없다. 탱크·지형·효과 크기는 바뀌지 않는다. 원본480은 배경 크기·parallax 수치도 유지한다.
+
+CPU raster는 원본480 비교 전용이다. 확장 offscreen 진단은 실제GL 버퍼 snapshot을 사용한다. 제품 onscreen 경로는 계속 GL 직접 present이며 readback/UIImage를 매 프레임 만들지 않는다. `HMGLReferenceTests`의 원본8개와 확장/resize/clip4개를 함께 유지한다.

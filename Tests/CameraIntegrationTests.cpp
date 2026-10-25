@@ -11,6 +11,7 @@
 #include "../Sources/Core/GameSession.cpp"
 #include <cassert>
 #include <iostream>
+#include <fstream>
 using namespace heavymach;
 int main(){
  auto data=GameData::loadDirectory(std::filesystem::path(__FILE__).parent_path().parent_path()/"Resources/RawData");
@@ -81,5 +82,120 @@ int main(){
   else {sharedSprite=true;assert(!sprite.worldTexture);}
  }
  assert(sharedQueries>0&&worldQueries>=3&&worldBackground&&worldObject&&sharedSprite);
+
+ // Render, weapon AI and collision share the expanded visibility gate.
+ game.start(0,0,0);i.enemies.clear();i.dynamic.clear();i.world.camera={240,160};
+ game.setCameraOffset({0,0});enemy.position={580,100};i.spawnEnemy(enemy);
+ auto& edge=i.enemies.front();edge.bounds=imageBounds(20,20);i.player->position={100,100};
+ for(auto& p:edge.parts)if(p->armed){p->weapon.aiStep=1;p->weapon.resetTime=-100;p->weapon.delayTime=0;}
+ i.motionEvents(*edge.enemy,edge,{{MotionEventKind::TickChildren}});
+ assert(!edge.inScreen&&!i.targetAt(false,enemy.position));
+ game.setCanvasWidth(696);assert(game.canvasWidth()==696);
+ before=calls;i.motionEvents(*edge.enemy,edge,{{MotionEventKind::TickChildren}});
+ assert(edge.inScreen&&calls>before&&i.targetAt(false,enemy.position)==edge.id);
+ i.collect();bool edgeBody=false;
+ for(auto& sprite:game.sprites())if(!sprite.worldTexture&&sprite.position.x>696-80&&sprite.position.y<160)edgeBody=true;
+ assert(edgeBody);
+ // A real projectile at that newly visible position follows the normal damage path.
+ BulletState edgeBullet;edgeBullet.info=&data.weapons.at("P_Wpn_Gun01");edgeBullet.pos=enemy.position;
+ CombatFrame edgeFrame;edgeFrame.playerPos=i.player->position;int edgeHP=edge.enemy->hp;
+ tickBullet(edgeBullet,edgeFrame,i);assert(edge.enemy->hp<edgeHP);
+
+ // Extended touches retain the original 100/60 aiming thresholds and world deltas.
+ auto& wideWeapon=*i.playerGraph.parts[2];wideWeapon.visual.rotatedPosition={0,0};
+ auto anchor=i.cameraPoint(i.player->position);game.touch({anchor.x+300,anchor.y},0);
+ assert(wideWeapon.weapon.aimDirDest==0);game.touch({800,anchor.y},2);assert(!wideWeapon.weapon.isFire);
+ game.start(0,0,1);assert(game.canvasWidth()==696); // Stage/menu replacement keeps the chosen extent.
+ // Rear map cleanup keeps all terrain intersecting the wider left edge,
+ // while still advancing the original physical backLine.
+ i.world.gameMode=0;i.world.paused=true;i.world.camera={1000,160};i.player->position={1000,100};
+ i.safeBackLine=0;i.removeBgLine=700;i.mapSprites.clear();map.position={560,100};i.mapSprites.push_back(map);
+ i.tick(3,0); // safeBackLine 760 has not crossed the original 320-unit cleanup quantum.
+ assert(i.mapSprites.size()==1);
+ i.player->position.x=1400;i.world.camera={600,160};i.world.backLine=0;i.world.frontLine=5000;i.tick(3.1,0);
+ assert(i.world.backLine==700&&i.mapSprites.size()==1); // Original progression is independent of retention.
+ game.setCanvasWidth(480);assert(game.canvasWidth()==480);
+
+ // Visible prefetched bosses fight normally, but do not unlock another boss
+ // if destroyed before their ORIGINAL map placement reaches the 500 trigger.
+ auto encounterData=data;auto& encounterMap=encounterData.maps.at("Stage01");
+ encounterMap.left=0;encounterMap.right=3000;encounterMap.bottom=-160;encounterMap.top=640;
+ encounterMap.objects.clear();encounterMap.enemies={{"MBoss01",{430,100},true},{"Boss07",{600,100},true}};
+ SaveSlot encounterSlot;GlobalInfo(encounterSlot).selectSlot(1);
+ GameSession encounters(encounterData,encounterSlot,[](std::string_view){return Vector2{128,128};},[]{return 1;});
+ encounters.setCanvasWidth(696);encounters.start(0,0,0);auto& ei=*encounters.impl_;
+ assert(ei.enemies.size()==2&&ei.world.bossEncounter==1&&ei.world.frontLine==580);
+ auto pending=std::find_if(ei.enemies.begin(),ei.enemies.end(),[](auto& e){return e.mapEnemyIndex==1;});
+ assert(pending!=ei.enemies.end()&&!ei.world.bossEncounterActivated[1]);
+ pending->enemy->position.x=1000; // A moving boss does not move the encounter threshold.
+ ei.world.processRegen(100,ei);assert(!ei.world.bossEncounterActivated[1]); // Strictly less than 500.
+ ei.damage(pending->id,pending->enemy->hp);
+ assert(ei.world.mapEnemiesDefeated[1]&&ei.world.bossEncounter==1&&ei.world.frontLine==580);
+ ei.world.processRegen(111,ei);assert(!ei.world.bossEncounterActivated[1]&&ei.world.bossEncounter==1);
+ // The surviving active boss still owns the lock, and releases it on death.
+ auto active=std::find_if(ei.enemies.begin(),ei.enemies.end(),[](auto& e){return e.mapEnemyIndex==0;});
+ ei.damage(active->id,active->enemy->hp);assert(ei.world.bossEncounter==0&&ei.world.frontLine==3010);
+ encounters.start(0,0,0);pending=std::find_if(ei.enemies.begin(),ei.enemies.end(),[](auto& e){return e.mapEnemyIndex==1;});
+ pending->enemy->position.x=2000;ei.world.processRegen(100,ei);assert(ei.world.bossEncounter==1);
+ ei.world.processRegen(111,ei);
+ assert(ei.world.bossEncounter==2&&ei.world.bossEncounterActivated[1]&&ei.world.frontLine==750);
+ // Mode changes retain pending encounter ownership instead of losing its lock.
+ encounters.start(0,0,0);encounters.setCanvasWidth(480);ei.world.processRegen(111,ei);
+ assert(ei.world.bossEncounter==2&&ei.world.frontLine==750);
+
+
+ // Original 480 spawns keep the original unmapped death callback, including
+ // two projectiles finding the same removed boss during one original frame.
+ encounters.setCanvasWidth(480);encounters.start(0,0,0);
+ assert(ei.enemies.size()==1&&ei.enemies.front().mapEnemyIndex==SIZE_MAX);
+ auto& originalBoss=ei.enemies.front();originalBoss.enemy->hp=1;
+ ei.world.bins.clear(); // Isolate target collision from the fixture's old terrain.
+ originalBoss.bounds=imageBounds(20,20);ei.world.camera={240,160};
+ BulletState firstHit;firstHit.info=&data.weapons.at("P_Wpn_Gun01");firstHit.pos=originalBoss.enemy->position;
+ auto secondHit=firstHit;CombatFrame hits;hits.playerPos=ei.player->position;
+ tickBullet(firstHit,hits,ei);assert(ei.world.bossCount==-1);
+ tickBullet(secondHit,hits,ei);assert(ei.world.bossCount==-2);
+ // Audit the actual registered bounds of all 155 referenced enemy models,
+ // including all 48 boss placements across the 42 referenced maps.
+ auto actualDimensions=[](std::string_view name){
+  auto path=std::filesystem::path(__FILE__).parent_path().parent_path()/"Resources/Images"/name;
+  std::ifstream file(path,std::ios::binary);unsigned char bytes[24]{};file.read(reinterpret_cast<char*>(bytes),24);assert(file.gcount()==24);
+  auto be=[&](int p){return uint32_t(bytes[p])<<24|uint32_t(bytes[p+1])<<16|uint32_t(bytes[p+2])<<8|bytes[p+3];};
+  return Vector2{float(be(16)),float(be(20))};
+ };
+ SaveSlot auditSlot;GlobalInfo(auditSlot).selectSlot(1);GameSession models(data,auditSlot,actualDimensions,[]{return 1;});
+ std::unordered_map<std::string,ObjectBounds> actualBounds;std::set<std::string> maps{"Survival"};
+ for(int mission=0;mission<8;++mission)for(int stage=0;stage<GlobalInfo::stageCount(mission);++stage){char key[32];std::snprintf(key,sizeof(key),"Stage%02d",GlobalInfo::mapNumber({mission,stage}));maps.insert(key);}
+ int bossPlacements=0;
+ for(auto& key:maps)for(auto& enemy:data.maps.at(key).enemies){
+  bossPlacements+=enemy.isBoss;if(actualBounds.contains(enemy.name))continue;
+  models.impl_->spawnEnemy(enemy);auto bounds=models.impl_->enemies.back().bounds;
+  assert(bounds.left>=-128);actualBounds.emplace(enemy.name,bounds);
+ }
+ assert(actualBounds.size()==155&&bossPlacements==48&&maps.size()==42);
+ struct AuditHost:WorldHost {
+  Vector2 tileSize(std::string_view)override{return {900,400};}
+  void spawnMapObject(const MapObjectDefinition&,int)override{}
+  void spawnEnemy(const EnemyDefinition&)override{}
+  void spawnPlayer(Vector2)override{}
+  void event(const WorldEvent&)override{}
+ };
+ for(float width:{695.f,696.f})for(auto& key:maps){
+  const auto& map=data.maps.at(key);AuditHost host;WorldState audit;audit.setCanvasWidth(width);
+  audit.camera={10000,160};audit.openMap(map,0,host);float safe=-32000,removed=-32000;
+  for(float x=audit.playerSpawn.x;x<=map.right;++x){
+   float y=audit.mapHeight(x);if(y==10000)y=100;
+   audit.tick(Vector2{x,y+10},{0,0},host,[]{return 1;});
+   for(size_t index=0;index<map.enemies.size();++index){const auto& enemy=map.enemies[index];if(!enemy.isBoss||audit.enemiesSpawned[index])continue;
+    auto bounds=actualBounds.at(enemy.name);
+    bool horizontal=enemy.position.x+bounds.left<=audit.camera.x+width*.5f&&enemy.position.x+bounds.right>=audit.camera.x-width*.5f;
+    bool vertical=enemy.position.y+bounds.top>=audit.camera.y-160&&enemy.position.y+bounds.bottom<=audit.camera.y+160;
+    assert(!(horizontal&&vertical));
+   }
+   if(safe<x-240){safe=x-240;if(safe>removed+320){audit.backLine=std::max(audit.backLine,removed);removed=safe;}}
+   // Exercise each successive encounter's approach/end/narrow camera interval.
+   if(audit.bossEncounter&&x>=audit.frontLine-60)while(audit.bossEncounter)audit.killBoss();
+  }
+ }
  std::cout<<"Camera collision/AI/target/touch/fixed-map/cached-item integration passed\n";
 }

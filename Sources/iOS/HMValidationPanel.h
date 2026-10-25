@@ -8,5 +8,7 @@
 @property(nonatomic,copy) void(^resumeSave)(void);
 @property(nonatomic,copy) void(^addExperience)(void);
 @property(nonatomic,copy) void(^closed)(void);
+@property(nonatomic) BOOL wideCanvas;
+@property(nonatomic,copy) void(^canvasChanged)(BOOL enabled);
 @end
 #endif

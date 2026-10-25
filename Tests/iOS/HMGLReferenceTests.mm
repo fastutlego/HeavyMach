@@ -3,12 +3,16 @@
 // never generated from the new renderer. RGB error <=1 permits driver rounding.
 #import <XCTest/XCTest.h>
 #import "../../Sources/iOS/HMGLRenderer.h"
+#import "../../Sources/iOS/HMMedia.h"
+#import <OpenGLES/EAGL.h>
+#include <limits>
 #include <vector>
 #include <algorithm>
 namespace {
 UIImage* fixture(int type){
  std::vector<uint8_t> p;int w,h;bool rgb=type==2;
- if(type==0){w=2;h=1;p={255,255,255,255,0,0,0,0};}
+ if(type==3){w=16;h=16;p.assign(w*h*4,255);}
+ else if(type==0){w=2;h=1;p={255,255,255,255,0,0,0,0};}
  else if(type==1){w=3;h=3;p={255,0,0,255,0,128,0,128,0,0,64,64,255,255,0,255,128,0,128,128,0,255,255,255,64,64,64,64,255,255,255,255,0,0,0,0};}
  else{w=3;h=1;p={123,45,67,255,17,93,181,255,255,255,255,255};}
  NSData* data=[NSData dataWithBytes:p.data() length:p.size()];auto provider=CGDataProviderCreateWithCFData((__bridge CFDataRef)data);auto cs=CGColorSpaceCreateDeviceRGB();
@@ -16,8 +20,20 @@ UIImage* fixture(int type){
  UIImage* result=[UIImage imageWithCGImage:image];CGImageRelease(image);CGColorSpaceRelease(cs);CGDataProviderRelease(provider);return result;
 }
 std::vector<uint8_t> bytes(UIImage* image){std::vector<uint8_t> p(480*320*4);auto cs=CGColorSpaceCreateDeviceRGB();auto ctx=CGBitmapContextCreate(p.data(),480,320,8,480*4,cs,CGBitmapInfo(kCGBitmapByteOrder32Big)|CGBitmapInfo(kCGImageAlphaPremultipliedLast));CGColorSpaceRelease(cs);CGContextSetBlendMode(ctx,kCGBlendModeCopy);CGContextDrawImage(ctx,CGRectMake(0,0,480,320),image.CGImage);CGContextRelease(ctx);return p;}
+std::vector<uint8_t> canvasBytes(UIImage* image){
+ const size_t w=CGImageGetWidth(image.CGImage),h=CGImageGetHeight(image.CGImage);
+ std::vector<uint8_t> p(w*h*4);auto cs=CGColorSpaceCreateDeviceRGB();
+ auto ctx=CGBitmapContextCreate(p.data(),w,h,8,w*4,cs,CGBitmapInfo(kCGBitmapByteOrder32Big)|CGBitmapInfo(kCGImageAlphaPremultipliedLast));CGColorSpaceRelease(cs);
+ CGContextSetBlendMode(ctx,kCGBlendModeCopy);CGContextDrawImage(ctx,CGRectMake(0,0,w,h),image.CGImage);CGContextRelease(ctx);return p;
+}
+int redAt(const std::vector<uint8_t>& pixels,int width,int x,int y){return pixels[(size_t(319-y)*width+x)*4];}
 struct Sample{int x,y,r,g,b;};
 }
+@interface HMCanvasFixtureMedia:HMMedia
+@end
+@implementation HMCanvasFixtureMedia
+- (UIImage *)image:(NSString *)name {return fixture(3);}
+@end
 @interface HMGLReferenceTests:XCTestCase
 @end
 @implementation HMGLReferenceTests
@@ -101,6 +117,63 @@ struct Sample{int x,y,r,g,b;};
  [gpu finish];[gpu endFrame];auto actual=bytes([gpu snapshot]);
  const Sample samples[]={{239,159,100,100,100},{240,160,64,64,64},{241,160,36,36,36},{244,160,0,0,0},{240,164,0,0,0},{232,156,64,64,64},{235,156,195,195,195},{238,156,143,143,143},{241,156,36,36,36},{245,156,4,4,4},{232,157,64,64,64},{235,157,195,195,195},{238,157,143,143,143},{241,157,36,36,36},{245,157,4,4,4},{232,158,64,64,64},{235,158,195,195,195},{238,158,143,143,143},{241,158,36,36,36},{245,158,4,4,4},{232,159,64,64,64},{235,159,195,195,195},{238,159,143,143,143},{241,159,36,36,36},{245,159,4,4,4},{232,160,64,64,64},{235,160,195,195,195},{238,160,143,143,143},{245,160,4,4,4},{232,161,64,64,64},{235,161,195,195,195},{238,161,143,143,143},{241,161,36,36,36},{245,161,4,4,4},{232,162,64,64,64},{235,162,195,195,195},{238,162,143,143,143},{241,162,36,36,36},{245,162,4,4,4},{232,163,64,64,64},{235,163,195,195,195},{238,163,143,143,143},{241,163,36,36,36},{245,163,4,4,4}};
  for(auto p:samples){int expected[]={p.r,p.g,p.b};for(int c=0;c<3;++c)XCTAssertLessThanOrEqual(abs(int(actual[(size_t(319-p.y)*480+p.x)*4+c])-expected[c]),1,@"Original GL sample %d,%d channel%d",p.x,p.y,c);}
+ XCTAssertEqualObjects([gpu diagnostics][@"lastError"],@"");
+}
+- (void)testWideCanvasPreservesCentrePixelsAndShowsBothNewEdges {
+ HMGLRenderer* gpu=[HMGLRenderer new];XCTAssertNotNil(gpu);if(!gpu)return;
+ UIImage* im=fixture(3);
+ XCTAssertTrue([gpu beginFrame]);
+ [gpu drawImage:im name:@"solid" columns:1 rows:1 tile:0 position:CGPointMake(240,160) scale:CGSizeMake(1,1) rotation:0 alpha:1 blend:0 rgb565:NO];
+ [gpu endFrame];auto original=canvasBytes([gpu snapshot]);
+ XCTAssertTrue([gpu setLogicalWidth:640 height:320]);XCTAssertTrue([gpu beginFrame]);
+ for(double x:{20.,320.,620.})[gpu drawImage:im name:@"solid" columns:1 rows:1 tile:0 position:CGPointMake(x,160) scale:CGSizeMake(1,1) rotation:0 alpha:1 blend:0 rgb565:NO];
+ [gpu endFrame];UIImage* shot=[gpu snapshot];XCTAssertEqual(CGImageGetWidth(shot.CGImage),640u);XCTAssertEqual(CGImageGetHeight(shot.CGImage),320u);auto wide=canvasBytes(shot);
+ for(int y=0;y<320;++y)XCTAssertTrue(std::equal(original.begin()+size_t(y)*480*4,original.begin()+size_t(y+1)*480*4,wide.begin()+(size_t(y)*640+80)*4),@"Original centre row %d",y);
+ XCTAssertEqual(redAt(wide,640,20,160),255);XCTAssertEqual(redAt(wide,640,620,160),255);
+ XCTAssertEqualObjects([gpu diagnostics][@"textureUploads"],@1);XCTAssertEqualObjects([gpu diagnostics][@"lastError"],@"");
+}
+- (void)testFractionalCanvasResizeReusesTexturesAndPreservesExternalContext {
+ EAGLContext* previous=[EAGLContext currentContext];EAGLContext* external=[[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES1];
+ XCTAssertTrue([EAGLContext setCurrentContext:external]);
+ HMGLRenderer* gpu=[HMGLRenderer new];XCTAssertNotNil(gpu);if(!gpu){[EAGLContext setCurrentContext:previous];return;}
+ XCTAssertEqual([EAGLContext currentContext],external);
+ XCTAssertTrue([gpu prepareImage:fixture(3) name:@"solid" rgb565:NO]);
+ XCTAssertTrue([gpu setLogicalWidth:693.333333 height:320]);
+ XCTAssertEqual([EAGLContext currentContext],external);
+ auto diagnostics=[gpu diagnostics];XCTAssertEqualWithAccuracy([diagnostics[@"logicalWidth"] doubleValue],693.333333,.000001);XCTAssertEqualObjects(diagnostics[@"bufferWidth"],@694);
+ NSNumber* allocations=diagnostics[@"sceneReallocations"];
+ for(int i=0;i<20;++i){XCTAssertTrue([gpu setLogicalWidth:693.5 height:320]);XCTAssertTrue([gpu beginFrame]);XCTAssertFalse([gpu setLogicalWidth:640 height:320]);[gpu endFrame];XCTAssertEqual([EAGLContext currentContext],external);}
+ XCTAssertEqualObjects([gpu diagnostics][@"sceneReallocations"],allocations);
+ XCTAssertTrue([gpu hasTexture:@"solid" rgb565:NO]);XCTAssertEqualObjects([gpu diagnostics][@"textureUploads"],@1);
+ for(double invalid:{0.,-1.,1e12,std::numeric_limits<double>::infinity(),std::numeric_limits<double>::quiet_NaN()})XCTAssertFalse([gpu setLogicalWidth:invalid height:320]);
+ XCTAssertEqualObjects([gpu diagnostics][@"bufferWidth"],@694);
+ XCTAssertEqual([EAGLContext currentContext],external);
+ UIImage* shot=[gpu snapshot];XCTAssertEqual(CGImageGetWidth(shot.CGImage),694u);XCTAssertEqual([EAGLContext currentContext],external);
+ XCTAssertTrue([gpu setLogicalWidth:480 height:320]);XCTAssertEqualObjects([gpu diagnostics][@"sceneReallocations"],@([allocations unsignedIntegerValue]+1));
+ XCTAssertEqualObjects([gpu diagnostics][@"lastError"],@"");[EAGLContext setCurrentContext:previous];
+}
+- (void)testScaledOffsetHUDClipMatchesSpriteAndTrail {
+ HMGLRenderer* gpu=[HMGLRenderer new];XCTAssertNotNil(gpu);if(!gpu)return;XCTAssertTrue([gpu setLogicalWidth:640 height:320]);
+ [gpu setDrawingOffset:CGPointMake(100,20)];[gpu setDrawingScale:.5];[gpu setClipRect:CGRectMake(220,92,12,16)];
+ XCTAssertTrue([gpu beginFrame]);
+ [gpu drawImage:fixture(3) name:@"solid" columns:1 rows:1 tile:0 position:CGPointMake(240,160) scale:CGSizeMake(4,4) rotation:0 alpha:1 blend:0 rgb565:NO];
+ [gpu endFrame];auto sprite=canvasBytes([gpu snapshot]);
+ XCTAssertEqual(redAt(sprite,640,219,100),0);XCTAssertEqual(redAt(sprite,640,220,100),255);XCTAssertEqual(redAt(sprite,640,231,100),255);XCTAssertEqual(redAt(sprite,640,232,100),0);XCTAssertEqual(redAt(sprite,640,224,91),0);XCTAssertEqual(redAt(sprite,640,224,108),0);
+ heavymach::TrailMesh mesh;mesh.translation={250,165};
+ for(int i=0;i<4;++i){heavymach::TrailVertex v;v.position={float(i%2?32:-32),float(i/2?32:-32)};v.uv={float(i%2),float(i/2?0:1)};v.color={1,1,1,1};mesh.vertices.push_back(v);}
+ XCTAssertTrue([gpu beginFrame]);[gpu drawTrail:mesh image:nil name:@"solid" rgb565:NO cameraOffset:CGPointMake(10,5)];[gpu endFrame];auto trail=canvasBytes([gpu snapshot]);XCTAssertTrue(sprite==trail);
+ [gpu resetClip];XCTAssertTrue([gpu beginFrame]);[gpu drawTrail:mesh image:nil name:@"solid" rgb565:NO cameraOffset:CGPointMake(10,5)];[gpu endFrame];auto unclipped=canvasBytes([gpu snapshot]);XCTAssertEqual(redAt(unclipped,640,210,100),255);
+ XCTAssertEqualObjects([gpu diagnostics][@"lastError"],@"");
+}
+- (void)testMediaTransformsAndClipsCPUAndGPUHUD {
+ HMCanvasFixtureMedia* media=[HMCanvasFixtureMedia new];
+ [media setDrawingOffset:CGPointMake(100,20)];[media setDrawingScale:.5];[media setClipRect:CGRectMake(220,92,12,16)];
+ UIGraphicsBeginImageContextWithOptions(CGSizeMake(640,320),YES,1);[[UIColor blackColor] setFill];UIRectFill(CGRectMake(0,0,640,320));
+ [media draw:@"solid" x:240 y:160 columns:1 rows:1 tile:0 scaleX:4 scaleY:4 rotation:0 alpha:1];
+ auto cpu=canvasBytes(UIGraphicsGetImageFromCurrentImageContext());UIGraphicsEndImageContext();
+ HMGLRenderer* gpu=[HMGLRenderer new];XCTAssertNotNil(gpu);if(!gpu)return;XCTAssertTrue([gpu setLogicalWidth:640 height:320]);
+ media.glRenderer=gpu;XCTAssertTrue([gpu beginFrame]);[media draw:@"solid" x:240 y:160 columns:1 rows:1 tile:0 scaleX:4 scaleY:4 rotation:0 alpha:1];[gpu endFrame];auto gl=canvasBytes([gpu snapshot]);
+ for(int y=90;y<110;++y)for(int x=218;x<234;++x){int expected=(x>=220&&x<232&&y>=92&&y<108)?255:0;XCTAssertEqual(redAt(cpu,640,x,y),expected);XCTAssertEqual(redAt(gl,640,x,y),expected);}
  XCTAssertEqualObjects([gpu diagnostics][@"lastError"],@"");
 }
 @end

@@ -35,6 +35,22 @@
 @interface HMMenuParityTests : XCTestCase
 @end
 @implementation HMMenuParityTests
+- (void)testInterruptedResultDrawsResumeMenuAboveIllustrationAndAcceptsResume {
+    HMMenuCommandMedia* media=[HMMenuCommandMedia new];
+    media.fixtureImage=[[[UIGraphicsImageRenderer alloc]initWithSize:CGSizeMake(120,120)]imageWithActions:^(UIGraphicsImageRendererContext* c){}];
+    HMGameHUD* hud=[[HMGameHUD alloc]initWithMedia:media];[hud setMenuVisible:YES];
+    for(int i=0;i<120;++i)[hud tick:i/60.0];
+    heavymach::StagePresentation presentation;presentation.step=4;presentation.alpha=1;presentation.loadingAsset="GameLoading_01.jpg";
+    HMGameHUDSnapshot snapshot;snapshot.paused=true;snapshot.menuVisible=true;snapshot.presentation=&presentation;[hud draw:snapshot];
+    NSInteger imageIndex=-1,menuIndex=-1;
+    for(NSUInteger i=0;i<media.commands.count;++i){
+        if([media.commands[i][@"name"]isEqual:@"GameLoading_01.jpg"])imageIndex=i;
+        if([media.commands[i][@"name"]isEqual:@"GameMenuSub.png"])menuIndex=i;
+    }
+    XCTAssertGreaterThan(imageIndex,NSInteger(-1));XCTAssertGreaterThan(menuIndex,imageIndex);
+    __block int clicked=-1;hud.button=^(int identifier,int state){if(state==2)clicked=identifier;};
+    XCTAssertTrue([hud touch:CGPointMake(220,220) state:0]);XCTAssertTrue([hud touch:CGPointMake(220,220) state:2]);XCTAssertEqual(clicked,101);
+}
 - (void)testMissionScrollRetainsOriginalFloatCoordinates {
     HMMenuCommandMedia *media=[HMMenuCommandMedia new];
     heavymach::SaveData save;heavymach::GameData data;

@@ -16,7 +16,7 @@
 
 현재 게임 그래픽은 HMGLRenderer의 OpenGL ES 1.1, 음향은 HMOpenALAudio의 OpenAL Soft 1.22.2를 사용한다. UIKit은 창·입력·검증 패널을 맡는다. SpriteRaster/TrailRaster는 비교용 CPU 구현이며 현재 제품의 프레임 합성 경로가 아니다. 게임 규칙과 플랫폼 출력 연결을 분리하여 동일 입력·상태를 비교한다.
 
-[정본](canonical.md)을 시작점으로 [좌표](coordinate-policy.md), [렌더](rendering-policy.md), [수치](game-calculation-policy.md), [시간·저장·음향](runtime-policy.md)을 적용한다. 최신 사용자 요청의 사용성 개선은 [TODO](usability-todo.md), 시야 확장은 [계획](wide-canvas-plan.md)에 둔다. 아직 구현하지 않은 계획을 현행 동작으로 읽지 않는다.
+[정본](canonical.md)을 시작점으로 [좌표](coordinate-policy.md), [렌더](rendering-policy.md), [수치](game-calculation-policy.md), [시간·저장·음향](runtime-policy.md)을 적용한다. 최신 사용자 요청의 사용성 개선은 [TODO](usability-todo.md), 시야 확장 구현과 검사는 [캔버스 기록](wide-canvas-plan.md)에 둔다. 아직 구현하지 않은 계획을 현행 동작으로 읽지 않는다.
 
 호출 흐름은 Application → HMGameView → GameSession/World → RenderCommand → HMGLRenderer다. GameData는 원본 파생 데이터를 읽고 SaveData는 3624바이트 저장을 해석한다. 게임 이벤트의 음향은 HMOpenALAudio, 저장 이벤트는 HMGameView의 제한된 파일 쓰기로 연결한다. 일반·검증 앱은 공통 코어를 쓰며 HM_VALIDATION 전처리 조건으로 치트 패널과 방향 버튼을 분리한다.
 
@@ -51,8 +51,8 @@ MAP/MCH 관찰 구조는 LE u32 `declared_size,type,data_size`, payload, LE u32 
 
 ## 구현된 렌더 경로
 
-원본 스프라이트를 OpenGL ES 1.1의 480×320 RGBA8 버퍼에 합성하고 최종 화면에 표시한다. 스프라이트는 GL_REPLACE, POT texture의 LINEAR/REPEAT, 최종 화면은 LINEAR/CLAMP_TO_EDGE를 쓴다. Tile/Trail의 blend3 차이와 상태 상속을 보존한다. 텍스처 업로드 뒤 CPU 디코딩 픽셀을 해제한다. 정확한 버퍼·좌표·캐시 정책과 검사는 [그래픽 정책](rendering-policy.md)을 따른다.
+원본 스프라이트를 OpenGL ES 1.1의 RGBA8 버퍼에 합성하고 최종 화면에 표시한다. 게임플레이는 높이320·기기 비율의 가변폭, 타이틀/선택과 검증 원본 모드는480×320이다. 스프라이트는 GL_REPLACE, POT texture의 LINEAR/REPEAT, 최종 화면은 LINEAR/CLAMP_TO_EDGE를 쓴다. Tile/Trail의 blend3 차이와 상태 상속을 보존한다. 텍스처 업로드 뒤 CPU 디코딩 픽셀을 해제한다. 정확한 버퍼·좌표·캐시 정책과 검사는 [그래픽 정책](rendering-policy.md)을 따른다.
 
 ## 구현된 음향과 수명
 
-31개 WAV의 OpenAL 버퍼와 source를 준비하고 재사용한다. 원본 위치·거리 모델·stop/play 순서를 따른다. 과거 AVAudioPlayer의 근사 pan은 현행 경로가 아니다. 원작 4개 저장 호출 지점, 50Hz 가속도 필터, 한 프레임 한 tick, 메모리/파일 저장 경계는 [실행 정책](runtime-policy.md)을 따른다. 백그라운드·잠금·장기 미사용 정책 개선은 TODO의 원본 비교 결과에 따라 별도 구현한다.
+31개 WAV의 OpenAL 버퍼와 source를 준비하고 재사용한다. 원본 위치·거리 모델·stop/play 순서를 따른다. 과거 AVAudioPlayer의 근사 pan은 현행 경로가 아니다. 원작 4개 저장 호출 지점, 50Hz 가속도 필터, 한 프레임 한 tick, 메모리/파일 저장 경계는 [실행 정책](runtime-policy.md)을 따른다. 백그라운드·잠금·120초 무조작은 실행 정책에 따라 명시 재개를 요구한다. 결과/업그레이드 상태와 정상 저장 시점은 보존한다.

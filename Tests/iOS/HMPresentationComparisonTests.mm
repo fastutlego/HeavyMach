@@ -14,6 +14,7 @@
 
 @interface HMGameView (PresentationComparison)
 - (void)frame:(CADisplayLink*)link;
+- (void)setWideCanvasEnabled:(BOOL)enabled;
 - (void)refreshScreen:(int)screen;
 - (void)startSlot:(int)slot mode:(int)mode mission:(int)mission stage:(int)stage;
 @end
@@ -77,6 +78,7 @@ NSDictionary* distribution(std::vector<double> v){
   NSArray* ordered=[sceneName isEqualToString:@"slot_preview"]?variants:variants.reverseObjectEnumerator.allObjects;
   for(NSString* variant in ordered){@autoreleasepool{
    HMComparisonView* view=[[HMComparisonView alloc]initWithFrame:scene.coordinateSpace.bounds];[[view valueForKey:@"frameTimer"]invalidate];[[view valueForKey:@"motionTimer"]invalidate];[(CMMotionManager*)[view valueForKey:@"motion"]stopAccelerometerUpdates];XCTAssertNil([view valueForKey:@"loadError"]);
+   [view setWideCanvasEnabled:NO]; // Historical presentation A/B uses the original fixed canvas.
    view.fullViewport=[variant isEqualToString:@"full_viewport"]||[variant isEqualToString:@"full_plus_linear"];
    view.linear=[variant isEqualToString:@"linear_filter"]||[variant isEqualToString:@"full_plus_linear"];
    view.skipFrame=[variant isEqualToString:@"no_render_control"];
