@@ -1,3 +1,11 @@
+# 2026-10-25 14:46 클리어 일러스트 수정본 실기기 재설치
+
+사용자가 다시 연결한 PaleMirror에 일반·검증 앱을 업데이트 설치하고 실행했다. 서명 앱의 debug dylib SHA-256은 앞선 `clear-illustration-20261025/signed-builds.json`과 일치했다. 두 앱 모두 Documents를 먼저 백업했고 설치 직후 실행 전의 파일별 해시가 일치했다. 프로세스 조회에서 일반58594, 검증58590 실행을 확인했다. 일반 앱을 마지막으로 실행했다.
+
+설치 근거: `build/device-validation-runs/20261025T054633.693594Z/summary.json`(검증), `20261025T054644.286299Z/summary.json`(일반), `build/clear-illustration-20261025/installed-processes.json`.
+
+실기기 일러스트 확인은 미완료다. CUA가 `Sky Computer Use native pipe startup failed`로 실패했고 세션 초기화 후에도 같은 오류가 났다. 대체 실기기 XCTest는 테스트 번들 코드 서명에서 `errSecInternalComponent`로 실패하여 실행 전 중단됐다(`physical.log`, `physical.xcresult`). 이 실패는 이미 서명·설치한 일반/검증 앱의 설치 실패가 아니다. 설치된 앱은 유지했다. 앞선 시뮬레이터 15개 이미지 표시 검사와 이번 실기기 실행 확인을 구분한다.
+
 # 2026-10-25 클리어 일러스트 누락 수정
 
 원본 JPEG를 직접 읽는 로더에 결과 화면이 예전 `.jpg.png` 이름을 넘겨 이미지가 빠졌다. 원본/포팅판의 파일명 처리와 비교하여 HMGameHUD의 `.png` 추가를 제거했다. 미션7개·스테이지7개·게임오버1개를 실제 OpenGL 결과 화면으로 그려 검사했고 15개 모두 원본 JPEG 직접 표시와 중앙 일러스트 영역이 일치했다. 관련 iOS 자원 검사3/3, 기존 스테이지 전환 검사1/1 통과. 미션1 렌더 첨부 이미지를 직접 확인했다.
