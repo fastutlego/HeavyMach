@@ -1,3 +1,17 @@
+# 2026-10-25 15:44 최신 치트 앱 설치·실행 확인
+
+사용자가 GUI에서 빌드한15:43:25 `HeavyMachValidation`의 서명·프로파일·기기 포함 여부를 확인한 뒤 PaleMirror에 업데이트 설치하고 실행했다. 최신 확장 캔버스·초기 정지 화면 및 검증 방향 조작부 심볼을 확인했다. debug dylib SHA-256은 `bfe9ea9eb398ede2976bd2be724819327fdd636c3488cec5fe141c55759d9b09`다. 실행 뒤 프로세스58834가 유지되는 것을 조회했다. 설치 전 Documents를 백업했고 실행 후 다시 복사해 전체1개 파일의 해시가 동일함을 확인했다. 일반 앱은 이번에 설치하지 않았다.
+
+설치·실행 근거: `build/device-validation-runs/20261025T064359.459937Z/`의 `summary.json`, `launch.json`, `processes-after.json`, `save-comparison.json`. 실행 후 복사: `20261025T064429.444859Z/`. CUA 화면 조작 연결은 여전히 `Sky Computer Use native pipe startup failed`다. 따라서 최신 치트 앱의 실기기 이동·사격·출력음·잠금·확장 화면 시각 검사는 아직 수행하지 못했다. 설치 성공을 플레이 검증 완료로 표시하지 않는다. 아래15:37·15:41 실패는 이전 시도 기록이다.
+
+# 2026-10-25 15:41 사용자 GUI 빌드 확인
+
+사용자가 빌드한 `HeavyMachRestored` 일반 앱의 바이너리 수정 시각은15:41:08이며 `codesign --verify --deep --strict`를 통과했다. 최신 확장 캔버스(`CanvasGeometry::forDrawable`, `setWideCanvasEnabled:`)와 생명주기(`prepareInitialPausedFrame`, `_resumeRequired`) 심볼을 확인했고 검증 조작부 클래스는 없다. 같은 GUI DerivedData의 `HeavyMachValidation`은02:57 이전 빌드다. 일반 앱 빌드 후 치트 앱 CLI 서명을 다시 시도했지만 CodeSign에서 실패했고 CUA의 Xcode 연결도 native pipe 오류가 계속됐다. 이번 확인에서 두 앱 모두 새로 설치하지 않았다. 치트 앱부터 설치하라는 순서를 유지한다. 근거: `build/device-canvas-install-20261025/restored-gui-build.json`, `signed-build-after-restored.log`.
+
+# 2026-10-25 15:37 치트 앱 실기기 설치 재시도
+
+사용자 요청에 따라 커밋 `9020c7d1`의 `HeavyMachValidation`을 연결된 PaleMirror 대상으로 다시 서명 빌드했다. 기기는 연결됐고 잠금 상태 조회도 성공했다. 빌드는 CodeSign에서 `errSecInternalComponent`로 실패했다. macOS 보안 로그는 `CSSMERR_CSP_NO_USER_INTERACTION` / `errSecInteractionNotAllowed`로 서명 키 접근 실패를 기록했다. 인증서 2개가 유효하게 조회된 것과 실제 개인 키 서명 성공은 구분한다. CUA 초기화 및 재초기화 후 Xcode 접근도 `Sky Computer Use native pipe startup failed`로 실패했다. 최신 앱 설치·실행·플레이 검사는 수행하지 못했다. 기존 폰 앱·저장과 키체인 설정은 변경하지 않았다. 증거: `build/device-canvas-install-20261025/`의 `signed-build.log`, `signing-diagnostic.log`, `lock-state.json`. 제품 코드는 변경하지 않았다.
+
 # 2026-10-25 캔버스 확장·통합 회귀·빌드
 
 검증 앱에서 확장 화면 검사17/17을 통과한 뒤 일반 앱도 같은 확장 경로로 바꿨다. 이후 보스 팝인과 새 세션의 폭 전달 순서를 수정하고 최종 영향 iOS9/9을 통과했다(`boss-final.xcresult`). 게임플레이는 기기 전체 폭을 쓰고 논리 높이320을 유지한다. 탱크·지형 크기는 그대로다. 중앙HUD만 safeArea에 맞추고, 폭이 부족한 원본 배경은 비율을 유지해 확대한다. 검증 패널에는 원본480 비교 스위치가 있다. 타이틀/선택 화면은 기존480 비율을 유지한다.
