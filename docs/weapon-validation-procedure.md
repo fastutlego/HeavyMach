@@ -15,3 +15,5 @@
 ## 현재 실행 결과와 재실행
 
 2026-10-25 [검사 결과](weapon-result-fix-20261025.md): 20무기×3화면×6해제/정지 입력360조건 통과. 자동 실행 대상은 `HeavyMachRenderTests/HMFramePerformanceTests/testAllWeaponsKeepTargetsAcrossTouchRelease`다. 결과화면은 `testResultIllustrationsCoverExpandedCanvas`와 기존 `HMResourceLifecycleTests/testResultScreensRenderOriginalJPEGIllustrations`를 함께 실행한다. `HeavyMachValidation` scheme을 쓰며 실제 연결된 전용 Simulator ID와 새로운 resultBundlePath를 지정한다. 후속 충돌·피해/출력음/실기기 범위는 위 절차와 결과 문서에서 별도 추적한다.
+
+2026-10-25 추가 실기기 실행: iPhone Air iOS27.0.1에서 동일20무기360조건 통과, 탄환1,080발·목표/궤적 위반0. [실기기 결과와 남은 검수](physical-self-test-20261025.md).
