@@ -23,7 +23,7 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
   Vector2 validationSpawnPosition{};
 #endif
  };
- struct Dynamic {bool correctAim=false;uintptr_t aimTarget=0;int aimTicks=0;std::variant<BulletState,GobItemBox,std::shared_ptr<GobTrailEffect>> value;std::shared_ptr<GobTrailEffect> trailForBullet;explicit Dynamic(BulletState b):value(b){}explicit Dynamic(GobItemBox b):value(b){}explicit Dynamic(std::shared_ptr<GobTrailEffect> t):value(std::move(t)){}};
+ struct Dynamic {uintptr_t aimTarget=0;std::variant<BulletState,GobItemBox,std::shared_ptr<GobTrailEffect>> value;std::shared_ptr<GobTrailEffect> trailForBullet;explicit Dynamic(BulletState b):value(b){}explicit Dynamic(GobItemBox b):value(b){}explicit Dynamic(std::shared_ptr<GobTrailEffect> t):value(std::move(t)){}};
  const GameData& data;SaveSlot& slot;TileSize sizes,worldSizes;Random31 random;
  PlayerPassives ownedPassives;PlayerPassives& passives;
  WorldState world;StagePosition stage{};std::unique_ptr<GobHvM_Player> player;
@@ -31,7 +31,7 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
  Machine playerGraph;std::list<Machine> enemies;std::list<Dynamic> dynamic;
  std::vector<DrawSprite> mapSprites,draws;std::vector<SessionRenderItem> render;std::shared_ptr<GobTrailEffect> pendingTrail;std::vector<SessionEvent> events;
  std::set<std::string> unsupported;std::array<bool,64> particleQueued{};
- bool aimCorrection=true;AimMode aimMode=AimMode::manual;uintptr_t aimTarget=0,excludedTarget=0;bool autoFire=false;
+ AimMode aimMode=AimMode::manual;uintptr_t aimTarget=0,excludedTarget=0;bool autoFire=false;
  AimSnapshot aimState{};Dynamic* assistedBullet=nullptr;
  Machine* current=nullptr;const MachDefinition* building=nullptr;ParticleState* acquired=nullptr;
  int selected=0,charge=0;bool replaceWeapon=false,active=false;double globalTime=0;
@@ -217,10 +217,9 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
 #endif
   BulletState b;b.toPlayer=toPlayer;pendingTrail.reset();setBulletFire(b,info,angle,p,time,*this);dynamic.emplace_back(b);auto& node=dynamic.back();node.trailForBullet=std::move(pendingTrail);
   if(!toPlayer&&aimMode==AimMode::automatic){if(auto target=findAimTarget(aimTarget)){
-   auto& shot=std::get<BulletState>(node.value);auto center=aimPoint(*target);
-   if(aimCorrection&&info.wpnType==5&&info.spd==0)shot.pos.x=center.x;
-   auto solution=aimPath(shot.pos,center,target->aimStep,info);
-   if(solution){if(aimCorrection){shot.vel=solution.velocity;shot.rotate=solution.angle;}node.correctAim=aimCorrection;node.aimTarget=target->id;node.aimTicks=solution.ticks;++aimState.assistedShots;}
+   // Track ownership for offscreen collision and test counters only. Preserve
+   // setBulletFire's original position, randomized velocity and angle.
+   node.aimTarget=target->id;++aimState.assistedShots;
   }}
  }
  void event(TrailEventKind)override{}
@@ -297,14 +296,6 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
   aimState.angle=info.rotWpn?solution.angle:w.aimDir;aimState.flightTicks=solution.ticks;
   aimState.status=!clear?AimStatus::blocked:(!info.rotWpn||std::fabs(w.aimDir-w.aimDirDest)<.1f)?AimStatus::ready:AimStatus::tracking;
   w.fireTarget=center;w.isFire=autoFire&&clear;
- }
- void guideBullet(Dynamic& node,BulletState& b){
-  if(!node.aimTarget||world.paused)return;
-  auto target=findAimTarget(node.aimTarget);
-  if(!target||node.aimTicks<1){node.aimTarget=0;return;}
-  if(!node.correctAim)return;
-  b.vel=interceptionVelocity(b.pos,aimPoint(*target),target->aimStep,b.info->g,node.aimTicks);
-  --node.aimTicks;
  }
  CombatFrame frame(GobHvMach& owner,Machine& graph,Part& p){
   CombatFrame f;f.time=world.gameTime;f.paused=world.paused||waitingForBossEncounter(graph);f.playerPos=player?player->position:Vector2{};f.ownerPos=owner.position;f.weaponPos=owner.position;f.rotPos=p.visual.rotatedPosition;f.socket0=socket(p.visual.info,0);f.socket1=socket(p.visual.info,1);f.machType=owner.machType;f.isPlayer=owner.player;f.isMainPlayer=&graph==&playerGraph;f.ownerInScreen=graph.inScreen;f.weaponUpgrade=slot.bytes[0x2d];
@@ -389,7 +380,7 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
    motionEvents(*player,playerGraph,player->GobHvMach::tick(world.motionWorld(player->position.x,globalTime,[this]{return random31();})));
   }
   for(auto it=dynamic.begin();it!=dynamic.end();){bool remove=std::visit([](const auto& n){if constexpr(std::is_same_v<std::decay_t<decltype(n)>,std::shared_ptr<GobTrailEffect>>)return n->removed;else return n.removed;},it->value);if(remove){it=dynamic.erase(it);continue;}
-   if(auto b=std::get_if<BulletState>(&it->value)){CombatFrame f;f.time=world.gameTime;f.paused=world.paused;f.playerPos=player?player->position:Vector2{};f.weaponUpgrade=slot.bytes[0x2d];if(player){f.damageBoost=player->passives.active(1);f.shield=player->passives.active(0);}guideBullet(*it,*b);assistedBullet=&*it;tickBullet(*b,f,*this);assistedBullet=nullptr;if(it->aimTicks==0)it->aimTarget=0;}
+   if(auto b=std::get_if<BulletState>(&it->value)){CombatFrame f;f.time=world.gameTime;f.paused=world.paused;f.playerPos=player?player->position:Vector2{};f.weaponUpgrade=slot.bytes[0x2d];if(player){f.damageBoost=player->passives.active(1);f.shield=player->passives.active(0);}assistedBullet=&*it;tickBullet(*b,f,*this);assistedBullet=nullptr;}
    else if(auto item=std::get_if<GobItemBox>(&it->value)){auto& box=*item;ItemBoxFrame f;f.motion=world.motionWorld(box.position.x,globalTime);f.hasPlayer=bool(player);if(player)f.playerPosition=player->position;box.tick(f,*this);box.inScreen=box.show&&inView(box.position,imageBounds(tileSize("ItemBox.png").x,tileSize("ItemBox.png").y));}
    else std::get<std::shared_ptr<GobTrailEffect>>(it->value)->tick(world.gameTime,world.paused,*this);
    ++it;
@@ -497,8 +488,6 @@ void GameSession::releaseFire(){impl_->autoFire=false;auto& parts=impl_->playerG
 void GameSession::setAimMode(AimMode mode){if(impl_->aimMode==mode)return;releaseFire();impl_->aimMode=mode;impl_->aimTarget=impl_->excludedTarget=0;impl_->aimState={};impl_->aimState.mode=mode;}
 AimMode GameSession::aimMode()const{return impl_->aimMode;}
 void GameSession::setAutoFire(bool down){auto& i=*impl_;if(i.aimMode!=AimMode::automatic)return;i.autoFire=down&&!i.world.paused&&i.world.gameState==0;if(!i.autoFire)releaseFire();}
-void GameSession::setAimCorrectionEnabled(bool enabled){releaseFire();impl_->aimCorrection=enabled;}
-bool GameSession::aimCorrectionEnabled()const{return impl_->aimCorrection;}
 void GameSession::cycleAimTarget(){impl_->cycleAimTarget();}
 AimSnapshot GameSession::aimSnapshot()const{auto state=impl_->aimState;state.mode=impl_->aimMode;return state;}
 void GameSession::booster(){auto& i=*impl_;if(i.player&&!i.world.paused)i.motionEvents(*i.player,i.playerGraph,i.player->setBooster(i.slot.bytes[0x2f],i.player->passives.active(2)));}

@@ -1039,7 +1039,7 @@
 - (void)saveAimMode { [NSUserDefaults.standardUserDefaults setInteger:int(_preferredAimMode) forKey:@"AimModeV1"]; }
 - (void)setInputAimMode:(heavymach::AimMode)mode {
     if(!_session||_session->aimMode()==mode)return;
-    [self cancelAimFireInput];_session->setAimMode(mode);if(mode==heavymach::AimMode::automatic)_session->setAimCorrectionEnabled(true);_preferredAimMode=mode;[self saveAimMode];
+    [self cancelAimFireInput];_session->setAimMode(mode);_preferredAimMode=mode;[self saveAimMode];
 }
 - (void)cancelAimFireInput {
     for(id token in _heldTouches)[_aimCancelledTouches addObject:token];

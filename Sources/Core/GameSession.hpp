@@ -69,8 +69,7 @@ public:
  // Optional assisted input. Manual remains the default and original path.
  void setAimMode(AimMode);AimMode aimMode()const;
  void setAutoFire(bool);
- void setAimCorrectionEnabled(bool);
- bool aimCorrectionEnabled()const;void cycleAimTarget();AimSnapshot aimSnapshot()const;
+ void cycleAimTarget();AimSnapshot aimSnapshot()const;
  void booster();void selectWeapon(int index);void cycleWeapon(int delta=1);
  bool selectUpgrade(int part);void confirmUpgrade();void finishUpgradeSlide();
  void resultButton(int id);void setPaused(bool);

@@ -371,7 +371,6 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  auto& session=storage<std::unique_ptr<heavymach::GameSession>>(self.game,"_session");
  XCTAssertTrue(CGRectIsNull([self.game aimControlRect:0]));
  XCTAssertTrue(CGRectIsNull([self.game aimControlRect:4]));
- session->setAimCorrectionEnabled(false); // Internal comparison state must not survive enabling A.
  auto vp=storage<heavymach::Viewport>(self.game,"_viewport");auto r=[self.game aimControlRect:1];
  CGPoint a=CGPointMake(vp.x+CGRectGetMidX(r)*vp.scale,vp.y+(vp.logicalHeight-CGRectGetMidY(r))*vp.verticalScale());
  NSObject* toggle=[NSObject new];
@@ -383,7 +382,6 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  [self.game routePoint:target state:2 token:world];
  [self.game routePoint:a state:0 token:toggle];[self.game routePoint:a state:2 token:toggle];
  XCTAssertEqual(session->aimMode(),heavymach::AimMode::automatic);
- XCTAssertTrue(session->aimCorrectionEnabled());
  XCTAssertFalse(session->validationWeaponState().isFire);
  // A cancelled toggle must not change the mode.
  [self.game routePoint:a state:0 token:toggle];[self.game routePoint:a state:3 token:toggle];

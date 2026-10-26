@@ -630,12 +630,12 @@ void emit(NSDictionary* record){NSData* json=[NSJSONSerialization dataWithJSONOb
  XCTAssertEqual(controls.selectedSegmentIndex,NSInteger(3));XCTAssertFalse([[view valueForKey:@"rightPressed"]boolValue]);
  [view setApplicationActive:NO];
 }
-- (void)testAutoAimPresentedFramesCompareManualPredictionCorrection {
+- (void)testAutoAimPresentedFramesCompareManualPrediction {
  UIWindowScene* scene=nil;for(UIScene* s in UIApplication.sharedApplication.connectedScenes)if([s isKindOfClass:UIWindowScene.class]){scene=(UIWindowScene*)s;break;}
  XCTAssertNotNil(scene);if(!scene)return;
  UIWindow* old=scene.keyWindow;HMGameView* host=[old.rootViewController.view isKindOfClass:HMGameView.class]?(HMGameView*)old.rootViewController.view:nil;[host setApplicationActive:NO];
  NSMutableDictionary* costs=[NSMutableDictionary new];
- @try {for(NSString* name in @[@"manual",@"prediction",@"correction"]){@autoreleasepool{
+ @try {for(NSString* name in @[@"manual",@"prediction"]){@autoreleasepool{
   HMProductionTimerView* view=[[HMProductionTimerView alloc]initWithFrame:scene.coordinateSpace.bounds];
   auto& data=perfStorage<heavymach::GameData>(view,"_data");auto& map=data.maps.at("Stage01");map.enemies.clear();map.objects.clear();map.collisionPaths={{{0,40},{10000,40}}};data.machines.at("Heli001").hpMax=100000;
   perfStorage<heavymach::SaveData>(view,"_save")={};[view setValue:@1 forKey:@"randomState"];
@@ -645,7 +645,7 @@ void emit(NSDictionary* record){NSData* json=[NSJSONSerialization dataWithJSONOb
   [view startSlot:0 mode:0 mission:0 stage:0];for(int n=0;n<110;++n)[view advanceOriginalFrame];
   auto& session=perfStorage<std::unique_ptr<heavymach::GameSession>>(view,"_session");auto p=session->player()->position;
   session->validationSpawnEnemy({"Heli001",{p.x+240,p.y+140},false});
-  if(![name isEqual:@"manual"])[view setInputAimMode:heavymach::AimMode::automatic];session->setAimCorrectionEnabled([name isEqual:@"correction"]);
+  if(![name isEqual:@"manual"])[view setInputAimMode:heavymach::AimMode::automatic];
   ((HMValidationControls*)[view valueForKey:@"validationControls"]).selectedSegmentIndex=1;
   UIWindow* window=[[UIWindow alloc]initWithWindowScene:scene];UIViewController* vc=[UIViewController new];vc.view=view;window.rootViewController=vc;[window makeKeyAndVisible];[view layoutIfNeeded];
   view.autoAimExercise=YES;view.timerDone=[self expectationWithDescription:name];[self waitForExpectations:@[view.timerDone] timeout:20];
@@ -653,12 +653,11 @@ void emit(NSDictionary* record){NSData* json=[NSJSONSerialization dataWithJSONOb
   emit(@{@"phase":@"autoaim_production_timer",@"candidate":name,@"frame_work":work,@"callback_intervals":metrics(view->timerIntervals),@"assisted_shots":@(aim.assistedShots),@"target_hits":@(aim.targetHits),@"renderer":[[view valueForKey:@"glRenderer"]diagnostics]});
   XCTAssertEqual(view->timerWork.size(),size_t(180));XCTAssertNil([view valueForKey:@"loadError"]);XCTAssertEqualObjects([[view valueForKey:@"glRenderer"]diagnostics][@"lastError"],@"");
   XCTAssertLessThan([work[@"p95_ms"]doubleValue],1000.0/60.0);
-  if([name isEqual:@"correction"])XCTAssertGreaterThan(aim.targetHits,uint64_t(0));
   HMGLRenderer* aimRenderer=[view valueForKey:@"glRenderer"];UIImage* image=[aimRenderer snapshot];XCTAssertNotNil(image);if(image){XCTAttachment* a=[XCTAttachment attachmentWithImage:image];a.name=[@"iPad_presented_" stringByAppendingString:name];a.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:a];}
   [view setApplicationActive:NO];window.hidden=YES;window.rootViewController=nil;
  }}}
  @finally {[old makeKeyAndVisible];[host setApplicationActive:YES];}
- emit(@{@"phase":@"autoaim_p95_added_cost",@"prediction_ms":@([costs[@"prediction"][@"p95_ms"]doubleValue]-[costs[@"manual"][@"p95_ms"]doubleValue]),@"correction_ms":@([costs[@"correction"][@"p95_ms"]doubleValue]-[costs[@"manual"][@"p95_ms"]doubleValue])});
+ emit(@{@"phase":@"autoaim_p95_added_cost",@"prediction_ms":@([costs[@"prediction"][@"p95_ms"]doubleValue]-[costs[@"manual"][@"p95_ms"]doubleValue])});
 }
 - (void)testProductionNSTimerTitleMenuAndFiring {
  UIWindowScene* scene=nil;for(UIScene* s in UIApplication.sharedApplication.connectedScenes)if([s isKindOfClass:UIWindowScene.class]){scene=(UIWindowScene*)s;break;}

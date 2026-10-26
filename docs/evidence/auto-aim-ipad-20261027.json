@@ -939,5 +939,523 @@
       ]
     },
     "merged": false
+  },
+  "correction_removed": {
+    "date": "2026-10-27",
+    "branch": "feat/auto-aim-ipad-validation",
+    "removed": [
+      "spawn-time velocity/angle override",
+      "support-bomb X override",
+      "per-tick homing velocity",
+      "correction flag and API"
+    ],
+    "retained": [
+      "target selection and cycling",
+      "turret prediction",
+      "A toggle, fire button and F",
+      "offscreen target collision tracking"
+    ],
+    "core_tests": {
+      "passed": 20,
+      "failed": 0,
+      "log": "build/auto-aim-no-c-20261027/core-tests.log"
+    },
+    "manual_parity": {
+      "baseline_commit": "8fdeb629ac5a5cf0a871425f8044b7654b74c5da",
+      "test_source": "Tests/ManualCombatTrace.cpp",
+      "test_source_sha256": "340e39831fd5ce52ba2d5b78dff2dae601e4628ca217480828370b4f338f2bd1",
+      "weapons": 20,
+      "seeds": 3,
+      "frames_each": 420,
+      "frames_total": 25200,
+      "byte_identical": true,
+      "trace_sha256": "8c3381e397310c60555878ceb6e2fd4a3eff8809e6222e56d112b0095f981d34",
+      "baseline_trace": "build/auto-aim-no-c-20261027/manual-baseline.trace",
+      "current_trace": "build/auto-aim-no-c-20261027/manual-current.trace",
+      "minimum_player_bullet_samples_per_case": 343,
+      "compared": [
+        "RNG state",
+        "player position/HP",
+        "bullet position/velocity/angle/alpha/removal",
+        "enemy position/HP",
+        "charge/reload/fire state",
+        "events",
+        "final SaveSlot bytes"
+      ]
+    },
+    "tests": {
+      "ipad": {
+        "passed": 4,
+        "failed": 0,
+        "result_bundle": "build/auto-aim-no-c-20261027/iPadInput.xcresult",
+        "weapons": [
+          {
+            "weapon": "P_Wpn_Canon01",
+            "shots": 6,
+            "tracked": 6,
+            "target_hits": 5,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Canon02",
+            "shots": 6,
+            "tracked": 6,
+            "target_hits": 5,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Canon03",
+            "shots": 7,
+            "tracked": 7,
+            "target_hits": 6,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_ElShock",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Gun01",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Gun02",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Gun03",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Gun04",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Gun05",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Gun06",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Gun07",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Laser",
+            "shots": 3,
+            "tracked": 3,
+            "target_hits": 3,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Missile01",
+            "shots": 6,
+            "tracked": 6,
+            "target_hits": 6,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Missile02",
+            "shots": 6,
+            "tracked": 6,
+            "target_hits": 6,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Missile03",
+            "shots": 7,
+            "tracked": 7,
+            "target_hits": 6,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_RaderBomb",
+            "shots": 14,
+            "tracked": 14,
+            "target_hits": 7,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_RaderLsr",
+            "shots": 20,
+            "tracked": 20,
+            "target_hits": 19,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_RaderMsl",
+            "shots": 14,
+            "tracked": 14,
+            "target_hits": 11,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Shotgun01",
+            "shots": 40,
+            "tracked": 40,
+            "target_hits": 33,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Shotgun02",
+            "shots": 56,
+            "tracked": 56,
+            "target_hits": 47,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          }
+        ]
+      },
+      "iphone": {
+        "passed": 4,
+        "failed": 0,
+        "result_bundle": "build/auto-aim-no-c-20261027/iPhoneInput.xcresult",
+        "weapons": [
+          {
+            "weapon": "P_Wpn_Canon01",
+            "shots": 6,
+            "tracked": 6,
+            "target_hits": 5,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Canon02",
+            "shots": 6,
+            "tracked": 6,
+            "target_hits": 5,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Canon03",
+            "shots": 7,
+            "tracked": 7,
+            "target_hits": 6,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_ElShock",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Gun01",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Gun02",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Gun03",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Gun04",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Gun05",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Gun06",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Gun07",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Laser",
+            "shots": 3,
+            "tracked": 3,
+            "target_hits": 3,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Missile01",
+            "shots": 6,
+            "tracked": 6,
+            "target_hits": 6,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Missile02",
+            "shots": 6,
+            "tracked": 6,
+            "target_hits": 6,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Missile03",
+            "shots": 7,
+            "tracked": 7,
+            "target_hits": 6,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_RaderBomb",
+            "shots": 14,
+            "tracked": 14,
+            "target_hits": 7,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_RaderLsr",
+            "shots": 20,
+            "tracked": 20,
+            "target_hits": 19,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_RaderMsl",
+            "shots": 14,
+            "tracked": 14,
+            "target_hits": 11,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Shotgun01",
+            "shots": 40,
+            "tracked": 40,
+            "target_hits": 33,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Shotgun02",
+            "shots": 56,
+            "tracked": 56,
+            "target_hits": 47,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          }
+        ]
+      },
+      "simulator": {
+        "passed": 4,
+        "failed": 0,
+        "result_bundle": "build/auto-aim-no-c-20261027/Input.xcresult"
+      }
+    },
+    "device_actions": [
+      {
+        "device": "ipad",
+        "app": "restored",
+        "action": "install",
+        "outcome": "success",
+        "transport": "localNetwork",
+        "raw": "build/auto-aim-no-c-20261027/ipad-restored-install.json",
+        "sha256": "a14b022d8a924f635e14d773769d2fc2ff18d9f12e658d616d5d386367676f9e"
+      },
+      {
+        "device": "ipad",
+        "app": "restored",
+        "action": "launch",
+        "outcome": "success",
+        "transport": "localNetwork",
+        "raw": "build/auto-aim-no-c-20261027/ipad-restored-launch.json",
+        "sha256": "d26c2269e1c86f8420a5443d42a5811d759c2492c660bcee8c5cfb8a5b71aae5"
+      },
+      {
+        "device": "ipad",
+        "app": "validation",
+        "action": "install",
+        "outcome": "success",
+        "transport": "localNetwork",
+        "raw": "build/auto-aim-no-c-20261027/ipad-validation-install.json",
+        "sha256": "2d56ec97c03b3f1a5f2a405e1efacff8323552213ad639144f3810d75c9ed56a"
+      },
+      {
+        "device": "ipad",
+        "app": "validation",
+        "action": "launch",
+        "outcome": "success",
+        "transport": "localNetwork",
+        "raw": "build/auto-aim-no-c-20261027/ipad-validation-launch.json",
+        "sha256": "a962d03d332763b3e4cd3507eaa246d5c9556da9d47c8ae44f7b36c5cfcc807a"
+      },
+      {
+        "device": "iphone",
+        "app": "restored",
+        "action": "install",
+        "outcome": "success",
+        "transport": "localNetwork",
+        "raw": "build/auto-aim-no-c-20261027/iphone-restored-install.json",
+        "sha256": "039aff8bd25b668db6fe1bf34a724bb76e63ee7c1d5910bf0da518a6ad73d262"
+      },
+      {
+        "device": "iphone",
+        "app": "restored",
+        "action": "launch",
+        "outcome": "success",
+        "transport": "localNetwork",
+        "raw": "build/auto-aim-no-c-20261027/iphone-restored-launch.json",
+        "sha256": "16c8efa9535b9cd879bf00ebb33e06ae394d3179b829994a80282c2b29e2678c"
+      },
+      {
+        "device": "iphone",
+        "app": "validation",
+        "action": "install",
+        "outcome": "success",
+        "transport": "localNetwork",
+        "raw": "build/auto-aim-no-c-20261027/iphone-validation-install.json",
+        "sha256": "3c52c76b4f028305dd4561d5794df100839312fc4434f16a686021d0ef64056c"
+      },
+      {
+        "device": "iphone",
+        "app": "validation",
+        "action": "launch",
+        "outcome": "success",
+        "transport": "localNetwork",
+        "raw": "build/auto-aim-no-c-20261027/iphone-validation-launch.json",
+        "sha256": "7a930c0c2d45f6f8164a28aa22cfbc9c8e2122ba9a4962c04c9932db999a805b"
+      }
+    ],
+    "apps": {
+      "HeavyMachRestored": {
+        "configuration": "Debug, development signed",
+        "executable_sha256": "0ef1143426608cea0ec577c91ad00985696c1a4becd3795a165de2b5b62cec23",
+        "debug_dylib_sha256": "99b7f54b37f42b910944177d647a36be26f261fc68d8236199cc0770e3857aac",
+        "correction_symbols_absent": true
+      },
+      "HeavyMachValidation": {
+        "configuration": "Debug, development signed",
+        "executable_sha256": "653d3bacdde7a2a56d50323059757eabbf81c1a7096364912bfa5c10008ac3ca",
+        "debug_dylib_sha256": "123ed7d85963daa2882e62cf79053d643505f18e1a280baf3f8061d8cf82d90f",
+        "correction_symbols_absent": true
+      }
+    },
+    "merged": false,
+    "limits": [
+      "No new frame-time benchmark or full-mission run.",
+      "Manual trace compares the pre-auto-aim source revision; it is not a fresh IPA runtime comparison."
+    ]
   }
 }

@@ -399,3 +399,12 @@ A·표적 전환·사격 순서, 사선과 LOCKED/TRACK/BLOCKED 표시, 세 환�
 - URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/auto-aim-progress.html
 
 게임 저장소의 develop/main에는 병합하지 않았다.
+
+### 2026-10-27 08:24 KST — C 삭제·수동 사격 비교·4건 설치
+
+C 보정 삭제와 원래 탄속·분산 유지, 자동조준 추가 전 코드와 수동 사격 25,200프레임 일치, 시뮬레이터·iPhone·iPad 입력 검사 각 4개, 두 기기 정식·치트 앱의 무선 설치·실행을 반영했다. 과거 보정 비교는 삭제 전 기록으로 표시했다. Chrome에서 최신 본문과 기존 절 앵커를 확인했다. 소유자 비공개 범위를 유지했다.
+
+- Site source: `89b59fef56ab3166cca04c98f988cc3664b460cb`
+- Version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_1fdb12683a688191bd10cf7052bb61b5`
+- Deployment: `appgdep_6adfe139d06081918b60398bdbb5dcb8`, `succeeded`
+- URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/auto-aim-progress.html
