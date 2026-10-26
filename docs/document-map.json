@@ -16,7 +16,9 @@
     "docs/stage-transition-contract.md",
     "docs/source-provenance.md",
     "docs/report-site.md",
-    "docs/repository-management.md"
+    "docs/repository-management.md",
+    "docs/android-port-plan-20261026.md",
+    "docs/related-titles-20261026.md"
   ],
   "base_read": [
     "AGENTS.md",
@@ -214,6 +216,33 @@
       ],
       "tests": [],
       "evidence": [
+        "docs/current-status.md"
+      ]
+    },
+    "android": {
+      "label": "Android 이식·APK",
+      "read": [
+        "docs/android-port-plan-20261026.md",
+        "docs/coordinate-policy.md",
+        "docs/rendering-policy.md",
+        "docs/runtime-policy.md",
+        "docs/weapon-validation-procedure.md",
+        ".agents/skills/port-heavymach-android/SKILL.md"
+      ],
+      "sources": [
+        "CMakeLists.txt",
+        "Sources/Core/*",
+        "Sources/iOS/*",
+        "docs/android-port-plan-20261026.md",
+        ".agents/skills/port-heavymach-android/*"
+      ],
+      "tests": [
+        "Tests/CoreTests.cpp",
+        "Tests/AudioContractTests.cpp",
+        "Tests/GameSessionTests.cpp"
+      ],
+      "evidence": [
+        "docs/research/android-and-titles-evidence-20261026.json",
         "docs/current-status.md"
       ]
     }

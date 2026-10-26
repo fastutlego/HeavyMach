@@ -1,5 +1,15 @@
 # HeavyMach 보고 사이트
 
+## 최신 게시 — 2026-10-26 후속 타이틀·Android 계획
+
+`#android-plan`에 두 조사 요약을 추가하고 `/related-titles.html`, `/android-plan.html`에 전문과 동일 Markdown 다운로드를 게시했다. 원래 Archive 목록, 중단한 Defense 포크, Android 코어 컴파일 결과, 개발 단계·스킬·APK 검증 절차를 기록했다.
+
+- 소스: `a9215736a6ebe6b4b9f7a146b1ea03b8d0293e8a`.
+- 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_60aac3caa8c4819181e60788788d7c1f`.
+- 배포: `appgdep_6aded2ef195081918ead09f9b8382c8c`, `succeeded`, 2026-10-26T04:11:40.055557+00:00. 소유자 전용 유지.
+- 로컬 링크 145개, 기존 앵커·이미지 13개·REA 부록, 두 신규 원고/다운로드 일치를 확인했다. Chrome의 좁은 창에서 두 전문, 목차 이동, 단계 표와 긴 경로 줄바꿈을 확인했다.
+- 문서 연결 9개 업무·48개 참조와 Android 스킬 형식 검사를 통과했다. 배포 API 성공을 확인했으며 인증 후 게시 화면은 별도 검사하지 않았다. Android APK 생성 완료를 뜻하지 않는다.
+
 ## 최신 게시 — 2026-10-26 전수검사·REA 실행
 
 `#migration-audit`에 독립 저장소 전수검사, 누락 복구, 현재 세션의 REA 디컴파일 실행 결과와 상세 문서 링크를 추가했다.

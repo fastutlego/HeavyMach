@@ -1,5 +1,12 @@
 # 2026-10-25 문서·코드·앱 일치 체계 점검 및 보완
 
+## 2026-10-26 후속 타이틀·Android 계획
+
+원래 아카이브의 IPA 19개에서 Heavy Mach 2/HD와 Mach Defense/Heavy MACH: Defense를 확인했다. 중단한 Defense 포크의 로컬 Android 브랜치와 기존 APK도 찾았으며 변경하지 않았다. [타이틀 조사](related-titles-20261026.md).
+
+HeavyMach C++ 코어 20개 소스를 수정 없이 Android ARM64 정적 라이브러리로 컴파일했다. APK와 Android 플레이는 아직 미구현이다. [개발 단계·검증·APK 절차](android-port-plan-20261026.md), 전용 port-heavymach-android 스킬과 android 문서 읽기 경로를 추가했다. 정상 iOS 제품 코드·v0.9는 유지했다.
+
+
 ## 2026-10-26 분리 후 전수검사
 
 Git 대상 595개에 누락은 없었고 게임 코드·아트·검사는 v0.9와 같다. Git 제외 규칙에 걸린 OpenAL 소스 4개, 새 폴더에 없던 REA 분석·호환 소스, 상위 iOS 지침, 끊긴 문서 경로와 스킬 배정을 복구했다. 로컬 입력 10,292항목을 대조하고 REA 증거 부록6개의 동일 재생성을 확인했다. [전수검사와 보존 범위](migration/completeness-audit-20261026.md)를 따른다. 이어서 현재 REA MCP로 원본 경험치 함수의 디컴파일·어셈블리 조회가 성공했고 분석 세션을 정상 종료했다. [REA 실행 근거](rea-availability-20261026.md).
