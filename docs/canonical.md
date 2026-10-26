@@ -36,7 +36,7 @@
 
 ## 저장소와 증거 보존
 
-코드·테스트·도구·문서·Xcode 구성·필요한 오픈소스 vendor와 라이선스는 Git으로 관리한다. 원본 IPA/추출 자원 `Resources/`, 로컬 REA 출력 `Analysis/`, `build/`, 사용자 저장, 인증서·프로파일·키는 커밋하지 않는다. 파일은 삭제하지 않고 로컬에 보존한다. 로컬 원본 준비는 README와 출처 문서를 따른다.
+코드·테스트·도구·문서·Xcode 구성·vendor와 라이선스, 앱 빌드·검사에 필요한 자원을 Git/LFS로 관리한다. `Resources/OriginalImages`, `Images`, `Audio`, `RawData`, `Assets.xcassets`, `Validation`과 `Art/Extensions`는 `docs/build-resources.json`에 파일별 크기·SHA-256을 기록한다. 새 clone은 `git lfs pull` 뒤 `python3 tools/verify_build_resources.py`로 확인한다. IPA나 별도 자원 복사는 필요하지 않다. 원본 IPA, 로컬 REA 출력 `Analysis/`, 자원 분석 기록 `Resources/Data`·`Evidence`, `build/`, 사용자 저장, 인증서·프로파일·키는 커밋하지 않고 로컬에 보존한다.
 
 최신 결과는 current-status가 소유한다. 시뮬레이터 통과를 실제 폰 통과로, 치트 클리어를 정상 난이도 통과로, 일부 장면 일치를 전체 원본 동등성으로 바꾸어 보고하지 않는다.
 
