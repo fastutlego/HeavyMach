@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-27",
+  "tool": "image_gen.imagegen",
+  "purpose": "visual concepts, not runtime sprites",
+  "transparent_background": true,
+  "outputs": [
+    {
+      "unit": "yak141",
+      "file": "yak141-concept.png",
+      "source": "exec-e74da4dd-ab85-47eb-95ef-cd245d354d85.png",
+      "original": "exec-42543c73-91b3-49aa-94bf-05c490555c1c.png",
+      "references": [
+        "Resources/Images/E_Heli_Body_01.png",
+        "Resources/Images/E_Heli_Body_06.png"
+      ],
+      "prompt": "Create ONE original enemy game sprite concept for HeavyMach: a Yakovlev Yak-141 inspired VTOL combat aircraft. Reference images are STYLE AND PALETTE references only, not edit targets. Strict side elevation, aircraft nose pointing LEFT, fully visible including tail and wings, no perspective foreshortening, landing gear retracted, level neutral attitude. Narrow pointed nose, angular side air intake, recognisable twin-tail/tail-boom silhouette and a small dorsal lift-engine hatch. Adapt it into the same compact hand-painted 2009 2D mechanical war-game sprite language as the supplied helicopter sprites: dark outlines, weathered warm rust-brown and desaturated olive-grey metal, cream highlights, layered riveted panels, soot, restrained detail that reads at 140 pixels wide. Not photorealistic, not glossy, not a modern vector illustration, no insignia, no text. Weapon fittings subtle: one small under-fuselage launcher compatible with existing missile sprite. Include two short downward orange exhaust plumes from lift outlets and rear vector nozzle, as a concept of hovering, not a big rocket trail. Transparent background, no backdrop, no ground shadow, no labels or diagram elements. One aircraft only. Large centered sprite with generous clear alpha margin. Preserve readable low resolution game shapes rather than a dense technical blueprint.",
+      "edit_prompt": "Edit this existing Yak-141 inspired HeavyMach sprite with ONE local correction. Preserve aircraft shape, pose, left facing direction, colors, all details, composition, size and transparent background. The small orange flame currently comes from the dorsal/top hatch and overlaps the upper fuselage: REMOVE that top flame completely, restore continuous dark weathered metal at that location. Instead place that lift-engine exhaust flame BELOW THE BELLY directly under the dorsal hatch, exiting a small downward-facing underside nozzle, so all exhaust goes down from under the aircraft. Keep the existing rear downward nozzle flame exactly as it is. The result has two small underside plumes, zero flames above or across the body. Do not add another aircraft or labels. Keep alpha transparency.",
+      "sha256": "1a46b579ab8cb933a35e5ec0eb5ec27eb6182615d0fcd47e01171af1aa520544",
+      "reference_sha256": {
+        "Resources/Images/E_Heli_Body_01.png": "27935b3fca1c204ae01d2afd7a729bed3d07c32438cf8db1bb9727141d2dd074",
+        "Resources/Images/E_Heli_Body_06.png": "35bb833f7768194ff6aff6503774351aeda0ff3d58c715f05d20b6ae38267537"
+      }
+    },
+    {
+      "unit": "harrier",
+      "file": "harrier-concept.png",
+      "source": "exec-dba005e5-f575-416d-bc97-9a396b09783c.png",
+      "references": [
+        "Resources/Images/E_Heli_Body_06.png",
+        "Resources/Images/E_Heli_Body_01.png"
+      ],
+      "prompt": "Create ONE original 2D enemy aircraft sprite concept for HeavyMach, inspired by a Harrier jump jet, nose pointing LEFT, level side profile. Reference images specify the old game art language, palette, painterly shading and industrial wear, not the helicopter shape. Single seat bubble canopy, blunt rounded drooping nose, large rounded side intake, short swept wing with slight anhedral, distinct single tall swept tail fin, two visible circular swivelling exhaust nozzles on the side of the belly. Gear retracted. Wide squat sturdy silhouette different from slender pointed Yak-141 and angular F35. Compact 2009 hand-painted 2D game machinery, desaturated olive green and cream-grey panels, dark outlines, fine weathering and scratches but strong readable broad shapes at 140px wide, soft upper highlights and dark underside. One restrained small paired weapon pod mounting under belly. No modern glossy photorealism, no 3D render, no markings, no text, no logos. Two SHORT stylized orange-yellow exhaust jets directed DOWN from the lower side swivel nozzles ONLY, never from top/intake. Full aircraft uncut on transparent background with clear margin, no shadow, no scenery, no perspective composition, no other aircraft. This is a game art concept, not a photograph.",
+      "sha256": "aaa54c606b504365b4342e808ab9817d55bbc528b0cdd778f4c2b1f0cb88f368",
+      "reference_sha256": {
+        "Resources/Images/E_Heli_Body_06.png": "35bb833f7768194ff6aff6503774351aeda0ff3d58c715f05d20b6ae38267537",
+        "Resources/Images/E_Heli_Body_01.png": "27935b3fca1c204ae01d2afd7a729bed3d07c32438cf8db1bb9727141d2dd074"
+      }
+    },
+    {
+      "unit": "f35b",
+      "file": "f35b-concept.png",
+      "source": "exec-d8204fdb-b14c-4526-a555-08e0f65e8853.png",
+      "references": [
+        "Resources/Images/E_Heli_Body_06.png",
+        "Resources/Images/E_Boss05.png"
+      ],
+      "prompt": "Make ONE original HeavyMach 2D enemy sprite concept inspired by F-35B STOVL aircraft. All references are style/palette references only. Nosed LEFT in a flat side-elevation gameplay view, horizontal level fuselage, landing gear retracted, entire aircraft visible. Distinct F35B silhouette: short wedge nose, single bubble canopy, angular side intake, broad angular swept wings, outward canted twin fins seen mostly in side profile, dorsal lift fan hatch just behind cockpit opened slightly. Compact exaggerated armored industrial panels suited to existing 2009 hand-painted mechanical war game, not photographic realism or sleek 3D render. Weathered warm pewter grey and charcoal panels, restrained faded olive panels and tiny muted ochre accents, dirty cream top highlights, dark outlines, dark belly. Match supplied original sprites in restrained saturation and readable mechanical detail, broad strong shapes at 150px wide. Underbody a compact gun port and a flush dark launcher bay, no giant external modern missiles. Two short stylized orange exhaust plumes point DOWN from UNDER the forward lift-fan outlet and rear downward-vectored nozzle, NO flame on top of fuselage, NO flame through the canopy, keep dorsal intake unlit. Transparent background, no floor, no shadow, no text, no labels, no insignia, no additional sprites. Generous alpha margin. One aircraft only.",
+      "sha256": "d719164b8785773befd8577b211ca3ebf2b7a443b63be380ea4925803ec52728",
+      "reference_sha256": {
+        "Resources/Images/E_Heli_Body_06.png": "35bb833f7768194ff6aff6503774351aeda0ff3d58c715f05d20b6ae38267537",
+        "Resources/Images/E_Boss05.png": "a8a38219459075125f8a690d577a0e48e96e0d4b4045310080b3f4346bf1be21"
+      }
+    }
+  ]
+}

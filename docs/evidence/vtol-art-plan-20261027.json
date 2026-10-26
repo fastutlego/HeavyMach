@@ -1,0 +1,195 @@
+{
+  "date": "2026-10-27",
+  "status": "concept and placement proposal; not installed",
+  "placement": [
+    {
+      "unit": "yak141",
+      "mission_substage": "2-2",
+      "map": "Stage06",
+      "existing_enemies": 39,
+      "additional_enemies": 1,
+      "gap": 284.0,
+      "candidate_x": 730.0,
+      "status": "proposal, not runtime placement"
+    },
+    {
+      "unit": "yak141",
+      "mission_substage": "2-4",
+      "map": "Stage08",
+      "existing_enemies": 44,
+      "additional_enemies": 1,
+      "gap": 440.0,
+      "candidate_x": -291.0,
+      "status": "proposal, not runtime placement"
+    },
+    {
+      "unit": "yak141",
+      "mission_substage": "3-2",
+      "map": "Stage11",
+      "existing_enemies": 41,
+      "additional_enemies": 1,
+      "gap": 365.0,
+      "candidate_x": 4590.5,
+      "status": "proposal, not runtime placement"
+    },
+    {
+      "unit": "yak141",
+      "mission_substage": "4-2",
+      "map": "Stage26",
+      "existing_enemies": 32,
+      "additional_enemies": 1,
+      "gap": 663.0,
+      "candidate_x": 3364.5,
+      "status": "proposal, not runtime placement"
+    },
+    {
+      "unit": "yak141",
+      "mission_substage": "5-2",
+      "map": "Stage16",
+      "existing_enemies": 46,
+      "additional_enemies": 1,
+      "gap": 392.0,
+      "candidate_x": 5190.0,
+      "status": "proposal, not runtime placement"
+    },
+    {
+      "unit": "harrier",
+      "mission_substage": "3-3",
+      "map": "Stage12",
+      "existing_enemies": 23,
+      "additional_enemies": 1,
+      "gap": 560.0,
+      "candidate_x": 258.0,
+      "status": "proposal, not runtime placement"
+    },
+    {
+      "unit": "harrier",
+      "mission_substage": "4-3",
+      "map": "Stage27",
+      "existing_enemies": 41,
+      "additional_enemies": 1,
+      "gap": 573.0,
+      "candidate_x": 1529.5,
+      "status": "proposal, not runtime placement"
+    },
+    {
+      "unit": "harrier",
+      "mission_substage": "5-3",
+      "map": "Stage17",
+      "existing_enemies": 43,
+      "additional_enemies": 1,
+      "gap": 583.0,
+      "candidate_x": 665.5,
+      "status": "proposal, not runtime placement"
+    },
+    {
+      "unit": "harrier",
+      "mission_substage": "6-3",
+      "map": "Stage22",
+      "existing_enemies": 29,
+      "additional_enemies": 1,
+      "gap": 697.0,
+      "candidate_x": 1941.5,
+      "status": "proposal, not runtime placement"
+    },
+    {
+      "unit": "harrier",
+      "mission_substage": "7-2",
+      "map": "Stage31",
+      "existing_enemies": 60,
+      "additional_enemies": 1,
+      "gap": 243.0,
+      "candidate_x": 1969.5,
+      "status": "proposal, not runtime placement"
+    },
+    {
+      "unit": "f35b",
+      "mission_substage": "6-2",
+      "map": "Stage21",
+      "existing_enemies": 36,
+      "additional_enemies": 1,
+      "gap": 310.0,
+      "candidate_x": 3307.0,
+      "status": "proposal, not runtime placement"
+    },
+    {
+      "unit": "f35b",
+      "mission_substage": "6-4",
+      "map": "Stage23",
+      "existing_enemies": 22,
+      "additional_enemies": 1,
+      "gap": 503.0,
+      "candidate_x": 3316.5,
+      "status": "proposal, not runtime placement"
+    },
+    {
+      "unit": "f35b",
+      "mission_substage": "7-3",
+      "map": "Stage32",
+      "existing_enemies": 45,
+      "additional_enemies": 1,
+      "gap": 347.0,
+      "candidate_x": 2243.5,
+      "status": "proposal, not runtime placement"
+    },
+    {
+      "unit": "f35b",
+      "mission_substage": "7-4",
+      "map": "Stage33",
+      "existing_enemies": 47,
+      "additional_enemies": 1,
+      "gap": 375.0,
+      "candidate_x": 2736.5,
+      "status": "proposal, not runtime placement"
+    }
+  ],
+  "weapons": {
+    "yak141": {
+      "name": "E_Wpn_ASM",
+      "source": "Heli001..010",
+      "damage": 25,
+      "shot_count": 1,
+      "type": 6
+    },
+    "harrier": {
+      "name": "E_Boss_Wpn_01",
+      "source": "Boss04/Boss06 helicopter",
+      "damage": 50,
+      "shot_count": 2,
+      "type": 0
+    },
+    "f35b": {
+      "name": "E_0604_Wpn",
+      "source": "E0604 helicopter",
+      "damage": 100,
+      "shot_count": 2,
+      "type": 6
+    }
+  },
+  "art": [
+    {
+      "file": "Art/VTOL/20261027/f35b-concept.png",
+      "sha256": "d719164b8785773befd8577b211ca3ebf2b7a443b63be380ea4925803ec52728"
+    },
+    {
+      "file": "Art/VTOL/20261027/harrier-concept.png",
+      "sha256": "aaa54c606b504365b4342e808ab9817d55bbc528b0cdd778f4c2b1f0cb88f368"
+    },
+    {
+      "file": "Art/VTOL/20261027/yak141-concept.png",
+      "sha256": "1a46b579ab8cb933a35e5ec0eb5ec27eb6182615d0fcd47e01171af1aa520544"
+    }
+  ],
+  "raw": [
+    {
+      "path": "build/vtol-feasibility-20261027/air-weapons.txt",
+      "sha256": "3a2d24abdf6619e6876eb13e57b74d3850c9c99319e872229d403ef68905a489"
+    },
+    {
+      "path": "build/vtol-feasibility-20261027/placement-final.txt",
+      "sha256": "0b7fa7350ecbf9a685d493fdedfa67e227223b5f5650576810a2145adc19896c"
+    }
+  ],
+  "selection": "largest gap between consecutive original enemy X coordinates, >300 from map ends, >=600 from every boss spawn; Y and actual combat overlap still to validate",
+  "excluded": "Mission8 Stage37/39 had no enemy entries in the current parsed map data; not used as between-spawn candidates"
+}
