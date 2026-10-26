@@ -15,12 +15,19 @@ git clone https://github.com/gelb2/HeavyMach.git
 cd HeavyMach
 git lfs install --local
 git lfs pull
+```
+
+이미지·음원·맵·앱 아이콘·이미지 비교 자료는 저장소에 포함돼 있다. 원본 IPA, 포팅판, 기존 Mac의 자원 폴더는 필요하지 않다.
+
+현재 저장소는 비공개이므로 접근 가능한 GitHub 계정으로 인증한다. `v0.9`는 자원을 Git에 넣기 전의 제품 코드 태그다. 새로 빌드할 때는 자원이 포함된 현재 `main`을 사용한다. GitHub Releases에는 설치 파일을 등록하지 않았다.
+
+## 자원 검사
+
+```sh
 python3 tools/verify_build_resources.py
 ```
 
-이미지·음원·맵·앱 아이콘·이미지 비교 자료는 저장소에 포함돼 있다. 원본 IPA, 포팅판, 기존 Mac의 자원 폴더는 필요하지 않다. 검사 도구는 빌드·검사 자원 1,475개의 크기와 SHA-256을 확인하며, 누락·손상·다운로드되지 않은 LFS 파일을 보고한다.
-
-현재 저장소는 비공개이므로 접근 가능한 GitHub 계정으로 인증한다. `v0.9`는 자원을 Git에 넣기 전의 제품 코드 태그다. 새로 빌드할 때는 자원이 포함된 현재 `main`을 사용한다. GitHub Releases에는 설치 파일을 등록하지 않았다.
+빌드·검사 자원 1,475개의 크기와 SHA-256을 확인한다. 누락·손상·다운로드되지 않은 LFS 파일이 있으면 종료 코드 1을 반환한다. LFS 포인터가 남았다면 `git lfs pull`을 실행하고 다시 검사한다.
 
 ## 시뮬레이터 빌드
 
@@ -77,4 +84,4 @@ cmake --build build/core -j 4
 ctest --test-dir build/core --output-on-failure
 ```
 
-기존 [IPA 없는 빌드 검사](ipa-independent-build-20261026.md)는 로컬 자원을 복사한 검사였다. 새 원격 clone의 빌드 결과는 후속 검사에서 별도로 기록한다.
+기존 [IPA 없는 빌드 검사](ipa-independent-build-20261026.md)는 로컬 자원을 복사한 검사였다. [새 원격 clone 검사](clone-build-20261026.md)에서는 GitHub에서 소스·LFS 자원을 받아 빌드 4개, 코어17·iOS14 검사, 새 Simulator의 두 앱 실행을 통과했다.

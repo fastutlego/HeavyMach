@@ -1,0 +1,142 @@
+[
+  {
+    "label": "simulator-bootstatus",
+    "exit_code": 0,
+    "command": [
+      "xcrun",
+      "simctl",
+      "bootstatus",
+      "145C929B-9A75-4A81-89F9-127FE2B27895",
+      "-b"
+    ]
+  },
+  {
+    "label": "install-HeavyMachRestored",
+    "exit_code": 0,
+    "command": [
+      "xcrun",
+      "simctl",
+      "install",
+      "145C929B-9A75-4A81-89F9-127FE2B27895",
+      "/private/tmp/heavymach-git-clone-20261026T103406Z/derived-iphonesimulator/Build/Products/Debug-iphonesimulator/HeavyMachRestored.app"
+    ]
+  },
+  {
+    "label": "launch-HeavyMachRestored",
+    "exit_code": 0,
+    "command": [
+      "xcrun",
+      "simctl",
+      "launch",
+      "145C929B-9A75-4A81-89F9-127FE2B27895",
+      "com.gelb2.heavymach.restored"
+    ]
+  },
+  {
+    "label": "capture-HeavyMachRestored",
+    "exit_code": 0,
+    "command": [
+      "xcrun",
+      "simctl",
+      "io",
+      "145C929B-9A75-4A81-89F9-127FE2B27895",
+      "screenshot",
+      "/private/tmp/heavymach-git-clone-20261026T103406Z/HeavyMachRestored-title.png"
+    ]
+  },
+  {
+    "label": "terminate-HeavyMachRestored",
+    "exit_code": 0,
+    "command": [
+      "xcrun",
+      "simctl",
+      "terminate",
+      "145C929B-9A75-4A81-89F9-127FE2B27895",
+      "com.gelb2.heavymach.restored"
+    ]
+  },
+  {
+    "label": "install-HeavyMachValidation",
+    "exit_code": 0,
+    "command": [
+      "xcrun",
+      "simctl",
+      "install",
+      "145C929B-9A75-4A81-89F9-127FE2B27895",
+      "/private/tmp/heavymach-git-clone-20261026T103406Z/derived-iphonesimulator/Build/Products/Debug-iphonesimulator/HeavyMachValidation.app"
+    ]
+  },
+  {
+    "label": "launch-HeavyMachValidation",
+    "exit_code": 0,
+    "command": [
+      "xcrun",
+      "simctl",
+      "launch",
+      "145C929B-9A75-4A81-89F9-127FE2B27895",
+      "com.gelb2.heavymach.validation"
+    ]
+  },
+  {
+    "label": "capture-HeavyMachValidation",
+    "exit_code": 0,
+    "command": [
+      "xcrun",
+      "simctl",
+      "io",
+      "145C929B-9A75-4A81-89F9-127FE2B27895",
+      "screenshot",
+      "/private/tmp/heavymach-git-clone-20261026T103406Z/HeavyMachValidation-title.png"
+    ]
+  },
+  {
+    "label": "terminate-HeavyMachValidation",
+    "exit_code": 0,
+    "command": [
+      "xcrun",
+      "simctl",
+      "terminate",
+      "145C929B-9A75-4A81-89F9-127FE2B27895",
+      "com.gelb2.heavymach.validation"
+    ]
+  },
+  {
+    "label": "resource-and-gameplay-tests",
+    "exit_code": 0,
+    "command": [
+      "/usr/bin/sandbox-exec",
+      "-f",
+      "/private/tmp/heavymach-git-clone-20261026T103406Z/deny-originals.sb",
+      "xcodebuild",
+      "-project",
+      "iOS/HeavyMachRestored.xcodeproj",
+      "-scheme",
+      "HeavyMachValidation",
+      "-configuration",
+      "Debug",
+      "-sdk",
+      "iphonesimulator",
+      "-destination",
+      "platform=iOS Simulator,id=145C929B-9A75-4A81-89F9-127FE2B27895",
+      "-derivedDataPath",
+      "/private/tmp/heavymach-git-clone-20261026T103406Z/derived-iphonesimulator",
+      "-resultBundlePath",
+      "/private/tmp/heavymach-git-clone-20261026T103406Z/resource-and-gameplay.xcresult",
+      "-parallel-testing-enabled",
+      "NO",
+      "ARCHS=arm64",
+      "ONLY_ACTIVE_ARCH=YES",
+      "CODE_SIGNING_ALLOWED=NO",
+      "COMPILER_INDEX_STORE_ENABLE=NO",
+      "test",
+      "-only-testing:HeavyMachRenderTests/HMMediaParityTests",
+      "-only-testing:HeavyMachRenderTests/HMOpenALAudioTests",
+      "-only-testing:HeavyMachRenderTests/HMFramePerformanceTests/testAllWeaponsKeepTargetsAcrossTouchRelease",
+      "-only-testing:HeavyMachRenderTests/HMFramePerformanceTests/testExpandedEdgeTouchFiresAndOutsideReleaseAndModalStopIt",
+      "-only-testing:HeavyMachRenderTests/HMFramePerformanceTests/testWeaponSwitchReleasePlaysOriginalSoundOnlyWhenAllowed",
+      "-only-testing:HeavyMachRenderTests/HMFramePerformanceTests/testValidationDirectionControlsMoveRealPlayerAndReleaseOnBackground",
+      "-only-testing:HeavyMachRenderTests/HMFramePerformanceTests/testOriginalRenderSceneAdvancesExactlyOncePerFrame",
+      "-only-testing:HeavyMachRenderTests/HMFramePerformanceTests/testCompatibilityRandomSequence"
+    ]
+  }
+]

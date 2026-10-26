@@ -191,17 +191,24 @@
         "docs/source-provenance.md",
         "docs/ios-source-map.md",
         "docs/public/ipa-independent-build-20261026.md",
-        "docs/public/rea-implementation-audit-20261026.md"
+        "docs/public/rea-implementation-audit-20261026.md",
+        "docs/public/build-and-install.md",
+        "docs/build-resources.json",
+        "docs/public/clone-build-20261026.md"
       ],
       "sources": [
         "iOS/project.yml",
         "iOS/HeavyMachRestored.xcodeproj/*",
         "Sources/iOS/HMValidation*",
-        "tools/prepare_device_validation.py"
+        "tools/prepare_device_validation.py",
+        ".gitignore",
+        ".gitattributes",
+        "Resources/*"
       ],
       "tests": [
         "Tests/iOS/HMFramePerformanceTests.mm",
-        "Tests/iOS/HMSaveParityTests.mm"
+        "Tests/iOS/HMSaveParityTests.mm",
+        "tools/verify_build_resources.py"
       ],
       "evidence": [
         "docs/device-validation-ready.md",
@@ -220,7 +227,8 @@
         "docs/public/publication-inventory.md",
         "docs/public/media/README.md",
         "docs/public/ipa-independent-build-20261026.md",
-        "docs/public/rea-implementation-audit-20261026.md"
+        "docs/public/rea-implementation-audit-20261026.md",
+        "docs/public/clone-build-20261026.md"
       ],
       "sources": [
         "docs/*",
@@ -283,7 +291,8 @@
         "docs/public/media/README.md",
         "docs/media-publication.md",
         "docs/public/ipa-independent-build-20261026.md",
-        "docs/public/rea-implementation-audit-20261026.md"
+        "docs/public/rea-implementation-audit-20261026.md",
+        "docs/public/clone-build-20261026.md"
       ],
       "sources": [
         "docs/RESTORATION.md",

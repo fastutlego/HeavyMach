@@ -61,7 +61,7 @@ def main():
         current.append(child)
     nav=old.select_one('aside nav');nav.clear()
     for section in main.select('section'):
-        a=old.new_tag('a',href='#'+section['id']);a.string={'independence':'IPA 없는 빌드 검증', 'publication':'집필 자료·설치 안내', 'developer-story':'개발자의 변', 'ios-audit':'iOS 코드·문서 검사', 'android-plan':'타이틀·Android', 'migration-audit':'전수검사·REA', 'repositories':'저장소·v0.9','port-and-native':'포팅·복원 과정','retrospective':'기술 회고','rea':'REA 활용','documentation':'문서 체계','menu-joins':'배경 연결 수정','menu-result':'메뉴 확장','phone':'아이폰 검사','ai':'적 이동','rotation':'가로 회전','screens':'남은 화면','evidence':'남은 작업'}[section['id']];nav.append(a)
+        a=old.new_tag('a',href='#'+section['id']);a.string={'clone-build':'새 clone 빌드', 'independence':'IPA 없는 빌드 검증', 'publication':'집필 자료·설치 안내', 'developer-story':'개발자의 변', 'ios-audit':'iOS 코드·문서 검사', 'android-plan':'타이틀·Android', 'migration-audit':'전수검사·REA', 'repositories':'저장소·v0.9','port-and-native':'포팅·복원 과정','retrospective':'기술 회고','rea':'REA 활용','documentation':'문서 체계','menu-joins':'배경 연결 수정','menu-result':'메뉴 확장','phone':'아이폰 검사','ai':'적 이동','rotation':'가로 회전','screens':'남은 화면','evidence':'남은 작업'}[section['id']];nav.append(a)
     old.select_one('.sidefoot').string='2026.10.26 · 개발·검증 기록'
     old.title.string='HeavyMach 복원과 아이폰 검증'
     old.select_one('meta[name="description"]')['content']='HeavyMach 원본 분석, 사용자 지시별 수정, 아이폰 검증과 남은 작업'
@@ -77,6 +77,7 @@ def main():
     article(ROOT/'docs/ios-completeness-audit-20261026.md',dist/'ios-audit.html','ios-completeness-audit-20261026.md',retro)
     article(ROOT/'docs/RESTORATION.md',dist/'restoration.html','RESTORATION.md',retro)
     public_articles = [
+        ('clone-build-20261026.md', 'clone-build.html'),
         ('ipa-independent-build-20261026.md', 'independence.html'),
         ('rea-implementation-audit-20261026.md', 'rea-implementation.html'),
         ('build-and-install.md', 'installation.html'),
@@ -95,6 +96,7 @@ def main():
     (dist/'restoration.html').write_text(str(story))
     shutil.copytree(ROOT/'docs/public/rea',dist/'rea',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/independence',dist/'independence',dirs_exist_ok=True)
+    shutil.copytree(ROOT/'docs/public/clone',dist/'clone',dirs_exist_ok=True)
     for name in ['game-design.md','document-governance.md','document-map.json']:
         shutil.copyfile(ROOT/'docs'/name,dist/name)
     report={'pages':['index.html','retrospective.html','documentation.html','rea.html','port-and-native.html','related-titles.html','android-plan.html','ios-audit.html','restoration.html'],'manuscripts':['report-overview-20261025.md','engineering-retrospective-20261025.md','rea-restoration-method-20261025.md','ipa-port-and-native-app-20261026.md','related-titles-20261026.md','android-port-plan-20261026.md','ios-completeness-audit-20261026.md','RESTORATION.md'],'image_count_before':len(BeautifulSoup(original,'html.parser').select('img')),'image_count_after':len(old.select('img'))}
