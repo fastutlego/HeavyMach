@@ -1,5 +1,6 @@
 #pragma once
 #include "World.hpp"
+#include "AutoAim.hpp"
 #include "Player.hpp"
 #include "Enemy.hpp"
 #include "ItemBox.hpp"
@@ -38,6 +39,7 @@ public:
 #if defined(HM_VALIDATION) && HM_VALIDATION
  struct ValidationEnemySnapshot { uintptr_t id;std::string name;Vector2 position;int32_t hp,hpMax;bool boss,removed;Vector2 spawnPosition;ObjectBounds bounds; };
  std::vector<ValidationEnemySnapshot> validationEnemies()const;
+ void validationSpawnEnemy(const EnemyDefinition&);
  Vector2 validationAimOrigin()const;
  WeaponState validationWeaponState()const;
  // Optional read-only observer. No shot history or per-frame allocation in the app.
@@ -64,6 +66,11 @@ public:
  void touch(Vector2 logical,int state);
  // Cancel/keyboard/outside release has no new aim coordinate. Keep a live burst's target.
  void releaseFire();
+ // Optional assisted input. Manual remains the default and original path.
+ void setAimMode(AimMode);AimMode aimMode()const;
+ void setAutoFire(bool);
+ void setAimCorrectionEnabled(bool);
+ bool aimCorrectionEnabled()const;void cycleAimTarget();AimSnapshot aimSnapshot()const;
  void booster();void selectWeapon(int index);void cycleWeapon(int delta=1);
  bool selectUpgrade(int part);void confirmUpgrade();void finishUpgradeSlide();
  void resultButton(int id);void setPaused(bool);

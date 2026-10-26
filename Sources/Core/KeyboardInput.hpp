@@ -3,11 +3,11 @@
 #include <algorithm>
 #include <cmath>
 namespace heavymach {
-enum class KeyAction : unsigned {left,right,aimLeft,aimRight,aimUp,aimDown,fire,jump,previousWeapon,nextWeapon,fine,confirm,back,focus,settings,count};
+enum class KeyAction : unsigned {left,right,aimLeft,aimRight,aimUp,aimDown,fire,jump,previousWeapon,nextWeapon,fine,confirm,back,focus,settings,nextTarget,count};
 struct KeyboardInput {
  static constexpr unsigned count=unsigned(KeyAction::count);
  // USB HID usages describe physical keys independently of layout and transport.
- static constexpr std::array<unsigned,count> defaults={0x04,0x07,0x50,0x4f,0x52,0x51,0x09,0x2c,0x14,0x08,0xe1,0x28,0x29,0x2b,0x3b};
+ static constexpr std::array<unsigned,count> defaults={0x04,0x07,0x50,0x4f,0x52,0x51,0x09,0x2c,0x14,0x08,0xe1,0x28,0x29,0x2b,0x3b,0x15};
  std::array<unsigned,count> bindings=defaults;
  std::array<bool,256> keys{};
  float virtualTilt=0;

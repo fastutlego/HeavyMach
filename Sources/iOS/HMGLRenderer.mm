@@ -193,6 +193,13 @@ static NSString *glString(GLenum name){const auto p=glGetString(name);return p?[
     }
     [HMGLContext setCurrentContext:previous];
 }
+- (void)drawAimLines:(const float*)points count:(int)count red:(float)red green:(float)green blue:(float)blue {
+    if(!_active||count<2)return;
+    glLoadIdentity();glDisable(GL_TEXTURE_2D);glDisableClientState(GL_TEXTURE_COORD_ARRAY);glDisableClientState(GL_COLOR_ARRAY);
+    glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);glColor4f(red,green,blue,1);glLineWidth(2);
+    glVertexPointer(2,GL_FLOAT,0,points);glDrawArrays(GL_LINES,0,count);
+    glLineWidth(1);glEnableClientState(GL_COLOR_ARRAY);glEnableClientState(GL_TEXTURE_COORD_ARRAY);glEnable(GL_TEXTURE_2D);_drawCalls++;
+}
 - (void)drawInputOutline:(CGRect)rect {
     if(!_active||CGRectIsEmpty(rect))return;
     GLfloat points[]={float(CGRectGetMinX(rect)),float(CGRectGetMinY(rect)),float(CGRectGetMaxX(rect)),float(CGRectGetMinY(rect)),float(CGRectGetMaxX(rect)),float(CGRectGetMaxY(rect)),float(CGRectGetMinX(rect)),float(CGRectGetMaxY(rect))};

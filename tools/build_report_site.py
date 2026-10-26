@@ -90,6 +90,7 @@ def main():
     public_articles = [
         ('apple-platform-progress-20261026.md', 'apple-platforms.html'),
         ('fullscreen-transitions-20261027.md', 'fullscreen.html'),
+        ('auto-aim-ipad-20261027.md', 'auto-aim-progress.html'),
         ('vtol-art-and-loadout-20261027.md', 'vtol-art.html'),
         ('clone-build-20261026.md', 'clone-build.html'),
         ('ipa-independent-build-20261026.md', 'independence.html'),
@@ -102,7 +103,7 @@ def main():
         article(ROOT/'docs/public'/source_name, dist/page_name, source_name, retro)
         page = BeautifulSoup((dist/page_name).read_text(), 'html.parser')
         if page.footer: page.footer.decompose()
-        if page_name == 'fullscreen.html':
+        if page_name in ('fullscreen.html','auto-aim-progress.html'):
             style=page.new_tag('style');style.string='main img{display:block;max-width:100%;height:auto;margin:16px 0}';page.head.append(style)
             for img in page.select('main img'):
                 link=page.new_tag('a',href=img['src']);img.wrap(link)
@@ -121,8 +122,9 @@ def main():
     shutil.copytree(ROOT/'docs/public/clone',dist/'clone',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/media/vtol',dist/'media/vtol',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/media/fullscreen',dist/'media/fullscreen',dirs_exist_ok=True)
+    shutil.copytree(ROOT/'docs/public/media/auto-aim',dist/'media/auto-aim',dirs_exist_ok=True)
     (dist/'evidence').mkdir(exist_ok=True)
-    for name in ['apple-platform-performance-20261026.json', 'mac-fullscreen-capture-20261027.json', 'physical-apple-20261027.json', 'wireless-apple-20261027.json', 'vtol-feasibility-20261027.json', 'vtol-art-plan-20261027.json', 'vtol-helicopter-density-20261027.json', 'vtol-implementation-20261027.json', 'vtol-refinement-20261027.json', 'fullscreen-transitions-20261027.json']:
+    for name in ['apple-platform-performance-20261026.json', 'mac-fullscreen-capture-20261027.json', 'physical-apple-20261027.json', 'wireless-apple-20261027.json', 'vtol-feasibility-20261027.json', 'vtol-art-plan-20261027.json', 'vtol-helicopter-density-20261027.json', 'vtol-implementation-20261027.json', 'vtol-refinement-20261027.json', 'fullscreen-transitions-20261027.json', 'auto-aim-ipad-20261027.json']:
         shutil.copyfile(ROOT/'docs/evidence'/name,dist/'evidence'/name)
     for name in ['game-design.md','document-governance.md','document-map.json','apple-platforms.md','keyboard-input-policy.md','current-status.md','wireless-device-workflow.md']:
         shutil.copyfile(ROOT/'docs'/name,dist/name)

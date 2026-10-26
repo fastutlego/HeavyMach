@@ -30,3 +30,7 @@
 VTOL 크기·외곽선·불꽃 수정 `6404c999`까지 작업 브랜치→develop(`63afa4f5`)→main(`76cbd21c`)으로 병합했다. main 병합 커밋에 annotated tag `v0.10`을 붙였고 develop·main·태그의 원격 반영을 확인했다. v0.9는 이동하지 않았다. v0.10은 Git LFS 자원을 포함한다.
 
 이후 전체 화면 도어 수정은 develop에서 분기한 `fix/fullscreen-transitions`에서 진행한다. v0.10에는 포함되지 않는다. [변경·검사](public/fullscreen-transitions-20261027.md).
+
+## 자동조준 개발 브랜치 — 2026-10-27
+
+`develop`의 `8fdeb629`에서 `feat/auto-aim-ipad-validation`을 분기했다. 사용자 지시의 dev는 이 저장소의 develop을 가리킨다. 자동조준 개발과 iPad 치트 앱 검증은 이 브랜치에서 진행한다. 완성 전 develop/main 병합과 릴리스 태그 생성은 하지 않는다.
