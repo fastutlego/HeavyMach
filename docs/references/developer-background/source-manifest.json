@@ -63,5 +63,12 @@
     "copy": "user-background-20261026.md",
     "source": "2026-10-26 현재 대화의 사용자 제공 문장과 후속 정정",
     "sha256": "b6b2f0b6dc8c7901eae894701b8f40f7b1becc64cb406f255865708e19335c7d"
-  }
+  },
+  "user_followups": [
+    {
+      "copy": "user-restoration-reason-20261026.md",
+      "source": "2026-10-26 현재 대화에서 사용자가 제공한 후속 글감",
+      "sha256": "01283fd5bab120afd3f121fc37d03178d8b2b88ee0d69f5e6e1d0f265e82bbe9"
+    }
+  ]
 }
