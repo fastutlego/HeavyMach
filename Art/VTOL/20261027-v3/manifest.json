@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-27",
+  "request": "Clean sprite boundary, reduce width between Heli001 and Heli006, retain only aft exhaust.",
+  "previous_version": "../20261027-v2/manifest.json",
+  "assets": [
+    {
+      "unit": "Yak141",
+      "file": "VTOL_Yak141.png",
+      "width": 2172,
+      "height": 724,
+      "sha256": "fdff4c3a7193738d2da9ecb0dd233397490a5e1dc29a65544726cd9c68ace626",
+      "source": "exec-77e1ddb4-75a7-4eb5-ae06-b5bf592258f3.png"
+    },
+    {
+      "unit": "Harrier",
+      "file": "VTOL_Harrier.png",
+      "width": 2034,
+      "height": 773,
+      "sha256": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb",
+      "source": "exec-056c3a43-ba10-4fdf-a260-1dcc6fdfbe62.png"
+    },
+    {
+      "unit": "F35B",
+      "file": "VTOL_F35B.png",
+      "width": 2033,
+      "height": 773,
+      "sha256": "8c2663b77851cde0665186c3ace3e7032de687e011162cfebe28fc71018a6913",
+      "source": "exec-ddd263d9-146a-4dd3-a4ca-090005449faa.png"
+    }
+  ]
+}

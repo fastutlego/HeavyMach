@@ -1,14 +1,15 @@
-#import <UIKit/UIKit.h>
+#import "HMPlatform.h"
 #include "../Core/Trail.hpp"
 @class HMGLRenderer, HMOpenALAudio;
 // Exact touchHLE decoder output: top-down premultiplied RGBA8, width*4 stride.
 // Nil for images not loaded through HMMedia. Dimensions are image.CGImage dimensions.
-FOUNDATION_EXPORT NSData *HMOriginalImageRGBA(UIImage *image);
+FOUNDATION_EXPORT NSData *HMOriginalImageRGBA(HMImage *image);
 @interface HMMedia : NSObject
 // Non-nil only while submitting a GPU frame. Nil retains the CPU comparison path.
 @property(nonatomic,strong) HMGLRenderer *glRenderer;
 @property(nonatomic,weak) HMGLRenderer *textureRenderer;
 @property(nonatomic,copy) NSString *resourceScope;
+@property(nonatomic) CGPoint presentationOffset;
 - (CGSize)imageSize:(NSString *)name;
 - (CGSize)imageSize:(NSString *)name scope:(NSString *)scope;
 - (void)releaseScope:(NSString *)scope;
@@ -23,7 +24,7 @@ FOUNDATION_EXPORT NSData *HMOriginalImageRGBA(UIImage *image);
 - (void)drawEdgeContinuation:(NSString*)name x:(CGFloat)x y:(CGFloat)y scale:(CGFloat)scale rotation:(CGFloat)rotation width:(CGFloat)width;
 - (void)drawJoinedBackground:(NSString*)name x:(CGFloat)x y:(CGFloat)y scale:(CGFloat)scale rotation:(CGFloat)rotation;
 - (void)drawTrail:(const heavymach::TrailMesh&)mesh;
-- (UIImage *)image:(NSString *)name;
+- (HMImage *)image:(NSString *)name;
 // Called during init, before the first title frame. Repeated calls reuse voices.
 - (BOOL)prepareOriginalSounds;
 - (void)sound:(NSString *)name;

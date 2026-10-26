@@ -1,5 +1,9 @@
 # 소스 복원 설계와 원작 근거
 
+## Apple 플랫폼 확장 — 2026-10-26
+
+Apple 구성은 [공용 모듈](apple-platforms.md)을 따른다. 세 프로젝트를 workspace에서 연결하고 Core·AppleRuntime·Assets를 공유한다. [키보드 입력](keyboard-input-policy.md)은 GameSession 앞의 입력 계층이며 게임 수식은 유지한다.
+
 확인한 원작 경로를 중심으로 소스를 연결한다. 현행 구조는 2026-10-25 기준이다. 각 모듈의 전체 원본 동등성은 current-status와 source-coverage의 확인 범위로 제한한다. 주소는 HeavyMach 1.13 실행 파일 기준이다.
 
 ## 문서 역할
@@ -55,8 +59,12 @@ MAP/MCH 관찰 구조는 LE u32 `declared_size,type,data_size`, payload, LE u32 
 
 ## 구현된 렌더 경로
 
-원본 스프라이트를 OpenGL ES 1.1의 RGBA8 버퍼에 합성하고 최종 화면에 표시한다. 게임플레이는 높이320·기기 비율의 가변폭, 타이틀/선택도 승인된 가변폭 배치를 사용하며 검증 원본 모드는480×320이다. 스프라이트는 GL_REPLACE, POT texture의 LINEAR/REPEAT, 최종 화면은 LINEAR/CLAMP_TO_EDGE를 쓴다. Tile/Trail의 blend3 차이와 상태 상속을 보존한다. 텍스처 업로드 뒤 CPU 디코딩 픽셀을 해제한다. 정확한 버퍼·좌표·캐시 정책과 검사는 [그래픽 정책](rendering-policy.md)을 따른다.
+원본 스프라이트를 OpenGL ES 1.1의 RGBA8 버퍼에 합성하고 최종 화면에 표시한다. 게임플레이는480×320을 최소 크기로 두고 화면 비율에 따라 폭 또는 높이를 늘린다. 타이틀/선택은 중앙 원본 배치와 주변 배경을 함께 표시하며 검증 원본 모드는480×320이다. 스프라이트는 GL_REPLACE, POT texture의 LINEAR/REPEAT, 최종 화면은 LINEAR/CLAMP_TO_EDGE를 쓴다. Tile/Trail의 blend3 차이와 상태 상속을 보존한다. 텍스처 업로드 뒤 CPU 디코딩 픽셀을 해제한다. 정확한 버퍼·좌표·캐시 정책과 검사는 [그래픽 정책](rendering-policy.md)을 따른다.
 
 ## 구현된 음향과 수명
 
 31개 WAV의 OpenAL 버퍼와 source를 준비하고 재사용한다. 원본 위치·거리 모델·stop/play 순서를 따른다. 과거 AVAudioPlayer의 근사 pan은 현행 경로가 아니다. 원작 4개 저장 호출 지점, 50Hz 가속도 필터, 한 프레임 한 tick, 메모리/파일 저장 경계는 [실행 정책](runtime-policy.md)을 따른다. 백그라운드·잠금·120초 무조작은 실행 정책에 따라 명시 재개를 요구한다. 결과/업그레이드 상태와 정상 저장 시점은 보존한다.
+
+## 승인된 공중 적 확장 — 2026-10-27
+
+`VTOL.cpp`는 원본 데이터 로드 후 새 기체3종과 별도 캠페인 배치를 추가한다. `GameSession`은 기존 비행·무기·피격 경로를 사용하며 새 기체의 회전·발사점·충돌 범위·배기만 분기한다. [구현과 검사](vtol-expansion.md).

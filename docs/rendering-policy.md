@@ -1,17 +1,27 @@
 # 그래픽 렌더링 정책
 
+## Apple 플랫폼 확장 — 2026-10-26
+
+Apple 모듈화에서 iOS/iPadOS의 ES1.1 경로는 유지한다. native Mac은 AppKit NSOpenGLContext와 desktop compatibility GL을 사용하고 스프라이트·블렌드 제출 코드를 공유한다. Catalyst는 사용하지 않는다. [플랫폼 구조](apple-platforms.md).
+
 정본: [canonical](canonical.md). 제품 경로는 `HMGameView → HMMedia → HMGLRenderer`다. 이전 CPU raster/UIImage 합성은 비교·검사 경로로 남아 있으며 일반 게임의 정상 렌더 경로로 복귀시키지 않는다.
 
 2026-10-25 전체 캔버스 확장을 구현했다. 원본480 비교 모드와 확장 게임플레이 모드를 같은 GL 경로로 처리한다. 현재 구현과 검사는 [캔버스 기록](wide-canvas-plan.md)을 따른다.
 
+## Mac 화면 표시
+
+Mac은 기존60Hz 게임 타이머를 유지한다. `NSOpenGLContext`의 swap interval은0으로 두어 별도 수직동기화 대기를 더하지 않는다. 프레임 제한기의 대기 시간에서는 렌더링 경과 시간을 차감한다. iOS/iPadOS의 원본 호환 대기 계산은 변경하지 않는다.
+
+Mac 게임 뷰는 고해상도 OpenGL 표면을 요청하고 `convertRectToBacking`의 픽셀 치수를 사용한다. GL 컨텍스트의 뷰·창·화면 위치·픽셀 크기가 달라질 때 표면을 갱신한다. 매 프레임 `setView`와 `update`를 반복하지 않는다. 창 크기 변경·전체 화면 왕복과 실제 화면이 켜진 상태의 성능을 검사한다. [측정 결과](public/apple-platform-progress-20261026.md).
+
 ## 고정할 경로
 
-- 게임 장면은 OpenGL ES1.1. UIKit은 창·수명주기·검증 조작부를 담당한다.
-- 논리W×320, 할당ceil(W)×320 RGBA8 renderbuffer에 원본 순서로 그린다. 기본·원본 비교 모드는W=480이다. 크기가 바뀔 때만 재할당하고 투영·복사·readback이 같은 치수를 사용한다. 장면을 재사용 화면 텍스처로 복사하고 drawable에 최종 확대한다.
+- iPhone/iPad는 OpenGL ES1.1, Mac은 desktop OpenGL compatibility로 게임을 그린다. UIKit/AppKit은 창·생명주기·설정·검증 조작부를 담당한다.
+- 논리W×H, 할당ceil(W)×ceil(H) RGBA8 renderbuffer에 원본 순서로 그린다. 원본 비교 모드는480×320이다. 확장 모드의 W/H는 좌표 정책을 따른다. 크기가 바뀔 때만 재할당하고 투영·복사·readback이 같은 치수를 사용한다. 장면을 재사용 화면 텍스처로 복사하고 drawable에 최종 확대한다.
 - 원본 자원의 제품 소비자는 `OriginalImages`의 원본 파일명과 확장자를 사용한다. 미션/스테이지 클리어의 `GameLoading_XX[E].jpg`, 게임오버의 `StageClear.jpg`에 파생본 접미사 `.png`를 붙이지 않는다. `Images/*.jpg.png`는 변환·비교용 자원이며 현재 제품 로더의 이름 계약이 아니다.
 - 원본 이미지695개를 보존된 stb 코드로 해석한다. POT 패딩, premultiplied 픽셀, RGB565 변환, UV와 타일 순서를 임의 보정하지 않는다.
 - sprite 텍스처는 LINEAR/REPEAT, 최종 화면 텍스처는 LINEAR/CLAMP_TO_EDGE다. 두 텍스처의 규칙을 섞지 않는다.
-- drawable은 nativeScale과 RGB565 요청을 사용한다. 실제 드라이버 보고 형식은 별도 기록한다. 요청이 실제 RGB565 할당을 증명하지 않는다.
+- iPhone/iPad drawable은 nativeScale과 RGB565 요청을 사용한다. Mac drawable은 고해상도 RGBA 표면을 사용한다. 실제 드라이버 보고 형식은 별도 기록한다. 요청이 실제 RGB565 할당을 증명하지 않는다.
 - 마지막 확대는 전체 화면 비율 맞춤 NDC quad, DITHER 비활성·blend 비활성 후 원래 상태 복원이다. 원본480 모드에서는 검정 여백을 유지하고 확장 게임 화면은 전체 drawable을 채운다. viewport와 터치는 [좌표 정책](coordinate-policy.md)을 함께 따른다.
 
 ## 합성과 순서
@@ -53,3 +63,14 @@ CPU raster는 원본480 비교 전용이다. 확장 offscreen 진단은 실제GL
 모드·미션은 각 원본별 `ModeWide`/`MissionWide` 생성 배경의 바깥 사분면을 연결한다. 공통 MenuMetal은 슬롯에만 쓴다. 확장 타이틀·모드·미션의 원본 배경은 반 texel 테두리 UV를 유효 색에 고정하여 검정 POT 여백 혼입을 막는다. 중앙 UV와 원본480/sprite 경로는 유지한다. 화면별 자원 수명과 원본 정책을 우회하지 않는다. [검은줄 재현·검사](menu-joins-20261025.md).
 
 사용자 승인으로 `Art/Extensions`의 별도 생성 이미지를 번들 `Extensions`에서 읽는다. 타이틀은 생성 이미지의 바깥 두 사분면만 원본과 같은 이동·회전·확대 변환으로 그린다. 원본 사각형 바깥20단위에만 가장자리 반사/알파 전환을 적용한다. 이 보조 draw에서만 GL_MODULATE를 쓰고 즉시 GL_REPLACE로 복원한다. 원본 sprite와 전투 렌더 규칙은 유지한다. 메뉴 원본 부분은 텍스처 clip으로 재배치하며 CPU bitmap을 만들지 않는다. 생성 자원도 화면 scope의 업로드·해제 규칙을 따른다. [적용·포맷 비용·증거](menu-art-extension-20261025.md).
+
+
+## Mac 전체 화면 캡처 검사
+
+CUA 창 캡처에 여백이 보이면 창·content view 크기, 원점, GL backing 크기를 확인한다. macOS 미리보기의 ‘스크린샷 찍기 → 전체 화면’으로 같은 앱의 전체 화면을 캡처해 대조한다. 전체 화면 전환 애니메이션이 끝난 뒤 캡처한다.
+
+캡처 원본과 SHA-256·크기를 보존한다. 화면 가장자리 픽셀과 게임 표시를 함께 확인한다. 캡처 경로에서 생긴 축소·여백에 맞춰 게임 좌표나 출력 크기를 역보정하지 않는다. 시스템 알림 등이 포함된 원본은 로컬 증거로 보존하고 게시용 이미지와 구분한다. [2026-10-27 대조 결과](evidence/mac-fullscreen-capture-20261027.json).
+
+## 실물 참조 유닛과 VTOL 자원
+
+현실의 유닛은 `integrate-game-art`의 실물 사진·도면 참조 절차로 그린다. 채택된 V2는 보존하며, 2026-10-27 외곽선 수정본 `Art/VTOL/20261027-v3/`를 `Art/Extensions/VTOL_*.png`에 포함한다. HMMedia는 이3종만 로드 시 논리 폭112/108/116으로 고품질 축소하고 기존 업로드·캐시 경로를 사용한다. 기존 원본 에셋 디코딩과 GL 필터·블렌드는 유지한다. 높이는 기체 비율을 유지하며 발사점·노즐·피격 범위도 함께 줄인다. 불꽃은 후방 노즐 하나에 기존 BulletEffect2 첫 프레임을 합성한다. 기체와 같은 회전으로 노즐·발사점을 이동하고 불꽃은 충돌 범위에서 제외한다. [세부](vtol-expansion.md).

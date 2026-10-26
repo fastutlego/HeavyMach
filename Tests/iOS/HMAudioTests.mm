@@ -1,3 +1,4 @@
+#import "HMResources.h"
 #import <XCTest/XCTest.h>
 #include "../../vendor/openal-soft/include/AL/al.h"
 #import "../../Sources/iOS/HMMedia.h"
@@ -16,7 +17,7 @@ static NSArray<NSString *> *expectedSourceOrder() {
 - (void)testOriginalResourcesExistAndDecodeWithoutPlayback {
     HMMedia *media=[HMMedia new];
     for(NSString *name in expectedSourceOrder()) {
-        XCTAssertNotNil([NSBundle.mainBundle URLForResource:name withExtension:@"wav" subdirectory:@"Audio"]);
+        XCTAssertNotNil([HMGameResourceBundle() URLForResource:name withExtension:@"wav" subdirectory:@"Audio"]);
         NSDictionary *voice=[media.audio soundInfo:name];
         XCTAssertGreaterThan([voice[@"bufferID"] unsignedIntValue],0u,@"%@ must decode into a real AL buffer",name);
         XCTAssertEqual([voice[@"channels"] intValue],1);XCTAssertEqual([voice[@"bits"] intValue],16);
@@ -28,7 +29,12 @@ static NSArray<NSString *> *expectedSourceOrder() {
 - (void)testInitEagerlyCreatesAndPreparesOriginalSourcesInOrder {
     HMMedia *media=[HMMedia new];NSDictionary *diagnostics=[media.audio diagnostics];
     XCTAssertEqualObjects(diagnostics[@"renderer"],@"OpenAL Soft");
+    #if TARGET_OS_OSX
+    // CoreAudio exposes the selected device name on macOS (e.g. built-in speakers).
+    XCTAssertGreaterThan([diagnostics[@"device"] length],NSUInteger(0));
+#else
     XCTAssertEqualObjects(diagnostics[@"device"],@"CoreAudio Default");
+#endif
     XCTAssertEqual([diagnostics[@"bufferCount"] unsignedIntegerValue],NSUInteger(31));
     XCTAssertEqual([diagnostics[@"sourceCount"] unsignedIntegerValue],NSUInteger(31));
     XCTAssertEqualObjects(diagnostics[@"creationOrder"],expectedSourceOrder());

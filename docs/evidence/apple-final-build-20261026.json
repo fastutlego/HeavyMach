@@ -1,0 +1,17 @@
+{
+  "source_commit": "58ade7ae",
+  "isolated_export": true,
+  "incremental_build": true,
+  "logs": {
+    "final-mac.log": {
+      "path": "/private/tmp/heavymach-apple-clean.0bWLXm/final-mac.log",
+      "sha256": "3db0fdb51b1feac7788e344c85aa5cf31c4cad3fa4ca9045245bc065cf2f1ba8",
+      "succeeded": true
+    },
+    "final-ios.log": {
+      "path": "/private/tmp/heavymach-apple-clean.0bWLXm/final-ios.log",
+      "sha256": "4ee4568994d3e38e4f7b7150fd7d55cfa7fc837d11ebefd9a9e4eb6860b36e37",
+      "succeeded": true
+    }
+  }
+}

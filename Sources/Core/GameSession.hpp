@@ -59,6 +59,7 @@ public:
  void setCameraOffset(Vector2 offset);
  void setCanvasWidth(float width);
  float canvasWidth()const;
+ void setCanvasHeight(float height);float canvasHeight()const;
  // Canvas-width x 320 logical coordinates with origin bottom-left; state 0/1/2.
  void touch(Vector2 logical,int state);
  // Cancel/keyboard/outside release has no new aim coordinate. Keep a live burst's target.

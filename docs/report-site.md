@@ -1,5 +1,143 @@
 # HeavyMach 보고 사이트
 
+## 최신 게시 — 2026-10-27 VTOL 외곽선·크기·불꽃 수정
+
+V3 그림3개, Heli001/Heli006과의 실제 GPU 비교, 줄어든 기체와 후방 불꽃 전투 캡처, 두 기기 일반·치트 앱 업데이트 결과를 게시했다. 이전 설치 캡처는 첫 적용 이력으로 남겼다.
+
+- URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/vtol-art.html#section-7
+- 소스: `7738deb89ac975913633b725f7d6a8b6c2574f2f`
+- 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_2e5818a2893c81919a220623152d525b`
+- 배포: `appgdep_6adfad31ade88191bb78bc34344288a7`, `succeeded`, 2026-10-26T19:42:53.724267+00:00. 소유자 전용 유지.
+- 상대 링크363개·앵커 검사, 원고와 VTOL 전체 자산 바이트 일치, 기존 메인 이미지13개 유지.
+- 두 기기 게임 캡처와 단독 비교 PNG를 직접 확인했다. Chrome 로컬 화면에서 새 절의 제목·본문·크기 표를 확인했다. 후속 스크롤은 `noWindowsAvailable`로 실패해 새 이미지의 브라우저 배치 확인은 완료하지 않았다. 게시본 인증 후 화면은 재검사하지 않았다.
+
+## 이전 게시 — 2026-10-27 공중 적 구현·기기 설치
+
+채택된3종을 게임에 적용한 결과,14개 서브미션의113대 배치, iPhone·iPad 일반/치트 설치·실행, 코어19개·기기별8개 검사와 실제 기기 렌더 캡처6장을 게시했다. 원래 적1,182개 항목 보존과 후속 장시간 검사 범위를 기록했다.
+
+- URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/vtol-art.html#section-6
+- 소스: `24c733a6aa58ac7d9ae2b9d23c4e8dac813ecc63`
+- 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_29cb02bb3d6c8191942c2e482a8dca90`
+- 배포: `appgdep_6adfa66bce008191a1bb7a12a3b2ffb3`, `succeeded`, 2026-10-26T19:13:59.137364+00:00. 소유자 전용 유지.
+- 상대 링크348개·앵커 검사, 원고와 모든 VTOL 자산의 바이트 일치 확인. 기존 메인 이미지13개 유지.
+- 게임 캡처 원본을 확인했다. Chrome 로컬 페이지에서 수정된 도입·배치 본문과 새 목차를 확인했다. 새 결과 절의 AX 내용·이미지 링크는 확인했으나 화면 이동 중 `noWindowsAvailable`로 캡처6장의 브라우저 배치 확인은 완료하지 않았다. 게시본 인증 후 화면은 재검사하지 않았다.
+
+## 이전 게시 — 2026-10-27 공중 적 두 번째 시안
+
+실물 사진·도면을 참조한 야크141·해리어 GR3·F35B 새 PNG3종을 게시했다. 해리어의 중복 배기구를 수정했고 기체 그림에 불꽃을 넣지 않았다. 큰 그림·축소 비교·원본 다운로드·생성 프롬프트·참조 링크를 제공하며 첫 시안은 접힌 비교 항목으로 보존했다. 무장·113대 배치안과 제품 코드·설치본은 유지했다.
+
+- URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/vtol-art.html
+- 소스: `8f828ce153f27d96e637d26ec948e8f60e0ca3bf`
+- 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_c7f9c7f70aa48191a1e1f603247d1559`
+- 배포: `appgdep_6adf9fe80884819180ae54dce7fcb2f3`, `succeeded`, 2026-10-26T18:46:11.874673+00:00. 소유자 전용 유지.
+- 상대 링크333개·앵커, 원고·모든 VTOL 자산 바이트 일치, PNG3개 알파 채널 검사 통과. 기존 메인 이미지13개 유지.
+- 생성된3종 원본을 확인했다. Chrome 좁은 창에서 새 본문·야크·해리어 큰 그림 표시를 확인했다. 후속 스크롤은 CUA `noWindowsAvailable`로 실패해 F35 페이지 표시·축소 비교·접힌 이전 시안의 화면 검사는 완료하지 않았다. 게시본 인증 후 화면은 재검사하지 않았다.
+
+## 이전 게시 — 2026-10-27 헬기 평균 수량·시안 재작업
+
+41개 맵의 일반 헬기·헬기형 보스 수, 미션별 평균,14개 서브미션에 총113대 추가하는 수량안을 반영했다. 첫3종 그림은 사용자 형상 지적으로 미채택·재작업 상태로 표시했다. 제품 코드·설치본은 유지했다.
+
+- URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/vtol-art.html
+- 소스: `8ace336060cea6c030fd6b51f8f8a644325caa17`
+- 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_fa9e1798a5c481919c5ca25b84b8394d`
+- 배포: `appgdep_6adf9d8138d88191beb21621f3a5ad5c`, `succeeded`, 2026-10-26T18:35:58.921490+00:00. 소유자 전용 유지.
+- 상대 링크324개·앵커·원고 바이트 일치 검사 통과. 직전 CUA noWindowsAvailable 이후 이번 표 수정의 추가 브라우저 검사는 하지 않았다. 기존 시안 원본을 보존했다.
+
+## 이전 게시 — 2026-10-27 공중 적3종 시안·무장·미션
+
+야크141·해리어·F35B 투명PNG3종, 기존 유닛과 축소 비교, 기존 헬기 무기3개 재사용안,14개 서브미션의 추가 배치 후보를 게시했다. 원본 그림·프롬프트·파일 해시와 실제 맵/무기 조사 결과를 연결했다. 제품 코드·설치본 변경은 없다.
+
+- URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/vtol-art.html
+- 소스: `ca502eaa11d1c6eec33acf626118057c9d67eac4`
+- 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_670338a6f7bc8191bcc3fa2d1c219629`
+- 배포: `appgdep_6adf9b7e45bc8191a5edc10b227a7a87`, `succeeded`, 2026-10-26T18:27:22.867740+00:00. 소유자 전용 유지.
+- 상대 링크322개·앵커·모든 시안/원고의 바이트 일치 검사 통과. 기존 메인 이미지13개 보존. Chrome 로컬 좁은 창에서 본문·F35 큰 그림·기존 유닛과 야크 축소 비교까지 확인했다. 후속 스크롤은 noWindowsAvailable로 실패해 나머지 축소 비교의 화면 검사는 완료하지 않았다. 생성된3종 원본은 각각 확인했다. 게시본 인증 후 화면은 재검사하지 않았다.
+
+## 이전 게시 — 2026-10-27 수직이착륙 공중 적 추가 계획
+
+야크·해리어·F35 3종의 요구, 기존 헬기 무기·미션 배치 조사, 단독 작업 가능 범위를 게시했다. 기존 스폰 항목을 보존하고 사이사이에 추가하는 조건을 명시했다. 제품 구현 전이다.
+
+- URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/apple-platforms.html#section-15
+- 소스: `6bcb7182daca3764863af90740048dab7bf39a09`
+- 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_31c9b52be9608191afe44a39af3f65a2`
+- 배포: `appgdep_6adf98a078e8819196de9152d11b9640`, `succeeded`, 2026-10-26T18:15:08.949151+00:00. 소유자 전용 유지.
+- 상대 링크299개·앵커와 원고/조사 JSON 바이트 일치 검사 통과. 기존 이미지13개 보존. Chrome 로컬 좁은 창에서 새 요구 목록을 확인했다. 게시본 인증 후 화면은 재검사하지 않았다.
+
+## 이전 게시 — 2026-10-27 일반 앱·무선 검증
+
+iPhone 일반 앱 설치와 무선 재설치, 두 기기 LLDB 검사, iPad 무선 XCTest8/8·Time Profiler21.716초 결과를 게시했다. 무선 작업 절차·외부 스킬 조사·실행 오류 복구·증거 JSON을 연결했다. 기존 표시시간 실패는 유지했다.
+
+- URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/apple-platforms.html#section-14
+- 소스: `3c1215da0c5d48145520efa29127de807967b1d8`
+- 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_a3bd4446658481919505b7f28794c718`
+- 배포: `appgdep_6adf91a5d4f48191ae045ede1851806a`, `succeeded`, 2026-10-26T17:45:23.406674+00:00. 소유자 전용 유지.
+- 상대 링크296개와 HTML 앵커, 원고·절차·증거 JSON 바이트 일치를 확인했다. 기존 이미지13개를 보존했다. Chrome 로컬 좁은 창에서 추가 본문과 표의 시작 부분을 확인했다. 게시본 인증 후 화면은 다시 검사하지 않았다.
+
+## 이전 게시 — 2026-10-27 iPhone·iPad 실제 기기 검사
+
+치트 앱의 기기별84/85 결과, 실제 NSTimer와 CADisplayLink 비교 측정, 회전·터치·키보드·복귀 조작, Instruments 누수0건의 기록 범위와 iPad 저전력 로그를 게시했다. 무선 설치·디버깅 조사 과제도 추가했다. 제품 소스는 변경하지 않았다.
+
+- URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/apple-platforms.html#section-13
+- 소스: `d733f626f74b6d8ed8cfbfa1aa63423d3bde8c81`
+- 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_34cc0b76be448191bc298b1eb8c2bfef`
+- 배포: `appgdep_6adf8b61c8b08191ab98add8ebdf055f`, `succeeded`, 2026-10-26T17:18:36.969329+00:00. 소유자 전용 유지.
+- 상대 링크275개와 HTML 앵커, 원고·증거 JSON 바이트 일치를 확인했다. 기존 이미지13개를 보존했다. Chrome 로컬 화면에서 추가 본문과 표의 시작 부분을 확인했다. 게시본 인증 후 화면은 다시 검사하지 않았다.
+
+## 이전 게시 — 2026-10-27 Mac 전체 화면 캡처 대조
+
+macOS 자체 전체 화면 캡처에서 게임이 화면 끝까지 표시됨을 확인한 결과를 게시했다. CUA 창 캡처의 흰 여백 분류, 원본 PNG 해시와 가장자리 측정값, 후속 검사 절차를 문서에 반영했다. 문서·사이트 생성기 커밋은 `1f2629fa`다. 제품 코드는 변경하지 않았다.
+
+- URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/apple-platforms.html#section-12
+- 소스: `f47b3cc6b73b417983728acd05f1e1695176dc06`
+- 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_00c2010ebe148191ad8c1e2d59b0c387`
+- 배포: `appgdep_6adf741006bc8191b218be869ad31a3b`, `succeeded`, 2026-10-26T15:39:09.584569+00:00. 소유자 전용 유지.
+- 상대 파일 링크127개와 대상 HTML 앵커, 원고·증거 JSON 바이트 일치를 확인했다. 기존 이미지13개를 보존했다. 이번 문구 추가의 브라우저 화면 검사는 수행하지 않았다.
+
+## 이전 게시 — 2026-10-26 Mac 누수0건·표시 대기 수정
+
+정식·치트 앱의 개발 서명과 누수0건, 잠금 해제 상태의33개 검사 통과, Mac 표시 대기·표면 갱신·Retina 수정과 여섯 장면 측정값을 게시했다. 순간 프레임 지연과 CUA 캡처 여백, 실제 iPhone/iPad 성능 미측정 범위를 함께 남겼다. 제품·검사 기록 커밋은 `314089fa`다.
+
+- URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/apple-platforms.html#section-11
+- 소스: `3b37d69aa1ebcd220219d41191153887e25e8dd8`
+- 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_aef3d2e4c7e08191ab16a4258a5e13f3`
+- 배포: `appgdep_6adf6a00090c8191b7b20dc35ec9e7c3`, `succeeded`, 소유자 전용 유지.
+- 로컬 링크143개와 원고·증거 JSON 바이트 일치를 확인했다. 기존 이미지13개를 보존했다. Chrome 실제 화면에서 새 결과와 본문 표시를 확인했다. 게시본 인증 후 화면은 이번에 다시 검사하지 않았다.
+
+
+## 이전 게시 — 2026-10-26 Mac 서명·누수 원인
+
+`/apple-platforms.html`에 AppKit 초기화부터 AppIntents 등록까지의 LLDB 호출 경로, 서비스의 팀 ID 검증 거절, Mac 서명 설정 수정과 기능32개 재검사 결과를 게시했다. 정상 개발 서명본의 누수 재검사는 키체인 잠금으로 남아 있음을 명시했다.
+
+- 저장소 커밋: `40276f4f`.
+- Sites 소스: `8eae1ed832016379c6309f06af885248fd5522aa`.
+- 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_127750aa44fc819189b64c3cfae6ad1c`.
+- 배포: `appgdep_6adf60bbf89881918168956ebea03adb`, `succeeded`, 2026-10-26T14:16:45.586044+00:00. 소유자 전용 유지.
+- 로컬 링크142개·원고 다운로드 바이트 일치 확인. 기존13개 이미지 보존. Mac 잠금 상태로 새 브라우저 화면 확인은 수행하지 않았다.
+
+
+## 최신 게시 — 2026-10-26 Mac 객체 해제·일반 앱 추적
+
+`/apple-platforms.html`에 게임 객체 해제24개 확인, XCTest 없는 일반 앱의 메모리 측정, 잠금 상태로 건너뛴 전체 화면 검사와 원시 로그 해시를 추가했다. 실제 제품 코드는 앞선 `58ade7ae`와 같고 추가 검사·문서 커밋은 `d39caa98`다.
+
+- Sites 소스: `e0ec9bfee732b6963da38e37da3bb15b560f868e`.
+- 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_5cefc2b4c9948191b20da4bd9dd78e02`.
+- 배포: `appgdep_6adf5996e5e48191a0c80be31f986e78`, `succeeded`, 2026-10-26T13:46:12.972069+00:00. 소유자 전용 유지.
+- 로컬 링크141개, 원고 다운로드 일치, 반복 생성 시 결과 불변을 확인했다. CSS 중복 누적을 제거했다. 기존13개 이미지를 보존했다.
+- Mac 잠금 상태여서 새 브라우저 화면 검사는 수행하지 못했다. 전체 화면 검사1개를 통과 수에 포함하지 않았다.
+
+
+## 최신 게시 — 2026-10-26 Apple 모듈·키보드·성능 검사
+
+`/apple-platforms.html`에 공용 모듈, 키보드, Mac·iPad·iPhone 검사, Instruments CPU·메모리 결과와 실패 범위를 게시했다. `/auto-aim.html`에 후속 개발 계획을 게시했다. 기존13개 이미지를 유지했다.
+
+- 제품 커밋: `58ade7ae` (`feat/apple-workspace-modules`). main·v0.9 변경 없음.
+- Sites 소스: `b190878370a67e873ecb8ea4632b54f7274ba97a`.
+- 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_6841e3631ff88191af66f80fa8e3185c`.
+- 배포: `appgdep_6adf500612f8819197f7cdb649d1c552`, `succeeded`, 2026-10-26T13:05:23.936746+00:00. 소유자 전용 유지.
+- 생성된 최상위 HTML의 로컬 링크141개와 새 원고2개의 다운로드 일치를 확인했다. Mac 잠금으로 새 브라우저 화면 검사는 수행하지 못했다.
+- 최종 커밋을 별도 export에 반영하고 기존 Git 폴더·Codex 원본 폴더·IPA 읽기를 차단해 Mac/iOS Simulator 치트 앱을 다시 빌드했다. 모두 `BUILD SUCCEEDED`. 로그는 `/private/tmp/heavymach-apple-clean.0bWLXm/final-mac.log`, `final-ios.log`다. 앞선 cold-cache 빌드와 구분하며 이번 재검사는 기존 export의 빌드 캐시를 사용했다.
+
+
 ## 최신 게시 — 2026-10-26 새 원격 clone 빌드
 
 `/clone-build.html`에 자원 Git 누락 수정, GitHub clone·LFS 다운로드, IPA 읽기 차단 상태의 빌드4개·코어17·iOS14·두 앱 Simulator 실행 결과를 게시했다. 설치 가이드에서 IPA 추출·자원 수동 복사 요구를 제거했다.

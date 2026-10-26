@@ -1,0 +1,249 @@
+{
+  "date": "2026-10-27",
+  "base_commit": "4ea0814c",
+  "changes": {
+    "widths": {
+      "Heli001": 99,
+      "Yak141": 112,
+      "Harrier": 108,
+      "F35B": 116,
+      "Heli006": 126
+    },
+    "exhaust": "Removed forward nozzle; retain one aft nozzle per VTOL.",
+    "geometry": "Scale body height, hitbox, muzzle and remaining nozzle proportionally.",
+    "images": "Imagegen boundary edit, retained V2 originals, V3 in resource bundle.",
+    "texture": "High-quality one-time prefilter to logical sprite width instead of 512px texture minification. Original asset decoding and GL sampling/blending unchanged.",
+    "spawn": "1182 original entries and 113 VTOL additions unchanged."
+  },
+  "tests": {
+    "before": "VTOL width assertion failed on previous 140/132/148 dimensions.",
+    "after": "HeavyMachVTOLTests PASS, including 60 player weapon hit cases, one exhaust draw per unit, actual shot origin, movement, pause and original spawn preservation."
+  },
+  "devices": {
+    "ipad": {
+      "model": "iPad Air 13 M2",
+      "transport": "wired",
+      "tests": {
+        "gameplay": "1 passed, 0 failed",
+        "size_edge_comparison": "1 passed, 0 failed"
+      },
+      "apps": {
+        "normal": {
+          "install": "success",
+          "launch": "success"
+        },
+        "cheat": {
+          "install": "success",
+          "launch": "success"
+        }
+      }
+    },
+    "iphone": {
+      "model": "iPhone Air",
+      "transport": "localNetwork",
+      "tests": {
+        "gameplay": "1 passed, 0 failed",
+        "size_edge_comparison": "1 passed, 0 failed"
+      },
+      "apps": {
+        "normal": {
+          "install": "success",
+          "launch": "success"
+        },
+        "cheat": {
+          "install": "success",
+          "launch": "success"
+        }
+      }
+    }
+  },
+  "art": [
+    {
+      "path": "Art/VTOL/20261027-v3/VTOL_F35B.png",
+      "sha256": "8c2663b77851cde0665186c3ace3e7032de687e011162cfebe28fc71018a6913",
+      "dimensions": [
+        2033,
+        773
+      ]
+    },
+    {
+      "path": "Art/VTOL/20261027-v3/VTOL_Harrier.png",
+      "sha256": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb",
+      "dimensions": [
+        2034,
+        773
+      ]
+    },
+    {
+      "path": "Art/VTOL/20261027-v3/VTOL_Yak141.png",
+      "sha256": "fdff4c3a7193738d2da9ecb0dd233397490a5e1dc29a65544726cd9c68ace626",
+      "dimensions": [
+        2172,
+        724
+      ]
+    },
+    {
+      "path": "docs/public/media/vtol/refined/VTOL_F35B.png",
+      "sha256": "8c2663b77851cde0665186c3ace3e7032de687e011162cfebe28fc71018a6913"
+    },
+    {
+      "path": "docs/public/media/vtol/refined/VTOL_Harrier.png",
+      "sha256": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb"
+    },
+    {
+      "path": "docs/public/media/vtol/refined/VTOL_Yak141.png",
+      "sha256": "fdff4c3a7193738d2da9ecb0dd233397490a5e1dc29a65544726cd9c68ace626"
+    }
+  ],
+  "captures": [
+    {
+      "path": "docs/public/media/vtol/refined/ipad-vtol_size_edges.png",
+      "sha256": "009659c886ebd25478f07170092821ffb5d21cc3fb4f76523019e0f1d95fd0e7"
+    },
+    {
+      "path": "docs/public/media/vtol/refined/iphone-vtol_harrier.png",
+      "sha256": "5246f00d9bfbc286e3f82deabc6d06ad999effa473f5a7d1b506c04e29cb2915"
+    },
+    {
+      "path": "docs/public/media/vtol/refined/iphone-vtol_yak141.png",
+      "sha256": "40f81dce1e9040a80e248f02c28497b370fff300f78827154e9f724dec5dee4f"
+    },
+    {
+      "path": "docs/public/media/vtol/refined/iphone-vtol_f35b.png",
+      "sha256": "70546546f065289f5d0991cf9bfb0092f471f4453ff909fae8f9533c18a4fee0"
+    },
+    {
+      "path": "docs/public/media/vtol/refined/ipad-vtol_harrier.png",
+      "sha256": "fa5000aaada0012f0ce95b11a4478c124931e0f1cf2f88d2fb60394dab7f95af"
+    },
+    {
+      "path": "docs/public/media/vtol/refined/ipad-vtol_f35b.png",
+      "sha256": "d037cea60666eece68f039da412993458af4c41cf3a168513f1b9eb79ae01d0b"
+    },
+    {
+      "path": "docs/public/media/vtol/refined/ipad-vtol_yak141.png",
+      "sha256": "33a34175bff4789a7ee6ce73e5af6703e929b4c5e6c76b5a62b966db49872633"
+    },
+    {
+      "path": "docs/public/media/vtol/refined/iphone-vtol_size_edges.png",
+      "sha256": "009659c886ebd25478f07170092821ffb5d21cc3fb4f76523019e0f1d95fd0e7"
+    }
+  ],
+  "local_evidence": [
+    {
+      "path": "build/vtol-size-before.log",
+      "sha256": "bd8ffa1c0d0c7fa76bc53f14ae1a48aa9e1828f603073d786331b48c358f8273"
+    },
+    {
+      "path": "build/vtol-size-after.log",
+      "sha256": "d8aab50cbbbb70ef40e5d3ca635cde7c3a0dbef92464958f1ffd1bc8eaab9da6"
+    },
+    {
+      "path": "build/vtol-refine-20261027/ipad.log",
+      "sha256": "c6c394d4040d1799adeaf65a11705e7bce2ff416c7ef0f15ff3a662892384e41"
+    },
+    {
+      "path": "build/vtol-refine-20261027/iphone-details.log",
+      "sha256": "4c2cc736f3bd595e50bf8893b44c3f82e18f476457cfae07ec731a16ef19eba6"
+    },
+    {
+      "path": "build/vtol-refine-20261027/ipad-cheat-install.log",
+      "sha256": "40e1a99cfbbfa7afc988b9f972efe2687004b009876cedd6d4fe8b324b810440"
+    },
+    {
+      "path": "build/vtol-refine-20261027/iphone.log",
+      "sha256": "c078eac372f58f3e77942258e74759c29e98512106f1b27e8c01d18b77f7a989"
+    },
+    {
+      "path": "build/vtol-refine-20261027/ipad-normal-launch.log",
+      "sha256": "347cce23cc3c23a709d7eca72b32ef9207eae856e2246db47a423c127e01eee9"
+    },
+    {
+      "path": "build/vtol-refine-20261027/iphone-comparison.log",
+      "sha256": "c2d4e300a41eac4b79530aac4be3b8efa8ced992644951ed946a33b470ac8c53"
+    },
+    {
+      "path": "build/vtol-refine-20261027/iphone-cheat-launch.log",
+      "sha256": "d8a976d9895929ec6d5d2653cf043a7bc51b0450ea023b67c9f9a95fbf628287"
+    },
+    {
+      "path": "build/vtol-refine-20261027/iphone-normal-install.log",
+      "sha256": "e5cb45db4b21c69feffeb279c22b50786b7fc5dfa0eb2f4f211e7f0585b86bbe"
+    },
+    {
+      "path": "build/vtol-refine-20261027/iphone-cheat-install.log",
+      "sha256": "a3e34668e319a9d61a97bdb4f5ed5b9f25e3ed19c06fd0983c6415ab4c1b1a74"
+    },
+    {
+      "path": "build/vtol-refine-20261027/ipad-details.log",
+      "sha256": "f71ec47fbfc6ef9d317905d351d324b3ecead25c3c69d9f675f223a3119eaec9"
+    },
+    {
+      "path": "build/vtol-refine-20261027/ipad-normal-install.log",
+      "sha256": "3650b561bda1a39a53069a5a7ff9c19828b54be1ff304621d103151977326b1f"
+    },
+    {
+      "path": "build/vtol-refine-20261027/ipad-cheat-launch.log",
+      "sha256": "d8a976d9895929ec6d5d2653cf043a7bc51b0450ea023b67c9f9a95fbf628287"
+    },
+    {
+      "path": "build/vtol-refine-20261027/ipad-comparison.log",
+      "sha256": "a3eb679fbf5ac6a22dde00f076ca56af6cddb98791f8fbe5b124a30035166758"
+    },
+    {
+      "path": "build/vtol-refine-20261027/iphone-normal-launch.log",
+      "sha256": "347cce23cc3c23a709d7eca72b32ef9207eae856e2246db47a423c127e01eee9"
+    },
+    {
+      "path": "build/vtol-refine-20261027/ipad-normal-install.json",
+      "sha256": "d5ff03a105ea7ecf1fb404f4ab934c02b758676a97c6be8391c501d5f9491187"
+    },
+    {
+      "path": "build/vtol-refine-20261027/iphone-normal-install.json",
+      "sha256": "9f099e01d967868d1d2e5a2b757742a0cae2c9cc7703edae96da40d8f676ae27"
+    },
+    {
+      "path": "build/vtol-refine-20261027/ipad-cheat-install.json",
+      "sha256": "a616dd9002d2fd12f82673426c86cb0b5a79fe407b5d1ae6a496bb4f3c97e958"
+    },
+    {
+      "path": "build/vtol-refine-20261027/iphone-cheat-install.json",
+      "sha256": "b665b1ad496b08a3ef9721c9930ddb28a362624c0b926e0c1b6efa2b5620431e"
+    },
+    {
+      "path": "build/vtol-refine-20261027/ipad-cheat-launch.json",
+      "sha256": "dd0b3205c239aa008d714a5e5fe9601b71c0d2211d9488928643b1b3c9c783ec"
+    },
+    {
+      "path": "build/vtol-refine-20261027/iphone-normal-launch.json",
+      "sha256": "056e31f903c2d37b8a1d84696114d725fa22dbd34f97c57ce92840cfc357c962"
+    },
+    {
+      "path": "build/vtol-refine-20261027/iphone-cheat-launch.json",
+      "sha256": "3fd872eec13d29cd7abb96c06a4a31ed0b7deb08c06ed80f5d2f417a23957175"
+    },
+    {
+      "path": "build/vtol-refine-20261027/ipad-normal-launch.json",
+      "sha256": "b3200c2633b8835d318e1fa45cce471b31ae6eb73d837300a4e08797bc15f871"
+    }
+  ],
+  "limits": [
+    "Device tests cover short scripted gameplay and isolated sprite comparison, not sustained full-campaign difficulty or thermal testing.",
+    "Captures are logical GPU frames, not full OS screenshots.",
+    "The F35B combat capture is partially occluded by original helicopters; isolated comparison shows the complete sprite."
+  ],
+  "apps": [
+    {
+      "name": "HeavyMachRestored",
+      "binary_sha256": "df570e06393a3a599689e33e92ccfbb15c7642b961b8a1c30aaf07a0f4064dc0",
+      "debug_dylib_sha256": "e0aa8814e75aa6bfbce61d54024a26c0ae24e44e3f4a8397bbdf0e47e4f424dd",
+      "VTOL_bundle_assets_match": true
+    },
+    {
+      "name": "HeavyMachValidation",
+      "binary_sha256": "b556c499b3d054b3b79bf5773fb08e5e52b828f6916c4c8f58b9b0291c197e1c",
+      "debug_dylib_sha256": "64c9fa4c05350a9529918612d56191ea1cd6df71698ab93f77929862550d8ddb",
+      "VTOL_bundle_assets_match": true
+    }
+  ]
+}

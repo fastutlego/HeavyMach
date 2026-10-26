@@ -1,5 +1,9 @@
 # 시간·저장·음향 정책
 
+## Apple 플랫폼 확장 — 2026-10-26
+
+Mac 저장 위치는 Application Support/<bundle ID>/HvM.dat다. 일반·치트 저장은 분리하며 iPhone/iPad의 Documents 경로는 유지한다. Mac 앱/창 비활성도 같은 중단 처리를 호출한다. 키 설정 저장은 게임 저장과 별도이며 배정 확정 때만 쓴다. [입력 정책](keyboard-input-policy.md).
+
 정본: [canonical](canonical.md). 제품 소비자는 HMGameView/GameSession/GlobalInfo/SaveData/HMOpenALAudio다.
 
 ## 시간

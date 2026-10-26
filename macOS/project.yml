@@ -1,0 +1,165 @@
+name: HeavyMachMac
+options:
+  deploymentTarget:
+    macOS: '12.0'
+settings:
+  base:
+    DEVELOPMENT_TEAM: PDF8XXXYH9
+    CODE_SIGN_STYLE: Automatic
+    CODE_SIGN_IDENTITY: Apple Development
+projectReferences:
+  Modules:
+    path: ../Modules/HeavyMachModules.xcodeproj
+targets:
+  HeavyMachMac:
+    type: application
+    platform: macOS
+    sources:
+    - ../Sources/Mac/Application.mm
+    dependencies:
+    - target: Modules/HeavyMachAppleRuntime_macOS
+      embed: false
+    - target: Modules/HeavyMachCore_macOS
+      embed: false
+    - target: Modules/HeavyMachAssets_macOS
+      link: false
+      embed: false
+    - bundle: HeavyMachAssets.bundle
+    - sdk: AppKit.framework
+    - sdk: GameController.framework
+    - sdk: Foundation.framework
+    - sdk: OpenGL.framework
+    - sdk: QuartzCore.framework
+    - sdk: CoreGraphics.framework
+    - sdk: AudioToolbox.framework
+    - sdk: CoreAudio.framework
+    preBuildScripts:
+    - name: Build OpenAL Soft
+      script: bash "$SRCROOT/../tools/build_openal.sh" macosx
+      basedOnDependencyAnalysis: false
+      outputFiles:
+      - $(SRCROOT)/../build/openal/$(PLATFORM_NAME)/libopenal.a
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.gelb2.heavymach.mac.restored
+        CLANG_CXX_LANGUAGE_STANDARD: c++20
+        CLANG_ENABLE_OBJC_ARC: 'YES'
+        SUPPORTS_MACCATALYST: 'NO'
+        HEADER_SEARCH_PATHS:
+        - $(SRCROOT)/../Sources/iOS
+        - $(SRCROOT)/../Sources/Apple
+        OTHER_LDFLAGS:
+        - $(inherited)
+        - -ObjC
+        - -force_load
+        - $(SRCROOT)/../build/openal/macosx/libopenal.a
+        GCC_PREPROCESSOR_DEFINITIONS:
+        - $(inherited)
+        - HM_VALIDATION=0
+    info:
+      path: HeavyMachMac-Info.plist
+      properties:
+        CFBundleShortVersionString: '1.13'
+        CFBundleVersion: '1'
+        NSHighResolutionCapable: true
+        NSPrincipalClass: NSApplication
+  HeavyMachMacValidation:
+    type: application
+    platform: macOS
+    sources:
+    - ../Sources/Mac/Application.mm
+    - path: ../Resources/Validation
+      type: folder
+      buildPhase: resources
+    dependencies:
+    - target: Modules/HeavyMachValidationRuntime_macOS
+      embed: false
+    - target: Modules/HeavyMachValidationCore_macOS
+      embed: false
+    - target: Modules/HeavyMachAssets_macOS
+      link: false
+      embed: false
+    - bundle: HeavyMachAssets.bundle
+    - sdk: AppKit.framework
+    - sdk: GameController.framework
+    - sdk: Foundation.framework
+    - sdk: OpenGL.framework
+    - sdk: QuartzCore.framework
+    - sdk: CoreGraphics.framework
+    - sdk: AudioToolbox.framework
+    - sdk: CoreAudio.framework
+    preBuildScripts:
+    - name: Build OpenAL Soft
+      script: bash "$SRCROOT/../tools/build_openal.sh" macosx
+      basedOnDependencyAnalysis: false
+      outputFiles:
+      - $(SRCROOT)/../build/openal/$(PLATFORM_NAME)/libopenal.a
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.gelb2.heavymach.mac.validation
+        CLANG_CXX_LANGUAGE_STANDARD: c++20
+        CLANG_ENABLE_OBJC_ARC: 'YES'
+        SUPPORTS_MACCATALYST: 'NO'
+        HEADER_SEARCH_PATHS:
+        - $(SRCROOT)/../Sources/iOS
+        - $(SRCROOT)/../Sources/Apple
+        OTHER_LDFLAGS:
+        - $(inherited)
+        - -ObjC
+        - -force_load
+        - $(SRCROOT)/../build/openal/macosx/libopenal.a
+        GCC_PREPROCESSOR_DEFINITIONS:
+        - $(inherited)
+        - HM_VALIDATION=1
+    info:
+      path: HeavyMachMacValidation-Info.plist
+      properties:
+        CFBundleShortVersionString: '1.13'
+        CFBundleVersion: '1'
+        NSHighResolutionCapable: true
+        NSPrincipalClass: NSApplication
+  HeavyMachMacInputTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+    - ../Tests/Apple
+    - ../Tests/iOS/HMGLReferenceTests.mm
+    - ../Tests/iOS/HMMediaParityTests.mm
+    - ../Tests/iOS/HMAudioTests.mm
+    - ../Tests/iOS/HMOpenALAudioTests.mm
+    dependencies:
+    - target: HeavyMachMacValidation
+    - sdk: CoreGraphics.framework
+    - sdk: AppKit.framework
+    - sdk: AVFoundation.framework
+    - sdk: OpenGL.framework
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: true
+        PRODUCT_BUNDLE_IDENTIFIER: com.gelb2.heavymach.mac.tests
+        CLANG_CXX_LANGUAGE_STANDARD: c++20
+        CLANG_ENABLE_OBJC_ARC: true
+        GCC_PREPROCESSOR_DEFINITIONS:
+        - $(inherited)
+        - HM_VALIDATION=1
+        HEADER_SEARCH_PATHS:
+        - $(SRCROOT)/../Sources/Core
+        - $(SRCROOT)/../Sources/iOS
+        - $(SRCROOT)/../Sources/Apple
+schemes:
+  HeavyMachMac:
+    build:
+      targets:
+        HeavyMachMac: all
+    run:
+      config: Debug
+  HeavyMachMacValidation:
+    build:
+      targets:
+        HeavyMachMacValidation: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+      - HeavyMachMacInputTests

@@ -1,0 +1,171 @@
+{
+  "date": "2026-10-27",
+  "source_commit": "aa45c9b6aea30a90a6a74438fa4a5ce6d7a6aefb",
+  "product_code_changed": false,
+  "xcode": "27.1 (27A9275)",
+  "build_configuration": "Debug, Apple Development signed; normal means non-cheat",
+  "devices": [
+    {
+      "model": "iPhone Air",
+      "os": "27.0.1 (24A446)",
+      "final_transport": "localNetwork",
+      "tunnel": "connected",
+      "normal_install": "passed, initially wired then wireless reinstall",
+      "normal_launch": "passed",
+      "lldb": {
+        "one_shot": "-[HMGameView frame:]",
+        "location": "HMGameView.mm:880",
+        "hit": true,
+        "self_read": true,
+        "resume": true
+      }
+    },
+    {
+      "model": "iPad Air 13-inch (M2)",
+      "os": "27.0.1 (24A446)",
+      "final_transport": "localNetwork",
+      "tunnel": "connected",
+      "normal_install": "passed",
+      "normal_launch": "passed, title and slot menu observed",
+      "cheat_install": "Xcode Run and XCTest wireless delivery passed",
+      "lldb": {
+        "one_shot": "-[HMGameView frame:]",
+        "location": "HMGameView.mm:880",
+        "hit": true,
+        "self_read": true,
+        "resume": true
+      },
+      "xctest": {
+        "passed": 8,
+        "failed": 0,
+        "skipped": 0,
+        "tests": [
+          "HMAppleInputTests testEveryWeaponKeyboardSelectionAndFire",
+          "HMAppleInputTests testFullscreenRatiosAndTouchInverse",
+          "HMAppleInputTests testHeightExtensionPreservesAircraftBossMotion",
+          "HMAppleInputTests testKeyboardMenusAndSettings",
+          "HMAppleInputTests testKeyboardMoveAimJumpFireAndRelease",
+          "HMAppleInputTests testPausedResizeAndUpperCanvasAim",
+          "HMAppleInputTests testTouchFireWhileKeyboardMoves",
+          "HMFramePerformanceTests testProductionTimerAndFullScreenTouchViewport"
+        ],
+        "input_method": "test API injection, not physical Bluetooth/USB keyboard"
+      },
+      "time_profiler": {
+        "record_exit": 0,
+        "seconds": 21.715994,
+        "exported_rows": 10202,
+        "contains_game_frame_stack": true,
+        "scope": "startup/title wireless collection, not combat performance or leaks"
+      },
+      "manual": [
+        "resume existing cheat save",
+        "world touch produced visible projectile",
+        "right button moved tank and world scrolled",
+        "stop button selected",
+        "pause menu displayed"
+      ]
+    }
+  ],
+  "failures_and_recovery": [
+    {
+      "stage": "CLI build signing",
+      "error": "errSecInternalComponent",
+      "recovery": "Same scheme built using Xcode GUI and existing signing access; signature verified"
+    },
+    {
+      "stage": "XCTest startup",
+      "error": "missing HeavyMachRenderTests.xctest after Run build",
+      "recovery": "Xcode Build For Testing then selected suite passed 8/8"
+    },
+    {
+      "stage": "LLDB command input",
+      "error": "completion joined two commands",
+      "recovery": "separate prompts; variable read and resume succeeded"
+    }
+  ],
+  "limits": [
+    "Previous device timing failures remain open; selected wireless suite does not replace 85-test results",
+    "No new iPhone XCTest or Instruments run in this wireless pass",
+    "iPad was already reconnected after user-reported reboot; no controlled reboot repeated",
+    "No new physical keyboard, sustained heat or long-duration memory test"
+  ],
+  "evidence_files": [
+    {
+      "path": "build/wireless-20261027/normal-build.log",
+      "sha256": "8a87cbc5601ce0f880946292f6373a8d9ce59eb01c5fbe0c9408f6ff303b2367"
+    },
+    {
+      "path": "build/wireless-20261027/iphone-wireless-details.json",
+      "sha256": "2534720abc4ece2af70bbb091cde31e4b41b246eff26c5a4e318cb0e19a931ba"
+    },
+    {
+      "path": "build/wireless-20261027/iphone-wireless-install.json",
+      "sha256": "f5d11c0bd80e8980ce6be94552466aed0f0d2fd4ba90a67a196c9da9eec23771"
+    },
+    {
+      "path": "build/wireless-20261027/iphone-wireless-launch.json",
+      "sha256": "159d8a8ff333811e326441b325e72fd7bfc3c6b52724b60a27bfcd07e9beabf9"
+    },
+    {
+      "path": "build/wireless-20261027/ipad-normal-install.json",
+      "sha256": "63556ad4e975084669457750848e17019ea1f1171363e6a753f12f87355d8710"
+    },
+    {
+      "path": "build/wireless-20261027/ipad-debug-details.json",
+      "sha256": "fcc5f5b5f7939e1436eff5b30d5413f06f9768046f009db2f7381dc6d733da26"
+    },
+    {
+      "path": "build/wireless-20261027/iphone-breakpoint-details.json",
+      "sha256": "dc5a8ac084cd9121fa50f7d41e18004c5e6d4d2ca3471fbf308860eed2c499f4"
+    },
+    {
+      "path": "build/wireless-20261027/ipad-input.log",
+      "sha256": "2ffe5b7d74d51f46a31c8f448096c60894088cc26ed91ce48ba12eaaafd6f0b5"
+    },
+    {
+      "path": "build/wireless-20261027/ipad-input-rebuilt.log",
+      "sha256": "5160617562cdba5f98f38c15fbd6004af0f42696263131a274d41bb798ae0881"
+    },
+    {
+      "path": "build/wireless-20261027/ipad-input-rebuilt-summary.json",
+      "sha256": "5aa893849598faa61766ee1064e43e61946b2471d80c80bbfe525d07fe6e1234"
+    },
+    {
+      "path": "build/wireless-20261027/ipad-test-details.json",
+      "sha256": "3369d4dabf4d4d36fe8e3a884951edf6b02720c599966977ab225e1f6bf7404b"
+    },
+    {
+      "path": "build/wireless-20261027/ipad-instruments-details.json",
+      "sha256": "d5e0f4affc4a803ff129e9bc85550a918d43d7b3af57e88ce3f306fbbdce4f29"
+    },
+    {
+      "path": "build/wireless-20261027/ipad-wireless-cpu.log",
+      "sha256": "9052465377245c06bcba0afc3a318a4227541a523ac22d58129bc01b11ddea4f"
+    },
+    {
+      "path": "build/wireless-20261027/ipad-wireless-cpu-toc.xml",
+      "sha256": "d8f3d59c263633b77a22f5dc9c64de3c5da514bfafefe34fb420e0a55e467491"
+    },
+    {
+      "path": "build/wireless-20261027/ipad-wireless-cpu-samples.xml",
+      "sha256": "a2ae309270a6a94df31b4df135f332388bbf87a76ccde63961278e7806494f5a"
+    },
+    {
+      "path": "build/wireless-20261027/manual-observations.json",
+      "sha256": "eb7366a527b0414c29f04d42ad66e3bbaad80f88588cee53fb0f13a5e46b396b"
+    },
+    {
+      "path": "build/wireless-20261027/iphone-final-details.json",
+      "sha256": "bf551e1d30d77d6504aa9166f1f7ca548e13df1839652507f0322b88eeb0e387"
+    },
+    {
+      "path": "build/wireless-20261027/ipad-final-details.json",
+      "sha256": "d8c92d16d4894a9fe3a141a4736436da63a582e5de4ace7563e438bddd687c85"
+    },
+    {
+      "path": "build/wireless-20261027/iphone-final-launch.json",
+      "sha256": "348b973a480f992e8f36a70d1b126db35cb62c962736eaedaf053a183b4e1f0a"
+    }
+  ]
+}

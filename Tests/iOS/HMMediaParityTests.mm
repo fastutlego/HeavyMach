@@ -11,7 +11,7 @@
     XCTAssertEqual(records.count,NSUInteger(695));
     HMMedia *media=[HMMedia new];
     for(NSDictionary *record in records)@autoreleasepool {
-        NSString *name=record[@"name"];UIImage *image=[media image:name];XCTAssertNotNil(image,@"%@",name);if(!image)continue;
+        NSString *name=record[@"name"];HMImage *image=[media image:name];XCTAssertNotNil(image,@"%@",name);if(!image)continue;
         XCTAssertEqual(CGImageGetWidth(image.CGImage),[record[@"width"] unsignedIntegerValue],@"%@",name);
         XCTAssertEqual(CGImageGetHeight(image.CGImage),[record[@"height"] unsignedIntegerValue],@"%@",name);
         NSData *rgba=HMOriginalImageRGBA(image);XCTAssertNotNil(rgba,@"%@",name);

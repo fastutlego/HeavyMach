@@ -1,3 +1,4 @@
+#import "HMResources.h"
 #import "HMOpenALAudio.h"
 #include "../../vendor/openal-soft/include/AL/al.h"
 #include "../../vendor/openal-soft/include/AL/alc.h"
@@ -115,7 +116,7 @@ bool decodeWAV(NSData *data,PCM& out){
     for(auto key:heavymach::originalInitialSoundNames){
         NSString *name=[[NSString alloc] initWithBytes:key.data() length:key.size() encoding:NSUTF8StringEncoding];
         if(_voices.count(std::string(key)))continue;
-        NSURL *url=[NSBundle.mainBundle URLForResource:name withExtension:@"wav" subdirectory:@"Audio"];
+        NSURL *url=[HMGameResourceBundle() URLForResource:name withExtension:@"wav" subdirectory:@"Audio"];
         NSData *data=url?[NSData dataWithContentsOfURL:url]:nil;
         if(![self loadSoundData:data name:name])ready=NO;
     }
@@ -125,7 +126,7 @@ bool decodeWAV(NSData *data,PCM& out){
     if(!_applicationActive||!name.length||!std::isfinite(sourceX))return;
     auto found=_voices.find(name.UTF8String);
     if(found==_voices.end()){
-        NSURL *url=[NSBundle.mainBundle URLForResource:name withExtension:@"wav" subdirectory:@"Audio"];
+        NSURL *url=[HMGameResourceBundle() URLForResource:name withExtension:@"wav" subdirectory:@"Audio"];
         if(![self loadSoundData:url?[NSData dataWithContentsOfURL:url]:nil name:name])return;
         found=_voices.find(name.UTF8String);
     }

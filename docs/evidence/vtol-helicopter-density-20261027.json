@@ -1,0 +1,455 @@
+{
+  "date": "2026-10-27",
+  "classification": "recursive E_Heli_Prop_ part presence; boss flag separates bosses; includes E0603/E0604, excludes rotorless aircraft",
+  "stages": [
+    {
+      "mission": 1,
+      "substage": 1,
+      "map": "Stage01",
+      "ordinary_helicopters": 2,
+      "boss_helicopters": 0,
+      "all_enemies": 15
+    },
+    {
+      "mission": 1,
+      "substage": 2,
+      "map": "Stage02",
+      "ordinary_helicopters": 2,
+      "boss_helicopters": 0,
+      "all_enemies": 26
+    },
+    {
+      "mission": 1,
+      "substage": 3,
+      "map": "Stage03",
+      "ordinary_helicopters": 4,
+      "boss_helicopters": 0,
+      "all_enemies": 40
+    },
+    {
+      "mission": 1,
+      "substage": 4,
+      "map": "Stage04",
+      "ordinary_helicopters": 3,
+      "boss_helicopters": 0,
+      "all_enemies": 6
+    },
+    {
+      "mission": 2,
+      "substage": 1,
+      "map": "Stage05",
+      "ordinary_helicopters": 7,
+      "boss_helicopters": 0,
+      "all_enemies": 42
+    },
+    {
+      "mission": 2,
+      "substage": 2,
+      "map": "Stage06",
+      "ordinary_helicopters": 4,
+      "boss_helicopters": 0,
+      "all_enemies": 39
+    },
+    {
+      "mission": 2,
+      "substage": 3,
+      "map": "Stage07",
+      "ordinary_helicopters": 7,
+      "boss_helicopters": 0,
+      "all_enemies": 39
+    },
+    {
+      "mission": 2,
+      "substage": 4,
+      "map": "Stage08",
+      "ordinary_helicopters": 3,
+      "boss_helicopters": 0,
+      "all_enemies": 44
+    },
+    {
+      "mission": 2,
+      "substage": 5,
+      "map": "Stage09",
+      "ordinary_helicopters": 5,
+      "boss_helicopters": 1,
+      "all_enemies": 7
+    },
+    {
+      "mission": 3,
+      "substage": 1,
+      "map": "Stage10",
+      "ordinary_helicopters": 6,
+      "boss_helicopters": 0,
+      "all_enemies": 35
+    },
+    {
+      "mission": 3,
+      "substage": 2,
+      "map": "Stage11",
+      "ordinary_helicopters": 7,
+      "boss_helicopters": 0,
+      "all_enemies": 41
+    },
+    {
+      "mission": 3,
+      "substage": 3,
+      "map": "Stage12",
+      "ordinary_helicopters": 8,
+      "boss_helicopters": 0,
+      "all_enemies": 23
+    },
+    {
+      "mission": 3,
+      "substage": 4,
+      "map": "Stage13",
+      "ordinary_helicopters": 13,
+      "boss_helicopters": 0,
+      "all_enemies": 31
+    },
+    {
+      "mission": 3,
+      "substage": 5,
+      "map": "Stage14",
+      "ordinary_helicopters": 3,
+      "boss_helicopters": 0,
+      "all_enemies": 6
+    },
+    {
+      "mission": 4,
+      "substage": 1,
+      "map": "Stage25",
+      "ordinary_helicopters": 5,
+      "boss_helicopters": 0,
+      "all_enemies": 39
+    },
+    {
+      "mission": 4,
+      "substage": 2,
+      "map": "Stage26",
+      "ordinary_helicopters": 3,
+      "boss_helicopters": 0,
+      "all_enemies": 32
+    },
+    {
+      "mission": 4,
+      "substage": 3,
+      "map": "Stage27",
+      "ordinary_helicopters": 4,
+      "boss_helicopters": 0,
+      "all_enemies": 41
+    },
+    {
+      "mission": 4,
+      "substage": 4,
+      "map": "Stage28",
+      "ordinary_helicopters": 3,
+      "boss_helicopters": 0,
+      "all_enemies": 44
+    },
+    {
+      "mission": 4,
+      "substage": 5,
+      "map": "Stage29",
+      "ordinary_helicopters": 4,
+      "boss_helicopters": 0,
+      "all_enemies": 5
+    },
+    {
+      "mission": 5,
+      "substage": 1,
+      "map": "Stage15",
+      "ordinary_helicopters": 9,
+      "boss_helicopters": 0,
+      "all_enemies": 41
+    },
+    {
+      "mission": 5,
+      "substage": 2,
+      "map": "Stage16",
+      "ordinary_helicopters": 9,
+      "boss_helicopters": 0,
+      "all_enemies": 46
+    },
+    {
+      "mission": 5,
+      "substage": 3,
+      "map": "Stage17",
+      "ordinary_helicopters": 13,
+      "boss_helicopters": 0,
+      "all_enemies": 43
+    },
+    {
+      "mission": 5,
+      "substage": 4,
+      "map": "Stage18",
+      "ordinary_helicopters": 9,
+      "boss_helicopters": 0,
+      "all_enemies": 34
+    },
+    {
+      "mission": 5,
+      "substage": 5,
+      "map": "Stage19",
+      "ordinary_helicopters": 5,
+      "boss_helicopters": 0,
+      "all_enemies": 11
+    },
+    {
+      "mission": 6,
+      "substage": 1,
+      "map": "Stage20",
+      "ordinary_helicopters": 14,
+      "boss_helicopters": 0,
+      "all_enemies": 41
+    },
+    {
+      "mission": 6,
+      "substage": 2,
+      "map": "Stage21",
+      "ordinary_helicopters": 12,
+      "boss_helicopters": 0,
+      "all_enemies": 36
+    },
+    {
+      "mission": 6,
+      "substage": 3,
+      "map": "Stage22",
+      "ordinary_helicopters": 10,
+      "boss_helicopters": 0,
+      "all_enemies": 29
+    },
+    {
+      "mission": 6,
+      "substage": 4,
+      "map": "Stage23",
+      "ordinary_helicopters": 10,
+      "boss_helicopters": 0,
+      "all_enemies": 22
+    },
+    {
+      "mission": 6,
+      "substage": 5,
+      "map": "Stage24",
+      "ordinary_helicopters": 5,
+      "boss_helicopters": 0,
+      "all_enemies": 11
+    },
+    {
+      "mission": 7,
+      "substage": 1,
+      "map": "Stage30",
+      "ordinary_helicopters": 8,
+      "boss_helicopters": 0,
+      "all_enemies": 65
+    },
+    {
+      "mission": 7,
+      "substage": 2,
+      "map": "Stage31",
+      "ordinary_helicopters": 19,
+      "boss_helicopters": 0,
+      "all_enemies": 60
+    },
+    {
+      "mission": 7,
+      "substage": 3,
+      "map": "Stage32",
+      "ordinary_helicopters": 8,
+      "boss_helicopters": 0,
+      "all_enemies": 45
+    },
+    {
+      "mission": 7,
+      "substage": 4,
+      "map": "Stage33",
+      "ordinary_helicopters": 6,
+      "boss_helicopters": 0,
+      "all_enemies": 47
+    },
+    {
+      "mission": 7,
+      "substage": 5,
+      "map": "Stage34",
+      "ordinary_helicopters": 17,
+      "boss_helicopters": 0,
+      "all_enemies": 85
+    },
+    {
+      "mission": 7,
+      "substage": 6,
+      "map": "Stage35",
+      "ordinary_helicopters": 6,
+      "boss_helicopters": 0,
+      "all_enemies": 11
+    },
+    {
+      "mission": 8,
+      "substage": 1,
+      "map": "Stage36",
+      "ordinary_helicopters": 0,
+      "boss_helicopters": 0,
+      "all_enemies": 0
+    },
+    {
+      "mission": 8,
+      "substage": 2,
+      "map": "Stage37",
+      "ordinary_helicopters": 0,
+      "boss_helicopters": 0,
+      "all_enemies": 0
+    },
+    {
+      "mission": 8,
+      "substage": 3,
+      "map": "Stage38",
+      "ordinary_helicopters": 0,
+      "boss_helicopters": 0,
+      "all_enemies": 0
+    },
+    {
+      "mission": 8,
+      "substage": 4,
+      "map": "Stage39",
+      "ordinary_helicopters": 0,
+      "boss_helicopters": 0,
+      "all_enemies": 0
+    },
+    {
+      "mission": 8,
+      "substage": 5,
+      "map": "Stage40",
+      "ordinary_helicopters": 0,
+      "boss_helicopters": 0,
+      "all_enemies": 0
+    },
+    {
+      "mission": 8,
+      "substage": 6,
+      "map": "Stage41",
+      "ordinary_helicopters": 0,
+      "boss_helicopters": 0,
+      "all_enemies": 0
+    }
+  ],
+  "missions": [
+    {
+      "mission": 1,
+      "stage_counts": [
+        2,
+        2,
+        4,
+        3
+      ],
+      "sum": 11,
+      "stage_count": 4,
+      "mean": 2.75,
+      "rounded_additional_count": 3
+    },
+    {
+      "mission": 2,
+      "stage_counts": [
+        7,
+        4,
+        7,
+        3,
+        5
+      ],
+      "sum": 26,
+      "stage_count": 5,
+      "mean": 5.2,
+      "rounded_additional_count": 5
+    },
+    {
+      "mission": 3,
+      "stage_counts": [
+        6,
+        7,
+        8,
+        13,
+        3
+      ],
+      "sum": 37,
+      "stage_count": 5,
+      "mean": 7.4,
+      "rounded_additional_count": 7
+    },
+    {
+      "mission": 4,
+      "stage_counts": [
+        5,
+        3,
+        4,
+        3,
+        4
+      ],
+      "sum": 19,
+      "stage_count": 5,
+      "mean": 3.8,
+      "rounded_additional_count": 4
+    },
+    {
+      "mission": 5,
+      "stage_counts": [
+        9,
+        9,
+        13,
+        9,
+        5
+      ],
+      "sum": 45,
+      "stage_count": 5,
+      "mean": 9.0,
+      "rounded_additional_count": 9
+    },
+    {
+      "mission": 6,
+      "stage_counts": [
+        14,
+        12,
+        10,
+        10,
+        5
+      ],
+      "sum": 51,
+      "stage_count": 5,
+      "mean": 10.2,
+      "rounded_additional_count": 10
+    },
+    {
+      "mission": 7,
+      "stage_counts": [
+        8,
+        19,
+        8,
+        6,
+        17,
+        6
+      ],
+      "sum": 64,
+      "stage_count": 6,
+      "mean": 10.666666666666666,
+      "rounded_additional_count": 11
+    },
+    {
+      "mission": 8,
+      "stage_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "sum": 0,
+      "stage_count": 6,
+      "mean": 0.0,
+      "rounded_additional_count": 0
+    }
+  ],
+  "proposed_total": 113,
+  "raw": {
+    "path": "build/vtol-feasibility-20261027/heli-density.csv",
+    "sha256": "2abeafa23855f0a491473965d5e1b02065d37af20269ee34021309556d56ebfa"
+  },
+  "audit_source_sha256": "007e25635a9c6c42225f595a1e0e4c6e52e14ebd9d53e50d875b1e1b507d7b86"
+}

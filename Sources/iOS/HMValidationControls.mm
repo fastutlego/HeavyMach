@@ -1,5 +1,5 @@
 #import "HMValidationControls.h"
-#if defined(HM_VALIDATION) && HM_VALIDATION
+#if defined(HM_VALIDATION) && HM_VALIDATION && !TARGET_OS_OSX
 @implementation HMValidationControls {
     NSArray<UIButton*> *_buttons;
 }
