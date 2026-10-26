@@ -1,0 +1,35 @@
+{
+  "yak141": {
+    "transparent_background": true,
+    "referenced_image_paths": [
+      "/Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/vtol-v2-references/yak141-3view.gif",
+      "/Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/vtol-v2-references/yak141-photo.jpg",
+      "/Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/docs/public/media/vtol/E_Heli_Body_06.png"
+    ],
+    "prompt": "Create one accurate Yakovlev Yak-141 aircraft side-profile game sprite, nose pointing LEFT. Reference 1 is the actual aircraft three-view: strictly follow the bottom side-profile geometry, long slender fuselage, pointed nose and probe, low canopy, rectangular side air intake, swept high wing, twin rear booms/two upright vertical fins and horizontal stabilizers in their actual positions. Reference 2 is the actual aircraft photo for structure and material. Reference 3 is ONLY muted gray/olive palette, shading and subtle worn-metal texture from the game; DO NOT copy its helicopter geometry or proportions. Keep actual aircraft proportions, do not shorten, thicken or add armor. Photographically credible airframe rendered as a detailed hand-painted 2D game sprite, crisp silhouette, restrained panel lines, smooth aircraft skin, light from upper left, subtly warm neutral gray metal. Exact lateral side view, very little perspective, complete aircraft and no cropped extremities. Landing gear retracted, cockpit closed, VTOL doors closed, no flames, no exhaust haze, no smoke, no shadow underneath, no labels, no lettering, no insignia, no extra weapons. One aircraft on fully transparent background, tight useful framing with safe padding, wide landscape canvas. Geometry accuracy takes precedence over stylization."
+  },
+  "harrier": {
+    "transparent_background": true,
+    "referenced_image_paths": [
+      "/Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/vtol-v2-references/harrier-gr3-photo.jpg",
+      "/Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/docs/public/media/vtol/E_Heli_Body_06.png"
+    ],
+    "prompt": "Create one faithful Hawker Siddeley Harrier GR3 aircraft game sprite, pointing LEFT, horizontal lateral side view. Image 1 is the REAL Harrier GR3, preserve its airframe geometry and recognizable long pointed laser-rangefinder nose, small elevated canopy, huge rounded side intake directly behind cockpit, small auxiliary intake doors, compact swept high wing with anhedral, ONE vertical tail fin, low rear stabilizers, Pegasus swiveling exhaust nozzles along the sides. Mirror the actual airframe into left-facing direction and level it, do not redesign it. Image 2 is ONLY game palette/texture/shading reference, never shape. Muted dark olive and charcoal-gray camouflage, faithful real aircraft proportions, smooth thin aircraft skin, restrained weathering and panel lines, credible realistic aircraft rendered as a detailed hand-painted 2D game sprite. Clean complete silhouette, light from upper left. Retract all landing gear, no weapons or drop tanks, keep cockpit closed. No armor plating, no oversized bolts, no shortening or thickening, no science-fiction parts, no twin tails, no flames/exhaust/smoke. One whole aircraft, no crop, small safe transparent margin, wide landscape, fully transparent background, no scenery, no floor shadow, no text/insignia. Preserve actual shape above stylization."
+  },
+  "harrier_correction": {
+    "transparent_background": true,
+    "referenced_image_paths": [
+      "/Users/sokol/.codex/generated_images/01a16cd5-17c4-7ef0-b6fb-87f0ac64e260/exec-b8be5f1b-813e-40d5-ab8f-315b43b98a94.png",
+      "/Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/vtol-v2-references/harrier-gr3-photo.jpg"
+    ],
+    "prompt": "Correct ONLY the visible Pegasus exhaust outlets on image 1 Harrier GR3 sprite. In the current sprite there are three dark nozzle mouths visible on the near fuselage side: one forward nozzle and a mistakenly doubled rear nozzle. A real Harrier has TWO nozzles on each side. Keep the forward nozzle in place; replace the paired rear mouths below the wing with ONE single rear nozzle at that location. Thus precisely two visible exhaust nozzle assemblies on this near side, each with one dark opening. Image 2 actual Harrier supplies structural reference. Preserve everything else exactly: long fuselage proportions, left-facing nose, canopy, large intake, wing, single tail, camouflage, shading, framing, transparent background. No flames, no text, no extra parts. Do not redesign or bulk up the airframe."
+  },
+  "f35b": {
+    "transparent_background": true,
+    "referenced_image_paths": [
+      "/Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/vtol-v2-references/f35b-photo.jpg",
+      "/Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/docs/public/media/vtol/E_Heli_Body_06.png"
+    ],
+    "prompt": "Create ONE faithful Lockheed Martin F-35B aircraft game sprite pointing LEFT in horizontal lateral side view, using image 1 actual USMC F-35B photograph as strict shape reference. Preserve actual aircraft geometry: pointed angular nose, single bubble canopy, angular side DSI intake with correct forward position, smooth blended center fuselage, trapezoidal wings, TWO outward-canted trapezoidal vertical stabilizers and actual horizontal tails, ONE rear engine nozzle. Mirror and render the airframe with landing gear retracted, all doors closed including lift-fan door and weapon bays. Keep the real length-to-height proportions and wing/tail placement. Image 2 is ONLY a muted gray color/metal shading game palette reference, do NOT borrow helicopter shape. Detailed realistic hand-painted 2D game sprite, smooth gray low-observable skin with restrained panel seams, subdued warm gray upper surface and darker lower surface, subtle wear; do not add armor plates or big rivets, no bulky science-fiction reinterpretation, no toy/chibi proportions. Light from upper left. Complete airframe with safe padding, very little perspective, wide landscape canvas. No flames, no smoke, no external missiles, no landing gear, no scenery, no floor shadow, no labels or insignia or lettering. Fully transparent background. The real F-35B silhouette takes priority over game stylization."
+  }
+}

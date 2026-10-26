@@ -1,32 +1,32 @@
 # 수직이착륙 공중 적 3종 시안·배치안
 
-야크141·해리어·F35B를 바탕으로 게임용 시안3종을 만들었다. 기존 적 그림을 참조해 낡은 금속판, 낮은 채도, 밝은 윗면과 어두운 아랫면을 사용했다. 아래 이미지는 **형상 재작업이 필요한 첫 시안**이다. 사용자가 실제 기체와 다른 모양을 지적했다. 최종 에셋으로 채택하지 않았고 게임에도 넣지 않았다. 실제 기체의 비례·날개·꼬리·흡입구를 유지하고 색조·질감·명암만 게임에 맞추는 기준으로 수정해야 한다. 불꽃은 시안에 함께 그렸고 실제 구현에서는 기체·노즐·불꽃을 분리한다.
+실제 기체 사진과 야크141 도면을 참조해 **야크141·해리어 GR3·F35B의 두 번째 시안**을 만들었다. 길이와 높이의 비례, 기수·흡입구·날개·꼬리 형태를 실물에 맞춰 다시 그렸다. 기존 게임 그림은 색조·질감·명암의 참고로 사용했다. 기체는 투명 PNG이며 불꽃은 넣지 않았다. 게임 적용 전 시안이다.
 
 ## 기체 시안
 
-### 야크141 — 갈색 금속판·단발 미사일
+### 야크141 — 긴 동체·각진 흡입구·두 수직 꼬리날개
 
-좁고 긴 기수와 두 꼬리날개, 갈색·회색 금속판으로 구분했다. 기존 초기형 헬기의 색을 참고했다. 작은 하부 발사대와 아래로 향한 배기 두 곳을 배치했다. 첫 생성본의 윗면 배기 불꽃은 수정했다.
+실물 사진과 삼면도에서 긴 동체, 낮은 조종석, 측면 흡입구와 높은 주익의 위치를 확인했다. 첫 시안의 두꺼운 장갑판과 갈색 도장을 빼고 회색 금속 표면으로 다시 그렸다.
 
-<figure class="vtol-art"><a href="media/vtol/yak141-concept.png"><img src="media/vtol/yak141-concept.png" alt="왼쪽을 향한 갈색 야크141 공중 적 시안" style="width:100%;height:auto"></a><figcaption>야크141 시안 · 투명 PNG1944×809 · 클릭하면 원본</figcaption></figure>
+<figure class="vtol-art"><a href="media/vtol/v2/yak141-concept.png"><img src="media/vtol/v2/yak141-concept.png" alt="실물 형상을 참조해 다시 그린 회색 야크141 측면 시안" style="width:100%;height:auto"></a><figcaption>야크141 · 두 번째 시안 · 클릭하면 투명 PNG 원본</figcaption></figure>
 
-### 해리어 — 둥근 흡입구·올리브색·2발 기관포
+### 해리어 GR3 — 긴 기수·둥근 흡입구·단일 수직 꼬리날개
 
-둥근 기수와 큰 측면 흡입구, 하나의 꼬리날개를 사용했다. 올리브색과 밝은 회색 도장으로 야크와 구분한다. 하부의 작은 포드에서 기관포를 발사하고 측면 노즐은 아래로 향한다.
+GR3 사진의 기수, 큰 흡입구와 낮게 내려가는 주익을 참고했다. 올리브색과 짙은 회색 위장 도장을 사용했다. 생성본의 중복 배기구를 수정해 보이는 측면에 앞·뒤 두 노즐을 남겼다.
 
-<figure class="vtol-art"><a href="media/vtol/harrier-concept.png"><img src="media/vtol/harrier-concept.png" alt="왼쪽을 향한 올리브색 해리어 공중 적 시안" style="width:100%;height:auto"></a><figcaption>해리어 시안 · 투명 PNG1774×887 · 클릭하면 원본</figcaption></figure>
+<figure class="vtol-art"><a href="media/vtol/v2/harrier-concept.png"><img src="media/vtol/v2/harrier-concept.png" alt="실물 형상을 참조해 다시 그린 올리브색 해리어 GR3 측면 시안" style="width:100%;height:auto"></a><figcaption>해리어 GR3 · 두 번째 시안 · 클릭하면 투명 PNG 원본</figcaption></figure>
 
-### F35B — 각진 회색 기체·2발 미사일
+### F35B — 각진 기수·흡입구·두 수직 꼬리날개
 
-짧은 쐐기형 기수, 각진 흡입구와 두 꼬리날개, 열린 상부 리프트팬 덮개로 구분했다. 회색 도장과 작은 황토색 표시를 사용한다. 후반 헬기의2발 미사일을 하부 발사구에 연결하는 안이다. 시안의 배기는 게임용 표현이며 실물 기체의 배기 온도·화염을 재현한 그림은 아니다.
+미 해병대 F35B 측면 사진을 참조했다. 기수에서 동체로 이어지는 윤곽, 조종석, 각진 흡입구와 꼬리 배치를 다시 그렸다. 랜딩기어와 리프트팬 덮개를 닫은 기체 시안이다. 호버링 때 열리는 덮개와 배기 효과는 구현할 때 별도로 만든다.
 
-<figure class="vtol-art"><a href="media/vtol/f35b-concept.png"><img src="media/vtol/f35b-concept.png" alt="왼쪽을 향한 회색 F35B 공중 적 시안" style="width:100%;height:auto"></a><figcaption>F35B 시안 · 투명 PNG1962×801 · 클릭하면 원본</figcaption></figure>
+<figure class="vtol-art"><a href="media/vtol/v2/f35b-concept.png"><img src="media/vtol/v2/f35b-concept.png" alt="실물 형상을 참조해 다시 그린 회색 F35B 측면 시안" style="width:100%;height:auto"></a><figcaption>F35B · 두 번째 시안 · 클릭하면 투명 PNG 원본</figcaption></figure>
 
 ## 기존 유닛과 작은 크기 비교
 
 아래는 브라우저에서 폭을 줄여 보는 비교다. 실제 게임 캡처는 아니다. 원본 비율을 유지했다. 신규 기체의 폭140/132/148은 첫 적용 후보이며 충돌 크기와 함께 검사한 뒤 정한다.
 
-<div class="vtol-small" style="display:flex;flex-wrap:wrap;align-items:end;gap:24px;padding:20px;background:#34362e;color:#f3efe3"><figure><img src="media/vtol/E_Heli_Body_01.png" alt="기존 Heli001 몸체" style="width:100px;height:auto"><figcaption>기존 Heli001</figcaption></figure><figure><img src="media/vtol/E_Heli_Body_06.png" alt="기존 Heli006 몸체" style="width:121px;height:auto"><figcaption>기존 Heli006</figcaption></figure><figure><img src="media/vtol/E_0604_Body.png" alt="기존 E0604 헬기 몸체" style="width:140px;height:auto"><figcaption>기존 E0604</figcaption></figure><figure><img src="media/vtol/yak141-concept.png" alt="작게 표시한 야크" style="width:140px;height:auto"><figcaption>야크141 / 140</figcaption></figure><figure><img src="media/vtol/harrier-concept.png" alt="작게 표시한 해리어" style="width:132px;height:auto"><figcaption>해리어 / 132</figcaption></figure><figure><img src="media/vtol/f35b-concept.png" alt="작게 표시한 F35B" style="width:148px;height:auto"><figcaption>F35B / 148</figcaption></figure></div>
+<div class="vtol-small" style="display:flex;flex-wrap:wrap;align-items:end;gap:24px;padding:20px;background:#34362e;color:#f3efe3"><figure><img src="media/vtol/E_Heli_Body_01.png" alt="기존 Heli001 몸체" style="width:100px;height:auto"><figcaption>기존 Heli001</figcaption></figure><figure><img src="media/vtol/E_Heli_Body_06.png" alt="기존 Heli006 몸체" style="width:121px;height:auto"><figcaption>기존 Heli006</figcaption></figure><figure><img src="media/vtol/E_0604_Body.png" alt="기존 E0604 헬기 몸체" style="width:140px;height:auto"><figcaption>기존 E0604</figcaption></figure><figure><img src="media/vtol/v2/yak141-concept.png" alt="작게 표시한 야크" style="width:140px;height:auto"><figcaption>야크141 / 140</figcaption></figure><figure><img src="media/vtol/v2/harrier-concept.png" alt="작게 표시한 해리어" style="width:132px;height:auto"><figcaption>해리어 / 132</figcaption></figure><figure><img src="media/vtol/v2/f35b-concept.png" alt="작게 표시한 F35B" style="width:148px;height:auto"><figcaption>F35B / 148</figcaption></figure></div>
 
 ## 무장 차이
 
@@ -98,12 +98,40 @@
 
 전후 이동은 기존 비행 코드의 속도 기반 기울기를 참고한다. 새3종에만 전후 목표각 약±8도와 상승·하강 보조각 약±3도를 초기 후보로 적용하고, 급격히 꺾이지 않게 보간한다. 이 각도는 아직 적용하지 않은 제안이다. 기체 회전과 같은 변환으로 노즐·불꽃·발사점을 이동시킨다.
 
-상승할 때 배기를 길게, 정지 비행에서는 짧게, 하강할 때는 더 약하게 표시한다. 실제 제작 때 기체와 불꽃을 분리하고 불꽃만 애니메이션한다. 현재PNG 전체를 흔들거나 불꽃 길이까지 포함한 충돌 사각형을 사용하지 않는다. 기존 적의 이동 상수·무기 수치·스폰 테이블은 유지한다.
+상승할 때 배기를 길게, 정지 비행에서는 짧게, 하강할 때는 더 약하게 표시한다. 새 시안에는 불꽃이 없다. 구현할 때 별도 배기 효과를 노즐에 연결하고 애니메이션한다. 불꽃 길이를 기체 충돌 사각형에 포함하지 않는다. 기존 적의 이동 상수·무기 수치·스폰 테이블은 유지한다.
 
 ## 제작·조사 근거
 
-내장 imagegen으로3종을 생성하고 야크의 배기 위치를 한 번 수정했다. PNG3개 모두 알파 채널이 있다. 이미지 원본·참조·프롬프트·해시는 `Art/VTOL/20261027/`와 [제작 명세](media/vtol/manifest.json)에 보존했다. [배치·무기 조사 JSON](../evidence/vtol-art-plan-20261027.json)은 실제 데이터 값과 제안 좌표를 구분한다.
+내장 imagegen으로 두 번째 시안 3종을 만들었다. 생성 후 사진·도면과 기수, 동체 비례, 흡입구, 날개·꼬리를 대조했고 해리어의 중복 노즐을 한 번 수정했다. 그림은 원본 크기로 확인했다. 아래 축소 표시는 브라우저의 비율 유지 축소이며 실제 게임 캡처가 아니다.
 
-기체 형식은 야크141, 해리어 계열, F35의수직이착륙형인B를 시안 기준으로 골랐다. 실물 제원과 게임 능력치를 연결하지 않는다. [야크141 전시 설명](https://muscom.ru/en//expositions/yak-141/), [RAF Museum 해리어](https://www.rafmuseum.org.uk/research/collections/hawker-siddeley-harrier-gr3/), [Lockheed Martin F35B](https://www.lockheedmartin.com/f35/news-and-features/Choose-Your-Fighter-F35A-vs-F35B.html).
+- 형상 참고: [야크141 삼면도](https://www.aviastar.org/air/russia/yak-141.php), [야크141 실물 사진](https://pesawattempurdaffa.blogspot.com/2012/06/yak-141-freestyle.html), [해리어 GR3 사진 — Kev Slade / Air-Britain](https://abpic.co.uk/pictures/view/1199591), [F35B 사진 — 미 해병대 / DVIDS](https://www.dvidshub.net/image/8085647/distributed-stovl-operation).
+- 색조·질감 참고: 기존 게임의 `E_Heli_Body_06.png`.
+- 새 원본: `Art/VTOL/20261027-v2/`. [파일 해시·참조 목록](media/vtol/v2/manifest.json), [생성·수정 프롬프트](media/vtol/v2/prompts.json).
+- 첫 시안은 `Art/VTOL/20261027/`에 보존했다. [첫 제작 명세](media/vtol/manifest.json).
+- [무기·배치 조사](../evidence/vtol-art-plan-20261027.json), [헬기 수량·평균](../evidence/vtol-helicopter-density-20261027.json).
 
-이번 작업은 그림 제작과 무장·배치안 작성이다. 게임 코드·맵·설치본은 변경하지 않았다. 기체·불꽃 분리, 실제 합성, 충돌·발사점, 추가 적 난도·성능 검사는 구현 단계에 남아 있다.
+기존 무장·113대 추가 배치안은 유지했다. 게임 코드·맵·설치본은 변경하지 않았다. 호버링 부품과 배기 효과, 게임 내 크기·충돌·발사점, 난도·성능 검사는 구현 단계에 남아 있다.
+
+<details>
+<summary>첫 시안 3종 보기 — 미채택</summary>
+
+<h3>야크141 — 갈색 금속판·단발 미사일</h3>
+
+좁고 긴 기수와 두 꼬리날개, 갈색·회색 금속판으로 구분했다. 기존 초기형 헬기의 색을 참고했다. 작은 하부 발사대와 아래로 향한 배기 두 곳을 배치했다. 첫 생성본의 윗면 배기 불꽃은 수정했다.
+
+<figure class="vtol-art"><a href="media/vtol/yak141-concept.png"><img src="media/vtol/yak141-concept.png" alt="왼쪽을 향한 갈색 야크141 공중 적 시안" style="width:100%;height:auto"></a><figcaption>야크141 시안 · 투명 PNG1944×809 · 클릭하면 원본</figcaption></figure>
+
+<h3>해리어 — 둥근 흡입구·올리브색·2발 기관포</h3>
+
+둥근 기수와 큰 측면 흡입구, 하나의 꼬리날개를 사용했다. 올리브색과 밝은 회색 도장으로 야크와 구분한다. 하부의 작은 포드에서 기관포를 발사하고 측면 노즐은 아래로 향한다.
+
+<figure class="vtol-art"><a href="media/vtol/harrier-concept.png"><img src="media/vtol/harrier-concept.png" alt="왼쪽을 향한 올리브색 해리어 공중 적 시안" style="width:100%;height:auto"></a><figcaption>해리어 시안 · 투명 PNG1774×887 · 클릭하면 원본</figcaption></figure>
+
+<h3>F35B — 각진 회색 기체·2발 미사일</h3>
+
+짧은 쐐기형 기수, 각진 흡입구와 두 꼬리날개, 열린 상부 리프트팬 덮개로 구분했다. 회색 도장과 작은 황토색 표시를 사용한다. 후반 헬기의2발 미사일을 하부 발사구에 연결하는 안이다. 시안의 배기는 게임용 표현이며 실물 기체의 배기 온도·화염을 재현한 그림은 아니다.
+
+<figure class="vtol-art"><a href="media/vtol/f35b-concept.png"><img src="media/vtol/f35b-concept.png" alt="왼쪽을 향한 회색 F35B 공중 적 시안" style="width:100%;height:auto"></a><figcaption>F35B 시안 · 투명 PNG1962×801 · 클릭하면 원본</figcaption></figure>
+
+
+</details>
