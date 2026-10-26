@@ -330,6 +330,50 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
   ++index;
  }
 }
+- (void)testAutoAimControlsAttachToHUDAndNextTargetTouch {
+ [self autoAimArenaWithWeapon:"P_Wpn_Gun01"];
+ auto& session=storage<std::unique_ptr<heavymach::GameSession>>(self.game,"_session");
+ for(NSValue* value in @[[NSValue valueWithCGSize:CGSizeMake(1200,900)],[NSValue valueWithCGSize:CGSizeMake(1400,650)]]){
+  self.game.frame=CGRectMake(0,0,value.CGSizeValue.width,value.CGSizeValue.height);[self.game updateCanvasGeometry];
+  auto offset=storage<CGPoint>(self.game,"_hudOffset");auto scale=storage<CGFloat>(self.game,"_hudScale");
+  for(int button=1;button<=3;++button){CGRect r=[self.game aimControlRect:button];
+   XCTAssertEqualWithAccuracy((r.origin.y-offset.y)/scale,10,.01);
+   XCTAssertGreaterThanOrEqual((r.origin.x-offset.x)/scale,334);
+   XCTAssertLessThanOrEqual((CGRectGetMaxX(r)-offset.x)/scale,480);
+   XCTAssertLessThanOrEqual((CGRectGetMaxY(r)-offset.y)/scale,64);
+  }
+ }
+ auto vp=storage<heavymach::Viewport>(self.game,"_viewport");CGRect r=[self.game aimControlRect:3];
+ CGPoint next=CGPointMake(vp.x+CGRectGetMidX(r)*vp.scale,vp.y+(vp.logicalHeight-CGRectGetMidY(r))*vp.verticalScale());
+ auto first=session->aimSnapshot().target;auto p=session->player()->position;session->validationSpawnEnemy({"Heli001",{p.x+320,p.y+150},false});
+ NSObject* finger=[NSObject new];[self.game routePoint:next state:0 token:finger];[self.game routePoint:next state:2 token:finger];frames(self.game,2);
+ XCTAssertNotEqual(session->aimSnapshot().target,first);XCTAssertFalse(session->validationWeaponState().isFire);
+ HMMedia* media=[self.game valueForKey:@"media"];CGSize sheet=[media imageSize:@"Extensions/AutoAimControls.png"];
+ XCTAssertEqual(sheet.width,138);XCTAssertEqual(sheet.height,92);
+}
+- (void)testAutoAimSingleToggleRestoresManualTouchFire {
+ [self autoAimArenaWithWeapon:"P_Wpn_Gun01"];
+ auto& session=storage<std::unique_ptr<heavymach::GameSession>>(self.game,"_session");
+ XCTAssertTrue(CGRectIsNull([self.game aimControlRect:0]));
+ XCTAssertTrue(CGRectIsNull([self.game aimControlRect:4]));
+ session->setAimCorrectionEnabled(false); // Internal comparison state must not survive enabling A.
+ auto vp=storage<heavymach::Viewport>(self.game,"_viewport");auto r=[self.game aimControlRect:1];
+ CGPoint a=CGPointMake(vp.x+CGRectGetMidX(r)*vp.scale,vp.y+(vp.logicalHeight-CGRectGetMidY(r))*vp.verticalScale());
+ NSObject* toggle=[NSObject new];
+ [self.game routePoint:a state:0 token:toggle];[self.game routePoint:a state:2 token:toggle];
+ XCTAssertEqual(session->aimMode(),heavymach::AimMode::manual);
+ NSObject* world=[NSObject new];CGPoint target=CGPointMake(vp.x+430*vp.scale,vp.y+(vp.logicalHeight-180)*vp.verticalScale());
+ [self.game routePoint:target state:0 token:world];frames(self.game,12);
+ XCTAssertTrue(session->validationWeaponState().isFire);
+ [self.game routePoint:target state:2 token:world];
+ [self.game routePoint:a state:0 token:toggle];[self.game routePoint:a state:2 token:toggle];
+ XCTAssertEqual(session->aimMode(),heavymach::AimMode::automatic);
+ XCTAssertTrue(session->aimCorrectionEnabled());
+ XCTAssertFalse(session->validationWeaponState().isFire);
+ // A cancelled toggle must not change the mode.
+ [self.game routePoint:a state:0 token:toggle];[self.game routePoint:a state:3 token:toggle];
+ XCTAssertEqual(session->aimMode(),heavymach::AimMode::automatic);
+}
 - (void)testAutoAimModeSwitchAndTouchKeyboardOwnership {
  [self autoAimArenaWithWeapon:std::string("P_Wpn_Gun01")];auto& session=storage<std::unique_ptr<heavymach::GameSession>>(self.game,"_session");
  auto vp=storage<heavymach::Viewport>(self.game,"_viewport");auto point=[&](int button){auto r=[self.game aimControlRect:button];return CGPointMake(vp.x+CGRectGetMidX(r)*vp.scale,vp.y+(vp.logicalHeight-CGRectGetMidY(r))*vp.verticalScale());};
@@ -340,7 +384,7 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  [self.game routePoint:empty state:0 token:world];[self.game routePoint:empty state:3 token:world];frames(self.game,2);XCTAssertTrue(session->validationWeaponState().isFire);
  [self.game handleKeyCode:9 pressed:YES];[self.game routePoint:point(2) state:2 token:fire];frames(self.game,2);XCTAssertTrue(session->validationWeaponState().isFire);
  [self.game handleKeyCode:7 pressed:YES];
- [self.game routePoint:point(0) state:0 token:mode];[self.game routePoint:point(0) state:2 token:mode];
+ [self.game routePoint:point(1) state:0 token:mode];[self.game routePoint:point(1) state:2 token:mode];
  XCTAssertEqual(session->aimMode(),heavymach::AimMode::manual);XCTAssertFalse(session->validationWeaponState().isFire);
  XCTAssertTrue(storage<heavymach::KeyboardInput>(self.game,"_keyboardControls").down(heavymach::KeyAction::right));
  [self.game handleKeyCode:9 pressed:YES];frames(self.game,2);XCTAssertFalse(session->validationWeaponState().isFire);
@@ -351,7 +395,7 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  [self.game handleKeyCode:9 pressed:YES];[self.game keyboardDisconnected:nil];frames(self.game,2);XCTAssertFalse(session->validationWeaponState().isFire);
  // Switching mode while the fire finger remains down must discard its capture.
  [self.game routePoint:point(2) state:0 token:fire];frames(self.game,2);XCTAssertTrue(session->validationWeaponState().isFire);
- [self.game routePoint:point(0) state:0 token:mode];[self.game routePoint:point(0) state:2 token:mode];
+ [self.game routePoint:point(1) state:0 token:mode];[self.game routePoint:point(1) state:2 token:mode];
  [self.game setInputAimMode:heavymach::AimMode::automatic];[self.game routePoint:point(2) state:1 token:fire];frames(self.game,2);XCTAssertFalse(session->validationWeaponState().isFire);
  [self.game routePoint:point(2) state:2 token:fire];[self.game routePoint:point(2) state:0 token:fire];frames(self.game,2);XCTAssertTrue(session->validationWeaponState().isFire);
  [self.game routePoint:point(2) state:3 token:fire];frames(self.game,2);XCTAssertFalse(session->validationWeaponState().isFire);

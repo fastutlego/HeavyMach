@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-27",
+  "tool": "built-in image_gen",
+  "asset": "Art/Extensions/AutoAimControls.png",
+  "sha256": "8376ff2bc4635472d52ad435688b015e94b1d907995e13e97be8079364d9800b",
+  "references": [
+    {
+      "path": "Resources/Images/Btn_Weapon.png",
+      "sha256": "28501ed34607aabe5d186329571adc6742da5076d24badef9c9f3333edbaf1cf"
+    },
+    {
+      "path": "Resources/Images/Btn_Booster.png",
+      "sha256": "7a335a6c27fa002a9a353366665a65c37b4c7e9e93b4ceedb9e5a8802d33514c"
+    },
+    {
+      "path": "Resources/Images/GameUI_Btm.png",
+      "sha256": "44d92a2b1d6df4534e3eec26372b5b5cf06d902fb829f2ffda028a2a7bcfa093"
+    },
+    {
+      "path": "Resources/Images/GameMenu.png",
+      "sha256": "062e03549689617dd60424eb27ef72810025879390856492936acd465fb28141"
+    }
+  ],
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "top": [
+      "auto",
+      "fire",
+      "next"
+    ],
+    "bottom": "pressed/active"
+  },
+  "runtime": "one-time 138x92 prefilter; 46x46 cells; HUD local positions x334,382,430 y10; same HUD offset/scale for drawing and input",
+  "alpha_inspection": {
+    "zero_alpha_pixels": 267867,
+    "total_pixels": 1572864
+  },
+  "original_assets_modified": false
+}

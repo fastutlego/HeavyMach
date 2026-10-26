@@ -650,6 +650,14 @@
     {
       "path": "build/auto-aim-install-20261027/ipad-no-mirror.log",
       "sha256": "e42e200a1357534a695b832c5a11bcec717b490ea09d1765fbada4e40dd4f932"
+    },
+    {
+      "path": "build/auto-aim-single-toggle-20261027/simulator-hud.log",
+      "sha256": "df40a2d8992e431c1b21d049262dfa27fdfe6705ae06131490bda56914a8f3b1"
+    },
+    {
+      "path": "build/auto-aim-single-toggle-20261027/ipad-hud.log",
+      "sha256": "1c3a4c3e09c5ec5ca2e3ba9bb51686fb51319176114bd7ae2f54f69a144b1530"
     }
   ],
   "simulator_safe_area_followup": {
@@ -691,5 +699,40 @@
     ],
     "final_state": "Automatic mode enabled; paused at Resume Game",
     "limitations": "Short Stage01 interaction, not all missions or sustained frame assessment."
+  },
+  "hud_integration": {
+    "date": "2026-10-27 06:54 KST",
+    "changes": [
+      "M and C buttons removed",
+      "A OFF restores manual touch aim/fire",
+      "A ON includes trajectory correction",
+      "3 metal controls mounted to original HUD offset/scale"
+    ],
+    "simulator": {
+      "passed": 4,
+      "failed": 0
+    },
+    "physical_ipad": {
+      "passed": 4,
+      "failed": 0,
+      "model": "iPad Air 13-inch (M2)",
+      "os": "27.0.1",
+      "installed": true
+    },
+    "tests": [
+      "testAutoAimControlsAttachToHUDAndNextTargetTouch",
+      "testAutoAimSingleToggleRestoresManualTouchFire",
+      "testAutoAimModeSwitchAndTouchKeyboardOwnership",
+      "testAutoAimEveryWeaponWithMovementAndJump"
+    ],
+    "direct_screen": "CUA real iPad: new metal HUD buttons visible, M/C absent, A toggles secondary controls visibility, existing cheat save resumed, final pause menu.",
+    "performance": "Not rerun for this UI change; earlier failed frame budget remains open.",
+    "art_manifest": "Art/AutoAim/20261027/manifest.json",
+    "capture": "docs/public/media/auto-aim/hud-integrated-ipad.png",
+    "source_sha256": {
+      "Sources/iOS/HMGameView.mm": "2e3d4e79a3610f7e75125143d618307f6657eeabae1aa1b8617e843a8bb7b103",
+      "Sources/iOS/HMMedia.mm": "0cfa86c73695e652020e2f88df8eb3756b6c6c0beb61646d3412f6bbeba1bc57",
+      "Tests/Apple/HMAppleInputTests.mm": "5bda3eecb1d4ac33053ac5df5591c37b8b4456b53d613731145ed31c3f96b3ed"
+    }
   }
 }

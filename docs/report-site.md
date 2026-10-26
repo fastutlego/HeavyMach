@@ -370,3 +370,12 @@ macOS 자체 전체 화면 캡처에서 게임이 화면 끝까지 표시됨을 
 - URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/auto-aim-progress.html
 
 게임 소스는 `feat/auto-aim-ipad-validation`에 유지한다. develop/main 병합은 하지 않았다.
+
+### 2026-10-27 06:57 KST — 자동조준 버튼 통합·HUD 부착
+
+기존 `/auto-aim-progress.html`과 계획 원고에 M·C 삭제, 명중 보정 통합, A OFF 시 터치 사격 복귀, 금속 패널과 HUD 하단 부착을 반영했다. 실제 iPad 캡처와 시뮬레이터/실기기 각4개 검사 결과를 게시했다. Chrome AX에서 최신 본문·캡처 링크를 확인했다. 마지막 상단 화면 캡처 시 CUA `noWindowsAvailable`이 발생해 상단 레이아웃의 추가 브라우저 캡처는 남기지 못했다. 실제 게임 캡처와 기기 화면은 앞서 확인했다. 기존 소유자 비공개 범위를 유지했다.
+
+- Site source: `60c56de3a74af75ecdc839ad860ce4888e71693b`
+- Version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_29ca0d8812dc8191ac944421048cb6ac`
+- Deployment: `appgdep_6adfccd43cfc8191be3969e3a48759f8`, `succeeded`
+- URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/auto-aim-progress.html

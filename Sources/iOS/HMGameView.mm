@@ -161,7 +161,7 @@
         #if HM_VALIDATION
         _aimTouches=[NSMapTable strongToStrongObjectsMapTable];_aimCancelledTouches=[NSHashTable weakObjectsHashTable];
         NSNumber* savedAim=[NSUserDefaults.standardUserDefaults objectForKey:@"AimModeV1"];
-        _preferredAimMode=savedAim&&savedAim.integerValue>=0&&savedAim.integerValue<=2?heavymach::AimMode(savedAim.intValue):heavymach::AimMode::manual;
+        _preferredAimMode=savedAim.integerValue==int(heavymach::AimMode::automatic)?heavymach::AimMode::automatic:heavymach::AimMode::manual;
 #endif
         _canvasWidth=480;_canvasHeight=320;_hudScale=1;
         _wideCanvasEnabled=YES;_appliedWideCanvas=YES;
@@ -1046,15 +1046,15 @@
 // One rectangle is consumed by both rendering and hit testing. Coordinates are
 // absolute logical canvas points; none of these controls enter world touch().
 - (CGRect)aimControlRect:(int)control {
-    CGFloat edge=std::max(CGFloat(32),CGRectGetMaxX(_menuSafeRect)-34),bottom=CGRectGetMinY(_menuSafeRect);
-    if(control==4)return CGRectMake(edge-136,bottom+122,44,44);
-    if(control<2)return CGRectMake(edge-110+control*52-22,bottom+66,44,44);
-    return CGRectMake(edge-26,bottom+(control==2?26:92),52,52);
+    if(control<1||control>3)return CGRectNull; // Removed manual/correction buttons have no hit area.
+    // Mount to the same 480-unit HUD rail as booster/weapon, including safe-area scale.
+    CGRect r=CGRectMake(334+(control-1)*48,10,46,46);
+    return CGRectMake(_hudOffset.x+r.origin.x*_hudScale,_hudOffset.y+r.origin.y*_hudScale,r.size.width*_hudScale,r.size.height*_hudScale);
 }
 - (void)saveAimMode { [NSUserDefaults.standardUserDefaults setInteger:int(_preferredAimMode) forKey:@"AimModeV1"]; }
 - (void)setInputAimMode:(heavymach::AimMode)mode {
     if(!_session||_session->aimMode()==mode)return;
-    [self cancelAimFireInput];_session->setAimMode(mode);_preferredAimMode=mode;[self saveAimMode];
+    [self cancelAimFireInput];_session->setAimMode(mode);if(mode==heavymach::AimMode::automatic)_session->setAimCorrectionEnabled(true);_preferredAimMode=mode;[self saveAimMode];
 }
 - (void)cancelAimFireInput {
     for(id token in _heldTouches)[_aimCancelledTouches addObject:token];
@@ -1077,15 +1077,14 @@
             if(action==2)[self refreshAutoFire];
             else if(state==2&&![self worldInputBlocked]&&CGRectContainsPoint([self aimControlRect:action],p)){
                 if(action==3)_session->cycleAimTarget();
-                else if(action==4){[self cancelAimFireInput];_session->setAimCorrectionEnabled(!_session->aimCorrectionEnabled());}
-                else {auto mode=action==0?heavymach::AimMode::manual:heavymach::AimMode::automatic;[self setInputAimMode:_session->aimMode()==mode?heavymach::AimMode::off:mode];}
+                else if(action==1)[self setInputAimMode:_session->aimMode()==heavymach::AimMode::automatic?heavymach::AimMode::manual:heavymach::AimMode::automatic];
             }
         }
         return YES;
     }
     if(state!=0||[self worldInputBlocked]||_loading.visible())return NO;
-    int count=_session->aimMode()==heavymach::AimMode::automatic?5:2;
-    for(int action=0;action<count;++action)if(CGRectContainsPoint([self aimControlRect:action],p)){
+    int count=_session->aimMode()==heavymach::AimMode::automatic?4:2;
+    for(int action=1;action<count;++action)if(CGRectContainsPoint([self aimControlRect:action],p)){
         [_aimTouches setObject:@(action) forKey:token];if(action==2)[self refreshAutoFire];return YES;
     }
     return NO;
@@ -1093,18 +1092,12 @@
 - (void)drawAimControls {
     if(!_session||[self worldInputBlocked]||_loading.visible())return;
     [_media resetClip];[_media setDrawingOffset:CGPointZero];[_media setDrawingScale:1];
-    auto mode=_session->aimMode();int count=mode==heavymach::AimMode::automatic?5:2;
-    for(int action=0;action<count;++action){auto r=[self aimControlRect:action];float x=CGRectGetMidX(r),y=CGRectGetMidY(r);
-        bool selected=(action==0&&mode==heavymach::AimMode::manual)||(action==1&&mode==heavymach::AimMode::automatic)||(action==4&&_session->aimCorrectionEnabled());
+    auto mode=_session->aimMode();int count=mode==heavymach::AimMode::automatic?4:2;
+    for(int action=1;action<count;++action){auto r=[self aimControlRect:action];float x=CGRectGetMidX(r),y=CGRectGetMidY(r);
+        bool selected=(action==1&&mode==heavymach::AimMode::automatic);
         for(NSNumber* held in _aimTouches.objectEnumerator)if(held.intValue==action)selected=true;
-        CGSize size=[_media imageSize:@"Btn_Empty.png"];float scale=r.size.width/std::max(CGFloat(1),size.width);
-        [_media draw:@"Btn_Empty.png" x:x y:y columns:1 rows:2 tile:selected?1:0 scaleX:scale scaleY:scale rotation:0 alpha:1];
-        float m[]={x-8,y-7,x-8,y+7,x-8,y+7,x,y,x,y,x+8,y+7,x+8,y+7,x+8,y-7};
-        float a[]={x-8,y-7,x,y+8,x,y+8,x+8,y-7,x-4,y-1,x+4,y-1};
-        float fire[]={x-11,y,x-4,y,x+4,y,x+11,y,x,y-11,x,y-4,x,y+4,x,y+11,x-3,y-3,x+3,y-3,x+3,y-3,x+3,y+3,x+3,y+3,x-3,y+3,x-3,y+3,x-3,y-3};
-        float correction[]={x+7,y+7,x-7,y+7,x-7,y+7,x-7,y-7,x-7,y-7,x+7,y-7};
-        float next[]={x-9,y,x+8,y,x+8,y,x+1,y+7,x+8,y,x+1,y-7,x-8,y+6,x-8,y-6};
-        [_glRenderer drawAimLines:action==0?m:action==1?a:action==2?fire:action==3?next:correction count:action==0?8:action==1?6:action==2?16:action==3?8:6 red:1 green:1 blue:1];
+        NSString* sheet=@"Extensions/AutoAimControls.png";CGSize size=[_media imageSize:sheet];
+        [_media draw:sheet x:x y:y columns:3 rows:2 tile:(selected?3:0)+action-1 scaleX:r.size.width/std::max(CGFloat(1),size.width/3) scaleY:r.size.height/std::max(CGFloat(1),size.height/2) rotation:0 alpha:1];
     }
     if(mode!=heavymach::AimMode::automatic)return;auto aim=_session->aimSnapshot();if(!aim.target){_drawnAimTarget=0;return;}
     if(_drawnAimTarget!=aim.target){_drawnAimTarget=aim.target;_aimAcquiredTime=_time;}
