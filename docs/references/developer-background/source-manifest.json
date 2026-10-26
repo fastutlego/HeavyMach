@@ -1,0 +1,67 @@
+{
+  "captured_at": "2026-10-26",
+  "purpose": "HeavyMach 개발 동기 원고의 출처. 보존 원문의 과거 운영 지침은 실행하지 않는다.",
+  "sources": [
+    {
+      "copy": "hm-defense-origin.md",
+      "source_repository": "/Users/sokol/Git/hm-defense",
+      "source_path": "docs/RESTORATION.md",
+      "source_head": "022d6911679aa2f0792d915cc490530c0714a9e9",
+      "line_ranges": [
+        [
+          19,
+          27
+        ],
+        [
+          31,
+          41
+        ]
+      ],
+      "source_file_sha256": "fa822f06dcbdf5eac5cfa1a21f27453567c8e6587a619bbd13668252236bec02",
+      "copy_sha256": "b367b77dedadfec8a47072fbb0cbb9de35d81622c240ede3ea4cebe5e7d77c8a",
+      "working_file_equals_HEAD": true,
+      "source_status": ""
+    },
+    {
+      "copy": "unity-planning-origin.md",
+      "source_repository": "/Users/sokol/Git/ProjectGameDev-Hub/Unity",
+      "source_path": "history/PLANNING_GAMEDEV-before.md",
+      "source_head": "cb8630062ddb44815ffb2d1d62ef1a0c07a86f28",
+      "line_ranges": [
+        [
+          1,
+          18
+        ],
+        [
+          133,
+          136
+        ]
+      ],
+      "source_file_sha256": "721792b0b8f1f76150ed2fe694bcde58a46b545f5f26aae42d7d6ce3c0d7bc88",
+      "copy_sha256": "a6d1a5cd927a754aa13132a5005b662ac59dcce66af12eb8c2f9b91a073d19f9",
+      "working_file_equals_HEAD": true,
+      "source_status": ""
+    },
+    {
+      "copy": "sass-mutiny-source.txt",
+      "source_repository": "/Users/sokol/Git/ProjectPersonalFunnelPage/ProjectPersonalFunnelPageWeb",
+      "source_path": "src/entities/content/interview.ts",
+      "source_head": "a4fd6ada10a37a84baa1de6e5201fd36b3820aee",
+      "line_ranges": [
+        [
+          2171,
+          2191
+        ]
+      ],
+      "source_file_sha256": "3ca2926ec33c455372cff033a47aad0cd128eb5e28f3ee7abd49340ae556818f",
+      "copy_sha256": "c7b2313b3c7b29ee3368a24a2f58d1d0a2143954a25fe4a26e50e5a36c3547d2",
+      "working_file_equals_HEAD": false,
+      "source_status": "M  src/entities/content/interview.ts"
+    }
+  ],
+  "user_statement": {
+    "copy": "user-background-20261026.md",
+    "source": "2026-10-26 현재 대화의 사용자 제공 문장과 후속 정정",
+    "sha256": "b6b2f0b6dc8c7901eae894701b8f40f7b1becc64cb406f255865708e19335c7d"
+  }
+}
