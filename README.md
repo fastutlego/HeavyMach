@@ -6,6 +6,8 @@
 
 기존 [HeavyMachRecovery](Compatibility/README.md)는 원본 ARMv6 바이너리를 인터프리터로 실행한다. 그 실행본은 동작 비교 기준이며, 소스 복원 완료를 뜻하지 않는다. 이 프로젝트의 완료 여부는 소스로 빌드한 게임의 증거로 판단한다.
 
+[개발자의 변](docs/RESTORATION.md)에 HeavyMach를 선택한 개인적인 배경을 기록한다. 소개·회고·SaaS Apps·Mags를 작성할 때는 [원문과 출처](docs/developer-background.md)를 함께 읽는다.
+
 | 문서 | 내용 |
 | --- | --- |
 | [game-design](docs/game-design.md) | 게임 기획·화면 의도·요구 ID·승인/미구현 범위 |
