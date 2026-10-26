@@ -1922,5 +1922,12 @@
       "build/apple-performance-20261026/mac-development-signed/normal-final-leaks.txt": "6b0c30880c7aa446aadb7ab9f8bd9a25f0a6b33e0d947e33d65fc42b894aeabe",
       "build/apple-performance-20261026/mac-development-signed/normal-final-run.json": "9d9120a0cf7a0af9496ffccb9be3ed3fe6be2e12308e384afe53342aacebef25"
     }
+  },
+  "mac_fullscreen_capture_followup": {
+    "date": "2026-10-27",
+    "evidence": "mac-fullscreen-capture-20261027.json",
+    "native_capture_fills_display": true,
+    "white_margin_classification": "CUA window capture path",
+    "product_code_changed": false
   }
 }

@@ -114,7 +114,8 @@ def main():
     shutil.copytree(ROOT/'docs/public/independence',dist/'independence',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/clone',dist/'clone',dirs_exist_ok=True)
     (dist/'evidence').mkdir(exist_ok=True)
-    shutil.copyfile(ROOT/'docs/evidence/apple-platform-performance-20261026.json',dist/'evidence/apple-platform-performance-20261026.json')
+    for name in ['apple-platform-performance-20261026.json', 'mac-fullscreen-capture-20261027.json']:
+        shutil.copyfile(ROOT/'docs/evidence'/name,dist/'evidence'/name)
     for name in ['game-design.md','document-governance.md','document-map.json','apple-platforms.md','keyboard-input-policy.md','current-status.md']:
         shutil.copyfile(ROOT/'docs'/name,dist/name)
     report={'pages':['index.html','retrospective.html','documentation.html','rea.html','port-and-native.html','related-titles.html','android-plan.html','ios-audit.html','restoration.html'],'manuscripts':['report-overview-20261025.md','engineering-retrospective-20261025.md','rea-restoration-method-20261025.md','ipa-port-and-native-app-20261026.md','related-titles-20261026.md','android-port-plan-20261026.md','ios-completeness-audit-20261026.md','RESTORATION.md'],'image_count_before':len(BeautifulSoup(original,'html.parser').select('img')),'image_count_after':len(old.select('img'))}

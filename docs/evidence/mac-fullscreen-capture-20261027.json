@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-27",
+  "product_commit": "314089fa",
+  "app": "HeavyMachMac (normal)",
+  "capture_method": "Preview File > Take Screenshot > Entire Screen, operated through CUA",
+  "native_capture": {
+    "local_path": "build/mac-fullscreen-20261027/native-display-normal.png",
+    "sha256": "e88f74fe5822732fce8e865e0d25d109c8d3e3d4615517cd4764e59b62602741",
+    "bytes": 6553645,
+    "height": 2160,
+    "regions": {
+      "bottom_110": {
+        "near_white_pixels": 0,
+        "pixels": 422400
+      },
+      "right_195": {
+        "near_white_pixels": 0,
+        "pixels": 421200
+      },
+      "top_110": {
+        "near_white_pixels": 0,
+        "pixels": 422400
+      }
+    },
+    "width": 3840
+  },
+  "pixel_check": "ImageIO/CoreGraphics decoded RGBA8; near white means R, G and B each >=245. Both horizontal edge strips were checked to avoid bitmap row-origin ambiguity.",
+  "visual_observation": "Game fills native display capture edges. CUA window capture shows white top/right margins.",
+  "cua_margin_approx_pixels": {
+    "top": 110,
+    "right": 195
+  },
+  "conclusion": "White margins belong to the CUA window-capture path; native whole-display capture does not contain them.",
+  "limitations": [
+    "Native capture contains Screenshot toolbar/selection and desktop overlays; raw image remains local.",
+    "Underlying CUA internal implementation was not changed or identified.",
+    "Native capture in this follow-up is the normal app; cheat fullscreen geometry was covered by the prior 33-test run."
+  ],
+  "product_changes_this_followup": false
+}
