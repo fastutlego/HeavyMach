@@ -106,7 +106,7 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
   auto& session=storage<std::unique_ptr<heavymach::GameSession>>(self.game,"_session");XCTAssertTrue(bool(session));if(!session)return;session->validationSetCheats(true);
   bool seen=false;size_t maxBullets=0;std::vector<double> costs;NSUInteger before=((HMInputTestView*)self.game).gameSaveCalls;
   for(int n=0;n<180;++n){auto begin=std::chrono::steady_clock::now();frames(self.game,1);if(n>=30)costs.push_back(std::chrono::duration<double,std::milli>(std::chrono::steady_clock::now()-begin).count());maxBullets=std::max(maxBullets,session->bulletCount());for(auto& sprite:session->sprites())if(sprite.tile==spec.tile){seen=true;XCTAssertTrue(std::isfinite(sprite.rotation));}}
-  XCTAssertTrue(seen,@"%s",spec.name);CGSize size=[media imageSize:[NSString stringWithUTF8String:spec.tile]];XCTAssertEqual(size.width,512);XCTAssertGreaterThan(size.height,100);
+  XCTAssertTrue(seen,@"%s",spec.name);CGSize size=[media imageSize:[NSString stringWithUTF8String:spec.tile]];XCTAssertEqual(size.width,spec.width);XCTAssertEqualWithAccuracy(size.height,spec.width*spec.aspect,.51);
   XCTAssertEqual(((HMInputTestView*)self.game).gameSaveCalls,before);
 #if !TARGET_OS_OSX
   UIImage* picture=[gl snapshot];XCTAssertNotNil(picture);if(picture){XCTAttachment* a=[XCTAttachment attachmentWithImage:picture];a.name=[NSString stringWithUTF8String:spec.name];a.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:a];}
@@ -114,6 +114,23 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
   std::sort(costs.begin(),costs.end());double sum=0;for(double c:costs)sum+=c;
   NSLog(@"HM_VTOL %s texture=%gx%g seen=%d bullets=%zu render_mean_ms=%.3f render_p95_ms=%.3f",spec.name,size.width,size.height,seen,maxBullets,sum/costs.size(),costs[costs.size()*95/100]);++index;
  }
+}
+- (void)testVTOLSizeAndEdgeComparison {
+ // Same GPU path and scale as gameplay. Rows: Heli001, Heli006, Yak, Harrier, F35B.
+ // Columns show level flight and pitched flight without other enemies hiding the body.
+ HMMedia* media=[HMMedia new];HMGLRenderer* gl=[HMGLRenderer new];XCTAssertNotNil(gl);
+ media.glRenderer=gl;XCTAssertTrue([gl beginFrame]);
+ [media draw:@"BG_City01.png" x:240 y:160];
+ NSArray<NSString*>* names=@[@"E_Heli_Body_01.png",@"E_Heli_Body_06.png",@"Extensions/VTOL_Yak141.png",@"Extensions/VTOL_Harrier.png",@"Extensions/VTOL_F35B.png"];
+ for(NSUInteger row=0;row<names.count;++row){
+  CGSize size=[media imageSize:names[row]];CGFloat height=size.height;
+  if(row>=2){const auto& spec=heavymach::vtolSpecs()[row-2];height=spec.width*spec.aspect;XCTAssertGreaterThan(size.width,[media imageSize:names[0]].width);XCTAssertLessThan(size.width,[media imageSize:names[1]].width);}
+  for(int col=0;col<2;++col)[media draw:names[row] x:150+col*180 y:280-row*55 columns:1 rows:1 tile:0 scaleX:1 scaleY:height/size.height rotation:col*.14 alpha:1];
+ }
+ [gl finish];[gl endFrame];media.glRenderer=nil;XCTAssertEqualObjects([gl diagnostics][@"lastError"],@"");
+#if !TARGET_OS_OSX
+ UIImage* picture=[gl snapshot];XCTAssertNotNil(picture);if(picture){XCTAttachment* a=[XCTAttachment attachmentWithImage:picture];a.name=@"VTOL_Size_Edges";a.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:a];}
+#endif
 }
 - (void)startFixture {
  heavymach::ValidationScenario fixture;fixture.allWeapons=true;fixture.internalLevel=4;fixture.grades={4,4,4};fixture.playerPosition=heavymach::Vector2{250,100};

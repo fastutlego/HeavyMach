@@ -7397,18 +7397,18 @@
     },
     {
       "path": "Art/Extensions/VTOL_F35B.png",
-      "bytes": 910278,
-      "sha256": "747b937be1dc5cd5049e5ccbd5736ecd19b9a9a421222df7e0a56bae92c8980e"
+      "bytes": 874915,
+      "sha256": "8c2663b77851cde0665186c3ace3e7032de687e011162cfebe28fc71018a6913"
     },
     {
       "path": "Art/Extensions/VTOL_Harrier.png",
-      "bytes": 910761,
-      "sha256": "b40e1e5b9cae681472de34c9be748d50c0e8bf5a0b8fd3b1004ed401df983ecc"
+      "bytes": 886912,
+      "sha256": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb"
     },
     {
       "path": "Art/Extensions/VTOL_Yak141.png",
-      "bytes": 926746,
-      "sha256": "dc89ede4289373fbb8cc4b8c12a4a662a6ca4c657e066b21ca294b4c8db2e527"
+      "bytes": 881263,
+      "sha256": "fdff4c3a7193738d2da9ecb0dd233397490a5e1dc29a65544726cd9c68ace626"
     }
   ]
 }

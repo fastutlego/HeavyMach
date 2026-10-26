@@ -8,7 +8,7 @@ namespace heavymach {
 struct VTOLSpec {
  const char* name; const char* tile; const char* statsSource; const char* weapon;
  float width,aspect; ObjectBounds bounds; Vector2 muzzle;
- std::array<Vector2,2> exhaust;
+ std::array<Vector2,1> exhaust;
 };
 const std::array<VTOLSpec,3>& vtolSpecs();
 const VTOLSpec* vtolSpec(std::string_view name);

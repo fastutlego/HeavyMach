@@ -6,9 +6,9 @@
 namespace heavymach {
 const std::array<VTOLSpec,3>& vtolSpecs(){
  static const std::array<VTOLSpec,3> specs{{
-  {"VTOL_Yak141","Extensions/VTOL_Yak141.png","Heli004","E_Wpn_ASM",140,724.f/2172,{-66,-12,65,17},{-30,-10},{{{-17,-10},{35,-10}}}},
-  {"VTOL_Harrier","Extensions/VTOL_Harrier.png","Heli008","E_Boss_Wpn_01",132,773.f/2033,{-60,-13,61,17},{-39,-10},{{{-4,-8},{12,-10}}}},
-  {"VTOL_F35B","Extensions/VTOL_F35B.png","E0604","E_0604_Wpn",148,774.f/2032,{-68,-14,67,17},{-20,-11},{{{-20,-10},{55,-8}}}}
+  {"VTOL_Yak141","Extensions/VTOL_Yak141.png","Heli004","E_Wpn_ASM",112,724.f/2172,{-52.8f,-9.6f,52,13.6f},{-24,-8},{{{28,-8}}}},
+  {"VTOL_Harrier","Extensions/VTOL_Harrier.png","Heli008","E_Boss_Wpn_01",108,773.f/2034,{-60*108.f/132,-13*108.f/132,61*108.f/132,17*108.f/132},{-39*108.f/132,-10*108.f/132},{{{12*108.f/132,-10*108.f/132}}}},
+  {"VTOL_F35B","Extensions/VTOL_F35B.png","E0604","E_0604_Wpn",116,773.f/2033,{-68*116.f/148,-14*116.f/148,67*116.f/148,17*116.f/148},{-20*116.f/148,-11*116.f/148},{{{55*116.f/148,-8*116.f/148}}}}
  }};return specs;
 }
 const VTOLSpec* vtolSpec(std::string_view name){for(const auto& s:vtolSpecs())if(name==s.name)return &s;return nullptr;}

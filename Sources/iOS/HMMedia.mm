@@ -2,6 +2,7 @@
 #import "HMMedia.h"
 #import "HMGLRenderer.h"
 #import "HMOpenALAudio.h"
+#include "VTOL.hpp"
 #import <objc/runtime.h>
 #define STB_IMAGE_IMPLEMENTATION
 #define STB_IMAGE_STATIC
@@ -106,10 +107,13 @@ template<class Raster> static void HMDrawRaster(Raster& raster,CGPoint offset,CG
     CGColorSpaceRef space=CGColorSpaceCreateDeviceRGB();
     CGBitmapInfo flags=CGBitmapInfo(kCGBitmapByteOrder32Big)|CGBitmapInfo(rgb565?kCGImageAlphaNoneSkipLast:kCGImageAlphaPremultipliedLast);
     CGImageRef decoded=CGImageCreate(width,height,8,32,size_t(width)*4,space,flags,provider,nullptr,false,kCGRenderingIntentDefault);
-    // Approved high-resolution VTOL originals stay intact in the bundle. Decode
-    // once to a <=512px runtime texture; no per-frame resize or file writes.
-    if(decoded&&[name hasPrefix:@"Extensions/VTOL_"]&&width>512){
-        int smallWidth=512,smallHeight=std::max(1,int(std::lround(double(height)*512/width)));
+    // Prefilter new aircraft to their logical drawing size once. Sampling a
+    // 512px texture into ~110 scene pixels skipped thin edges and fine details.
+    int spriteWidth=0;
+    if([name hasPrefix:@"Extensions/VTOL_"])for(const auto& spec:heavymach::vtolSpecs())
+        if([name isEqualToString:[NSString stringWithUTF8String:spec.tile]]){spriteWidth=int(std::lround(spec.width));break;}
+    if(decoded&&spriteWidth>0&&width>spriteWidth){
+        int smallWidth=spriteWidth,smallHeight=std::max(1,int(std::lround(double(height)*spriteWidth/width)));
         NSMutableData *small=[NSMutableData dataWithLength:size_t(smallWidth)*smallHeight*4];
         CGContextRef context=CGBitmapContextCreate(small.mutableBytes,smallWidth,smallHeight,8,size_t(smallWidth)*4,space,kCGBitmapByteOrder32Big|kCGImageAlphaPremultipliedLast);
         if(context){
