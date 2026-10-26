@@ -1,8 +1,12 @@
 # HeavyMach 1.13 소스 복원
 
-작업은 [AGENTS.md](AGENTS.md)와 [정본 문서](docs/canonical.md)에서 시작한다. [현재 상태](docs/current-status.md)로 완료 범위와 남은 일을 확인하고, 설계·관련 정책을 읽은 뒤 수정한다. 과거 인계는 당시 증거로 보존한다.
-
 원본 IPA를 REA로 분석하여 게임 코드를 소스로 복원하고, 최신 iPhone과 iOS 시뮬레이터에서 빌드·실행하는 프로젝트다. 2026-10-24 사용자는 HeavyMach 1을 GameDev 초기 기획의 참고 원본이라고 확인했다. Unity는 별도 ProjectGameDevUnity 저장소에서 관리한다.
+
+일반 앱과 치트 검증 앱을 iPhone Air에 설치했고, 사용자는 설치본의 모든 미션에서 크래시·오동작·적 이동 이상은 없는 것 같다고 보고했다. 이 제품 코드를 `v0.9`로 보존했다. 복원판은 C++20·Objective-C++로 작성했다.
+
+- [빌드와 설치](docs/public/build-and-install.md): 원본 자원 준비, 두 앱 빌드, Simulator·아이폰 설치.
+- [구현과 검증 범위](docs/public/implementation-status.md): 구현 기능, 실제 확인한 결과, 남은 작업과 배포 상태.
+- [SaaS 집필용 문서 안내](docs/public/publication-inventory.md): 읽기 순서·주제별 출처·이미지와 아직 없는 근거.
 
 기존 [HeavyMachRecovery](Compatibility/README.md)는 원본 ARMv6 바이너리를 인터프리터로 실행한다. 그 실행본은 동작 비교 기준이며, 소스 복원 완료를 뜻하지 않는다. 이 프로젝트의 완료 여부는 소스로 빌드한 게임의 증거로 판단한다.
 
@@ -45,7 +49,7 @@ ctest --test-dir build/core --output-on-failure
 
 프로젝트 구성 변경 후 생성은 `xcodegen generate --spec iOS/project.yml`이다. 원본 IPA·추출본·사용자 저장·검증된 호환 실행본을 덮어쓰지 않는다. 최신 빌드·실행 성공 범위와 미확인 항목은 위 문서에서 확인한다.
 
-원본과 추출 자원 `Resources/`, 로컬 분석 `Analysis/`, `build/`는 Git에서 제외한다. 새 checkout은 원본 없이 앱을 빌드할 수 없다. [출처](docs/source-provenance.md)의 동일 SHA 원본을 별도 보관하고 `python3 tools/export_resources.py --source <원본-추출-앱-폴더> --output Resources`로 파생 자원을 준비한다. 입력 폴더 구조는 `--help`와 출처 기록을 확인한다. 기존 자원과 사용자 저장을 덮어쓰지 않는다. vendor의 라이선스를 유지한다.
+원본과 추출 자원 `Resources/`, 로컬 분석 `Analysis/`, `build/`는 Git에서 제외한다. 새 checkout은 원본 없이 앱을 빌드할 수 없다. [출처](docs/source-provenance.md)의 동일 SHA 원본을 별도 보관하고 `python3 tools/export_resources.py --source <원본-추출-앱-폴더> --output Resources`로 파생 자원을 준비한다. 현재 렌더러에는 `OriginalImages`도 필요하다. [설치 가이드](docs/public/build-and-install.md)의 원본 이미지 복사 단계까지 수행한다. 기존 자원과 사용자 저장을 덮어쓰지 않는다. vendor의 라이선스를 유지한다.
 
 업무별 읽기 목록과 문서 연결 검사:
 
@@ -71,3 +75,7 @@ xcodebuild -project iOS/HeavyMachRestored.xcodeproj -scheme HeavyMachRestored -s
 치트 앱은 같은 명령의 scheme을 HeavyMachValidation으로 바꾼다. 현재 OpenAL 빌드 스크립트의 대상은 arm64다. 최초 일반 generic 명령의 라이브러리 입력 누락 실패는 개편 기록에 보존했다.
 
 [분리 후 전수검사](docs/migration/completeness-audit-20261026.md)에 파일 보존·복구·경로 수정과 로컬 증거 위치를 기록했다. 과거 build/ 증거는 기존 제작 폴더에 보존하며 새 빌드 출력과 구분한다.
+
+코드를 수정할 때는 [AGENTS.md](AGENTS.md), [정본](docs/canonical.md), [현재 상태](docs/current-status.md)와 관련 정책을 읽는다.
+
+기존 화면 자료는 [이미지 색인](docs/public/media/README.md), 후속 플레이 영상의 추출·배치는 [영상·README 작업 절차](docs/media-publication.md)를 따른다.

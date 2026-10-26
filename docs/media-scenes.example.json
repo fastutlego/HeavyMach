@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "status": "template_waiting_for_user_video",
+  "source": {
+    "filename": null,
+    "sha256": null,
+    "duration_seconds": null,
+    "width": null,
+    "height": null,
+    "rotation_degrees": null,
+    "frame_rate": null,
+    "device": null,
+    "app_variant": null,
+    "build_or_commit": null
+  },
+  "scenes": [
+    {
+      "id": "gameplay-01",
+      "start_seconds": null,
+      "end_seconds": null,
+      "poster_seconds": null,
+      "observed_action": null,
+      "caption": null,
+      "alt_text": null,
+      "outputs": [],
+      "selected_for": []
+    }
+  ]
+}

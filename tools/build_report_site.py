@@ -61,7 +61,7 @@ def main():
         current.append(child)
     nav=old.select_one('aside nav');nav.clear()
     for section in main.select('section'):
-        a=old.new_tag('a',href='#'+section['id']);a.string={'developer-story':'개발자의 변', 'ios-audit':'iOS 코드·문서 검사', 'android-plan':'타이틀·Android', 'migration-audit':'전수검사·REA', 'repositories':'저장소·v0.9','port-and-native':'포팅·복원 과정','retrospective':'기술 회고','rea':'REA 활용','documentation':'문서 체계','menu-joins':'배경 연결 수정','menu-result':'메뉴 확장','phone':'아이폰 검사','ai':'적 이동','rotation':'가로 회전','screens':'남은 화면','evidence':'남은 작업'}[section['id']];nav.append(a)
+        a=old.new_tag('a',href='#'+section['id']);a.string={'publication':'집필 자료·설치 안내', 'developer-story':'개발자의 변', 'ios-audit':'iOS 코드·문서 검사', 'android-plan':'타이틀·Android', 'migration-audit':'전수검사·REA', 'repositories':'저장소·v0.9','port-and-native':'포팅·복원 과정','retrospective':'기술 회고','rea':'REA 활용','documentation':'문서 체계','menu-joins':'배경 연결 수정','menu-result':'메뉴 확장','phone':'아이폰 검사','ai':'적 이동','rotation':'가로 회전','screens':'남은 화면','evidence':'남은 작업'}[section['id']];nav.append(a)
     old.select_one('.sidefoot').string='2026.10.26 · 개발·검증 기록'
     old.title.string='HeavyMach 복원과 아이폰 검증'
     old.select_one('meta[name="description"]')['content']='HeavyMach 원본 분석, 사용자 지시별 수정, 아이폰 검증과 남은 작업'
@@ -76,6 +76,18 @@ def main():
     article(ROOT/'docs/android-port-plan-20261026.md',dist/'android-plan.html','android-port-plan-20261026.md',retro)
     article(ROOT/'docs/ios-completeness-audit-20261026.md',dist/'ios-audit.html','ios-completeness-audit-20261026.md',retro)
     article(ROOT/'docs/RESTORATION.md',dist/'restoration.html','RESTORATION.md',retro)
+    public_articles = [
+        ('build-and-install.md', 'installation.html'),
+        ('implementation-status.md', 'implementation.html'),
+        ('publication-inventory.md', 'publication.html'),
+    ]
+    for source_name, page_name in public_articles:
+        article(ROOT/'docs/public'/source_name, dist/page_name, source_name, retro)
+        page = BeautifulSoup((dist/page_name).read_text(), 'html.parser')
+        if page.footer: page.footer.decompose()
+        (dist/page_name).write_text(str(page))
+    article(ROOT/'docs/media-publication.md', dist/'media-preparation.html', 'media-publication.md', retro)
+    shutil.copyfile(ROOT/'docs/media-scenes.example.json', dist/'media-scenes.example.json')
     story=BeautifulSoup((dist/'restoration.html').read_text(),'html.parser')
     if story.footer: story.footer.decompose()
     (dist/'restoration.html').write_text(str(story))
@@ -83,6 +95,8 @@ def main():
     for name in ['game-design.md','document-governance.md','document-map.json']:
         shutil.copyfile(ROOT/'docs'/name,dist/name)
     report={'pages':['index.html','retrospective.html','documentation.html','rea.html','port-and-native.html','related-titles.html','android-plan.html','ios-audit.html','restoration.html'],'manuscripts':['report-overview-20261025.md','engineering-retrospective-20261025.md','rea-restoration-method-20261025.md','ipa-port-and-native-app-20261026.md','related-titles-20261026.md','android-port-plan-20261026.md','ios-completeness-audit-20261026.md','RESTORATION.md'],'image_count_before':len(BeautifulSoup(original,'html.parser').select('img')),'image_count_after':len(old.select('img'))}
+    report['pages'] += [page for _, page in public_articles] + ['media-preparation.html']
+    report['manuscripts'] += [source for source, _ in public_articles] + ['media-publication.md']
     assert report['image_count_before']==report['image_count_after']
     print(json.dumps(report,ensure_ascii=False))
 if __name__=='__main__':main()

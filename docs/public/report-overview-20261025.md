@@ -4,6 +4,12 @@
 
 제품 코드 `72e8c68e` · 2026년 10월 25일 기준
 
+## GitHub 문서·SaaS 집필 자료 {#publication}
+
+SaaS 담당 세션이 개발 동기·사용자 원문·복원 과정·검증 결과를 읽고 Apps·Mags를 작성하도록 문서 안내를 정리했다. GitHub용 설치 가이드와 구현·검증 범위도 추가했다. 기존 보고 이미지 13개를 출처와 함께 저장소에 보존했다.
+
+[SaaS 집필용 문서 안내](publication.html) · [빌드·설치](installation.html) · [구현 범위](implementation.html) · [플레이 영상·README 준비](media-preparation.html)
+
 ## 개발자의 변 {#developer-story}
 
 대학생 시절 아이팟터치에서 만난 HeavyMach는 지준영이 개발자로 직업을 바꾸는 데 영향을 준 게임이다. 2015년 잡지사, 2016년 필리핀 근무를 거쳐 2017년 7월 iOS 개발자로 전업했다. 본인은 HeavyMach의 영향을 약 35%로 평가한다. 잡지사 편집디자이너들의 집단 항명과 근무 조건 변화, 공장 자동화 기업 임원들을 취재하며 접한 기술의 편익도 함께 기록했다.
