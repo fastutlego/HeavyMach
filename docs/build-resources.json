@@ -17,7 +17,7 @@
     "Resources/RawData": 46,
     "Resources/Assets.xcassets": 3,
     "Resources/Validation": 1,
-    "Art/Extensions": 4
+    "Art/Extensions": 7
   },
   "files": [
     {
@@ -7394,6 +7394,21 @@
       "path": "Art/Extensions/TitleWide.png",
       "bytes": 2189002,
       "sha256": "03ce72c951431b7a51d13b329c950b67ee635842e22630f7ec9d61097aefdf6b"
+    },
+    {
+      "path": "Art/Extensions/VTOL_F35B.png",
+      "bytes": 910278,
+      "sha256": "747b937be1dc5cd5049e5ccbd5736ecd19b9a9a421222df7e0a56bae92c8980e"
+    },
+    {
+      "path": "Art/Extensions/VTOL_Harrier.png",
+      "bytes": 910761,
+      "sha256": "b40e1e5b9cae681472de34c9be748d50c0e8bf5a0b8fd3b1004ed401df983ecc"
+    },
+    {
+      "path": "Art/Extensions/VTOL_Yak141.png",
+      "bytes": 926746,
+      "sha256": "dc89ede4289373fbb8cc4b8c12a4a662a6ca4c657e066b21ca294b4c8db2e527"
     }
   ]
 }

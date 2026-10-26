@@ -64,3 +64,7 @@ MAP/MCH 관찰 구조는 LE u32 `declared_size,type,data_size`, payload, LE u32 
 ## 구현된 음향과 수명
 
 31개 WAV의 OpenAL 버퍼와 source를 준비하고 재사용한다. 원본 위치·거리 모델·stop/play 순서를 따른다. 과거 AVAudioPlayer의 근사 pan은 현행 경로가 아니다. 원작 4개 저장 호출 지점, 50Hz 가속도 필터, 한 프레임 한 tick, 메모리/파일 저장 경계는 [실행 정책](runtime-policy.md)을 따른다. 백그라운드·잠금·120초 무조작은 실행 정책에 따라 명시 재개를 요구한다. 결과/업그레이드 상태와 정상 저장 시점은 보존한다.
+
+## 승인된 공중 적 확장 — 2026-10-27
+
+`VTOL.cpp`는 원본 데이터 로드 후 새 기체3종과 별도 캠페인 배치를 추가한다. `GameSession`은 기존 비행·무기·피격 경로를 사용하며 새 기체의 회전·발사점·충돌 범위·배기만 분기한다. [구현과 검사](vtol-expansion.md).

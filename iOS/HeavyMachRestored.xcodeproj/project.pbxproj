@@ -176,6 +176,9 @@
 		03DFCB1F4CEDEAC7FA6AA896 /* wide-mode-912-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wide-mode-912-0.png"; sourceTree = "<group>"; };
 		0402785238868DABF547CBBF /* wide-title-912-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wide-title-912-0.png"; sourceTree = "<group>"; };
 		06C86ECE0343169617A53F62 /* assault-procedures.csv */ = {isa = PBXFileReference; path = "assault-procedures.csv"; sourceTree = "<group>"; };
+		070ABAFE741ADFB19429418D /* harrier-concept.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "harrier-concept.png"; sourceTree = "<group>"; };
+		07ED27B18EBB601EB97D7DF6 /* f35b-concept.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "f35b-concept.png"; sourceTree = "<group>"; };
+		09FCC02D24921FDED7F64EB4 /* E_Heli_Body_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = E_Heli_Body_01.png; sourceTree = "<group>"; };
 		0AC9E233379817B782191A15 /* nil-parts-observation.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "nil-parts-observation.md"; sourceTree = "<group>"; };
 		0B38F0C1AF257040BF415F40 /* Validation */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Validation; path = ../Resources/Validation; sourceTree = SOURCE_ROOT; };
 		108A90E6EAF7981E0C0E1ED7 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
@@ -187,16 +190,20 @@
 		14800518615380B465CBCA73 /* ios-completeness-evidence-20261026.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "ios-completeness-evidence-20261026.json"; sourceTree = "<group>"; };
 		186FA87DDD9F0E116037450B /* sprite-raster.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "sprite-raster.md"; sourceTree = "<group>"; };
 		1986FF0AA05DA140FC2F5D8E /* release-review-20261025.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "release-review-20261025.md"; sourceTree = "<group>"; };
+		1A1632886032D437AC0FF0B7 /* apple-final-build-20261026.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "apple-final-build-20261026.json"; sourceTree = "<group>"; };
 		1A9C5DF87DAF87021A4F2F1A /* after-wide-title-912-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "after-wide-title-912-0.png"; sourceTree = "<group>"; };
 		1AC5F0B9DF714D79DF45FA88 /* HMMediaTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMMediaTests.mm; sourceTree = "<group>"; };
+		1B394C55A1EB4BF61DA2C808 /* keyboard-input-policy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "keyboard-input-policy.md"; sourceTree = "<group>"; };
 		1E155672CFC9DAA270003894 /* HMMediaParityTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMMediaParityTests.mm; sourceTree = "<group>"; };
 		1E690824D09AA5F5A9A72384 /* user-background-20261026.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "user-background-20261026.md"; sourceTree = "<group>"; };
+		1FD05AF93076309459C68938 /* vtol-art-and-loadout-20261027.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "vtol-art-and-loadout-20261027.md"; sourceTree = "<group>"; };
 		208157197CDE999B8C845E9F /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = System/Library/Frameworks/GameController.framework; sourceTree = SDKROOT; };
 		218E8A524F0CF706D63BCE7F /* ipa-port-and-native-app-20261026.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "ipa-port-and-native-app-20261026.md"; sourceTree = "<group>"; };
 		22777839507DB25AB4AF3506 /* cheat-stage-check.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "cheat-stage-check.md"; sourceTree = "<group>"; };
 		236B5E6E05A88062350A9AA4 /* core-trail-raster.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "core-trail-raster.md"; sourceTree = "<group>"; };
 		246630478B515E6581CC3F6F /* boss-battles-v6.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "boss-battles-v6.md"; sourceTree = "<group>"; };
 		2584106093F1DF4FEF43B5C9 /* current-status.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "current-status.md"; sourceTree = "<group>"; };
+		2778754E10DB20CBC8809174 /* mac-fullscreen-capture-20261027.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "mac-fullscreen-capture-20261027.json"; sourceTree = "<group>"; };
 		28395D016CD926BE352FCB23 /* Application.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Application.mm; sourceTree = "<group>"; };
 		28753B5A5C5D07136C518D1F /* validation-mode.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "validation-mode.md"; sourceTree = "<group>"; };
 		2C056C70D6CAEDEBA403C2C5 /* implementation-status.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "implementation-status.md"; sourceTree = "<group>"; };
@@ -204,6 +211,7 @@
 		2CD3A716AECFC03CC799EE70 /* rea-availability-20261026.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "rea-availability-20261026.md"; sourceTree = "<group>"; };
 		2D45BB164B71C7D6B4A1A4DD /* weapon-validation-procedure.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "weapon-validation-procedure.md"; sourceTree = "<group>"; };
 		2E643F9C22E5FA4672DE3280 /* core-player.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "core-player.md"; sourceTree = "<group>"; };
+		3037AF25AD1605C96BD16E15 /* yak141-concept.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yak141-concept.png"; sourceTree = "<group>"; };
 		326ADA81CEF8AD70460634EF /* verification.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = verification.md; sourceTree = "<group>"; };
 		32C17D64DAC4FC4E65AE60F6 /* coordinate-policy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "coordinate-policy.md"; sourceTree = "<group>"; };
 		336B28E4FD9D946A8A413417 /* boss-battles-v1.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "boss-battles-v1.md"; sourceTree = "<group>"; };
@@ -213,9 +221,11 @@
 		36C91BD13C30DCFCC76905D3 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		390607579E2C3B74E55BE0D4 /* opengl-migration-20261024.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "opengl-migration-20261024.md"; sourceTree = "<group>"; };
 		3ADB54D9B5A9A03B6B9A51DB /* presentation-ab-20261024.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "presentation-ab-20261024.md"; sourceTree = "<group>"; };
+		3B0720A01397B7955CC08076 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = manifest.json; sourceTree = "<group>"; };
 		3DB19E4A0D6282EF80468101 /* gauge-registration.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "gauge-registration.md"; sourceTree = "<group>"; };
 		3F81E2D1CF48A6BDCECF1B4C /* render-performance.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "render-performance.md"; sourceTree = "<group>"; };
 		3FC6793FC71C9B845F861E05 /* core-visuals.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "core-visuals.md"; sourceTree = "<group>"; };
+		403B299BC86718E4BD532711 /* E_Boss05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = E_Boss05.png; sourceTree = "<group>"; };
 		40B31279B3FDF352F97FF9CF /* before-wide-mission-912-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "before-wide-mission-912-0.png"; sourceTree = "<group>"; };
 		40B5BBD1408F95F15D983471 /* HMAudioTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMAudioTests.mm; sourceTree = "<group>"; };
 		410ADE42E28C6C78D1BF8E06 /* HeavyMachRestored.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = HeavyMachRestored.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -233,11 +243,15 @@
 		4BA21BFDEDBC34071BCAA5E2 /* bundle-audit.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "bundle-audit.json"; sourceTree = "<group>"; };
 		4C186A1CD1CF2568FBFBCCEE /* wide-mission-912-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wide-mission-912-0.png"; sourceTree = "<group>"; };
 		4C7A2F37229D2C8F2F7D631B /* bundle-audit.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "bundle-audit.json"; sourceTree = "<group>"; };
+		4EEDD35DAAFA7072269A86A8 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = manifest.json; sourceTree = "<group>"; };
 		4F37507E6DFEC50B21BA3F45 /* scene-render-comparison.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "scene-render-comparison.md"; sourceTree = "<group>"; };
 		4FA65D317F89D98A91A7DB58 /* README.md.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md.txt; sourceTree = "<group>"; };
+		50CF85F15EA4BB85FAAFA5E9 /* physical-apple-20261027.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "physical-apple-20261027.json"; sourceTree = "<group>"; };
 		52184CD1B5AF9BA5B7CD751B /* status-history-20261024.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "status-history-20261024.md"; sourceTree = "<group>"; };
+		52422C68C625D5938C90F218 /* wireless-apple-20261027.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "wireless-apple-20261027.json"; sourceTree = "<group>"; };
 		532EDB73F624575B2E2A4C59 /* menu-joins-20261025.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "menu-joins-20261025.md"; sourceTree = "<group>"; };
 		535B238683FCED4B5C4EEC79 /* heavy-mach-113-assault-analysis-20261024.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "heavy-mach-113-assault-analysis-20261024.md"; sourceTree = "<group>"; };
+		537551CAC826EA2B0742D775 /* apple-platform-progress-20261026.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "apple-platform-progress-20261026.md"; sourceTree = "<group>"; };
 		54E375898FC422FFEB25FE93 /* HeavyMachRenderTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = HeavyMachRenderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57AC2B9EC0FD2A52BC1DD562 /* RESTORATION.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = RESTORATION.md; sourceTree = "<group>"; };
 		58988EB22F82530CBB4CA5FD /* heavymach-recovery-20261024.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "heavymach-recovery-20261024.md"; sourceTree = "<group>"; };
@@ -247,10 +261,12 @@
 		5A8423B0BCC0B6480D8B16C0 /* core-items.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "core-items.md"; sourceTree = "<group>"; };
 		5AD7E667DDFC38AA9F8F5E3C /* user-restoration-reason-20261026.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "user-restoration-reason-20261026.md"; sourceTree = "<group>"; };
 		5F004D6E34EDF564EF4BB5AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5F83153A48BD54E32E8F6499 /* prompts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = prompts.json; sourceTree = "<group>"; };
 		6064E3C7D6863524A46593E9 /* repository-management.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "repository-management.md"; sourceTree = "<group>"; };
 		6082A90FC44E17D31BC6877E /* survival-audit.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "survival-audit.md"; sourceTree = "<group>"; };
 		613BDC321CE5B1F1405DE68C /* named-machine-bounds.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "named-machine-bounds.md"; sourceTree = "<group>"; };
 		66C79E83E3B01B0E181C594F /* report-overview-20261025.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "report-overview-20261025.md"; sourceTree = "<group>"; };
+		68B80B12913961B1D3E0D52E /* apple-platform-performance-20261026.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "apple-platform-performance-20261026.json"; sourceTree = "<group>"; };
 		6C72DC3A90889B17040F9817 /* HeavyMachRestored-title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HeavyMachRestored-title.png"; sourceTree = "<group>"; };
 		6EB9EABE72CF2DFD14B6DE71 /* player-gauge.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "player-gauge.md"; sourceTree = "<group>"; };
 		6EDD756A4457CA734779347C /* render-fidelity-audit.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "render-fidelity-audit.md"; sourceTree = "<group>"; };
@@ -266,18 +282,21 @@
 		77847EF65DD7629DBD23D5D0 /* core-trail.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "core-trail.md"; sourceTree = "<group>"; };
 		78337F678A716FD48171D145 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		797C960A51D9D63C910A96BB /* runtime-policy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "runtime-policy.md"; sourceTree = "<group>"; };
+		7A1E843D8C31F29FF2FEE252 /* wireless-device-workflow.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "wireless-device-workflow.md"; sourceTree = "<group>"; };
 		7B03793EB8A9E595790A8010 /* original-procedures.csv */ = {isa = PBXFileReference; path = "original-procedures.csv"; sourceTree = "<group>"; };
 		7C96EEAE67C5C2D61771E0DA /* hm-defense-origin.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "hm-defense-origin.md"; sourceTree = "<group>"; };
 		7CD899817C62F8E38FEE5AE1 /* core-title.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "core-title.md"; sourceTree = "<group>"; };
 		7D0DB01D3E25BDB027FD1FB5 /* boss-motion-fix-20261025.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "boss-motion-fix-20261025.md"; sourceTree = "<group>"; };
 		7E66B8BE948E766D7FBB36F9 /* title-b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "title-b.png"; sourceTree = "<group>"; };
 		83166561B50C8B33F2950105 /* Modules */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Modules; path = ../Modules/HeavyMachModules.xcodeproj; sourceTree = "<group>"; };
+		8403DD328CBBED0400784D3E /* vtol-helicopter-density-20261027.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "vtol-helicopter-density-20261027.json"; sourceTree = "<group>"; };
 		853B139AC90D420064E47A20 /* developer-background.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "developer-background.md"; sourceTree = "<group>"; };
 		85F6D98D330E6DB6AC9F4BEC /* OriginalTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OriginalTypes.h; sourceTree = "<group>"; };
 		873AF8B5832718C3BD3A1C28 /* report-site.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "report-site.md"; sourceTree = "<group>"; };
 		883EA33703F130F86BFAAB0F /* media-scenes.example.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "media-scenes.example.json"; sourceTree = "<group>"; };
 		89B16328BFC2E9FFEA2C48DB /* HMResourceLifecycleTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMResourceLifecycleTests.mm; sourceTree = "<group>"; };
 		8AADFC1117F5DC5B0122FD9D /* audio-preload.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "audio-preload.md"; sourceTree = "<group>"; };
+		8DBB13F902EC5D515094E6D1 /* yak141-concept.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yak141-concept.png"; sourceTree = "<group>"; };
 		8E74F76EA57F3C2606331405 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		8EBAF40B3CCCC68939FE1058 /* HeavyMachValidation-title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HeavyMachValidation-title.png"; sourceTree = "<group>"; };
 		90A36F72BFE0B02643FA865D /* evidence-index.csv */ = {isa = PBXFileReference; path = "evidence-index.csv"; sourceTree = "<group>"; };
@@ -289,15 +308,18 @@
 		9AC080A75FE4676E7C571853 /* source-manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "source-manifest.json"; sourceTree = "<group>"; };
 		9D8DF3657E31249D9890236E /* frame-drop-investigation-20261024.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "frame-drop-investigation-20261024.md"; sourceTree = "<group>"; };
 		9F111CD59009324CDE18B622 /* native-menus.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "native-menus.md"; sourceTree = "<group>"; };
+		9FBBFEDE339D8551A7455D59 /* auto-aim-plan-20261026.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "auto-aim-plan-20261026.md"; sourceTree = "<group>"; };
 		A00E4CAC3EA41FD587F8CA92 /* restoration-contract.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "restoration-contract.md"; sourceTree = "<group>"; };
 		A1451F6051CFB5BDCAEEE48C /* completeness-audit-20261026.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "completeness-audit-20261026.md"; sourceTree = "<group>"; };
 		A2299D1DA0E938863932D743 /* clone-build-20261026.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "clone-build-20261026.md"; sourceTree = "<group>"; };
 		A2E598C85C26B839AE180293 /* method-address-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "method-address-map.json"; sourceTree = "<group>"; };
+		A4071DBEE8535C94812B0DB8 /* E_0604_Body.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = E_0604_Body.png; sourceTree = "<group>"; };
 		A6816EFD45254FFD7BD889AE /* ios-completeness-audit-20261026.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "ios-completeness-audit-20261026.md"; sourceTree = "<group>"; };
 		A6CB4A553495F4B6F8EE8DAF /* device-validation-ready.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "device-validation-ready.md"; sourceTree = "<group>"; };
 		A6FA707E7CC17138EEBFB6D4 /* related-titles-20261026.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "related-titles-20261026.md"; sourceTree = "<group>"; };
 		A9CA1558485D3C2302CA7538 /* HMGLReferenceTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMGLReferenceTests.mm; sourceTree = "<group>"; };
 		A9F9AF709BDE548A75804212 /* rea-provenance.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "rea-provenance.json"; sourceTree = "<group>"; };
+		AAB65F292ABEA6F5E874EC65 /* f35b-concept.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "f35b-concept.png"; sourceTree = "<group>"; };
 		AACB612D08366230690E6ACE /* core-world.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "core-world.md"; sourceTree = "<group>"; };
 		AB2B83C0AFA0601BE600779D /* core-bullet-visual.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "core-bullet-visual.md"; sourceTree = "<group>"; };
 		AB993236FCD324F28BCBFA0C /* android-port-plan-20261026.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "android-port-plan-20261026.md"; sourceTree = "<group>"; };
@@ -310,6 +332,7 @@
 		B27E15C873174A7694EB996C /* publication-inventory.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "publication-inventory.md"; sourceTree = "<group>"; };
 		B41F02A0FA9BB07479B2F3AB /* documentation-audit-20261025.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "documentation-audit-20261025.md"; sourceTree = "<group>"; };
 		B5866A9FFEABA7138AD89FDF /* session-lifecycle.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "session-lifecycle.md"; sourceTree = "<group>"; };
+		B6ED30725AF5BF71C0780F82 /* apple-platforms.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "apple-platforms.md"; sourceTree = "<group>"; };
 		B74DBB4B2398ED0B516366B6 /* related-title-archive-20261026.csv */ = {isa = PBXFileReference; path = "related-title-archive-20261026.csv"; sourceTree = "<group>"; };
 		B77C7F2D948DD25491DF55B6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B7D57194E97D56947DA09374 /* commit-map.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "commit-map.txt"; sourceTree = "<group>"; };
@@ -352,6 +375,7 @@
 		E78A123DED194A1CD126DC33 /* canvas-ai-and-rotation-research-20261025.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "canvas-ai-and-rotation-research-20261025.md"; sourceTree = "<group>"; };
 		E8432EED144FFE452F8B6904 /* handover-20261024.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "handover-20261024.md"; sourceTree = "<group>"; };
 		E98970B311A0BFCE501D0899 /* game-calculation-policy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "game-calculation-policy.md"; sourceTree = "<group>"; };
+		E9F5C780F43FDA4DE574BF1D /* harrier-concept.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "harrier-concept.png"; sourceTree = "<group>"; };
 		EC5A4726B46F9E01D381071A /* audio-fidelity.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "audio-fidelity.md"; sourceTree = "<group>"; };
 		EC8E6C601E9AA56A6321BEA5 /* before-wide-mode-912-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "before-wide-mode-912-0.png"; sourceTree = "<group>"; };
 		EEF173AB49983E4525BCF020 /* sprite-gl-reference.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "sprite-gl-reference.md"; sourceTree = "<group>"; };
@@ -359,10 +383,13 @@
 		F058EFA336087FE4FDC0F2F2 /* artifact-index.csv */ = {isa = PBXFileReference; path = "artifact-index.csv"; sourceTree = "<group>"; };
 		F1417F39BD48BA1520898419 /* summary.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = summary.json; sourceTree = "<group>"; };
 		F18D28C287BDF73BFC8B65EE /* before-wide-title-912-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "before-wide-title-912-0.png"; sourceTree = "<group>"; };
+		F658AEF8688BBF27685160FC /* vtol-feasibility-20261027.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "vtol-feasibility-20261027.json"; sourceTree = "<group>"; };
 		F8FD8EB152194A92019D3388 /* native-hud.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "native-hud.md"; sourceTree = "<group>"; };
 		F9CDC07191214F735D78E929 /* Arm32DiskLayouts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Arm32DiskLayouts.h; sourceTree = "<group>"; };
+		FB56E42D202B2D41B745291F /* vtol-art-plan-20261027.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "vtol-art-plan-20261027.json"; sourceTree = "<group>"; };
 		FB6D4AA4355C569ED0C5533D /* game-design.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "game-design.md"; sourceTree = "<group>"; };
 		FF08AC79BBEC4688A18F9F99 /* texture-sampling-diagnosis.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "texture-sampling-diagnosis.md"; sourceTree = "<group>"; };
+		FF97514A81378C660F041128 /* E_Heli_Body_06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = E_Heli_Body_06.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -427,6 +454,7 @@
 				B77C7F2D948DD25491DF55B6 /* README.md */,
 				47172EAD2B5F0CE4EAE37ED2 /* menu-art */,
 				D992126F8DC812C4E470B596 /* menu-joins */,
+				AE26FFEB181855B9D3096607 /* vtol */,
 			);
 			path = media;
 			sourceTree = "<group>";
@@ -538,12 +566,26 @@
 			name = Bundles;
 			sourceTree = "<group>";
 		};
+		6EAC6AD428E423297D9428C1 /* v2 */ = {
+			isa = PBXGroup;
+			children = (
+				AAB65F292ABEA6F5E874EC65 /* f35b-concept.png */,
+				070ABAFE741ADFB19429418D /* harrier-concept.png */,
+				3B0720A01397B7955CC08076 /* manifest.json */,
+				5F83153A48BD54E32E8F6499 /* prompts.json */,
+				3037AF25AD1605C96BD16E15 /* yak141-concept.png */,
+			);
+			path = v2;
+			sourceTree = "<group>";
+		};
 		755B8620714DB80178562940 /* docs */ = {
 			isa = PBXGroup;
 			children = (
 				AB993236FCD324F28BCBFA0C /* android-port-plan-20261026.md */,
+				B6ED30725AF5BF71C0780F82 /* apple-platforms.md */,
 				EC5A4726B46F9E01D381071A /* audio-fidelity.md */,
 				8AADFC1117F5DC5B0122FD9D /* audio-preload.md */,
+				9FBBFEDE339D8551A7455D59 /* auto-aim-plan-20261026.md */,
 				0228069A84AFF043754BF923 /* blend-reachability.md */,
 				336B28E4FD9D946A8A413417 /* boss-battles-v1.md */,
 				98F439444AA54CC19AA4B9D0 /* boss-battles-v5.md */,
@@ -590,6 +632,7 @@
 				5A2C56D93AEE15B804838961 /* instruments-validation-20261024.md */,
 				A6816EFD45254FFD7BD889AE /* ios-completeness-audit-20261026.md */,
 				C168E2A441F62141C90CF71A /* ios-source-map.md */,
+				1B394C55A1EB4BF61DA2C808 /* keyboard-input-policy.md */,
 				993B84B8EDBAC35750140196 /* media-publication.md */,
 				883EA33703F130F86BFAAB0F /* media-scenes.example.json */,
 				47623F1F51E3686EF32548DB /* menu-art-extension-20261025.md */,
@@ -641,6 +684,8 @@
 				DEF3A9AFC6A532C841FB1313 /* weapon-result-fix-20261025.md */,
 				2D45BB164B71C7D6B4A1A4DD /* weapon-validation-procedure.md */,
 				4B96C5E574626EE4EECE8BCE /* wide-canvas-plan.md */,
+				7A1E843D8C31F29FF2FEE252 /* wireless-device-workflow.md */,
+				E3FA8E0ECE1DC2F422C452BB /* evidence */,
 				A41DCABD86D8179C5E65CB05 /* migration */,
 				FA7204690605F88E083DC9DF /* public */,
 				FAA6B54001E44C9D18B9C8AB /* references */,
@@ -698,6 +743,22 @@
 			);
 			name = OriginalInterfaces;
 			path = ../Sources/OriginalInterfaces;
+			sourceTree = "<group>";
+		};
+		AE26FFEB181855B9D3096607 /* vtol */ = {
+			isa = PBXGroup;
+			children = (
+				A4071DBEE8535C94812B0DB8 /* E_0604_Body.png */,
+				403B299BC86718E4BD532711 /* E_Boss05.png */,
+				09FCC02D24921FDED7F64EB4 /* E_Heli_Body_01.png */,
+				FF97514A81378C660F041128 /* E_Heli_Body_06.png */,
+				07ED27B18EBB601EB97D7DF6 /* f35b-concept.png */,
+				E9F5C780F43FDA4DE574BF1D /* harrier-concept.png */,
+				4EEDD35DAAFA7072269A86A8 /* manifest.json */,
+				8DBB13F902EC5D515094E6D1 /* yak141-concept.png */,
+				6EAC6AD428E423297D9428C1 /* v2 */,
+			);
+			path = vtol;
 			sourceTree = "<group>";
 		};
 		AFE87A144E808EBE8685D395 /* Projects */ = {
@@ -781,6 +842,21 @@
 			path = ../Tests/Apple;
 			sourceTree = "<group>";
 		};
+		E3FA8E0ECE1DC2F422C452BB /* evidence */ = {
+			isa = PBXGroup;
+			children = (
+				1A1632886032D437AC0FF0B7 /* apple-final-build-20261026.json */,
+				68B80B12913961B1D3E0D52E /* apple-platform-performance-20261026.json */,
+				2778754E10DB20CBC8809174 /* mac-fullscreen-capture-20261027.json */,
+				50CF85F15EA4BB85FAAFA5E9 /* physical-apple-20261027.json */,
+				FB56E42D202B2D41B745291F /* vtol-art-plan-20261027.json */,
+				F658AEF8688BBF27685160FC /* vtol-feasibility-20261027.json */,
+				8403DD328CBBED0400784D3E /* vtol-helicopter-density-20261027.json */,
+				52422C68C625D5938C90F218 /* wireless-apple-20261027.json */,
+			);
+			path = evidence;
+			sourceTree = "<group>";
+		};
 		EB6233A9B3452554B6E10736 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -796,6 +872,7 @@
 		FA7204690605F88E083DC9DF /* public */ = {
 			isa = PBXGroup;
 			children = (
+				537551CAC826EA2B0742D775 /* apple-platform-progress-20261026.md */,
 				13D7B840917FAA0970F2B294 /* build-and-install.md */,
 				A2299D1DA0E938863932D743 /* clone-build-20261026.md */,
 				D93438B37AEB2640138DAD65 /* engineering-retrospective-20261025.md */,
@@ -806,6 +883,7 @@
 				C86E0AAEEA9202BA9D785456 /* rea-implementation-audit-20261026.md */,
 				D15B81C3B25B465ED286F6D9 /* rea-restoration-method-20261025.md */,
 				66C79E83E3B01B0E181C594F /* report-overview-20261025.md */,
+				1FD05AF93076309459C68938 /* vtol-art-and-loadout-20261027.md */,
 				8271D9D72739783E2CEFFDBE /* clone */,
 				BE25DD106A6CABC8D5DAB40E /* independence */,
 				05A245CE42062BA33C9FE8B4 /* media */,

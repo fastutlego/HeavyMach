@@ -106,6 +106,19 @@ template<class Raster> static void HMDrawRaster(Raster& raster,CGPoint offset,CG
     CGColorSpaceRef space=CGColorSpaceCreateDeviceRGB();
     CGBitmapInfo flags=CGBitmapInfo(kCGBitmapByteOrder32Big)|CGBitmapInfo(rgb565?kCGImageAlphaNoneSkipLast:kCGImageAlphaPremultipliedLast);
     CGImageRef decoded=CGImageCreate(width,height,8,32,size_t(width)*4,space,flags,provider,nullptr,false,kCGRenderingIntentDefault);
+    // Approved high-resolution VTOL originals stay intact in the bundle. Decode
+    // once to a <=512px runtime texture; no per-frame resize or file writes.
+    if(decoded&&[name hasPrefix:@"Extensions/VTOL_"]&&width>512){
+        int smallWidth=512,smallHeight=std::max(1,int(std::lround(double(height)*512/width)));
+        NSMutableData *small=[NSMutableData dataWithLength:size_t(smallWidth)*smallHeight*4];
+        CGContextRef context=CGBitmapContextCreate(small.mutableBytes,smallWidth,smallHeight,8,size_t(smallWidth)*4,space,kCGBitmapByteOrder32Big|kCGImageAlphaPremultipliedLast);
+        if(context){
+            CGContextSetInterpolationQuality(context,kCGInterpolationHigh);
+            CGContextDrawImage(context,CGRectMake(0,0,smallWidth,smallHeight),decoded);
+            CGImageRef reduced=CGBitmapContextCreateImage(context);CGContextRelease(context);
+            if(reduced){CGImageRelease(decoded);decoded=reduced;rgba=small;width=smallWidth;height=smallHeight;}
+        }
+    }
     if(decoded){image=[HMImage imageWithCGImage:decoded];CGImageRelease(decoded);}
     CGColorSpaceRelease(space);CGDataProviderRelease(provider);
     if(image){objc_setAssociatedObject(image,&HMOriginalRGBAKey,rgba,OBJC_ASSOCIATION_RETAIN_NONATOMIC);_images[key]=image;_sizes[key]=HMSizeValue(image.size);if(rgb565)[_rgb565Images addObject:key];}

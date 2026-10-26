@@ -8,6 +8,7 @@
 #import "HMValidationControls.h"
 #import "HMValidationPanel.h"
 #include "GameSession.hpp"
+#include "VTOL.hpp"
 #include "KeyboardInput.hpp"
 #include "Viewport.hpp"
 #include "TiltState.hpp"
@@ -88,6 +89,32 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  [self.game setValue:@1 forKey:@"randomState"];[self.game updateCanvasGeometry];
 }
 - (void)tearDown {[self.game setApplicationActive:NO];self.game=nil;[NSFileManager.defaultManager removeItemAtURL:self.temp error:nil];[super tearDown];}
+- (void)testVTOLExpansionRendersAndUsesSeparateTextures {
+ // Reproducible neutral movement; a connected physical device may be tilted.
+ ((HMValidationControls*)[self.game valueForKey:@"validationControls"]).selectedSegmentIndex=1;
+#if !TARGET_OS_OSX
+ CGSize screen=UIScreen.mainScreen.bounds.size;self.game.frame=CGRectMake(0,0,std::max(screen.width,screen.height),std::min(screen.width,screen.height));[self.game updateCanvasGeometry];
+#endif
+ auto& data=storage<heavymach::GameData>(self.game,"_data");XCTAssertNil([self.game valueForKey:@"loadError"]);
+ HMMedia* media=[self.game valueForKey:@"media"];HMGLRenderer* gl=[self.game valueForKey:@"glRenderer"];
+ int index=0;const int missions[]={1,2,5},stages[]={1,2,1};const char* maps[]={"Stage06","Stage12","Stage21"};
+ for(const auto& spec:heavymach::vtolSpecs()){
+  auto& map=data.maps.at(maps[index]);auto enemy=std::find_if(map.enemies.begin(),map.enemies.end(),[&](const auto& e){return e.name==spec.name;});XCTAssertTrue(enemy!=map.enemies.end());if(enemy==map.enemies.end())return;
+  heavymach::ValidationScenario fixture;fixture.mission=missions[index];fixture.stage=stages[index];fixture.allWeapons=true;fixture.internalLevel=50;fixture.grades={6,6,6};fixture.playerPosition=heavymach::Vector2{enemy->position.x-130,enemy->position.y-100};
+  storage<std::optional<heavymach::ValidationScenario>>(self.game,"_validationFixture")=fixture;
+  [self.game startSlot:0 mode:0 mission:fixture.mission stage:fixture.stage];
+  auto& session=storage<std::unique_ptr<heavymach::GameSession>>(self.game,"_session");XCTAssertTrue(bool(session));if(!session)return;session->validationSetCheats(true);
+  bool seen=false;size_t maxBullets=0;std::vector<double> costs;NSUInteger before=((HMInputTestView*)self.game).gameSaveCalls;
+  for(int n=0;n<180;++n){auto begin=std::chrono::steady_clock::now();frames(self.game,1);if(n>=30)costs.push_back(std::chrono::duration<double,std::milli>(std::chrono::steady_clock::now()-begin).count());maxBullets=std::max(maxBullets,session->bulletCount());for(auto& sprite:session->sprites())if(sprite.tile==spec.tile){seen=true;XCTAssertTrue(std::isfinite(sprite.rotation));}}
+  XCTAssertTrue(seen,@"%s",spec.name);CGSize size=[media imageSize:[NSString stringWithUTF8String:spec.tile]];XCTAssertEqual(size.width,512);XCTAssertGreaterThan(size.height,100);
+  XCTAssertEqual(((HMInputTestView*)self.game).gameSaveCalls,before);
+#if !TARGET_OS_OSX
+  UIImage* picture=[gl snapshot];XCTAssertNotNil(picture);if(picture){XCTAttachment* a=[XCTAttachment attachmentWithImage:picture];a.name=[NSString stringWithUTF8String:spec.name];a.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:a];}
+#endif
+  std::sort(costs.begin(),costs.end());double sum=0;for(double c:costs)sum+=c;
+  NSLog(@"HM_VTOL %s texture=%gx%g seen=%d bullets=%zu render_mean_ms=%.3f render_p95_ms=%.3f",spec.name,size.width,size.height,seen,maxBullets,sum/costs.size(),costs[costs.size()*95/100]);++index;
+ }
+}
 - (void)startFixture {
  heavymach::ValidationScenario fixture;fixture.allWeapons=true;fixture.internalLevel=4;fixture.grades={4,4,4};fixture.playerPosition=heavymach::Vector2{250,100};
  storage<std::optional<heavymach::ValidationScenario>>(self.game,"_validationFixture")=fixture;

@@ -1,7 +1,7 @@
 {
   "date": "2026-10-27",
   "version": 2,
-  "status": "visual_concepts_not_integrated",
+  "status": "accepted_by_user_2026-10-27",
   "assets": [
     {
       "aircraft": "yak141",
@@ -62,5 +62,6 @@
     "f35b": "angular nose and intake, canopy, twin fins, rear nozzle compared against USMC photo"
   },
   "effects": "no flame baked into body; engine effects not yet made",
-  "previous_version": "../20261027/manifest.json"
+  "previous_version": "../20261027/manifest.json",
+  "runtime_assets": "Art/Extensions/VTOL_*.png; byte-identical approved originals, downsampled to width512 once at runtime"
 }

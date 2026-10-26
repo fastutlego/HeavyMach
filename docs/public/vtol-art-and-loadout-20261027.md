@@ -1,6 +1,6 @@
-# 수직이착륙 공중 적 3종 시안·배치안
+# 수직이착륙 공중 적 3종 — 그림·배치·설치 결과
 
-실제 기체 사진과 야크141 도면을 참조해 **야크141·해리어 GR3·F35B의 두 번째 시안**을 만들었다. 길이와 높이의 비례, 기수·흡입구·날개·꼬리 형태를 실물에 맞춰 다시 그렸다. 기존 게임 그림은 색조·질감·명암의 참고로 사용했다. 기체는 투명 PNG이며 불꽃은 넣지 않았다. 게임 적용 전 시안이다.
+실제 기체 사진과 야크141 도면을 참조해 **야크141·해리어 GR3·F35B의 두 번째 시안**을 만들었다. 길이와 높이의 비례, 기수·흡입구·날개·꼬리 형태를 실물에 맞춰 다시 그렸다. 기존 게임 그림은 색조·질감·명암의 참고로 사용했다. 기체는 투명 PNG이며 불꽃은 넣지 않았다. 사용자가 채택한 이 그림을 게임에 적용하고 iPhone·iPad에 치트 앱과 정식 앱을 설치했다.
 
 ## 기체 시안
 
@@ -18,13 +18,13 @@ GR3 사진의 기수, 큰 흡입구와 낮게 내려가는 주익을 참고했�
 
 ### F35B — 각진 기수·흡입구·두 수직 꼬리날개
 
-미 해병대 F35B 측면 사진을 참조했다. 기수에서 동체로 이어지는 윤곽, 조종석, 각진 흡입구와 꼬리 배치를 다시 그렸다. 랜딩기어와 리프트팬 덮개를 닫은 기체 시안이다. 호버링 때 열리는 덮개와 배기 효과는 구현할 때 별도로 만든다.
+미 해병대 F35B 측면 사진을 참조했다. 기수에서 동체로 이어지는 윤곽, 조종석, 각진 흡입구와 꼬리 배치를 다시 그렸다. 랜딩기어와 리프트팬 덮개를 닫은 기체 시안이다. 게임에서는 이 기체에 별도 배기 효과를 붙였다. 덮개가 열리는 애니메이션은 구현하지 않았다.
 
 <figure class="vtol-art"><a href="media/vtol/v2/f35b-concept.png"><img src="media/vtol/v2/f35b-concept.png" alt="실물 형상을 참조해 다시 그린 회색 F35B 측면 시안" style="width:100%;height:auto"></a><figcaption>F35B · 두 번째 시안 · 클릭하면 투명 PNG 원본</figcaption></figure>
 
 ## 기존 유닛과 작은 크기 비교
 
-아래는 브라우저에서 폭을 줄여 보는 비교다. 실제 게임 캡처는 아니다. 원본 비율을 유지했다. 신규 기체의 폭140/132/148은 첫 적용 후보이며 충돌 크기와 함께 검사한 뒤 정한다.
+아래는 브라우저에서 폭을 줄여 보는 비교다. 실제 게임 캡처는 아니다. 원본 비율을 유지했다. 게임의 논리 폭은 야크140·해리어132·F35B148로 적용했다. 아래쪽에 실제 기기에서 렌더한 화면을 추가했다.
 
 <div class="vtol-small" style="display:flex;flex-wrap:wrap;align-items:end;gap:24px;padding:20px;background:#34362e;color:#f3efe3"><figure><img src="media/vtol/E_Heli_Body_01.png" alt="기존 Heli001 몸체" style="width:100px;height:auto"><figcaption>기존 Heli001</figcaption></figure><figure><img src="media/vtol/E_Heli_Body_06.png" alt="기존 Heli006 몸체" style="width:121px;height:auto"><figcaption>기존 Heli006</figcaption></figure><figure><img src="media/vtol/E_0604_Body.png" alt="기존 E0604 헬기 몸체" style="width:140px;height:auto"><figcaption>기존 E0604</figcaption></figure><figure><img src="media/vtol/v2/yak141-concept.png" alt="작게 표시한 야크" style="width:140px;height:auto"><figcaption>야크141 / 140</figcaption></figure><figure><img src="media/vtol/v2/harrier-concept.png" alt="작게 표시한 해리어" style="width:132px;height:auto"><figcaption>해리어 / 132</figcaption></figure><figure><img src="media/vtol/v2/f35b-concept.png" alt="작게 표시한 F35B" style="width:148px;height:auto"><figcaption>F35B / 148</figcaption></figure></div>
 
@@ -32,19 +32,19 @@ GR3 사진의 기수, 큰 흡입구와 낮게 내려가는 주익을 참고했�
 
 일반 Heli001~010은 모두 같은 단발 미사일을 사용한다. 추가 조사에서 회전날개가 있는 헬기 보스와E0604의 다른 무기를 확인했다. 다음 세 정의를 그대로 재사용한다. 새 무기·탄환 계산을 복제하지 않는다.
 
-| 기체 | 무장안·재사용 정의 | 기존 사용 유닛 | 발당 피해 / 한 번에 준비하는 탄수 | 차이 |
+| 기체 | 무장·재사용 정의 | 기존 사용 유닛 | 발당 피해 / 한 번에 준비하는 탄수 | 차이 |
 |---|---|---|---|---|
 | 야크141 | 단발 미사일 `E_Wpn_ASM` | Heli001~010 | 25 / 1발 | 낮은 위력의 단발 공격. 미션2부터 등장 |
 | 해리어 | 2발 기관포 `E_Boss_Wpn_01` | 헬기 보스Boss04·Boss06 | 50 / 2발 | 미사일과 다른 기관포 탄환. 미션3부터 등장 |
 | F35B | 2발 미사일 `E_0604_Wpn` | 후반 헬기E0604 | 100 / 2발 | 기존 후반 헬기의 강한 연속 공격. 미션6부터 등장 |
 
-표의 피해·탄수는 실제 원본 데이터 값이다. 세 정의의delay는 모두5지만 AI 조준 대기·발사·재장전이 함께 작동하므로 ‘정확히5초마다 발사’라고 해석하지 않는다. 2발은 연사 묶음이며 두 발이 동시에 나간다는 뜻이 아니다. type6 탄환에 발사 후 추적 기능은 없어 유도 미사일이라고 부르지 않는다. HP·등장 밀도와 합친 난도는 치트 앱에서 비교할 항목이다.
+표의 피해·탄수는 실제 원본 데이터 값이다. 세 정의의delay는 모두5지만 AI 조준 대기·발사·재장전이 함께 작동하므로 ‘정확히5초마다 발사’라고 해석하지 않는다. 2발은 연사 묶음이며 두 발이 동시에 나간다는 뜻이 아니다. type6 탄환에 발사 후 추적 기능은 없어 유도 미사일이라고 부르지 않는다. HP는 야크210·해리어400·F35B900이다. 추가 밀도에 따른 전체 미션 난도는 후속 플레이 검사에 남겼다.
 
 ## 미션별 추가 배치
 
-**기존 적을 모두 유지하고 아래14개 서브미션에 일반 헬기 평균을 기준으로 추가한다.** 사용자의 수량 수정 지시를 반영해 최초의 각1대안을 바꿨다. 새 안은 야크30대·해리어41대·F35B42대, 총113대다. 보스 플래그는 붙이지 않는다. 미션1은 원래 구성으로 유지한다. 후기 미션에서도 모든 기체가 무조건 한 단계씩 교체되는 방식은 쓰지 않는다.
+**기존 적을 모두 유지하고 아래14개 서브미션에 일반 헬기 평균을 기준으로 추가한다.** 사용자의 수량 수정 지시를 반영해 최초의 각1대안을 바꿨다. 적용 수량은 야크30대·해리어41대·F35B42대, 총113대다. 보스 플래그는 붙이지 않는다. 미션1은 원래 구성으로 유지한다. 후기 미션에서도 모든 기체가 무조건 한 단계씩 교체되는 방식은 쓰지 않는다.
 
-| 기체 | 최초 등장 | 추가할 미션·서브미션 |
+| 기체 | 최초 등장 | 추가한 미션·서브미션 |
 |---|---|---|
 | 야크141 | 2-2 | 2-2, 2-4, 3-2, 4-2, 5-2 |
 | 해리어 | 3-3 | 3-3, 4-3, 5-3, 6-3, 7-2 |
@@ -90,15 +90,15 @@ GR3 사진의 기수, 큰 흡입구와 낮게 내려가는 주익을 참고했�
 
 맵 번호는`GlobalInfo::mapNumber`의 진행표와 대조했다. 미션4는Stage25~29다. 원래 적의 이름·좌표·수량·생성 조건을 유지하고 새로운 배치 목록만 합친다.
 
-처음 조사한 좌표는 한 대안의 후보이므로113대를 그14곳에 몰아서 넣지 않는다. 다음 배치 작업에서 원래 적 사이의 여러 간격에 나누고, 시작·출구·보스 전투를 피한다. Y는 지형과 비행 높이를 보고 정한다. 모든 개체의 최종 좌표는 아직 정하지 않았다. 특히 미션7-2는 원래60대에11대가 더해지므로 중첩 전투·탄환 수·프레임을 우선 검사한다. 무기별 원래 수치는 유지한 채 배치 간격과 동시 진입 수로 난도를 확인한다. Survival은 이번 캠페인 배치에 포함하지 않았다.
+113개의 최종 좌표를 정해 원래 적 사이에 분산했다. 맵 양끝300과 보스 주변600을 피하고, 지형 높이에140을 더해 생성한다. 원래 적1,182개 항목의 이름·좌표·순서·보스 플래그가 그대로인지 자동 대조했다. 미션7-2는 원래60대에11대를 추가했다. 전체 미션 난도와 장시간 성능은 후속 검사다. Survival의 원래 생성 규칙은 유지했다. [113개 좌표와 검사 결과](../evidence/vtol-implementation-20261027.json).
 
 [41개 스테이지 헬기 수·평균 JSON](../evidence/vtol-helicopter-density-20261027.json), [수정 배치와 이전 한 대안](../evidence/vtol-art-plan-20261027.json).
 
-## 자세·엔진 효과 적용안
+## 자세·엔진 효과
 
-전후 이동은 기존 비행 코드의 속도 기반 기울기를 참고한다. 새3종에만 전후 목표각 약±8도와 상승·하강 보조각 약±3도를 초기 후보로 적용하고, 급격히 꺾이지 않게 보간한다. 이 각도는 아직 적용하지 않은 제안이다. 기체 회전과 같은 변환으로 노즐·불꽃·발사점을 이동시킨다.
+기존 헬기 비행을 재사용했다. 새3종에만 수평 속도에 따른 최대8도와 수직 속도에 따른 최대3도를 더한 목표각을 적용하고, 각도를 서서히 바꾼다. 노즐·불꽃·발사점·피격 범위가 기체 회전을 따른다.
 
-상승할 때 배기를 길게, 정지 비행에서는 짧게, 하강할 때는 더 약하게 표시한다. 새 시안에는 불꽃이 없다. 구현할 때 별도 배기 효과를 노즐에 연결하고 애니메이션한다. 불꽃 길이를 기체 충돌 사각형에 포함하지 않는다. 기존 적의 이동 상수·무기 수치·스폰 테이블은 유지한다.
+기존 배기 그림을 노즐에 따로 붙였다. 상승할 때 길게, 하강할 때 짧게 표시하고 일시정지 때 멈춘다. 불꽃은 기체 충돌 사각형에 포함하지 않는다. 원래 적의 이동 상수·무기 수치·스폰 항목은 유지했다.
 
 ## 제작·조사 근거
 
@@ -110,7 +110,7 @@ GR3 사진의 기수, 큰 흡입구와 낮게 내려가는 주익을 참고했�
 - 첫 시안은 `Art/VTOL/20261027/`에 보존했다. [첫 제작 명세](media/vtol/manifest.json).
 - [무기·배치 조사](../evidence/vtol-art-plan-20261027.json), [헬기 수량·평균](../evidence/vtol-helicopter-density-20261027.json).
 
-기존 무장·113대 추가 배치안은 유지했다. 게임 코드·맵·설치본은 변경하지 않았다. 호버링 부품과 배기 효과, 게임 내 크기·충돌·발사점, 난도·성능 검사는 구현 단계에 남아 있다.
+앞으로 현실 기체를 추가할 때도 사진·도면으로 형태를 확인하고 기존 게임 그림에서 색조·질감을 참고하도록 `integrate-game-art` 스킬에 기록했다. 원본 PNG3개를 자원에 넣고, 로드할 때만 폭512로 축소해 GPU에서 사용한다. 매 프레임 이미지 변환이나 파일 저장은 추가하지 않았다.
 
 <details>
 <summary>첫 시안 3종 보기 — 미채택</summary>
@@ -135,3 +135,28 @@ GR3 사진의 기수, 큰 흡입구와 낮게 내려가는 주익을 참고했�
 
 
 </details>
+
+## 게임 적용·설치 결과
+
+iPhone Air와 iPad Air 13형 M2에 치트 앱과 정식 앱을 모두 업데이트 설치하고 실행했다. 기존 앱을 삭제하거나 저장을 초기화하지 않았다. iPhone은 무선, iPad는 USB 연결을 사용했다.
+
+- 코어 자동 검사19개 통과. 원래 적1,182개 항목 보존,113개 추가, 이동·자세·발사·정지·파괴를 확인했다.
+- 플레이어 무기20종×새 기체3종의 피격60건 통과. 탄환을 피격 범위 안에서 시작해 충돌·피해 처리를 확인하는 검사다.
+- iPhone·iPad 각각 입력 검사8개 통과. 터치·키보드와20종 무기 발사, 새3종의 생성·렌더가 포함된다.
+- 각 기기에서 중립 이동 상태로 새 기체 화면을 다시 캡처했다. 이 추가 검사도 각각1개 통과했다.
+
+아래는 실제 기기 GPU에서 렌더한 게임 화면이다. 게임의 논리 해상도로 저장했으며 OS 화면 전체를 찍은 스크린샷은 아니다. F35B 장면에서는 기존 헬기와 새 기체가 함께 비행한다.
+
+<figure><a href="media/vtol/runtime/iphone-vtol_yak141.png"><img src="media/vtol/runtime/iphone-vtol_yak141.png" alt="iPhone에서 렌더한 야크141 전투 화면" style="width:100%;height:auto"></a><figcaption>iPhone · 야크141 · 게임 렌더 캡처</figcaption></figure>
+
+<figure><a href="media/vtol/runtime/iphone-vtol_harrier.png"><img src="media/vtol/runtime/iphone-vtol_harrier.png" alt="iPhone에서 렌더한 해리어 GR3 전투 화면" style="width:100%;height:auto"></a><figcaption>iPhone · 해리어 GR3 · 게임 렌더 캡처</figcaption></figure>
+
+<figure><a href="media/vtol/runtime/iphone-vtol_f35b.png"><img src="media/vtol/runtime/iphone-vtol_f35b.png" alt="iPhone에서 렌더한 F35B 전투 화면" style="width:100%;height:auto"></a><figcaption>iPhone · F35B · 게임 렌더 캡처</figcaption></figure>
+
+<figure><a href="media/vtol/runtime/ipad-vtol_yak141.png"><img src="media/vtol/runtime/ipad-vtol_yak141.png" alt="iPad에서 렌더한 야크141 전투 화면" style="width:100%;height:auto"></a><figcaption>iPad · 야크141 · 게임 렌더 캡처</figcaption></figure>
+
+<figure><a href="media/vtol/runtime/ipad-vtol_harrier.png"><img src="media/vtol/runtime/ipad-vtol_harrier.png" alt="iPad에서 렌더한 해리어 GR3 전투 화면" style="width:100%;height:auto"></a><figcaption>iPad · 해리어 GR3 · 게임 렌더 캡처</figcaption></figure>
+
+<figure><a href="media/vtol/runtime/ipad-vtol_f35b.png"><img src="media/vtol/runtime/ipad-vtol_f35b.png" alt="iPad에서 렌더한 F35B 전투 화면" style="width:100%;height:auto"></a><figcaption>iPad · F35B · 게임 렌더 캡처</figcaption></figure>
+
+전체 미션의 난도 플레이, 장시간 발열과 Mac의 신규 유닛 성능 측정은 남았다. 짧은 동기 렌더 비용은 실시간60fps를 측정한 값으로 사용하지 않는다. [설치·검사·캡처 해시 기록](../evidence/vtol-implementation-20261027.json).

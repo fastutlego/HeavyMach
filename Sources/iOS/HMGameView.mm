@@ -1,3 +1,4 @@
+#include "VTOL.hpp"
 #import "HMResources.h"
 #import "HMGameView.h"
 #import "HMValidationControls.h"
@@ -166,6 +167,7 @@
         try {
             NSString *raw=[HMGameResourceBundle().resourcePath stringByAppendingPathComponent:@"RawData"];
             _data=heavymach::GameData::loadDirectory(raw.fileSystemRepresentation);
+            heavymach::addVTOLExpansion(_data);
             if ([NSFileManager.defaultManager fileExistsAtPath:_saveURL.path]) {
                 NSError *error=nil;
                 NSData *bytes=[NSData dataWithContentsOfURL:_saveURL options:0 error:&error];
