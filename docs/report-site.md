@@ -1,6 +1,17 @@
 # HeavyMach 보고 사이트
 
-## 최신 게시 — 2026-10-26 Mac 서명·누수 원인
+## 최신 게시 — 2026-10-26 Mac 누수0건·표시 대기 수정
+
+정식·치트 앱의 개발 서명과 누수0건, 잠금 해제 상태의33개 검사 통과, Mac 표시 대기·표면 갱신·Retina 수정과 여섯 장면 측정값을 게시했다. 순간 프레임 지연과 CUA 캡처 여백, 실제 iPhone/iPad 성능 미측정 범위를 함께 남겼다. 제품·검사 기록 커밋은 `314089fa`다.
+
+- URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/apple-platforms.html#section-11
+- 소스: `3b37d69aa1ebcd220219d41191153887e25e8dd8`
+- 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_aef3d2e4c7e08191ab16a4258a5e13f3`
+- 배포: `appgdep_6adf6a00090c8191b7b20dc35ec9e7c3`, `succeeded`, 소유자 전용 유지.
+- 로컬 링크143개와 원고·증거 JSON 바이트 일치를 확인했다. 기존 이미지13개를 보존했다. Chrome 실제 화면에서 새 결과와 본문 표시를 확인했다. 게시본 인증 후 화면은 이번에 다시 검사하지 않았다.
+
+
+## 이전 게시 — 2026-10-26 Mac 서명·누수 원인
 
 `/apple-platforms.html`에 AppKit 초기화부터 AppIntents 등록까지의 LLDB 호출 경로, 서비스의 팀 ID 검증 거절, Mac 서명 설정 수정과 기능32개 재검사 결과를 게시했다. 정상 개발 서명본의 누수 재검사는 키체인 잠금으로 남아 있음을 명시했다.
 
