@@ -1118,5 +1118,159 @@
     "build/apple-performance-20261026/mac-app-direct/leaks-1.txt": "838597d2848244b02e5a454683797c87ce23733b6fb422fde169ddfd88c81b4a",
     "build/apple-performance-20261026/mac-app-direct/leaks-2.txt": "620287004c8883a0b9ccfb185b5c002c4c3c4d45def87d7c14a103ad4e8159fa",
     "build/apple-performance-20261026/mac-app-direct/toc.xml": "66894a400c742562465d77eadfabf421e0b37c8f441217912e3aadcf52fabbfa"
+  },
+  "mac_xpc_origin": {
+    "application_entry": "Sources/Mac/Application.mm:21 NSApplication.sharedApplication",
+    "observed_call_chain": [
+      "+[NSApplication sharedApplication]",
+      "-[NSApplication init]",
+      "-[NSApplication _registerApplicationWithUIIntelligence]",
+      "-[LNProcessInstanceRegistryClient registerWithError:]",
+      "-[LNProcessInstanceRegistryClient makeXPCConnection]",
+      "+[NSXPCConnection(ApplicationService) ln_applicationServiceWithError:]",
+      "-[NSXPCConnection initWithMachServiceName:options:]"
+    ],
+    "server_errors": [
+      "Unable to get teamId from com.gelb2.heavymach.mac.restored",
+      "Rejecting invalid client due to requiresValidatedBundle"
+    ],
+    "ad_hoc_signature_was_explicit_in_project": true,
+    "tracked_connection_initializations": 7,
+    "tracked_connection_activations": 4,
+    "launchservices_reproduction": {
+      "leaks": 417,
+      "bytes": 20016,
+      "footprint_mb": 279.8
+    },
+    "candidate_fix": "Replace explicit ad-hoc signing with Apple Development and existing development team for Mac app and test targets",
+    "fix_verified": false,
+    "verification_blocker": "Keychain signing fails: errSecInternalComponent; keychain settings query: User interaction is not allowed; desktop locked",
+    "log_sha256": {
+      "build/apple-performance-20261026/mac-xpc-origin/origin.log": "535a22432726dd4d527b6e499f83cc0e80236c2905e9e761f8a817dc702a794c",
+      "build/apple-performance-20261026/mac-xpc-origin/startup.log": "bb12c401108dfdaeb56c9d4d458a40030bb5cea1f77a5c57c3129c2af6c033cf",
+      "build/apple-performance-20261026/mac-xpc-origin/retry.log": "5271e416bc08cf68f72b18057002e85010bb1f4787d0d30f88c632839b04ed67",
+      "build/apple-performance-20261026/mac-xpc-origin/lifecycle-events.log": "9a8c521261ae26cfc9cf959c61e7bf26ba29a971cd428511558794e6d7326602",
+      "build/apple-performance-20261026/mac-xpc-origin/linkd-detailed.log": "7a8baeefe603ed48c07fe0d4214afd6898946b092d6ffbf8ee89a28cee008ad8",
+      "build/apple-performance-20261026/mac-launchservices-memory/leaks-1.txt": "9c4f68b9b235ed78409e2772c56aa6e13c0c28245f7baa0b5fac5f9f18c6544b",
+      "build/apple-performance-20261026/mac-functional-recheck.log": "7004720ce43221987ea352c2aeb5a74a6342fceff2bf4780a1aa3eff61aefb72",
+      "build/apple-performance-20261026/mac-xpc-origin/development-build.log": "eca61ab30ff38a946bb7c4cd8fa18e38527e0b15cec3bf180eb5a661813a88e2"
+    }
+  },
+  "mac_functional_recheck": {
+    "passed": 32,
+    "skipped": 1,
+    "failed": 0,
+    "skipped_test": "testMacNativeFullscreenUsesEntireDrawableAndRestoresWindow: desktop locked",
+    "signing": "Explicit ad-hoc override for functional/performance run while developer signing unavailable; not validation of the signing fix",
+    "frames": [
+      {
+        "size": "1200x800",
+        "scene": "title_animation",
+        "frame_work": {
+          "max_ms": 5.139291984960437,
+          "mean_ms": 3.458793795046707,
+          "p95_ms": 4.681541118770838,
+          "samples": 180
+        },
+        "callback_intervals": {
+          "max_ms": 18.570541171357036,
+          "mean_ms": 16.666987273169475,
+          "p95_ms": 18.361165886744857,
+          "samples": 180
+        },
+        "max_bullets": 0,
+        "game_save_calls": 0
+      },
+      {
+        "size": "1200x800",
+        "scene": "slot_preview",
+        "frame_work": {
+          "max_ms": 8.185375016182661,
+          "mean_ms": 5.792803270742297,
+          "p95_ms": 6.393040996044874,
+          "samples": 180
+        },
+        "callback_intervals": {
+          "max_ms": 18.645333126187325,
+          "mean_ms": 16.65799861204707,
+          "p95_ms": 18.380667082965374,
+          "samples": 180
+        },
+        "max_bullets": 0,
+        "game_save_calls": 0
+      },
+      {
+        "size": "1200x800",
+        "scene": "stage01_firing",
+        "frame_work": {
+          "max_ms": 6.5322499722242355,
+          "mean_ms": 4.638587516577293,
+          "p95_ms": 5.887625040486455,
+          "samples": 180
+        },
+        "callback_intervals": {
+          "max_ms": 22.019917145371437,
+          "mean_ms": 16.666715743485838,
+          "p95_ms": 18.38245801627636,
+          "samples": 180
+        },
+        "max_bullets": 8,
+        "game_save_calls": 0
+      },
+      {
+        "size": "screen_size",
+        "scene": "title_animation",
+        "frame_work": {
+          "max_ms": 6.941916886717081,
+          "mean_ms": 4.801563198109054,
+          "p95_ms": 6.235791835933924,
+          "samples": 180
+        },
+        "callback_intervals": {
+          "max_ms": 18.65962496958673,
+          "mean_ms": 16.66966203936479,
+          "p95_ms": 18.395458115264773,
+          "samples": 180
+        },
+        "max_bullets": 0,
+        "game_save_calls": 0
+      },
+      {
+        "size": "screen_size",
+        "scene": "slot_preview",
+        "frame_work": {
+          "max_ms": 5.585500039160252,
+          "mean_ms": 4.592708072676841,
+          "p95_ms": 5.177832907065749,
+          "samples": 180
+        },
+        "callback_intervals": {
+          "max_ms": 18.656708067283034,
+          "mean_ms": 16.662871761299257,
+          "p95_ms": 18.394374987110496,
+          "samples": 180
+        },
+        "max_bullets": 0,
+        "game_save_calls": 0
+      },
+      {
+        "size": "screen_size",
+        "scene": "stage01_firing",
+        "frame_work": {
+          "max_ms": 5.075750174000859,
+          "mean_ms": 4.2223043739795685,
+          "p95_ms": 4.824584117159247,
+          "samples": 180
+        },
+        "callback_intervals": {
+          "max_ms": 18.66629207506776,
+          "mean_ms": 16.66116527824973,
+          "p95_ms": 18.384041963145137,
+          "samples": 180
+        },
+        "max_bullets": 8,
+        "game_save_calls": 0
+      }
+    ]
   }
 }

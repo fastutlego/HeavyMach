@@ -2,6 +2,11 @@ name: HeavyMachMac
 options:
   deploymentTarget:
     macOS: '12.0'
+settings:
+  base:
+    DEVELOPMENT_TEAM: PDF8XXXYH9
+    CODE_SIGN_STYLE: Automatic
+    CODE_SIGN_IDENTITY: Apple Development
 projectReferences:
   Modules:
     path: ../Modules/HeavyMachModules.xcodeproj
@@ -51,7 +56,6 @@ targets:
         GCC_PREPROCESSOR_DEFINITIONS:
         - $(inherited)
         - HM_VALIDATION=0
-        CODE_SIGN_IDENTITY: '-'
     info:
       path: HeavyMachMac-Info.plist
       properties:
@@ -107,7 +111,6 @@ targets:
         GCC_PREPROCESSOR_DEFINITIONS:
         - $(inherited)
         - HM_VALIDATION=1
-        CODE_SIGN_IDENTITY: '-'
     info:
       path: HeavyMachMacValidation-Info.plist
       properties:

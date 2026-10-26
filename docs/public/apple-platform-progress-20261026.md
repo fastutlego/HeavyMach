@@ -1,6 +1,6 @@
 # Apple 공용 모듈·키보드 검사
 
-2026년 10월 26일, `feat/apple-workspace-modules` 작업 중 기록이다. 공용 모듈과 키보드 입력을 구현했다. 기능 검사와 Mac 프레임 검사는 통과했고, iPhone/iPad Simulator의 프레임 검사는 실패했다. Mac 전체 화면 캡처에서 보인 여백은 게임 없는 AppKit 비교 앱에서도 재현됐다. 사용자가 외부에서 원격으로 지시한 조건에 따라 실기기 연결을 기다리지 않고 Simulator와 현재 Mac에서 검사했다. 물리 iPhone/iPad 확인은 후속 항목이다. Mac의 최종 화면 캡처 확인은 잠금 상태로 남았다. main·v0.9에는 이 변경을 반영하지 않았다.
+2026년 10월 26일, `feat/apple-workspace-modules` 작업 중 기록이다. 공용 모듈과 키보드 입력을 구현했다. 기능 검사와 Mac 프레임 검사는 통과했고, iPhone/iPad Simulator의 프레임 검사는 실패했다. Mac 전체 화면 캡처에서 보인 여백은 게임 없는 AppKit 비교 앱에서도 재현됐다. 사용자가 외부에서 원격으로 지시한 조건에 따라 실기기 연결을 기다리지 않고 Simulator와 현재 Mac에서 검사했다. 물리 iPhone/iPad 확인은 후속 항목이다. Mac의 최종 화면 캡처 확인은 잠금 상태로 남았다. main·v0.9에는 이 변경을 반영하지 않았다. 후속 조사에서 Mac 임시 서명의 팀 ID 부재로 시스템 등록이 거절되는 원인을 확인했다. 개발 서명 설정을 수정했으나 잠긴 키체인 때문에 정상 서명본의 누수 재검사는 남았다.
 
 ## 프로젝트 구성
 
@@ -158,3 +158,17 @@ HUD 에셋은 이동할 요소별로 나눈다. 원본 이미지에서 필요한
 - `iphone-normal-build.log`, `iphone-cheat-build.log`, `mac-normal-build.log`, `mac-panel-build.log`
 
 독립 export의 경로는 `/private/tmp/heavymach-apple-clean.0bWLXm`이며 `fresh-mac.log`와 `fresh-ios.log`에 빌드 결과를 보존했다. 이 export 뒤에 Mac 치트 창의 포커스·무기 선택을 수정했고 추가 무기 선택 검사를 실행했다.
+
+## Mac 누수 원인·서명 수정 후속
+
+LLDB로 일반 Mac 앱의 연결 생성 지점에 중단점을 걸었다. 시작점은 `Sources/Mac/Application.mm:21`의 `NSApplication.sharedApplication`이다. AppKit의 `NSApplication init`이 `_registerApplicationWithUIIntelligence`를 호출하고, AppIntents의 `LNProcessInstanceRegistryClient`가 현재 앱 프로세스를 등록하려고 `com.apple.linkd.autoShortcut` 연결을 만든다. 게임 뷰·렌더러를 만들기 전 실행되는 경로다.
+
+App Intents는 앱의 기능·콘텐츠를 Siri·Spotlight·단축어 등 시스템 기능과 연결하는 프레임워크다. XPC는 프로세스 사이의 통신 수단이다. 이번 연결은 AppKit 초기화의 시스템 등록 경로이며 게임의 사격·이동을 처리하지 않는다. [Apple App Intents 설명](https://developer.apple.com/documentation/appintents), [Apple XPC 설명](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingXPCServices.html).
+
+서비스 쪽 `linkd` 로그에서 `Unable to get teamId from com.gelb2.heavymach.mac.restored`와 `Rejecting invalid client due to requiresValidatedBundle`을 확인했다. Mac 프로젝트의 `CODE_SIGN_IDENTITY: '-'`가 만든 ad-hoc 서명에는 개발 팀 정보가 없었다. 서비스가 앱 등록을 거절하고 AppIntents가 재시도했다. 연결 생성7회·활성화4회를 추적했으며, 메모리 기록에는 해당 서비스 연결3개의 참조 순환이 남았다. LaunchServices로 일반 앱을 직접 실행해도417개·20,016바이트가 검출됐다. 디버거나 XCTest 실행에만 한정된 현상이 아니었다.
+
+Mac 프로젝트를 기존 iOS와 같은 개발 팀의 `Apple Development` 자동 서명으로 수정했다. 일반·치트·테스트 target에 적용한다. 이 설정으로 빌드를 시도했으나 잠긴 키체인에서 `errSecInternalComponent`로 서명에 실패했다. 키체인 조회도 `User interaction is not allowed`를 반환했다. **서명 설정 수정은 반영했지만 정상 서명본의 누수0건은 아직 확인하지 않았다.** 잠금 해제 뒤 정상 서명과 팀 ID를 확인하고 같은 앱 실행·메모리 검사를 반복한다.
+
+그동안 실제 Mac 치트 앱의 기능32개를 다시 통과했다. 잠긴 데스크톱의 전체 화면 전환1개는 건너뛰었다. 타이틀·슬롯·사격을 두 창 크기에서 측정한 프레임 처리 p95는4.682~6.393ms였다. 각 사격 조건에서 최대 탄환8개와 게임 저장 호출0회를 확인했다. 객체 해제24개 확인도 통과했다. 이 실행은 기능·성능 검사용 ad-hoc 서명을 명시했으므로 서명 수정 후 누수 검사로 세지 않는다.
+
+원시 기록은 `build/apple-performance-20261026/mac-xpc-origin/`, `mac-launchservices-memory/`, `mac-functional-recheck.log`에 있다. 다른 프로세스가 포함된 시스템 로그 원문은 사이트에 올리지 않고 해당 오류 문구·호출 경로·파일 해시만 [집계 JSON](../evidence/apple-platform-performance-20261026.json)에 기록했다.

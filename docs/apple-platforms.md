@@ -35,8 +35,10 @@ open HeavyMach.xcworkspace
 ```sh
 xcodebuild -workspace HeavyMach.xcworkspace -scheme HeavyMachMacValidation \
   -destination 'platform=macOS,arch=arm64' -derivedDataPath build/mac \
-  CODE_SIGNING_ALLOWED=NO test
+  test
 ```
+
+Mac 일반·치트·테스트 target은 Apple Development 자동 서명을 사용한다. Xcode의 Signing & Capabilities에서 자신의 개발 팀을 선택한다. 이 저장소의 기본 팀은 기존 iOS 설정과 같다. `CODE_SIGNING_ALLOWED=NO`는 컴파일 확인용이며 실행·메모리 검사와 구분한다. ad-hoc 서명(`CODE_SIGN_IDENTITY=-`)에서는 macOS27.0.1의 시스템 등록 서비스가 팀 ID 부재로 연결을 거절했고, 재시도 뒤 약20KB 참조 순환이 관측됐다. 정상 서명본의 후속 결과는 [검사 보고](public/apple-platform-progress-20261026.md)를 따른다.
 
 프레임워크의 중복 소스와 앱별 누락은 `tools/audit_ios_sources.py`가 세 프로젝트의 의존 관계를 따라 검사한다. `.yml`을 바꾸면 관련 프로젝트를 다시 생성하고 generated project도 함께 커밋한다.
 
