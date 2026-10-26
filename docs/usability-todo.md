@@ -130,3 +130,16 @@ foreground 타임아웃의 시계는 단조 증가하는 실제 시간으로 계
 4. 각 변경의 원본 근거, 실패 재현, 수정 검사, 실기기 관측을 `current-status.md`에 기록한다. 실제 채택한 정책만 `runtime-policy.md`에 반영한다.
 
 Apple의 scene 기반 앱에서는 `sceneWillResignActive`가 일시적 중단과 background 진입 전의 정지 지점이다. 이번 앱도 scene delegate를 사용하므로 기존 앱 delegate만 추가하는 수정은 부족하다. [Apple sceneWillResignActive](https://developer.apple.com/documentation/uikit/uiscenedelegate/scenewillresignactive(_:)).
+
+## 2026-10-26 후속 타이틀·Android APK
+
+- [x] 사용자 원래 Archive 링크에서 후속 타이틀·버전·다운로드 응답 확인. [조사 기록](related-titles-20261026.md).
+- [x] 중단한 hm-defense 포크·로컬 브랜치·기존 APK·남은 TODO 확인. 작업 파일 보존.
+- [x] HeavyMach 코어 NDK ARM64 컴파일·개발 계획·전용 스킬·읽기 경로 작성. [Android 계획](android-port-plan-20261026.md).
+- [ ] A1 Android 앱·EGL/OpenAL·일반/치트 debug APK 뼈대.
+- [ ] A2 메뉴·HUD·게임 조립 공통화와 iOS 회귀.
+- [ ] A3 입력·음향·저장·중단/복귀 이식 및 전체 무기 검사.
+- [ ] A4 전체 미션·화면비·context·고주사율·16KB·실기기 발열 검사.
+- [ ] A5 일반 release·치트 APK 서명·설치·저장 보존·재현 기록.
+
+계획 수립과 코어 컴파일을 APK 개발 완료로 표시하지 않는다. 다른 타이틀의 다운로드·복원 재개는 이번 조사 완료 범위에 포함하지 않는다.

@@ -1,0 +1,60 @@
+{
+  "checked_at": "2026-10-26T04:05:33.392464+00:00",
+  "heavymach_source_commit": "7c73e06fe5405a880226e554ef8de0174b7238f0",
+  "archive_metadata_url": "https://archive.org/metadata/heavy-mach-archive_202406",
+  "archive_ipa_count": 19,
+  "selected_download_head": [
+    {
+      "name": "Game IPAs/Heavy MACH: Defense/MachDefense v1.0.3 - (com.wemadeent.HeavyMachDefence).ipa",
+      "url": "https://archive.org/download/heavy-mach-archive_202406/Game%20IPAs/Heavy%20MACH%3A%20Defense/MachDefense%20v1.0.3%20-%20%28com.wemadeent.HeavyMachDefence%29.ipa",
+      "status": 200,
+      "content_length": "62512014",
+      "archive_sha1": "1e22f0c772cb5ec23525dd34ca5157c733d502bc"
+    },
+    {
+      "name": "Game IPAs/Heavy Mach 2/Heavy Mach 2 HD/HeavyMach2HD v1.0.3 - (kr.indieapps.HvM2HD).ipa",
+      "url": "https://archive.org/download/heavy-mach-archive_202406/Game%20IPAs/Heavy%20Mach%202/Heavy%20Mach%202%20HD/HeavyMach2HD%20v1.0.3%20-%20%28kr.indieapps.HvM2HD%29.ipa",
+      "status": 200,
+      "content_length": "69171560",
+      "archive_sha1": "472bbd0acbe632fe60ffc312c9f2fa5bad6b96b2"
+    },
+    {
+      "name": "Game IPAs/Heavy Mach 2/Heavy Mach 2/HeavyMach2 v2.0.1 - (com.indiean.HeavyMach2).ipa",
+      "url": "https://archive.org/download/heavy-mach-archive_202406/Game%20IPAs/Heavy%20Mach%202/Heavy%20Mach%202/HeavyMach2%20v2.0.1%20-%20%28com.indiean.HeavyMach2%29.ipa",
+      "status": 200,
+      "content_length": "55854756",
+      "archive_sha1": "849da2eeef19807f2ab1f4e3111cd92e782a478f"
+    },
+    {
+      "name": "Game IPAs/Mach Defense/Mach_Defense v1.0.5 - (kr.indieapps.MachDefense).ipa",
+      "url": "https://archive.org/download/heavy-mach-archive_202406/Game%20IPAs/Mach%20Defense/Mach_Defense%20v1.0.5%20-%20%28kr.indieapps.MachDefense%29.ipa",
+      "status": 200,
+      "content_length": "62698352",
+      "archive_sha1": "72ade18b5c5b62e37e9e71363597136559518cbe"
+    }
+  ],
+  "defense_remote": {
+    "repo": "gelb2/hm-defense",
+    "parent": "Mesabloo/hm-defense",
+    "main": "a4446660141e78829aa573af2e66de3329a19d00",
+    "dev": "7b8a6419a38e57a4850cf70b485c16e03389bbcb"
+  },
+  "defense_local": {
+    "path": "/Users/sokol/Git/hm-defense",
+    "branch": "feature/add_android_build",
+    "head": "022d6911679aa2f0792d915cc490530c0714a9e9",
+    "ahead_of_remote_main": 81,
+    "dirty": "untracked .claude/ retained"
+  },
+  "android_core_probe": {
+    "result": "static library compile succeeded; not APK or runtime validation",
+    "ndk": "26.3.11579264",
+    "clang": "17.0.2",
+    "abi": "arm64-v8a",
+    "api": 26,
+    "source_files": 20,
+    "archive_sha256": "fc837a82ca1fdd7c410969b19ce57fdd889ab1b2695a899f13594c3e559344f1",
+    "warnings": "9 missing-field-initializers in GameSession.cpp; CMake old minimum-version deprecation in NDK",
+    "output": "build/research-20261026/android-core-probe/libHeavyMachCore.a"
+  }
+}

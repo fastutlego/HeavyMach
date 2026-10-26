@@ -21,3 +21,5 @@
 - 보고서·GitHub 문서·게임 안의 텍스트·진행/최종 답변은 `.agents/skills/write-project-text/SKILL.md`를 먼저 읽고 적용한다. 보고 사이트와 다운로드는 같은 원고에서 만들며 최신 상태와 과거 계측 시점을 구분한다.
 
 - 개발 브랜치는 develop에 병합하고 main에는 develop만 병합한다. v0.9 등 릴리스 태그는 main의 병합 커밋에 붙이며 재지정하지 않는다. [저장소 관리](docs/repository-management.md)를 따른다.
+
+- HeavyMach Android 이식·APK 작업에는 `.agents/skills/port-heavymach-android/SKILL.md`와 `docs/android-port-plan-20261026.md`를 읽고 `document_contract.py plan --task android`로 연결을 확인한다. 조사·예정 단계와 실제 APK 완료를 구분한다.

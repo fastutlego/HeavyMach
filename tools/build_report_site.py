@@ -61,7 +61,7 @@ def main():
         current.append(child)
     nav=old.select_one('aside nav');nav.clear()
     for section in main.select('section'):
-        a=old.new_tag('a',href='#'+section['id']);a.string={'migration-audit':'전수검사·REA', 'repositories':'저장소·v0.9','port-and-native':'포팅·복원 과정','retrospective':'기술 회고','rea':'REA 활용','documentation':'문서 체계','menu-joins':'배경 연결 수정','menu-result':'메뉴 확장','phone':'아이폰 검사','ai':'적 이동','rotation':'가로 회전','screens':'남은 화면','evidence':'남은 작업'}[section['id']];nav.append(a)
+        a=old.new_tag('a',href='#'+section['id']);a.string={'android-plan':'타이틀·Android', 'migration-audit':'전수검사·REA', 'repositories':'저장소·v0.9','port-and-native':'포팅·복원 과정','retrospective':'기술 회고','rea':'REA 활용','documentation':'문서 체계','menu-joins':'배경 연결 수정','menu-result':'메뉴 확장','phone':'아이폰 검사','ai':'적 이동','rotation':'가로 회전','screens':'남은 화면','evidence':'남은 작업'}[section['id']];nav.append(a)
     old.select_one('.sidefoot').string='2026.10.26 · 개발·검증 기록'
     old.title.string='HeavyMach 복원과 아이폰 검증'
     old.select_one('meta[name="description"]')['content']='HeavyMach 원본 분석, 사용자 지시별 수정, 아이폰 검증과 남은 작업'
@@ -72,10 +72,12 @@ def main():
     article(ROOT/'docs/documentation-audit-20261025.md',dist/'documentation.html','documentation-audit-20261025.md',doc)
     article(ROOT/'docs/public/rea-restoration-method-20261025.md',dist/'rea.html','rea-restoration-method-20261025.md',retro)
     article(ROOT/'docs/public/ipa-port-and-native-app-20261026.md',dist/'port-and-native.html','ipa-port-and-native-app-20261026.md',retro)
+    article(ROOT/'docs/related-titles-20261026.md',dist/'related-titles.html','related-titles-20261026.md',retro)
+    article(ROOT/'docs/android-port-plan-20261026.md',dist/'android-plan.html','android-port-plan-20261026.md',retro)
     shutil.copytree(ROOT/'docs/public/rea',dist/'rea',dirs_exist_ok=True)
     for name in ['game-design.md','document-governance.md','document-map.json']:
         shutil.copyfile(ROOT/'docs'/name,dist/name)
-    report={'pages':['index.html','retrospective.html','documentation.html','rea.html','port-and-native.html'],'manuscripts':['report-overview-20261025.md','engineering-retrospective-20261025.md','rea-restoration-method-20261025.md','ipa-port-and-native-app-20261026.md'],'image_count_before':len(BeautifulSoup(original,'html.parser').select('img')),'image_count_after':len(old.select('img'))}
+    report={'pages':['index.html','retrospective.html','documentation.html','rea.html','port-and-native.html','related-titles.html','android-plan.html'],'manuscripts':['report-overview-20261025.md','engineering-retrospective-20261025.md','rea-restoration-method-20261025.md','ipa-port-and-native-app-20261026.md','related-titles-20261026.md','android-port-plan-20261026.md'],'image_count_before':len(BeautifulSoup(original,'html.parser').select('img')),'image_count_after':len(old.select('img'))}
     assert report['image_count_before']==report['image_count_after']
     print(json.dumps(report,ensure_ascii=False))
 if __name__=='__main__':main()
