@@ -1,5 +1,28 @@
 # 2026-10-25 문서·코드·앱 일치 체계 점검 및 보완
 
+## 2026-10-26 Mac·iPad 성능 검사 후속
+
+Mac 일반 창/화면 크기의 타이틀·슬롯·사격6조건에서 프레임 처리 p95는3.470~10.308ms로16.67ms 기준을 통과했다. 기존 기능31개에 성능1개 검사를 추가했다. Time Profiler와 Allocations+Leaks를 실행했고 실제 탄환·음향·저장 호출0회를 확인했다.
+
+iPad Simulator는 작업본44.311~48.133ms, 변경 전 main39.972~40.580ms로 양쪽 모두 실패했다. CPU 표본의91.33%가 최종 표시 경로에 있었고 Apple Software Renderer의 픽셀 채우기가 주된 비용이다. 높이320→360 확장으로 추가된 표시 면적과 확대 비용 증가를 기록했다. 실제 iPad 성능 저하로 보고하지 않는다.
+
+iPad heap 검사 누수0건, Mac은 AppIntents의 XPC 연결 참조 순환417개·20,016바이트를 관측했다. Mac 비교 앱 추적은 OS 권한 오류로 실패해 원인 분리를 완료하지 않았다. 현재 Mac이 잠겨 CUA 최종 화면 확인도 남았다. 사용자 원격 작업 지시에 따라 물리폰·패드 연결을 작업 조건으로 요구하지 않는다. 상세·원시 로그·실패 범위는 [검사 보고](public/apple-platform-progress-20261026.md), 집계는 [JSON](evidence/apple-platform-performance-20261026.json)에 있다.
+
+[자동조준 계획](auto-aim-plan-20261026.md)을 작성했다. HUD 배치 편집은 TODO에 보존했고 두 기능을 구현 완료로 표시하지 않는다.
+
+## 2026-10-26 Apple 공용 모듈·키보드 검증 진행
+
+`feat/apple-workspace-modules`에서 workspace 하나와 하위 Modules/iOS/macOS 프로젝트를 구성했다. Mac은 AppKit/OpenGL 앱이며 Catalyst를 사용하지 않는다. 코어·Apple 실행 코드·자원 번들을 공유한다. iPad 터치·틸트는 유지하고 이동·점프·조준·사격·무기 전환·메뉴용 키보드 입력과 키 재지정을 추가했다.
+
+코어18개, Mac31개, iPad Simulator22개, iPhone Simulator53개의 기능 검사가 통과했다. Mac31개에는 치트 창의 무기 선택 검사를 포함한다. 등급7개 × 전체 무기 지급2조건 × 무기20종, 총280가지 시작 조건을 확인했다. Mac 일반/치트와 iPhone SDK 일반/치트 빌드가 성공했다. 기존 Git 폴더와 IPA 읽기를 차단한 별도 export에서 Mac/iOS Simulator 치트 빌드도 성공했다.
+
+Mac 실제 창에서 게임과 키 입력을 확인했다. 전체 화면 캡처 여백은 게임 없는 순수 AppKit 비교 앱에서도 재현됐고, 창·뷰·내용 영역은1920×1080과 원점0,0으로 일치했다. 비교 앱의 네 테두리가 남은 채 캡처 내용 전체가 축소되는 현상으로 분리했다. 게임 크기에 역보정을 넣지 않았다. 잠금 해제 후 CUA를 다시 사용했고 진단용 코드·바탕색 변경은 제거했다. 실제 디스플레이와 캡처의 최종 대조는 남아 있다. iPhone Simulator의 16.67ms 성능 검사는 실패했고 변경 전 main도 같은 환경에서 실패했다. 현재 물리 iPhone/iPad 검증은 수행하지 않았다. 물리3플랫폼 검증 완료·main 병합으로 표시하지 않는다. [구현 범위와 검사 기록](public/apple-platform-progress-20261026.md).
+
+사용자 지적 후 iPad Simulator를 종료하고 iPhone 한 대·병렬 테스트 해제로 성능을 재측정했다. 타이틀/슬롯/사격 p95는27.528/29.540/28.646ms로 앞선 측정과 거의 같았고16.67ms 기준은 실패했다. 최초 보고 전에 동시 실행 영향을 통제하지 않은 검증 누락을 기록한다. 원시 로그는 `build/iphone-single-simulator-perf.log`와 `build/iphone-single-simulator-environment.log`다. 제품 코드와 검사 기준은 변경하지 않았다.
+
+자동조준 연구개발 계획과 HUD 배치 편집 요구를 [투두](usability-todo.md)에 추가했다. HUD는 실제 게임 캡처로 미리보기, 드래그 이동, 표시 위치와 터치 판정 일치, 기존 조작 보호, 현재 기본 배치 복원을 요구한다. 두 기능은 아직 구현하지 않았다.
+
+
 ## 2026-10-26 자원 Git 포함·새 원격 clone 빌드
 
 Resources 전체 제외로 새 clone에서 빌드 자원이 빠지던 구성을 수정했다. 필요한 자원1,471개를 Git/LFS에 추가하고 기존 확장 그림을 포함한1,475개 SHA-256 목록·검사 도구를 연결했다. GitHub에서 새로 받은 `daf0c178`에서 IPA·기존 프로젝트 읽기를 차단하고 일반·치트 앱의 Simulator/iPhone 빌드4개, 코어17·iOS14, 새 Simulator 두 앱 설치·실행을 통과했다. 앱별 자원 누락·해시 불일치는0개다. [검사 결과](public/clone-build-20261026.md).

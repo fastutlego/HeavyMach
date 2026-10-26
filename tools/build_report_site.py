@@ -35,7 +35,7 @@ def article(source,dest,download,template):
     for child in list(content.contents):
         if getattr(child,'name',None)=='h2' and nav.parent is None: main.append(nav)
         main.append(child)
-    footer=page.new_tag('footer');footer.string='HeavyMach · 제품 코드 72e8c68e';main.append(footer)
+    footer=page.new_tag('footer');footer.string='HeavyMach';main.append(footer)
     page.title.string=title+' | HeavyMach'
     # Keep long hashes, code, and tables within narrow mobile screens.
     style=page.new_tag('style');style.string='main{min-width:0}code,a{overflow-wrap:anywhere}pre{white-space:pre-wrap}nav{display:block}nav ol{padding-left:0;list-style:none;columns:2}nav li{break-inside:avoid}@media(max-width:700px){table thead{display:none}table tbody tr:first-child{display:block}nav ol{columns:1}}';page.head.append(style)
@@ -61,7 +61,7 @@ def main():
         current.append(child)
     nav=old.select_one('aside nav');nav.clear()
     for section in main.select('section'):
-        a=old.new_tag('a',href='#'+section['id']);a.string={'clone-build':'새 clone 빌드', 'independence':'IPA 없는 빌드 검증', 'publication':'집필 자료·설치 안내', 'developer-story':'개발자의 변', 'ios-audit':'iOS 코드·문서 검사', 'android-plan':'타이틀·Android', 'migration-audit':'전수검사·REA', 'repositories':'저장소·v0.9','port-and-native':'포팅·복원 과정','retrospective':'기술 회고','rea':'REA 활용','documentation':'문서 체계','menu-joins':'배경 연결 수정','menu-result':'메뉴 확장','phone':'아이폰 검사','ai':'적 이동','rotation':'가로 회전','screens':'남은 화면','evidence':'남은 작업'}[section['id']];nav.append(a)
+        a=old.new_tag('a',href='#'+section['id']);a.string={'apple-platforms':'Apple·키보드·투두', 'clone-build':'새 clone 빌드', 'independence':'IPA 없는 빌드 검증', 'publication':'집필 자료·설치 안내', 'developer-story':'개발자의 변', 'ios-audit':'iOS 코드·문서 검사', 'android-plan':'타이틀·Android', 'migration-audit':'전수검사·REA', 'repositories':'저장소·v0.9','port-and-native':'포팅·복원 과정','retrospective':'기술 회고','rea':'REA 활용','documentation':'문서 체계','menu-joins':'배경 연결 수정','menu-result':'메뉴 확장','phone':'아이폰 검사','ai':'적 이동','rotation':'가로 회전','screens':'남은 화면','evidence':'남은 작업'}[section['id']];nav.append(a)
     old.select_one('.sidefoot').string='2026.10.26 · 개발·검증 기록'
     old.title.string='HeavyMach 복원과 아이폰 검증'
     old.select_one('meta[name="description"]')['content']='HeavyMach 원본 분석, 사용자 지시별 수정, 아이폰 검증과 남은 작업'
@@ -75,8 +75,10 @@ def main():
     article(ROOT/'docs/related-titles-20261026.md',dist/'related-titles.html','related-titles-20261026.md',retro)
     article(ROOT/'docs/android-port-plan-20261026.md',dist/'android-plan.html','android-port-plan-20261026.md',retro)
     article(ROOT/'docs/ios-completeness-audit-20261026.md',dist/'ios-audit.html','ios-completeness-audit-20261026.md',retro)
+    article(ROOT/'docs/auto-aim-plan-20261026.md',dist/'auto-aim.html','auto-aim-plan-20261026.md',retro)
     article(ROOT/'docs/RESTORATION.md',dist/'restoration.html','RESTORATION.md',retro)
     public_articles = [
+        ('apple-platform-progress-20261026.md', 'apple-platforms.html'),
         ('clone-build-20261026.md', 'clone-build.html'),
         ('ipa-independent-build-20261026.md', 'independence.html'),
         ('rea-implementation-audit-20261026.md', 'rea-implementation.html'),
@@ -88,6 +90,10 @@ def main():
         article(ROOT/'docs/public'/source_name, dist/page_name, source_name, retro)
         page = BeautifulSoup((dist/page_name).read_text(), 'html.parser')
         if page.footer: page.footer.decompose()
+        for link in page.select('a[href]'):
+            if link['href'].startswith('../evidence/'): link['href']=link['href'][3:]
+            if link['href'] in ('../apple-platforms.md','../keyboard-input-policy.md','../current-status.md','../auto-aim-plan-20261026.md'):
+                link['href']=link['href'].removeprefix('../')
         (dist/page_name).write_text(str(page))
     article(ROOT/'docs/media-publication.md', dist/'media-preparation.html', 'media-publication.md', retro)
     shutil.copyfile(ROOT/'docs/media-scenes.example.json', dist/'media-scenes.example.json')
@@ -97,7 +103,9 @@ def main():
     shutil.copytree(ROOT/'docs/public/rea',dist/'rea',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/independence',dist/'independence',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/clone',dist/'clone',dirs_exist_ok=True)
-    for name in ['game-design.md','document-governance.md','document-map.json']:
+    (dist/'evidence').mkdir(exist_ok=True)
+    shutil.copyfile(ROOT/'docs/evidence/apple-platform-performance-20261026.json',dist/'evidence/apple-platform-performance-20261026.json')
+    for name in ['game-design.md','document-governance.md','document-map.json','apple-platforms.md','keyboard-input-policy.md','current-status.md']:
         shutil.copyfile(ROOT/'docs'/name,dist/name)
     report={'pages':['index.html','retrospective.html','documentation.html','rea.html','port-and-native.html','related-titles.html','android-plan.html','ios-audit.html','restoration.html'],'manuscripts':['report-overview-20261025.md','engineering-retrospective-20261025.md','rea-restoration-method-20261025.md','ipa-port-and-native-app-20261026.md','related-titles-20261026.md','android-port-plan-20261026.md','ios-completeness-audit-20261026.md','RESTORATION.md'],'image_count_before':len(BeautifulSoup(original,'html.parser').select('img')),'image_count_after':len(old.select('img'))}
     report['pages'] += [page for _, page in public_articles] + ['media-preparation.html']

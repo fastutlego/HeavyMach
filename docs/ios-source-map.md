@@ -2,9 +2,9 @@
 
 2026-10-26 전수검사 기준. 현재 구현의 파일별 안내다. 요구·승인 범위는 [기획](game-design.md), 구현 규칙은 각 분야 정책을 따른다. 과거 함수 복원 과정은 [이전 대응표](source-coverage.md)에 남긴다.
 
-현재 앱은 C++ 코어와 Objective-C++ iOS 연결로 구성된다. Swift 소스는 없다. 일반 앱과 치트 앱은 같은 컴파일 소스 29개를 사용하며 `HM_VALIDATION`으로 검증 기능을 나눈다. 원본 인터페이스 자료는 참조용이다.
+현재 앱은 C++ 코어와 Objective-C++ Apple 연결로 구성된다. Swift 소스는 없다. 공용 코드·자원은 Modules 프로젝트의 정적 프레임워크와 자원 번들로 빌드한다. iOS/iPadOS 앱과 native macOS 앱은 각 진입점만 컴파일하고 공용 프레임워크를 연결한다. `HM_VALIDATION`으로 일반·치트 기능을 분리한다. 원본 인터페이스 자료는 참조용이다.
 
-## 소스 68개
+## 소스 파일
 
 표는 `Sources/`의 모든 파일을 열거한다. 검사 열은 관련 검사 위치이며 각 파일의 모든 동작을 검증했다는 뜻은 아니다.
 
@@ -33,7 +33,7 @@
 
 ## 빌드와 자원
 
-- `iOS/project.yml`이 Xcode 생성 입력이고 `iOS/HeavyMachRestored.xcodeproj/project.pbxproj`가 등록 결과다. 구성 변경 시 둘을 함께 검토한다.
+- `Modules/project.yml`, `iOS/project.yml`, `macOS/project.yml`이 Xcode 생성 입력이며 각 하위 project.pbxproj가 등록 결과다. 구성 변경 시 둘을 함께 검토한다.
 - `HeavyMachRestored`, `HeavyMachValidation`은 각각 C++ 20개·Objective-C++ 9개를 컴파일한다. `HeavyMachRenderTests`는 `Tests/iOS/`의 12개 파일을 컴파일한다.
 - `vendor/openal-soft/`와 `vendor/stb/`의 소스·라이선스를 보존한다. OpenAL 빌드 명령과 arm64 대상은 [README](../README.md)에 있다.
 - `Resources/`, `Analysis/`, 원본 IPA와 호환판 checkout은 별도 보존 입력이다. Git 제외는 누락 여부와 별도로 판정한다. 출처·해시는 [출처 문서](source-provenance.md), 호환 소스 재구성은 [호환판 안내](../Compatibility/README.md)를 따른다.
@@ -49,3 +49,17 @@ python3 tools/document_contract.py check
 첫 명령은 소스 목록·Xcode 등록·로컬 include·이 문서의 파일 목록·기준 태그의 제품 tree·호환판 패치를 검사한다. 패치는 임시 폴더에서만 적용한다. 새 제품 변경으로 v0.9와 달라지면 실패를 보고하므로 변경 사유를 검토한다. 자동으로 코드를 되돌리지 않는다.
 
 이번 전체 검사 결과는 [iOS 전수검사](ios-completeness-audit-20261026.md)에 있다.
+
+## Apple 플랫폼 확장
+
+| 역할 | 파일 | 관련 검사 |
+|---|---|---|
+| 키 매핑·가상 기울기·조준 | `Sources/Core/KeyboardInput.hpp` | Tests/KeyboardInputTests.cpp, Tests/Apple/HMAppleInputTests.mm |
+| 플랫폼 이미지·뷰·좌표 값 | `Sources/Apple/HMPlatform.h`, `Sources/Apple/HMPlatform.mm` | Apple 공통 입력·렌더 검사 |
+| ES/desktop GL 컨텍스트 | `Sources/Apple/HMGLPlatform.h`, `Sources/Apple/HMGLPlatform.mm` | Mac 앱 실행·iOS GL 비교 |
+| 공용 자원 번들 조회 | `Sources/Apple/HMResources.h`, `Sources/Apple/HMResources.mm` | 이미지·음원·게임 데이터 로드 검사 |
+| native Mac 앱·창·생명주기 | `Sources/Mac/Application.mm` | Mac 치트 앱 실행 |
+| Mac 검증 방향 입력 | `Sources/Mac/HMValidationControlsMac.mm` | HMAppleInputTests |
+| Mac 검증 조건 창 | `Sources/Mac/HMValidationPanelMac.mm` | Mac 검증 패널·공통 시나리오 검사 |
+
+공통 Apple 구현 파일은 기존 `Sources/iOS` 경로를 유지한다. 경로 이름만으로 UIKit 전용이라고 판단하지 않는다. 실제 컴파일 대상과 AppKit/UIKit 분기는 `Modules/project.yml`에서 확인한다.

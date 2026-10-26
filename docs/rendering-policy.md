@@ -1,13 +1,17 @@
 # 그래픽 렌더링 정책
 
+## Apple 플랫폼 확장 — 2026-10-26
+
+Apple 모듈화에서 iOS/iPadOS의 ES1.1 경로는 유지한다. native Mac은 AppKit NSOpenGLContext와 desktop compatibility GL을 사용하고 스프라이트·블렌드 제출 코드를 공유한다. Catalyst는 사용하지 않는다. [플랫폼 구조](apple-platforms.md).
+
 정본: [canonical](canonical.md). 제품 경로는 `HMGameView → HMMedia → HMGLRenderer`다. 이전 CPU raster/UIImage 합성은 비교·검사 경로로 남아 있으며 일반 게임의 정상 렌더 경로로 복귀시키지 않는다.
 
 2026-10-25 전체 캔버스 확장을 구현했다. 원본480 비교 모드와 확장 게임플레이 모드를 같은 GL 경로로 처리한다. 현재 구현과 검사는 [캔버스 기록](wide-canvas-plan.md)을 따른다.
 
 ## 고정할 경로
 
-- 게임 장면은 OpenGL ES1.1. UIKit은 창·수명주기·검증 조작부를 담당한다.
-- 논리W×320, 할당ceil(W)×320 RGBA8 renderbuffer에 원본 순서로 그린다. 기본·원본 비교 모드는W=480이다. 크기가 바뀔 때만 재할당하고 투영·복사·readback이 같은 치수를 사용한다. 장면을 재사용 화면 텍스처로 복사하고 drawable에 최종 확대한다.
+- iPhone/iPad는 OpenGL ES1.1, Mac은 desktop OpenGL compatibility로 게임을 그린다. UIKit/AppKit은 창·생명주기·설정·검증 조작부를 담당한다.
+- 논리W×H, 할당ceil(W)×ceil(H) RGBA8 renderbuffer에 원본 순서로 그린다. 원본 비교 모드는480×320이다. 확장 모드의 W/H는 좌표 정책을 따른다. 크기가 바뀔 때만 재할당하고 투영·복사·readback이 같은 치수를 사용한다. 장면을 재사용 화면 텍스처로 복사하고 drawable에 최종 확대한다.
 - 원본 자원의 제품 소비자는 `OriginalImages`의 원본 파일명과 확장자를 사용한다. 미션/스테이지 클리어의 `GameLoading_XX[E].jpg`, 게임오버의 `StageClear.jpg`에 파생본 접미사 `.png`를 붙이지 않는다. `Images/*.jpg.png`는 변환·비교용 자원이며 현재 제품 로더의 이름 계약이 아니다.
 - 원본 이미지695개를 보존된 stb 코드로 해석한다. POT 패딩, premultiplied 픽셀, RGB565 변환, UV와 타일 순서를 임의 보정하지 않는다.
 - sprite 텍스처는 LINEAR/REPEAT, 최종 화면 텍스처는 LINEAR/CLAMP_TO_EDGE다. 두 텍스처의 규칙을 섞지 않는다.

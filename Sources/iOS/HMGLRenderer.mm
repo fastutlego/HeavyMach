@@ -1,9 +1,7 @@
 #import "HMGLRenderer.h"
 #import "HMMedia.h"
 #include "HMCompatibilityPixels.hpp"
-#import <OpenGLES/EAGL.h>
-#import <OpenGLES/ES1/gl.h>
-#import <OpenGLES/ES1/glext.h>
+#import "HMGLPlatform.h"
 #include <algorithm>
 #include <cmath>
 #include <map>
@@ -16,7 +14,7 @@ static GLsizei pot(GLsizei n){GLsizei p=1;while(p<n)p*=2;return p;}
 static NSString *glString(GLenum name){const auto p=glGetString(name);return p?[NSString stringWithUTF8String:(const char*)p]:@"unavailable";}
 }
 @implementation HMGLRenderer {
-    EAGLContext *_context,*_previousContext;
+    HMGLContext *_context,*_previousContext;
     BOOL _active;
     GLuint _sceneFBO,_sceneBuffer,_sceneTexture,_displayFBO,_displayBuffer;
     BOOL _sceneTextureAllocated;
@@ -28,7 +26,7 @@ static NSString *glString(GLenum name){const auto p=glGetString(name);return p?[
     NSUInteger _sceneReallocations;
     double _nextPresentDue;
     GLint _displayWidth,_displayHeight,_displayFormat;
-    __weak CAEAGLLayer *_displayLayer;
+    __weak HMGLSurface *_displayLayer;
     CGSize _drawablePointSize;
     CGFloat _drawableScale;
     std::map<std::string,Texture> _textures;
@@ -42,10 +40,10 @@ static NSString *glString(GLenum name){const auto p=glGetString(name);return p?[
 - (instancetype)init {
     if(!(self=[super init]))return nil;
     _logicalWidth=480;_logicalHeight=320;_bufferWidth=480;_bufferHeight=320;_drawingScale=1;
-    _context=[[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES1];
+    _context=HMCreateGLContext();
     if(!_context)return nil;
-    EAGLContext *previous=[EAGLContext currentContext];
-    if(![EAGLContext setCurrentContext:_context])return nil;
+    HMGLContext *previous=[HMGLContext currentContext];
+    if(![HMGLContext setCurrentContext:_context])return nil;
     _vendor=glString(GL_VENDOR);_renderer=glString(GL_RENDERER);_version=glString(GL_VERSION);
     // Match touchHLE EAGL: renderbuffer -> reusable NPOT copy texture -> drawable.
     glGenTextures(1,&_sceneTexture);glBindTexture(GL_TEXTURE_2D,_sceneTexture);
@@ -57,27 +55,27 @@ static NSString *glString(GLenum name){const auto p=glGetString(name);return p?[
     glGenFramebuffersOES(1,&_sceneFBO);glBindFramebufferOES(GL_FRAMEBUFFER_OES,_sceneFBO);
     glFramebufferRenderbufferOES(GL_FRAMEBUFFER_OES,GL_COLOR_ATTACHMENT0_OES,GL_RENDERBUFFER_OES,_sceneBuffer);
     BOOL ok=glCheckFramebufferStatusOES(GL_FRAMEBUFFER_OES)==GL_FRAMEBUFFER_COMPLETE_OES&&glGetError()==GL_NO_ERROR;
-    [EAGLContext setCurrentContext:previous];
+    [HMGLContext setCurrentContext:previous];
     if(!ok){[self recordError:@"Logical framebuffer creation failed"];return nil;}
     return self;
 }
 - (void)dealloc {
-    EAGLContext *previous=[EAGLContext currentContext];
-    if(_context&&[EAGLContext setCurrentContext:_context]){
+    HMGLContext *previous=[HMGLContext currentContext];
+    if(_context&&[HMGLContext setCurrentContext:_context]){
         for(auto &entry:_textures)glDeleteTextures(1,&entry.second.id);
         glDeleteTextures(1,&_sceneTexture);glDeleteFramebuffersOES(1,&_sceneFBO);glDeleteRenderbuffersOES(1,&_sceneBuffer);
         glDeleteFramebuffersOES(1,&_displayFBO);glDeleteRenderbuffersOES(1,&_displayBuffer);
-        [EAGLContext setCurrentContext:previous==_context?nil:previous];
+        [HMGLContext setCurrentContext:previous==_context?nil:previous];
     }
 }
 - (BOOL)setLogicalWidth:(CGFloat)width height:(CGFloat)height {
     if(_active||!std::isfinite(width)||!std::isfinite(height)||width<=0||height<=0)return NO;
     if(width==_logicalWidth&&height==_logicalHeight)return YES;
-    EAGLContext *previous=[EAGLContext currentContext];
-    if(![EAGLContext setCurrentContext:_context])return NO;
+    HMGLContext *previous=[HMGLContext currentContext];
+    if(![HMGLContext setCurrentContext:_context])return NO;
     GLint maxTexture=0,maxBuffer=0;glGetIntegerv(GL_MAX_TEXTURE_SIZE,&maxTexture);glGetIntegerv(GL_MAX_RENDERBUFFER_SIZE_OES,&maxBuffer);
     if(std::ceil(width)>std::min(maxTexture,maxBuffer)||std::ceil(height)>std::min(maxTexture,maxBuffer)){
-        [EAGLContext setCurrentContext:previous];return NO;
+        [HMGLContext setCurrentContext:previous];return NO;
     }
     const GLsizei w=GLsizei(std::ceil(width)),h=GLsizei(std::ceil(height));
     if(w!=_bufferWidth||h!=_bufferHeight){
@@ -88,7 +86,7 @@ static NSString *glString(GLenum name){const auto p=glGetString(name);return p?[
         glGenFramebuffersOES(1,&fbo);glBindFramebufferOES(GL_FRAMEBUFFER_OES,fbo);
         glFramebufferRenderbufferOES(GL_FRAMEBUFFER_OES,GL_COLOR_ATTACHMENT0_OES,GL_RENDERBUFFER_OES,buffer);
         const BOOL ok=glCheckFramebufferStatusOES(GL_FRAMEBUFFER_OES)==GL_FRAMEBUFFER_COMPLETE_OES&&glGetError()==GL_NO_ERROR;
-        if(!ok){glDeleteFramebuffersOES(1,&fbo);glDeleteRenderbuffersOES(1,&buffer);glBindFramebufferOES(GL_FRAMEBUFFER_OES,previousFBO);glBindRenderbufferOES(GL_RENDERBUFFER_OES,previousBuffer);[EAGLContext setCurrentContext:previous];return NO;}
+        if(!ok){glDeleteFramebuffersOES(1,&fbo);glDeleteRenderbuffersOES(1,&buffer);glBindFramebufferOES(GL_FRAMEBUFFER_OES,previousFBO);glBindRenderbufferOES(GL_RENDERBUFFER_OES,previousBuffer);[HMGLContext setCurrentContext:previous];return NO;}
         if(previousFBO==GLint(_sceneFBO))previousFBO=fbo;
         if(previousBuffer==GLint(_sceneBuffer))previousBuffer=buffer;
         glDeleteFramebuffersOES(1,&_sceneFBO);glDeleteRenderbuffersOES(1,&_sceneBuffer);
@@ -96,7 +94,7 @@ static NSString *glString(GLenum name){const auto p=glGetString(name);return p?[
         glBindFramebufferOES(GL_FRAMEBUFFER_OES,previousFBO);glBindRenderbufferOES(GL_RENDERBUFFER_OES,previousBuffer);
     }
     _logicalWidth=width;_logicalHeight=height;
-    [EAGLContext setCurrentContext:previous];return YES;
+    [HMGLContext setCurrentContext:previous];return YES;
 }
 - (void)setDrawingOffset:(CGPoint)offset {if(std::isfinite(offset.x)&&std::isfinite(offset.y))_drawingOffset=offset;}
 - (void)setDrawingScale:(CGFloat)scale {if(std::isfinite(scale)&&scale>0)_drawingScale=scale;}
@@ -118,8 +116,8 @@ static NSString *glString(GLenum name){const auto p=glGetString(name);return p?[
 - (void)resetClip {_hasClip=NO;if(_active)[self applyClip];}
 - (BOOL)beginFrame {
     if(_active){[self recordError:@"Nested beginFrame"];return NO;}
-    _previousContext=[EAGLContext currentContext];
-    if(![EAGLContext setCurrentContext:_context]){[self recordError:@"Cannot activate ES context"];_previousContext=nil;return NO;}
+    _previousContext=[HMGLContext currentContext];
+    if(![HMGLContext setCurrentContext:_context]){[self recordError:@"Cannot activate ES context"];_previousContext=nil;return NO;}
     _active=YES;_drawCalls=0;
     glBindFramebufferOES(GL_FRAMEBUFFER_OES,_sceneFBO);glViewport(0,0,_bufferWidth,_bufferHeight);
     glDisable(GL_SCISSOR_TEST);glDisable(GL_DEPTH_TEST);glDisable(GL_CULL_FACE);glDisable(GL_LIGHTING);glEnable(GL_DITHER);
@@ -134,9 +132,9 @@ static NSString *glString(GLenum name){const auto p=glGetString(name);return p?[
 - (void)endFrame {
     if(!_active)return;
     GLenum error=glGetError();if(error!=GL_NO_ERROR)[self recordError:[NSString stringWithFormat:@"OpenGL error 0x%x",error]];
-    glFlush();[EAGLContext setCurrentContext:_previousContext];_previousContext=nil;_active=NO;_frames++;
+    glFlush();[HMGLContext setCurrentContext:_previousContext];_previousContext=nil;_active=NO;_frames++;
 }
-- (Texture *)textureForImage:(UIImage *)image name:(NSString *)name rgb565:(BOOL)rgb565 {
+- (Texture *)textureForImage:(HMImage *)image name:(NSString *)name rgb565:(BOOL)rgb565 {
     if(!name)return nullptr;
     std::string key(name.UTF8String);key+=rgb565?"#565":"#rgba";
     auto found=_textures.find(key);if(found!=_textures.end())return &found->second;
@@ -174,24 +172,31 @@ static NSString *glString(GLenum name){const auto p=glGetString(name);return p?[
 - (BOOL)hasTexture:(NSString *)name rgb565:(BOOL)rgb565 {
     std::string key(name.UTF8String);key+=rgb565?"#565":"#rgba";return _textures.contains(key);
 }
-- (BOOL)prepareImage:(UIImage *)image name:(NSString *)name rgb565:(BOOL)rgb565 {
-    EAGLContext *previous=[EAGLContext currentContext];
-    if(![EAGLContext setCurrentContext:_context])return NO;
+- (BOOL)prepareImage:(HMImage *)image name:(NSString *)name rgb565:(BOOL)rgb565 {
+    HMGLContext *previous=[HMGLContext currentContext];
+    if(![HMGLContext setCurrentContext:_context])return NO;
     GLint alignment=4;glGetIntegerv(GL_UNPACK_ALIGNMENT,&alignment);glPixelStorei(GL_UNPACK_ALIGNMENT,1);
     BOOL ok=[self textureForImage:image name:name rgb565:rgb565]!=nullptr;
     glPixelStorei(GL_UNPACK_ALIGNMENT,alignment);
-    [EAGLContext setCurrentContext:previous];return ok;
+    [HMGLContext setCurrentContext:previous];return ok;
 }
 - (void)releaseTextureScope:(NSString *)scope {
-    EAGLContext *previous=[EAGLContext currentContext];
-    if(![EAGLContext setCurrentContext:_context])return;
+    HMGLContext *previous=[HMGLContext currentContext];
+    if(![HMGLContext setCurrentContext:_context])return;
     std::string prefix([[scope stringByAppendingString:@"|"] UTF8String]);
     for(auto i=_textures.begin();i!=_textures.end();) {
         if(i->first.starts_with(prefix)){glDeleteTextures(1,&i->second.id);i=_textures.erase(i);}else ++i;
     }
-    [EAGLContext setCurrentContext:previous];
+    [HMGLContext setCurrentContext:previous];
 }
-- (void)drawImage:(UIImage *)image name:(NSString *)name columns:(NSInteger)columns rows:(NSInteger)rows tile:(NSInteger)tile position:(CGPoint)position scale:(CGSize)scale rotation:(CGFloat)rotation alpha:(CGFloat)alpha blend:(NSInteger)blend rgb565:(BOOL)rgb565 {
+- (void)drawInputOutline:(CGRect)rect {
+    if(!_active||CGRectIsEmpty(rect))return;
+    GLfloat points[]={float(CGRectGetMinX(rect)),float(CGRectGetMinY(rect)),float(CGRectGetMaxX(rect)),float(CGRectGetMinY(rect)),float(CGRectGetMaxX(rect)),float(CGRectGetMaxY(rect)),float(CGRectGetMinX(rect)),float(CGRectGetMaxY(rect))};
+    glLoadIdentity();glDisable(GL_TEXTURE_2D);glDisableClientState(GL_TEXTURE_COORD_ARRAY);glDisableClientState(GL_COLOR_ARRAY);
+    glColor4f(1,1,0,1);glLineWidth(2);glVertexPointer(2,GL_FLOAT,0,points);glDrawArrays(GL_LINE_LOOP,0,4);
+    glLineWidth(1);glEnableClientState(GL_COLOR_ARRAY);glEnableClientState(GL_TEXTURE_COORD_ARRAY);glEnable(GL_TEXTURE_2D);_drawCalls++;
+}
+- (void)drawImage:(HMImage *)image name:(NSString *)name columns:(NSInteger)columns rows:(NSInteger)rows tile:(NSInteger)tile position:(CGPoint)position scale:(CGSize)scale rotation:(CGFloat)rotation alpha:(CGFloat)alpha blend:(NSInteger)blend rgb565:(BOOL)rgb565 {
     if(!_active||columns<1||rows<1||tile<0||!std::isfinite(position.x)||!std::isfinite(position.y)||!std::isfinite(scale.width)||!std::isfinite(scale.height)||!std::isfinite(rotation)||!std::isfinite(alpha))return;
     Texture *t=[self textureForImage:image name:name rgb565:rgb565];if(!t)return;
     tile=std::min(tile,columns*rows-1);
@@ -240,7 +245,7 @@ static NSString *glString(GLenum name){const auto p=glGetString(name);return p?[
     }
     glTexEnvi(GL_TEXTURE_ENV,GL_TEXTURE_ENV_MODE,GL_REPLACE);
 }
-- (void)drawTrail:(const heavymach::TrailMesh&)mesh image:(UIImage *)image name:(NSString *)name rgb565:(BOOL)rgb565 cameraOffset:(CGPoint)offset {
+- (void)drawTrail:(const heavymach::TrailMesh&)mesh image:(HMImage *)image name:(NSString *)name rgb565:(BOOL)rgb565 cameraOffset:(CGPoint)offset {
     if(!_active||mesh.vertices.size()<3)return;
     Texture *t=[self textureForImage:image name:name rgb565:rgb565];if(!t)return;
     glBindTexture(GL_TEXTURE_2D,t->id);if(mesh.setBlend)glBlendFunc(mesh.sourceFactor,mesh.destinationFactor);
@@ -249,7 +254,7 @@ static NSString *glString(GLenum name){const auto p=glGetString(name);return p?[
     glTexCoordPointer(2,GL_FLOAT,sizeof(heavymach::TrailVertex),&vertices[0].uv.x);glColorPointer(4,GL_FLOAT,sizeof(heavymach::TrailVertex),vertices[0].color.data());
     glDrawArrays(GL_TRIANGLE_STRIP,0,GLsizei(mesh.vertices.size()));_drawCalls++;
 }
-- (BOOL)presentToLayer:(CAEAGLLayer *)layer viewport:(CGRect)viewport {
+- (BOOL)presentToLayer:(HMGLSurface *)layer viewport:(CGRect)viewport {
     if(!_active||!layer||CGRectIsEmpty(layer.bounds)||CGRectIsEmpty(viewport))return NO;
     // touchHLE eagl.rs limit_framerate: bounded one-interval slop, default 60 Hz.
     const double now=CACurrentMediaTime(),interval=1.0/60.0;
@@ -261,6 +266,12 @@ static NSString *glString(GLenum name){const auto p=glGetString(name);return p?[
         if(now<due)delay=due-now;
     }
 
+#if TARGET_OS_OSX
+    [_context setView:layer];[_context update];
+    CGRect backing=[layer convertRectToBacking:layer.bounds];
+    _displayWidth=GLint(backing.size.width);_displayHeight=GLint(backing.size.height);
+    _displayFBO=0;_displayFormat=GL_RGBA8;
+#else
     if(_displayLayer!=layer||!CGSizeEqualToSize(_drawablePointSize,layer.bounds.size)||_drawableScale!=layer.contentsScale){
         glDeleteFramebuffersOES(1,&_displayFBO);glDeleteRenderbuffersOES(1,&_displayBuffer);_displayFBO=0;_displayBuffer=0;_displayLayer=nil;
         glGenRenderbuffersOES(1,&_displayBuffer);glBindRenderbufferOES(GL_RENDERBUFFER_OES,_displayBuffer);
@@ -271,6 +282,7 @@ static NSString *glString(GLenum name){const auto p=glGetString(name);return p?[
         if(glCheckFramebufferStatusOES(GL_FRAMEBUFFER_OES)!=GL_FRAMEBUFFER_COMPLETE_OES){[self recordError:@"Drawable framebuffer incomplete"];return NO;}
         _displayLayer=layer;_drawablePointSize=layer.bounds.size;_drawableScale=layer.contentsScale;
     }
+#endif
 #if HM_VALIDATION
     _presentStart=CACurrentMediaTime();
 #endif
@@ -296,7 +308,11 @@ static NSString *glString(GLenum name){const auto p=glGetString(name);return p?[
 #if HM_VALIDATION
     double afterQuad=CACurrentMediaTime();_presentQuad=(afterQuad-afterCopy)*1000;
 #endif
+    #if TARGET_OS_OSX
+    [_context flushBuffer];BOOL ok=YES;
+#else
     glBindRenderbufferOES(GL_RENDERBUFFER_OES,_displayBuffer);BOOL ok=[_context presentRenderbuffer:GL_RENDERBUFFER_OES];
+#endif
 #if HM_VALIDATION
     double afterSwap=CACurrentMediaTime();_presentSwap=(afterSwap-afterQuad)*1000;
 #endif
@@ -310,26 +326,26 @@ static NSString *glString(GLenum name){const auto p=glGetString(name);return p?[
     if(!ok)[self recordError:@"Drawable presentation failed"];return ok;
 }
 - (void)finish {
-    EAGLContext *previous=[EAGLContext currentContext];
-    if(![EAGLContext setCurrentContext:_context]){[self recordError:@"Cannot activate ES context for finish"];return;}
+    HMGLContext *previous=[HMGLContext currentContext];
+    if(![HMGLContext setCurrentContext:_context]){[self recordError:@"Cannot activate ES context for finish"];return;}
     glFinish();
-    [EAGLContext setCurrentContext:previous];
+    [HMGLContext setCurrentContext:previous];
 }
-- (UIImage *)snapshot {
-    EAGLContext *previous=[EAGLContext currentContext];if(![EAGLContext setCurrentContext:_context])return nil;
+- (HMImage *)snapshot {
+    HMGLContext *previous=[HMGLContext currentContext];if(![HMGLContext setCurrentContext:_context])return nil;
     GLint previousFBO=0;glGetIntegerv(GL_FRAMEBUFFER_BINDING_OES,&previousFBO);glBindFramebufferOES(GL_FRAMEBUFFER_OES,_sceneFBO);
     std::vector<uint8_t> bottom(size_t(_bufferWidth)*_bufferHeight*4),top(bottom.size());glReadPixels(0,0,_bufferWidth,_bufferHeight,GL_RGBA,GL_UNSIGNED_BYTE,bottom.data());
-    GLenum error=glGetError();glBindFramebufferOES(GL_FRAMEBUFFER_OES,previousFBO);[EAGLContext setCurrentContext:previous];
+    GLenum error=glGetError();glBindFramebufferOES(GL_FRAMEBUFFER_OES,previousFBO);[HMGLContext setCurrentContext:previous];
     if(error!=GL_NO_ERROR){[self recordError:@"Diagnostic readback failed"];return nil;}
     for(int y=0;y<_bufferHeight;++y)std::copy_n(bottom.data()+size_t(_bufferHeight-1-y)*_bufferWidth*4,size_t(_bufferWidth)*4,top.data()+size_t(y)*_bufferWidth*4);
     // The drawable is opaque. Readback alpha is post-blend framebuffer state,
-    // not coverage: applying it again in UIImage would darken displayed RGB.
+    // not coverage: applying it again in HMImage would darken displayed RGB.
     for(size_t i=3;i<top.size();i+=4)top[i]=255;
     NSData *data=[NSData dataWithBytes:top.data() length:top.size()];CGDataProviderRef provider=CGDataProviderCreateWithCFData((__bridge CFDataRef)data);CGColorSpaceRef space=CGColorSpaceCreateDeviceRGB();
     CGImageRef image=CGImageCreate(_bufferWidth,_bufferHeight,8,32,size_t(_bufferWidth)*4,space,CGBitmapInfo(kCGBitmapByteOrder32Big)|CGBitmapInfo(kCGImageAlphaLast),provider,nullptr,false,kCGRenderingIntentDefault);
-    UIImage *result=image?[UIImage imageWithCGImage:image]:nil;if(image)CGImageRelease(image);CGColorSpaceRelease(space);CGDataProviderRelease(provider);return result;
+    HMImage *result=image?[HMImage imageWithCGImage:image]:nil;if(image)CGImageRelease(image);CGColorSpaceRelease(space);CGDataProviderRelease(provider);return result;
 }
-- (NSDictionary *)diagnostics {NSMutableDictionary* result=[@{@"backend":@"OpenGL ES 1.1",@"logicalWidth":@(_logicalWidth),@"logicalHeight":@(_logicalHeight),@"bufferWidth":@(_bufferWidth),@"bufferHeight":@(_bufferHeight),@"sceneReallocations":@(_sceneReallocations),@"drawableInternalFormat":@(_displayFormat),@"vendor":_vendor?:@"",@"renderer":_renderer?:@"",@"version":_version?:@"",@"textureCount":@(_textures.size()),@"textureUploads":@(_uploads),@"drawCalls":@(_drawCalls),@"frames":@(_frames),@"lastError":_lastError?:@""} mutableCopy];
+- (NSDictionary *)diagnostics {NSMutableDictionary* result=[@{@"backend":HMGLBackendName(),@"logicalWidth":@(_logicalWidth),@"logicalHeight":@(_logicalHeight),@"bufferWidth":@(_bufferWidth),@"bufferHeight":@(_bufferHeight),@"sceneReallocations":@(_sceneReallocations),@"drawableInternalFormat":@(_displayFormat),@"vendor":_vendor?:@"",@"renderer":_renderer?:@"",@"version":_version?:@"",@"textureCount":@(_textures.size()),@"textureUploads":@(_uploads),@"drawCalls":@(_drawCalls),@"frames":@(_frames),@"lastError":_lastError?:@""} mutableCopy];
 #if HM_VALIDATION
     result[@"presentation_timings_ms"]=@{@"copy":@(_presentCopy),@"quad":@(_presentQuad),@"swap":@(_presentSwap),@"wait_and_restore":@(_presentWait)};
 #endif

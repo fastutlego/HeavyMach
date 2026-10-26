@@ -1,4 +1,4 @@
-#import <UIKit/UIKit.h>
+#import "HMPlatform.h"
 #include "../Core/SaveData.hpp"
 #include "../Core/GameData.hpp"
 @class HMMedia;
@@ -25,4 +25,7 @@
 // GobHvM_Player.init 0x1bb84 notifies the retained game HUD before adding parts.
 @property(nonatomic,copy) void(^previewPlayerCreated)(void);
 @property(nonatomic,copy) void(^slotSelected)(int slot);
+- (void)moveKeyboardFocus:(int)delta;
+- (void)activateKeyboardFocus;
+- (CGRect)keyboardFocusRect;
 @end

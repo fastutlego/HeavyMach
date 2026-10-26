@@ -1,4 +1,4 @@
-#import <UIKit/UIKit.h>
+#import "HMPlatform.h"
 #include "../Core/Player.hpp"
 #include "../Core/World.hpp"
 @class HMMedia;
@@ -13,7 +13,7 @@ struct HMGameHUDSnapshot {
     bool paused=false,upgradeVisible=false,menuVisible=false;
     int upgradeSelection=0;
     double time=0;
-    CGFloat canvasWidth=480,hudScale=1;
+    CGFloat canvasHeight=320,canvasWidth=480,hudScale=1;
     CGPoint hudOffset=CGPointZero;
 };
 @interface HMGameHUD : NSObject
@@ -40,4 +40,7 @@ struct HMGameHUDSnapshot {
 @property(nonatomic,copy) void(^button)(int originalID,int state);
 // Original GuiGame unpauses after the upgrade panel moves past x659.
 @property(nonatomic,copy) void(^upgradeClosed)(void);
+- (void)moveKeyboardFocus:(int)delta;
+- (void)activateKeyboardFocus;
+- (CGRect)keyboardFocusRect;
 @end

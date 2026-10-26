@@ -1,0 +1,51 @@
+# Apple 플랫폼과 공용 모듈
+
+2026-10-26 작업 브랜치: `feat/apple-workspace-modules`. main의 v0.9 태그는 이동하지 않는다.
+
+`HeavyMach.xcworkspace` 하나에서 세 프로젝트를 연다. iPhone과 iPad는 같은 iOS 앱 target을 사용한다. Mac은 AppKit 앱이며 Catalyst를 사용하지 않는다.
+
+| 프로젝트 | 역할 |
+|---|---|
+| Modules/HeavyMachModules.xcodeproj | C++ 코어, Apple 공통 실행 코드, 자원 번들 |
+| iOS/HeavyMachRestored.xcodeproj | iPhone·iPad 일반/치트 앱과 XCTest |
+| macOS/HeavyMachMac.xcodeproj | native Mac 일반/치트 앱과 XCTest |
+
+공용 C++ 코드는 `Sources/Core` 한 벌이다. 일반용 HeavyMachCore와 치트용 HeavyMachValidationCore를 각각 정적 프레임워크로 만든다. HM_VALIDATION이 앱과 코어에서 일치해야 한다. AppleRuntime 프레임워크도 일반/치트를 구분한다. iOS와 macOS SDK별 산출물은 XcodeGen의 플랫폼 접미사로 구별한다.
+
+이미지·음원·MAP/MCH는 HeavyMachAssets.bundle 한 구성에서 가져온다. 앱 안에는 그 플랫폼용 자원 번들이 들어간다. HMGameResourceBundle이 해당 번들을 찾는다. IPA·호환 실행기를 읽거나 외부 폴더에서 그림을 가져오는 경로를 추가하지 않는다. 기존 자원의 SHA-256은 `docs/build-resources.json`으로 검사한다.
+
+공통 Objective-C++ 구현은 기존 `Sources/iOS`에 있다. HMPlatform은 UIView/NSView, UIImage/NSImage 등 OS 차이를 분리한다. HMGLPlatform은 iOS의 ES1.1 컨텍스트와 Mac의 desktop OpenGL compatibility 컨텍스트를 만든다. 그 뒤 텍스처·블렌드·스프라이트·궤적 제출 코드는 공유한다. AppKit의 NSWindow·검증 창은 `Sources/Mac`에 있다.
+
+Mac OpenGL은 Apple이 deprecated한 API다. 이번 구현은 기존 fixed-function 렌더와 비교할 수 있도록 같은 렌더 연산을 유지한다. Metal 전환은 별도 과제로 다루며 이번 모듈화에서 렌더 수식과 에셋을 교체하지 않는다.
+
+## 실행
+
+```sh
+xcodegen generate --spec Modules/project.yml
+xcodegen generate --spec iOS/project.yml
+xcodegen generate --spec macOS/project.yml
+open HeavyMach.xcworkspace
+```
+
+- iPhone/iPad: HeavyMachRestored 또는 HeavyMachValidation scheme과 기기/Simulator를 선택한다.
+- Mac: HeavyMachMac 또는 HeavyMachMacValidation scheme을 선택한다. 창 크기 변경과 macOS 전체 화면을 구현했다. 전체 화면 캡처 여백은 순수 AppKit 비교 앱에서도 재현됐다. 실제 디스플레이와 캡처의 최종 대조는 남았다. [현재 검사 결과](public/apple-platform-progress-20261026.md).
+- 키 배치·재지정·터치 병용은 [키보드 정책](keyboard-input-policy.md)을 따른다.
+- 초기 구성은 Apple Silicon arm64다. OpenAL 빌드도 arm64로 고정돼 있으며 Intel Mac 지원을 완료한 것으로 표시하지 않는다.
+
+```sh
+xcodebuild -workspace HeavyMach.xcworkspace -scheme HeavyMachMacValidation \
+  -destination 'platform=macOS,arch=arm64' -derivedDataPath build/mac \
+  CODE_SIGNING_ALLOWED=NO test
+```
+
+프레임워크의 중복 소스와 앱별 누락은 `tools/audit_ios_sources.py`가 세 프로젝트의 의존 관계를 따라 검사한다. `.yml`을 바꾸면 관련 프로젝트를 다시 생성하고 generated project도 함께 커밋한다.
+
+## Android 연결
+
+Apple framework 바이너리를 Android에 가져가지 않는다. `Sources/Core`의 같은 CMake target을 NDK로 빌드하고 동일 자원 목록을 Android assets로 묶는다. JNI·Android 생명주기·렌더·음향 연결은 [기존 계획](android-port-plan-20261026.md)의 후속 구현이다. 현재 Apple 모듈화가 Android APK 완료를 뜻하지 않는다.
+
+## 조사 근거
+
+[Apple의 여러 프로젝트와 의존 관계](https://developer.apple.com/documentation/xcode/managing-multiple-projects-and-their-dependencies), [Swift package의 리소스 지원](https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package), [XcodeGen 프로젝트 명세](https://github.com/yonaskolb/XcodeGen/blob/master/Docs/ProjectSpec.md), [Apple Silicon 앱 이식](https://developer.apple.com/documentation/Apple-Silicon/porting-your-macos-apps-to-apple-silicon), [Android CMake 연결](https://developer.android.com/studio/projects/gradle-external-native-builds).
+
+게임도 공용 코어와 자원을 framework/SPM으로 모듈화할 수 있다. 이번에는 사용자가 지정한 workspace 아래 여러 project 구성과 기존 Objective-C++ 연결을 직접 사용할 수 있는 정적 framework를 채택했다.

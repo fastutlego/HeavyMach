@@ -1,3 +1,4 @@
+#import "HMResources.h"
 #import "HMMedia.h"
 #import "HMGLRenderer.h"
 #import "HMOpenALAudio.h"
@@ -11,7 +12,7 @@
 #define STBI_NO_STDIO
 #include "../../vendor/stb/stb_image.h"
 static char HMOriginalRGBAKey;
-NSData *HMOriginalImageRGBA(UIImage *image) { return objc_getAssociatedObject(image,&HMOriginalRGBAKey); }
+NSData *HMOriginalImageRGBA(HMImage *image) { return objc_getAssociatedObject(image,&HMOriginalRGBAKey); }
 #include <cmath>
 #include <climits>
 #include <algorithm>
@@ -34,18 +35,18 @@ template<class Raster> static void HMDrawRaster(Raster& raster,CGPoint offset,CG
     CGImageRef output=CGImageCreate(raster.bounds.width,raster.bounds.height,8,32,stride,space,CGBitmapInfo(kCGBitmapByteOrder32Big)|CGBitmapInfo(kCGImageAlphaPremultipliedLast),provider,nullptr,false,kCGRenderingIntentDefault);
     CGColorSpaceRelease(space);CGDataProviderRelease(provider);CFRelease(data);
     if(output){
-        CGContextRef ctx=UIGraphicsGetCurrentContext();CGContextSaveGState(ctx);
+        CGContextRef ctx=HMCurrentGraphicsContext();CGContextSaveGState(ctx);
         if(hasClip)CGContextClipToRect(ctx,CGRectMake(clip.origin.x,320-CGRectGetMaxY(clip),clip.size.width,clip.size.height));
         CGContextTranslateCTM(ctx,offset.x,320*(1-scale)-offset.y);CGContextScaleCTM(ctx,scale,scale);
         CGContextSetInterpolationQuality(ctx,kCGInterpolationNone);
-        [[UIImage imageWithCGImage:output] drawInRect:CGRectMake(raster.bounds.x,320-raster.bounds.y-raster.bounds.height,raster.bounds.width,raster.bounds.height) blendMode:raster.blend==2?kCGBlendModePlusLighter:kCGBlendModeNormal alpha:1];
+        [[HMImage imageWithCGImage:output] drawInRect:CGRectMake(raster.bounds.x,320-raster.bounds.y-raster.bounds.height,raster.bounds.width,raster.bounds.height) blendMode:raster.blend==2?kCGBlendModePlusLighter:kCGBlendModeNormal alpha:1];
         CGContextRestoreGState(ctx);CGImageRelease(output);
     }
 }
 @implementation HMMedia {
     std::unordered_map<std::string,HMTrailTexture> _trailTextures;
     std::unordered_map<std::string,HMTrailTexture> _spriteTextures;
-    NSMutableDictionary<NSString *,UIImage *> *_images;
+    NSMutableDictionary<NSString *,HMImage *> *_images;
     NSMutableSet<NSString *> *_rgb565Images;
     NSMutableDictionary<NSString *,NSValue *> *_sizes;
     NSUInteger _decodeCount;
@@ -65,6 +66,7 @@ template<class Raster> static void HMDrawRaster(Raster& raster,CGPoint offset,CG
 - (void)setCameraOffset:(CGPoint)offset {_cameraOffset=offset;}
 - (void)setDrawingOffset:(CGPoint)offset {
     if(!std::isfinite(offset.x)||!std::isfinite(offset.y))return;
+    offset.x+=self.presentationOffset.x;offset.y+=self.presentationOffset.y;
     _drawingOffset=offset;[_glRenderer setDrawingOffset:offset];
 }
 - (void)setDrawingScale:(CGFloat)scale {
@@ -73,15 +75,16 @@ template<class Raster> static void HMDrawRaster(Raster& raster,CGPoint offset,CG
 }
 - (void)setClipRect:(CGRect)rect {
     if(!std::isfinite(rect.origin.x)||!std::isfinite(rect.origin.y)||!std::isfinite(rect.size.width)||!std::isfinite(rect.size.height)||rect.size.width<0||rect.size.height<0)rect=CGRectZero;
+    rect=CGRectOffset(rect,self.presentationOffset.x,self.presentationOffset.y);
     _hasClip=YES;_clipRect=rect;[_glRenderer setClipRect:rect];
 }
 - (void)resetClip {_hasClip=NO;[_glRenderer resetClip];}
-- (UIImage *)image:(NSString *)name {
+- (HMImage *)image:(NSString *)name {
     NSString *key=[self resourceKey:name];
-    UIImage *image=_images[key];if(image)return image;
+    HMImage *image=_images[key];if(image)return image;
     // Generated extensions are separate resources; never replace OriginalImages.
     BOOL extension=[name hasPrefix:@"Extensions/"];
-    NSString *path=[NSBundle.mainBundle pathForResource:extension?name.lastPathComponent:name ofType:nil inDirectory:extension?@"Extensions":@"OriginalImages"];
+    NSString *path=[HMGameResourceBundle() pathForResource:extension?name.lastPathComponent:name ofType:nil inDirectory:extension?@"Extensions":@"OriginalImages"];
     NSData *file=path?[NSData dataWithContentsOfFile:path]:nil;
     if(!file.length||file.length>INT_MAX){NSLog(@"Missing original image %@",name);return nil;}
     // Same stb revision/options and float truncation as touchHLE src/image.rs.
@@ -103,24 +106,24 @@ template<class Raster> static void HMDrawRaster(Raster& raster,CGPoint offset,CG
     CGColorSpaceRef space=CGColorSpaceCreateDeviceRGB();
     CGBitmapInfo flags=CGBitmapInfo(kCGBitmapByteOrder32Big)|CGBitmapInfo(rgb565?kCGImageAlphaNoneSkipLast:kCGImageAlphaPremultipliedLast);
     CGImageRef decoded=CGImageCreate(width,height,8,32,size_t(width)*4,space,flags,provider,nullptr,false,kCGRenderingIntentDefault);
-    if(decoded){image=[UIImage imageWithCGImage:decoded];CGImageRelease(decoded);}
+    if(decoded){image=[HMImage imageWithCGImage:decoded];CGImageRelease(decoded);}
     CGColorSpaceRelease(space);CGDataProviderRelease(provider);
-    if(image){objc_setAssociatedObject(image,&HMOriginalRGBAKey,rgba,OBJC_ASSOCIATION_RETAIN_NONATOMIC);_images[key]=image;_sizes[key]=[NSValue valueWithCGSize:image.size];if(rgb565)[_rgb565Images addObject:key];}
+    if(image){objc_setAssociatedObject(image,&HMOriginalRGBAKey,rgba,OBJC_ASSOCIATION_RETAIN_NONATOMIC);_images[key]=image;_sizes[key]=HMSizeValue(image.size);if(rgb565)[_rgb565Images addObject:key];}
     return image;
 }
 - (NSString *)resourceKey:(NSString *)name {return [NSString stringWithFormat:@"%@|%@",self.resourceScope?:@"shared",name];}
 - (BOOL)prepareTexture:(NSString *)name renderer:(HMGLRenderer *)renderer {
     NSString *key=[self resourceKey:name];BOOL rgb=[_rgb565Images containsObject:key];
     if([renderer hasTexture:key rgb565:rgb])return YES;
-    UIImage *image=[self image:name];if(!image)return NO;
-    _sizes[key]=[NSValue valueWithCGSize:image.size];
+    HMImage *image=[self image:name];if(!image)return NO;
+    _sizes[key]=HMSizeValue(image.size);
     if(![renderer prepareImage:image name:key rgb565:[_rgb565Images containsObject:key]])return NO;
     // Texture2D.initWithImage 0x69b0 frees its temporary pixels after upload.
     [_images removeObjectForKey:key];return YES;
 }
 - (CGSize)imageSize:(NSString *)name {
     NSString *key=[self resourceKey:name];
-    if(self.textureRenderer){if(![self prepareTexture:name renderer:self.textureRenderer])return CGSizeZero;return [_sizes[key] CGSizeValue];}
+    if(self.textureRenderer){if(![self prepareTexture:name renderer:self.textureRenderer])return CGSizeZero;return HMValueSize(_sizes[key]);}
     return [self image:name].size;
 }
 - (CGSize)imageSize:(NSString *)name scope:(NSString *)scope {
@@ -136,7 +139,7 @@ template<class Raster> static void HMDrawRaster(Raster& raster,CGPoint offset,CG
     [self.textureRenderer releaseTextureScope:scope];
 }
 - (NSDictionary *)cacheDiagnostics {
-    NSUInteger bytes=0;for(UIImage* image in _images.allValues)bytes+=HMOriginalImageRGBA(image).length;
+    NSUInteger bytes=0;for(HMImage* image in _images.allValues)bytes+=HMOriginalImageRGBA(image).length;
     return @{@"decodedImages":@(_images.count),@"decodedBytes":@(bytes),@"metadataCount":@(_sizes.count),@"decodeCount":@(_decodeCount),@"keys":_sizes.allKeys};
 }
 - (BOOL)prepareOriginalSounds { return [_audio prepareOriginalSounds]; }
@@ -159,7 +162,7 @@ template<class Raster> static void HMDrawRaster(Raster& raster,CGPoint offset,CG
             rotation:r alpha:a blend:blend rgb565:[_rgb565Images containsObject:key]];
         return;
     }
-    UIImage *image=[self image:name];if(!image)return;
+    HMImage *image=[self image:name];if(!image)return;
     auto& texture=_spriteTextures[key.UTF8String];
     if(texture.pixels.empty()) {
         texture.width=int(CGImageGetWidth(image.CGImage));texture.height=int(CGImageGetHeight(image.CGImage));
@@ -198,7 +201,7 @@ template<class Raster> static void HMDrawRaster(Raster& raster,CGPoint offset,CG
     }
     auto& texture=_trailTextures[[self resourceKey:[NSString stringWithUTF8String:mesh.tile.c_str()]].UTF8String];
     if (texture.pixels.empty()) {
-        UIImage *source=[self image:[NSString stringWithUTF8String:mesh.tile.c_str()]];
+        HMImage *source=[self image:[NSString stringWithUTF8String:mesh.tile.c_str()]];
         if (!source) return;
         texture.width=int(CGImageGetWidth(source.CGImage));texture.height=int(CGImageGetHeight(source.CGImage));
         texture.pixels.resize(size_t(texture.width)*texture.height*4);

@@ -1,5 +1,9 @@
 # HeavyMach 게임 기획
 
+## Apple 플랫폼 확장 — 2026-10-26
+
+2026-10-26 추가 범위는 iPhone·iPad·native Mac, 공용 코드/자원 모듈, 가변 화면, 키보드 전 조작이다. [구조](apple-platforms.md), [입력](keyboard-input-policy.md)을 따른다. 자동조준과 HUD 배치 편집은 후속 연구·계획 요청으로 [TODO](usability-todo.md)에 기록하며 현행 전투 기능으로 표시하지 않는다.
+
 2026-10-25 현행 요구. HeavyMach 1.13 복원 제품에 적용한다. 별도 Unity 게임 기획과 섞지 않는다. 원본 함수·수치는 [복원 계약](restoration-contract.md)과 분야별 정책이 상세를 소유한다. [문서 위계](document-governance.md)에 따라 기술 설계와 실제 앱에 연결한다.
 
 ## 제품 의도와 플레이

@@ -2,14 +2,14 @@
 
 HeavyMach 1.13을 현재 아이폰에서 실행하는 호환판을 만들고, 이어 수정·빌드 가능한 네이티브 복원판을 작성했다. 복원판의 일반 앱과 치트 앱을 iPhone Air에 설치했다. 사용자는 설치본의 모든 미션을 플레이한 뒤 크래시·오동작·적 이동 이상은 없는 것 같다고 보고했다.
 
-정상 플레이 기준은 `v0.9`다. 현재 저장소에는 앱 빌드·검사 자원도 포함한다. `v0.9`는 자원을 포함하기 전 태그이며 재지정하지 않는다. 2026년 10월 26일 기준 후속 변경은 문서와 저장소 정리이며 제품 코드는 이 기준을 유지한다. [설치 방법](https://github.com/gelb2/HeavyMach/blob/main/docs/public/build-and-install.md)과 [소스 저장소](https://github.com/gelb2/HeavyMach)에서 확인할 수 있다.
+정상 플레이 기준은 `v0.9`다. 현재 저장소에는 앱 빌드·검사 자원도 포함한다. `v0.9`는 자원을 포함하기 전 태그이며 재지정하지 않는다. 2026년 10월 26일의 Apple 확장은 `feat/apple-workspace-modules`에서 진행한다. main/v0.9의 사용자 플레이 확인과 새 브랜치의 Mac·Simulator 검사 결과를 구분한다. [설치 방법](https://github.com/gelb2/HeavyMach/blob/main/docs/public/build-and-install.md)과 [소스 저장소](https://github.com/gelb2/HeavyMach)에서 확인할 수 있다.
 
 ## 두 판본의 구조
 
 | 판본 | 실행하는 코드 | 역할 |
 |---|---|---|
 | IPA 호환 실행판 | 원본 ARMv6 바이너리를 touchHLE 계열 Rust 인터프리터로 실행 | 원작 동작 비교 기준 |
-| 네이티브 복원판 | C++20 게임 코어와 Objective-C++ iOS 연결 코드 | 수정·빌드·테스트할 수 있는 현재 제품 |
+| 네이티브 복원판 | C++20 게임 코어와 Objective-C++ Apple 연결 코드 | 수정·빌드·테스트할 수 있는 현재 제품 |
 
 원본 개발 프로젝트를 확보한 것은 아니다. IPA의 실행파일·자원과 REA 분석 결과에서 규칙을 확인해 새 코드를 작성했다. 복원판은 Swift로 작성하지 않았다.
 
@@ -55,3 +55,7 @@ Android는 C++ 코어의 ARM64 컴파일까지 확인했다. Android 앱·APK는
 `v0.9`는 Git 태그이며 앱 Info.plist의 표시 버전 `1.13`과 구분한다. 작업 브랜치는 `develop`에 병합하고, `main`에는 `develop`만 병합한다. 이전 코드를 따로 열 때는 `git worktree add --detach ../HeavyMach-v0.9 v0.9`를 사용한다. 아이폰 앱·저장 데이터의 복원은 해당 소스의 재빌드와 저장 백업이 별도로 필요하다.
 
 현재 앱은 개발 서명으로 아이폰에 설치한 상태다. App Store·TestFlight 배포나 GitHub Release 설치 파일 제공은 진행하지 않았다.
+
+## Apple 확장 브랜치
+
+[Apple 플랫폼 구조](../apple-platforms.md)에서 workspace·프레임워크·자원 번들과 native Mac을 설명한다. iPhone과 iPad는 하나의 iOS 앱을 공유한다. [키보드 입력](../keyboard-input-policy.md)은 이동·점프·조준·사격·무기 전환·메뉴·키 재지정을 포함한다. [현재 상태](../current-status.md)의 후속 검사 범위를 확인한다. 자동조준과 HUD 배치 편집은 TODO의 연구·계획 단계다.

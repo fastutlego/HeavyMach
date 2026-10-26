@@ -54,6 +54,7 @@ void emit(NSDictionary* record){NSData* json=[NSJSONSerialization dataWithJSONOb
 @end
 @interface HMDirectionTestKey:NSObject
 @property(nonatomic)UIKeyboardHIDUsage keyCode;
+@property(nonatomic)UIKeyModifierFlags modifierFlags;
 @end
 @implementation HMDirectionTestKey
 @end
@@ -541,15 +542,15 @@ void emit(NSDictionary* record){NSData* json=[NSJSONSerialization dataWithJSONOb
 - (void)testValidationKeyboardReleaseAndCancellationClearDirection {
  HMPerformanceView* view=[[HMPerformanceView alloc]initWithFrame:CGRectMake(0,0,912,420)];
  [[view valueForKey:@"frameTimer"]invalidate];[[view valueForKey:@"motionTimer"]invalidate];
- HMDirectionTestPress* press=[HMDirectionTestPress new];press.key=[HMDirectionTestKey new];press.key.keyCode=UIKeyboardHIDUsageKeyboardRightArrow;
+ HMDirectionTestPress* press=[HMDirectionTestPress new];press.key=[HMDirectionTestKey new];press.key.keyCode=UIKeyboardHIDUsageKeyboardD;
  NSSet* presses=[NSSet setWithObject:press];
  HMValidationControls* controls=[view valueForKey:@"validationControls"];
  [view pressesBegan:presses withEvent:nil];[view sampleOriginalAcceleration];
- XCTAssertEqual(controls.selectedSegmentIndex,NSInteger(2));XCTAssertGreaterThan(perfStorage<heavymach::TiltState>(view,"_tilt").y,0);
- [view pressesEnded:presses withEvent:nil];XCTAssertEqual(controls.selectedSegmentIndex,NSInteger(1));
+ XCTAssertEqual(controls.selectedSegmentIndex,NSInteger(3));XCTAssertGreaterThan(perfStorage<heavymach::TiltState>(view,"_tilt").y,0);
+ [view pressesEnded:presses withEvent:nil];XCTAssertEqual(controls.selectedSegmentIndex,NSInteger(3));
  XCTAssertFalse([[view valueForKey:@"rightPressed"]boolValue]);
  [view pressesBegan:presses withEvent:nil];[view pressesCancelled:presses withEvent:nil];
- XCTAssertEqual(controls.selectedSegmentIndex,NSInteger(1));XCTAssertFalse([[view valueForKey:@"rightPressed"]boolValue]);
+ XCTAssertEqual(controls.selectedSegmentIndex,NSInteger(3));XCTAssertFalse([[view valueForKey:@"rightPressed"]boolValue]);
  [view setApplicationActive:NO];
 }
 - (void)testProductionNSTimerTitleMenuAndFiring {

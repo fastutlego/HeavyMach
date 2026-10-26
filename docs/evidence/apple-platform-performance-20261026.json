@@ -1,0 +1,968 @@
+{
+  "iphone_single": {
+    "log": "build/iphone-single-simulator-perf.log",
+    "sha256": "9a680b9f3c2138af38f2f747f8bd6c1d69938dcc2e1b50aae80645f56bd35e1d",
+    "records": [
+      {
+        "phase": "onscreen_180_frames_after_30_warmup",
+        "scene": "title_animation",
+        "frame_work": {
+          "frames": 180,
+          "max_ms": 28.339208336547017,
+          "mean_ms": 26.72614467770068,
+          "over_60hz_budget": 180,
+          "p95_ms": 27.528125094249845
+        },
+        "callback_intervals": {
+          "frames": 180,
+          "max_ms": 40.714666713029146,
+          "mean_ms": 33.3333192134483,
+          "over_60hz_budget": 180,
+          "p95_ms": 40.1740416418761
+        },
+        "max_bullets": 0,
+        "renderer": {
+          "backend": "OpenGL ES 1.1",
+          "bufferHeight": 320,
+          "bufferWidth": 695,
+          "drawableInternalFormat": 32849,
+          "drawCalls": 7,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 320,
+          "logicalWidth": 694.8571166992188,
+          "presentation_timings_ms": {
+            "copy": 0.06033340469002724,
+            "quad": 22.30904158204794,
+            "swap": 2.4355417117476463,
+            "wait_and_restore": 0.005125068128108978
+          },
+          "renderer": "Apple Software Renderer",
+          "sceneReallocations": 2,
+          "textureCount": 28,
+          "textureUploads": 28,
+          "vendor": "Apple Inc.",
+          "version": "OpenGL ES-CM 1.1 APPLE-23.1.1"
+        }
+      },
+      {
+        "phase": "onscreen_180_frames_after_30_warmup",
+        "scene": "slot_preview",
+        "frame_work": {
+          "frames": 180,
+          "max_ms": 29.798500007018447,
+          "mean_ms": 29.11480764547984,
+          "over_60hz_budget": 180,
+          "p95_ms": 29.540375107899308
+        },
+        "callback_intervals": {
+          "frames": 180,
+          "max_ms": 38.16716675646603,
+          "mean_ms": 33.33226180531912,
+          "over_60hz_budget": 180,
+          "p95_ms": 37.709333235397935
+        },
+        "max_bullets": 0,
+        "renderer": {
+          "backend": "OpenGL ES 1.1",
+          "bufferHeight": 320,
+          "bufferWidth": 695,
+          "drawableInternalFormat": 32849,
+          "drawCalls": 155,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 320,
+          "logicalWidth": 694.8571166992188,
+          "presentation_timings_ms": {
+            "copy": 0.060499878600239754,
+            "quad": 22.24037516862154,
+            "swap": 2.320833271369338,
+            "wait_and_restore": 0.005791662260890007
+          },
+          "renderer": "Apple Software Renderer",
+          "sceneReallocations": 2,
+          "textureCount": 39,
+          "textureUploads": 39,
+          "vendor": "Apple Inc.",
+          "version": "OpenGL ES-CM 1.1 APPLE-23.1.1"
+        }
+      },
+      {
+        "phase": "onscreen_180_frames_after_30_warmup",
+        "scene": "stage01_firing",
+        "frame_work": {
+          "frames": 180,
+          "max_ms": 29.550750041380525,
+          "mean_ms": 28.179665031428968,
+          "over_60hz_budget": 180,
+          "p95_ms": 28.646333143115044
+        },
+        "callback_intervals": {
+          "frames": 180,
+          "max_ms": 39.098125183954835,
+          "mean_ms": 33.33334652836331,
+          "over_60hz_budget": 180,
+          "p95_ms": 38.72200008481741
+        },
+        "max_bullets": 9,
+        "renderer": {
+          "backend": "OpenGL ES 1.1",
+          "bufferHeight": 320,
+          "bufferWidth": 695,
+          "drawableInternalFormat": 32849,
+          "drawCalls": 63,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 320,
+          "logicalWidth": 694.8571166992188,
+          "presentation_timings_ms": {
+            "copy": 0.05895853973925114,
+            "quad": 22.503333166241646,
+            "swap": 2.3297916632145643,
+            "wait_and_restore": 0.003916677087545395
+          },
+          "renderer": "Apple Software Renderer",
+          "sceneReallocations": 2,
+          "textureCount": 50,
+          "textureUploads": 50,
+          "vendor": "Apple Inc.",
+          "version": "OpenGL ES-CM 1.1 APPLE-23.1.1"
+        }
+      }
+    ]
+  },
+  "ipad_single": {
+    "log": "build/ipad-single-simulator-perf.log",
+    "sha256": "407e0a0ab838c0e15a6c7de0e850be77d81a5be6c404be6d093a8260c290a6d7",
+    "records": [
+      {
+        "phase": "onscreen_180_frames_after_30_warmup",
+        "scene": "title_animation",
+        "frame_work": {
+          "frames": 180,
+          "max_ms": 45.146083226427436,
+          "mean_ms": 43.438540740559496,
+          "over_60hz_budget": 180,
+          "p95_ms": 44.40662497654557
+        },
+        "callback_intervals": {
+          "frames": 180,
+          "max_ms": 50.06158328615129,
+          "mean_ms": 50.00007361070149,
+          "over_60hz_budget": 180,
+          "p95_ms": 50.02083326689899
+        },
+        "max_bullets": 0,
+        "renderer": {
+          "backend": "OpenGL ES 1.1",
+          "bufferHeight": 360,
+          "bufferWidth": 480,
+          "drawableInternalFormat": 32849,
+          "drawCalls": 4,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 360,
+          "logicalWidth": 480,
+          "presentation_timings_ms": {
+            "copy": 0.0444166362285614,
+            "quad": 37.61616675183177,
+            "swap": 2.9845000244677067,
+            "wait_and_restore": 0.005166511982679367
+          },
+          "renderer": "Apple Software Renderer",
+          "sceneReallocations": 2,
+          "textureCount": 28,
+          "textureUploads": 28,
+          "vendor": "Apple Inc.",
+          "version": "OpenGL ES-CM 1.1 APPLE-23.1.1"
+        }
+      },
+      {
+        "phase": "onscreen_180_frames_after_30_warmup",
+        "scene": "slot_preview",
+        "frame_work": {
+          "frames": 180,
+          "max_ms": 49.86741649918258,
+          "mean_ms": 45.9855875142643,
+          "over_60hz_budget": 180,
+          "p95_ms": 48.13283332623541
+        },
+        "callback_intervals": {
+          "frames": 180,
+          "max_ms": 50.04129162989557,
+          "mean_ms": 49.99996782409855,
+          "over_60hz_budget": 180,
+          "p95_ms": 50.01437501050532
+        },
+        "max_bullets": 0,
+        "renderer": {
+          "backend": "OpenGL ES 1.1",
+          "bufferHeight": 360,
+          "bufferWidth": 480,
+          "drawableInternalFormat": 32849,
+          "drawCalls": 152,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 360,
+          "logicalWidth": 480,
+          "presentation_timings_ms": {
+            "copy": 0.0455416738986969,
+            "quad": 37.739125080406666,
+            "swap": 3.2469998113811016,
+            "wait_and_restore": 0.005500158295035362
+          },
+          "renderer": "Apple Software Renderer",
+          "sceneReallocations": 2,
+          "textureCount": 39,
+          "textureUploads": 39,
+          "vendor": "Apple Inc.",
+          "version": "OpenGL ES-CM 1.1 APPLE-23.1.1"
+        }
+      },
+      {
+        "phase": "onscreen_180_frames_after_30_warmup",
+        "scene": "stage01_firing",
+        "frame_work": {
+          "frames": 180,
+          "max_ms": 47.42525005713105,
+          "mean_ms": 43.59389721260717,
+          "over_60hz_budget": 180,
+          "p95_ms": 44.31141656823456
+        },
+        "callback_intervals": {
+          "frames": 180,
+          "max_ms": 50.08454155176878,
+          "mean_ms": 50.00001527757073,
+          "over_60hz_budget": 180,
+          "p95_ms": 50.029791658744216
+        },
+        "max_bullets": 8,
+        "renderer": {
+          "backend": "OpenGL ES 1.1",
+          "bufferHeight": 360,
+          "bufferWidth": 480,
+          "drawableInternalFormat": 32849,
+          "drawCalls": 48,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 360,
+          "logicalWidth": 480,
+          "presentation_timings_ms": {
+            "copy": 0.0452918466180563,
+            "quad": 37.432124838232994,
+            "swap": 3.1305416487157345,
+            "wait_and_restore": 0.00600004568696022
+          },
+          "renderer": "Apple Software Renderer",
+          "sceneReallocations": 2,
+          "textureCount": 42,
+          "textureUploads": 42,
+          "vendor": "Apple Inc.",
+          "version": "OpenGL ES-CM 1.1 APPLE-23.1.1"
+        }
+      }
+    ]
+  },
+  "ipad_main": {
+    "log": "build/apple-performance-20261026/ipad-main-baseline.log",
+    "sha256": "feb0f7f3a0019ac6444ba2c852d2c5ac25b94507762998ec95ee9f56878f2b9b",
+    "records": [
+      {
+        "phase": "onscreen_180_frames_after_30_warmup",
+        "scene": "title_animation",
+        "frame_work": {
+          "frames": 180,
+          "max_ms": 44.574791798368096,
+          "mean_ms": 38.688414120891444,
+          "over_60hz_budget": 180,
+          "p95_ms": 40.4685833491385
+        },
+        "callback_intervals": {
+          "frames": 180,
+          "max_ms": 50.034958170726895,
+          "mean_ms": 50.00007314762721,
+          "over_60hz_budget": 180,
+          "p95_ms": 50.01150001771748
+        },
+        "max_bullets": 0,
+        "renderer": {
+          "backend": "OpenGL ES 1.1",
+          "bufferHeight": 320,
+          "bufferWidth": 480,
+          "drawableInternalFormat": 32849,
+          "drawCalls": 3,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 320,
+          "logicalWidth": 480,
+          "presentation_timings_ms": {
+            "copy": 0.040458282455801964,
+            "quad": 33.29070843756199,
+            "swap": 3.693291451781988,
+            "wait_and_restore": 0.005333451554179192
+          },
+          "renderer": "Apple Software Renderer",
+          "sceneReallocations": 1,
+          "textureCount": 28,
+          "textureUploads": 28,
+          "vendor": "Apple Inc.",
+          "version": "OpenGL ES-CM 1.1 APPLE-23.1.1"
+        }
+      },
+      {
+        "phase": "onscreen_180_frames_after_30_warmup",
+        "scene": "slot_preview",
+        "frame_work": {
+          "frames": 180,
+          "max_ms": 60.64500007778406,
+          "mean_ms": 39.74849167021198,
+          "over_60hz_budget": 180,
+          "p95_ms": 40.579958353191614
+        },
+        "callback_intervals": {
+          "frames": 180,
+          "max_ms": 66.65541674010456,
+          "mean_ms": 50.09260509266622,
+          "over_60hz_budget": 180,
+          "p95_ms": 50.018083304166794
+        },
+        "max_bullets": 0,
+        "renderer": {
+          "backend": "OpenGL ES 1.1",
+          "bufferHeight": 320,
+          "bufferWidth": 480,
+          "drawableInternalFormat": 32849,
+          "drawCalls": 151,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 320,
+          "logicalWidth": 480,
+          "presentation_timings_ms": {
+            "copy": 0.03966665826737881,
+            "quad": 33.42529176734388,
+            "swap": 3.6987916100770235,
+            "wait_and_restore": 0.005916692316532135
+          },
+          "renderer": "Apple Software Renderer",
+          "sceneReallocations": 1,
+          "textureCount": 38,
+          "textureUploads": 38,
+          "vendor": "Apple Inc.",
+          "version": "OpenGL ES-CM 1.1 APPLE-23.1.1"
+        }
+      },
+      {
+        "phase": "onscreen_180_frames_after_30_warmup",
+        "scene": "stage01_firing",
+        "frame_work": {
+          "frames": 180,
+          "max_ms": 40.29745818115771,
+          "mean_ms": 39.34562637781104,
+          "over_60hz_budget": 180,
+          "p95_ms": 39.97245826758444
+        },
+        "callback_intervals": {
+          "frames": 180,
+          "max_ms": 50.09637516923249,
+          "mean_ms": 49.999987036507164,
+          "over_60hz_budget": 180,
+          "p95_ms": 50.01145834103227
+        },
+        "max_bullets": 8,
+        "renderer": {
+          "backend": "OpenGL ES 1.1",
+          "bufferHeight": 320,
+          "bufferWidth": 480,
+          "drawableInternalFormat": 32849,
+          "drawCalls": 48,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 320,
+          "logicalWidth": 480,
+          "presentation_timings_ms": {
+            "copy": 0.04291674122214317,
+            "quad": 33.47729169763625,
+            "swap": 3.1644583214074373,
+            "wait_and_restore": 0.004749977961182594
+          },
+          "renderer": "Apple Software Renderer",
+          "sceneReallocations": 1,
+          "textureCount": 42,
+          "textureUploads": 42,
+          "vendor": "Apple Inc.",
+          "version": "OpenGL ES-CM 1.1 APPLE-23.1.1"
+        }
+      }
+    ]
+  },
+  "mac_native": {
+    "log": "build/apple-performance-20261026/mac-uninstrumented-tests5.log",
+    "sha256": "6e88608f840d9d3b81bd4315debc28a94ebf3a238bedd1c44dfde590fc81bf1f",
+    "records": [
+      {
+        "phase": "native_mac_production_timer",
+        "size": "1200x800",
+        "scene": "title_animation",
+        "frame_work": {
+          "max_ms": 6.375083001330495,
+          "mean_ms": 3.5673136331347957,
+          "p95_ms": 5.2064580377191305,
+          "samples": 180
+        },
+        "callback_intervals": {
+          "max_ms": 18.630083883181214,
+          "mean_ms": 16.668852776961607,
+          "p95_ms": 18.370124977082014,
+          "samples": 180
+        },
+        "max_bullets": 0,
+        "game_save_calls": 0,
+        "view_width": 1200,
+        "view_height": 800,
+        "scale": 2,
+        "renderer": {
+          "backend": "macOS OpenGL compatibility",
+          "bufferHeight": 320,
+          "bufferWidth": 480,
+          "drawableInternalFormat": 32856,
+          "drawCalls": 3,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 320,
+          "logicalWidth": 480,
+          "presentation_timings_ms": {
+            "copy": 0.2834165934473276,
+            "quad": 0.1280417200177908,
+            "swap": 1.0909999255090952,
+            "wait_and_restore": 2.17316672205925
+          },
+          "renderer": "Apple M4 Pro",
+          "sceneReallocations": 1,
+          "textureCount": 28,
+          "textureUploads": 28,
+          "vendor": "Apple",
+          "version": "2.1 Metal - 91.7"
+        }
+      },
+      {
+        "phase": "native_mac_production_timer",
+        "size": "1200x800",
+        "scene": "slot_preview",
+        "frame_work": {
+          "max_ms": 11.297957971692085,
+          "mean_ms": 6.725030096196052,
+          "p95_ms": 10.307583026587963,
+          "samples": 180
+        },
+        "callback_intervals": {
+          "max_ms": 18.701208056882024,
+          "mean_ms": 16.670218055757385,
+          "p95_ms": 18.355000065639615,
+          "samples": 180
+        },
+        "max_bullets": 0,
+        "game_save_calls": 0,
+        "view_width": 1200,
+        "view_height": 800,
+        "scale": 2,
+        "renderer": {
+          "backend": "macOS OpenGL compatibility",
+          "bufferHeight": 320,
+          "bufferWidth": 480,
+          "drawableInternalFormat": 32856,
+          "drawCalls": 151,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 320,
+          "logicalWidth": 480,
+          "presentation_timings_ms": {
+            "copy": 0.3440834116190672,
+            "quad": 0.10558334179222584,
+            "swap": 0.6907917559146881,
+            "wait_and_restore": 0.005541602149605751
+          },
+          "renderer": "Apple M4 Pro",
+          "sceneReallocations": 1,
+          "textureCount": 36,
+          "textureUploads": 42,
+          "vendor": "Apple",
+          "version": "2.1 Metal - 91.7"
+        }
+      },
+      {
+        "phase": "native_mac_production_timer",
+        "size": "1200x800",
+        "scene": "stage01_firing",
+        "frame_work": {
+          "max_ms": 5.96866593696177,
+          "mean_ms": 3.9177852178302905,
+          "p95_ms": 5.211916984990239,
+          "samples": 180
+        },
+        "callback_intervals": {
+          "max_ms": 18.595833098515868,
+          "mean_ms": 16.666524533906745,
+          "p95_ms": 18.299459014087915,
+          "samples": 180
+        },
+        "max_bullets": 8,
+        "game_save_calls": 0,
+        "view_width": 1200,
+        "view_height": 800,
+        "scale": 2,
+        "renderer": {
+          "backend": "macOS OpenGL compatibility",
+          "bufferHeight": 320,
+          "bufferWidth": 480,
+          "drawableInternalFormat": 32856,
+          "drawCalls": 48,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 320,
+          "logicalWidth": 480,
+          "presentation_timings_ms": {
+            "copy": 0.4444166552275419,
+            "quad": 0.22766669280827045,
+            "swap": 1.0287498589605093,
+            "wait_and_restore": 0.1812500413507223
+          },
+          "renderer": "Apple M4 Pro",
+          "sceneReallocations": 1,
+          "textureCount": 56,
+          "textureUploads": 56,
+          "vendor": "Apple",
+          "version": "2.1 Metal - 91.7"
+        }
+      },
+      {
+        "phase": "native_mac_production_timer",
+        "size": "screen_size",
+        "scene": "title_animation",
+        "frame_work": {
+          "max_ms": 8.48499988205731,
+          "mean_ms": 4.010203545395699,
+          "p95_ms": 6.584459217265248,
+          "samples": 180
+        },
+        "callback_intervals": {
+          "max_ms": 18.588374834507704,
+          "mean_ms": 16.66789815062657,
+          "p95_ms": 18.27600016258657,
+          "samples": 180
+        },
+        "max_bullets": 0,
+        "game_save_calls": 0,
+        "view_width": 1920,
+        "view_height": 1080,
+        "scale": 2,
+        "renderer": {
+          "backend": "macOS OpenGL compatibility",
+          "bufferHeight": 320,
+          "bufferWidth": 569,
+          "drawableInternalFormat": 32856,
+          "drawCalls": 7,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 320,
+          "logicalWidth": 568.888916015625,
+          "presentation_timings_ms": {
+            "copy": 0.3314581699669361,
+            "quad": 0.09204167872667313,
+            "swap": 0.5638333968818188,
+            "wait_and_restore": 0.2427082508802414
+          },
+          "renderer": "Apple M4 Pro",
+          "sceneReallocations": 2,
+          "textureCount": 28,
+          "textureUploads": 28,
+          "vendor": "Apple",
+          "version": "2.1 Metal - 91.7"
+        }
+      },
+      {
+        "phase": "native_mac_production_timer",
+        "size": "screen_size",
+        "scene": "slot_preview",
+        "frame_work": {
+          "max_ms": 4.96599986217916,
+          "mean_ms": 3.0813312597779765,
+          "p95_ms": 3.4697079099714756,
+          "samples": 180
+        },
+        "callback_intervals": {
+          "max_ms": 18.557083792984486,
+          "mean_ms": 16.67025324422866,
+          "p95_ms": 18.22250010445714,
+          "samples": 180
+        },
+        "max_bullets": 0,
+        "game_save_calls": 0,
+        "view_width": 1920,
+        "view_height": 1080,
+        "scale": 2,
+        "renderer": {
+          "backend": "macOS OpenGL compatibility",
+          "bufferHeight": 320,
+          "bufferWidth": 569,
+          "drawableInternalFormat": 32856,
+          "drawCalls": 155,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 320,
+          "logicalWidth": 568.888916015625,
+          "presentation_timings_ms": {
+            "copy": 0.3777917008846998,
+            "quad": 0.10449998080730438,
+            "swap": 0.697124982252717,
+            "wait_and_restore": 0.004916684702038765
+          },
+          "renderer": "Apple M4 Pro",
+          "sceneReallocations": 2,
+          "textureCount": 36,
+          "textureUploads": 42,
+          "vendor": "Apple",
+          "version": "2.1 Metal - 91.7"
+        }
+      },
+      {
+        "phase": "native_mac_production_timer",
+        "size": "screen_size",
+        "scene": "stage01_firing",
+        "frame_work": {
+          "max_ms": 9.073709137737751,
+          "mean_ms": 5.540010659024119,
+          "p95_ms": 7.3928749188780785,
+          "samples": 180
+        },
+        "callback_intervals": {
+          "max_ms": 18.049624981358647,
+          "mean_ms": 16.667773149028008,
+          "p95_ms": 17.66199991106987,
+          "samples": 180
+        },
+        "max_bullets": 8,
+        "game_save_calls": 0,
+        "view_width": 1920,
+        "view_height": 1080,
+        "scale": 2,
+        "renderer": {
+          "backend": "macOS OpenGL compatibility",
+          "bufferHeight": 320,
+          "bufferWidth": 569,
+          "drawableInternalFormat": 32856,
+          "drawCalls": 58,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 320,
+          "logicalWidth": 568.888916015625,
+          "presentation_timings_ms": {
+            "copy": 0.36241672933101654,
+            "quad": 0.14545838348567486,
+            "swap": 0.7509165443480015,
+            "wait_and_restore": 0.0045835040509700775
+          },
+          "renderer": "Apple M4 Pro",
+          "sceneReallocations": 2,
+          "textureCount": 63,
+          "textureUploads": 63,
+          "vendor": "Apple",
+          "version": "2.1 Metal - 91.7"
+        }
+      }
+    ]
+  },
+  "mac-cpu": {
+    "sample_rows": 7459,
+    "game_frame_sample_rows": 4033,
+    "inclusive_game_frame": [
+      [
+        "-[HMGameView frame:]",
+        4033
+      ],
+      [
+        "-[HMGameView renderOpenGLFrame]",
+        3698
+      ],
+      [
+        "-[HMGLRenderer presentToLayer:viewport:]",
+        2102
+      ],
+      [
+        "-[HMGameView drawLogicalFrame]",
+        1473
+      ],
+      [
+        "-[HMMedia draw:x:y:columns:rows:tile:scaleX:scaleY:rotation:alpha:blend:]",
+        1362
+      ],
+      [
+        "-[HMMenus drawSlots]",
+        962
+      ],
+      [
+        "-[HMMenus draw]",
+        962
+      ],
+      [
+        "-[NSOpenGLContext flushBuffer]",
+        872
+      ],
+      [
+        "CGLFlushDrawable",
+        871
+      ],
+      [
+        "glSwap_Exec",
+        870
+      ],
+      [
+        "glDrawArrays_IMM_Exec",
+        800
+      ],
+      [
+        "-[HMMenus numberText:x:y:pitch:]",
+        750
+      ],
+      [
+        "GLDContextRec::flushContext(bool)",
+        722
+      ],
+      [
+        "-[HMGLRenderer drawImage:name:columns:rows:tile:position:scale:rotation:alpha:blend:rgb565:]",
+        716
+      ],
+      [
+        "-[_MTLCommandQueue submitCommandBuffer:]",
+        660
+      ],
+      [
+        "-[_MTLCommandQueue _submitAvailableCommandBuffers]",
+        659
+      ],
+      [
+        "_dispatch_lane_barrier_sync_invoke_and_complete",
+        659
+      ],
+      [
+        "_dispatch_client_callout",
+        659
+      ],
+      [
+        "__40-[_MTLCommandQueue submitCommandBuffer:]_block_invoke",
+        659
+      ],
+      [
+        "iokit_user_client_trap",
+        654
+      ],
+      [
+        "-[IOGPUMetalCommandQueue submitCommandBuffers:count:]",
+        650
+      ],
+      [
+        "-[IOGPUMetalCommandQueue _submitCommandBuffers:count:]",
+        650
+      ],
+      [
+        "IOGPUCommandQueueSubmitCommandBuffers",
+        640
+      ],
+      [
+        "-[NSOpenGLContext update]",
+        552
+      ],
+      [
+        "NSCGLSurfaceFlush",
+        535
+      ],
+      [
+        "-[NSCGLSurface flushRect:]",
+        525
+      ],
+      [
+        "NSOpenGLContextUpdateOffScreenViewSurface",
+        491
+      ],
+      [
+        "-[HMMedia resourceKey:]",
+        479
+      ],
+      [
+        "gldCopyTexSubImage",
+        458
+      ],
+      [
+        "glCopyTexSubImage2D_Exec",
+        456
+      ],
+      [
+        "glCopyTexSubImage2D",
+        456
+      ],
+      [
+        "gleDrawArraysOrElements_ExecCore",
+        440
+      ],
+      [
+        "gldBlitFramebufferData",
+        439
+      ],
+      [
+        "+[NSString stringWithFormat:]",
+        438
+      ],
+      [
+        "_CFStringCreateWithFormatAndArgumentsAux2",
+        408
+      ]
+    ],
+    "scope": "CPU samples; inclusive stacks overlap. No GPU time or wall-clock FPS inference."
+  },
+  "ipad-cpu-device": {
+    "sample_rows": 34586,
+    "game_frame_sample_rows": 26147,
+    "inclusive_game_frame": [
+      [
+        "-[HMGameView frame:]",
+        26147
+      ],
+      [
+        "-[HMGameView renderOpenGLFrame]",
+        26132
+      ],
+      [
+        "glDrawArrays_IMM_Exec",
+        24839
+      ],
+      [
+        "gleDrawArraysOrElements_ExecCore",
+        24767
+      ],
+      [
+        "-[HMGLRenderer presentToLayer:viewport:]",
+        23880
+      ],
+      [
+        "0x106a47187",
+        22964
+      ],
+      [
+        "gldRenderFillTriangles",
+        22964
+      ],
+      [
+        "0x106ba5571",
+        6293
+      ],
+      [
+        "0x106ba5561",
+        3685
+      ],
+      [
+        "0x106ba5569",
+        2487
+      ],
+      [
+        "-[HMGameView drawLogicalFrame]",
+        2241
+      ],
+      [
+        "-[HMMedia draw:x:y:columns:rows:tile:scaleX:scaleY:rotation:alpha:blend:]",
+        2126
+      ],
+      [
+        "-[HMGLRenderer drawImage:name:columns:rows:tile:position:scale:rotation:alpha:blend:rgb565:]",
+        1863
+      ],
+      [
+        "0x106a3d17b",
+        1208
+      ],
+      [
+        "gldRenderFillPolygonPtr",
+        1208
+      ],
+      [
+        "-[HMMedia draw:x:y:columns:rows:tile:scaleX:scaleY:rotation:alpha:]",
+        1206
+      ],
+      [
+        "-[EAGLContext presentRenderbuffer:]",
+        751
+      ],
+      [
+        "gliPresentViewES_Exec",
+        751
+      ],
+      [
+        "native_window_swap(_EAGLWindowObject*)",
+        679
+      ],
+      [
+        "-[HMMenus draw]",
+        678
+      ],
+      [
+        "-[HMMenus drawSlots]",
+        678
+      ],
+      [
+        "0x106a3d1ab",
+        588
+      ],
+      [
+        "gldRenderFillTriangleStrip",
+        588
+      ],
+      [
+        "_platform_memmove",
+        548
+      ],
+      [
+        "CGBlt_copyBytes",
+        544
+      ],
+      [
+        "0x106ba5695",
+        436
+      ],
+      [
+        "0x106ba5595",
+        312
+      ],
+      [
+        "-[HMMedia draw:x:y:]",
+        244
+      ],
+      [
+        "-[HMMedia prepareTexture:renderer:]",
+        238
+      ],
+      [
+        "0x106ba5655",
+        223
+      ],
+      [
+        "0x106ba5185",
+        219
+      ],
+      [
+        "0x106ba55c9",
+        218
+      ],
+      [
+        "-[HMGLRenderer textureForImage:name:rgb565:]",
+        215
+      ],
+      [
+        "_platform_memset_pattern16",
+        206
+      ],
+      [
+        "0x106ba55e5",
+        204
+      ]
+    ],
+    "scope": "CPU samples; inclusive stacks overlap. No GPU time or wall-clock FPS inference."
+  }
+}

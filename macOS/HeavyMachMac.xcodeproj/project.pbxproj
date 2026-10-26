@@ -1,0 +1,945 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		079D22104F90EC490468FD37 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BD5043DB2F1EBD82A09621 /* AudioToolbox.framework */; };
+		0A2C9DFBDAD067D2E84ABF32 /* HMOpenALAudioTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7A8BDA4FBD551258CFC16555 /* HMOpenALAudioTests.mm */; };
+		0B72374EF3014AE7B6CC416E /* HeavyMachAssets.bundle in Copy Bundle Resources */ = {isa = PBXBuildFile; fileRef = 2EF51FFD0951FFCB548CFE56 /* HeavyMachAssets.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1A59352DBBB4D37D8DA6265D /* HeavyMachValidationCore_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B0A76E0CC8F14BA222C0E73 /* HeavyMachValidationCore_macOS.framework */; };
+		21A0175D897206FE2E86B804 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E5578437581ECD45CAACEF /* OpenGL.framework */; };
+		29B156BA5340505BB3ADB725 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0EDBDDA825378CE17739B2 /* AVFoundation.framework */; };
+		2FABA3276A988085DCCE0E05 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15AC064D89D9A744587670A /* AppKit.framework */; };
+		382C801E8957234ED12C865A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A539FE243565D5D4EFEDDC /* Foundation.framework */; };
+		389E3178FDFC344D3A6F64E9 /* Validation in Resources */ = {isa = PBXBuildFile; fileRef = 7019942F9A48FDAA95B0894F /* Validation */; };
+		46C1D07805C6CC9CC589481C /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15AC064D89D9A744587670A /* AppKit.framework */; };
+		5A697F33C1AF060CD31D13F5 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F292C9FFBED37AD84638A48E /* GameController.framework */; };
+		60247451B2D46E3C2D3A13E4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE50A6D593570089B65CA5F /* CoreGraphics.framework */; };
+		66603CEE518D629B0C588245 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BD5043DB2F1EBD82A09621 /* AudioToolbox.framework */; };
+		714353AF60FE32D4C1D8B16A /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15AC064D89D9A744587670A /* AppKit.framework */; };
+		7B48F9E09F3F51118778206F /* HMAudioTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 75B9FB8B13B8B8DB1C3356DB /* HMAudioTests.mm */; };
+		8805A63C90C4D769FFDCE985 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A539FE243565D5D4EFEDDC /* Foundation.framework */; };
+		89BB91E997FB1EC5653754EF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F82438B691E36E863F62A2 /* QuartzCore.framework */; };
+		8E6FA4682420ACAE9860EAE3 /* HMGLReferenceTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 409931DCADC8C5DF35AA3535 /* HMGLReferenceTests.mm */; };
+		91ECD8B46E2C69F4209CAB0E /* HeavyMachValidationRuntime_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 730909BFAF96199024325274 /* HeavyMachValidationRuntime_macOS.framework */; };
+		92C0B5CE26CC772D4DED98F3 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E5578437581ECD45CAACEF /* OpenGL.framework */; };
+		97C6DA9538FCBEC6D5D12552 /* Application.mm in Sources */ = {isa = PBXBuildFile; fileRef = 61F059005E8C581B1D89A9CF /* Application.mm */; };
+		99547859F874C5B479B706A0 /* Application.mm in Sources */ = {isa = PBXBuildFile; fileRef = 61F059005E8C581B1D89A9CF /* Application.mm */; };
+		B593047F5564A1E68872B9BC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE50A6D593570089B65CA5F /* CoreGraphics.framework */; };
+		C307B0E43B59A13EC5A49622 /* HeavyMachAppleRuntime_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 816FA3C3880F3E1262DF060B /* HeavyMachAppleRuntime_macOS.framework */; };
+		C770CCAD246345BA5EC787AF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F82438B691E36E863F62A2 /* QuartzCore.framework */; };
+		CF2833F221DD4C9940D4D136 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431DD1041B73B74FCFDE460F /* CoreAudio.framework */; };
+		D908932FBC025A318CF0D1E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE50A6D593570089B65CA5F /* CoreGraphics.framework */; };
+		DDD2DC6CD53B901B66A6F72C /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E5578437581ECD45CAACEF /* OpenGL.framework */; };
+		DF0907B286ECBAA86A49DBB9 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431DD1041B73B74FCFDE460F /* CoreAudio.framework */; };
+		E45FC6B0BAD99DE25DED3A4F /* HMAppleInputTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B705E3C88A323CF88420F5F /* HMAppleInputTests.mm */; };
+		E4FC00BCF6ABAF553BFBFF11 /* HeavyMachCore_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B19751A4E7E2E941435651D /* HeavyMachCore_macOS.framework */; };
+		F0FDC122DAE8A341425F31C6 /* HeavyMachAssets.bundle in Copy Bundle Resources */ = {isa = PBXBuildFile; fileRef = 2EF51FFD0951FFCB548CFE56 /* HeavyMachAssets.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F6F3FA3FEE266E1FCB5296D6 /* HMMediaParityTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7813FC29C8B8597E30ADF7B7 /* HMMediaParityTests.mm */; };
+		FB3FEC152A917D948327C740 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F292C9FFBED37AD84638A48E /* GameController.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0E4541F3BEEBD400734BB531 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C975524DE506E9D2E096BD3 /* Modules */;
+			proxyType = 1;
+			remoteGlobalIDString = DAD29F46D26EE658E2E3883C;
+			remoteInfo = HeavyMachAppleRuntime_macOS;
+		};
+		42F32FE105DD304F55A72ECE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C975524DE506E9D2E096BD3 /* Modules */;
+			proxyType = 1;
+			remoteGlobalIDString = 641395257682CAA85D919E11;
+			remoteInfo = HeavyMachValidationRuntime_macOS;
+		};
+		44E71CE14EC1EC123D0E2134 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1F5464CF730ED646341D2DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E6A04E7BA907DA8B8558A4A;
+			remoteInfo = HeavyMachMacValidation;
+		};
+		7270A2B46CE98EEFCF1F6B3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C975524DE506E9D2E096BD3 /* Modules */;
+			proxyType = 1;
+			remoteGlobalIDString = A664E6E141098266A41BEE8A;
+			remoteInfo = HeavyMachAssets_macOS;
+		};
+		77B810A431DF8CC800467654 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C975524DE506E9D2E096BD3 /* Modules */;
+			proxyType = 2;
+			remoteGlobalIDString = B0FD1AB64DE97353B45FCA04;
+			remoteInfo = HeavyMachAppleRuntime_macOS;
+		};
+		78F15A02C3CD21C5EE59B157 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C975524DE506E9D2E096BD3 /* Modules */;
+			proxyType = 2;
+			remoteGlobalIDString = A9F8A4B45929CB90957FD084;
+			remoteInfo = HeavyMachValidationRuntime_macOS;
+		};
+		8832B46678F9065C72E5F3A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C975524DE506E9D2E096BD3 /* Modules */;
+			proxyType = 1;
+			remoteGlobalIDString = 6DA73326E57A35A567E0E1C9;
+			remoteInfo = HeavyMachCore_macOS;
+		};
+		8BA4EE2CB9DB6ED2A6CF6ED0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C975524DE506E9D2E096BD3 /* Modules */;
+			proxyType = 2;
+			remoteGlobalIDString = 781AB6D12C115F5A1CD70D07;
+			remoteInfo = HeavyMachValidationCore_macOS;
+		};
+		95E50692C6F5E209001AAC22 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C975524DE506E9D2E096BD3 /* Modules */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C6349918E459387BA746710;
+			remoteInfo = HeavyMachValidationCore_macOS;
+		};
+		A77EE70B6D2A18E32FF23272 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C975524DE506E9D2E096BD3 /* Modules */;
+			proxyType = 2;
+			remoteGlobalIDString = 79E04E8C2DD01535EF2904F1;
+			remoteInfo = HeavyMachAssets_macOS;
+		};
+		E6FA56F05F666B768B302280 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C975524DE506E9D2E096BD3 /* Modules */;
+			proxyType = 1;
+			remoteGlobalIDString = A664E6E141098266A41BEE8A;
+			remoteInfo = HeavyMachAssets_macOS;
+		};
+		FA0A813C1E7F777DE82F7F27 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C975524DE506E9D2E096BD3 /* Modules */;
+			proxyType = 2;
+			remoteGlobalIDString = D079D7612882E8E6E0D84C43;
+			remoteInfo = HeavyMachCore_macOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4E0D593C9DBFC42DCD7EF0DE /* Copy Bundle Resources */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstSubfolderSpec = 7;
+			files = (
+				F0FDC122DAE8A341425F31C6 /* HeavyMachAssets.bundle in Copy Bundle Resources */,
+			);
+			name = "Copy Bundle Resources";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D318530C8D990C0AC6370A2 /* Copy Bundle Resources */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstSubfolderSpec = 7;
+			files = (
+				0B72374EF3014AE7B6CC416E /* HeavyMachAssets.bundle in Copy Bundle Resources */,
+			);
+			name = "Copy Bundle Resources";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		15358B7A6664A3522109E262 /* HeavyMachMacInputTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeavyMachMacInputTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C0EDBDDA825378CE17739B2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		2EF51FFD0951FFCB548CFE56 /* HeavyMachAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = wrapper.cfbundle; path = HeavyMachAssets.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		409931DCADC8C5DF35AA3535 /* HMGLReferenceTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMGLReferenceTests.mm; sourceTree = "<group>"; };
+		41A539FE243565D5D4EFEDDC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		431DD1041B73B74FCFDE460F /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		61F059005E8C581B1D89A9CF /* Application.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Application.mm; sourceTree = "<group>"; };
+		7019942F9A48FDAA95B0894F /* Validation */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Validation; path = ../Resources/Validation; sourceTree = SOURCE_ROOT; };
+		74E5578437581ECD45CAACEF /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		75B9FB8B13B8B8DB1C3356DB /* HMAudioTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMAudioTests.mm; sourceTree = "<group>"; };
+		7813FC29C8B8597E30ADF7B7 /* HMMediaParityTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMMediaParityTests.mm; sourceTree = "<group>"; };
+		79F82438B691E36E863F62A2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7A8BDA4FBD551258CFC16555 /* HMOpenALAudioTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMOpenALAudioTests.mm; sourceTree = "<group>"; };
+		7B705E3C88A323CF88420F5F /* HMAppleInputTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMAppleInputTests.mm; sourceTree = "<group>"; };
+		7C975524DE506E9D2E096BD3 /* Modules */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Modules; path = ../Modules/HeavyMachModules.xcodeproj; sourceTree = "<group>"; };
+		B15AC064D89D9A744587670A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		D3BD5043DB2F1EBD82A09621 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		EAE50A6D593570089B65CA5F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F05A209A45C4BA90A898D392 /* HeavyMachMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeavyMachMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F292C9FFBED37AD84638A48E /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = System/Library/Frameworks/GameController.framework; sourceTree = SDKROOT; };
+		FB7E1B912750215670A752CF /* HeavyMachMacValidation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeavyMachMacValidation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84B3A79C0A897BDE4DA30ACD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B593047F5564A1E68872B9BC /* CoreGraphics.framework in Frameworks */,
+				46C1D07805C6CC9CC589481C /* AppKit.framework in Frameworks */,
+				29B156BA5340505BB3ADB725 /* AVFoundation.framework in Frameworks */,
+				DDD2DC6CD53B901B66A6F72C /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB244A201A8E5919F727B3C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C307B0E43B59A13EC5A49622 /* HeavyMachAppleRuntime_macOS.framework in Frameworks */,
+				E4FC00BCF6ABAF553BFBFF11 /* HeavyMachCore_macOS.framework in Frameworks */,
+				2FABA3276A988085DCCE0E05 /* AppKit.framework in Frameworks */,
+				5A697F33C1AF060CD31D13F5 /* GameController.framework in Frameworks */,
+				8805A63C90C4D769FFDCE985 /* Foundation.framework in Frameworks */,
+				21A0175D897206FE2E86B804 /* OpenGL.framework in Frameworks */,
+				89BB91E997FB1EC5653754EF /* QuartzCore.framework in Frameworks */,
+				60247451B2D46E3C2D3A13E4 /* CoreGraphics.framework in Frameworks */,
+				079D22104F90EC490468FD37 /* AudioToolbox.framework in Frameworks */,
+				CF2833F221DD4C9940D4D136 /* CoreAudio.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C539DE891868936FBDE0D5C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91ECD8B46E2C69F4209CAB0E /* HeavyMachValidationRuntime_macOS.framework in Frameworks */,
+				1A59352DBBB4D37D8DA6265D /* HeavyMachValidationCore_macOS.framework in Frameworks */,
+				714353AF60FE32D4C1D8B16A /* AppKit.framework in Frameworks */,
+				FB3FEC152A917D948327C740 /* GameController.framework in Frameworks */,
+				382C801E8957234ED12C865A /* Foundation.framework in Frameworks */,
+				92C0B5CE26CC772D4DED98F3 /* OpenGL.framework in Frameworks */,
+				C770CCAD246345BA5EC787AF /* QuartzCore.framework in Frameworks */,
+				D908932FBC025A318CF0D1E3 /* CoreGraphics.framework in Frameworks */,
+				66603CEE518D629B0C588245 /* AudioToolbox.framework in Frameworks */,
+				DF0907B286ECBAA86A49DBB9 /* CoreAudio.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1CA2147D4CAC3AC36EBB0AB4 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				75B9FB8B13B8B8DB1C3356DB /* HMAudioTests.mm */,
+				409931DCADC8C5DF35AA3535 /* HMGLReferenceTests.mm */,
+				7813FC29C8B8597E30ADF7B7 /* HMMediaParityTests.mm */,
+				7A8BDA4FBD551258CFC16555 /* HMOpenALAudioTests.mm */,
+			);
+			name = iOS;
+			path = ../Tests/iOS;
+			sourceTree = "<group>";
+		};
+		56C573DCCDEF48E4C7821E9C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B15AC064D89D9A744587670A /* AppKit.framework */,
+				D3BD5043DB2F1EBD82A09621 /* AudioToolbox.framework */,
+				1C0EDBDDA825378CE17739B2 /* AVFoundation.framework */,
+				431DD1041B73B74FCFDE460F /* CoreAudio.framework */,
+				EAE50A6D593570089B65CA5F /* CoreGraphics.framework */,
+				41A539FE243565D5D4EFEDDC /* Foundation.framework */,
+				F292C9FFBED37AD84638A48E /* GameController.framework */,
+				74E5578437581ECD45CAACEF /* OpenGL.framework */,
+				79F82438B691E36E863F62A2 /* QuartzCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		597605202E24B91920468927 /* Bundles */ = {
+			isa = PBXGroup;
+			children = (
+				2EF51FFD0951FFCB548CFE56 /* HeavyMachAssets.bundle */,
+			);
+			name = Bundles;
+			sourceTree = "<group>";
+		};
+		5B061A06B93B7D74AF3610A8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				816FA3C3880F3E1262DF060B /* HeavyMachAppleRuntime_macOS.framework */,
+				1B19751A4E7E2E941435651D /* HeavyMachCore_macOS.framework */,
+				85F8C93053298A485283036B /* HeavyMachAssets_macOS.bundle */,
+				730909BFAF96199024325274 /* HeavyMachValidationRuntime_macOS.framework */,
+				8B0A76E0CC8F14BA222C0E73 /* HeavyMachValidationCore_macOS.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8222A7B48A131E6890DF2372 /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				61F059005E8C581B1D89A9CF /* Application.mm */,
+			);
+			name = Mac;
+			path = ../Sources/Mac;
+			sourceTree = "<group>";
+		};
+		853B1AD2E09EAA780D001919 /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				7C975524DE506E9D2E096BD3 /* Modules */,
+			);
+			name = Projects;
+			sourceTree = "<group>";
+		};
+		980DBD9F271603F406155A19 = {
+			isa = PBXGroup;
+			children = (
+				7019942F9A48FDAA95B0894F /* Validation */,
+				E96E29F14A0C2E47FB034AEC /* Apple */,
+				1CA2147D4CAC3AC36EBB0AB4 /* iOS */,
+				8222A7B48A131E6890DF2372 /* Mac */,
+				597605202E24B91920468927 /* Bundles */,
+				56C573DCCDEF48E4C7821E9C /* Frameworks */,
+				CE2E02562D260188DCA0CCF1 /* Products */,
+				853B1AD2E09EAA780D001919 /* Projects */,
+			);
+			sourceTree = "<group>";
+		};
+		CE2E02562D260188DCA0CCF1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F05A209A45C4BA90A898D392 /* HeavyMachMac.app */,
+				15358B7A6664A3522109E262 /* HeavyMachMacInputTests.xctest */,
+				FB7E1B912750215670A752CF /* HeavyMachMacValidation.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E96E29F14A0C2E47FB034AEC /* Apple */ = {
+			isa = PBXGroup;
+			children = (
+				7B705E3C88A323CF88420F5F /* HMAppleInputTests.mm */,
+			);
+			name = Apple;
+			path = ../Tests/Apple;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0E6A04E7BA907DA8B8558A4A /* HeavyMachMacValidation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC8179686A784A68AE75EE4F /* Build configuration list for PBXNativeTarget "HeavyMachMacValidation" */;
+			buildPhases = (
+				7CF05BBFBDA232A6A866560C /* Build OpenAL Soft */,
+				913E09B9A3A008106F627B87 /* Sources */,
+				15A315E3F912DF0AF1C4420A /* Resources */,
+				C539DE891868936FBDE0D5C4 /* Frameworks */,
+				4E0D593C9DBFC42DCD7EF0DE /* Copy Bundle Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B7A81C257404591051D2EB30 /* PBXTargetDependency */,
+				3031D1DE73DE8B765AA0553B /* PBXTargetDependency */,
+				4447C0D00D234122BFAC497A /* PBXTargetDependency */,
+			);
+			name = HeavyMachMacValidation;
+			packageProductDependencies = (
+			);
+			productName = HeavyMachMacValidation;
+			productReference = FB7E1B912750215670A752CF /* HeavyMachMacValidation.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8A99EA134C664FC07188EE8F /* HeavyMachMacInputTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9F16E8DF99D9BEC6A23479D /* Build configuration list for PBXNativeTarget "HeavyMachMacInputTests" */;
+			buildPhases = (
+				F8BDFAD5B7B3530039173FE3 /* Sources */,
+				84B3A79C0A897BDE4DA30ACD /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				93F3334CE2E222EC491D1CA8 /* PBXTargetDependency */,
+			);
+			name = HeavyMachMacInputTests;
+			packageProductDependencies = (
+			);
+			productName = HeavyMachMacInputTests;
+			productReference = 15358B7A6664A3522109E262 /* HeavyMachMacInputTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D536E955D395AC3E0BFFA3FF /* HeavyMachMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A25F1021C71D37C5ACC42CF8 /* Build configuration list for PBXNativeTarget "HeavyMachMac" */;
+			buildPhases = (
+				7FB95C3D1E1627CE19D03A49 /* Build OpenAL Soft */,
+				CA6712C0983028B8EF79CB9F /* Sources */,
+				BB244A201A8E5919F727B3C8 /* Frameworks */,
+				8D318530C8D990C0AC6370A2 /* Copy Bundle Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3998E241C8E7019A87C3032F /* PBXTargetDependency */,
+				A5F08172889E5896BB9E20DF /* PBXTargetDependency */,
+				A80C3B4A8A155E65A7122FF0 /* PBXTargetDependency */,
+			);
+			name = HeavyMachMac;
+			packageProductDependencies = (
+			);
+			productName = HeavyMachMac;
+			productReference = F05A209A45C4BA90A898D392 /* HeavyMachMac.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E1F5464CF730ED646341D2DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 12D243592F845B8C377A51F8 /* Build configuration list for PBXProject "HeavyMachMac" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 980DBD9F271603F406155A19;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = CE2E02562D260188DCA0CCF1 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5B061A06B93B7D74AF3610A8 /* Products */;
+					ProjectRef = 7C975524DE506E9D2E096BD3 /* Modules */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				D536E955D395AC3E0BFFA3FF /* HeavyMachMac */,
+				8A99EA134C664FC07188EE8F /* HeavyMachMacInputTests */,
+				0E6A04E7BA907DA8B8558A4A /* HeavyMachMacValidation */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		1B19751A4E7E2E941435651D /* HeavyMachCore_macOS.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = HeavyMachCore_macOS.framework;
+			remoteRef = FA0A813C1E7F777DE82F7F27 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		730909BFAF96199024325274 /* HeavyMachValidationRuntime_macOS.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = HeavyMachValidationRuntime_macOS.framework;
+			remoteRef = 78F15A02C3CD21C5EE59B157 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		816FA3C3880F3E1262DF060B /* HeavyMachAppleRuntime_macOS.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = HeavyMachAppleRuntime_macOS.framework;
+			remoteRef = 77B810A431DF8CC800467654 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		85F8C93053298A485283036B /* HeavyMachAssets_macOS.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = HeavyMachAssets_macOS.bundle;
+			remoteRef = A77EE70B6D2A18E32FF23272 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8B0A76E0CC8F14BA222C0E73 /* HeavyMachValidationCore_macOS.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = HeavyMachValidationCore_macOS.framework;
+			remoteRef = 8BA4EE2CB9DB6ED2A6CF6ED0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		15A315E3F912DF0AF1C4420A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				389E3178FDFC344D3A6F64E9 /* Validation in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7CF05BBFBDA232A6A866560C /* Build OpenAL Soft */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build OpenAL Soft";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/../build/openal/$(PLATFORM_NAME)/libopenal.a",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"$SRCROOT/../tools/build_openal.sh\" macosx";
+		};
+		7FB95C3D1E1627CE19D03A49 /* Build OpenAL Soft */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build OpenAL Soft";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/../build/openal/$(PLATFORM_NAME)/libopenal.a",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"$SRCROOT/../tools/build_openal.sh\" macosx";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		913E09B9A3A008106F627B87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97C6DA9538FCBEC6D5D12552 /* Application.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA6712C0983028B8EF79CB9F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99547859F874C5B479B706A0 /* Application.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8BDFAD5B7B3530039173FE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E45FC6B0BAD99DE25DED3A4F /* HMAppleInputTests.mm in Sources */,
+				7B48F9E09F3F51118778206F /* HMAudioTests.mm in Sources */,
+				8E6FA4682420ACAE9860EAE3 /* HMGLReferenceTests.mm in Sources */,
+				F6F3FA3FEE266E1FCB5296D6 /* HMMediaParityTests.mm in Sources */,
+				0A2C9DFBDAD067D2E84ABF32 /* HMOpenALAudioTests.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3031D1DE73DE8B765AA0553B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = HeavyMachValidationCore_macOS;
+			targetProxy = 95E50692C6F5E209001AAC22 /* PBXContainerItemProxy */;
+		};
+		3998E241C8E7019A87C3032F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = HeavyMachAppleRuntime_macOS;
+			targetProxy = 0E4541F3BEEBD400734BB531 /* PBXContainerItemProxy */;
+		};
+		4447C0D00D234122BFAC497A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = HeavyMachAssets_macOS;
+			targetProxy = 7270A2B46CE98EEFCF1F6B3A /* PBXContainerItemProxy */;
+		};
+		93F3334CE2E222EC491D1CA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0E6A04E7BA907DA8B8558A4A /* HeavyMachMacValidation */;
+			targetProxy = 44E71CE14EC1EC123D0E2134 /* PBXContainerItemProxy */;
+		};
+		A5F08172889E5896BB9E20DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = HeavyMachCore_macOS;
+			targetProxy = 8832B46678F9065C72E5F3A8 /* PBXContainerItemProxy */;
+		};
+		A80C3B4A8A155E65A7122FF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = HeavyMachAssets_macOS;
+			targetProxy = E6FA56F05F666B768B302280 /* PBXContainerItemProxy */;
+		};
+		B7A81C257404591051D2EB30 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = HeavyMachValidationRuntime_macOS;
+			targetProxy = 42F32FE105DD304F55A72ECE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0C3BAC7B8591DA51941B8002 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"HM_VALIDATION=0",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../Sources/iOS",
+					"$(SRCROOT)/../Sources/Apple",
+				);
+				INFOPLIST_FILE = "HeavyMachMac-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-force_load",
+					"$(SRCROOT)/../build/openal/macosx/libopenal.a",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gelb2.heavymach.mac.restored;
+				SDKROOT = macosx;
+				SUPPORTS_MACCATALYST = NO;
+			};
+			name = Debug;
+		};
+		13CE452EB321141AC3DF275A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		675168AFC91623605EE962F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"HM_VALIDATION=1",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../Sources/iOS",
+					"$(SRCROOT)/../Sources/Apple",
+				);
+				INFOPLIST_FILE = "HeavyMachMacValidation-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-force_load",
+					"$(SRCROOT)/../build/openal/macosx/libopenal.a",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gelb2.heavymach.mac.validation;
+				SDKROOT = macosx;
+				SUPPORTS_MACCATALYST = NO;
+			};
+			name = Debug;
+		};
+		867B71E65C7ADF3A72BFD6DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"HM_VALIDATION=1",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../Sources/iOS",
+					"$(SRCROOT)/../Sources/Apple",
+				);
+				INFOPLIST_FILE = "HeavyMachMacValidation-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-force_load",
+					"$(SRCROOT)/../build/openal/macosx/libopenal.a",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gelb2.heavymach.mac.validation;
+				SDKROOT = macosx;
+				SUPPORTS_MACCATALYST = NO;
+			};
+			name = Release;
+		};
+		967DF7A3432F64751B468FA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"HM_VALIDATION=1",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../Sources/Core",
+					"$(SRCROOT)/../Sources/iOS",
+					"$(SRCROOT)/../Sources/Apple",
+				);
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gelb2.heavymach.mac.tests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HeavyMachMacValidation.app/Contents/MacOS/HeavyMachMacValidation";
+			};
+			name = Debug;
+		};
+		BA3C1514EFAD732A954AB47E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"HM_VALIDATION=1",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../Sources/Core",
+					"$(SRCROOT)/../Sources/iOS",
+					"$(SRCROOT)/../Sources/Apple",
+				);
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gelb2.heavymach.mac.tests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HeavyMachMacValidation.app/Contents/MacOS/HeavyMachMacValidation";
+			};
+			name = Release;
+		};
+		BDDB6ADF55FF8E927A54A07D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C54C5D0ADC92F71DFCC6C541 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"HM_VALIDATION=0",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../Sources/iOS",
+					"$(SRCROOT)/../Sources/Apple",
+				);
+				INFOPLIST_FILE = "HeavyMachMac-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-force_load",
+					"$(SRCROOT)/../build/openal/macosx/libopenal.a",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gelb2.heavymach.mac.restored;
+				SDKROOT = macosx;
+				SUPPORTS_MACCATALYST = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		12D243592F845B8C377A51F8 /* Build configuration list for PBXProject "HeavyMachMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDDB6ADF55FF8E927A54A07D /* Debug */,
+				13CE452EB321141AC3DF275A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A25F1021C71D37C5ACC42CF8 /* Build configuration list for PBXNativeTarget "HeavyMachMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C3BAC7B8591DA51941B8002 /* Debug */,
+				C54C5D0ADC92F71DFCC6C541 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		EC8179686A784A68AE75EE4F /* Build configuration list for PBXNativeTarget "HeavyMachMacValidation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				675168AFC91623605EE962F7 /* Debug */,
+				867B71E65C7ADF3A72BFD6DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F9F16E8DF99D9BEC6A23479D /* Build configuration list for PBXNativeTarget "HeavyMachMacInputTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				967DF7A3432F64751B468FA7 /* Debug */,
+				BA3C1514EFAD732A954AB47E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E1F5464CF730ED646341D2DE /* Project object */;
+}

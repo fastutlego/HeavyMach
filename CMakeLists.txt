@@ -44,3 +44,7 @@ if(HM_BUILD_VALIDATION_TESTS)
   # Extended gameplay runner: explicit execution retains per-boss results.
   # It is not a smoke-test substitute for completing every encounter.
 endif()
+
+add_executable(HeavyMachKeyboardInputTests Tests/KeyboardInputTests.cpp)
+target_link_libraries(HeavyMachKeyboardInputTests PRIVATE HeavyMachCore)
+add_test(NAME HeavyMachKeyboardInputTests COMMAND HeavyMachKeyboardInputTests)

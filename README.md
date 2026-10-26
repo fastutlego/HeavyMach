@@ -38,7 +38,7 @@
 | [stage-journeys](docs/stage-journeys.md) | 정상 시작 위치부터 진행한 맵별 성공·실패 |
 | [hud-event-order](docs/hud-event-order.md) | HP·강화·메뉴 이벤트 수정과 최종 빌드·검사 |
 
-게임 핵심 소스는 `Sources/Core/`, iOS 화면·입력·음향 연결은 `Sources/iOS/`, Xcode 프로젝트는 `iOS/HeavyMachRestored.xcodeproj`다. Xcode에서 일반 실행은 `HeavyMachRestored`, 조건별 검사는 `HeavyMachValidation` scheme을 선택한다. 검증 앱은 별도 저장을 사용한다.
+게임 핵심 소스는 `Sources/Core/`, iOS 화면·입력·음향 연결은 `Sources/iOS/`, Apple 작업은 `HeavyMach.xcworkspace`를 연다. 공용 모듈·iOS/iPadOS·native Mac 프로젝트를 함께 관리한다. [구조와 실행](docs/apple-platforms.md), [키 배치](docs/keyboard-input-policy.md)를 참고한다. Xcode에서 일반 실행은 `HeavyMachRestored`, 조건별 검사는 `HeavyMachValidation` scheme을 선택한다. 검증 앱은 별도 저장을 사용한다.
 
 이 저장소 루트에서 코어 검사:
 
