@@ -65,3 +65,5 @@ xcodebuild -project iOS/HeavyMachRestored.xcodeproj -scheme HeavyMachRestored -s
 ```
 
 치트 앱은 같은 명령의 scheme을 HeavyMachValidation으로 바꾼다. 현재 OpenAL 빌드 스크립트의 대상은 arm64다. 최초 일반 generic 명령의 라이브러리 입력 누락 실패는 개편 기록에 보존했다.
+
+[분리 후 전수검사](docs/migration/completeness-audit-20261026.md)에 파일 보존·복구·경로 수정과 로컬 증거 위치를 기록했다. 과거 build/ 증거는 기존 제작 폴더에 보존하며 새 빌드 출력과 구분한다.

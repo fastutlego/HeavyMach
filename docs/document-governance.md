@@ -18,12 +18,12 @@ canonical은 이 위계를 안내하는 색인과 보존 규칙이다. current-s
 
 ## 업무별 진입
 
-HeavyMach 요청이면 루트에서 시작해도 HeavyMach/AGENTS를 읽는다. 공통 문서와 업무별 필수 문서·코드·검사는 [문서 연결표](document-map.json)가 소유한다. 작업자의 실제 읽기를 명령이 대신했다고 보고하지 않는다.
+이 독립 저장소의 AGENTS.md를 읽는다. 허브에서 시작했다면 먼저 HeavyMach 폴더로 이동한다. 공통 문서와 업무별 필수 문서·코드·검사는 [문서 연결표](document-map.json)가 소유한다. 작업자의 실제 읽기를 명령이 대신했다고 보고하지 않는다.
 
 ```sh
-python3 HeavyMach/tools/document_contract.py plan --task input
-python3 HeavyMach/tools/document_contract.py plan --files HeavyMach/Sources/Core/Combat.cpp
-python3 HeavyMach/tools/document_contract.py check
+python3 tools/document_contract.py plan --task input
+python3 tools/document_contract.py plan --files Sources/Core/Combat.cpp
+python3 tools/document_contract.py check
 ```
 
 업무 종류: planning(기획/규칙), input(입력/회전), rendering(그래픽/아트), menus(메뉴/전환), combat(무기/적/수치), runtime(음향/저장/생명주기), validation(빌드/실기기), documentation(문서/보고). 여러 영역이면 합집합을 읽는다. 파일 경로로 업무를 찾지 못하면 관련 요구를 직접 분류하고 연결표를 보완한다. 상위 사용자 지시를 단어 일치로 자동 해석하지 않는다.

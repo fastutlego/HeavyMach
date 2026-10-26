@@ -15,7 +15,8 @@
     "docs/weapon-validation-procedure.md",
     "docs/stage-transition-contract.md",
     "docs/source-provenance.md",
-    "docs/report-site.md"
+    "docs/report-site.md",
+    "docs/repository-management.md"
   ],
   "base_read": [
     "AGENTS.md",
@@ -208,7 +209,8 @@
         "tools/document_contract.py",
         "tools/export_rea_public_report.py",
         "docs/public/*",
-        "tools/build_report_site.py"
+        "tools/build_report_site.py",
+        "tools/audit_repository_migration.py"
       ],
       "tests": [],
       "evidence": [

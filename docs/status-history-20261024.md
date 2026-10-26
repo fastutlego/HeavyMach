@@ -32,7 +32,7 @@
 
 기존 기록에 Xcode SDK 27.1 시뮬레이터 ARM64 빌드 성공, iOS 26.5 iPhone Air 시뮬레이터 플레이, iOS 27.1 iPhone Duo 시뮬레이터 설치·launch 성공이 있다. 27.1 시뮬레이터의 플레이는 미확인이다. 실기기는 iPhone Air / iOS 27.0.1에서 서명·설치·실행했다. 이 값은 검증 당시 환경이며 이후의 최신 버전을 자동 보증하지 않는다.
 
-기존 실행 증거 루트는 `/Users/sokol/Documents/Codex/2026-10-24/heavymach-recovery`다. `workspace-simulator-build.log`, `device-final-console.log`, `cpu-tests.log`, `simulator-keyboard-tilt-tests.log` 및 실패 로그를 보존한다. 상세는 [호환 실행 기록](../../docs/heavymach-recovery-20261024.md)에 있다.
+기존 실행 증거 루트는 `/Users/sokol/Documents/Codex/2026-10-24/heavymach-recovery`다. `workspace-simulator-build.log`, `device-final-console.log`, `cpu-tests.log`, `simulator-keyboard-tilt-tests.log` 및 실패 로그를 보존한다. 상세는 [호환 실행 기록](heavymach-recovery-20261024.md)에 있다.
 
 ## 최신 사용자 실기기 보고
 
