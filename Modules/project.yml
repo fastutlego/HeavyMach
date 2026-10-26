@@ -1,0 +1,230 @@
+name: HeavyMachModules
+options:
+  deploymentTarget:
+    iOS: '15.0'
+    macOS: '12.0'
+settings:
+  base:
+    CLANG_CXX_LANGUAGE_STANDARD: c++20
+    CLANG_ENABLE_OBJC_ARC: 'YES'
+    OTHER_CPLUSPLUSFLAGS:
+    - $(inherited)
+    - -ffp-contract=off
+    - -fno-fast-math
+    SUPPORTS_MACCATALYST: 'NO'
+    GENERATE_INFOPLIST_FILE: 'YES'
+    CODE_SIGNING_ALLOWED: 'NO'
+targets:
+  HeavyMachCore:
+    type: framework.static
+    platform:
+    - iOS
+    - macOS
+    sources:
+    - path: ../Sources/Core
+      excludes:
+      - SpriteRaster.cpp
+      - TrailRaster.cpp
+    - path: ../Sources/Core/SpriteRaster.cpp
+      compilerFlags: -O2
+    - path: ../Sources/Core/TrailRaster.cpp
+      compilerFlags: -O2
+    - path: include/HeavyMachCore.h
+      headerVisibility: public
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.gelb2.HeavyMachCore
+        GCC_PREPROCESSOR_DEFINITIONS:
+        - $(inherited)
+        - HM_VALIDATION=0
+        DEFINES_MODULE: 'YES'
+  HeavyMachValidationCore:
+    type: framework.static
+    platform:
+    - iOS
+    - macOS
+    sources:
+    - path: ../Sources/Core
+      excludes:
+      - SpriteRaster.cpp
+      - TrailRaster.cpp
+    - path: ../Sources/Core/SpriteRaster.cpp
+      compilerFlags: -O2
+    - path: ../Sources/Core/TrailRaster.cpp
+      compilerFlags: -O2
+    - path: include/HeavyMachValidationCore.h
+      headerVisibility: public
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.gelb2.HeavyMachValidationCore
+        GCC_PREPROCESSOR_DEFINITIONS:
+        - $(inherited)
+        - HM_VALIDATION=1
+        DEFINES_MODULE: 'YES'
+  HeavyMachAssets:
+    type: bundle
+    platform:
+    - iOS
+    - macOS
+    sources:
+    - path: ../Resources/OriginalImages
+      type: folder
+      buildPhase: resources
+    - path: ../Resources/Images
+      type: folder
+      buildPhase: resources
+    - path: ../Resources/Audio
+      type: folder
+      buildPhase: resources
+    - path: ../Resources/RawData
+      type: folder
+      buildPhase: resources
+    - path: ../Art/Extensions
+      type: folder
+      buildPhase: resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.gelb2.heavymach.assets
+        SKIP_INSTALL: 'YES'
+  HeavyMachAppleRuntime_iOS:
+    type: framework.static
+    platform: iOS
+    sources:
+    - path: ../Sources/iOS
+      excludes:
+      - Application.mm
+    - path: ../Sources/Apple
+    dependencies:
+    - target: HeavyMachCore_iOS
+      embed: false
+    - sdk: Foundation.framework
+    - sdk: QuartzCore.framework
+    - sdk: CoreGraphics.framework
+    - sdk: AudioToolbox.framework
+    - sdk: CoreAudio.framework
+    - sdk: UIKit.framework
+    - sdk: OpenGLES.framework
+    - sdk: CoreMotion.framework
+    - sdk: AVFoundation.framework
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.gelb2.HeavyMachAppleRuntime_iOS
+        GCC_PREPROCESSOR_DEFINITIONS:
+        - $(inherited)
+        - HM_VALIDATION=0
+        HEADER_SEARCH_PATHS:
+        - $(inherited)
+        - $(SRCROOT)/../Sources/Core
+        - $(SRCROOT)/../Sources/iOS
+        - $(SRCROOT)/../Sources/Apple
+        DEFINES_MODULE: 'NO'
+        OTHER_LDFLAGS:
+        - $(inherited)
+        - -ObjC
+  HeavyMachAppleRuntime_macOS:
+    type: framework.static
+    platform: macOS
+    sources:
+    - path: ../Sources/iOS
+      excludes:
+      - Application.mm
+    - path: ../Sources/Apple
+    - path: ../Sources/Mac
+      excludes:
+      - Application.mm
+    dependencies:
+    - target: HeavyMachCore_macOS
+      embed: false
+    - sdk: Foundation.framework
+    - sdk: QuartzCore.framework
+    - sdk: CoreGraphics.framework
+    - sdk: AudioToolbox.framework
+    - sdk: CoreAudio.framework
+    - sdk: AppKit.framework
+    - sdk: OpenGL.framework
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.gelb2.HeavyMachAppleRuntime_macOS
+        GCC_PREPROCESSOR_DEFINITIONS:
+        - $(inherited)
+        - HM_VALIDATION=0
+        HEADER_SEARCH_PATHS:
+        - $(inherited)
+        - $(SRCROOT)/../Sources/Core
+        - $(SRCROOT)/../Sources/iOS
+        - $(SRCROOT)/../Sources/Apple
+        DEFINES_MODULE: 'NO'
+        OTHER_LDFLAGS:
+        - $(inherited)
+        - -ObjC
+  HeavyMachValidationRuntime_iOS:
+    type: framework.static
+    platform: iOS
+    sources:
+    - path: ../Sources/iOS
+      excludes:
+      - Application.mm
+    - path: ../Sources/Apple
+    dependencies:
+    - target: HeavyMachValidationCore_iOS
+      embed: false
+    - sdk: Foundation.framework
+    - sdk: QuartzCore.framework
+    - sdk: CoreGraphics.framework
+    - sdk: AudioToolbox.framework
+    - sdk: CoreAudio.framework
+    - sdk: UIKit.framework
+    - sdk: OpenGLES.framework
+    - sdk: CoreMotion.framework
+    - sdk: AVFoundation.framework
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.gelb2.HeavyMachValidationRuntime_iOS
+        GCC_PREPROCESSOR_DEFINITIONS:
+        - $(inherited)
+        - HM_VALIDATION=1
+        HEADER_SEARCH_PATHS:
+        - $(inherited)
+        - $(SRCROOT)/../Sources/Core
+        - $(SRCROOT)/../Sources/iOS
+        - $(SRCROOT)/../Sources/Apple
+        DEFINES_MODULE: 'NO'
+        OTHER_LDFLAGS:
+        - $(inherited)
+        - -ObjC
+  HeavyMachValidationRuntime_macOS:
+    type: framework.static
+    platform: macOS
+    sources:
+    - path: ../Sources/iOS
+      excludes:
+      - Application.mm
+    - path: ../Sources/Apple
+    - path: ../Sources/Mac
+      excludes:
+      - Application.mm
+    dependencies:
+    - target: HeavyMachValidationCore_macOS
+      embed: false
+    - sdk: Foundation.framework
+    - sdk: QuartzCore.framework
+    - sdk: CoreGraphics.framework
+    - sdk: AudioToolbox.framework
+    - sdk: CoreAudio.framework
+    - sdk: AppKit.framework
+    - sdk: OpenGL.framework
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.gelb2.HeavyMachValidationRuntime_macOS
+        GCC_PREPROCESSOR_DEFINITIONS:
+        - $(inherited)
+        - HM_VALIDATION=1
+        HEADER_SEARCH_PATHS:
+        - $(inherited)
+        - $(SRCROOT)/../Sources/Core
+        - $(SRCROOT)/../Sources/iOS
+        - $(SRCROOT)/../Sources/Apple
+        DEFINES_MODULE: 'NO'
+        OTHER_LDFLAGS:
+        - $(inherited)
+        - -ObjC

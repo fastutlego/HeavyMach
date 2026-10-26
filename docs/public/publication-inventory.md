@@ -60,3 +60,12 @@ GitHub Release 등록·SaaS 편집·번역·대표 컷 선정은 집필·게시 
 개발자의 변과 사용자 정정은 개인 서사의 기준이다. 설치·구현·검사 수치는 기술 문서와 실행 기록을 기준으로 쓴다. 메타카피·자기합리화·근거 없는 성과를 추가하지 않고, 실제로 없었던 인터뷰 질문·답변도 만들지 않는다. 이번 작업은 HeavyMach 내부 자료 정리이며 SaaS 본문·운영 데이터는 변경하지 않았다.
 
 [새 clone 빌드 검증](clone-build-20261026.md)은 자원 누락 수정과 원격에서 받은 파일만으로 수행한 빌드·실행 결과다. 앞선 로컬 복사 검사와 구분해 인용한다.
+
+## Apple 플랫폼 후속 자료
+
+`docs/apple-platforms.md`, `docs/keyboard-input-policy.md`, `docs/current-status.md`를 먼저 읽는다. v0.9의 사용자 전 미션 플레이와 후속 Mac/Simulator 결과를 혼동하지 않는다. 자동조준·HUD 배치 편집의 사용자 요구는 `docs/usability-todo.md`에 있으며 아직 구현한 기능으로 쓰지 않는다.
+
+## Apple 확장 후속 자료
+
+- [Apple 모듈·키보드 검사](apple-platform-progress-20261026.md): 실제 구현·검사와 남은 범위.
+- [자동조준 개발 계획](../auto-aim-plan-20261026.md): 요구와 후보 설계. 현재 앱에 구현됐다고 쓰지 않는다.

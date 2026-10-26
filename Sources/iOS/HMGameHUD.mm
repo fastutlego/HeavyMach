@@ -21,6 +21,8 @@ int glyph(unichar c) {return c>='0'&&c<='9'?c-'0':c=='.'?10:c=='/'?11:c==':'?12:
 }
 @implementation HMGameHUD {
     HMMedia *_media;
+    int _keyboardFocus;
+    BOOL _keyboardFocusVisible;
     std::vector<HUDButton> _buttons;
     std::map<int,heavymach::HMButtonState> _buttonStates;
     int _pressed,_menuStep,_upgradeStep;
@@ -146,15 +148,15 @@ int glyph(unichar c) {return c>='0'&&c<='9'?c-'0':c=='.'?10:c=='/'?11:c==':'?12:
         NSString *asset=[NSString stringWithUTF8String:p.loadingAsset.c_str()];
         // 0xb8f0 / 0xbf74 pass the original JPEG name to ResMgr_Tile.
         // HMMedia reads OriginalImages directly; no derived PNG suffix.
-        if(s.canvasWidth>480){
+        if(s.canvasWidth>480||s.canvasHeight>320){
             // The illustration covers the world, independently of the safe-area HUD.
             // Preserve aspect ratio; only the illustration may crop vertically.
             CGSize size=[_media imageSize:asset];
             // LINEAR/REPEAT sprite textures have zero POT padding. Keep the
             // screen inside the outer texel centres so padding cannot darken its edges.
-            double scale=size.width>1&&size.height>1?std::max(s.canvasWidth/(size.width-1),320./(size.height-1)):1;
+            double scale=size.width>1&&size.height>1?std::max(s.canvasWidth/(size.width-1),s.canvasHeight/(size.height-1)):1;
             [_media resetClip];[_media setDrawingOffset:CGPointZero];[_media setDrawingScale:1];
-            [self sprite:asset x:s.canvasWidth/2 y:160 columns:1 rows:1 tile:0 sx:scale sy:scale rotation:0 alpha:p.alpha blend:0];
+            [self sprite:asset x:s.canvasWidth/2 y:s.canvasHeight/2 columns:1 rows:1 tile:0 sx:scale sy:scale rotation:0 alpha:p.alpha blend:0];
             [_media setDrawingOffset:s.hudOffset];[_media setDrawingScale:s.hudScale];
             [_media setClipRect:CGRectMake(s.hudOffset.x,s.hudOffset.y,480*s.hudScale,320*s.hudScale)];
         }else [self sprite:asset x:240 y:160 columns:1 rows:1 tile:0 sx:1 sy:1 rotation:0 alpha:p.alpha blend:0];
@@ -228,4 +230,31 @@ int glyph(unichar c) {return c>='0'&&c<='9'?c-'0':c=='.'?10:c=='/'?11:c==':'?12:
     // GuiGame inherits QobBase.onTap (0x81b4), which does not consume empty space.
     return NO;
 }
+- (std::vector<HUDButton>)keyboardButtons {
+    auto buttons=_buttons;
+    buttons.erase(std::remove_if(buttons.begin(),buttons.end(),[&](const auto& b){
+        return CGRectGetMidX(b.bounds)<0||CGRectGetMidX(b.bounds)>480||CGRectGetMidY(b.bounds)<0||CGRectGetMidY(b.bounds)>320;
+    }),buttons.end());
+    std::stable_sort(buttons.begin(),buttons.end(),[](const auto& a,const auto& b){
+        if(std::fabs(CGRectGetMidY(a.bounds)-CGRectGetMidY(b.bounds))>8)return CGRectGetMidY(a.bounds)>CGRectGetMidY(b.bounds);
+        return CGRectGetMidX(a.bounds)<CGRectGetMidX(b.bounds);
+    });
+    return buttons;
+}
+- (void)moveKeyboardFocus:(int)delta {
+    auto buttons=[self keyboardButtons];if(buttons.empty())return;
+    int index=-1;for(size_t i=0;i<buttons.size();++i)if(buttons[i].key==_keyboardFocus)index=int(i);
+    if(index<0)index=delta<0?int(buttons.size())-1:0;else index=(index+delta+int(buttons.size()))%int(buttons.size());
+    _keyboardFocus=buttons[index].key;_keyboardFocusVisible=YES;
+}
+- (CGRect)keyboardFocusRect {
+    if(!_keyboardFocusVisible)return CGRectZero;
+    auto buttons=[self keyboardButtons];for(const auto& b:buttons)if(b.key==_keyboardFocus)return b.bounds;
+    if(buttons.empty())return CGRectZero;_keyboardFocus=buttons.front().key;return buttons.front().bounds;
+}
+- (void)activateKeyboardFocus {
+    _keyboardFocusVisible=YES;CGRect rect=[self keyboardFocusRect];if(CGRectIsEmpty(rect))return;
+    CGPoint point=CGPointMake(CGRectGetMidX(rect),CGRectGetMidY(rect));[self touch:point state:0];[self touch:point state:2];
+}
+
 @end

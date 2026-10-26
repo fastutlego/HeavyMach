@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-27",
+  "version": 2,
+  "status": "accepted_by_user_2026-10-27",
+  "assets": [
+    {
+      "aircraft": "yak141",
+      "file": "yak141-concept.png",
+      "width": 2172,
+      "height": 724,
+      "sha256": "dc89ede4289373fbb8cc4b8c12a4a662a6ca4c657e066b21ca294b4c8db2e527",
+      "generated_source": "exec-9cc3d139-9cb7-4f26-b736-4b331cdce318.png"
+    },
+    {
+      "aircraft": "harrier",
+      "file": "harrier-concept.png",
+      "width": 2033,
+      "height": 773,
+      "sha256": "b40e1e5b9cae681472de34c9be748d50c0e8bf5a0b8fd3b1004ed401df983ecc",
+      "generated_source": "exec-872d40c3-0149-46ee-a783-db425fd05c3e.png"
+    },
+    {
+      "aircraft": "f35b",
+      "file": "f35b-concept.png",
+      "width": 2032,
+      "height": 774,
+      "sha256": "747b937be1dc5cd5049e5ccbd5736ecd19b9a9a421222df7e0a56bae92c8980e",
+      "generated_source": "exec-5a952bbd-7814-4e53-a287-c50aa8111420.png"
+    }
+  ],
+  "references": [
+    {
+      "file": "yak141-3view.gif",
+      "source_page": "https://www.aviastar.org/air/russia/yak-141.php",
+      "sha256": "2260b547b02f8db98dbe10576ed827559443560ed5bc342acb6e52221f2b9118",
+      "role": "airframe_geometry"
+    },
+    {
+      "file": "yak141-photo.jpg",
+      "source_page": "https://pesawattempurdaffa.blogspot.com/2012/06/yak-141-freestyle.html",
+      "sha256": "646e986f3e958fb9d1f80628c0afe58bc0f5cf6aba63f04402a0adf5a7f2b65d",
+      "role": "airframe_geometry"
+    },
+    {
+      "file": "harrier-gr3-photo.jpg",
+      "source_page": "https://abpic.co.uk/pictures/view/1199591",
+      "sha256": "b9cde2999318fdaa710e94ba54b4e49cc3a9b23afd6dd860661a964c5c0e1a7c",
+      "role": "airframe_geometry"
+    },
+    {
+      "file": "f35b-photo.jpg",
+      "source_page": "https://www.dvidshub.net/image/8085647/distributed-stovl-operation",
+      "sha256": "d5ecf00b87604404749203da93da2e2d62ee25d04b739abbfa480d0aea4b1164",
+      "role": "airframe_geometry"
+    }
+  ],
+  "palette_reference": "docs/public/media/vtol/E_Heli_Body_06.png",
+  "generation": "image_gen; exact prompts in prompts.json",
+  "review": {
+    "yak141": "long fuselage, pointed nose, rectangular intake, high wing, twin fins compared against drawing and photo",
+    "harrier": "GR3 nose, round intake, single fin compared against photo; duplicate rear nozzle corrected to two visible side nozzles",
+    "f35b": "angular nose and intake, canopy, twin fins, rear nozzle compared against USMC photo"
+  },
+  "effects": "no flame baked into body; engine effects not yet made",
+  "previous_version": "../20261027/manifest.json",
+  "runtime_assets": "Art/Extensions/VTOL_*.png; byte-identical approved originals, downsampled to width512 once at runtime"
+}

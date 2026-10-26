@@ -1,7 +1,10 @@
+#include "VTOL.hpp"
+#import "HMResources.h"
 #import "HMGameView.h"
 #import "HMValidationControls.h"
 #import "HMGLRenderer.h"
-#import <QuartzCore/CAEAGLLayer.h>
+#import "HMGLPlatform.h"
+#include "KeyboardInput.hpp"
 #import "HMMedia.h"
 #import "HMMenus.h"
 #import "HMGameHUD.h"
@@ -9,8 +12,11 @@
 #if defined(HM_VALIDATION) && HM_VALIDATION
 #import "HMValidationPanel.h"
 #endif
+#if !TARGET_OS_OSX
 #import <CoreMotion/CoreMotion.h>
+#endif
 #import <mach/mach_time.h>
+#import <GameController/GameController.h>
 #import <TargetConditionals.h>
 #include "GameSession.hpp"
 #include "TiltState.hpp"
@@ -24,17 +30,36 @@
 
 @implementation HMGameView {
     HMMedia *_media;
+    #if !TARGET_OS_OSX
     UIGraphicsImageRenderer *_logicalRenderer; // CPU reference, offscreen validation only.
-    HMGLRenderer *_glRenderer;
     UILabel *_renderError;
+    #else
+    NSTextField *_renderError;
+    NSObject *_mouseToken;
+    #if HM_VALIDATION
+    HMValidationPanel *_nativeValidationPanel;
+    #endif
+    #endif
+    HMGLRenderer *_glRenderer;
+    heavymach::KeyboardInput _keyboardControls;
+    BOOL _keyboardSettingsOpen,_capturingKey,_settingsWasPaused;
+    unsigned _settingsSelection;
+#if TARGET_OS_OSX
+    NSTextField *_keyboardHelp;
+#else
+    UILabel *_keyboardHelp;
+#endif
+
     HMMenus *_menus;
     HMGameHUD *_hud;
+    #if !TARGET_OS_OSX
     CMMotionManager *_motion;
+    #endif
     NSTimer *_motionTimer;
     heavymach::TiltState _tilt;
     heavymach::CameraShake _titleShake, _worldShake;
     CGPoint _keyboardAim;
-    BOOL _hasKeyboardAim;
+    BOOL _hasKeyboardAim,_keyboardAimVisible;
     heavymach::PlayerPassives _passives;
     std::unique_ptr<heavymach::GameSession> _session;
     int _slotIndex, _ammoPreview;
@@ -55,27 +80,45 @@
     heavymach::TitleState _title;
     heavymach::LoadingTransition _loading;
     heavymach::Viewport _viewport;
-    CGFloat _canvasWidth, _hudScale;
+    CGFloat _canvasWidth, _canvasHeight, _hudScale;
     CGPoint _hudOffset;
-    BOOL _wideCanvasEnabled;
+    BOOL _wideCanvasEnabled,_appliedWideCanvas;
     CGRect _menuSafeRect;
-    NSHashTable<UITouch*> *_worldTouches, *_hudTouches;
+    NSHashTable<id> *_worldTouches, *_hudTouches;
     double _time, _retainedWorldTime;
     uint32_t _randomState;
     heavymach::Vector2 _retainedWorldCamera;
     BOOL _active, _trace, _resumeRequired;
     double _lastInteraction;
-    NSHashTable<UITouch*> *_heldTouches;
+    NSHashTable<id> *_heldTouches;
     int _traceSecond;
 #if defined(HM_VALIDATION) && HM_VALIDATION
+    #if TARGET_OS_OSX
+    NSButton *_validationButton;
+    #else
     UIButton *_validationButton;
+    #endif
     HMValidationControls *_validationControls;
     std::optional<heavymach::ValidationScenario> _validationFixture;
 #endif
 }
+#if !TARGET_OS_OSX
 + (Class)layerClass { return CAEAGLLayer.class; }
+#else
+- (BOOL)isFlipped {return YES;}
+- (CGFloat)contentScaleFactor {return self.window.backingScaleFactor?:NSScreen.mainScreen.backingScaleFactor;}
+- (void)setErrorText:(NSString*)text {_renderError.stringValue=text?:@"";_renderError.hidden=!text.length;}
+#endif
 - (instancetype)initWithFrame:(CGRect)frame {
     if ((self=[super initWithFrame:frame])) {
+#if TARGET_OS_OSX
+        self.wantsBestResolutionOpenGLSurface=YES;
+        _mouseToken=[NSObject new];
+        _glRenderer=[HMGLRenderer new];
+        _renderError=[NSTextField wrappingLabelWithString:@""];
+        _renderError.textColor=NSColor.whiteColor;_renderError.hidden=YES;
+        [self addSubview:_renderError];
+#else
         self.backgroundColor=UIColor.blackColor;
         self.multipleTouchEnabled=YES;
         self.contentScaleFactor=UIScreen.mainScreen.nativeScale;
@@ -83,22 +126,48 @@
         ((CAEAGLLayer*)self.layer).drawableProperties=@{kEAGLDrawablePropertyRetainedBacking:@NO,kEAGLDrawablePropertyColorFormat:kEAGLColorFormatRGB565};
         _glRenderer=[HMGLRenderer new];
         _renderError=[[UILabel alloc] initWithFrame:self.bounds];
-        _renderError.textColor=UIColor.whiteColor;_renderError.numberOfLines=0;
+        _renderError.textColor=HMWhiteColor();_renderError.numberOfLines=0;
         _renderError.userInteractionEnabled=NO;_renderError.hidden=YES;
         [self addSubview:_renderError];
+#endif
+#if TARGET_OS_OSX
+        _keyboardHelp=[NSTextField wrappingLabelWithString:@""];
+        _keyboardHelp.drawsBackground=YES;_keyboardHelp.backgroundColor=NSColor.blackColor;
+        _keyboardHelp.textColor=NSColor.whiteColor;_keyboardHelp.font=[NSFont monospacedSystemFontOfSize:15 weight:NSFontWeightRegular];
+#else
+        _keyboardHelp=[UILabel new];_keyboardHelp.numberOfLines=0;_keyboardHelp.backgroundColor=UIColor.blackColor;
+        _keyboardHelp.textColor=UIColor.whiteColor;_keyboardHelp.font=[UIFont monospacedSystemFontOfSize:15 weight:UIFontWeightRegular];
+#endif
+        _keyboardHelp.hidden=YES;[self addSubview:_keyboardHelp];
+        NSArray *mapping=[NSUserDefaults.standardUserDefaults arrayForKey:@"KeyboardBindingsV1"];
+        if(mapping.count==heavymach::KeyboardInput::count){
+            auto candidate=_keyboardControls.bindings;bool valid=true;std::array<bool,256> seen{};
+            for(unsigned i=0;i<candidate.size();++i){unsigned code=[mapping[i] unsignedIntValue];if(!code||code>=256||code==0xe3||code==0xe7||seen[code]){valid=false;break;}seen[code]=true;candidate[i]=code;}
+            if(valid)_keyboardControls.bindings=candidate;
+        }
+        [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(keyboardDisconnected:) name:GCKeyboardDidDisconnectNotification object:nil];
         _heldTouches=[NSHashTable weakObjectsHashTable];_worldTouches=[NSHashTable weakObjectsHashTable];_hudTouches=[NSHashTable weakObjectsHashTable];_lastInteraction=[self interactionTime];
-        _canvasWidth=480;_hudScale=1;
-        _wideCanvasEnabled=YES;
+        _canvasWidth=480;_canvasHeight=320;_hudScale=1;
+        _wideCanvasEnabled=YES;_appliedWideCanvas=YES;
         _media=[HMMedia new];_media.textureRenderer=_glRenderer; _active=YES;_ammoPreview=-1;
+#if !TARGET_OS_OSX
         UIGraphicsImageRendererFormat *format=[UIGraphicsImageRendererFormat defaultFormat];
         format.scale=1;format.opaque=YES;format.preferredRange=UIGraphicsImageRendererFormatRangeStandard;
         _logicalRenderer=[[UIGraphicsImageRenderer alloc] initWithSize:CGSizeMake(480,320) format:format];
+#endif
         _randomState=uint32_t(mach_absolute_time());
         _trace=[NSProcessInfo.processInfo.environment[@"HM_TRACE"] isEqualToString:@"1"];
+#if TARGET_OS_OSX
+        NSURL *directory=[[NSFileManager.defaultManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask].firstObject URLByAppendingPathComponent:NSBundle.mainBundle.bundleIdentifier];
+        [NSFileManager.defaultManager createDirectoryAtURL:directory withIntermediateDirectories:YES attributes:nil error:nil];
+        _saveURL=[directory URLByAppendingPathComponent:@"HvM.dat"];
+#else
         _saveURL=[[NSFileManager.defaultManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].firstObject URLByAppendingPathComponent:@"HvM.dat"];
+#endif
         try {
-            NSString *raw=[NSBundle.mainBundle.resourcePath stringByAppendingPathComponent:@"RawData"];
+            NSString *raw=[HMGameResourceBundle().resourcePath stringByAppendingPathComponent:@"RawData"];
             _data=heavymach::GameData::loadDirectory(raw.fileSystemRepresentation);
+            heavymach::addVTOLExpansion(_data);
             if ([NSFileManager.defaultManager fileExistsAtPath:_saveURL.path]) {
                 NSError *error=nil;
                 NSData *bytes=[NSData dataWithContentsOfURL:_saveURL options:0 error:&error];
@@ -128,8 +197,10 @@
         _hud.button=^(int identifier,int state) {[weakSelf gameButton:identifier state:state];};
         _hud.upgradeClosed=^{[weakSelf finishUpgrade];};
         [self prepareScreenResources:1];
+#if !TARGET_OS_OSX
         _motion=[CMMotionManager new];
         if (_motion.accelerometerAvailable) [_motion startAccelerometerUpdates];
+#endif
         // The host polls the latest SDL sample at the original 50 Hz delegate interval.
         [self scheduleOriginalMotionTimer:CACurrentMediaTime()+heavymach::TiltState::interval];
         // Original guest NSTimer @0x20b8 runs through touchHLE's deadline rules.
@@ -137,6 +208,12 @@
         self.accessibilityIdentifier=@"HeavyMach.Restored.GameView";
         self.accessibilityLabel=@"Heavy Mach";
 #if defined(HM_VALIDATION) && HM_VALIDATION
+#if TARGET_OS_OSX
+        _validationButton=[NSButton buttonWithTitle:@"검증" target:self action:@selector(openValidation)];
+        [self addSubview:_validationButton];
+        _validationControls=[HMValidationControls new];_validationControls.target=self;_validationControls.action=@selector(validationDirectionChanged:);
+        [self addSubview:_validationControls];
+#else
         _validationButton=[UIButton buttonWithType:UIButtonTypeSystem];
         [_validationButton setTitle:@"검증" forState:UIControlStateNormal];
         _validationButton.backgroundColor=[UIColor.systemBackgroundColor colorWithAlphaComponent:.9];
@@ -147,11 +224,15 @@
         [_validationControls addTarget:self action:@selector(validationDirectionChanged:) forControlEvents:UIControlEventValueChanged];
         [self addSubview:_validationControls];
 #endif
+#endif
     }
     return self;
 }
 #if defined(HM_VALIDATION) && HM_VALIDATION
 - (void)validationDirectionChanged:(HMValidationControls *)sender {
+#if TARGET_OS_OSX
+    [self.window makeFirstResponder:self];
+#endif
     _leftPressed=NO;_rightPressed=NO;_upPressed=NO;_downPressed=NO;
 }
 - (void)stopValidationDirection {
@@ -162,7 +243,11 @@
     _validationControls.selectedSegmentIndex=1+int(_rightPressed)-int(_leftPressed);
 }
 - (void)openValidation {
+#if TARGET_OS_OSX
+    if(_nativeValidationPanel.window.visible)return;
+#else
     UIViewController *presenter=self.window.rootViewController;if(!presenter||presenter.presentedViewController)return;
+#endif
     [self stopValidationDirection];
     HMValidationPanel *panel=[[HMValidationPanel alloc] initWithData:&_data];
     __weak HMGameView *weakSelf=self;
@@ -173,23 +258,32 @@
     panel.closed=^{HMGameView *view=weakSelf;if(view&&view->_session.get()==pausedSession&&view->_session)view->_session->setPaused(wasPaused||view->_resumeRequired);};
     panel.applyFixture=^(const heavymach::ValidationScenario& scenario){
         HMGameView *view=weakSelf;if(!view)return;
-        view->_validationFixture=scenario;view->_loadError=nil;view->_loading=heavymach::LoadingTransition{};
+        view->_resumeRequired=NO;view->_validationFixture=scenario;view->_loadError=nil;view->_loading=heavymach::LoadingTransition{};
         [view startSlot:0 mode:0 mission:scenario.mission stage:scenario.stage];[view persistSave];
     };
-    panel.resumeSave=^{[weakSelf resumeValidationSave];};
+    panel.resumeSave=^{HMGameView* view=weakSelf;if(view)view->_resumeRequired=NO;[view resumeValidationSave];};
     panel.addExperience=^{HMGameView *view=weakSelf;if(view&&view->_session){
         view->_session->validationAddExperience(1);[view consumeGameEvents];
         NSLog(@"HM_VALIDATION actual addExperience(1): exp=%d level=%d",view->_save.slots[view->_slotIndex].experience(),view->_save.slots[view->_slotIndex].level());
     }};
+#if TARGET_OS_OSX
+    _nativeValidationPanel=panel;[panel showWindow:self];
+#else
     [presenter presentViewController:panel animated:YES completion:nil];
+#endif
 }
 - (void)resumeValidationSave {
     // Never applies fixture defaults here. Resume the validation bundle's own save.
     NSUserDefaults *defaults=NSUserDefaults.standardUserDefaults;
     int slot=int([defaults integerForKey:@"validation.resume.slot"]);
     if(slot<0||slot>=3||!_save.slots[slot].occupied()){
+#if TARGET_OS_OSX
+        NSAlert *alert=[NSAlert new];alert.messageText=@"저장 없음";alert.informativeText=@"초기 조건 재설정 후 시작으로 검증 저장을 먼저 만드세요.";[alert runModal];
+#else
         UIAlertController *alert=[UIAlertController alertControllerWithTitle:@"저장 없음" message:@"초기 조건 재설정 후 시작으로 검증 저장을 먼저 만드세요." preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil]];[self.window.rootViewController presentViewController:alert animated:YES completion:nil];return;
+        [alert addAction:[UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil]];[self.window.rootViewController presentViewController:alert animated:YES completion:nil];
+#endif
+        return;
     }
     _validationFixture.reset();_loading=heavymach::LoadingTransition{};
     int mission=[defaults objectForKey:@"validation.resume.mission"]?int([defaults integerForKey:@"validation.resume.mission"]):_save.slots[slot].i32(0xc);
@@ -244,7 +338,11 @@
         // even when openMap's addExp(0) opens an upgrade from leftover EXP.
         _session->setPaused(false);[self updateCanvasGeometry];
         [self noteInteraction];if(_resumeRequired){[self pauseForInterruption];_session->prepareInitialPausedFrame();}
+#if TARGET_OS_OSX
+        [self.window makeFirstResponder:self];
+#else
         [self becomeFirstResponder];
+#endif
     } catch (const std::exception& error) {_loadError=[NSString stringWithUTF8String:error.what()];}
 }
 - (void)requestScreen:(int)screen {
@@ -294,6 +392,13 @@
     if(oldScope)[_media releaseScope:oldScope];
 }
 - (void)drawLoading {
+    _media.presentationOffset=CGPointZero;
+    if(_canvasHeight>320){
+        [_media resetClip];[_media setDrawingOffset:CGPointZero];[_media setDrawingScale:1];
+        const CGFloat sy=_canvasHeight/320,sx=_canvasWidth/480;
+        for(const auto& sprite:_loading.sprites())[_media draw:[NSString stringWithUTF8String:sprite.tile.c_str()] x:sprite.position.x*sx y:sprite.position.y*sy columns:sprite.cols rows:sprite.rows tile:sprite.frame scaleX:sprite.scale.x*sx scaleY:sprite.scale.y*sy rotation:sprite.rotation alpha:sprite.alpha blend:sprite.blend];
+        return;
+    }
     if(_canvasWidth>480&&!_session){
         CGFloat center=(_canvasWidth-480)/2;
         for(int side=-1;side<=1;++side){
@@ -316,11 +421,11 @@
 #if defined(HM_VALIDATION) && HM_VALIDATION
     [self stopValidationDirection];
 #endif
-    _leftPressed=_rightPressed=_upPressed=_downPressed=_keyboardFire=NO;_hasKeyboardAim=NO;
+    _leftPressed=_rightPressed=_upPressed=_downPressed=_keyboardFire=NO;_hasKeyboardAim=NO;_keyboardAimVisible=NO;
     [_heldTouches removeAllObjects];[_worldTouches removeAllObjects];[_hudTouches removeAllObjects];[_hud cancelInput];
     if(_session)_session->releaseFire();
     else if(_showMenu)[_menus touch:CGPointMake(-1000,-1000) state:3];
-    _tilt={};
+    _tilt={};_keyboardControls.cancel();
 }
 - (void)pauseForInterruption {
     [self cancelGameInput];
@@ -369,9 +474,13 @@
             if(world.paused){
                 // 0x17c4c: original CFString bytes at file offset0x24964.
                 [_media sound:@"UI_Click"];
+#if TARGET_OS_OSX
+                [NSWorkspace.sharedWorkspace openURL:[NSURL URLWithString:@"http://www.indiean.com"]];
+#else
                 [UIApplication.sharedApplication openURL:[NSURL URLWithString:@"http://www.indiean.com"] options:@{} completionHandler:^(BOOL success){
                     if(!success)NSLog(@"Original website URL could not be opened");
                 }];
+#endif
             }break;
         case 1100: _session->cycleWeapon();[_media sound:@"Game_ChangeWeapon"];break; // 0x17c4c: release, then sfxID4.
         case 1200:case 1201:case 1202: _session->selectUpgrade(identifier-1200);break;
@@ -420,52 +529,128 @@
         } else if (e.kind==SessionEventKind::Unsupported) NSLog(@"Unrestored behavior: %s",e.text.c_str());
     }
 }
+- (void)keyboardDisconnected:(NSNotification*)notification {[self cancelGameInput];}
+- (NSString*)keyName:(unsigned)code {
+    if(code>=4&&code<=29)return [NSString stringWithFormat:@"%c",'A'+code-4];
+    if(code>=30&&code<=38)return [NSString stringWithFormat:@"%u",code-29];
+    switch(code){case 39:return @"0";case 0x28:return @"Enter";case 0x29:return @"Esc";case 0x2b:return @"Tab";case 0x2c:return @"Space";case 0x4f:return @"→";case 0x50:return @"←";case 0x51:return @"↓";case 0x52:return @"↑";case 0xe1:return @"Shift";case 0xe5:return @"Right Shift";case 0x3b:return @"F2";default:return [NSString stringWithFormat:@"HID %02X",code];}
+}
+- (void)refreshKeyboardHelp {
+    NSArray *names=@[@"왼쪽 이동",@"오른쪽 이동",@"왼쪽 조준",@"오른쪽 조준",@"위로 조준",@"아래로 조준",@"사격",@"점프",@"이전 무기",@"다음 무기",@"천천히 이동·조준",@"선택",@"일시정지·뒤로",@"다음 버튼",@"키 설정"];
+    NSMutableString *text=[NSMutableString stringWithString:@"키 설정\n↑↓ 선택 · Enter 키 변경 · Backspace 기본값 · Esc 닫기\n같은 키를 지정하면 두 동작의 키가 서로 바뀝니다.\n\n"];
+    for(unsigned i=0;i<names.count;++i)[text appendFormat:@"%@ %@  —  %@\n",i==_settingsSelection?@"▶":@"  ",names[i],[self keyName:_keyboardControls.bindings[i]]];
+    if(_capturingKey)[text appendString:@"\n사용할 키를 누르세요. Esc: 취소"];
+#if TARGET_OS_OSX
+    _keyboardHelp.stringValue=text;
+#else
+    _keyboardHelp.text=text;
+#endif
+    _keyboardHelp.frame=CGRectInset(self.bounds,24,24);_keyboardHelp.hidden=!_keyboardSettingsOpen;
+}
+- (void)saveKeyboardBindings {
+    NSMutableArray *values=[NSMutableArray new];for(auto key:_keyboardControls.bindings)[values addObject:@(key)];
+    [NSUserDefaults.standardUserDefaults setObject:values forKey:@"KeyboardBindingsV1"];
+}
+- (void)toggleKeyboardSettings {
+    if(!_keyboardSettingsOpen){_settingsWasPaused=_session&&_session->world().paused;[self cancelGameInput];if(_session)_session->setPaused(true);}
+    else {if(_session)_session->setPaused(_settingsWasPaused||_resumeRequired);[self cancelGameInput];}
+    _keyboardSettingsOpen=!_keyboardSettingsOpen;_capturingKey=NO;[self refreshKeyboardHelp];
+}
+- (void)ensureKeyboardAim {
+    _keyboardAimVisible=YES;
+    if(_hasKeyboardAim||!_session)return;
+    auto player=_session->player();if(!player)return;auto point=heavymach::Vector2{player->position.x-_session->world().camera.x,player->position.y-_session->world().camera.y};point.x+=_canvasWidth/2;point.y+=160;_keyboardAim=CGPointMake(std::min(float(_canvasWidth-8),point.x+100),std::clamp(point.y+20,8.f,312.f));_hasKeyboardAim=YES;
+}
+- (BOOL)handleKeyCode:(unsigned)code pressed:(BOOL)pressed {
+    using A=heavymach::KeyAction;
+    if(!_active)return NO;
+    if(_keyboardSettingsOpen){
+        if(!_keyboardControls.set(code,pressed)||!pressed)return YES;
+        if(_capturingKey){if(code!=0x29&&_keyboardControls.remap(A(_settingsSelection),code))[self saveKeyboardBindings];_capturingKey=NO;}
+        else if(code==0x29){[self toggleKeyboardSettings];return YES;}
+        else if(code==0x52)_settingsSelection=(_settingsSelection+heavymach::KeyboardInput::count-1)%heavymach::KeyboardInput::count;
+        else if(code==0x51||code==0x2b)_settingsSelection=(_settingsSelection+1)%heavymach::KeyboardInput::count;
+        else if(code==0x28)_capturingKey=YES;
+        else if(code==0x2a){_keyboardControls.bindings=heavymach::KeyboardInput::defaults;[self saveKeyboardBindings];}
+        [self refreshKeyboardHelp];return YES;
+    }
+    if(!_keyboardControls.handles(code))return NO;
+    BOOL changed=_keyboardControls.set(code,pressed);if(!changed)return YES;
+    [self noteInteraction];
+    _leftPressed=_keyboardControls.down(A::left);_rightPressed=_keyboardControls.down(A::right);
+    if(_keyboardControls.is(code,A::left)||_keyboardControls.is(code,A::right)){
+        if(!_keyboardControls.moving()){_keyboardControls.virtualTilt=0;_tilt={};}
+    }
+    if(pressed&&_keyboardControls.is(code,A::settings)){[self toggleKeyboardSettings];return YES;}
+    if(_loading.visible())return YES;
+    if(!pressed&&_keyboardControls.is(code,A::fire)){
+        _keyboardFire=NO;if(_session&&!_worldTouches.count)_session->releaseFire();return YES;
+    }
+    if(pressed&&_keyboardControls.is(code,A::back)){
+        if(_session){if(_gameMenu)[self gameButton:101 state:2];else if(![self worldInputBlocked])[self gameButton:100 state:2];}
+        else if(_showMenu)[self requestScreen:3];return YES;
+    }
+    if(_showMenu||(_session&&[self worldInputBlocked])){
+        if(!pressed)return YES;
+        int delta=0;
+        if(_keyboardControls.is(code,A::focus))delta=_keyboardControls.fine()?-1:1;
+        else if(_keyboardControls.is(code,A::aimLeft)||_keyboardControls.is(code,A::aimUp))delta=-1;
+        else if(_keyboardControls.is(code,A::aimRight)||_keyboardControls.is(code,A::aimDown))delta=1;
+        if(delta){if(_showMenu)[_menus moveKeyboardFocus:delta];else [_hud moveKeyboardFocus:delta];}
+        if(_keyboardControls.is(code,A::confirm)){if(_showMenu)[_menus activateKeyboardFocus];else [_hud activateKeyboardFocus];}
+        return YES;
+    }
+    if(_session){
+        if(pressed&&_keyboardControls.is(code,A::fire)){[self ensureKeyboardAim];_keyboardFire=YES;_session->touch({float(_keyboardAim.x),float(_keyboardAim.y)},0);}
+        if(pressed&&_keyboardControls.is(code,A::jump))[self gameButton:1000 state:0];
+        if(pressed&&(_keyboardControls.is(code,A::nextWeapon)||_keyboardControls.is(code,A::previousWeapon))){
+            _session->cycleWeapon(_keyboardControls.is(code,A::previousWeapon)?-1:1);[_media sound:@"Game_ChangeWeapon"];
+        }
+        [self consumeGameEvents];
+    }else if(pressed&&_keyboardControls.is(code,A::confirm)&&_title.released(_time))[self requestScreen:3];
+    return YES;
+}
+- (void)updateKeyboardAim {
+    if(!_session||[self worldInputBlocked]||_keyboardSettingsOpen)return;
+    if(_keyboardControls.aiming()){
+        [self ensureKeyboardAim];float x=_keyboardAim.x,y=_keyboardAim.y;_keyboardControls.aim(x,y,_canvasWidth,_canvasHeight);_keyboardAim=CGPointMake(x,y);[self noteInteraction];
+        if(_keyboardFire)_session->touch({x,y},1);
+    }
+}
+- (void)drawKeyboardIndicators {
+    if(_loading.visible())return;
+    CGRect rect=CGRectZero;
+    if(_showMenu)rect=CGRectOffset([_menus keyboardFocusRect],0,(_canvasHeight-320)/2);
+    else if(_session&&[self worldInputBlocked]){rect=[_hud keyboardFocusRect];rect=CGRectMake(rect.origin.x*_hudScale+_hudOffset.x,rect.origin.y*_hudScale+_hudOffset.y,rect.size.width*_hudScale,rect.size.height*_hudScale);}
+    else if(_hasKeyboardAim&&_keyboardAimVisible&&_session)rect=CGRectMake(_keyboardAim.x-4,_keyboardAim.y-4,8,8);
+    [_glRenderer resetClip];[_glRenderer drawInputOutline:rect];
+}
+#if TARGET_OS_OSX
+- (BOOL)acceptsFirstResponder {return YES;}
+- (void)viewDidMoveToWindow {[super viewDidMoveToWindow];if(self.window)[self.window makeFirstResponder:self];}
+- (unsigned)HIDCode:(NSEvent*)event {
+    static const unsigned codes[128]={
+        4,22,7,9,11,10,29,27,6,25,0,5,20,26,8,21,28,23,30,31,32,33,35,34,46,38,36,45,37,39,48,18,
+        24,47,12,19,40,15,13,52,14,51,49,54,56,17,16,55,43,44,53,42,0,41,231,227,225,57,226,224,229,230,228,0,
+        108,99,0,85,0,87,0,83,0,0,0,84,88,0,86,109,110,103,98,89,90,91,92,93,94,95,111,96,97,0,0,0,
+        62,63,64,60,65,66,0,68,0,104,107,105,0,67,0,69,0,106,73,74,75,76,61,77,59,78,58,80,79,81,82,0};
+    return event.keyCode<128?codes[event.keyCode]:0;
+}
+- (void)keyDown:(NSEvent*)event {if(event.modifierFlags&NSEventModifierFlagCommand){[self cancelGameInput];[super keyDown:event];return;}unsigned code=[self HIDCode:event];if(!code||![self handleKeyCode:code pressed:YES])[super keyDown:event];}
+- (void)keyUp:(NSEvent*)event {unsigned code=[self HIDCode:event];if(!code||![self handleKeyCode:code pressed:NO])[super keyUp:event];}
+- (void)flagsChanged:(NSEvent*)event {unsigned code=[self HIDCode:event];NSEventModifierFlags flag=code==0xe1||code==0xe5?NSEventModifierFlagShift:code==0xe0||code==0xe4?NSEventModifierFlagControl:NSEventModifierFlagOption;[self handleKeyCode:code pressed:(event.modifierFlags&flag)!=0];}
+- (BOOL)resignFirstResponder {[self cancelGameInput];return [super resignFirstResponder];}
+#else
 - (BOOL)canBecomeFirstResponder {return YES;}
 - (void)didMoveToWindow {[super didMoveToWindow];if(self.window)[self becomeFirstResponder];}
-- (void)pressesBegan:(NSSet<UIPress *> *)presses withEvent:(UIPressesEvent *)event {
-    if(!_active)return;[self noteInteraction];
-    BOOL handled=NO;
-    for (UIPress *press in presses) {
-#if defined(HM_VALIDATION) && HM_VALIDATION
-        if ((press.key.keyCode==UIKeyboardHIDUsageKeyboardLeftShift || press.key.keyCode==UIKeyboardHIDUsageKeyboardRightShift || press.key.keyCode==UIKeyboardHIDUsageKeyboardF) && _session) {
-            _keyboardFire=YES;handled=YES;
-            if (auto p=_session->player()) _session->touch(_hasKeyboardAim?heavymach::Vector2{float(_keyboardAim.x),float(_keyboardAim.y)}:heavymach::Vector2{float(_canvasWidth-10),p->position.y-_session->world().camera.y+185},0);
-        }
-#endif
-        if (press.key.keyCode==UIKeyboardHIDUsageKeyboardLeftArrow) {_leftPressed=YES;handled=YES;}
-        if (press.key.keyCode==UIKeyboardHIDUsageKeyboardRightArrow) {_rightPressed=YES;handled=YES;}
-        if (press.key.keyCode==UIKeyboardHIDUsageKeyboardUpArrow) {_upPressed=YES;handled=YES;}
-        if (press.key.keyCode==UIKeyboardHIDUsageKeyboardDownArrow) {_downPressed=YES;handled=YES;}
-#if defined(HM_VALIDATION) && HM_VALIDATION
-        if(press.key.keyCode>=UIKeyboardHIDUsageKeyboardRightArrow && press.key.keyCode<=UIKeyboardHIDUsageKeyboardUpArrow)[self updateValidationKeyboardDirection];
-        if (press.key.keyCode==UIKeyboardHIDUsageKeyboardSpacebar && _session) {_session->booster();handled=YES;}
-#endif
-    }
-    if(!handled)[super pressesBegan:presses withEvent:event];
+- (void)pressesBegan:(NSSet<UIPress*>*)presses withEvent:(UIPressesEvent*)event {
+    NSMutableSet *unhandled=[NSMutableSet new];for(UIPress* press in presses){if(!press.key||(press.key.modifierFlags&UIKeyModifierCommand)||![self handleKeyCode:unsigned(press.key.keyCode) pressed:YES])[unhandled addObject:press];}if(unhandled.count)[super pressesBegan:unhandled withEvent:event];
 }
-- (void)pressesEnded:(NSSet<UIPress *> *)presses withEvent:(UIPressesEvent *)event {
-    for (UIPress *press in presses) {
-#if defined(HM_VALIDATION) && HM_VALIDATION
-        if (press.key.keyCode==UIKeyboardHIDUsageKeyboardLeftShift || press.key.keyCode==UIKeyboardHIDUsageKeyboardRightShift || press.key.keyCode==UIKeyboardHIDUsageKeyboardF) {
-            _keyboardFire=NO;if(_session)_session->releaseFire();
-        }
-#endif
-        if (press.key.keyCode==UIKeyboardHIDUsageKeyboardLeftArrow)_leftPressed=NO;
-        if (press.key.keyCode==UIKeyboardHIDUsageKeyboardRightArrow)_rightPressed=NO;
-        if (press.key.keyCode==UIKeyboardHIDUsageKeyboardUpArrow)_upPressed=NO;
-        if (press.key.keyCode==UIKeyboardHIDUsageKeyboardDownArrow)_downPressed=NO;
-#if defined(HM_VALIDATION) && HM_VALIDATION
-        if(press.key.keyCode>=UIKeyboardHIDUsageKeyboardRightArrow && press.key.keyCode<=UIKeyboardHIDUsageKeyboardUpArrow)[self updateValidationKeyboardDirection];
-#endif
-    }
-    [super pressesEnded:presses withEvent:event];
+- (void)pressesEnded:(NSSet<UIPress*>*)presses withEvent:(UIPressesEvent*)event {
+    NSMutableSet *unhandled=[NSMutableSet new];for(UIPress* press in presses)if(!press.key||![self handleKeyCode:unsigned(press.key.keyCode) pressed:NO])[unhandled addObject:press];if(unhandled.count)[super pressesEnded:unhandled withEvent:event];
 }
-- (void)pressesCancelled:(NSSet<UIPress *> *)presses withEvent:(UIPressesEvent *)event {
-#if defined(HM_VALIDATION) && HM_VALIDATION
-    [self stopValidationDirection];
+- (void)pressesCancelled:(NSSet<UIPress*>*)presses withEvent:(UIPressesEvent*)event {[self cancelGameInput];[super pressesCancelled:presses withEvent:event];}
 #endif
-    _leftPressed=NO;_rightPressed=NO;_upPressed=NO;_downPressed=NO;_keyboardFire=NO;if(_session)_session->releaseFire();[super pressesCancelled:presses withEvent:event];
-}
 - (void)scheduleOriginalMotionTimer:(double)due {
     _nextMotionDue=due;
     __weak HMGameView *owner=self;
@@ -502,11 +687,22 @@
     state^=state<<13;state^=state>>17;state^=state<<5;
     _randomState=state;return int32_t(state&0x7fffffff);
 }
+#if !TARGET_OS_OSX
 - (UIInterfaceOrientation)accelerationInterfaceOrientation {
     return self.window.windowScene.interfaceOrientation;
 }
+#endif
 - (void)sampleOriginalAcceleration {
     if(!_active)return;
+    if(_keyboardControls.moving()){
+        float y=_keyboardControls.sample();
+        // Digital release has no physical sensor settling; stop immediately.
+        if(!_keyboardControls.moving())_tilt={};else _tilt.sample(0,y,-std::sqrt(1-y*y));
+        return;
+    }
+#if TARGET_OS_OSX
+    float x=0,y=0,z=-1;
+#else
     CMAccelerometerData *sample=_motion.accelerometerData;
     CMAcceleration acceleration=sample?sample.acceleration:CMAcceleration{0,0,-1};
     // SDL CoreMotion stores m/s^2 in float, then touchHLE converts back to g.
@@ -520,6 +716,7 @@
     // Normalize real samples before filtering. Screen-relative manual inputs
     // below already use the guest axes and must not be flipped again.
     if([self accelerationInterfaceOrientation]==UIInterfaceOrientationLandscapeRight){x=-x;y=-y;}
+#endif
 #if defined(HM_VALIDATION) && HM_VALIDATION
     // Same path on physical iPhone and Simulator; feed the original filter.
     if(_validationControls.selectedSegmentIndex!=3 || _leftPressed||_rightPressed||_upPressed||_downPressed){
@@ -527,17 +724,27 @@
         y=(_leftPressed||_rightPressed)?float(int(_rightPressed)-int(_leftPressed))*.2f:
           (_validationControls.selectedSegmentIndex==3?0.f:float(_validationControls.selectedSegmentIndex-1)*.2f);
         z=-std::sqrt(1.f-x*x-y*y);
-    } else if(!_motion.accelerometerAvailable){x=0;y=0;z=-1;}
+    }
+#if !TARGET_OS_OSX
+    else if(!_motion.accelerometerAvailable){x=0;y=0;z=-1;}
+#endif
 #elif TARGET_OS_SIMULATOR
     if(_leftPressed||_rightPressed||_upPressed||_downPressed){
         x=float(int(_downPressed)-int(_upPressed))*.2f;
         y=float(int(_rightPressed)-int(_leftPressed))*.2f;
         z=-std::sqrt(1.f-x*x-y*y);
-    } else if(!_motion.accelerometerAvailable){x=0;y=0;z=-1;}
+    }
+#if !TARGET_OS_OSX
+    else if(!_motion.accelerometerAvailable){x=0;y=0;z=-1;}
+#endif
 #endif
     _tilt.sample(x,y,z);
 }
-- (void)dealloc {[_frameTimer invalidate];[_motionTimer invalidate];[_motion stopAccelerometerUpdates];}
+- (void)dealloc {[NSNotificationCenter.defaultCenter removeObserver:self];[_frameTimer invalidate];[_motionTimer invalidate];
+#if !TARGET_OS_OSX
+    [_motion stopAccelerometerUpdates];
+#endif
+}
 - (void)setApplicationActive:(BOOL)active {
     // Resign-active happens before background. The duplicate background call
     // must not issue GL commands after the app has already become inactive.
@@ -546,11 +753,17 @@
         if(_loading.visible())_resumeRequired=YES;
         [self pauseForInterruption];
         [_frameTimer invalidate];_frameTimer=nil;[_motionTimer invalidate];_motionTimer=nil;
-        [_motion stopAccelerometerUpdates];[_media.audio setApplicationActive:NO];
+
+#if !TARGET_OS_OSX
+    [_motion stopAccelerometerUpdates];
+#endif
+[_media.audio setApplicationActive:NO];
         [_glRenderer finish];_active=NO;
     }else{
         _active=YES;_tilt={};[self noteInteraction];[_media.audio setApplicationActive:YES];
+#if !TARGET_OS_OSX
         if(_motion.accelerometerAvailable)[_motion startAccelerometerUpdates];
+#endif
         [self scheduleOriginalTimer:CACurrentMediaTime()+0.01666666753590107];
         [self scheduleOriginalMotionTimer:CACurrentMediaTime()+heavymach::TiltState::interval];
         // Pause/menu state is intentionally retained until an explicit action.
@@ -564,40 +777,55 @@
     CGRect bounds=self.bounds;
     const int dw=int(std::lround(bounds.size.width*self.contentScaleFactor));
     const int dh=int(std::lround(bounds.size.height*self.contentScaleFactor));
-    auto canvas=heavymach::CanvasGeometry::forDrawable(dw,dh,_wideCanvasEnabled);
+    if(!_session||!_session->world().paused)_appliedWideCanvas=_wideCanvasEnabled;
+    auto canvas=heavymach::CanvasGeometry::forDrawable(dw,dh,_appliedWideCanvas);
     // A paused scene keeps its cached draw commands; apply mode changes before
     // the next simulation tick, never by collecting stateful visuals twice.
-    if(_session&&_session->world().paused)canvas.width=float(_canvasWidth);
-    _canvasWidth=canvas.width;
-    _viewport=heavymach::Viewport::drawable(dw,dh,self.contentScaleFactor,_canvasWidth);
+
+    _canvasWidth=canvas.width;_canvasHeight=canvas.height;
+    _viewport=heavymach::Viewport::drawable(dw,dh,self.contentScaleFactor,_canvasWidth,_canvasHeight);
     _viewport.x+=bounds.origin.x;_viewport.y+=bounds.origin.y;
-    _hudScale=1;_hudOffset=CGPointMake((_canvasWidth-480)/2,0);
-    _menuSafeRect=CGRectMake(0,0,_canvasWidth,320);
-    if(_canvasWidth>480 && _viewport.scale>0){
-        CGRect safe=UIEdgeInsetsInsetRect(bounds,self.safeAreaInsets);
+    _hudScale=1;_hudOffset=CGPointMake((_canvasWidth-480)/2,(_canvasHeight-320)/2);
+    _menuSafeRect=CGRectMake(0,0,_canvasWidth,_canvasHeight);
+    if((_canvasWidth>480||_canvasHeight>320) && _viewport.scale>0){
+        CGRect safe=[self safeContentRect];
         const CGFloat left=std::max(CGFloat(0),(CGRectGetMinX(safe)-_viewport.x)/_viewport.scale);
         const CGFloat right=std::min(_canvasWidth,(CGRectGetMaxX(safe)-_viewport.x)/_viewport.scale);
-        const CGFloat bottom=std::max(CGFloat(0),320-(CGRectGetMaxY(safe)-_viewport.y)/_viewport.verticalScale());
-        const CGFloat top=std::min(CGFloat(320),320-(CGRectGetMinY(safe)-_viewport.y)/_viewport.verticalScale());
+        const CGFloat bottom=std::max(CGFloat(0),_canvasHeight-(CGRectGetMaxY(safe)-_viewport.y)/_viewport.verticalScale());
+        const CGFloat top=std::min(_canvasHeight,_canvasHeight-(CGRectGetMinY(safe)-_viewport.y)/_viewport.verticalScale());
         _menuSafeRect=CGRectMake(left,bottom,right-left,top-bottom);
         _hudScale=std::max(CGFloat(.01),std::min({CGFloat(1),(right-left)/480,(top-bottom)/320}));
         _hudOffset=CGPointMake((left+right-480*_hudScale)/2,(bottom+top-320*_hudScale)/2);
     }
-    [_menus setCanvasWidth:_canvasWidth safeRect:_menuSafeRect];
+    [_menus setCanvasWidth:_canvasWidth safeRect:CGRectOffset(_menuSafeRect,0,-(_canvasHeight-320)/2)];
 #if defined(HM_VALIDATION) && HM_VALIDATION
     _validationControls.hidden=!_session||_showMenu;
 #endif
+    if(_session&&_session->canvasHeight()!=float(_canvasHeight))_session->setCanvasHeight(float(_canvasHeight));
     if(_session&&_session->canvasWidth()!=float(_canvasWidth))_session->setCanvasWidth(float(_canvasWidth));
 }
 - (BOOL)worldInputBlocked {
     if(!_session)return YES;
     return _loading.visible()||_gameMenu||_session->world().paused||_session->world().gameState!=0;
 }
+- (CGRect)safeContentRect {
+#if TARGET_OS_OSX
+    return self.bounds;
+#else
+    return UIEdgeInsetsInsetRect(self.bounds,self.safeAreaInsets);
+#endif
+}
+#if TARGET_OS_OSX
+- (void)layout {[super layout];[self layoutGameSurface];}
+- (void)layoutGameSurface {
+#else
 - (void)layoutSubviews {
     [super layoutSubviews];
+#endif
     [self updateCanvasGeometry];
+    if(_keyboardSettingsOpen)[self refreshKeyboardHelp];
 #if defined(HM_VALIDATION) && HM_VALIDATION
-    CGRect safe=UIEdgeInsetsInsetRect(self.bounds,self.safeAreaInsets);
+    CGRect safe=[self safeContentRect];
     _validationButton.frame=CGRectMake(CGRectGetMaxX(safe)-72,CGRectGetMinY(safe)+8,64,36);
     if(_viewport.x-CGRectGetMinX(safe)>=68)
         _validationControls.frame=CGRectMake(_viewport.x-68,CGRectGetMidY(safe)-94,60,188);
@@ -613,7 +841,7 @@
     _time+=0.01666666753590107; // Original constant 0x3f91111120000000.
     if(_session)_worldShake.tick(_time);
     else if(!_showMenu)_titleShake.tick(_time);
-    if (_loadError) return;
+    if (_loadError||_keyboardSettingsOpen) return;
     _loading.tick([self](heavymach::LoadingEvent event){
         switch(event.kind){
             case heavymach::LoadingEventKind::CloseSound:[self->_media sound:@"Loading_Close"];break;
@@ -624,6 +852,7 @@
     if (_loadError) return;
     if (_showMenu) {[_menus tick:_time];_passives.tick();[_hud tick:_time];return;}
     if (_session) {
+        [self updateKeyboardAim];
         // Pause menus and interrupted upgrades must also freeze passive timers.
         if(_gameMenu||(_resumeRequired&&_session->world().gameState==0)){[_hud tick:_time];return;}
         try {
@@ -658,30 +887,41 @@
 // Production submits directly to CAEAGLLayer. Readback is never used to present.
 - (void)renderOpenGLFrame {
     if (!_active || !self.window) return;
+#if TARGET_OS_OSX
+    _renderError.frame=CGRectInset(self.bounds,24,24);
+    [self setErrorText:_loadError ?: (_glRenderer?nil:@"OpenGL renderer unavailable")];
+    if(!_glRenderer||_loadError)return;
+    if(![_glRenderer setLogicalWidth:_canvasWidth height:_canvasHeight]||![_glRenderer beginFrame]){[self setErrorText:@"Game canvas allocation failed"];return;}
+    _media.glRenderer=_glRenderer;
+    @try {[self drawLogicalFrame];[self drawKeyboardIndicators];if(![_glRenderer presentToLayer:self viewport:CGRectMake(_viewport.x,_viewport.y,_canvasWidth*_viewport.scale,_canvasHeight*_viewport.verticalScale())])[self setErrorText:@"OpenGL presentation failed"];}
+    @finally {_media.glRenderer=nil;[_glRenderer endFrame];}
+#else
     _renderError.frame=CGRectInset(self.bounds,24,24);
     _renderError.text=_loadError ?: (_glRenderer?nil:@"OpenGL ES renderer unavailable");
     _renderError.hidden=(_renderError.text==nil);
     if (!_glRenderer || _loadError) return;
-    if(![_glRenderer setLogicalWidth:_canvasWidth height:320]){_renderError.text=@"Game canvas allocation failed";_renderError.hidden=NO;return;}
+    if(![_glRenderer setLogicalWidth:_canvasWidth height:_canvasHeight]){_renderError.text=@"Game canvas allocation failed";_renderError.hidden=NO;return;}
     if (![_glRenderer beginFrame]) { _renderError.text=@"OpenGL ES context unavailable";_renderError.hidden=NO;return; }
     _media.glRenderer=_glRenderer;
     @try {
-        [self drawLogicalFrame];
-        if(![_glRenderer presentToLayer:(CAEAGLLayer*)self.layer viewport:CGRectMake(_viewport.x,_viewport.y,_canvasWidth*_viewport.scale,320*_viewport.verticalScale())]) {
+        [self drawLogicalFrame];[self drawKeyboardIndicators];
+        if(![_glRenderer presentToLayer:(CAEAGLLayer*)self.layer viewport:CGRectMake(_viewport.x,_viewport.y,_canvasWidth*_viewport.scale,_canvasHeight*_viewport.verticalScale())]) {
             _renderError.text=@"OpenGL ES presentation failed";_renderError.hidden=NO;
         }
     } @finally { _media.glRenderer=nil;[_glRenderer endFrame]; }
+#endif
 }
 // The CPU path is kept as a comparison oracle for existing offscreen tests.
+#if !TARGET_OS_OSX
 - (void)drawRect:(CGRect)rect {
     if (self.window) return; // The original timer exclusively owns onscreen drawing.
-    CGContextRef ctx=UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(ctx,UIColor.blackColor.CGColor); CGContextFillRect(ctx,self.bounds);
+    CGContextRef ctx=HMCurrentGraphicsContext();
+    CGContextSetFillColorWithColor(ctx,HMBlackColor().CGColor); CGContextFillRect(ctx,self.bounds);
     // Expanded diagnostics use the same GPU scene. CPU raster remains a 480 oracle.
-    if(_canvasWidth>480){
-        if([_glRenderer setLogicalWidth:_canvasWidth height:320]&&[_glRenderer beginFrame]){
+    if(_canvasWidth>480||_canvasHeight>320){
+        if([_glRenderer setLogicalWidth:_canvasWidth height:_canvasHeight]&&[_glRenderer beginFrame]){
             _media.glRenderer=_glRenderer;[self drawLogicalFrame];_media.glRenderer=nil;[_glRenderer endFrame];
-            [[_glRenderer snapshot]drawInRect:CGRectMake(_viewport.x,_viewport.y,_canvasWidth*_viewport.scale,320*_viewport.verticalScale())];
+            [[_glRenderer snapshot]drawInRect:CGRectMake(_viewport.x,_viewport.y,_canvasWidth*_viewport.scale,_canvasHeight*_viewport.verticalScale())];
         }
         return;
     }
@@ -691,20 +931,26 @@
         [self drawLogicalFrame];
     }];
     CGContextSaveGState(ctx);CGContextSetInterpolationQuality(ctx,kCGInterpolationNone);
-    [frame drawInRect:CGRectMake(_viewport.x,_viewport.y,480*_viewport.scale,320*_viewport.verticalScale())];
+    [frame drawInRect:CGRectMake(_viewport.x,_viewport.y,480*_viewport.scale,_canvasHeight*_viewport.verticalScale())];
     CGContextRestoreGState(ctx);
 }
+#endif
 - (void)drawLogicalFrame {
-    CGContextRef ctx=_media.glRenderer?nullptr:UIGraphicsGetCurrentContext();
-    if(ctx){CGContextSetFillColorWithColor(ctx,UIColor.blackColor.CGColor);CGContextFillRect(ctx,CGRectMake(0,0,480,320));}
+    _media.presentationOffset=CGPointZero;
+    CGContextRef ctx=_media.glRenderer?nullptr:HMCurrentGraphicsContext();
+    if(ctx){CGContextSetFillColorWithColor(ctx,HMBlackColor().CGColor);CGContextFillRect(ctx,CGRectMake(0,0,480,320));}
     [_media setCameraOffset:CGPointZero];[_media setDrawingOffset:CGPointZero];[_media setDrawingScale:1];[_media resetClip];_media.resourceScope=@"shared";
     if(ctx){CGContextSaveGState(ctx);CGContextClipToRect(ctx,CGRectMake(0,0,480,320));}
     if (_loadError) {
-        if(ctx)[_loadError drawInRect:CGRectMake(24,100,432,180) withAttributes:@{NSForegroundColorAttributeName:UIColor.whiteColor,NSFontAttributeName:[UIFont systemFontOfSize:14]}];
+        if(ctx)[_loadError drawInRect:CGRectMake(24,100,432,180) withAttributes:@{NSForegroundColorAttributeName:HMWhiteColor(),NSFontAttributeName:HMSystemFont(14)}];
         if(ctx)CGContextRestoreGState(ctx); return;
     }
-    if (_showMenu) {_media.resourceScope=_screenResourceScope;[_menus draw];_media.resourceScope=@"shared";[self drawLoading];if(ctx)CGContextRestoreGState(ctx);return;}
+    if (_showMenu) {_media.resourceScope=_screenResourceScope;
+        if(_canvasHeight>320){CGSize size=[_media imageSize:@"Extensions/MenuMetal.png"];CGFloat scale=std::max(_canvasWidth/size.width,_canvasHeight/size.height);[_media draw:@"Extensions/MenuMetal.png" x:_canvasWidth/2 y:_canvasHeight/2 columns:1 rows:1 tile:0 scaleX:scale scaleY:scale rotation:0 alpha:1];}
+        _media.presentationOffset=CGPointMake(0,(_canvasHeight-320)/2);[_menus draw];_media.presentationOffset=CGPointZero;_media.resourceScope=@"shared";[self drawLoading];if(ctx)CGContextRestoreGState(ctx);return;}
     if (_session) {
+        const auto& world=_session->world();
+        if(world.paused&&world.hasBackground){NSString *asset=[NSString stringWithUTF8String:world.map.background.c_str()];_media.resourceScope=@"world";CGSize size=[_media imageSize:asset];CGFloat scale=std::max(_canvasWidth/std::max(CGFloat(1),size.width-1),_canvasHeight/std::max(CGFloat(1),size.height-1));[_media draw:asset x:_canvasWidth/2 y:_canvasHeight/2 columns:1 rows:1 tile:0 scaleX:scale scaleY:scale rotation:0 alpha:1];}
         [_media setCameraOffset:CGPointMake(_worldShake.offset.x,_worldShake.offset.y)];
         if(!(_canvasWidth>480&&_loading.visible()))for (const auto& item:_session->renderItems()) {
             if (const auto *sprite=std::get_if<heavymach::DrawSprite>(&item)){
@@ -716,7 +962,7 @@
         [_media setDrawingOffset:_hudOffset];[_media setDrawingScale:_hudScale];
         [_media setClipRect:CGRectMake(_hudOffset.x,_hudOffset.y,480*_hudScale,320*_hudScale)];
         HMGameHUDSnapshot snapshot;
-        snapshot.canvasWidth=_canvasWidth;snapshot.hudOffset=_hudOffset;snapshot.hudScale=_hudScale;
+        snapshot.canvasWidth=_canvasWidth;snapshot.canvasHeight=_canvasHeight;snapshot.hudOffset=_hudOffset;snapshot.hudScale=_hudScale;
         snapshot.slot=&_save.slots[_slotIndex];snapshot.data=&_data;snapshot.passives=&_passives;
         snapshot.hpGauge=_hpGauge;snapshot.expGauge=_expGauge;snapshot.reloadGauge=_reloadGauge;
         snapshot.selectedWeapon=_session->selectedWeapon();
@@ -725,7 +971,6 @@
             auto found=_data.weapons.find(name);if(found!=_data.weapons.end())snapshot.weapon=&found->second;
             snapshot.ammo=_ammoPreview>=0?_ammoPreview:snapshot.slot->weaponCharge(snapshot.selectedWeapon);
         }
-        const auto& world=_session->world();
         snapshot.presentation=&world.presentation;snapshot.paused=world.paused;snapshot.mode=world.gameMode;
         auto stage=_session->stage();snapshot.mission=stage.mission;snapshot.stage=stage.stage;
         snapshot.menuVisible=_gameMenu;snapshot.time=_time;
@@ -736,6 +981,8 @@
         [_hud draw:snapshot];[self drawLoading];[_media resetClip];[_media setDrawingOffset:CGPointZero];[_media setDrawingScale:1];if(ctx)CGContextRestoreGState(ctx);return;
     }
     _media.resourceScope=_screenResourceScope;
+    if(_canvasHeight>320){CGSize size=[_media imageSize:@"Main_BG.png"];CGFloat scale=std::max(_canvasWidth/(size.width-1),_canvasHeight/(size.height-1));[_media draw:@"Main_BG.png" x:_canvasWidth/2 y:_canvasHeight/2 columns:1 rows:1 tile:0 scaleX:scale scaleY:scale rotation:0 alpha:1];}
+    _media.presentationOffset=CGPointMake(0,(_canvasHeight-320)/2);[_media setDrawingOffset:CGPointZero];
     if(_canvasWidth>480) {
         CGSize size=[_media imageSize:@"Extensions/TitleWide.png"];
         // Draw only the two OUTER quarters of the generated candidate. Its center
@@ -763,14 +1010,13 @@
     _media.resourceScope=@"shared";[self drawLoading];
     if(ctx)CGContextRestoreGState(ctx);
 }
-- (void)routeTouches:(NSSet<UITouch *> *)touches state:(int)state {
-    if (!_active || _loadError) return;
-    for (UITouch *touch in touches) {
-        CGPoint point=[touch locationInView:self];
+- (void)routePoint:(CGPoint)point state:(int)state token:(id)touch {
+    if(!_active||_loadError||_keyboardSettingsOpen)return;
+    _keyboardAimVisible=NO;
         auto logical=_viewport.logical(point.x,point.y);
         if(state>=2)[_heldTouches removeObject:touch];
         if(logical){[self noteInteraction];if(state==0)[_heldTouches addObject:touch];}
-        if(_session&&_canvasWidth>480){
+        if(_session&&(_canvasWidth>480||_canvasHeight>320)){
             const CGPoint p=logical?CGPointMake(logical->first,logical->second):CGPointMake(-1000,-1000);
             const CGPoint hp=CGPointMake((p.x-_hudOffset.x)/_hudScale,(p.y-_hudOffset.y)/_hudScale);
             const BOOL insideHUD=hp.x>=0&&hp.x<=480&&hp.y>=0&&hp.y<=320;
@@ -790,7 +1036,7 @@
                 }
                 else if(logical&&![self worldInputBlocked]){_session->touch({float(p.x),float(p.y)},state);_keyboardAim=p;_hasKeyboardAim=YES;}
             }
-            [self consumeGameEvents];continue;
+            [self consumeGameEvents];return;
         }
         if (_session) {
             const CGPoint p=logical?CGPointMake(logical->first,logical->second):CGPointMake(-1000,-1000);
@@ -802,16 +1048,24 @@
                 if(state>=2&&(state==3||!logical))_session->releaseFire();
                 else _session->touch({float(p.x),float(p.y)},state>=2?2:state);
             }
-            [self consumeGameEvents];continue;
+            [self consumeGameEvents];return;
         }
-        if (!logical) {if (_showMenu && state>=2) [_menus touch:CGPointMake(-1000,-1000) state:3];continue;}
-        if (_showMenu) {[_menus touch:CGPointMake(logical->first,logical->second) state:state];continue;}
+        if (!logical) {if (_showMenu && state>=2) [_menus touch:CGPointMake(-1000,-1000) state:3];return;}
+        if (_showMenu) {[_menus touch:CGPointMake(logical->first,logical->second-(_canvasHeight-320)/2) state:state];return;}
         if (state==2 && _title.released(_time)) [self requestScreen:3];
-    }
+}
+#if !TARGET_OS_OSX
+- (void)routeTouches:(NSSet<UITouch *> *)touches state:(int)state {
+    for(UITouch *touch in touches)[self routePoint:[touch locationInView:self] state:state token:touch];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {[self routeTouches:touches state:0];}
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {[self routeTouches:touches state:1];}
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {[self routeTouches:touches state:2];}
 - (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {[self routeTouches:touches state:3];}
+#else
+- (void)mouseDown:(NSEvent*)event {[self.window makeFirstResponder:self];[self routePoint:[self convertPoint:event.locationInWindow fromView:nil] state:0 token:_mouseToken];}
+- (void)mouseDragged:(NSEvent*)event {[self routePoint:[self convertPoint:event.locationInWindow fromView:nil] state:1 token:_mouseToken];}
+- (void)mouseUp:(NSEvent*)event {[self routePoint:[self convertPoint:event.locationInWindow fromView:nil] state:2 token:_mouseToken];}
+#endif
 @end

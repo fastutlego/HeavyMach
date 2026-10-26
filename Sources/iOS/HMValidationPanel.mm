@@ -1,5 +1,5 @@
 #import "HMValidationPanel.h"
-#if defined(HM_VALIDATION) && HM_VALIDATION
+#if defined(HM_VALIDATION) && HM_VALIDATION && !TARGET_OS_OSX
 #include "GlobalInfo.hpp"
 #include <algorithm>
 @implementation HMValidationPanel {

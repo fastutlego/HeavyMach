@@ -31,6 +31,8 @@ struct SlotPreview {
 }
 @implementation HMMenus {
     HMMedia *_media;
+    int _keyboardFocus;
+    BOOL _keyboardFocusVisible;
     heavymach::SaveData *_save;
     const heavymach::GameData *_data;
     MenuScreen _screen;
@@ -360,4 +362,31 @@ struct SlotPreview {
         break;
     }
 }
+- (std::vector<MenuButton>)keyboardButtons {
+    auto buttons=_buttons;
+    buttons.erase(std::remove_if(buttons.begin(),buttons.end(),[&](const auto& b){
+        return CGRectGetMidX(b.bounds)<0||CGRectGetMidX(b.bounds)>_canvasWidth||CGRectGetMidY(b.bounds)<0||CGRectGetMidY(b.bounds)>320;
+    }),buttons.end());
+    std::stable_sort(buttons.begin(),buttons.end(),[](const auto& a,const auto& b){
+        if(std::fabs(CGRectGetMidY(a.bounds)-CGRectGetMidY(b.bounds))>8)return CGRectGetMidY(a.bounds)>CGRectGetMidY(b.bounds);
+        return CGRectGetMidX(a.bounds)<CGRectGetMidX(b.bounds);
+    });
+    return buttons;
+}
+- (void)moveKeyboardFocus:(int)delta {
+    auto buttons=[self keyboardButtons];if(buttons.empty())return;
+    int index=-1;for(size_t i=0;i<buttons.size();++i)if(buttons[i].identifier==_keyboardFocus)index=int(i);
+    if(index<0)index=delta<0?int(buttons.size())-1:0;else index=(index+delta+int(buttons.size()))%int(buttons.size());
+    _keyboardFocus=buttons[index].identifier;_keyboardFocusVisible=YES;
+}
+- (CGRect)keyboardFocusRect {
+    if(!_keyboardFocusVisible)return CGRectZero;
+    auto buttons=[self keyboardButtons];for(const auto& b:buttons)if(b.identifier==_keyboardFocus)return b.bounds;
+    if(buttons.empty())return CGRectZero;_keyboardFocus=buttons.front().identifier;return buttons.front().bounds;
+}
+- (void)activateKeyboardFocus {
+    _keyboardFocusVisible=YES;CGRect rect=[self keyboardFocusRect];if(CGRectIsEmpty(rect))return;
+    CGPoint point=CGPointMake(CGRectGetMidX(rect),CGRectGetMidY(rect));[self touch:point state:0];[self touch:point state:2];
+}
+
 @end

@@ -45,7 +45,7 @@ public:
  std::vector<float> objectHalfWidths;
  std::array<ParticleState,64> particles;
  Vector2 camera{},backgroundPosition{},center{},playerSpawn{};
- float canvasWidth=480,backgroundDrawScale=1,preparedVisibleRight=-10000;Vector2 backgroundSize{};
+ float canvasHeight=320,canvasWidth=480,backgroundDrawScale=1,preparedVisibleRight=-10000;Vector2 backgroundSize{};
  float backLine=-240,frontLine=240,bgScale=.5f,objectRegenPosition=-10000;
  int bossCount=0,bossEncounter=0,gameMode=0,survivalRegenSeed=0;
  int16_t gameState=0;bool paused=false,show=true,hasBackground=false;

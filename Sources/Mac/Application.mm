@@ -1,0 +1,21 @@
+#import <AppKit/AppKit.h>
+#import "HMGameView.h"
+@interface HMNativeAppDelegate : NSObject <NSApplicationDelegate,NSWindowDelegate>
+@property(nonatomic,strong) NSWindow *window;
+@property(nonatomic,strong) HMGameView *game;
+@end
+@implementation HMNativeAppDelegate
+- (void)applicationDidFinishLaunching:(NSNotification*)notification {
+ self.window=[[NSWindow alloc]initWithContentRect:NSMakeRect(0,0,1200,800) styleMask:NSWindowStyleMaskTitled|NSWindowStyleMaskClosable|NSWindowStyleMaskMiniaturizable|NSWindowStyleMaskResizable backing:NSBackingStoreBuffered defer:NO];
+ self.window.title=@"Heavy Mach";self.window.delegate=self;self.window.contentMinSize=NSMakeSize(640,420);self.window.collectionBehavior=NSWindowCollectionBehaviorFullScreenPrimary;
+ self.game=[[HMGameView alloc]initWithFrame:self.window.contentView.bounds];self.game.autoresizingMask=NSViewWidthSizable|NSViewHeightSizable;self.window.contentView=self.game;
+ [self.window center];[self.window makeKeyAndOrderFront:nil];[NSApp activateIgnoringOtherApps:YES];
+ NSMenu* bar=[NSMenu new];NSMenuItem* item=[NSMenuItem new];[bar addItem:item];NSMenu* app=[NSMenu new];[app addItemWithTitle:@"전체 화면" action:@selector(toggleFullScreen:) keyEquivalent:@"f"];[app addItemWithTitle:@"종료" action:@selector(terminate:) keyEquivalent:@"q"];item.submenu=app;NSApp.mainMenu=bar;
+}
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication*)sender{return YES;}
+- (void)applicationDidBecomeActive:(NSNotification*)n {[self.game setApplicationActive:YES];}
+- (void)applicationWillResignActive:(NSNotification*)n {[self.game setApplicationActive:NO];}
+- (void)windowDidResignKey:(NSNotification*)n {[self.game setApplicationActive:NO];}
+- (void)windowDidBecomeKey:(NSNotification*)n {[self.game setApplicationActive:YES];}
+@end
+int main(int argc,const char**argv){@autoreleasepool {NSApplication* app=NSApplication.sharedApplication;[app setActivationPolicy:NSApplicationActivationPolicyRegular];HMNativeAppDelegate* delegate=[HMNativeAppDelegate new];app.delegate=delegate;[app run];}return 0;}

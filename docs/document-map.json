@@ -25,7 +25,11 @@
     "docs/public/implementation-status.md",
     "docs/public/publication-inventory.md",
     "docs/media-publication.md",
-    "docs/public/media/README.md"
+    "docs/public/media/README.md",
+    "docs/apple-platforms.md",
+    "docs/keyboard-input-policy.md",
+    "docs/wireless-device-workflow.md",
+    "docs/vtol-expansion.md"
   ],
   "base_read": [
     "AGENTS.md",
@@ -88,19 +92,22 @@
       "read": [
         "docs/rendering-policy.md",
         "docs/coordinate-policy.md",
-        "docs/weapon-validation-procedure.md"
+        "docs/weapon-validation-procedure.md",
+        "docs/vtol-expansion.md"
       ],
       "sources": [
         "Sources/iOS/HMGLRenderer.*",
         "Sources/iOS/HMMedia.*",
         "Sources/Core/Visuals.*",
         "Sources/Core/Trail.*",
-        "Art/Extensions/*"
+        "Art/Extensions/*",
+        "Sources/Core/VTOL.*"
       ],
       "tests": [
         "Tests/iOS/HMGLReferenceTests.mm",
         "Tests/iOS/HMResourceLifecycleTests.mm",
-        "Tests/iOS/HMFramePerformanceTests.mm"
+        "Tests/iOS/HMFramePerformanceTests.mm",
+        "Tests/VTOLTests.cpp"
       ],
       "evidence": [
         "docs/menu-joins-20261025.md",
@@ -135,7 +142,8 @@
       "read": [
         "docs/game-calculation-policy.md",
         "docs/coordinate-policy.md",
-        "docs/weapon-validation-procedure.md"
+        "docs/weapon-validation-procedure.md",
+        "docs/vtol-expansion.md"
       ],
       "sources": [
         "Sources/Core/Combat.*",
@@ -143,13 +151,15 @@
         "Sources/Core/Player.*",
         "Sources/Core/World.*",
         "Sources/Core/Motion.*",
-        "Sources/Core/GameSession.*"
+        "Sources/Core/GameSession.*",
+        "Sources/Core/VTOL.*"
       ],
       "tests": [
         "Tests/CombatTests.cpp",
         "Tests/PlayerTests.cpp",
         "Tests/WorldTests.cpp",
-        "Tests/iOS/HMFramePerformanceTests.mm"
+        "Tests/iOS/HMFramePerformanceTests.mm",
+        "Tests/VTOLTests.cpp"
       ],
       "evidence": [
         "docs/boss-motion-fix-20261025.md",
@@ -194,7 +204,9 @@
         "docs/public/rea-implementation-audit-20261026.md",
         "docs/public/build-and-install.md",
         "docs/build-resources.json",
-        "docs/public/clone-build-20261026.md"
+        "docs/public/clone-build-20261026.md",
+        "docs/wireless-device-workflow.md",
+        ".agents/skills/apple-wireless-device/SKILL.md"
       ],
       "sources": [
         "iOS/project.yml",
@@ -324,6 +336,36 @@
       "tests": [],
       "evidence": [
         "docs/public/media/manifest.json",
+        "docs/current-status.md"
+      ]
+    },
+    "apple_platforms": {
+      "label": "Apple 공용 모듈·화면·키보드",
+      "read": [
+        "docs/apple-platforms.md",
+        "docs/keyboard-input-policy.md",
+        "docs/coordinate-policy.md",
+        "docs/runtime-policy.md",
+        "docs/rendering-policy.md",
+        ".agents/skills/game-keyboard-input/SKILL.md",
+        "docs/auto-aim-plan-20261026.md"
+      ],
+      "sources": [
+        "Sources/Apple/*",
+        "Sources/Mac/*",
+        "Sources/Core/KeyboardInput.hpp",
+        "Modules/*",
+        "iOS/project.yml",
+        "macOS/*",
+        "HeavyMach.xcworkspace/*"
+      ],
+      "tests": [
+        "Tests/KeyboardInputTests.cpp",
+        "Tests/Apple/HMAppleInputTests.mm",
+        "tools/profile_apple.py",
+        "tools/analyze_apple_profile.py"
+      ],
+      "evidence": [
         "docs/current-status.md"
       ]
     }

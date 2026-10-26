@@ -1,7 +1,11 @@
+#import "HMResources.h"
 #import <XCTest/XCTest.h>
 #include "../../vendor/openal-soft/include/AL/al.h"
 #include "../../vendor/openal-soft/include/AL/alc.h"
+#import <TargetConditionals.h>
+#if !TARGET_OS_OSX
 #import <AVFoundation/AVFoundation.h>
+#endif
 #import "../../Sources/iOS/HMOpenALAudio.h"
 #include <cstring>
 #include <limits>
@@ -114,7 +118,7 @@
     [HMOpenALAudio validationMakeContextCurrent:previous];[HMOpenALAudio validationDestroyContext:external];
 }
 - (void)testMalformedRIFFDoesNotAllocateALResources {
-    NSURL *url=[NSBundle.mainBundle URLForResource:@"Wpn_Gun01" withExtension:@"wav" subdirectory:@"Audio"];
+    NSURL *url=[HMGameResourceBundle() URLForResource:@"Wpn_Gun01" withExtension:@"wav" subdirectory:@"Audio"];
     NSData *valid=[NSData dataWithContentsOfURL:url];XCTAssertGreaterThan(valid.length,NSUInteger(44));if(valid.length<44)return;
     HMOpenALAudio *audio=[HMOpenALAudio new];
     XCTAssertFalse([audio loadSoundData:[valid subdataWithRange:NSMakeRange(0,11)] name:@"short"]);
@@ -132,6 +136,7 @@
     XCTAssertEqual([[audio diagnostics][@"startCount"] intValue],0);
     XCTAssertEqualObjects([audio soundInfo:@"Wpn_Gun01"][@"position"],(@[@0,@0,@0]));
 }
+#if !TARGET_OS_OSX
 - (void)testSessionNotificationsDoNotIntroduceSourcePauseOrPlaybackGating {
     // Synthetic notifications exercise app policy only, not a real OS interruption.
     // The compatibility host adds no HeavyMach source pause/resume observer.
@@ -156,4 +161,5 @@
     XCTAssertEqualObjects(AVAudioSession.sharedInstance.category,category);
     XCTAssertEqualObjects([audio diagnostics][@"error"],@"");
 }
+#endif
 @end

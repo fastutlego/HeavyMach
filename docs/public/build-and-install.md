@@ -35,7 +35,7 @@ python3 tools/verify_build_resources.py
 
 ```sh
 bash tools/build_openal.sh iphonesimulator
-xcodebuild -project iOS/HeavyMachRestored.xcodeproj \
+xcodebuild -workspace HeavyMach.xcworkspace \
   -scheme HeavyMachRestored -configuration Debug \
   -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' \
   -derivedDataPath build/ios-simulator \
@@ -55,7 +55,7 @@ xcrun simctl launch booted com.gelb2.heavymach.restored
 
 ## 아이폰 설치
 
-Xcode에서 `iOS/HeavyMachRestored.xcodeproj`를 연다. 사용할 target의 **Signing & Capabilities**에서 본인의 개발 팀을 선택한다. 저장소에 기록된 팀 ID는 작성자의 설정이다. 앱 ID 등록 충돌이 발생하면 본인 팀에서 사용할 고유한 Bundle Identifier를 지정한다.
+Xcode에서 `HeavyMach.xcworkspace`를 연다. 사용할 target의 **Signing & Capabilities**에서 본인의 개발 팀을 선택한다. 저장소에 기록된 팀 ID는 작성자의 설정이다. 앱 ID 등록 충돌이 발생하면 본인 팀에서 사용할 고유한 Bundle Identifier를 지정한다.
 
 아이폰을 연결하고 Mac을 신뢰한 뒤 개발자 모드를 켠다. 실행 대상을 연결한 아이폰으로 바꾸고 일반 앱은 `HeavyMachRestored`, 치트 앱은 `HeavyMachValidation` scheme으로 Run한다. Xcode의 빌드 단계가 `iphoneos`용 OpenAL을 준비한다.
 
@@ -71,7 +71,7 @@ Xcode에서 `iOS/HeavyMachRestored.xcodeproj`를 연다. 사용할 target의 **S
 |---|---|
 | `libopenal.a`를 찾지 못함 | 선택한 SDK에 맞게 `build_openal.sh`를 먼저 실행했는지 확인한다. |
 | x86_64 링크 실패 | 현재 라이브러리는 arm64다. 위 명령의 `ARCHS=arm64`와 Apple Silicon 실행 대상을 확인한다. |
-| 그림이 표시되지 않음 | `git lfs pull`과 자원 검사를 실행하고 앱 번들의 `OriginalImages`를 확인한다. |
+| 그림이 표시되지 않음 | `git lfs pull`과 자원 검사를 실행하고 앱 번들 안 `HeavyMachAssets.bundle/OriginalImages`를 확인한다. |
 | 맵·무기 데이터를 찾지 못함 | `git lfs pull`과 자원 검사를 실행해 `Resources/RawData`를 확인한다. |
 | 서명 실패 | Xcode의 팀·인증서·기기 등록 오류를 확인한다. 기존 작업에서는 CLI 서명 실패 후 Xcode GUI 빌드로 설치했다. |
 | 이미지 비교 테스트에서 자료 없음 | 저장소에 포함된 `Resources/Validation/ImageDecodeParity.json`을 자원 검사로 확인한다. |
@@ -85,3 +85,9 @@ ctest --test-dir build/core --output-on-failure
 ```
 
 기존 [IPA 없는 빌드 검사](ipa-independent-build-20261026.md)는 로컬 자원을 복사한 검사였다. [새 원격 clone 검사](clone-build-20261026.md)에서는 GitHub에서 소스·LFS 자원을 받아 빌드 4개, 코어17·iOS14 검사, 새 Simulator의 두 앱 실행을 통과했다.
+
+## iPad와 Mac
+
+iPad는 같은 iOS 앱과 scheme을 사용한다. iPad Simulator 또는 연결한 iPad를 실행 대상으로 선택한다. 터치·기울기·키보드를 함께 지원한다.
+
+Mac은 workspace의 HeavyMachMac(일반) 또는 HeavyMachMacValidation(치트)을 선택한다. AppKit 앱이며 Catalyst가 아니다. 구조·빌드·키 배치는 [Apple 플랫폼](../apple-platforms.md)과 [키보드 정책](../keyboard-input-policy.md)을 따른다.
