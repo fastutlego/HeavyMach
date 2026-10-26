@@ -10,6 +10,7 @@ p = argparse.ArgumentParser()
 p.add_argument('--platform', choices=('mac', 'ipad'), required=True)
 p.add_argument('--template', choices=('Time Profiler', 'Allocations', 'Metal System Trace'), required=True)
 p.add_argument('--output', type=Path, required=True)
+p.add_argument('--derived-data', type=Path, help='Use an existing signed Xcode build for test-without-building')
 a = p.parse_args()
 root = Path(__file__).resolve().parents[1]
 out = a.output.resolve()
@@ -24,7 +25,7 @@ old_pids = app_pids()
 command = ['xcodebuild', '-workspace', 'HeavyMach.xcworkspace', '-scheme', name,
            '-configuration', 'Debug', '-destination',
            'platform=macOS,arch=arm64' if mac else 'platform=iOS Simulator,id=5177F449-414C-471D-AB92-79DF7F768DC9',
-           '-derivedDataPath', 'build/workspace-mac' if mac else 'build/workspace-validation',
+           '-derivedDataPath', str(a.derived_data) if a.derived_data else ('build/workspace-mac' if mac else 'build/workspace-validation'),
            '-parallel-testing-enabled', 'NO',
            '-only-testing:' + ('HeavyMachMacInputTests/HMAppleInputTests/testMacPresentedFrameCostsWithProductionTimer' if mac else 'HeavyMachRenderTests/HMFramePerformanceTests/testOnscreenOpenGLCadenceAudioAndResume'),
            'test-without-building']

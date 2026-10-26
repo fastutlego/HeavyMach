@@ -29,6 +29,10 @@ static NSString *glString(GLenum name){const auto p=glGetString(name);return p?[
     __weak HMGLSurface *_displayLayer;
     CGSize _drawablePointSize;
     CGFloat _drawableScale;
+#if TARGET_OS_OSX
+    __weak NSWindow *_drawableWindow;
+    CGRect _drawableScreenRect;
+#endif
     std::map<std::string,Texture> _textures;
     NSString *_lastError,*_vendor,*_renderer,*_version;
     NSUInteger _drawCalls,_uploads,_frames;
@@ -267,8 +271,16 @@ static NSString *glString(GLenum name){const auto p=glGetString(name);return p?[
     }
 
 #if TARGET_OS_OSX
-    [_context setView:layer];[_context update];
     CGRect backing=[layer convertRectToBacking:layer.bounds];
+    NSWindow *window=layer.window;
+    CGRect screenRect=window?[window convertRectToScreen:[layer convertRect:layer.bounds toView:nil]]:layer.bounds;
+    BOOL changedTarget=_displayLayer!=layer||_drawableWindow!=window;
+    if(changedTarget)[_context setView:layer];
+    if(changedTarget||!CGRectEqualToRect(screenRect,_drawableScreenRect)||
+       _displayWidth!=GLint(backing.size.width)||_displayHeight!=GLint(backing.size.height)){
+        [_context update];
+        _displayLayer=layer;_drawableWindow=window;_drawableScreenRect=screenRect;
+    }
     _displayWidth=GLint(backing.size.width);_displayHeight=GLint(backing.size.height);
     _displayFBO=0;_displayFormat=GL_RGBA8;
 #else
@@ -319,6 +331,11 @@ static NSString *glString(GLenum name){const auto p=glGetString(name);return p?[
     glMatrixMode(GL_TEXTURE);glPopMatrix();glMatrixMode(GL_PROJECTION);glPopMatrix();glMatrixMode(GL_MODELVIEW);glPopMatrix();
     if(dither)glEnable(GL_DITHER);
     glEnable(GL_BLEND);glEnableClientState(GL_COLOR_ARRAY);glBindFramebufferOES(GL_FRAMEBUFFER_OES,_sceneFBO);glViewport(0,0,_bufferWidth,_bufferHeight);[self applyClip];
+#if TARGET_OS_OSX
+    // Rendering and swapping consume part of the interval calculated above.
+    // Sleep only until that deadline, rather than adding the original delay.
+    delay=std::max(0.0,now+delay-CACurrentMediaTime());
+#endif
     if(delay>0)[NSThread sleepForTimeInterval:delay];
 #if HM_VALIDATION
     _presentWait=(CACurrentMediaTime()-afterSwap)*1000;

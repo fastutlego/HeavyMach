@@ -8,6 +8,12 @@ Apple 모듈화에서 iOS/iPadOS의 ES1.1 경로는 유지한다. native Mac은 
 
 2026-10-25 전체 캔버스 확장을 구현했다. 원본480 비교 모드와 확장 게임플레이 모드를 같은 GL 경로로 처리한다. 현재 구현과 검사는 [캔버스 기록](wide-canvas-plan.md)을 따른다.
 
+## Mac 화면 표시
+
+Mac은 기존60Hz 게임 타이머를 유지한다. `NSOpenGLContext`의 swap interval은0으로 두어 별도 수직동기화 대기를 더하지 않는다. 프레임 제한기의 대기 시간에서는 렌더링 경과 시간을 차감한다. iOS/iPadOS의 원본 호환 대기 계산은 변경하지 않는다.
+
+Mac 게임 뷰는 고해상도 OpenGL 표면을 요청하고 `convertRectToBacking`의 픽셀 치수를 사용한다. GL 컨텍스트의 뷰·창·화면 위치·픽셀 크기가 달라질 때 표면을 갱신한다. 매 프레임 `setView`와 `update`를 반복하지 않는다. 창 크기 변경·전체 화면 왕복과 실제 화면이 켜진 상태의 성능을 검사한다. [측정 결과](public/apple-platform-progress-20261026.md).
+
 ## 고정할 경로
 
 - iPhone/iPad는 OpenGL ES1.1, Mac은 desktop OpenGL compatibility로 게임을 그린다. UIKit/AppKit은 창·생명주기·설정·검증 조작부를 담당한다.
@@ -15,7 +21,7 @@ Apple 모듈화에서 iOS/iPadOS의 ES1.1 경로는 유지한다. native Mac은 
 - 원본 자원의 제품 소비자는 `OriginalImages`의 원본 파일명과 확장자를 사용한다. 미션/스테이지 클리어의 `GameLoading_XX[E].jpg`, 게임오버의 `StageClear.jpg`에 파생본 접미사 `.png`를 붙이지 않는다. `Images/*.jpg.png`는 변환·비교용 자원이며 현재 제품 로더의 이름 계약이 아니다.
 - 원본 이미지695개를 보존된 stb 코드로 해석한다. POT 패딩, premultiplied 픽셀, RGB565 변환, UV와 타일 순서를 임의 보정하지 않는다.
 - sprite 텍스처는 LINEAR/REPEAT, 최종 화면 텍스처는 LINEAR/CLAMP_TO_EDGE다. 두 텍스처의 규칙을 섞지 않는다.
-- drawable은 nativeScale과 RGB565 요청을 사용한다. 실제 드라이버 보고 형식은 별도 기록한다. 요청이 실제 RGB565 할당을 증명하지 않는다.
+- iPhone/iPad drawable은 nativeScale과 RGB565 요청을 사용한다. Mac drawable은 고해상도 RGBA 표면을 사용한다. 실제 드라이버 보고 형식은 별도 기록한다. 요청이 실제 RGB565 할당을 증명하지 않는다.
 - 마지막 확대는 전체 화면 비율 맞춤 NDC quad, DITHER 비활성·blend 비활성 후 원래 상태 복원이다. 원본480 모드에서는 검정 여백을 유지하고 확장 게임 화면은 전체 drawable을 채운다. viewport와 터치는 [좌표 정책](coordinate-policy.md)을 함께 따른다.
 
 ## 합성과 순서

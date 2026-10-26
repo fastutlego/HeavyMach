@@ -111,6 +111,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     if ((self=[super initWithFrame:frame])) {
 #if TARGET_OS_OSX
+        self.wantsBestResolutionOpenGLSurface=YES;
         _mouseToken=[NSObject new];
         _glRenderer=[HMGLRenderer new];
         _renderError=[NSTextField wrappingLabelWithString:@""];

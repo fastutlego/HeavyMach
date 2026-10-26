@@ -13,7 +13,9 @@ static inline HMGLContext *HMCreateGLContext(void) {
  NSOpenGLPixelFormatAttribute attributes[]={NSOpenGLPFAOpenGLProfile,NSOpenGLProfileVersionLegacy,NSOpenGLPFAAccelerated,NSOpenGLPFADoubleBuffer,NSOpenGLPFAColorSize,24,NSOpenGLPFAAlphaSize,8,0};
  NSOpenGLPixelFormat *format=[[NSOpenGLPixelFormat alloc] initWithAttributes:attributes];
  HMGLContext *context=[[NSOpenGLContext alloc] initWithFormat:format shareContext:nil];
- GLint sync=1;[context setValues:&sync forParameter:NSOpenGLContextParameterSwapInterval];return context;
+ // The shared game timer and presentation limiter already pace frames at 60 Hz.
+ // Avoid adding a vertical-refresh wait to the existing frame pacing.
+ GLint sync=0;[context setValues:&sync forParameter:NSOpenGLContextParameterSwapInterval];return context;
 }
 static inline NSString *HMGLBackendName(void){return @"macOS OpenGL compatibility";}
 #define glOrthof glOrtho
