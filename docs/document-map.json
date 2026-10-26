@@ -19,7 +19,8 @@
     "docs/repository-management.md",
     "docs/android-port-plan-20261026.md",
     "docs/related-titles-20261026.md",
-    "docs/ios-source-map.md"
+    "docs/ios-source-map.md",
+    "docs/developer-background.md"
   ],
   "base_read": [
     "AGENTS.md",
@@ -204,7 +205,9 @@
     "documentation": {
       "label": "문서·보고",
       "read": [
-        "docs/report-site.md"
+        "docs/report-site.md",
+        "docs/developer-background.md",
+        "docs/RESTORATION.md"
       ],
       "sources": [
         "docs/*",
@@ -247,6 +250,30 @@
       ],
       "evidence": [
         "docs/research/android-and-titles-evidence-20261026.json",
+        "docs/current-status.md"
+      ]
+    },
+    "developer_story": {
+      "label": "개발자의 변·README 소개·SaaS Apps·Mags",
+      "read": [
+        "docs/developer-background.md",
+        "docs/RESTORATION.md",
+        "docs/references/developer-background/user-background-20261026.md",
+        "docs/references/developer-background/hm-defense-origin.md",
+        "docs/references/developer-background/sass-mutiny-source.txt",
+        "docs/references/developer-background/unity-planning-origin.md",
+        ".agents/skills/write-project-text/SKILL.md"
+      ],
+      "sources": [
+        "docs/RESTORATION.md",
+        "docs/developer-background.md",
+        "docs/references/developer-background/*",
+        "README.md",
+        "docs/public/*"
+      ],
+      "tests": [],
+      "evidence": [
+        "docs/references/developer-background/source-manifest.json",
         "docs/current-status.md"
       ]
     }

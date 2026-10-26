@@ -57,3 +57,9 @@ python3 tools/document_contract.py check
 ## 글쓰기·보고 파생본
 
 모든 보고서·게임 문구·GitHub 문서·답변은 루트 `write-project-text` 스킬을 적용한다. 보고 원고는 `docs/public`과 해당 분야 문서에서 관리한다. `tools/build_report_site.py --checkout <기존 Sites checkout>`은 Markdown·beautifulsoup4가 설치된 Python에서 기존 사이트의 본문·다운로드를 함께 갱신한다. 도구는 게시하지 않으며 현재 Sites 스킬로 같은 사이트에 배포한다. 원고·웹·다운로드의 사실과 수치를 대조하고 과거 검사 기록의 시점을 유지한다.
+
+## 개발 동기와 소개 글
+
+개발자의 변·README 소개·GitHub 회고·SaaS Apps·Mags에는 `developer_story` 업무를 적용한다. [개발 동기 자료](developer-background.md)와 보존 원문을 읽고 [RESTORATION 원고](RESTORATION.md)를 갱신한다. 사용자 보충·정정이 개인 경험의 기준이며, 출시·성과 수치는 출처와 대조한다. 기술적 완료 여부는 기존 current-status와 실행 증거를 따른다.
+
+원문 → 개발자의 변 → README·Apps·Mags 순서로 관련 부분을 수정한다. 출처 메모·대기 상태·작성 규칙은 본문에 붙이지 않는다. 사용자가 아직 주지 않은 이유나 결론은 작성하지 않는다.
