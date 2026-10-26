@@ -17,7 +17,9 @@
 | [design](docs/design.md) | 확인한 함수·데이터와 복원 설계 |
 | [verification](docs/verification.md) | 과거 빌드·동작 비교·저장 실행 이력. 현행은 current-status와 분야 정책 |
 | [validation-mode](docs/validation-mode.md) | 조건 설정 패널·실제 레벨업·외형·저장 검사 결과 |
-| [source-coverage](docs/source-coverage.md) | 원본 함수와 복원 소스 대응·남은 범위 |
+| [source-coverage](docs/source-coverage.md) | 과거 원본 함수 대응·당시 검사 범위 |
+| [ios-source-map](docs/ios-source-map.md) | 현행 iOS 소스 68개·정책·검사 연결 |
+| [iOS 전수검사](docs/ios-completeness-audit-20261026.md) | 파일 누락·Xcode 등록·문서·미커밋 변경 확인 |
 | [boss-battles-v6](docs/boss-battles-v6.md) | 최신 코어의 보스 48개 실제 처치 검사 |
 | [runtime-policy](docs/runtime-policy.md) | 시간·저장·OpenAL 음향 정책 |
 | [stage-transition-contract](docs/stage-transition-contract.md) | 전체맵의 출구·미션말·최종clamp 조건검사 |
