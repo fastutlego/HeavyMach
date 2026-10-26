@@ -388,4 +388,3 @@ A·표적 전환·사격 순서, 사선과 LOCKED/TRACK/BLOCKED 표시, 세 환�
 - Version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_d18b29a66c6c8191babbfec9c604e8dc`
 - Deployment: `appgdep_6adfd5f5fa9481918fbb77621f06ea31`, `succeeded`
 - URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/auto-aim-progress.html
-
