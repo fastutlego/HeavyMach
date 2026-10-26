@@ -4,6 +4,7 @@
 #import "../../Sources/iOS/HMGameView.h"
 #import "../../Sources/iOS/HMMenus.h"
 #include "../../Sources/Core/TitleState.hpp"
+#include "../../Sources/Core/LoadingTransition.hpp"
 #import "../../Sources/iOS/HMMedia.h"
 #import "../../Sources/iOS/HMGLRenderer.h"
 #import "../../Sources/iOS/HMOpenALAudio.h"
@@ -20,6 +21,7 @@
 @interface HMGameView (FramePerformance)
 - (void)frame:(CADisplayLink*)link;
 - (void)drawLogicalFrame;
+- (void)drawLoading;
 - (void)sampleOriginalAcceleration;
 - (UIInterfaceOrientation)accelerationInterfaceOrientation;
 - (int32_t)nextOriginalRandom;
@@ -166,6 +168,68 @@ void emit(NSDictionary* record){NSData* json=[NSJSONSerialization dataWithJSONOb
 @interface HMFramePerformanceTests:XCTestCase
 @end
 @implementation HMFramePerformanceTests
+- (void)testTitleAndSelectionScreensCoverWideAndTallCanvas {
+ for(CGSize size:{CGSizeMake(695,320),CGSizeMake(480,360),CGSizeMake(960,320),CGSizeMake(569,320)}){@autoreleasepool{
+  HMPerformanceView* view=[[HMPerformanceView alloc]initWithFrame:CGRectMake(0,0,size.width,size.height)];
+  [[view valueForKey:@"frameTimer"]invalidate];[[view valueForKey:@"motionTimer"]invalidate];
+  perfStorage<heavymach::SaveData>(view,"_save")={};[view updateCanvasGeometry];
+  HMMedia* media=[view valueForKey:@"media"];HMGLRenderer* gl=[view valueForKey:@"glRenderer"];media.glRenderer=gl;
+  XCTAssertTrue([gl setLogicalWidth:size.width height:size.height]);
+  for(int screen=1;screen<=4;++screen){[view refreshScreen:screen];
+   if(screen==1){auto& title=perfStorage<heavymach::TitleState>(view,"_title");title.bgScale=1;title.bgRotate=0;title.camX=title.camY=0;title.showTitle=title.showEpisode=title.showStart=true;title.titleScale=title.episodeScale=1;}
+   XCTAssertTrue([gl beginFrame]);[view drawLogicalFrame];[gl finish];[gl endFrame];UIImage* picture=[gl snapshot];
+   size_t w=CGImageGetWidth(picture.CGImage),h=CGImageGetHeight(picture.CGImage);std::vector<uint8_t> bytes(w*h*4);auto cs=CGColorSpaceCreateDeviceRGB();auto context=CGBitmapContextCreate(bytes.data(),w,h,8,w*4,cs,kCGImageAlphaPremultipliedLast|kCGBitmapByteOrder32Big);CGContextDrawImage(context,CGRectMake(0,0,w,h),picture.CGImage);CGContextRelease(context);CGColorSpaceRelease(cs);
+   for(size_t y:{size_t(0),h-1})for(size_t x:{size_t(0),w-1}){auto p=(y*w+x)*4;XCTAssertGreaterThan(int(bytes[p])+bytes[p+1]+bytes[p+2],0,@"Black uncovered corner screen%d %gx%g",screen,size.width,size.height);}
+   if(size.width==695||size.height==360){XCTAttachment* a=[XCTAttachment attachmentWithImage:picture];a.name=[NSString stringWithFormat:@"screen%d-%gx%g",screen,size.width,size.height];a.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:a];}
+  }
+  media.glRenderer=nil;[view setApplicationActive:NO];
+ }}
+}
+- (void)testDoorOpeningRevealsWorldAtExpandedEdges {
+ for(CGSize size:{CGSizeMake(695,320),CGSizeMake(480,360)}){@autoreleasepool{
+  HMPerformanceView* view=[[HMPerformanceView alloc]initWithFrame:CGRectMake(0,0,size.width,size.height)];
+  [[view valueForKey:@"frameTimer"]invalidate];[[view valueForKey:@"motionTimer"]invalidate];
+  perfStorage<heavymach::SaveData>(view,"_save")={};[view updateCanvasGeometry];[view startSlot:0 mode:0 mission:0 stage:0];[view advanceOriginalFrame];
+  auto& loading=perfStorage<heavymach::LoadingTransition>(view,"_loading");loading.changeScreen(6);
+  HMMedia* media=[view valueForKey:@"media"];HMGLRenderer* gl=[view valueForKey:@"glRenderer"];media.glRenderer=gl;
+  XCTAssertTrue([gl setLogicalWidth:size.width height:size.height]);std::vector<uint8_t> opening;
+  for(int state:{3,5,6}){
+   for(int n=0;n<120&&loading.state()!=state;++n)loading.tick({});XCTAssertEqual(loading.state(),state);
+   // State 5 starts the vertical opening; sample after its middle has cleared.
+   if(state==5)for(int n=0;n<12;++n)loading.tick({});
+   XCTAssertTrue([gl beginFrame]);[view drawLogicalFrame];[gl finish];[gl endFrame];UIImage* picture=[gl snapshot];
+   size_t w=CGImageGetWidth(picture.CGImage),h=CGImageGetHeight(picture.CGImage);std::vector<uint8_t> bytes(w*h*4);auto cs=CGColorSpaceCreateDeviceRGB();auto c=CGBitmapContextCreate(bytes.data(),w,h,8,w*4,cs,kCGImageAlphaPremultipliedLast|kCGBitmapByteOrder32Big);CGContextDrawImage(c,CGRectMake(0,0,w,h),picture.CGImage);CGContextRelease(c);CGColorSpaceRelease(cs);
+   if(state==5)opening=bytes;
+   if(state==6)for(size_t x:{size_t(0),w-1}){size_t p=(h/2*w+x)*4;XCTAssertGreaterThan(int(bytes[p])+bytes[p+1]+bytes[p+2],0);}
+   if(state==6){size_t p=(h/2*w+w/2)*4;for(int channel=0;channel<3;++channel)XCTAssertEqual(opening[p+channel],bytes[p+channel],@"World missing behind opening door");}
+   XCTAttachment* a=[XCTAttachment attachmentWithImage:picture];a.name=[NSString stringWithFormat:@"door-world-state%d-%gx%g",state,size.width,size.height];a.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:a];
+  }
+  media.glRenderer=nil;[view setApplicationActive:NO];
+ }}
+}
+- (void)testClosedDoorCoversCanvasOutsideHUDInMenusAndGame {
+ auto pixels=[](UIImage* image){size_t w=CGImageGetWidth(image.CGImage),h=CGImageGetHeight(image.CGImage);std::vector<uint8_t> p(w*h*4);auto cs=CGColorSpaceCreateDeviceRGB();auto c=CGBitmapContextCreate(p.data(),w,h,8,w*4,cs,kCGImageAlphaPremultipliedLast|kCGBitmapByteOrder32Big);CGContextDrawImage(c,CGRectMake(0,0,w,h),image.CGImage);CGContextRelease(c);CGColorSpaceRelease(cs);return p;};
+ for(CGSize size:{CGSizeMake(695,320),CGSizeMake(480,360),CGSizeMake(960,320),CGSizeMake(569,320),CGSizeMake(320.0*912/420,320)})for(int game=0;game<2;++game){@autoreleasepool{
+  HMPerformanceView* view=[[HMPerformanceView alloc]initWithFrame:CGRectMake(0,0,size.width,size.height)];
+  [[view valueForKey:@"frameTimer"]invalidate];[[view valueForKey:@"motionTimer"]invalidate];
+  if(game){perfStorage<heavymach::SaveData>(view,"_save")={};[view startSlot:0 mode:0 mission:0 stage:0];}
+  perfStorage<CGFloat>(view,"_canvasWidth")=size.width;perfStorage<CGFloat>(view,"_canvasHeight")=size.height;
+  auto& loading=perfStorage<heavymach::LoadingTransition>(view,"_loading");loading.changeScreen(game?3:6);
+  for(int tick=0;tick<100&&loading.state()!=3;++tick)loading.tick({});XCTAssertEqual(loading.state(),3);
+  HMMedia* media=[view valueForKey:@"media"];HMGLRenderer* gl=[view valueForKey:@"glRenderer"];[gl setLogicalWidth:size.width height:size.height];media.glRenderer=gl;
+  std::vector<uint8_t> first;
+  for(int pass=0;pass<2;++pass){
+   UIGraphicsBeginImageContextWithOptions(CGSizeMake(2,2),YES,1);[(pass?UIColor.cyanColor:UIColor.magentaColor) setFill];UIRectFill(CGRectMake(0,0,2,2));UIImage* marker=UIGraphicsGetImageFromCurrentImageContext();UIGraphicsEndImageContext();
+   [media resetClip];[media setCameraOffset:CGPointZero];[media setDrawingOffset:CGPointZero];[media setDrawingScale:1];
+   XCTAssertTrue([gl beginFrame]);[gl drawImage:marker name:[NSString stringWithFormat:@"marker%d",pass] columns:1 rows:1 tile:0 position:CGPointMake(size.width/2,size.height/2) scale:CGSizeMake(size.width,size.height) rotation:0 alpha:1 blend:0 rgb565:YES];
+   if(game){[media setDrawingOffset:CGPointMake((size.width-480)/2,0)];[media setDrawingScale:.9];[media setClipRect:CGRectMake((size.width-432)/2,16,432,288)];}
+   [view drawLoading];[gl finish];[gl endFrame];UIImage* snapshot=[gl snapshot];auto current=pixels(snapshot);
+   if(!pass)first=current;else {size_t exposed=0;for(size_t n=0;n<current.size();n+=4)if(std::abs(int(current[n])-first[n])>1||std::abs(int(current[n+1])-first[n+1])>1||std::abs(int(current[n+2])-first[n+2])>1){if(exposed<8)NSLog(@"HM_DOOR_GAP x=%zu y=%zu first=%d,%d,%d second=%d,%d,%d",n/4%CGImageGetWidth(snapshot.CGImage),n/4/CGImageGetWidth(snapshot.CGImage),first[n],first[n+1],first[n+2],current[n],current[n+1],current[n+2]);++exposed;}XCTAssertEqual(exposed,size_t(0),@"Door exposed %zu background pixels at %gx%g game=%d",exposed,size.width,size.height,game);NSLog(@"HM_DOOR_COVER %gx%g game=%d exposed=%zu",size.width,size.height,game,exposed);
+    XCTAttachment* a=[XCTAttachment attachmentWithImage:snapshot];a.name=[NSString stringWithFormat:@"door-closed-%gx%g-game%d",size.width,size.height,game];a.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:a];}
+  }
+  media.glRenderer=nil;[view setApplicationActive:NO];
+ }}
+}
 - (void)testExpandedTitleAndSlotsPreserveOriginalArtAndUseMovedHitTargets {
  for(NSValue* value in @[[NSValue valueWithCGSize:CGSizeMake(480,320)],[NSValue valueWithCGSize:CGSizeMake(912,420)],[NSValue valueWithCGSize:CGSizeMake(956,440)]])for(int direction=0;direction<2;++direction){@autoreleasepool{
   CGSize size=value.CGSizeValue;HMCanvasTestView* view=[[HMCanvasTestView alloc]initWithFrame:CGRectMake(0,0,size.width,size.height)];

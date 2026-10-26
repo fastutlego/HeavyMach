@@ -204,6 +204,12 @@ template<class Raster> static void HMDrawRaster(Raster& raster,CGPoint offset,CG
     NSString* key=[self resourceKey:name];
     [self.glRenderer drawJoinedBackground:key position:CGPointMake(x-_cameraOffset.x,y-_cameraOffset.y) scale:scale rotation:rotation rgb565:[_rgb565Images containsObject:key]];
 }
+- (void)drawExpandedPanel:(NSString*)name x:(CGFloat)x y:(CGFloat)y left:(CGFloat)left right:(CGFloat)right top:(CGFloat)top bottom:(CGFloat)bottom {
+    if(!self.glRenderer){[self draw:name x:x y:y];return;} // Original 480 comparison path.
+    if(![self prepareTexture:name renderer:self.glRenderer])return;
+    NSString* key=[self resourceKey:name];
+    [self.glRenderer drawExpandedPanel:key position:CGPointMake(x,y) left:left right:right top:top bottom:bottom rgb565:[_rgb565Images containsObject:key]];
+}
 - (void)drawEdgeContinuation:(NSString*)name x:(CGFloat)x y:(CGFloat)y scale:(CGFloat)scale rotation:(CGFloat)rotation width:(CGFloat)width {
     if(!self.glRenderer||![self prepareTexture:name renderer:self.glRenderer])return;
     NSString* key=[self resourceKey:name];

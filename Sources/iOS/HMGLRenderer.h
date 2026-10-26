@@ -23,6 +23,8 @@
 // Background joins only: clamp the half-texel border to image pixels without
 // changing interior UVs, original textures, or the default sprite sampler.
 - (void)drawJoinedBackground:(NSString*)name position:(CGPoint)position scale:(CGFloat)scale rotation:(CGFloat)rotation rgb565:(BOOL)rgb565;
+// Extend only the outer metal strips; keep the interior artwork at native size.
+- (void)drawExpandedPanel:(NSString*)name position:(CGPoint)position left:(CGFloat)left right:(CGFloat)right top:(CGFloat)top bottom:(CGFloat)bottom rgb565:(BOOL)rgb565;
 - (void)drawTrail:(const heavymach::TrailMesh&)mesh image:(HMImage *)image name:(NSString *)name rgb565:(BOOL)rgb565 cameraOffset:(CGPoint)offset;
 // viewport uses UIKit points measured in layer.bounds, with a top-left origin.
 - (BOOL)presentToLayer:(HMGLSurface *)layer viewport:(CGRect)viewport;

@@ -24,3 +24,9 @@
 `.githooks/pre-push`는 main의 두 번째 부모가 develop인지 검사하고 Git LFS 업로드를 실행한다. PR 검사도 main의 source branch가 develop인지 확인한다. 로컬 훅을 사용하려면 clone마다 `git config core.hooksPath .githooks`를 설정한다.
 
 현재 GitHub 계정의 비공개 저장소 branch protection API는 요금제 제한으로 403을 반환했다. 서버 보호가 설정됐다고 보고하지 않는다. 로컬 훅과 PR 검사, 저장소 지침을 적용하며 관리자에 의한 우회까지 차단한 상태는 아니다.
+
+## v0.10 — 2026-10-27
+
+VTOL 크기·외곽선·불꽃 수정 `6404c999`까지 작업 브랜치→develop(`63afa4f5`)→main(`76cbd21c`)으로 병합했다. main 병합 커밋에 annotated tag `v0.10`을 붙였고 develop·main·태그의 원격 반영을 확인했다. v0.9는 이동하지 않았다. v0.10은 Git LFS 자원을 포함한다.
+
+이후 전체 화면 도어 수정은 develop에서 분기한 `fix/fullscreen-transitions`에서 진행한다. v0.10에는 포함되지 않는다. [변경·검사](public/fullscreen-transitions-20261027.md).

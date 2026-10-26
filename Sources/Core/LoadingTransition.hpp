@@ -6,6 +6,10 @@
 namespace heavymach {
 enum class LoadingEventKind { CloseSound, RefreshScreen, OpenSound };
 struct LoadingEvent { LoadingEventKind kind; int screen; };
+struct LoadingPanelDraw {
+ DrawSprite sprite;
+ float left=0,right=0,top=0,bottom=0;
+};
 // GameMain 0x2ecc/0x3374/0x3890. One step per original game tick, no dt.
 class LoadingTransition {
 public:
@@ -22,6 +26,8 @@ public:
  // Screen coordinates, +Y up, 480x320. Center anchors; layer6, no camera quake.
  std::span<const DrawSprite> sprites() const { return visible_?std::span<const DrawSprite>(sprites_):std::span<const DrawSprite>(); }
  const std::array<DrawSprite,4>& panels() const { return sprites_; }
+ // Presentation-only expansion. Original recurrence/events remain 480x320.
+ std::array<LoadingPanelDraw,4> expandedPanels(float width,float height) const;
 private:
  int state_=6,screen_=1;
  bool visible_=false;

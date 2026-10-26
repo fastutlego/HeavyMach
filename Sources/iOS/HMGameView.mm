@@ -392,21 +392,13 @@
     if(oldScope)[_media releaseScope:oldScope];
 }
 - (void)drawLoading {
+    if(!_loading.visible())return;
     _media.presentationOffset=CGPointZero;
-    if(_canvasHeight>320){
-        [_media resetClip];[_media setDrawingOffset:CGPointZero];[_media setDrawingScale:1];
-        const CGFloat sy=_canvasHeight/320,sx=_canvasWidth/480;
-        for(const auto& sprite:_loading.sprites())[_media draw:[NSString stringWithUTF8String:sprite.tile.c_str()] x:sprite.position.x*sx y:sprite.position.y*sy columns:sprite.cols rows:sprite.rows tile:sprite.frame scaleX:sprite.scale.x*sx scaleY:sprite.scale.y*sy rotation:sprite.rotation alpha:sprite.alpha blend:sprite.blend];
-        return;
-    }
-    if(_canvasWidth>480&&!_session){
-        CGFloat center=(_canvasWidth-480)/2;
-        for(int side=-1;side<=1;++side){
-            CGRect clip=side<0?CGRectMake(0,0,center,320):side>0?CGRectMake(center+480,0,center,320):CGRectMake(center,0,480,320);
-            [_media setClipRect:clip];[_media setDrawingOffset:CGPointMake(center+side*480,0)];
-            for(const auto& sprite:_loading.sprites())[_media draw:[NSString stringWithUTF8String:sprite.tile.c_str()] x:sprite.position.x y:sprite.position.y columns:sprite.cols rows:sprite.rows tile:sprite.frame scaleX:sprite.scale.x scaleY:sprite.scale.y rotation:sprite.rotation alpha:sprite.alpha blend:sprite.blend];
-        }
-        [_media resetClip];[_media setDrawingOffset:CGPointZero];
+    // Door is a canvas overlay, independent of HUD safe-area scale and clip.
+    [_media resetClip];[_media setDrawingOffset:CGPointZero];[_media setDrawingScale:1];[_media setCameraOffset:CGPointZero];
+    if(_canvasWidth>480||_canvasHeight>320){
+        for(const auto& panel:_loading.expandedPanels(_canvasWidth,_canvasHeight))
+            [_media drawExpandedPanel:[NSString stringWithUTF8String:panel.sprite.tile.c_str()] x:panel.sprite.position.x y:panel.sprite.position.y left:panel.left right:panel.right top:panel.top bottom:panel.bottom];
     }else for(const auto& sprite:_loading.sprites())
         [_media draw:[NSString stringWithUTF8String:sprite.tile.c_str()] x:sprite.position.x y:sprite.position.y columns:sprite.cols rows:sprite.rows tile:sprite.frame scaleX:sprite.scale.x scaleY:sprite.scale.y rotation:sprite.rotation alpha:sprite.alpha blend:sprite.blend];
 }
@@ -952,7 +944,7 @@
         const auto& world=_session->world();
         if(world.paused&&world.hasBackground){NSString *asset=[NSString stringWithUTF8String:world.map.background.c_str()];_media.resourceScope=@"world";CGSize size=[_media imageSize:asset];CGFloat scale=std::max(_canvasWidth/std::max(CGFloat(1),size.width-1),_canvasHeight/std::max(CGFloat(1),size.height-1));[_media draw:asset x:_canvasWidth/2 y:_canvasHeight/2 columns:1 rows:1 tile:0 scaleX:scale scaleY:scale rotation:0 alpha:1];}
         [_media setCameraOffset:CGPointMake(_worldShake.offset.x,_worldShake.offset.y)];
-        if(!(_canvasWidth>480&&_loading.visible()))for (const auto& item:_session->renderItems()) {
+        for (const auto& item:_session->renderItems()) {
             if (const auto *sprite=std::get_if<heavymach::DrawSprite>(&item)){
                 _media.resourceScope=sprite->worldTexture?@"world":@"shared";
                 [_media draw:[NSString stringWithUTF8String:sprite->tile.c_str()] x:sprite->position.x y:sprite->position.y columns:sprite->cols rows:sprite->rows tile:sprite->frame scaleX:sprite->scale.x scaleY:sprite->scale.y rotation:sprite->rotation alpha:sprite->alpha blend:sprite->blend];}
