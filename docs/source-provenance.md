@@ -42,3 +42,7 @@ Clutch-2.0.4는 아카이브 이름의 도구 표기다. Assault 앱 버전은 I
 원작 일반 파일 776개 중 이미지 695개, WAV 31개, 맵 43개와 MCH 3개를 확인했다. 두 판본의 같은 경로·바이트 일치 파일은 744개다. 원작 이미지 674개와 WAV 31개는 Assault와 동일하지만 Stage01·Stage36~41과 Boss08 부품 등에는 차이가 있다. 원작 복원에 Assault 파일을 일괄 대체하지 않는다.
 
 기존 상세 보고: [판본 분석](heavy-mach-113-assault-analysis-20261024.md), [분석 인계](handoff-20261024-rea-install.md), [호환 실행 검증](heavymach-recovery-20261024.md). 과거 보고의 미착수 표기는 당시 상태다. 현재 판정은 [current-status](current-status.md)를 따른다.
+
+## 빌드 자원 관리 — 2026-10-26
+
+앱에서 읽는 OriginalImages 695개, 변환 Images 695개, Audio 31개, RawData 46개, 앱 아이콘 구성 3개, 이미지 비교 자료 1개를 Git/LFS에 포함한다. 기존 Art/Extensions 4개와 합쳐 [자원 목록](build-resources.json) 1,475개를 관리한다. 이번 변경은 기존 파일의 바이트를 수정하지 않는다. `python3 tools/verify_build_resources.py`로 크기·SHA-256을 검사한다. 원본 IPA와 ARMv6 실행 파일은 앱 빌드 입력에 포함하지 않는다.

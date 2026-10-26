@@ -31,7 +31,7 @@ SaaS 담당 세션이 HeavyMach의 자료를 읽고 Apps·Mags를 작성할 때 
 
 ## GitHub용 기술 문서
 
-[빌드와 설치](https://github.com/gelb2/HeavyMach/blob/main/docs/public/build-and-install.md)는 원본 자원 준비부터 일반·치트 앱 빌드, Simulator 실행, 본인 서명으로 아이폰에 설치하는 순서를 설명한다. 기존 추출 명령이 만들지 않던 `OriginalImages` 복사 단계를 추가했다. 실제 원본 이미지 695개를 별도 출력 폴더에 복사하고 해시 일치를 확인했다.
+[빌드와 설치](https://github.com/gelb2/HeavyMach/blob/main/docs/public/build-and-install.md)는 clone·Git LFS 자원 받기, 일반·치트 앱 빌드, Simulator 실행, 본인 서명으로 아이폰에 설치하는 순서를 설명한다. 빌드·검사 자원은 저장소에 포함한다. IPA 추출과 기존 Mac에서 자원을 복사하는 단계는 필요하지 않다.
 
 [구현과 검증 범위](https://github.com/gelb2/HeavyMach/blob/main/docs/public/implementation-status.md)는 만든 기능, 사용한 기술, 실행 결과, 남은 작업과 배포 상태를 설명한다. README에서 두 문서로 바로 이동한다.
 
@@ -45,8 +45,8 @@ SaaS 담당 세션이 HeavyMach의 자료를 읽고 Apps·Mags를 작성할 때 
 
 | 자료 | 현재 상태 | 이후 문서에 추가할 내용 |
 |---|---|---|
-| 새 clone에서의 설치 전 과정 | 기존 환경의 빌드·설치 성공, 설치 가이드의 명령·설정과 이미지 복사 단계 확인 | 새 checkout에서 두 앱 실행까지 진행한 환경·결과 |
-| 이미지 비교 테스트 입력 재현 | 로컬 ImageDecodeParity.json과 비교 테스트 존재 | 같은 입력을 준비하는 저장소 내 재현 절차 |
+| 새 clone 빌드·실행 | 원격 clone의 빌드4개, 코어17·iOS14, 새 Simulator 두 앱 실행 통과 | 새 clone으로 실제 아이폰 서명·재설치는 이번 검사에서 미실행 |
+| 이미지 비교 테스트 입력 | ImageDecodeParity.json을 Git에 포함. 새 clone에서 이미지695개 디코딩 비교 통과 | 추가 입력 준비 없음 |
 | 장시간 발열·전력 비교 | 127.77초 실기기 계측, 전체 미션 사용자 플레이 보고 | 동일 조건의 호환판·복원판 장시간 비교 결과 |
 | 원작자 답변과 배포 조건 | 사용자 문의 기록과 무료 배포 의향 | 실제 답변·조건을 받으면 원문과 날짜 추가 |
 | 게시용 플레이 영상 | 사용자 후속 제공 예정 | 촬영 앱·기기·버전, 장면 타임코드, 이미지·클립과 설명 |
@@ -58,3 +58,5 @@ GitHub Release 등록·SaaS 편집·번역·대표 컷 선정은 집필·게시 
 조회한 SaaS 웹 소스에는 HeavyMach Apps·Mags 항목이 없었다. Apps는 `src/entities/content/apps.ts`와 `src/shared/i18n/canonical/apps.tsx`, 언어별 콘텐츠를 사용한다. Mags는 `src/entities/content/issues.ts`의 호 등록과 본문·번역·공유 카드·챗봇 자료가 연결된다. 집필·게시는 SaaS 저장소의 현행 지침을 읽고 진행한다.
 
 개발자의 변과 사용자 정정은 개인 서사의 기준이다. 설치·구현·검사 수치는 기술 문서와 실행 기록을 기준으로 쓴다. 메타카피·자기합리화·근거 없는 성과를 추가하지 않고, 실제로 없었던 인터뷰 질문·답변도 만들지 않는다. 이번 작업은 HeavyMach 내부 자료 정리이며 SaaS 본문·운영 데이터는 변경하지 않았다.
+
+[새 clone 빌드 검증](clone-build-20261026.md)은 자원 누락 수정과 원격에서 받은 파일만으로 수행한 빌드·실행 결과다. 앞선 로컬 복사 검사와 구분해 인용한다.

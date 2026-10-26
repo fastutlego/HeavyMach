@@ -1,5 +1,16 @@
 # HeavyMach 보고 사이트
 
+## 최신 게시 — 2026-10-26 새 원격 clone 빌드
+
+`/clone-build.html`에 자원 Git 누락 수정, GitHub clone·LFS 다운로드, IPA 읽기 차단 상태의 빌드4개·코어17·iOS14·두 앱 Simulator 실행 결과를 게시했다. 설치 가이드에서 IPA 추출·자원 수동 복사 요구를 제거했다.
+
+- 소스: `716bf64e9aca2aaeca413893bf1a6a9c93934ac7`.
+- 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_8327a5c46b948191b6fb26c8fc69a6df`.
+- 배포: `appgdep_6adf2db5902c8191ab0d2d7f612a92bb`, `succeeded`, 2026-10-26T10:38:59.379457+00:00. 소유자 전용 유지.
+- 로컬 링크246개, 기존 앵커·이미지, 수정 원고5개의 본문·다운로드 일치를 확인했다. 실행 화면2개와 빌드·앱·검사JSON을 게시했다.
+- 새 웹페이지의 브라우저 화면 검사는 수행하지 않았다. 게임의 새 Simulator 실행·자동 검사는 직접 수행했다.
+
+
 ## 최신 게시 — 2026-10-26 IPA 없는 빌드·REA 구현 검증
 
 `/independence.html`에 원본 읽기 차단·4개 빌드·앱 자원 해시·Simulator 실행·Core17/iOS14 검사와 Git 자원 상태를 게시했다. `/rea-implementation.html`에 25함수군·증거140건·산출물2,067개·REA 함수 재조회 결과를 연결했다. 설치 문서의 IPA 필수 표현을 수정했다.
