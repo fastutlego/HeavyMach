@@ -379,3 +379,13 @@ macOS 자체 전체 화면 캡처에서 게임이 화면 끝까지 표시됨을 
 - Version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_29ca0d8812dc8191ac944421048cb6ac`
 - Deployment: `appgdep_6adfccd43cfc8191be3969e3a48759f8`, `succeeded`
 - URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/auto-aim-progress.html
+
+### 2026-10-27 07:36 KST — 표적 상태 표지·버튼 순서·두 기기 설치
+
+A·표적 전환·사격 순서, 사선과 LOCKED/TRACK/BLOCKED 표시, 세 환경의 검사 각3개, iPhone·iPad 정식·치트 앱4건의 무선 설치·실행을 반영했다. 실제 iPad GL 캡처를 추가했다. 기존 절 앵커 section-0~3을 유지했다. Chrome에서 최신 본문과 상단 레이아웃을 확인했고, 후속 캡처는 noWindowsAvailable로 추가 확인하지 못했다. 소유자 비공개 범위를 유지했다.
+
+- Site source: `556af79be53abb32e0fc946c4799ab7d00d2fb5c`
+- Version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_d18b29a66c6c8191babbfec9c604e8dc`
+- Deployment: `appgdep_6adfd5f5fa9481918fbb77621f06ea31`, `succeeded`
+- URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/auto-aim-progress.html
+

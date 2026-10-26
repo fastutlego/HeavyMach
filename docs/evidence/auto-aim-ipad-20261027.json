@@ -734,5 +734,128 @@
       "Sources/iOS/HMMedia.mm": "0cfa86c73695e652020e2f88df8eb3756b6c6c0beb61646d3412f6bbeba1bc57",
       "Tests/Apple/HMAppleInputTests.mm": "5bda3eecb1d4ac33053ac5df5591c37b8b4456b53d613731145ed31c3f96b3ed"
     }
+  },
+  "lock_label_and_four_installs": {
+    "date": "2026-10-27",
+    "requirement": "HM-AIM",
+    "changes": "사용자 지시로 버튼 순서를 A → 표적 전환 화살표 → 사격 조준경으로 바꿨다. 표적 네 모서리에 사선과 상태 표지를 연결했다. LOCKED는 조준 가능, TRACK은 추적 중, BLOCKED는 지형·사거리 등으로 발사할 수 없는 상태다. 표적 획득 때 사선을 0.15초 동안 그리고 표지를 한 번 점등한다. 화면 가장자리에서는 글자를 안쪽에 배치한다. 기존 OpenGL 선 그리기를 사용하며 프레임마다 파일을 쓰거나 이미지를 생성하지 않는다.",
+    "result": "시뮬레이터·실제 iPad·실제 iPhone에서 관련3개씩 통과했다. 버튼 순서와 터치 판정, 상태 표지와 화면 경계,20종 무기 이동·점프·사격·피해를 검사했다. 두 기기에 치트·정식 앱4건을 무선으로 업데이트 설치하고 각각 실행했다. 기존 앱 삭제·저장 초기화는 하지 않았다. 자동조준 UI는 치트 앱에만 제공하며 정식 앱은 기존 터치 조작을 유지한다. develop/main에는 병합하지 않는다. 이전 프레임 기준 실패는 이번 검사 범위에 포함하지 않았다.",
+    "branch": "feat/auto-aim-ipad-validation",
+    "base_commit": "5fce9205",
+    "sources": {
+      "Sources/iOS/HMGameView.mm": "294126d6cbbad56749ec7a3cdb43047bfa247b84a39681f16995d5adf598afae",
+      "Sources/iOS/HMAimOverlay.hpp": "bfb02fd0eaece8d7f909ed4dab340f1e8ff85328c4071ce9eb15e631f58ae638",
+      "Tests/Apple/HMAppleInputTests.mm": "d445b2f4c09b32f0949f026c702b66e643fe027111f3f9dace9293a799ddab6b"
+    },
+    "tests": {
+      "simulator": {
+        "passed": 3,
+        "failed": 0,
+        "raw_log": "build/auto-aim-lock-label-20261027/simulator.log",
+        "sha256": "0ba78572851e581280d69b8e4fc20e8e36afa7a4a6420269695f75b828b06775"
+      },
+      "ipad": {
+        "passed": 3,
+        "failed": 0,
+        "raw_log": "build/auto-aim-lock-label-20261027/ipad.log",
+        "sha256": "93b27211bab30c6526e4a5dd0cc496b9f370fd01312fd50f0aa26600f3b1194f"
+      },
+      "iphone": {
+        "passed": 3,
+        "failed": 0,
+        "raw_log": "build/auto-aim-lock-label-20261027/iphone.log",
+        "sha256": "3e5d6dfcf1f24f2b3f05fd2726fe7750c81ce3d6c0e7baddf09a88980876d676"
+      }
+    },
+    "installs": [
+      {
+        "device": "ipad",
+        "app": "restored",
+        "action": "install",
+        "transport": "localNetwork",
+        "outcome": null,
+        "raw": "build/auto-aim-lock-label-20261027/ipad-restored-install-final.json",
+        "sha256": "060708c050af631e32b3e5ef5f672018239e85eecdac9d6ae7f40c4e3a178b6b"
+      },
+      {
+        "device": "ipad",
+        "app": "restored",
+        "action": "launch",
+        "transport": "localNetwork",
+        "outcome": null,
+        "raw": "build/auto-aim-lock-label-20261027/ipad-restored-launch-final.json",
+        "sha256": "a301805c8b2164ae05d2c8945b298d872570a351a75e2ddf5da1d1b09b2f587c"
+      },
+      {
+        "device": "ipad",
+        "app": "validation",
+        "action": "install",
+        "transport": "localNetwork",
+        "outcome": null,
+        "raw": "build/auto-aim-lock-label-20261027/ipad-validation-install-final.json",
+        "sha256": "4267c14f10a91af28b9445de5fef41b50ff100de0c3e491f1745500d3f779d76"
+      },
+      {
+        "device": "ipad",
+        "app": "validation",
+        "action": "launch",
+        "transport": "localNetwork",
+        "outcome": null,
+        "raw": "build/auto-aim-lock-label-20261027/ipad-validation-launch-final.json",
+        "sha256": "fef9fe06d56fd71edcdac83354a93df5d9c2db6d314ac06d49675ff9d94fc123"
+      },
+      {
+        "device": "iphone",
+        "app": "restored",
+        "action": "install",
+        "transport": "localNetwork",
+        "outcome": null,
+        "raw": "build/auto-aim-lock-label-20261027/iphone-restored-install-final.json",
+        "sha256": "e4fb93b0ccf1460672d6b5b00156467e5fae1db9de80853ac0877e61020d1be0"
+      },
+      {
+        "device": "iphone",
+        "app": "restored",
+        "action": "launch",
+        "transport": "localNetwork",
+        "outcome": null,
+        "raw": "build/auto-aim-lock-label-20261027/iphone-restored-launch-final.json",
+        "sha256": "418fcca6e1c9f9a3a6268c6a75e540b346f8b7d214367f20066c1f911263597f"
+      },
+      {
+        "device": "iphone",
+        "app": "validation",
+        "action": "install",
+        "transport": "localNetwork",
+        "outcome": null,
+        "raw": "build/auto-aim-lock-label-20261027/iphone-validation-install-final.json",
+        "sha256": "71eea02ae69731c5b39d71486a94eb463970715fa5266674e2cb3168678d49c0"
+      },
+      {
+        "device": "iphone",
+        "app": "validation",
+        "action": "launch",
+        "transport": "localNetwork",
+        "outcome": null,
+        "raw": "build/auto-aim-lock-label-20261027/iphone-validation-launch-final.json",
+        "sha256": "c6195d09b8c4c4c8cc0f3fa683b109dd64863384aa8f82411a3b36f08d3d4ff5"
+      }
+    ],
+    "screenshots": {
+      "docs/public/media/auto-aim/lock-label-iphone.png": "1ba1f85bbbf1494e07c90c989b4f67437f52200e8de5e408764b95d582b53f8a",
+      "docs/public/media/auto-aim/lock-label-ipad.png": "1ba1f85bbbf1494e07c90c989b4f67437f52200e8de5e408764b95d582b53f8a"
+    },
+    "apps": {
+      "HeavyMachValidation": {
+        "bundle_id": "com.gelb2.heavymach.validation",
+        "binary_sha256": "d6c683a182672c8ed1508c8f16ffa602e88bf876a4c1b40fa1ae50121962a143",
+        "configuration": "Debug, development signing"
+      },
+      "HeavyMachRestored": {
+        "bundle_id": "com.gelb2.heavymach.restored",
+        "binary_sha256": "dea1374b1db0a62094f6313979a9612950d21555f6928821c381cbcb07ef449e",
+        "configuration": "Debug, development signing"
+      }
+    }
   }
 }

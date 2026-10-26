@@ -1,4 +1,5 @@
 #include "VTOL.hpp"
+#include "HMAimOverlay.hpp"
 #import "HMResources.h"
 #import "HMGameView.h"
 #import "HMValidationControls.h"
@@ -1048,7 +1049,8 @@
 - (CGRect)aimControlRect:(int)control {
     if(control<1||control>3)return CGRectNull; // Removed manual/correction buttons have no hit area.
     // Mount to the same 480-unit HUD rail as booster/weapon, including safe-area scale.
-    CGRect r=CGRectMake(334+(control-1)*48,10,46,46);
+    int slot=control==1?0:control==3?1:2; // A, next target, fire.
+    CGRect r=CGRectMake(334+slot*48,10,46,46);
     return CGRectMake(_hudOffset.x+r.origin.x*_hudScale,_hudOffset.y+r.origin.y*_hudScale,r.size.width*_hudScale,r.size.height*_hudScale);
 }
 - (void)saveAimMode { [NSUserDefaults.standardUserDefaults setInteger:int(_preferredAimMode) forKey:@"AimModeV1"]; }
@@ -1115,6 +1117,15 @@
     }else {
         float length=8;float lines[]={left,bottom+length,left,bottom,left,bottom,left+length,bottom,right-length,bottom,right,bottom,right,bottom,right,bottom+length,left,top-length,left,top,left,top,left+length,top,right-length,top,right,top,right,top,right,top-length};
         [_glRenderer drawAimLines:lines count:16 red:red green:green blue:blue];
+        auto badge=heavymach::aimHUDLabel(left,right,top,float(_canvasWidth),float(_canvasHeight),aim.status,float(_time-_aimAcquiredTime));
+        float leader[]={badge.anchorX,badge.anchorY,badge.elbowX,badge.elbowY,badge.elbowX,badge.elbowY,badge.endX,badge.elbowY};
+        [_glRenderer drawAimLines:leader count:4 red:red green:green blue:blue];
+        auto text=heavymach::aimHUDText(badge);
+        // A small dark offset keeps the stencil readable over bright backgrounds.
+        auto shadow=text;for(size_t i=0;i<shadow.size;i+=2){shadow.points[i]+=.7f;shadow.points[i+1]-=.7f;}
+        [_glRenderer drawAimLines:shadow.points.data() count:int(shadow.size/2) red:.06f green:.08f blue:.08f];
+        float flash=badge.flash?1:0;
+        [_glRenderer drawAimLines:text.points.data() count:int(text.size/2) red:std::max(red,flash) green:std::max(green,flash) blue:std::max(blue,flash)];
     }
 }
 #endif

@@ -9,6 +9,7 @@
 #import "HMValidationPanel.h"
 #include "GameSession.hpp"
 #include "VTOL.hpp"
+#include "HMAimOverlay.hpp"
 #include "KeyboardInput.hpp"
 #include "Viewport.hpp"
 #include "TiltState.hpp"
@@ -330,6 +331,18 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
   ++index;
  }
 }
+- (void)testAutoAimLabelStaysInsideCanvas {
+ for(float width:{480.f,700.f})for(float height:{320.f,360.f})for(float x:{-20.f,200.f,width-10})for(float y:{10.f,height-5}){
+  for(auto status:{heavymach::AimStatus::tracking,heavymach::AimStatus::ready,heavymach::AimStatus::blocked}){
+   auto label=heavymach::aimHUDLabel(x,x+45,y,width,height,status,1);
+   auto strokes=heavymach::aimHUDText(label);XCTAssertGreaterThan(strokes.size,size_t(0));
+   for(size_t i=0;i<strokes.size;i+=2){XCTAssertGreaterThanOrEqual(strokes.points[i],0);XCTAssertLessThan(strokes.points[i],width);XCTAssertGreaterThan(strokes.points[i+1],64);XCTAssertLessThan(strokes.points[i+1],height);}
+   NSString* expected=status==heavymach::AimStatus::ready?@"LOCKED":status==heavymach::AimStatus::blocked?@"BLOCKED":@"TRACK";
+   XCTAssertEqualObjects([NSString stringWithUTF8String:label.text],expected);XCTAssertFalse(label.flash);
+  }
+ }
+ XCTAssertTrue(heavymach::aimHUDLabel(100,140,200,480,320,heavymach::AimStatus::ready,.18).flash);
+}
 - (void)testAutoAimControlsAttachToHUDAndNextTargetTouch {
  [self autoAimArenaWithWeapon:"P_Wpn_Gun01"];
  auto& session=storage<std::unique_ptr<heavymach::GameSession>>(self.game,"_session");
@@ -343,6 +356,8 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
    XCTAssertLessThanOrEqual((CGRectGetMaxY(r)-offset.y)/scale,64);
   }
  }
+ XCTAssertLessThan(CGRectGetMaxX([self.game aimControlRect:1]),CGRectGetMinX([self.game aimControlRect:3]));
+ XCTAssertLessThan(CGRectGetMaxX([self.game aimControlRect:3]),CGRectGetMinX([self.game aimControlRect:2]));
  auto vp=storage<heavymach::Viewport>(self.game,"_viewport");CGRect r=[self.game aimControlRect:3];
  CGPoint next=CGPointMake(vp.x+CGRectGetMidX(r)*vp.scale,vp.y+(vp.logicalHeight-CGRectGetMidY(r))*vp.verticalScale());
  auto first=session->aimSnapshot().target;auto p=session->player()->position;session->validationSpawnEnemy({"Heli001",{p.x+320,p.y+150},false});

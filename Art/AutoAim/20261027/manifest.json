@@ -31,7 +31,7 @@
     ],
     "bottom": "pressed/active"
   },
-  "runtime": "one-time 138x92 prefilter; 46x46 cells; HUD local positions x334,382,430 y10; same HUD offset/scale for drawing and input",
+  "runtime": "one-time 138x92 prefilter; 46x46 cells; HUD local positions A x334, next x382, fire x430, y10; same HUD offset/scale for drawing and input",
   "alpha_inspection": {
     "zero_alpha_pixels": 267867,
     "total_pixels": 1572864
