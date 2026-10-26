@@ -114,7 +114,7 @@ def main():
     shutil.copytree(ROOT/'docs/public/independence',dist/'independence',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/clone',dist/'clone',dirs_exist_ok=True)
     (dist/'evidence').mkdir(exist_ok=True)
-    for name in ['apple-platform-performance-20261026.json', 'mac-fullscreen-capture-20261027.json', 'physical-apple-20261027.json', 'wireless-apple-20261027.json']:
+    for name in ['apple-platform-performance-20261026.json', 'mac-fullscreen-capture-20261027.json', 'physical-apple-20261027.json', 'wireless-apple-20261027.json', 'vtol-feasibility-20261027.json']:
         shutil.copyfile(ROOT/'docs/evidence'/name,dist/'evidence'/name)
     for name in ['game-design.md','document-governance.md','document-map.json','apple-platforms.md','keyboard-input-policy.md','current-status.md','wireless-device-workflow.md']:
         shutil.copyfile(ROOT/'docs'/name,dist/name)
