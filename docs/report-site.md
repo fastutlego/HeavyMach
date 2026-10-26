@@ -1,5 +1,15 @@
 # HeavyMach 보고 사이트
 
+## 최신 게시 — 2026-10-26 전수검사·REA 실행
+
+`#migration-audit`에 독립 저장소 전수검사, 누락 복구, 현재 세션의 REA 디컴파일 실행 결과와 상세 문서 링크를 추가했다.
+
+- 소스: `8181a42ac7fa10f8c43f451fe5484e879ed15b78`.
+- 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_087130b040f481919dfe9f9b1e0fcf00`.
+- 배포: `appgdep_6adece26053c8191a7c283afbeb7d306`, `succeeded`, 2026-10-26T03:51:15.013100+00:00. 소유자 전용 유지.
+- 로컬 링크 126개, 기존 앵커·이미지 13개, REA 목록 수, 원고·다운로드 일치, 글쓰기 원본 14개 해시 검사를 통과했다. Chrome의 좁은 창에서 새 절의 본문·링크·줄바꿈을 확인했다. 배포 API 성공을 확인했으며 인증 후 게시 화면은 별도 검사하지 않았다.
+- 현행 상세 문서: [전수검사](migration/completeness-audit-20261026.md), [REA 실행 확인](rea-availability-20261026.md).
+
 ## 최신 게시 — 2026-10-26 독립 저장소·v0.9
 
 첫 화면 `#repositories`에 허브·HeavyMach·Unity 분리, feature→develop→main, v0.9, 보존 및 검사 결과, 복원 방법을 추가했다.

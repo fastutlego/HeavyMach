@@ -7,7 +7,7 @@
 | 발견 | 수정·확인 |
 |---|---|
 | 기존 일반 Git 대상 595개 | 595개 모두 존재. 제품 파일의 Git blob 또는 LFS 원본 SHA-256과 실행 권한을 대조 |
-| OpenAL resources의 원본 소스 4개가 Git 제외됨 | 원래 폴더에서 복구. Resources 제외 규칙을 저장소 루트로 한정하여 vendor 소스를 추적 |
+| OpenAL resources의 원본 소스 4개가 Git 제외됨 | 원래 폴더에서 복구. Resources 제외 규칙을 저장소 루트로 한정하여 vendor 소스를 추적. 원본의 CRLF·공백을 포함해 바이트 그대로 보존 |
 | 로컬 Analysis가 새 폴더에 없음 | 3,571개 분석 자료 복사·SHA-256 대조 |
 | 로컬 호환 실행기 작업 소스가 새 폴더에 없음 | 파일·심볼릭 링크 5,119개 복사·대조. 고정 upstream과 두 패치의 역적용 검사를 통과 |
 | 상위 iOS README·작업 지침이 새 저장소에 없음 | 원문 2개를 legacy-ios에 보존하고 Compatibility/AGENTS.md에 현행 경로·보존 규칙을 적용 |
