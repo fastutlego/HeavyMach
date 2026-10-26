@@ -1,6 +1,16 @@
 # HeavyMach 보고 사이트
 
-## 최신 게시 — 2026-10-27 Mac 전체 화면 캡처 대조
+## 최신 게시 — 2026-10-27 iPhone·iPad 실제 기기 검사
+
+치트 앱의 기기별84/85 결과, 실제 NSTimer와 CADisplayLink 비교 측정, 회전·터치·키보드·복귀 조작, Instruments 누수0건의 기록 범위와 iPad 저전력 로그를 게시했다. 무선 설치·디버깅 조사 과제도 추가했다. 제품 소스는 변경하지 않았다.
+
+- URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/apple-platforms.html#section-13
+- 소스: `d733f626f74b6d8ed8cfbfa1aa63423d3bde8c81`
+- 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_34cc0b76be448191bc298b1eb8c2bfef`
+- 배포: `appgdep_6adf8b61c8b08191ab98add8ebdf055f`, `succeeded`, 2026-10-26T17:18:36.969329+00:00. 소유자 전용 유지.
+- 상대 링크275개와 HTML 앵커, 원고·증거 JSON 바이트 일치를 확인했다. 기존 이미지13개를 보존했다. Chrome 로컬 화면에서 추가 본문과 표의 시작 부분을 확인했다. 게시본 인증 후 화면은 다시 검사하지 않았다.
+
+## 이전 게시 — 2026-10-27 Mac 전체 화면 캡처 대조
 
 macOS 자체 전체 화면 캡처에서 게임이 화면 끝까지 표시됨을 확인한 결과를 게시했다. CUA 창 캡처의 흰 여백 분류, 원본 PNG 해시와 가장자리 측정값, 후속 검사 절차를 문서에 반영했다. 문서·사이트 생성기 커밋은 `1f2629fa`다. 제품 코드는 변경하지 않았다.
 

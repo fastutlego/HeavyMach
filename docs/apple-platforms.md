@@ -51,3 +51,7 @@ Apple framework 바이너리를 Android에 가져가지 않는다. `Sources/Core
 [Apple의 여러 프로젝트와 의존 관계](https://developer.apple.com/documentation/xcode/managing-multiple-projects-and-their-dependencies), [Swift package의 리소스 지원](https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package), [XcodeGen 프로젝트 명세](https://github.com/yonaskolb/XcodeGen/blob/master/Docs/ProjectSpec.md), [Apple Silicon 앱 이식](https://developer.apple.com/documentation/Apple-Silicon/porting-your-macos-apps-to-apple-silicon), [Android CMake 연결](https://developer.android.com/studio/projects/gradle-external-native-builds).
 
 게임도 공용 코어와 자원을 framework/SPM으로 모듈화할 수 있다. 이번에는 사용자가 지정한 workspace 아래 여러 project 구성과 기존 Objective-C++ 연결을 직접 사용할 수 있는 정적 framework를 채택했다.
+
+## 2026-10-27 실제 기기 확인
+
+iPhone Air·iPad Air 13형 M2의 전체 suite는 각각84/85 통과다. 키보드20무기·터치 병용 API 검사는 통과했으며 남은 실패는 표시시간 비교다. Device Hub로 보낸 OS 키 입력에서 이동·점프·조준·사격·무기 전환을 확인했다. 양방향 가로 터치 사격과 홈 복귀 일시정지도 확인했다. 실제 Bluetooth/USB 키보드 검사는 남았다. [상세·측정 범위](public/apple-platform-progress-20261026.md), [증거](evidence/physical-apple-20261027.json).

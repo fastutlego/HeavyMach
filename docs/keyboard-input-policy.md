@@ -35,3 +35,7 @@ iPhone/iPad의 터치·기울기 조작을 유지한다. iPad에서 키보드를
 `Tests/KeyboardInputTests.cpp`: 반대 키·반복 이벤트·속도·키 교환·해제·조준 경계.
 
 `Tests/Apple/HMAppleInputTests.mm`: 실제 공통 뷰와 게임 세션에서 이동·점프·조준·사격, 모든20개 무기 정의(필살기3종 포함), 이전/다음 순환, 슬롯→모드→미션→게임, 설정 변경·복원, 키보드 이동 중 터치 사격, 다양한 화면 비율을 검사한다. 같은 검사를 native Mac, iPhone Simulator, iPad Simulator에서 실행한다. API 주입 검사와 CUA로 실제 OS 키 이벤트를 보낸 관측은 결과에 구분해서 적는다.
+
+## 2026-10-27 실제 기기 확인
+
+iPhone Air·iPad Air 13형 M2의 전체 suite는 각각84/85 통과다. 키보드20무기·터치 병용 API 검사는 통과했으며 남은 실패는 표시시간 비교다. Device Hub로 보낸 OS 키 입력에서 이동·점프·조준·사격·무기 전환을 확인했다. 양방향 가로 터치 사격과 홈 복귀 일시정지도 확인했다. 실제 Bluetooth/USB 키보드 검사는 남았다. [상세·측정 범위](public/apple-platform-progress-20261026.md), [증거](evidence/physical-apple-20261027.json).
