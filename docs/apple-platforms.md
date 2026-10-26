@@ -55,3 +55,7 @@ Apple framework 바이너리를 Android에 가져가지 않는다. `Sources/Core
 ## 2026-10-27 실제 기기 확인
 
 iPhone Air·iPad Air 13형 M2의 전체 suite는 각각84/85 통과다. 키보드20무기·터치 병용 API 검사는 통과했으며 남은 실패는 표시시간 비교다. Device Hub로 보낸 OS 키 입력에서 이동·점프·조준·사격·무기 전환을 확인했다. 양방향 가로 터치 사격과 홈 복귀 일시정지도 확인했다. 실제 Bluetooth/USB 키보드 검사는 남았다. [상세·측정 범위](public/apple-platform-progress-20261026.md), [증거](evidence/physical-apple-20261027.json).
+
+## 무선 설치와 디버깅
+
+2026-10-27 iPhone 일반 앱 무선 재설치·실행과 iPad 일반·치트 앱 무선 설치를 확인했다. 두 기기에서 LLDB 중단점·변수 조회·재개를 수행했다. iPad 선택 검사8/8과 Time Profiler21.716초 기록이 성공했다. [명령·스킬·검증 범위](wireless-device-workflow.md)를 따른다. 기존 표시시간 후속 과제는 유지한다.

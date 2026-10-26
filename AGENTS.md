@@ -29,3 +29,5 @@
 - SaaS 담당 세션에 집필 자료를 전달할 때는 [집필용 문서 안내](docs/public/publication-inventory.md)와 developer_story 경로를 사용한다. Apps·Mags 본문 작성은 SaaS 세션의 업무다. 플레이 영상·README 이미지 작업은 [영상 작업 절차](docs/media-publication.md)와 document-map의 media 업무를 읽고 원본·타임코드·파생 파일을 연결한다.
 
 - Apple 플랫폼·키보드 작업은 `docs/apple-platforms.md`, `docs/keyboard-input-policy.md`와 `.agents/skills/game-keyboard-input/SKILL.md`를 읽는다. 앱별 소스 복사를 추가하지 않으며 Catalyst를 사용하지 않는다. iPad 터치·기울기와 키보드를 함께 유지한다.
+
+- iPhone·iPad 무선 설치·디버깅에는 `.agents/skills/apple-wireless-device/SKILL.md`와 `docs/wireless-device-workflow.md`를 읽는다. 실제 transport와 스킴을 확인하고 일반 저장을 보존한다.

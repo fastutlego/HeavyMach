@@ -259,3 +259,24 @@ Device Hub로 OS 키 입력과 터치를 전달해 별도로 조작했다. 두 �
 [측정값·검사 결과·파일 해시](../evidence/physical-apple-20261027.json)를 보존했다. 일반 앱과 일반 저장 파일은 변경하지 않았다. 이번 결과는 치트 앱의 검사이며 main·v0.9 병합은 수행하지 않았다.
 
 후속 과제로 iPhone·iPad 무선 설치·디버깅 절차를 등록했다. Apple은 Mac과 기기를 페어링한 뒤 네트워크에서 실행하는 방법을 제공한다. 빌드는 Mac에서 수행한다. 케이블 없이 설치·실행·중단점·XCTest·Instruments 연결과 재부팅 후 재연결까지 확인하고 절차로 남긴다. [Apple 무선 실행 안내](https://help.apple.com/xcode/mac/current/en.lproj/dev3e2f4ee6d.html), [Device Hub 안내](https://developer.apple.com/documentation/xcode/managing-your-simulated-and-physical-devices-in-device-hub).
+
+
+## iPhone·iPad 무선 설치·디버깅 — 2026-10-27
+
+iPhone에 치트 기능이 없는 일반 앱을 설치했다. 케이블을 뺀 뒤 `localNetwork` 연결에서 다시 설치하고 실행했다. iPad에도 일반·치트 앱을 무선으로 설치했다. 두 기기에서 Xcode 중단점 정지, 게임 객체 조회, 실행 재개를 확인했다. 빌드는 Mac의 Xcode27.1에서 수행했고 앱 전송·디버깅은 네트워크를 사용했다. 설치한 일반 앱은 개발 서명된 Debug 구성이다.
+
+| 항목 | iPhone Air | iPad Air 13형 M2 |
+|---|---|---|
+| 무선 연결 | localNetwork / connected | localNetwork / connected |
+| 일반 앱 설치·실행 | 성공 | 성공 |
+| LLDB 중단점·변수·재개 | 확인 | 확인 |
+| 이번 무선 XCTest | 미실행 | 8개 통과·실패0·건너뜀0 |
+| 이번 무선 Instruments | 미실행 | Time Profiler21.716초·CPU 표본10,202개 내보내기 성공 |
+
+iPad의8개 검사는 전체20종 무기 선택·발사, 이동·점프·조준·해제, 키보드와 터치 병용, 메뉴·설정, 화면 크기별 좌표 변환, 항공기 보스 이동 보존, 실제 타이머와 전체 화면 터치를 포함한다. 실제 기기의 입력 API를 호출하는 검사다. 별도 Bluetooth·USB 키보드를 연결한 결과는 아니다. Device Hub로 기존 치트 저장을 이어서 터치 사격, 이동·정지와 일시정지 메뉴도 확인했다. 수동 점프는 화면으로 확정하지 않았으며 자동 검사에서 통과했다.
+
+CPU 기록은 시작·타이틀 구간이다. 게임 프레임 함수가 표본에 포함됨을 확인했다. 이번 기록으로 전투 성능·장시간 발열·누수까지 판정하지 않는다. 앞 절의85개 검사 중 남은 표시시간 실패와 iPhone 메뉴 p95 초과는 그대로 남아 있다. 제품 코드는 변경하지 않았다.
+
+CLI 빌드는 키체인 서명 오류로 실패했고 같은 구성을 Xcode GUI에서 빌드해 성공했다. 첫 무선 XCTest는 Run 빌드에 테스트 묶음이 없어 시작하지 못했다. Build For Testing으로 묶음을 만든 뒤8개가 통과했다. 실패한 로그도 보존했다. iPad는 사용자가 알린 재부팅 이후 무선으로 연결됐으며, 이번 작업에서 추가 재부팅을 반복하지 않았다.
+
+Sentry MobileBuildMCP의 공식 스킬과 기기 설치·실행 소스를 조사했다. 기존 도구로 이번 검증을 수행했고, 실제 명령·연결 확인·서명 오류·테스트 묶음 복구를 프로젝트 전용 스킬로 만들었다. [무선 작업 절차와 조사 출처](../wireless-device-workflow.md), [검사 결과·원시 파일 해시](../evidence/wireless-apple-20261027.json)에 기록했다.

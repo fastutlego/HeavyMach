@@ -27,7 +27,8 @@
     "docs/media-publication.md",
     "docs/public/media/README.md",
     "docs/apple-platforms.md",
-    "docs/keyboard-input-policy.md"
+    "docs/keyboard-input-policy.md",
+    "docs/wireless-device-workflow.md"
   ],
   "base_read": [
     "AGENTS.md",
@@ -196,7 +197,9 @@
         "docs/public/rea-implementation-audit-20261026.md",
         "docs/public/build-and-install.md",
         "docs/build-resources.json",
-        "docs/public/clone-build-20261026.md"
+        "docs/public/clone-build-20261026.md",
+        "docs/wireless-device-workflow.md",
+        ".agents/skills/apple-wireless-device/SKILL.md"
       ],
       "sources": [
         "iOS/project.yml",

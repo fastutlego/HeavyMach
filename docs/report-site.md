@@ -1,6 +1,16 @@
 # HeavyMach 보고 사이트
 
-## 최신 게시 — 2026-10-27 iPhone·iPad 실제 기기 검사
+## 최신 게시 — 2026-10-27 일반 앱·무선 검증
+
+iPhone 일반 앱 설치와 무선 재설치, 두 기기 LLDB 검사, iPad 무선 XCTest8/8·Time Profiler21.716초 결과를 게시했다. 무선 작업 절차·외부 스킬 조사·실행 오류 복구·증거 JSON을 연결했다. 기존 표시시간 실패는 유지했다.
+
+- URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/apple-platforms.html#section-14
+- 소스: `3c1215da0c5d48145520efa29127de807967b1d8`
+- 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_a3bd4446658481919505b7f28794c718`
+- 배포: `appgdep_6adf91a5d4f48191ae045ede1851806a`, `succeeded`, 2026-10-26T17:45:23.406674+00:00. 소유자 전용 유지.
+- 상대 링크296개와 HTML 앵커, 원고·절차·증거 JSON 바이트 일치를 확인했다. 기존 이미지13개를 보존했다. Chrome 로컬 좁은 창에서 추가 본문과 표의 시작 부분을 확인했다. 게시본 인증 후 화면은 다시 검사하지 않았다.
+
+## 이전 게시 — 2026-10-27 iPhone·iPad 실제 기기 검사
 
 치트 앱의 기기별84/85 결과, 실제 NSTimer와 CADisplayLink 비교 측정, 회전·터치·키보드·복귀 조작, Instruments 누수0건의 기록 범위와 iPad 저전력 로그를 게시했다. 무선 설치·디버깅 조사 과제도 추가했다. 제품 소스는 변경하지 않았다.
 
