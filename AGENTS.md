@@ -32,4 +32,4 @@
 
 - iPhone·iPad 무선 설치·디버깅에는 `.agents/skills/apple-wireless-device/SKILL.md`와 `docs/wireless-device-workflow.md`를 읽는다. 실제 transport와 스킴을 확인하고 일반 저장을 보존한다.
 
-- 사용자 지시(2026-10-27): 자동조준은 develop에서 분기한 `feat/auto-aim-ipad-validation`에서 개발한다. iPad 치트 앱에서 이동·점프·사격·무기/표적 전환을 검증한다. 충분히 완성하기 전에는 develop 또는 main에 병합하지 않는다. 정식 앱에는 실험용 자동조준 UI를 노출하지 않는다.
+- 사용자 지시(2026-10-27): 자동조준은 develop에서 분기한 `feat/auto-aim-ipad-validation`에서 개발한다. iPad 치트 앱에서 이동·점프·사격·무기/표적 전환을 검증한다. 충분히 완성하기 전에는 develop 또는 main에 병합하지 않는다. 후속 사용자 지시에 따라 정식 앱에도 자동조준을 제공한다. 기본값은 OFF이며 A로 켜고 끈다. 정식 앱의 치트 기능은 계속 비활성화한다.

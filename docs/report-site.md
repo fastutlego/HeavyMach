@@ -388,3 +388,14 @@ A·표적 전환·사격 순서, 사선과 LOCKED/TRACK/BLOCKED 표시, 세 환�
 - Version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_d18b29a66c6c8191babbfec9c604e8dc`
 - Deployment: `appgdep_6adfd5f5fa9481918fbb77621f06ea31`, `succeeded`
 - URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/auto-aim-progress.html
+
+### 2026-10-27 08:02 KST — 정식 앱 자동조준 추가
+
+정식 앱의 A ON/OFF, 공용 입력 검사 4개 통과, iPhone·iPad 무선 업데이트 설치·실행, 실제 정식 앱 조작 결과를 기존 보고서에 추가했다. iPad에서는 이동·LOCKED·F 사격·적 폭발을, iPhone에서는 A 전환·TRACK 표시를 확인했다. Chrome에서 최신 본문과 상단 배치를 확인했다. 기존 절 앵커와 소유자 비공개 범위를 유지했다.
+
+- Site source: `fce36528d8e6e1d1dc7af4c32c678d68493660d9`
+- Version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_5fca48b310c0819189274d781fd82a6b`
+- Deployment: `appgdep_6adfdc0506a48191a365a3efc0a0d995`, `succeeded`
+- URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/auto-aim-progress.html
+
+게임 저장소의 develop/main에는 병합하지 않았다.

@@ -857,5 +857,87 @@
         "configuration": "Debug, development signing"
       }
     }
+  },
+  "production_auto_aim": {
+    "date": "2026-10-27",
+    "branch": "feat/auto-aim-ipad-validation",
+    "change": "정식 앱 자동조준 UI·터치·키보드 입력을 활성화. A 기본 OFF. 치트 기능 제외.",
+    "source_sha256": "9f20bf4bf7822db9458933536c845cd104b3c1befc457d86631158e417ae7153",
+    "app": {
+      "bundle_id": "com.gelb2.heavymach.restored",
+      "configuration": "Debug, development signing",
+      "executable_sha256": "199cfda2267d2620b894ec29302d31cdfffd87871f656b47bddd75f92f201034",
+      "debug_dylib_sha256": "ae6d0fce26a1f4d3bfa2a3924daebe628a62467fce0ffff097281a652991253c",
+      "symbol_evidence": "build/auto-aim-production-20261027/production-symbols.txt"
+    },
+    "shared_input_tests": {
+      "host": "HeavyMachValidation, iOS Simulator",
+      "passed": 4,
+      "failed": 0,
+      "result_bundle": "build/auto-aim-production-20261027/SharedInput.xcresult",
+      "log": "build/auto-aim-production-20261027/shared-input.log",
+      "scope": [
+        "HUD placement and next target touch",
+        "single A toggle and manual touch restoration",
+        "touch/keyboard ownership",
+        "20 weapons with movement/jump/fire/damage"
+      ]
+    },
+    "device_actions": [
+      {
+        "device": "ipad",
+        "action": "install",
+        "outcome": "success",
+        "transport": "localNetwork",
+        "raw": "build/auto-aim-production-20261027/ipad-install.json",
+        "sha256": "75a4bcca21b1018ee2ac0b6d6b433ee6263b153a15dbdb6b4f769cbc95d0534c"
+      },
+      {
+        "device": "ipad",
+        "action": "launch",
+        "outcome": "success",
+        "transport": "localNetwork",
+        "raw": "build/auto-aim-production-20261027/ipad-launch.json",
+        "sha256": "67e46c78b8069b6c6c7642a207bea304f0f0d82b3925601ed59e2ab62c7ef5e3"
+      },
+      {
+        "device": "iphone",
+        "action": "install",
+        "outcome": "success",
+        "transport": "localNetwork",
+        "raw": "build/auto-aim-production-20261027/iphone-install.json",
+        "sha256": "4e8344775b6edd3b76a840f201688ef45af9ddfd3b18060c1550a639563e36e4"
+      },
+      {
+        "device": "iphone",
+        "action": "launch",
+        "outcome": "success",
+        "transport": "localNetwork",
+        "raw": "build/auto-aim-production-20261027/iphone-launch.json",
+        "sha256": "faabc85595572c4fd11b2e249ffef299b64796d03bc3ed2a5414ad129f589bdd"
+      }
+    ],
+    "ui_observations": {
+      "method": "Device Hub through CUA, actual normal app, existing saves",
+      "ipad": [
+        "A ON/OFF",
+        "movement with keyboard",
+        "LOCKED target label",
+        "F fire and enemy explosion"
+      ],
+      "iphone": [
+        "A initially OFF",
+        "A ON reveals next-target and fire controls",
+        "TRACK label follows target",
+        "A OFF hides controls and label",
+        "menu pause"
+      ],
+      "limits": [
+        "iPhone fire button was tapped; hit outcome was not established by the screenshot.",
+        "No new performance measurement or full-mission pass claimed.",
+        "No app uninstall or save reset."
+      ]
+    },
+    "merged": false
   }
 }

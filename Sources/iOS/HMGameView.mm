@@ -86,14 +86,12 @@
     BOOL _wideCanvasEnabled,_appliedWideCanvas;
     CGRect _menuSafeRect;
     NSHashTable<id> *_worldTouches, *_hudTouches;
-#if HM_VALIDATION
     NSMapTable<id,NSNumber*> *_aimTouches;
     NSHashTable<id> *_aimCancelledTouches;
     std::array<bool,256> _aimBlockedKeys;
     heavymach::AimMode _preferredAimMode;
     uintptr_t _drawnAimTarget;
     double _aimAcquiredTime;
-#endif
     double _time, _retainedWorldTime;
     uint32_t _randomState;
     heavymach::Vector2 _retainedWorldCamera;
@@ -159,11 +157,9 @@
         }
         [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(keyboardDisconnected:) name:GCKeyboardDidDisconnectNotification object:nil];
         _heldTouches=[NSHashTable weakObjectsHashTable];_worldTouches=[NSHashTable weakObjectsHashTable];_hudTouches=[NSHashTable weakObjectsHashTable];_lastInteraction=[self interactionTime];
-        #if HM_VALIDATION
         _aimTouches=[NSMapTable strongToStrongObjectsMapTable];_aimCancelledTouches=[NSHashTable weakObjectsHashTable];
         NSNumber* savedAim=[NSUserDefaults.standardUserDefaults objectForKey:@"AimModeV1"];
         _preferredAimMode=savedAim.integerValue==int(heavymach::AimMode::automatic)?heavymach::AimMode::automatic:heavymach::AimMode::manual;
-#endif
         _canvasWidth=480;_canvasHeight=320;_hudScale=1;
         _wideCanvasEnabled=YES;_appliedWideCanvas=YES;
         _media=[HMMedia new];_media.textureRenderer=_glRenderer; _active=YES;_ammoPreview=-1;
@@ -349,9 +345,7 @@
 #else
         _session->start(mode,mission,stage,_retainedWorldTime);
 #endif
-#if HM_VALIDATION
         _session->setAimMode(_preferredAimMode);
-#endif
         _showMenu=NO;
         [_hud setGameStart:_time]; [self consumeGameEvents];
         // GameMain.setScreen_Game0x3a1c unpauses after setMission/setSurvival,
@@ -432,8 +426,8 @@
 - (void)cancelGameInput {
 #if defined(HM_VALIDATION) && HM_VALIDATION
     [self stopValidationDirection];
-    [_aimTouches removeAllObjects];
 #endif
+    [_aimTouches removeAllObjects];
     _leftPressed=_rightPressed=_upPressed=_downPressed=_keyboardFire=NO;_hasKeyboardAim=NO;_keyboardAimVisible=NO;
     [_heldTouches removeAllObjects];[_worldTouches removeAllObjects];[_hudTouches removeAllObjects];[_hud cancelInput];
     if(_session)_session->releaseFire();
@@ -577,9 +571,7 @@
 - (BOOL)handleKeyCode:(unsigned)code pressed:(BOOL)pressed {
     using A=heavymach::KeyAction;
     if(!_active)return NO;
-#if HM_VALIDATION
     if(code<_aimBlockedKeys.size()&&_aimBlockedKeys[code]){if(!pressed)_aimBlockedKeys[code]=false;return YES;}
-#endif
     if(_keyboardSettingsOpen){
         if(!_keyboardControls.set(code,pressed)||!pressed)return YES;
         if(_capturingKey){if(code!=0x29&&_keyboardControls.remap(A(_settingsSelection),code))[self saveKeyboardBindings];_capturingKey=NO;}
@@ -601,9 +593,7 @@
     if(_loading.visible())return YES;
     if(!pressed&&_keyboardControls.is(code,A::fire)){
         _keyboardFire=NO;
-#if HM_VALIDATION
         if(_session&&_session->aimMode()==heavymach::AimMode::automatic){[self refreshAutoFire];return YES;}
-#endif
         if(_session&&!_worldTouches.count)_session->releaseFire();return YES;
     }
     if(pressed&&_keyboardControls.is(code,A::back)){
@@ -624,13 +614,9 @@
         if(pressed&&_keyboardControls.is(code,A::fire)){
             _keyboardFire=YES;
             if(_session->aimMode()==heavymach::AimMode::manual){[self ensureKeyboardAim];_session->touch({float(_keyboardAim.x),float(_keyboardAim.y)},0);}
-#if HM_VALIDATION
             else [self refreshAutoFire];
-#endif
         }
-#if HM_VALIDATION
         if(pressed&&_keyboardControls.is(code,A::nextTarget))_session->cycleAimTarget();
-#endif
         if(pressed&&_keyboardControls.is(code,A::jump))[self gameButton:1000 state:0];
         if(pressed&&(_keyboardControls.is(code,A::nextWeapon)||_keyboardControls.is(code,A::previousWeapon))){
             _session->cycleWeapon(_keyboardControls.is(code,A::previousWeapon)?-1:1);[_media sound:@"Game_ChangeWeapon"];
@@ -1008,9 +994,7 @@
             snapshot.upgradeSelection=player->upgradeSelection;
         }
         [_hud draw:snapshot];
-#if HM_VALIDATION
         [self drawAimControls];
-#endif
         [self drawLoading];[_media resetClip];[_media setDrawingOffset:CGPointZero];[_media setDrawingScale:1];if(ctx)CGContextRestoreGState(ctx);return;
     }
     _media.resourceScope=_screenResourceScope;
@@ -1043,7 +1027,6 @@
     _media.resourceScope=@"shared";[self drawLoading];
     if(ctx)CGContextRestoreGState(ctx);
 }
-#if HM_VALIDATION
 // One rectangle is consumed by both rendering and hit testing. Coordinates are
 // absolute logical canvas points; none of these controls enter world touch().
 - (CGRect)aimControlRect:(int)control {
@@ -1128,19 +1111,14 @@
         [_glRenderer drawAimLines:text.points.data() count:int(text.size/2) red:std::max(red,flash) green:std::max(green,flash) blue:std::max(blue,flash)];
     }
 }
-#endif
 - (void)routePoint:(CGPoint)point state:(int)state token:(id)touch {
     if(!_active||_loadError||_keyboardSettingsOpen)return;
     _keyboardAimVisible=NO;
-#if HM_VALIDATION
     if([_aimCancelledTouches containsObject:touch]){if(state>=2)[_aimCancelledTouches removeObject:touch];return;}
-#endif
         auto logical=_viewport.logical(point.x,point.y);
         if(state>=2)[_heldTouches removeObject:touch];
         if(logical){[self noteInteraction];if(state==0)[_heldTouches addObject:touch];}
-#if HM_VALIDATION
         if([self routeAimPoint:logical?CGPointMake(logical->first,logical->second):CGPointMake(-1000,-1000) state:state token:touch])return;
-#endif
         if(_session&&(_canvasWidth>480||_canvasHeight>320)){
             const CGPoint p=logical?CGPointMake(logical->first,logical->second):CGPointMake(-1000,-1000);
             const CGPoint hp=CGPointMake((p.x-_hudOffset.x)/_hudScale,(p.y-_hudOffset.y)/_hudScale);
