@@ -1,0 +1,10 @@
+# iOS 프로젝트 작업
+
+루트 AGENTS.md와 .agents/policy.md를 따른다. HeavyMachRecovery/README.md와 upstream.json에서 빌드 입력을 확인한다.
+
+- 원본 IPA·저장 데이터·다른 작업자의 변경을 보존한다.
+- 원본 ARMv6 게임과 ARM64 호스트 실행기를 구별한다. 원본 소스 복구라고 보고하지 않는다.
+- 호환 실행기 변경은 patches/heavymach.patch에 보존한다. compat-source는 버전 고정된 재생성 작업 폴더다.
+- MoleWorld 전용 패치와 치트를 활성화하지 않는다. 게임 검증은 실제 입력과 화면·저장 결과로 수행한다.
+- 서명 개인키·프로비저닝·계정·IPA·DerivedData·Rust target을 Git에 넣지 않는다.
+- 시뮬레이터 빌드, 실기기 코드 빌드, 서명, 설치, 실행, 스테이지 검증을 따로 보고한다.

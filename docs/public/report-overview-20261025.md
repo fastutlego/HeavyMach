@@ -4,6 +4,14 @@
 
 제품 코드 `72e8c68e` · 2026년 10월 25일 기준
 
+## 분리 후 전수검사·REA 실행 확인 {#migration-audit}
+
+분리 전 Git 대상 595개를 전수 대조했고 누락은 없었다. OpenAL 소스 4개가 제외 규칙에 걸린 것은 복구했다. 새 폴더에 없던 REA 분석 자료 3,571개와 호환판 소스·링크 5,119개, 상위 iOS 지침도 복원했다. 끊긴 문서 경로와 Unity용 스킬 배정을 수정했다. 로컬 입력 10,292항목을 원본과 대조했고, REA 증거 부록 6개가 동일하게 재생성됐다. 게임 코드와 v0.9 태그는 바꾸지 않았다.
+
+현재 Codex에서 REA 분석도 실제 실행됐다. 원본 헤비멕의 경험치 함수 `0x106e0`을 Ghidra 12.1.4로 디컴파일하고 어셈블리를 조회했다. 정책 거부나 승인 차단은 발생하지 않았다. 원본 파일 해시는 유지했고 설정을 바꾸지 않았다.
+
+[전수검사 상세](https://github.com/gelb2/HeavyMach/blob/main/docs/migration/completeness-audit-20261026.md) · [REA 실행 근거](https://github.com/gelb2/HeavyMach/blob/main/docs/rea-availability-20261026.md)
+
 ## 독립 저장소·v0.9 {#repositories}
 
 HeavyMach를 [GameDev 허브](https://github.com/gelb2/ProjectGameDev) 아래의 [독립 저장소](https://github.com/gelb2/HeavyMach)로 분리했다. Unity는 [별도 저장소](https://github.com/gelb2/ProjectGameDevUnity)에서 관리한다. 허브는 submodule로 두 게임의 커밋을 기록한다.

@@ -4,9 +4,9 @@
 
 ## 작업 위치
 
-- 기능 프로젝트: [iOS Proj/HeavyMachRecovery](../iOS%20Proj/HeavyMachRecovery/README.md)
+- 기능 프로젝트: [iOS Proj/HeavyMachRecovery](../Compatibility/README.md)
 - Xcode: `iOS Proj/HeavyMachRecovery/ios/HeavyMachRecovery.xcodeproj`
-- Unity: [Unity 진입](../Unity/README.md). 실제 기존 소스는 `game/`에 보존.
+- Unity: [Unity 진입](https://github.com/gelb2/ProjectGameDevUnity). 실제 기존 소스는 `game/`에 보존.
 - 복구 조사와 실행 증거: `/Users/sokol/Documents/Codex/2026-10-24/heavymach-recovery`
 - 원본: `/Users/sokol/Documents/Codex/2026-10-24/rea-ready/Heavy_Mach_1.13_ios_2.1.ipa`
 - 원본 SHA-256: `477c672f92110c6020be3f744dfa7a3456739e6f970c66715e3b7b3cd32b7776`
