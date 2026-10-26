@@ -350,3 +350,12 @@ macOS 자체 전체 화면 캡처에서 게임이 화면 끝까지 표시됨을 
 - 배포: `appgdep_6addcdb603a48191855e52d73a06dbf6`, API `succeeded`, 소유자 전용 유지.
 - 관련27개 검사와 후속 경로·타이머 검사 통과를 기록했다. Simulator의 타이틀·슬롯 약27~30ms는 60Hz 통과로 표시하지 않았다. 새 치트 앱은 아이폰 설치 성공, 잠금 때문에 실행 검사 대기다.
 - HTML 파싱과 이미지 참조 파일을 확인했다. 새 보고서의 브라우저 시각 검수는 `cgWindowNotFound`로 완료하지 못했다. 현재 앱 목록 조회는 성공했고 서비스/CLI 버전·서명 일치 및 최근 인증 거절0을 확인했다. 근거 없이 서버를 재시작하지 않았다. 진단은 `build/menu-extension-20261025/cua-window-diagnostic.json`에 남겼다.
+
+## 2026-10-27 자동조준 치트 브랜치 보고
+
+- `auto-aim-progress.html`: 전용 브랜치, 입력·표적·탄도, 실제 iPad 초기 검사와 캡처3장, 시뮬레이터 회귀, 보정 후보의 222발 비교, 미완료 실기기 계측을 게시했다.
+- 소스: `2bd29c1e17635efbbab8b43a59dd0394ca34f150`.
+- 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_56fe815dc260819188f80a04f13d2ea5`.
+- 배포: `appgdep_6adfc4b563948191bf42e0ef2b5a2ec5`, API `succeeded`. 소유자 전용 유지.
+- Markdown·HTML·이미지 링크를 검사했다. Mac 잠금으로 새 브라우저 화면 검수는 하지 못했다. 이미지 원본은 실제 iPad GL 캡처로 확인했다.
+- 게임 구현 커밋은 `314acca5`, 브랜치는 `feat/auto-aim-ipad-validation`이다. develop/main에는 병합하지 않았다. 사이트 소스 저장소의 main 갱신과 게임 저장소의 병합을 구분한다.

@@ -209,3 +209,9 @@ Survival은 `World.cpp`의4분류 이름 형식과 개수315/200/10/10, Heli001 
 ## 2026-10-27 빌드 후속
 
 - [ ] Intel(x86_64) Simulator 지원 여부 정리 및 OpenAL 아키텍처 구성. 범용 Simulator 빌드는 arm64 라이브러리와 x86_64 링크가 달라 실패했다. 현재 Apple Silicon arm64 Simulator 빌드는 별도로 확인한다. 원시 로그 `build/fullscreen-20261027/normal-build.log`.
+
+### 자동조준 치트 브랜치 실행 현황 — 2026-10-27
+
+`feat/auto-aim-ipad-validation`의 구현은 `314acca5`에 커밋·푸시했다. 실제 iPad의 초기 기능2개와 Simulator 기능13개, 안전 영역 후속3개, 코어20개가 통과했다. 정식 앱 교체와 develop/main 병합은 하지 않았다.
+
+남은 작업은 후속 수정본의 iPad 서명·설치·입력 검사와 실제 화면 프레임 비교, 실제 미션 지형·보스 전투, 버튼 검수다. 시뮬레이터의 소프트웨어 화면 출력은 수동·자동 모두 60Hz 기준에 실패했다. 이 실패를 실기기 성공으로 표시하지 않는다. 현재 Mac 잠금으로 GUI 서명을 기다리며 CLI 서명 실패 기록을 보존했다. [상세 결과](public/auto-aim-ipad-20261027.md).
