@@ -359,3 +359,14 @@ macOS 자체 전체 화면 캡처에서 게임이 화면 끝까지 표시됨을 
 - 배포: `appgdep_6adfc4b563948191bf42e0ef2b5a2ec5`, API `succeeded`. 소유자 전용 유지.
 - Markdown·HTML·이미지 링크를 검사했다. Mac 잠금으로 새 브라우저 화면 검수는 하지 못했다. 이미지 원본은 실제 iPad GL 캡처로 확인했다.
 - 게임 구현 커밋은 `314acca5`, 브랜치는 `feat/auto-aim-ipad-validation`이다. develop/main에는 병합하지 않았다. 사이트 소스 저장소의 main 갱신과 게임 저장소의 병합을 구분한다.
+
+### 2026-10-27 06:34 KST — 자동조준 최신 iPad 설치 결과
+
+기존 `/auto-aim-progress.html`에 최신 기기 설치, 기능4개 통과, Device Hub 직접 조작, 실기기 프레임 기준 실패와 후속 계측 항목을 반영했다. 원고와 JSON 증거를 함께 갱신했다. 로컬 Chrome에서 본문·캡처를 확인했고 HTTP200을 확인했다. 기존 소유자 비공개 범위를 유지했다.
+
+- Site source: `565354a483a6c46dbd7b1847281aec941fa2ed33`
+- Version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_934dc28f599c81919609f3163c5d0ea9`
+- Deployment: `appgdep_6adfc75cb454819197af26fe1dc673e1`, `succeeded`
+- URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/auto-aim-progress.html
+
+게임 소스는 `feat/auto-aim-ipad-validation`에 유지한다. develop/main 병합은 하지 않았다.

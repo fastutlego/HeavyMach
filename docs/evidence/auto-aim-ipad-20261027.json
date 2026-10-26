@@ -334,8 +334,281 @@
     "note": "All three modes exceed 16.67ms in software presentation. This is not a physical iPad frame measurement."
   },
   "physical_final_presentation": {
-    "status": "pending",
-    "reason": "Mac session locked; GUI signing unavailable. CLI signing returned errSecInternalComponent."
+    "status": "failed_60hz_budget",
+    "with_device_screen_open": [
+      {
+        "assisted_shots": 0,
+        "callback_intervals": {
+          "frames": 180,
+          "max_ms": 28.262708334295894,
+          "mean_ms": 16.740377546304646,
+          "over_60hz_budget": 84,
+          "p95_ms": 17.17258333337668
+        },
+        "candidate": "manual",
+        "frame_work": {
+          "frames": 180,
+          "max_ms": 28.205791668369784,
+          "mean_ms": 9.553734953634477,
+          "over_60hz_budget": 17,
+          "p95_ms": 17.1332916670508
+        },
+        "phase": "autoaim_production_timer",
+        "renderer": {
+          "backend": "OpenGL ES 1.1",
+          "bufferHeight": 360,
+          "bufferWidth": 480,
+          "drawableInternalFormat": 36194,
+          "drawCalls": 38,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 359.8243103027344,
+          "logicalWidth": 480,
+          "presentation_timings_ms": {
+            "copy": 7.88500000089698,
+            "quad": 0.060874999689986,
+            "swap": 0.05570833309320733,
+            "wait_and_restore": 9.264833333872957
+          },
+          "renderer": "Apple M2 GPU",
+          "sceneReallocations": 2,
+          "textureCount": 46,
+          "textureUploads": 46,
+          "vendor": "Apple Inc.",
+          "version": "OpenGL ES-CM 1.1 Metal - 105"
+        },
+        "target_hits": 0
+      },
+      {
+        "assisted_shots": 21,
+        "callback_intervals": {
+          "frames": 180,
+          "max_ms": 25.4954166666721,
+          "mean_ms": 16.660159259259267,
+          "over_60hz_budget": 89,
+          "p95_ms": 20.369874999232707
+        },
+        "candidate": "prediction",
+        "frame_work": {
+          "frames": 180,
+          "max_ms": 25.418250001166598,
+          "mean_ms": 16.57917847223871,
+          "over_60hz_budget": 90,
+          "p95_ms": 20.26333333196817
+        },
+        "phase": "autoaim_production_timer",
+        "renderer": {
+          "backend": "OpenGL ES 1.1",
+          "bufferHeight": 360,
+          "bufferWidth": 480,
+          "drawableInternalFormat": 36194,
+          "drawCalls": 62,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 359.8243103027344,
+          "logicalWidth": 480,
+          "presentation_timings_ms": {
+            "copy": 7.3817916672851425,
+            "quad": 1.7156666672235588,
+            "swap": 0.04958333374815993,
+            "wait_and_restore": 8.729708331884467
+          },
+          "renderer": "Apple M2 GPU",
+          "sceneReallocations": 2,
+          "textureCount": 47,
+          "textureUploads": 47,
+          "vendor": "Apple Inc.",
+          "version": "OpenGL ES-CM 1.1 Metal - 105"
+        },
+        "target_hits": 18
+      },
+      {
+        "assisted_shots": 21,
+        "callback_intervals": {
+          "frames": 180,
+          "max_ms": 29.026083333519637,
+          "mean_ms": 16.66628333333493,
+          "over_60hz_budget": 86,
+          "p95_ms": 17.938999999387306
+        },
+        "candidate": "correction",
+        "frame_work": {
+          "frames": 180,
+          "max_ms": 28.96333333410439,
+          "mean_ms": 16.568360416567884,
+          "over_60hz_budget": 77,
+          "p95_ms": 17.84662499994738
+        },
+        "phase": "autoaim_production_timer",
+        "renderer": {
+          "backend": "OpenGL ES 1.1",
+          "bufferHeight": 360,
+          "bufferWidth": 480,
+          "drawableInternalFormat": 36194,
+          "drawCalls": 62,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 359.8243103027344,
+          "logicalWidth": 480,
+          "presentation_timings_ms": {
+            "copy": 6.856166666693753,
+            "quad": 0.06312500045169145,
+            "swap": 0.050208333050250076,
+            "wait_and_restore": 8.782708333455957
+          },
+          "renderer": "Apple M2 GPU",
+          "sceneReallocations": 2,
+          "textureCount": 47,
+          "textureUploads": 47,
+          "vendor": "Apple Inc.",
+          "version": "OpenGL ES-CM 1.1 Metal - 105"
+        },
+        "target_hits": 18
+      },
+      {
+        "correction_ms": 0.7133333328965819,
+        "phase": "autoaim_p95_added_cost",
+        "prediction_ms": 3.1300416649173712
+      }
+    ],
+    "after_device_screen_closed": [
+      {
+        "assisted_shots": 0,
+        "callback_intervals": {
+          "frames": 180,
+          "max_ms": 39.00900000007823,
+          "mean_ms": 16.81058032407034,
+          "over_60hz_budget": 89,
+          "p95_ms": 26.828208332517534
+        },
+        "candidate": "manual",
+        "frame_work": {
+          "frames": 180,
+          "max_ms": 38.9322083319712,
+          "mean_ms": 16.641086574024182,
+          "over_60hz_budget": 81,
+          "p95_ms": 26.672541665902827
+        },
+        "phase": "autoaim_production_timer",
+        "renderer": {
+          "backend": "OpenGL ES 1.1",
+          "bufferHeight": 360,
+          "bufferWidth": 480,
+          "drawableInternalFormat": 36194,
+          "drawCalls": 38,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 359.8243103027344,
+          "logicalWidth": 480,
+          "presentation_timings_ms": {
+            "copy": 5.844499999511754,
+            "quad": 0.10345833470637444,
+            "swap": 0.08312499994644895,
+            "wait_and_restore": 0.0006249993020901456
+          },
+          "renderer": "Apple M2 GPU",
+          "sceneReallocations": 2,
+          "textureCount": 46,
+          "textureUploads": 46,
+          "vendor": "Apple Inc.",
+          "version": "OpenGL ES-CM 1.1 Metal - 105"
+        },
+        "target_hits": 0
+      },
+      {
+        "assisted_shots": 21,
+        "callback_intervals": {
+          "frames": 180,
+          "max_ms": 33.917499999006395,
+          "mean_ms": 16.75951365741639,
+          "over_60hz_budget": 83,
+          "p95_ms": 17.206458333021146
+        },
+        "candidate": "prediction",
+        "frame_work": {
+          "frames": 180,
+          "max_ms": 33.83887499876437,
+          "mean_ms": 16.542058333288878,
+          "over_60hz_budget": 30,
+          "p95_ms": 16.806833335067495
+        },
+        "phase": "autoaim_production_timer",
+        "renderer": {
+          "backend": "OpenGL ES 1.1",
+          "bufferHeight": 360,
+          "bufferWidth": 480,
+          "drawableInternalFormat": 36194,
+          "drawCalls": 62,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 359.8243103027344,
+          "logicalWidth": 480,
+          "presentation_timings_ms": {
+            "copy": 5.780416666311794,
+            "quad": 0.09812499956751708,
+            "swap": 0.11087500024586916,
+            "wait_and_restore": 9.873583334410796
+          },
+          "renderer": "Apple M2 GPU",
+          "sceneReallocations": 2,
+          "textureCount": 47,
+          "textureUploads": 47,
+          "vendor": "Apple Inc.",
+          "version": "OpenGL ES-CM 1.1 Metal - 105"
+        },
+        "target_hits": 18
+      },
+      {
+        "assisted_shots": 21,
+        "callback_intervals": {
+          "frames": 180,
+          "max_ms": 35.603208334578085,
+          "mean_ms": 16.76269398148078,
+          "over_60hz_budget": 95,
+          "p95_ms": 17.64187499975378
+        },
+        "candidate": "correction",
+        "frame_work": {
+          "frames": 180,
+          "max_ms": 35.514791667083045,
+          "mean_ms": 16.383773148219106,
+          "over_60hz_budget": 70,
+          "p95_ms": 17.492916666014935
+        },
+        "phase": "autoaim_production_timer",
+        "renderer": {
+          "backend": "OpenGL ES 1.1",
+          "bufferHeight": 360,
+          "bufferWidth": 480,
+          "drawableInternalFormat": 36194,
+          "drawCalls": 62,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 359.8243103027344,
+          "logicalWidth": 480,
+          "presentation_timings_ms": {
+            "copy": 5.194458333789953,
+            "quad": 0.7561249985883478,
+            "swap": 0.08541666829842143,
+            "wait_and_restore": 8.734166665817611
+          },
+          "renderer": "Apple M2 GPU",
+          "sceneReallocations": 2,
+          "textureCount": 47,
+          "textureUploads": 47,
+          "vendor": "Apple Inc.",
+          "version": "OpenGL ES-CM 1.1 Metal - 105"
+        },
+        "target_hits": 18
+      },
+      {
+        "correction_ms": -9.179624999887892,
+        "phase": "autoaim_p95_added_cost",
+        "prediction_ms": -9.865708330835332
+      }
+    ],
+    "interpretation": "frame_work includes the pre-existing renderer sleep. Both manual and automatic failed the 16.67ms p95 assertion. No renderer or threshold change was made. The two runs do not establish automatic-aim regression or its CPU cost.",
+    "next": "Separate explicit sleep, update/aim, GL work, and actual presentation intervals; compare equivalent scenes before deciding any rendering change."
   },
   "artifacts": [
     {
@@ -369,6 +642,14 @@
     {
       "path": "build/auto-aim-20261027/sim-safe-area.log",
       "sha256": "7f969db39cd9928279ce277adfee32dd7891a2bfec8cc7bd5e8b24d541a9a30c"
+    },
+    {
+      "path": "build/auto-aim-install-20261027/ipad-tests.log",
+      "sha256": "92d332a4b290deab899a4eec14a894adf6c5e416853d5b6542d621ba97bb5648"
+    },
+    {
+      "path": "build/auto-aim-install-20261027/ipad-no-mirror.log",
+      "sha256": "e42e200a1357534a695b832c5a11bcec717b490ea09d1765fbada4e40dd4f932"
     }
   ],
   "simulator_safe_area_followup": {
@@ -383,5 +664,32 @@
     "Tests/AutoAimTests.cpp": "b3fe55bb1d9429cddde8edc41432847d799bed420ce9ef80c21d5f57e933836d",
     "Tests/Apple/HMAppleInputTests.mm": "77c82a737d9fd0316d28b9092dbb2795d03b206984ee1374388290ffce9d2efa",
     "Tests/iOS/HMFramePerformanceTests.mm": "2841256ecf46d59a32fd391177e52c59ce9b4bf92fd3bc7ac7dcb3cb1bdf2e04"
+  },
+  "physical_final_functional": {
+    "status": "passed",
+    "passed": 4,
+    "failed": 0,
+    "source_commit": "3fcd1805",
+    "device": "iPad Air 13-inch (M2)",
+    "os": "27.0.1",
+    "transport": "wired",
+    "build": "Xcode Build For Testing 2026-10-27 06:26 KST, signature verified",
+    "scope": "20 weapons automatic movement/jump/fire/damage; manual keyboard 20 weapons; keyboard movement/jump/fire/release; mode and mixed touch/keyboard ownership. Shot-loop saveCalls=0."
+  },
+  "physical_direct_ui": {
+    "tool": "CUA Device Hub real-device screen",
+    "observed": [
+      "title and validation panel",
+      "Stage01 start with all weapons",
+      "forward movement and stop",
+      "automatic green reticle",
+      "fire-button hold followed by target disappearance and XP increase",
+      "booster jump",
+      "weapon change and support attack",
+      "manual/automatic switch",
+      "pause menu"
+    ],
+    "final_state": "Automatic mode enabled; paused at Resume Game",
+    "limitations": "Short Stage01 interaction, not all missions or sustained frame assessment."
   }
 }
