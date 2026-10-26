@@ -189,7 +189,9 @@
         "docs/weapon-validation-procedure.md",
         "docs/runtime-policy.md",
         "docs/source-provenance.md",
-        "docs/ios-source-map.md"
+        "docs/ios-source-map.md",
+        "docs/public/ipa-independent-build-20261026.md",
+        "docs/public/rea-implementation-audit-20261026.md"
       ],
       "sources": [
         "iOS/project.yml",
@@ -216,7 +218,9 @@
         "docs/public/build-and-install.md",
         "docs/public/implementation-status.md",
         "docs/public/publication-inventory.md",
-        "docs/public/media/README.md"
+        "docs/public/media/README.md",
+        "docs/public/ipa-independent-build-20261026.md",
+        "docs/public/rea-implementation-audit-20261026.md"
       ],
       "sources": [
         "docs/*",
@@ -277,7 +281,9 @@
         "docs/public/implementation-status.md",
         "docs/public/publication-inventory.md",
         "docs/public/media/README.md",
-        "docs/media-publication.md"
+        "docs/media-publication.md",
+        "docs/public/ipa-independent-build-20261026.md",
+        "docs/public/rea-implementation-audit-20261026.md"
       ],
       "sources": [
         "docs/RESTORATION.md",

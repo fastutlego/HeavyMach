@@ -1,5 +1,11 @@
 # 2026-10-25 문서·코드·앱 일치 체계 점검 및 보완
 
+## 2026-10-26 IPA 없는 독립 빌드·자원·REA 검증
+
+원본 IPA·기존 Git·분석 폴더 읽기를 차단한 새 복사본에서 일반·치트 arm64 Simulator/iPhone 미서명 빌드 4개가 성공했다. 앱별 원본 이미지695·변환 이미지695·WAV31·MAP/MCH46·확장 그림4개의 해시가 일치했다. 새 Simulator에 두 앱을 설치·실행했고 Core17/17·iOS14/14를 통과했다. REA 산출물2,067개·25함수군·대표Evidence140건을 대조하고 경험치 함수를 REA로 재조회했다. 제품 소스 변경 없음. [상세와 증거](public/ipa-independent-build-20261026.md).
+
+현재 로컬 프로젝트에 자원은 모두 있다. Git의 Resources 제외와 현재 앱의 IPA 실행 의존성을 혼동하지 않는다. 새 clone에는 준비된 Resources가 별도로 필요하며 현재 빌드에는 IPA가 필요하지 않다.
+
 ## 2026-10-26 GitHub·Apps·Mags 원고 정리
 
 [게시 자료 목록](public/publication-inventory.md), [빌드·설치 가이드](public/build-and-install.md), [구현·검증 범위](public/implementation-status.md)를 추가했다. Apps·Mags 본문은 SaaS 담당 세션이 작성하도록 읽기 순서·주제별 출처·기존 이미지 색인을 정리했다. 기존 추출 명령에 빠져 있던 OriginalImages 준비를 설명하고 특정 기기에 고정된 내부 설치 스크립트와 외부 독자의 설치 절차를 구분했다. SaaS 소스·운영 게시와 새 앱 빌드는 수행하지 않았다. 기존 보고 이미지 13개를 원본 해시와 함께 Git 자료로 보존했다. 후속 플레이 영상의 원본·타임코드·캡션·README 배치 절차와 빈 명세를 추가했다. 영상은 아직 받지 않았다.
