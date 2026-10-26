@@ -231,6 +231,22 @@ static NSString *glString(GLenum name){const auto p=glGetString(name);return p?[
     glLoadIdentity();glTranslatef(_drawingOffset.x,_drawingOffset.y,0);glScalef(_drawingScale,_drawingScale,1);glTranslatef(position.x,position.y,0);glScalef(scale,scale,1);glRotatef(rotation*57.29577951308232,0,0,1);
     glVertexPointer(2,GL_FLOAT,0,positions);glTexCoordPointer(2,GL_FLOAT,0,uv);glColorPointer(4,GL_FLOAT,0,colors);glDrawArrays(GL_TRIANGLES,0,n);_drawCalls++;
 }
+- (void)drawExpandedPanel:(NSString*)name position:(CGPoint)position left:(CGFloat)left right:(CGFloat)right top:(CGFloat)top bottom:(CGFloat)bottom rgb565:(BOOL)rgb565 {
+    if(!_active)return;
+    Texture* t=[self textureForImage:nil name:name rgb565:rgb565];if(!t)return;
+    // Only the outer 16px metal strips stretch. Interior coordinates/UVs remain 1:1.
+    const GLfloat hw=t->width*.5f,hh=t->height*.5f,edge=16;
+    const GLfloat xs[]={-hw-float(left),-hw+edge,hw-edge,hw+float(right)};
+    const GLfloat ys[]={-hh-float(bottom),-hh+edge,hh-edge,hh+float(top)};
+    const GLfloat us[]={1.5f/t->pw,edge/t->pw,(t->width-edge)/t->pw,(t->width-1.5f)/t->pw};
+    const GLfloat vs[]={(t->height-1.5f)/t->ph,(t->height-edge)/t->ph,edge/t->ph,1.5f/t->ph};
+    GLfloat positions[108],uv[108],colors[216];int n=0;
+    const int corners[][2]={{0,0},{1,0},{0,1},{0,1},{1,0},{1,1}};
+    for(int y=0;y<3;++y)for(int x=0;x<3;++x)for(auto& c:corners){int ix=x+c[0],iy=y+c[1];positions[n*2]=xs[ix];positions[n*2+1]=ys[iy];uv[n*2]=us[ix];uv[n*2+1]=vs[iy];std::fill_n(colors+n*4,4,1.f);++n;}
+    glBindTexture(GL_TEXTURE_2D,t->id);glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
+    glLoadIdentity();glTranslatef(position.x,position.y,0);
+    glVertexPointer(2,GL_FLOAT,0,positions);glTexCoordPointer(2,GL_FLOAT,0,uv);glColorPointer(4,GL_FLOAT,0,colors);glDrawArrays(GL_TRIANGLES,0,n);_drawCalls++;
+}
 - (void)drawEdgeContinuation:(NSString*)name position:(CGPoint)position scale:(CGFloat)scale rotation:(CGFloat)rotation width:(CGFloat)width rgb565:(BOOL)rgb565 {
     if(!_active||width<=0||!std::isfinite(width)||!std::isfinite(scale)||!std::isfinite(rotation))return;
     Texture* t=[self textureForImage:nil name:name rgb565:rgb565];if(!t)return;

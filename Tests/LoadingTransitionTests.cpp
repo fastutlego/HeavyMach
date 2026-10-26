@@ -27,6 +27,20 @@ void runLoadingTransitionTests(){
  assert(t.visible()&&t.state()==0&&t.panels()[0].position.y<423);
  t.tick({});assert(t.screen()==7&&t.panels()[0].position.y==423);
  for(const auto& p:t.sprites()){assert(p.z==6&&p.blend==0&&p.frame==0&&p.cols==1&&p.rows==1&&p.alpha==1&&p.scale.x==1);}
+ // Expanded presentation does not change panel recurrence or refresh/sound timing.
+ for(int step=0;step<100;++step){
+  auto native=t.expandedPanels(480,320),wide=t.expandedPanels(960,320),tall=t.expandedPanels(480,360);
+  for(size_t i=0;i<4;++i){
+   assert(native[i].sprite.position.x==t.panels()[i].position.x&&native[i].sprite.position.y==t.panels()[i].position.y);
+   assert(wide[i].left==240&&wide[i].right==240&&wide[i].sprite.scale.x==1);
+   assert(tall[i].left==0&&tall[i].right==0&&tall[i].sprite.scale.y==1);
+  }
+  assert(tall[0].top==20&&tall[0].bottom==0&&tall[1].bottom==20&&tall[1].top==0);
+  assert(tall[2].top==20&&tall[2].bottom==20);
+  if(t.state()==3||t.state()==4){assert(wide[0].sprite.position.y==223&&wide[1].sprite.position.y==101);}
+  if(t.state()==3){assert(wide[2].sprite.position.x==480&&wide[3].sprite.position.x==480);}
+  t.tick({});
+ }
 }
 #ifdef HEAVYMACH_LOADING_TEST_MAIN
 int main(){runLoadingTransitionTests();}

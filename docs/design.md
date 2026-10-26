@@ -68,3 +68,7 @@ MAP/MCH 관찰 구조는 LE u32 `declared_size,type,data_size`, payload, LE u32 
 ## 승인된 공중 적 확장 — 2026-10-27
 
 `VTOL.cpp`는 원본 데이터 로드 후 새 기체3종과 별도 캠페인 배치를 추가한다. `GameSession`은 기존 비행·무기·피격 경로를 사용하며 새 기체의 회전·발사점·충돌 범위·배기만 분기한다. [구현과 검사](vtol-expansion.md).
+
+## 전체 화면 도어
+
+원본 전환 상태는 `LoadingTransition`, 캔버스별 패널 배치는 `expandedPanels`, 실제 제출은 `HMMedia.drawExpandedPanel → HMGLRenderer.drawExpandedPanel`이 담당한다. 원본 네 PNG의 중앙 장식을 유지하고 외곽 부분만 늘린다. 각 패널54정점을 한 draw로 제출하며 추가 이미지나 프레임별 파일 쓰기는 없다. 화면 교체·효과음·게임 상태는 기존 전환 이벤트를 사용한다. [결과](public/fullscreen-transitions-20261027.md).
