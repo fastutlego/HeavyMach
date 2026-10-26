@@ -17,7 +17,7 @@
     "Resources/RawData": 46,
     "Resources/Assets.xcassets": 3,
     "Resources/Validation": 1,
-    "Art/Extensions": 7
+    "Art/Extensions": 8
   },
   "files": [
     {
@@ -7409,6 +7409,11 @@
       "path": "Art/Extensions/VTOL_Yak141.png",
       "bytes": 881263,
       "sha256": "fdff4c3a7193738d2da9ecb0dd233397490a5e1dc29a65544726cd9c68ace626"
+    },
+    {
+      "path": "Art/Extensions/AutoAimControls.png",
+      "bytes": 2275288,
+      "sha256": "8376ff2bc4635472d52ad435688b015e94b1d907995e13e97be8079364d9800b"
     }
   ]
 }

@@ -112,6 +112,7 @@ template<class Raster> static void HMDrawRaster(Raster& raster,CGPoint offset,CG
     int spriteWidth=0;
     if([name hasPrefix:@"Extensions/VTOL_"])for(const auto& spec:heavymach::vtolSpecs())
         if([name isEqualToString:[NSString stringWithUTF8String:spec.tile]]){spriteWidth=int(std::lround(spec.width));break;}
+    if([name isEqualToString:@"Extensions/AutoAimControls.png"])spriteWidth=138; // 3 columns of 46 logical pixels, cached once.
     if(decoded&&spriteWidth>0&&width>spriteWidth){
         int smallWidth=spriteWidth,smallHeight=std::max(1,int(std::lround(double(height)*spriteWidth/width)));
         NSMutableData *small=[NSMutableData dataWithLength:size_t(smallWidth)*smallHeight*4];

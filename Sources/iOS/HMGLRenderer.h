@@ -31,6 +31,7 @@
 // Diagnostic readback only; never required by the presentation path.
 - (HMImage *)snapshot;
 - (void)drawInputOutline:(CGRect)rect;
+- (void)drawAimLines:(const float*)points count:(int)count red:(float)red green:(float)green blue:(float)blue;
 - (void)finish;
 - (NSDictionary *)diagnostics;
 @end
