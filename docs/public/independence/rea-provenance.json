@@ -1,0 +1,2254 @@
+{
+  "head": "264a410e432adb4e7c3f1dc040fbfedbe1ffcfa6",
+  "artifact_rows": 2067,
+  "matched_by_root": {
+    "analysis": 1820,
+    "archive-evidence": 154,
+    "title-evidence": 20,
+    "resource-evidence": 73
+  },
+  "mismatches": [],
+  "families": [
+    {
+      "family": "geometry",
+      "sources": [
+        {
+          "path": "Sources/Core/Geometry.cpp",
+          "exists": true,
+          "lines": 118
+        }
+      ],
+      "tests": [
+        {
+          "path": "Tests/GeometryTests.cpp",
+          "exists": true
+        }
+      ],
+      "representative_evidence": [
+        {
+          "address": "0x5874",
+          "kind": "pseudo",
+          "evidence_id": "ev_1e50e7203660c2cf04aead09008de55d85e1060c903799799eb3996d8c614f57",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "3679d96904655e45427a654d97896df366b0cf28444ca33f4c65d1aa13d87332"
+        },
+        {
+          "address": "0x5874",
+          "kind": "assembly",
+          "evidence_id": "ev_88d6029c9144dc00a194e4d093942602183baa1cb55a48f44de9bb35e7717ec1",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "194ba74427bfd2604858ec098238d9907af5fec89d2ff87abca857fdf8f6e2f7"
+        },
+        {
+          "address": "0x7250",
+          "kind": "pseudo",
+          "evidence_id": "ev_5f4061d2e150d090e9780538396aaf5e2ce6ac3c1d16ffe03a591743bc1bff8f",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "bb87945182d7e1ac2c754a5d962b717183a3151f575d4a8d489a92e0de0d6948"
+        },
+        {
+          "address": "0x7250",
+          "kind": "assembly",
+          "evidence_id": "ev_0c46afed5d885628b0305124e3f3d74105316553fd11707aa913dfae3c7e0d84",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "1f9c0eabe8728ebf08b2eb8bb028d63855789851cca9588c9560410ee9bb7e31"
+        }
+      ],
+      "historical_remaining": "Collider selector and every degenerate input are not separately certified"
+    },
+    {
+      "family": "data_records",
+      "sources": [
+        {
+          "path": "Sources/Core/GameData.cpp",
+          "exists": true,
+          "lines": 219
+        }
+      ],
+      "tests": [
+        {
+          "path": "Tests/GameDataTests.cpp",
+          "exists": true
+        }
+      ],
+      "representative_evidence": [
+        {
+          "address": "0x11344",
+          "kind": "pseudo",
+          "evidence_id": "ev_a8db9bea85814ec2d98f985cbe01ffa7dfaee86445903bc62978dd19c7b0a058",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "0ea8f6ee7ed3ca9c3aeb4b137fa40515a715bde696190cd52683a2f781d87487"
+        },
+        {
+          "address": "0x11344",
+          "kind": "assembly",
+          "evidence_id": "ev_ed844a88d9f09e854bce8e12dca54b220c594772bb164c07d5ef6a12c6edf7bf",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "c3ac2239fe450df521024ea0c00ef70313e4bc35cae6f499fad4637e11fa99fb"
+        }
+      ],
+      "historical_remaining": "original ObjC allocation/accessor ABI is declaration-only, not separately implemented"
+    },
+    {
+      "family": "global_progress_save",
+      "sources": [
+        {
+          "path": "Sources/Core/GlobalInfo.cpp",
+          "exists": true,
+          "lines": 144
+        },
+        {
+          "path": "Sources/Core/SaveData.cpp",
+          "exists": true,
+          "lines": 60
+        },
+        {
+          "path": "Sources/Core/GameData.cpp",
+          "exists": true,
+          "lines": 219
+        },
+        {
+          "path": "Sources/iOS/HMGameView.mm",
+          "exists": true,
+          "lines": 817
+        }
+      ],
+      "tests": [
+        {
+          "path": "Tests/CoreTests.cpp",
+          "exists": true
+        },
+        {
+          "path": "Tests/GameDataTests.cpp",
+          "exists": true
+        }
+      ],
+      "representative_evidence": [
+        {
+          "address": "0x105f8",
+          "kind": "pseudo",
+          "evidence_id": "ev_3da0846a4e0a08218ae3951f1f26a4f7f6143677497e98f4f063a88466c7791a",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "fe8d91d457989b957c6e8de0de434a9cb55159e6325ba0f198a09218851789af"
+        },
+        {
+          "address": "0x105f8",
+          "kind": "assembly",
+          "evidence_id": "ev_517e3794ca311043f7cb8ca42bfe787040b453412e1606c1af82cb3e55124e01",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "49dff772a77386c3df9e07207b06cd3db842ba5f11472a62ac732e88b07d1db2"
+        },
+        {
+          "address": "0x106e0",
+          "kind": "pseudo",
+          "evidence_id": "ev_ee96914bf20181a47dc856df63729955f699db45e5ddb8aa51ab6b7607bb7e34",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "8ffc62346e02455b362ba5294de5f375fd06eb7866417fb37c853e8bcd9ab28f"
+        },
+        {
+          "address": "0x106e0",
+          "kind": "assembly",
+          "evidence_id": "ev_c6927c60df737146ff6313cc9b46327d77e498aba78720c70c468f8169c7a2be",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "d507c54f20fec5a4093d66938b5c00bbd7c7944376653a8bdacd61f2667e80cf"
+        },
+        {
+          "address": "0x1082c",
+          "kind": "pseudo",
+          "evidence_id": "ev_49643ddc2f9e8f88cd5cb85bd299895677639a44537a2296c498861ffd09ccd1",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "dcbfcdb8e4dd2f8fa7d2afcec9d078e5edc9b2a619d23391accd069263123505"
+        },
+        {
+          "address": "0x1082c",
+          "kind": "assembly",
+          "evidence_id": "ev_d128c8780b68e99522ca0998be97a9d6e99e24d64720709d7f07049ed6c8a990",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "a368dcb730c8d23ccc260cdd2c75f2f3ced1756de67754e6f93a93d89d971c21"
+        },
+        {
+          "address": "0x10a0c",
+          "kind": "pseudo",
+          "evidence_id": "ev_641356824eec8f3d87dd6b0b69f14c5586231d52131ec78303bf60b18a3765a7",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "a4478c98c54841c622bf03847448bb2de6901a08e384d50ef6c57a65c81563ef"
+        },
+        {
+          "address": "0x10a0c",
+          "kind": "assembly",
+          "evidence_id": "ev_a07f23f82d4c1580d5f97ff3334bbd6b4b52b2e130528edb414106fb27f1bf57",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "485db24f50efa5a31137032591163d155d500e15a00d780ca021930bdba9ec9e"
+        },
+        {
+          "address": "0x3ea0",
+          "kind": "pseudo",
+          "evidence_id": "ev_2a2bc4ef71beecfd9fcfb23924a6a42ecab14cc588eb99161ebd29cedd57db70",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "984989d8f14545b52b995b9bc731de8b80c86b57dd3d62564aaf7c685474529c"
+        },
+        {
+          "address": "0x3ea0",
+          "kind": "assembly",
+          "evidence_id": "ev_3ec1ba610c1ed9c6228b89d7ff975c0046fe19529523f488988affc9bd57741c",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "5177d66aafacbb16d07192061c49a60dad1dc58adc53d72bc1d6976decb3805a"
+        },
+        {
+          "address": "0x3f44",
+          "kind": "pseudo",
+          "evidence_id": "ev_a99defa1808735fe101924dc793dcf071a03be7c26c5afbe7b2ed24206c63318",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "3c5a555261dd731a0a4a326383d1aece36789f48028d81d86fc5e5c10f39f538"
+        },
+        {
+          "address": "0x3f44",
+          "kind": "assembly",
+          "evidence_id": "ev_fc74e52d927f892ad956320a2f725edc3595eb53f35453a61b06dd78b97dabdf",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "22b6b5a27205c0efe5f12b53fba4b8853ac8489be70e0ab6e6230efe9762e191"
+        }
+      ],
+      "historical_remaining": "all-mission and physical-device save/lifecycle journeys not certified"
+    },
+    {
+      "family": "machine_motion",
+      "sources": [
+        {
+          "path": "Sources/Core/Motion.cpp",
+          "exists": true,
+          "lines": 154
+        },
+        {
+          "path": "Sources/Core/GameSession.cpp",
+          "exists": true,
+          "lines": 428
+        }
+      ],
+      "tests": [
+        {
+          "path": "Tests/MotionTests.cpp",
+          "exists": true
+        },
+        {
+          "path": "Tests/GameSessionTests.cpp",
+          "exists": true
+        }
+      ],
+      "representative_evidence": [
+        {
+          "address": "0x479c",
+          "kind": "pseudo",
+          "evidence_id": "ev_68fb2854940b3815a08e4d6c18650e52207a44b301fac6e46357cb33af5daa70",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "670b71d9f639c3ee68592c96a5b43a256ed9a1180dde6ff9f3fb9ec907fe18f2"
+        },
+        {
+          "address": "0x479c",
+          "kind": "assembly",
+          "evidence_id": "ev_85f9956e1ce260404096c960e75478e81972a44ff4c3de23d6eb78839343f148",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "2fc013c10d36fcd6ca3fb6e7d2d17cad25cf7a0dae6bc495d34bd113972cbd45"
+        },
+        {
+          "address": "0x428c",
+          "kind": "pseudo",
+          "evidence_id": "ev_1db2770da7e357c5052079fc351cc22007152f1c642fe3a1aa270f40b41e3086",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "9a07ff3550f277b0dffa436b671d73a19368d9d51907ccb479870ed77956f156"
+        },
+        {
+          "address": "0x428c",
+          "kind": "assembly",
+          "evidence_id": "ev_3e497ab2d06d73170f5ac7ed1c1fe3d25bcea496460954624a1c90993c79e3bc",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "bf22eacc921782931c3f67fa5508bfd6cd309da881314a90e31717b841d79735"
+        }
+      ],
+      "historical_remaining": "original nil BaseParts stret bytes unresolved; no whole-original differential replay"
+    },
+    {
+      "family": "player",
+      "sources": [
+        {
+          "path": "Sources/Core/Player.cpp",
+          "exists": true,
+          "lines": 95
+        },
+        {
+          "path": "Sources/Core/GameSession.cpp",
+          "exists": true,
+          "lines": 428
+        }
+      ],
+      "tests": [
+        {
+          "path": "Tests/PlayerTests.cpp",
+          "exists": true
+        },
+        {
+          "path": "Tests/GameSessionTests.cpp",
+          "exists": true
+        },
+        {
+          "path": "Tests/AmmoSyncTests.cpp",
+          "exists": true
+        },
+        {
+          "path": "Tests/PassiveContinuityTests.cpp",
+          "exists": true
+        },
+        {
+          "path": "Tests/iOS/HMPassiveLifecycleTests.mm",
+          "exists": true
+        }
+      ],
+      "representative_evidence": [
+        {
+          "address": "0x1bd04",
+          "kind": "pseudo",
+          "evidence_id": "ev_6228f4125e66c104c1a56824b6c20901b02ed92fc35d4afd232aa8897d03ca15",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "09cd438e5a7106ad15a3752565d207692463eabdbf4dca1115af3c2b5650d617"
+        },
+        {
+          "address": "0x1bd04",
+          "kind": "assembly",
+          "evidence_id": "ev_cae237ed704ead0c07499cbef3648e1ce3142d636ee28d109ef18186d5594768",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "7b89562e8121caa6b282a8c06563ed269f306d2aa5316bbd7481aa3b5b7967ae"
+        },
+        {
+          "address": "0x1be84",
+          "kind": "pseudo",
+          "evidence_id": "ev_6f1110d5558eaac6dc72b9a343eca677ea2b819ee1ee4ef88b6121b04f1159ae",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "2a77e304b4a7e7b4e6a3825094efd4da43266094b8a37274879853d822d8761b"
+        },
+        {
+          "address": "0x1be84",
+          "kind": "assembly",
+          "evidence_id": "ev_49643ad8352dfcdbd10bc6ea92949396a6279f300ae22078758db3037393f380",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "e9290deca5e464e5077da1e8c38028020af387c206282c14dfc664775b7cc462"
+        },
+        {
+          "address": "0x1c64c",
+          "kind": "pseudo",
+          "evidence_id": "ev_ce0f944527589c2d3ace9506699ab29ce8bde50bd127a156017fbdea913181a0",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "8d71dc57597e770b7043fd42fd6d705defc3561945f30cb9148ad710c62f4350"
+        },
+        {
+          "address": "0x1c64c",
+          "kind": "assembly",
+          "evidence_id": "ev_1cdf98b006f98cf3699ece41f5daf5cd016c95c3f8f67854cf592ddc221cc001",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "5f0284e07a99333ff87eeb4eec18ae40bb646f69088ccab67794b4dc4564230f"
+        },
+        {
+          "address": "0x1cc70",
+          "kind": "pseudo",
+          "evidence_id": "ev_bff9f8e4890d299d63f185909579699ea3dbb260abddcda73328f826e57be8b1",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "dc12407967c0698c98f3b2c73521693e25fd52e410484f355e7d95baa270a1ab"
+        },
+        {
+          "address": "0x1cc70",
+          "kind": "assembly",
+          "evidence_id": "ev_5e9bef01e786512ecb8ea106b5cd428950da807bde5b9f5ee5be37e026e6db05",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "a466e9a4ad0c84aa447302368569b22f32ea6f2d413b7d7933cdaacd643cb463"
+        }
+      ],
+      "historical_remaining": "all native grade UI journeys and original differential comparison not certified"
+    },
+    {
+      "family": "enemy",
+      "sources": [
+        {
+          "path": "Sources/Core/Enemy.cpp",
+          "exists": true,
+          "lines": 99
+        },
+        {
+          "path": "Sources/Core/GameSession.cpp",
+          "exists": true,
+          "lines": 428
+        }
+      ],
+      "tests": [
+        {
+          "path": "Tests/EnemyTests.cpp",
+          "exists": true
+        },
+        {
+          "path": "Tests/GameSessionTests.cpp",
+          "exists": true
+        }
+      ],
+      "representative_evidence": [
+        {
+          "address": "0x14918",
+          "kind": "pseudo",
+          "evidence_id": "ev_71fb79070da5b2ffe07dafc782b3f9cdc45d38ba4bff6449e198c5f7126bd3ad",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "c0684ec9d075ded0619a74b0ad2895ff4ed35122acfbcc0458e8ce64355d12b4"
+        },
+        {
+          "address": "0x14918",
+          "kind": "assembly",
+          "evidence_id": "ev_c514199aab3d8a45fff98987496c8501fc0420277a573cef966a25315b772d0c",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "e06997c53ae76cb2e5c61af379885fb66f9619296769a3ad37d0fa33f1062eae"
+        }
+      ],
+      "historical_remaining": "all stage/mission journeys and original runtime equivalence; boss-only scenario success does not establish these"
+    },
+    {
+      "family": "combat",
+      "sources": [
+        {
+          "path": "Sources/Core/Combat.cpp",
+          "exists": true,
+          "lines": 162
+        },
+        {
+          "path": "Sources/Core/BulletVisual.cpp",
+          "exists": true,
+          "lines": 71
+        },
+        {
+          "path": "Sources/Core/GameSession.cpp",
+          "exists": true,
+          "lines": 428
+        }
+      ],
+      "tests": [
+        {
+          "path": "Tests/CombatTests.cpp",
+          "exists": true
+        },
+        {
+          "path": "Tests/BulletVisualTests.cpp",
+          "exists": true
+        },
+        {
+          "path": "Tests/GameSessionTests.cpp",
+          "exists": true
+        }
+      ],
+      "representative_evidence": [
+        {
+          "address": "0x9dc4",
+          "kind": "pseudo",
+          "evidence_id": "ev_59668dc363e3637db4db99913633fdc6f9da70018d71ac46e16867541336e67b",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "3fed3c98c475d50eb04697ab6a028d21e00b19d768a5930b873fab4047ff8907"
+        },
+        {
+          "address": "0x9dc4",
+          "kind": "assembly",
+          "evidence_id": "ev_784dcc726ac0e2bf3776d794e6d8c4d598c8e086cf4e746aa64310555a52bfbd",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "3d62b34d65811fbaf7ff86e37a7788bd9e2acbfeae7df7b1fa9f7583df596c91"
+        },
+        {
+          "address": "0xa198",
+          "kind": "pseudo",
+          "evidence_id": "ev_2a63441f52488d6ec68a66d542ca22458d1be12486dd84aa6e7e77f3a92fa846",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "bffd72f48eeb142e0dc364710643ef64318d84112e5376a69a09d88976d2395b"
+        },
+        {
+          "address": "0xa198",
+          "kind": "assembly",
+          "evidence_id": "ev_49fa8f1c356251a49eb8b5c346f568414ade26811f36aeeaf7862faa0e1cd7f6",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "df7e73ee861f275058b42ad1b998f84eb4589d78a9c3889fc6596866be242470"
+        },
+        {
+          "address": "0xa444",
+          "kind": "pseudo",
+          "evidence_id": "ev_7231dafbb276503baf69c11dde2170e3e30d9eb51113f1126847ad5f4f721390",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "27c444eee1a641b44460b530fb1e3db426fa0b72a1f061b8233fc57e8f101a3d"
+        },
+        {
+          "address": "0xa444",
+          "kind": "assembly",
+          "evidence_id": "ev_1d6c03dd068ecfb66e4e6a4ec9e93dc44792074293f9df8a8c20f04209151b51",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "c8d29de5013241faf6aa52b8a985fbb4c5ba226b03ced2f9ed9ad9b382349e17"
+        },
+        {
+          "address": "0xab04",
+          "kind": "pseudo",
+          "evidence_id": "ev_97fcce79af12638b0f3329f27e679bb32bc2a6ec5b2b92ef4cf9c8e655a5eef8",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "8f28fbf38b623e497b72381f3abb89dc3d086b2cbca7256855d151d9043370f2"
+        },
+        {
+          "address": "0xab04",
+          "kind": "assembly",
+          "evidence_id": "ev_5f9c20c3b3d34eef62f70fe92b7d7f093588d78d27724def05795cad17d7c93f",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "d77bc4b6c3b1d1711cd6aec03176b6addcfe5b1360ccb23881a36cd12501965e"
+        },
+        {
+          "address": "0x11e64",
+          "kind": "pseudo",
+          "evidence_id": "ev_c8b77c38b9cd3497ea8d82062a539e90a90afc5b7b2a219a728f758b2bebb870",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "655d1ef9f6c683ce05b46284c2bcba7c91ce9408319b6f87158b22ee20807d9d"
+        },
+        {
+          "address": "0x11e64",
+          "kind": "assembly",
+          "evidence_id": "ev_84c265a331dd167a71ee26b23b5be44c4cd3d93f238623d252b53bdb967f321e",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "c291a4f6ddbd83364320c6dcc9d251362da31ddf10b62b1f0d3c88c7415a8884"
+        },
+        {
+          "address": "0x12a40",
+          "kind": "pseudo",
+          "evidence_id": "ev_eb1c595c059ea78474ef641ddc9e88912ced97d96cab363b40dc588be45163cc",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "f18a4c7e87655aad0941985d89a6953b41bfbf48024fd003a6d6c096b8f65272"
+        },
+        {
+          "address": "0x12a40",
+          "kind": "assembly",
+          "evidence_id": "ev_ea2eec2cf80e96cf0f89ea27624db7673abea70377478345c688622010587d67",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "a9aa054f63edede488da335fa4a064ed9d10e1ecfeffed998a7bdae52ec20c45"
+        },
+        {
+          "address": "0x13214",
+          "kind": "pseudo",
+          "evidence_id": "ev_47881b28d7c619f4223326f2606d3a9cdb6b2a0be8a24cf35a448d1318744730",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "77e60e565c11dc5caecc7023f78be4e5775ba21846d33f080d2f94d62130fd97"
+        },
+        {
+          "address": "0x13214",
+          "kind": "assembly",
+          "evidence_id": "ev_7b4667380544d613f978d5edf0548ebfb493494bb632f714d137d87663707f16",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "b7bc094e70022b209e2b705b8f9ab30166f1f67d2794355c9ca0a59a096cf2f6"
+        }
+      ],
+      "historical_remaining": "original-device full weapon/output comparison and whole-game RNG equivalence remain; latest regression is bounded to actual Session offscreen visual side effects"
+    },
+    {
+      "family": "particles_parts",
+      "sources": [
+        {
+          "path": "Sources/Core/Visuals.cpp",
+          "exists": true,
+          "lines": 98
+        },
+        {
+          "path": "Sources/Core/GameSession.cpp",
+          "exists": true,
+          "lines": 428
+        }
+      ],
+      "tests": [
+        {
+          "path": "Tests/VisualsTests.cpp",
+          "exists": true
+        },
+        {
+          "path": "Tests/GameSessionTests.cpp",
+          "exists": true
+        }
+      ],
+      "representative_evidence": [
+        {
+          "address": "0x92b4",
+          "kind": "pseudo",
+          "evidence_id": "ev_fe26852cb7234bf38da7da1d0b174a906eccf6c9e63585939dd06af9277f529c",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "77911d7c675260b15c422f213ae940964eef86566ce85db42d02d9a97bbae992"
+        },
+        {
+          "address": "0x92b4",
+          "kind": "assembly",
+          "evidence_id": "ev_26ac68e16499269406d7f9fc7b2f07c4684c76f7ed87ebd4e5001eaa7d8eaaf4",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "f04a10865d62d1ef2924defb8d071edb213019b86e17be34dfe4c58acef07c4a"
+        },
+        {
+          "address": "0x94a8",
+          "kind": "pseudo",
+          "evidence_id": "ev_d3c43ff5e1bd606fbf4abbc5f4655a33251173f2e0ce2896b3d357af982204da",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "d77736f1c27d9747cd79794fd8af54e776ccaa1af69aa2659318527d9afdadb8"
+        },
+        {
+          "address": "0x94a8",
+          "kind": "assembly",
+          "evidence_id": "ev_04d860787b142533b0e07fc81412d52c03df4fc8fbf125c605efb164201d7c01",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "0b3e07db15094b661d8b3607e65e3908ff63edc80647899f31484723c8f8540a"
+        },
+        {
+          "address": "0x968c",
+          "kind": "pseudo",
+          "evidence_id": "ev_49ac43173c6ec3711f07b92a806bbf2dd0f2e13689b7824395317925dd127789",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "4559d83ad62996cadc3e13525f14dbf879fed9a89920fb68f5b5887d60d72409"
+        },
+        {
+          "address": "0x968c",
+          "kind": "assembly",
+          "evidence_id": "ev_ab1026906c1aaf5e3d46153f87729caf54be2352a30665f5e138dc5b4c963eac",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "ac4f8cdf7178e0b18e3cfa0334728877ee2493994572e94e667fd10c93b89a91"
+        },
+        {
+          "address": "0x11818",
+          "kind": "pseudo",
+          "evidence_id": "ev_8c0282f413f5895a2721c2732dfa01a477034a955caa2a2939bccf1db99bdfa0",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "58480211da56958c93d9a33feb8c84b64040d9ab8e3601640aa321223f5b5872"
+        },
+        {
+          "address": "0x11818",
+          "kind": "assembly",
+          "evidence_id": "ev_50f73eccbd808c8b4b24ed97ba9fa8ba95869a7031a69decbd31c2bb10a35ffb",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "6f63bcfaf61ea46ff2102eed3c465923ba64953f808f30a1aa0d06ca3e2aa521"
+        },
+        {
+          "address": "0x118fc",
+          "kind": "pseudo",
+          "evidence_id": "ev_ed56bd8c6fd38c1fb83dbfdfa676ff9de1726c7b9480dda3e2c126561a4eae50",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "6c0d7cdcc3f1694b8b8ac005b398f9f2f055412b6f99a4a46bc9d42d0d97708a"
+        },
+        {
+          "address": "0x118fc",
+          "kind": "assembly",
+          "evidence_id": "ev_39fb47bf0da59a7ca373dac4c8cb7dad589c20df85247abb738b489eba647c84",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "5609491053c11722137c6cd4397d2348532a6dce4d96b5530cdbdb100d9b5649"
+        },
+        {
+          "address": "0x11a48",
+          "kind": "pseudo",
+          "evidence_id": "ev_82efa5c0e5cc4521a5e34fd35e0181f5399854a13f871c3b8a2a24f4a7af6c9e",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "209fd17f9db600322e5716311b8ed8e7ec14d866fc9f81bf9729c7fefbedb417"
+        },
+        {
+          "address": "0x11a48",
+          "kind": "assembly",
+          "evidence_id": "ev_1dc04b9a4235dbad69dec02c0a4d88c67a9128a4d61c4dba8093b11ad85ebb5e",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "2996093fbbf601774fdbd162fe97b3baf9891624f1f8fe25a859ff06d6af08eb"
+        }
+      ],
+      "historical_remaining": "native visual equivalence across particle definitions not certified; renderer upper-frame clamp now restored"
+    },
+    {
+      "family": "trails",
+      "sources": [
+        {
+          "path": "Sources/Core/Trail.cpp",
+          "exists": true,
+          "lines": 62
+        },
+        {
+          "path": "Sources/Core/TrailRaster.cpp",
+          "exists": true,
+          "lines": 53
+        },
+        {
+          "path": "Sources/Core/GameSession.cpp",
+          "exists": true,
+          "lines": 428
+        },
+        {
+          "path": "Sources/iOS/HMMedia.mm",
+          "exists": true,
+          "lines": 215
+        }
+      ],
+      "tests": [
+        {
+          "path": "Tests/TrailTests.cpp",
+          "exists": true
+        },
+        {
+          "path": "Tests/TrailRasterTests.cpp",
+          "exists": true
+        },
+        {
+          "path": "Tests/GameSessionTests.cpp",
+          "exists": true
+        }
+      ],
+      "representative_evidence": [
+        {
+          "address": "0x1ab20",
+          "kind": "pseudo",
+          "evidence_id": "ev_50f03e3a42e3572506d033c5fbae9b497d1833c8ed6ea32475cb7166146b938e",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "3dc6b88cf27609ac33a14f8293db3525e74452f7f963d39a083ee7cbc37998bb"
+        },
+        {
+          "address": "0x1ab20",
+          "kind": "assembly",
+          "evidence_id": "ev_d5f15932e209fc0330a4fc2d4d5c057565c85ab178b723300ac1e84e42dbcf37",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "0033c927628bc709992fff7c82ed9c5f34fa243bd52028b2cb84d5f1fc81c8ba"
+        },
+        {
+          "address": "0x1ac60",
+          "kind": "pseudo",
+          "evidence_id": "ev_5e6bbf2b1b4f9b4336fdf9cf86e5a66b77e2436c91cf71d67536f628d003a44c",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "4765d8a1e7a0b494bc6d6a2d3cf869f06d96b460efd6988c313d951baaff72d7"
+        },
+        {
+          "address": "0x1ac60",
+          "kind": "assembly",
+          "evidence_id": "ev_5821aa1a2c58aabb2d83667840121afbc33a474007b8220bb9f95aa697876059",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "7dc48ee8e4bb56ae67564bd1ce1ce13cd36b6cd53b23c870840ebec3f99a2024"
+        },
+        {
+          "address": "0x1acd0",
+          "kind": "pseudo",
+          "evidence_id": "ev_504cc359ea14b590448ab5cc7684234ea36ff874dcef2462432b63a9c4535802",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "28d886aa1f90ecb6e4aafe725dae9ff43759428cc14a8697aa98c2a4ae0f35ae"
+        },
+        {
+          "address": "0x1acd0",
+          "kind": "assembly",
+          "evidence_id": "ev_96a56747158f0f5b43e2788f35a4c1da315129e0d652a063583a1bebf6a52366",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "9fd36602e4878088c1ca9ce3a815944daadcadb185263191d08685e03eefaba5"
+        }
+      ],
+      "historical_remaining": "full original gameplay visuals and whole-game RNG equivalence not certified"
+    },
+    {
+      "family": "items",
+      "sources": [
+        {
+          "path": "Sources/Core/ItemBox.cpp",
+          "exists": true,
+          "lines": 52
+        },
+        {
+          "path": "Sources/Core/GameSession.cpp",
+          "exists": true,
+          "lines": 428
+        }
+      ],
+      "tests": [
+        {
+          "path": "Tests/ItemBoxTests.cpp",
+          "exists": true
+        },
+        {
+          "path": "Tests/GameSessionTests.cpp",
+          "exists": true
+        }
+      ],
+      "representative_evidence": [
+        {
+          "address": "0x1d538",
+          "kind": "pseudo",
+          "evidence_id": "ev_f9a39ae2276bca9b9b934e6de4824b4a9bb264fda01bfac9dd04b4dc79cc5227",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "b2035e165ae8eacd7f7e621c06a5013d1fe6c7679942df6ff2ae11d0d06db79f"
+        },
+        {
+          "address": "0x1d538",
+          "kind": "assembly",
+          "evidence_id": "ev_dd2c35ec1a60819708a06f3bad1ffaad9646111e7a612ca1ee536e356e64071d",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "a6a1859d7173fbbeae827f921a6c29dd8b3fa34d8d8148155f149e4a0230049f"
+        }
+      ],
+      "historical_remaining": "native loot collection acceptance remains"
+    },
+    {
+      "family": "world",
+      "sources": [
+        {
+          "path": "Sources/Core/World.cpp",
+          "exists": true,
+          "lines": 176
+        },
+        {
+          "path": "Sources/Core/GameSession.cpp",
+          "exists": true,
+          "lines": 428
+        }
+      ],
+      "tests": [
+        {
+          "path": "Tests/WorldTests.cpp",
+          "exists": true
+        },
+        {
+          "path": "Tests/GameSessionTests.cpp",
+          "exists": true
+        }
+      ],
+      "representative_evidence": [
+        {
+          "address": "0xe3f4",
+          "kind": "pseudo",
+          "evidence_id": "ev_8469bfbeb7f949157942d66fe507bcd3213bdc5f9720bb1d487fc6de729b7ecb",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "ff42afd58ff5a7cabff6aa6d1bd08d1bb9f09f1580078da993de790fd96494d4"
+        },
+        {
+          "address": "0xe3f4",
+          "kind": "assembly",
+          "evidence_id": "ev_710e2b224c82081d2bce3974eae2572985fe888ea2deb3cb1ed0bf727557035d",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "b760953b71bb623964ab8133e15914e6fa966adbbb7c74c6af66cd14521f08a9"
+        },
+        {
+          "address": "0xc8b8",
+          "kind": "pseudo",
+          "evidence_id": "ev_a94e9f1761eb60bfd591739ef319bd2ca8b7d6cee39c23b25334bb8ccce9a384",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "2c64e0c8f6472afc6bb131bf902cbd4917f65efb2a07ab5d46085f43409434e1"
+        },
+        {
+          "address": "0xc8b8",
+          "kind": "assembly",
+          "evidence_id": "ev_9c0d064ff64bcdf2f492d27f0fbd429034e0f8d55dbba0106a2b1a4f310608a8",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "0a7f1d22d4d4a76d1a29106ad29ad21a700d85f1fa51172eed606e5d285cc26a"
+        },
+        {
+          "address": "0xcd00",
+          "kind": "pseudo",
+          "evidence_id": "ev_5d4dfd86a6ab73167de863622046a3b1356e071f9c47d9136e140e6f988bc440",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "d508405c16f250e6ba2272541919b440eb76f49721a1e1170cb4739b5933d454"
+        },
+        {
+          "address": "0xcd00",
+          "kind": "assembly",
+          "evidence_id": "ev_c75161c1a3afa4c8d0f2bf0491d2a38bc8de1ee60c4bdafdc80ba1776ab5189d",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "da7ba066675b32bbac4f59e5ec532dffdab73727e43f4e04ece7506d8a420a66"
+        },
+        {
+          "address": "0xb8f0",
+          "kind": "pseudo",
+          "evidence_id": "ev_f2235d894ad4c78606ae063b029801b8ef2e782ba5a11176e3a3effa43d1cd8b",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "e1699715337b7a603bd3f0c9d3defbaf452e1fd9ada5507630ed7873e15b627d"
+        },
+        {
+          "address": "0xb8f0",
+          "kind": "assembly",
+          "evidence_id": "ev_5e154d97600384c05d09d0704a1991934955171c834f38475db2c89030dd5be4",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "0e1bdb602fadf123df916a07666f90ff643b18c68fc8806953979e819eb33388"
+        },
+        {
+          "address": "0xbf74",
+          "kind": "pseudo",
+          "evidence_id": "ev_2157b05a6593131ffa6e8bf827e3544fc38fc11b587e9fb7d7e52363670adc92",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "9dc1eafb8085f9c8b2d7a5d3f59a5af6ffb25ca112cf5f736a8c6f590d57cbcf"
+        },
+        {
+          "address": "0xbf74",
+          "kind": "assembly",
+          "evidence_id": "ev_4399794a0dee585a789f8457d14d559f6fd93ffca3bbd7d777456d8b1ea236c8",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "99838f5c7f9877a50158ebf9e1302a5af7f3f69ac55cf4a77dc56d8ca95c58b7"
+        },
+        {
+          "address": "0xc228",
+          "kind": "pseudo",
+          "evidence_id": "ev_31783d43441ed547f921363f58bbe3fabea4aeecf1682622e0566834f73cc609",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "f2104b8802c8a873ce52e1adf67ff4c0cd61f6d5d3171b9e01619a59fe00a83d"
+        },
+        {
+          "address": "0xc228",
+          "kind": "assembly",
+          "evidence_id": "ev_6f47458af3489b691b14255094df923dcf92646eee5afe4f14da2ff72f5258ab",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "7938102fe7ff85c308ec38eda284a26ecb83a5dcec99db190ee862170c24466c"
+        }
+      ],
+      "historical_remaining": "All35 natural-progression maps have condition-specific journey evidence (25 non-cheat +10 explicit cheat). Continuous campaign, full native UI and original runtime equivalence remain; physical Air scope limited. Do not label the10 cheat maps untested."
+    },
+    {
+      "family": "title",
+      "sources": [
+        {
+          "path": "Sources/Core/TitleState.cpp",
+          "exists": true,
+          "lines": 40
+        },
+        {
+          "path": "Sources/iOS/HMGameView.mm",
+          "exists": true,
+          "lines": 817
+        }
+      ],
+      "tests": [
+        {
+          "path": "Tests/CoreTests.cpp",
+          "exists": true
+        }
+      ],
+      "representative_evidence": [
+        {
+          "address": "0xf464",
+          "kind": "pseudo",
+          "evidence_id": "ev_de0807af6b1905a1d47aedb457bd50b071040cd668e38fe4d990263ef4942bc1",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "c1b0c59df60ec346830ecdd9a1ff16fbb2f85b9e7f7a463ca6f85920098ec0bd"
+        },
+        {
+          "address": "0xf464",
+          "kind": "assembly",
+          "evidence_id": "ev_bdc52028138f476cd584f726c171f2ef66fc5fb8c4a04402d5bb74b2caa5a532",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "a004192372c238cb7ba2d255e84f55fdc52629a3cf337c9aa7fb229ca501d9a5"
+        },
+        {
+          "address": "0xf934",
+          "kind": "pseudo",
+          "evidence_id": "ev_7672422b499417065c482d2838366d931f741e572d670caa12195689c983c4fd",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "cde2464bfc4752f6bc3832807f3b6d531799cb77a6c9521b83f2ef4fa68e1bf9"
+        },
+        {
+          "address": "0xf934",
+          "kind": "assembly",
+          "evidence_id": "ev_70696f92a4d9d0376fa120f3a6ab18dbdf868bf35e8c961aea0f4d1773315d0e",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "3d155f6232a2653510278f5f33262d2ab2e783ea84ef8fb87ca87d762fa2ca7a"
+        }
+      ],
+      "historical_remaining": "no separate attract/demo mode confirmed; full original/native visual and whole-game RNG equivalence not certified"
+    },
+    {
+      "family": "menus",
+      "sources": [
+        {
+          "path": "Sources/iOS/HMMenus.mm",
+          "exists": true,
+          "lines": 363
+        }
+      ],
+      "tests": [],
+      "representative_evidence": [
+        {
+          "address": "0x18158",
+          "kind": "pseudo",
+          "evidence_id": "ev_75984fdd7bf8d3b0c5f607a438d6f4ab0e376246036e5a7f5091a14a60500a99",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "3dfdf7d186860bab0abfe6621dc33aa731185b8830998c47c03a6d044dfaab5c"
+        },
+        {
+          "address": "0x18158",
+          "kind": "assembly",
+          "evidence_id": "ev_e8ba196eb40e4b069f014bfa1f47a756c350fe63ca0ddec5dd4a828a8430557c",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "0bd29015ef5208629882af97ea09ee89536e32fd7787173d8414df71cccdac83"
+        },
+        {
+          "address": "0x18fc0",
+          "kind": "pseudo",
+          "evidence_id": "ev_53919f8f1345954d04410c34526c11d6b220ab69ed9cc72e3f9a7cfa89e2dac6",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "b292ad73f339f0ec6ce30fa5d387f4fcce7ea7a39f3f375b8ba8486ee8ce0d98"
+        },
+        {
+          "address": "0x18fc0",
+          "kind": "assembly",
+          "evidence_id": "ev_968e71da12bab02c8bab7bbe32f0371b262c32e16120633e7c6780f6cb179fce",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "d1518a1ce763b72fcf4689a40ca96f9e21dd482bdc66933609ed74b32fff339c"
+        },
+        {
+          "address": "0x19ba0",
+          "kind": "pseudo",
+          "evidence_id": "ev_d530e1545215ba8338b39ece48a862c7878129c5c569d1ef0b8f75259e430768",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "b5f81610599a77600d877cc82710580a36b7ce3abf9c5b9fe11124f3da54e5d0"
+        },
+        {
+          "address": "0x19ba0",
+          "kind": "assembly",
+          "evidence_id": "ev_e82684f5783376c9eecabf8bf1a3eee3101f6b5fbe2eb3b4e648cdd382dde5c7",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "afccae1bcb01fe23bb11530940b7400122acea0de6baf42eb6be4b3c3cbcb74b"
+        },
+        {
+          "address": "0x1a05c",
+          "kind": "pseudo",
+          "evidence_id": "ev_d1a302957dc973a9555ed15d3cb35ead13ef900c864419ffad796391e1bf0b99",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "d53c7110ec13722e1d7ac14226992c9ace4b13bfbabb5aa0893203ad90c6b686"
+        },
+        {
+          "address": "0x1a05c",
+          "kind": "assembly",
+          "evidence_id": "ev_6e48b4ccb9803c6c4fd2530d72629408ded1406829472869246726a637d44e2c",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "8687cd5b55b7132de3850fc7444cad10a8d64a0113a68906e83ac6184671ee00"
+        },
+        {
+          "address": "0x1a900",
+          "kind": "pseudo",
+          "evidence_id": "ev_fa12e486bc60cf0b590a792155ab09622ea8573935599c23665e4c6512bc5c9c",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "9aa51691e780929ea796426264b754d0faf4dda6c4b75b23729143944dda3223"
+        },
+        {
+          "address": "0x1a900",
+          "kind": "assembly",
+          "evidence_id": "ev_ad63aceae8954a01a8ad737907d0c720a525476b232caa160563938298b2c8ad",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "2ebe9291b90bfa2e0602824614972fe63ced23e400268801be623ae56be846d7"
+        }
+      ],
+      "historical_remaining": "all menu timing/render-frame equivalence not certified"
+    },
+    {
+      "family": "hud",
+      "sources": [
+        {
+          "path": "Sources/iOS/HMGameHUD.mm",
+          "exists": true,
+          "lines": 231
+        },
+        {
+          "path": "Sources/iOS/HMGameView.mm",
+          "exists": true,
+          "lines": 817
+        }
+      ],
+      "tests": [],
+      "representative_evidence": [
+        {
+          "address": "0x151a0",
+          "kind": "pseudo",
+          "evidence_id": "ev_5527cf77fbf3b7db0e6dc2fc777b9c86e308f2b0bbfac630c973e654524df5a4",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "d1bfb5936715a6bb08c0f06951e7e55edd5bafb3cbc2308351423b7252de4e1f"
+        },
+        {
+          "address": "0x151a0",
+          "kind": "assembly",
+          "evidence_id": "ev_583c06bf60fce487576374d651fe2e338cff9fcaf9d53e46908f4f045e2cfce4",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "8bb51c7ea2063694781ca79c54c125ba30161e3eedd7180a67c316ffa290b1a5"
+        },
+        {
+          "address": "0x161d0",
+          "kind": "pseudo",
+          "evidence_id": "ev_82c44eb5f2dea431f540db74364afea0624a1ffcb226106aa19263c7880b89f3",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "d9a5f0b0ad37ea944b2a97636d6a417c8b5bdccd14bcdeec27cf176f41d8f03c"
+        },
+        {
+          "address": "0x161d0",
+          "kind": "assembly",
+          "evidence_id": "ev_baa915b54c16ed724dc47adf53828fa61992edf32ca696f831982b50e0b8c45d",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "4cd817c2fb5b68875568a972850890f3cbd9cbc76d6cba9b8caf095a0c66fc9c"
+        },
+        {
+          "address": "0x16a98",
+          "kind": "pseudo",
+          "evidence_id": "ev_23a873fd34a7fe1ca774a6600d43abe1b9794f651a9cf4287115249ddb41ed91",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "20e570c19efcf65cfbadbaebadf0f71074040f04d435659fe14c0ac56ef752bf"
+        },
+        {
+          "address": "0x16a98",
+          "kind": "assembly",
+          "evidence_id": "ev_8ef28058d9d96ad57f32a99f8f85e3ad8b894a44b0963533aff3f9118f70687d",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "e69fcf8712f082710bf1f4b08ab8c9aaed51d4e7b22af8edd0b5f09779f4e4b3"
+        },
+        {
+          "address": "0x17280",
+          "kind": "pseudo",
+          "evidence_id": "ev_407be71144c9646246683227f8f7dc420b121242a784e7d4750fff0c004783c3",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "3b0420db6d8c777bb6fc32c3d2595a85e5944bc0990900e080d2c5a05e1fe2cb"
+        },
+        {
+          "address": "0x17280",
+          "kind": "assembly",
+          "evidence_id": "ev_24fc9a4180b0a584ddc532730e6457c768d3124c9278e5f1a94d83554ee98c37",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "32f4495203e2e74a328355b5da949f257426182df16280d4db57175db43bc017"
+        }
+      ],
+      "historical_remaining": "website103 original URL now wired, actual web dispatch/content not tested; full UI regression matrix incomplete"
+    },
+    {
+      "family": "screen_routing",
+      "sources": [
+        {
+          "path": "Sources/Core/LoadingTransition.cpp",
+          "exists": true,
+          "lines": 43
+        },
+        {
+          "path": "Sources/iOS/HMGameView.mm",
+          "exists": true,
+          "lines": 817
+        }
+      ],
+      "tests": [
+        {
+          "path": "Tests/LoadingTransitionTests.cpp",
+          "exists": true
+        }
+      ],
+      "representative_evidence": [
+        {
+          "address": "0x3374",
+          "kind": "pseudo",
+          "evidence_id": "ev_e2f1ad91a7c09ee7e9e84c8dc1e7a90bef5bd38199a72b4515a9b11627cee0be",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "9d40e8da0bb664b64db33531b69cda65e4abfb1a5af4cc818064b4594934ed01"
+        },
+        {
+          "address": "0x3374",
+          "kind": "assembly",
+          "evidence_id": "ev_25753c3d1b72f28861e2b058e172388a035c88cd070229d6fd53dec1e281ffe8",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "423112f7d9bbee6b33ec8113d3a73368880eee0b55d9e14cb7a122ca9423aa3e"
+        },
+        {
+          "address": "0x3778",
+          "kind": "pseudo",
+          "evidence_id": "ev_04e63d1d3d9590f6a45cbef24a74fe636d94df7e31d7d2a30019c752e4eb77a7",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "e4bf2e073fe3673c88f5fcd6f44b6d76c5af250b344ad00bfb7d603894135987"
+        },
+        {
+          "address": "0x3778",
+          "kind": "assembly",
+          "evidence_id": "ev_06eb04040bb517f6ffaab1b122f67aef911010c6ec3ade6012be896f5dc5cd83",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "2c195f49dca55c9379c96b41735cca352be0438c229f465a10455a446fd6f87d"
+        },
+        {
+          "address": "0x3890",
+          "kind": "pseudo",
+          "evidence_id": "ev_5116a61b6bfc6411e772b195d12ee8f72e0fc9e339261276d0469b7a8ac5fa91",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "5b63c8bcd5e0f5ab03ebd626474aaf1970e3f73f737e6eda27669813450d22fe"
+        },
+        {
+          "address": "0x3890",
+          "kind": "assembly",
+          "evidence_id": "ev_426d19e4e1cc13ea721eaddc33506b308feaf89d5143c955245c0516481de156",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "fa4683587e442e5284d7261f00fd1aa3ffd4d2eb5d6834ace76586b06c30b817"
+        },
+        {
+          "address": "0x38b0",
+          "kind": "pseudo",
+          "evidence_id": "ev_7396135d845716dc381198f063f96ea8a743d5a34e9c35aa0fabf02225f55cf7",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "966fdc3633f4bcba3ad6d0b13216d79694c582646a80e905e2b7837805960224"
+        },
+        {
+          "address": "0x38b0",
+          "kind": "assembly",
+          "evidence_id": "ev_db887daa93416b1f57facea91606503d216898acdd5e27948422adf11b8b7c8b",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "6c449994eccbd82b00b8e88c3d8beb0321e22bf0e12cefadf04143b0b3fa7336"
+        }
+      ],
+      "historical_remaining": "full original pixel/input equivalence not certified"
+    },
+    {
+      "family": "camera_quake",
+      "sources": [
+        {
+          "path": "Sources/Core/CameraShake.cpp",
+          "exists": true,
+          "lines": 17
+        },
+        {
+          "path": "Sources/iOS/HMGameView.mm",
+          "exists": true,
+          "lines": 817
+        }
+      ],
+      "tests": [
+        {
+          "path": "Tests/CameraShakeTests.cpp",
+          "exists": true
+        }
+      ],
+      "representative_evidence": [
+        {
+          "address": "0xed80",
+          "kind": "pseudo",
+          "evidence_id": "ev_a44aade4bff262ccb9de75fa3f1b12f8a7e0c3aa4605841ea8fa65e7d84316a5",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "e69ffd4ea04b3798c09c540051cf6b2c24e9f3b8e8fb7ca7de218d39e211561e"
+        },
+        {
+          "address": "0xed80",
+          "kind": "assembly",
+          "evidence_id": "ev_285005f7853cb98a2b7939ee598b84de1de759184c38ed3b8873d30518861aa1",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "05ce46c9c812e6e3dbe3040e85b75fc62d81b7a778275105776fa3650d2b322e"
+        },
+        {
+          "address": "0xeef8",
+          "kind": "pseudo",
+          "evidence_id": "ev_b1a6e82257d773e4ae217db2a23fef112d969f3e063d3b7ed653470badb9853c",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "0bdfec5070bdd683e7ab740c49db0fde97bec408aa8c11caa37808dd3d56c7a2"
+        },
+        {
+          "address": "0xeef8",
+          "kind": "assembly",
+          "evidence_id": "ev_addf180a11036fda99a915592e1ce05ba75d58bd6059a511a3e2860f75c4147f",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "d6b7f3b19346f05998ed57442bac00c8bf2501477d5cd29e6e0b06f931e1bf0a"
+        }
+      ],
+      "historical_remaining": "native visual amplitude/timing equivalence requires original comparison"
+    },
+    {
+      "family": "base_visual_font",
+      "sources": [
+        {
+          "path": "Sources/Core/GameSession.cpp",
+          "exists": true,
+          "lines": 428
+        },
+        {
+          "path": "Sources/Core/ItemBox.cpp",
+          "exists": true,
+          "lines": 52
+        },
+        {
+          "path": "Sources/iOS/HMMenus.mm",
+          "exists": true,
+          "lines": 363
+        },
+        {
+          "path": "Sources/iOS/HMGameHUD.mm",
+          "exists": true,
+          "lines": 231
+        }
+      ],
+      "tests": [
+        {
+          "path": "Tests/ItemBoxTests.cpp",
+          "exists": true
+        },
+        {
+          "path": "Tests/GameSessionTests.cpp",
+          "exists": true
+        },
+        {
+          "path": "Tests/PlayerGaugeTests.cpp",
+          "exists": true
+        },
+        {
+          "path": "Tests/EnemyGaugeTests.cpp",
+          "exists": true
+        }
+      ],
+      "representative_evidence": [
+        {
+          "address": "0x76a0",
+          "kind": "pseudo",
+          "evidence_id": "ev_5df291a1e11b7d7df7ff48f46b35ab011dcd1f0ea990c1800d13ebd32dbaaad0",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "c633eba0237acf34a5e550a6aab4e0eefcbb9c90275e7bde41d01810cb9a5640"
+        },
+        {
+          "address": "0x76a0",
+          "kind": "assembly",
+          "evidence_id": "ev_0879359e5d6fc5788cff65b53c616f6d78c2c7b8c426a36f849d15e037a471f5",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "bd643e9e9c9e509cf5439ff4c8aaebc2890ba4e33b822adda0abe7c40c5f07c1"
+        }
+      ],
+      "historical_remaining": "general-purpose ObjC node system, all text/font operations not separately restored"
+    },
+    {
+      "family": "buttons",
+      "sources": [
+        {
+          "path": "Sources/iOS/HMButtonState.hpp",
+          "exists": true,
+          "lines": 53
+        },
+        {
+          "path": "Sources/iOS/HMMenus.mm",
+          "exists": true,
+          "lines": 363
+        },
+        {
+          "path": "Sources/iOS/HMGameHUD.mm",
+          "exists": true,
+          "lines": 231
+        }
+      ],
+      "tests": [
+        {
+          "path": "Tests/HMButtonStateTests.cpp",
+          "exists": true
+        }
+      ],
+      "representative_evidence": [
+        {
+          "address": "0x84d8",
+          "kind": "pseudo",
+          "evidence_id": "ev_7ab145009cba57195942b9a6a20f39266dd667641e09775f927d9484a59e5c27",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "8c7d3d055f46f451f0d80d7ec86e4dbc40877141681b4563026d21f45a70f2ce"
+        },
+        {
+          "address": "0x84d8",
+          "kind": "assembly",
+          "evidence_id": "ev_d944d74ebd25f1d90ed3ebf7b86692eddebb0492e67525ad53de9d2c43ca4691",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "7d2d2776eb3caeb994fab3d4e0f55cd3b6a5514b9794fa03753f540d271162a5"
+        },
+        {
+          "address": "0x850c",
+          "kind": "pseudo",
+          "evidence_id": "ev_8a77acfeeb7f5626f14e27fb71ec866bd2ff94b928fc724fa601b740cc888131",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "3a086ce69202be4abfee102877f3cabd72f6414fcda93e46461c0a5949d28cbc"
+        },
+        {
+          "address": "0x850c",
+          "kind": "assembly",
+          "evidence_id": "ev_e45c8445ee231f3365103e2712148f6c7d0e1d22671f2e8a57a25fbfe665d235",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "751bbafc606be76442308fc6bc5485df879d0fa8509ccc24162134e7933bff5e"
+        },
+        {
+          "address": "0x87f8",
+          "kind": "pseudo",
+          "evidence_id": "ev_efb0412286cb886b60eeb0640637b37df153dae3569a3038f948634c42a2e325",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "027466717328ed72a6fb0db339f91ba8763103c857bf42758ad4186283a37ca3"
+        },
+        {
+          "address": "0x87f8",
+          "kind": "assembly",
+          "evidence_id": "ev_7ed7e60d274dd3671c5f779e443708a55e60fef93eff0cecf234c6a8afe8a97b",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "bbd9ad5df8ddf0af1d968ffc1e22f2bd42c64bc243964ee21e5e638d5d6fefc8"
+        }
+      ],
+      "historical_remaining": "full original input timing and all native button paths not certified"
+    },
+    {
+      "family": "containers_dispatch",
+      "sources": [
+        {
+          "path": "Sources/Core/GameSession.cpp",
+          "exists": true,
+          "lines": 428
+        },
+        {
+          "path": "Sources/iOS/HMGameView.mm",
+          "exists": true,
+          "lines": 817
+        }
+      ],
+      "tests": [
+        {
+          "path": "Tests/GameSessionTests.cpp",
+          "exists": true
+        }
+      ],
+      "representative_evidence": [
+        {
+          "address": "0xf9a8",
+          "kind": "pseudo",
+          "evidence_id": "ev_60fbad5c765fc37d7cc12442fb07dd70fa8b987d7a704d5707660dba8e7a7eb1",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "7727e12212945d2743ae72cc3530fb3fafd7ee83c7d618a372fe921b353dca8f"
+        },
+        {
+          "address": "0xf9a8",
+          "kind": "assembly",
+          "evidence_id": "ev_9f5de8b6fbab1a860e706371e0fe7627ed0d9146cfe10aa5cdfd64349abad57d",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "5162312dae87fea649ebdefd9526eadcb1f12f02aca5efd32db1b357ebfe7acd"
+        }
+      ],
+      "historical_remaining": "full generic object receiver ordering/reentrant mutation cases not selector-for-selector restored"
+    },
+    {
+      "family": "graphics_resources",
+      "sources": [
+        {
+          "path": "Sources/Core/SpriteRaster.cpp",
+          "exists": true,
+          "lines": 85
+        },
+        {
+          "path": "Sources/Core/TrailRaster.cpp",
+          "exists": true,
+          "lines": 53
+        },
+        {
+          "path": "Sources/iOS/HMMedia.mm",
+          "exists": true,
+          "lines": 215
+        },
+        {
+          "path": "Sources/iOS/HMGameView.mm",
+          "exists": true,
+          "lines": 817
+        }
+      ],
+      "tests": [
+        {
+          "path": "Tests/TrailRasterTests.cpp",
+          "exists": true
+        }
+      ],
+      "representative_evidence": [
+        {
+          "address": "0x69b0",
+          "kind": "pseudo",
+          "evidence_id": "ev_4db0e1d9e79a021e0e17baeefde6b9bd3a0af6d8d14c7614e7f4aca29e764672",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "46fbb80393777364eb2ad2fd1c25976b40a47412ad19e85186e0a275b54d906b"
+        },
+        {
+          "address": "0x69b0",
+          "kind": "assembly",
+          "evidence_id": "ev_0772209dd0acbd9daad543c3da3e54e79c2ee382c4417952f7bc6cb6e65809f6",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "42292e972a85c7d460c38c6d37469e9ab23155e0b5eefcf3d04d3d348f5e3921"
+        },
+        {
+          "address": "0x6f28",
+          "kind": "pseudo",
+          "evidence_id": "ev_944bc7a9b8d5fe15a205322f2b4b60536ceb46104525179275e8e6ede2188d1d",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "7a9409edebc85d20acc58319b381579b3aaf0ebb6bb1a1a11867a30847fa5754"
+        },
+        {
+          "address": "0x6f28",
+          "kind": "assembly",
+          "evidence_id": "ev_4d9844d1897ecc877af9b48c443e23796d9fd91be58eb86637fdaf770dc84aff",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "8ef5398df3fdd0d54c4f81247df7d252ab1c127f57ecabb2d4a01b9810db6f12"
+        }
+      ],
+      "historical_remaining": "whole original scenes/audio and physical performance unverified; generic SRC_COLOR/inherited states unsupported but no active original game path found; >1024 downscale outside current assets"
+    },
+    {
+      "family": "audio",
+      "sources": [
+        {
+          "path": "Sources/Core/AudioContract.hpp",
+          "exists": true,
+          "lines": 27
+        },
+        {
+          "path": "Sources/iOS/HMMedia.mm",
+          "exists": true,
+          "lines": 215
+        }
+      ],
+      "tests": [
+        {
+          "path": "Tests/AudioContractTests.cpp",
+          "exists": true
+        }
+      ],
+      "representative_evidence": [
+        {
+          "address": "0x13bd0",
+          "kind": "pseudo",
+          "evidence_id": "ev_d079292e3748bac313df3a12b275f5abdd593f1f37673bb4b12bf8010bf08eb0",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "4241a943b75cd5e240ef9fed21cf9d9712e789af580857bcded91e292682b247"
+        },
+        {
+          "address": "0x13bd0",
+          "kind": "assembly",
+          "evidence_id": "ev_e9d87c6f2fd7e7d7c8658f68d2a2597d3daed6563f26fa575933ce127ff8a9f8",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "924881e65312b54091a24f261c5a96f98057a5d7ffe47c4f1cf6d5543426a041"
+        },
+        {
+          "address": "0x13d0c",
+          "kind": "pseudo",
+          "evidence_id": "ev_62cb9951506bd914079fec8acd1062b412bf79bd45fba4a096c26d2c6b4ce53a",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "d9a697ec3f879902232adc8c9e243aa8e7650dff81fd3267d9133183ae098a18"
+        },
+        {
+          "address": "0x13d0c",
+          "kind": "assembly",
+          "evidence_id": "ev_3d887a4d03a60d3a941267a7d007f24d5f0ca209b3d073ef8e8db3f2e06cd6d8",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "b76bdd12c93545cc445a58dd120fa8dbad6204f9e1ec6f61ab434107ca542af8"
+        },
+        {
+          "address": "0x13d2c",
+          "kind": "pseudo",
+          "evidence_id": "ev_fbbf28ed53e624ba90f47b7f578cf114b5358a251b03ba3227bc637dc339e948",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "24254a47845028ca07c82e137df1831a3c04584583b62c42437ae0fb1c422647"
+        },
+        {
+          "address": "0x13d2c",
+          "kind": "assembly",
+          "evidence_id": "ev_d22f37b99dea2d21e524ef38ac170421340ed22fc3e26bc9ee341525d74f61cb",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "3c42950d9a43dd0397c6bf9878aafefa568e8aeecf481d851c70b91683bdfbce"
+        }
+      ],
+      "historical_remaining": "original/native stereo/mix/latency output, interruptions/routes and failure injection; tests do not emit/capture actual speaker sound"
+    },
+    {
+      "family": "ios_platform",
+      "sources": [
+        {
+          "path": "Sources/iOS/Application.mm",
+          "exists": true,
+          "lines": 31
+        },
+        {
+          "path": "Sources/iOS/HMGameView.mm",
+          "exists": true,
+          "lines": 817
+        },
+        {
+          "path": "Sources/Core/Viewport.hpp",
+          "exists": true,
+          "lines": 34
+        },
+        {
+          "path": "Sources/Core/TiltState.hpp",
+          "exists": true,
+          "lines": 17
+        }
+      ],
+      "tests": [
+        {
+          "path": "Tests/CoreTests.cpp",
+          "exists": true
+        }
+      ],
+      "representative_evidence": [
+        {
+          "address": "0x20b8",
+          "kind": "pseudo",
+          "evidence_id": "ev_fa86c726e0123f6d9fbd4c3c27c121d3c5ca46ec83211077a34c2d094ef42d57",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "d89b458b207e00d120dbc4eef9443d9b4696acd3aad3732c3e9aa2554042fb2b"
+        },
+        {
+          "address": "0x20b8",
+          "kind": "assembly",
+          "evidence_id": "ev_8d210f314265b864e0b7a29375f943cd32fd1600edf5ad6c34db82efdadbc28a",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "4aaf7232be9410f9533d2d5267719078e547776d1ccbfa363dcdcf88eccfd959"
+        }
+      ],
+      "historical_remaining": "deprecated EAGL/Objective-C ownership plumbing intentionally replaced, not game algorithm coverage"
+    },
+    {
+      "family": "linked_runtime_audio",
+      "sources": [
+        {
+          "path": "Sources/iOS/HMMedia.mm",
+          "exists": true,
+          "lines": 215
+        }
+      ],
+      "tests": [],
+      "representative_evidence": [
+        {
+          "address": "0x1db50",
+          "kind": "pseudo",
+          "evidence_id": "ev_cd78c04147f9cf300f244d71af97ce85579eeb1cf3757bb56bd2f2132c9ccfdf",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "2d392dea58be62c5d3f61f655c33d687056e16ae1e5546e3e588f422ef986e82"
+        },
+        {
+          "address": "0x1db50",
+          "kind": "assembly",
+          "evidence_id": "ev_8445644f65ea4d60a2203db2c1a95514d2f3f980590fe4d45abfc5c9ab1e2b78",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "85ea3a23ccef72a8806a7f49e78f2f8d0fe48322175046be339d8d066def6315"
+        }
+      ],
+      "historical_remaining": "retain inventory/evidence; exclude only runtime implementation from game-logic restoration target"
+    },
+    {
+      "family": "compiler_entry_helpers",
+      "sources": [
+        {
+          "path": "Sources/iOS/Application.mm",
+          "exists": true,
+          "lines": 31
+        }
+      ],
+      "tests": [],
+      "representative_evidence": [
+        {
+          "address": "0x2000",
+          "kind": "pseudo",
+          "evidence_id": "ev_fa255e9b14b7b8d6aec7d536a06573b921f179f390687b68554e6b07df23d6f3",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "48244822e48151f1995039e6325d2516395b6d3a2d411441e07a5357e369fbd6"
+        },
+        {
+          "address": "0x2000",
+          "kind": "assembly",
+          "evidence_id": "ev_fb20df137f4d8361773a4508df6c596962387a04fa880a847c62a9eb1bfa98ee",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "a9bdf30eae7b95b108c80c8cf6c3d8a68d72e22e1026500259a83bd642152379"
+        }
+      ],
+      "historical_remaining": "switch8/16/32 and ARM entry are compiler mechanics, not gameplay"
+    },
+    {
+      "family": "analysis_fragments",
+      "sources": [
+        {
+          "path": "Sources/Core/Combat.cpp",
+          "exists": true,
+          "lines": 162
+        },
+        {
+          "path": "Sources/Core/Enemy.cpp",
+          "exists": true,
+          "lines": 99
+        }
+      ],
+      "tests": [
+        {
+          "path": "Tests/CombatTests.cpp",
+          "exists": true
+        },
+        {
+          "path": "Tests/EnemyTests.cpp",
+          "exists": true
+        }
+      ],
+      "representative_evidence": [
+        {
+          "address": "0x128ec",
+          "kind": "pseudo",
+          "evidence_id": "ev_f2ecd6a9fa1713e8b98d0068d461bcbcc411e38bd1de7caf93f1fbd082b20853",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "7695528b1690b324603185eed364b8a8f14ffb4ccbb5a9ef1cd6750f0b83b768"
+        },
+        {
+          "address": "0x128ec",
+          "kind": "assembly",
+          "evidence_id": "ev_e64da607c92cbfedcb10127f0df29f4b5e70e0cf55d71d937bc9e938bdd470c4",
+          "provider": {
+            "id": "ghidra",
+            "name": "Ghidra",
+            "version": "12.1.4"
+          },
+          "raw_sha256": "5b53b79f0aebf6d420fa8f8fefd697bb9df68ca65ef2f2654a74798658fbc48e"
+        }
+      ],
+      "historical_remaining": "anonymous fragments require owner mapping, not independent feature counts"
+    }
+  ],
+  "matched_representative_evidence": 140,
+  "fresh_query": {
+    "procedure": "0x106e0",
+    "evidence_id": "ev_ee96914bf20181a47dc856df63729955f699db45e5ddb8aa51ab6b7607bb7e34",
+    "source_sha256": "97166198d701dd929243196a85e81182d7716915cdd50dec2acdc1918d10deeb",
+    "provider": {
+      "id": "ghidra",
+      "name": "Ghidra",
+      "version": "12.1.4"
+    },
+    "preserved_value_exact_match": true,
+    "closed_after_query": true,
+    "evidence_file": "build/no-ipa-audit-20261026/rea-fresh-106e0.json"
+  }
+}

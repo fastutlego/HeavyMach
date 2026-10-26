@@ -4,6 +4,12 @@
 
 제품 코드 `72e8c68e` · 2026년 10월 25일 기준
 
+## IPA 없는 빌드·실행 검증 {#independence}
+
+원본 IPA와 기존 프로젝트 폴더의 읽기를 차단한 새 복사본에서 일반·치트 앱의 Simulator·iPhone용 빌드 4개가 성공했다. 이미지·음원·맵·게임 데이터의 앱 내 해시가 모두 일치했다. 새 Simulator 실행과 코어17·iOS14 검사도 통과했다. REA 분석 기록과 실제 게임 코드의 연결을 재검사했다.
+
+[검증 결과와 실행 화면](independence.html) · [REA 구현 대조](rea-implementation.html)
+
 ## GitHub 문서·SaaS 집필 자료 {#publication}
 
 SaaS 담당 세션이 개발 동기·사용자 원문·복원 과정·검증 결과를 읽고 Apps·Mags를 작성하도록 문서 안내를 정리했다. GitHub용 설치 가이드와 구현·검증 범위도 추가했다. 기존 보고 이미지 13개를 출처와 함께 저장소에 보존했다.
