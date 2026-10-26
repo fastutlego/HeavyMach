@@ -4,6 +4,14 @@
 
 제품 코드 `72e8c68e` · 2026년 10월 25일 기준
 
+## iOS 코드·문서 전수검사 {#ios-audit}
+
+현재 소스 68개와 앱별 컴파일 입력 29개, iOS 테스트 12개, 헤더 참조 152개에서 누락을 찾지 못했다. 분리 전 파일 595개와 별도 보존 입력 10,292항목도 다시 대조했다. 검사 시작 시 HeavyMach 저장소의 미커밋·미추적 파일은 없었다.
+
+호환판 내부 수정 23개와 rust-sdl2 수정 1개는 커밋된 두 패치로 재구성된다. 소스별 문서 안내를 추가했고 과거 구현 설명과 현재 상태를 구분했다. 게임 코드·아이폰 설치본·v0.9는 바꾸지 않았다. 전체 화면 단일 문 전환, 회전·발열 등 기존 미완료 과제는 보고서에 남겼다.
+
+[전수검사 전문](ios-audit.html) · [GitHub용 Markdown](ios-completeness-audit-20261026.md) · [현행 소스·문서 연결](https://github.com/gelb2/HeavyMach/blob/main/docs/ios-source-map.md)
+
 ## 후속 타이틀·Android APK 계획 {#android-plan}
 
 원래 Archive 모음에 Heavy Mach 2, Heavy Mach 2 HD, Mach Defense, Heavy MACH: Defense가 있다. IPA 19개 목록과 네 대표 파일의 다운로드 응답을 확인했다. 중단한 Defense 포크는 로컬에 Android 개발 브랜치와 기존 debug APK가 남아 있으며 이번 조사에서 보존했다.

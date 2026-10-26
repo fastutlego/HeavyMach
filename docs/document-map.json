@@ -18,7 +18,8 @@
     "docs/report-site.md",
     "docs/repository-management.md",
     "docs/android-port-plan-20261026.md",
-    "docs/related-titles-20261026.md"
+    "docs/related-titles-20261026.md",
+    "docs/ios-source-map.md"
   ],
   "base_read": [
     "AGENTS.md",
@@ -181,7 +182,8 @@
       "read": [
         "docs/weapon-validation-procedure.md",
         "docs/runtime-policy.md",
-        "docs/source-provenance.md"
+        "docs/source-provenance.md",
+        "docs/ios-source-map.md"
       ],
       "sources": [
         "iOS/project.yml",
@@ -212,11 +214,13 @@
         "tools/export_rea_public_report.py",
         "docs/public/*",
         "tools/build_report_site.py",
-        "tools/audit_repository_migration.py"
+        "tools/audit_repository_migration.py",
+        "tools/audit_ios_sources.py"
       ],
       "tests": [],
       "evidence": [
-        "docs/current-status.md"
+        "docs/current-status.md",
+        "docs/ios-completeness-audit-20261026.md"
       ]
     },
     "android": {

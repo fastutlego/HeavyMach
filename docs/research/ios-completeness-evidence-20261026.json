@@ -1,0 +1,514 @@
+{
+  "head": "223b731542345d288f538473070fc767042e8792",
+  "status": [
+    "?? docs/ios-source-map.md",
+    "?? tools/audit_ios_sources.py"
+  ],
+  "source_count": 68,
+  "targets": {
+    "HeavyMachValidation": [
+      "Sources/Core/BulletVisual.cpp",
+      "Sources/Core/CameraShake.cpp",
+      "Sources/Core/Combat.cpp",
+      "Sources/Core/Enemy.cpp",
+      "Sources/Core/GameData.cpp",
+      "Sources/Core/GameSession.cpp",
+      "Sources/Core/Geometry.cpp",
+      "Sources/Core/GlobalInfo.cpp",
+      "Sources/Core/ItemBox.cpp",
+      "Sources/Core/LoadingTransition.cpp",
+      "Sources/Core/Motion.cpp",
+      "Sources/Core/Player.cpp",
+      "Sources/Core/SaveData.cpp",
+      "Sources/Core/SpriteRaster.cpp",
+      "Sources/Core/TitleState.cpp",
+      "Sources/Core/Trail.cpp",
+      "Sources/Core/TrailRaster.cpp",
+      "Sources/Core/ValidationScenario.cpp",
+      "Sources/Core/Visuals.cpp",
+      "Sources/Core/World.cpp",
+      "Sources/iOS/Application.mm",
+      "Sources/iOS/HMGLRenderer.mm",
+      "Sources/iOS/HMGameHUD.mm",
+      "Sources/iOS/HMGameView.mm",
+      "Sources/iOS/HMMedia.mm",
+      "Sources/iOS/HMMenus.mm",
+      "Sources/iOS/HMOpenALAudio.mm",
+      "Sources/iOS/HMValidationControls.mm",
+      "Sources/iOS/HMValidationPanel.mm"
+    ],
+    "HeavyMachRenderTests": [
+      "Tests/iOS/HMAudioTests.mm",
+      "Tests/iOS/HMCompatibilityPixelsTests.mm",
+      "Tests/iOS/HMFramePerformanceTests.mm",
+      "Tests/iOS/HMGLReferenceTests.mm",
+      "Tests/iOS/HMMediaParityTests.mm",
+      "Tests/iOS/HMMediaTests.mm",
+      "Tests/iOS/HMMenuParityTests.mm",
+      "Tests/iOS/HMOpenALAudioTests.mm",
+      "Tests/iOS/HMPassiveLifecycleTests.mm",
+      "Tests/iOS/HMPresentationComparisonTests.mm",
+      "Tests/iOS/HMResourceLifecycleTests.mm",
+      "Tests/iOS/HMSaveParityTests.mm"
+    ],
+    "HeavyMachRestored": [
+      "Sources/Core/BulletVisual.cpp",
+      "Sources/Core/CameraShake.cpp",
+      "Sources/Core/Combat.cpp",
+      "Sources/Core/Enemy.cpp",
+      "Sources/Core/GameData.cpp",
+      "Sources/Core/GameSession.cpp",
+      "Sources/Core/Geometry.cpp",
+      "Sources/Core/GlobalInfo.cpp",
+      "Sources/Core/ItemBox.cpp",
+      "Sources/Core/LoadingTransition.cpp",
+      "Sources/Core/Motion.cpp",
+      "Sources/Core/Player.cpp",
+      "Sources/Core/SaveData.cpp",
+      "Sources/Core/SpriteRaster.cpp",
+      "Sources/Core/TitleState.cpp",
+      "Sources/Core/Trail.cpp",
+      "Sources/Core/TrailRaster.cpp",
+      "Sources/Core/ValidationScenario.cpp",
+      "Sources/Core/Visuals.cpp",
+      "Sources/Core/World.cpp",
+      "Sources/iOS/Application.mm",
+      "Sources/iOS/HMGLRenderer.mm",
+      "Sources/iOS/HMGameHUD.mm",
+      "Sources/iOS/HMGameView.mm",
+      "Sources/iOS/HMMedia.mm",
+      "Sources/iOS/HMMenus.mm",
+      "Sources/iOS/HMOpenALAudio.mm",
+      "Sources/iOS/HMValidationControls.mm",
+      "Sources/iOS/HMValidationPanel.mm"
+    ]
+  },
+  "quoted_includes_resolved": 152,
+  "sources": [
+    {
+      "path": "Sources/Core/AudioContract.hpp",
+      "sha256": "a962f3e71243c3f6732fb839ec37426e1131983d63d1c09c654722d17814f1e1"
+    },
+    {
+      "path": "Sources/Core/BulletVisual.cpp",
+      "sha256": "3d4161dfde4f2547781f315a429bd29ddb987d5e00c534f86e0051f1e571aca2"
+    },
+    {
+      "path": "Sources/Core/BulletVisual.hpp",
+      "sha256": "b8ea1a42b1f9a4d22febded0c59132b7d046525fcd33e546bb8eb2419077aca3"
+    },
+    {
+      "path": "Sources/Core/CameraShake.cpp",
+      "sha256": "4461811278a353197d204934e7a28baffeac7f3b13361505cb6c3fc82d1b2a1d"
+    },
+    {
+      "path": "Sources/Core/CameraShake.hpp",
+      "sha256": "052f0a81943abf91ca66cd1b6a75f58e900bbffed916ee7634f9c8eff18767a5"
+    },
+    {
+      "path": "Sources/Core/CanvasGeometry.hpp",
+      "sha256": "551b39191555fcaf5c1e7f160cd1562df6f15525d395f8650f21feb57a94963b"
+    },
+    {
+      "path": "Sources/Core/Combat.cpp",
+      "sha256": "bd43ef1d0bfef5c69285dcf3f592f7a2effadbb5e8f050a15b0410d7f14841bd"
+    },
+    {
+      "path": "Sources/Core/Combat.hpp",
+      "sha256": "4cfadf89d0d9b8f23d6c41e6c0b40a9d6afb4272b2a5c2ac38b039667d042280"
+    },
+    {
+      "path": "Sources/Core/Enemy.cpp",
+      "sha256": "fe8e22021e65fcd9f677c175e98375bfe37fcf18519a4c157e94c5407b309160"
+    },
+    {
+      "path": "Sources/Core/Enemy.hpp",
+      "sha256": "997fc29e720e7aa090dffd2ad9a450d4faac5721cc59853275133b5bb6337c3c"
+    },
+    {
+      "path": "Sources/Core/GameData.cpp",
+      "sha256": "51aa866c3794670773db3b324b8b30197af76b0857724b317597c2f30d3c112f"
+    },
+    {
+      "path": "Sources/Core/GameData.hpp",
+      "sha256": "a84e0ca3df4b1c85c6ff92474f93fc5e4f8d7595f3f819f69d07f3715a860757"
+    },
+    {
+      "path": "Sources/Core/GameSession.cpp",
+      "sha256": "848461e5cd70b180c5b4c14cfe16c9dc644cde9be6abc07693ec8dc1bcc309e5"
+    },
+    {
+      "path": "Sources/Core/GameSession.hpp",
+      "sha256": "b631635c7ef4e843196cb8fcd74385e70b4d6b62196ee941c93637b25283fecb"
+    },
+    {
+      "path": "Sources/Core/Geometry.cpp",
+      "sha256": "b753120ea9d9530a569c5916dcf3895e1f5fa4b0a05dd36cd43e1b5eed23924d"
+    },
+    {
+      "path": "Sources/Core/Geometry.hpp",
+      "sha256": "3d0b3736acc0dfd61ccb2734277c022086e683a8dd01c7047e7b5187479f6fb0"
+    },
+    {
+      "path": "Sources/Core/GlobalInfo.cpp",
+      "sha256": "ba16167af9a5fa139a7fe691de3b967068dc11cc285cdc08f88f6d8d264d4d97"
+    },
+    {
+      "path": "Sources/Core/GlobalInfo.hpp",
+      "sha256": "d1a5ab355499e230b57f737c49b6ec0878a7560651debb1e7a40bc72b3e725de"
+    },
+    {
+      "path": "Sources/Core/ItemBox.cpp",
+      "sha256": "4992096a314c9ea066b2f5a343596cf60980e36174f5ab32f55385d4c401a062"
+    },
+    {
+      "path": "Sources/Core/ItemBox.hpp",
+      "sha256": "a2a651171a0adf2ca4e1cfbf09b5426502865819d16d78c866df502624ea749f"
+    },
+    {
+      "path": "Sources/Core/LoadingTransition.cpp",
+      "sha256": "307d534199b9106b451bec7011376922a067d331455fac4e78340dc9c2808feb"
+    },
+    {
+      "path": "Sources/Core/LoadingTransition.hpp",
+      "sha256": "a41cb041c4f7bcce51129a925b84b02ffd7bb1c7ddf4dd59122e176909f2df38"
+    },
+    {
+      "path": "Sources/Core/Motion.cpp",
+      "sha256": "e7f7c655dc1a07119933053fb90219b2ce64a6f8060d3a929c52395cce2075ea"
+    },
+    {
+      "path": "Sources/Core/Motion.hpp",
+      "sha256": "8e9be5f4498359d298bb534301b4ef60a440e4b3fa2b60b27fa153593d3892ea"
+    },
+    {
+      "path": "Sources/Core/Player.cpp",
+      "sha256": "ca218285dd25c05bf5a5a4d3a5f8074e535d7e5ea007ff8977df9633bf8d2a99"
+    },
+    {
+      "path": "Sources/Core/Player.hpp",
+      "sha256": "c966e64b226b04acad932ffc73355f0a5ab05287c1b32c8b1f271280ce5636db"
+    },
+    {
+      "path": "Sources/Core/SaveData.cpp",
+      "sha256": "1d522f930e0ba6da69be9939fdb6db46672d02cee9be36443a01771ffc6e5f7e"
+    },
+    {
+      "path": "Sources/Core/SaveData.hpp",
+      "sha256": "6190cc12fae20c3d0684b4cc537dc98092c48ddbb4958095886f95564670436b"
+    },
+    {
+      "path": "Sources/Core/SpriteRaster.cpp",
+      "sha256": "b398aead1850e5b9c3ef68872a8d48cdbfc1caa2992f97102fa0228b45492005"
+    },
+    {
+      "path": "Sources/Core/SpriteRaster.hpp",
+      "sha256": "d3ed65be021b0350243851fe2bdd9b579c76169e1910917badfbdf1ee95445b4"
+    },
+    {
+      "path": "Sources/Core/TextureFormat.hpp",
+      "sha256": "4003793d4d08408bf75fe9bb76778f17dc2653a1f208d3428eccb4792efbd9fa"
+    },
+    {
+      "path": "Sources/Core/TiltState.hpp",
+      "sha256": "c5bcda32f9a8100e21b214575b5c417015c137d06401282df2b59c1131f56382"
+    },
+    {
+      "path": "Sources/Core/TitleState.cpp",
+      "sha256": "f4a675a17845c4ceb91be986046eb2e205dbcedff6654e957fec21456b2fd704"
+    },
+    {
+      "path": "Sources/Core/TitleState.hpp",
+      "sha256": "c094bd00c0e7c616e09a59070d2d0728fea7e13341081607d9cf64a372c00223"
+    },
+    {
+      "path": "Sources/Core/Trail.cpp",
+      "sha256": "4cfe21c94c74c66d24eee0f214ebd920e45d94c44a6b1ba44bc092f7c5d902f5"
+    },
+    {
+      "path": "Sources/Core/Trail.hpp",
+      "sha256": "24520d2e61a35ff477b232420f59bf0de0ae1510283cae9e8f123578ed7ea3ff"
+    },
+    {
+      "path": "Sources/Core/TrailRaster.cpp",
+      "sha256": "8275c75a9e0082c6936acfc9667e8b136a8aa1bf3f2e7e8a32cb468d29a6d1e2"
+    },
+    {
+      "path": "Sources/Core/TrailRaster.hpp",
+      "sha256": "59e1d60bd231546fa87124dba07c3453c9e800e77a4b2fa91b066e175f1f006b"
+    },
+    {
+      "path": "Sources/Core/ValidationScenario.cpp",
+      "sha256": "48f7680249e020bf282bf28a34a28a18a9e7920c0f2205504abae29855af8eba"
+    },
+    {
+      "path": "Sources/Core/ValidationScenario.hpp",
+      "sha256": "519525ea989f5d12dca01c6ec6554d83224e0baa0244d1b5710dea17144e5eb0"
+    },
+    {
+      "path": "Sources/Core/Viewport.hpp",
+      "sha256": "506480fb921c105bf95031c3f61207e628083e871bb3c43cabf49665e7127b0e"
+    },
+    {
+      "path": "Sources/Core/Visuals.cpp",
+      "sha256": "951d7604a9b1ad67bbf023a162be2fed74bdd8ae39192195c503fb4b316865d8"
+    },
+    {
+      "path": "Sources/Core/Visuals.hpp",
+      "sha256": "1fa510a53cf9f48ab59a7c24f9ccc832084a573e53f28df5624445546c8d7407"
+    },
+    {
+      "path": "Sources/Core/World.cpp",
+      "sha256": "9622d48888566d020bb8a82f81fdbe3664ec765d498775f7f4d5ac29dbb3f58c"
+    },
+    {
+      "path": "Sources/Core/World.hpp",
+      "sha256": "983b3b9b551649c88dc816f677d30a3f3e26c81fefd8540e243654752438d36b"
+    },
+    {
+      "path": "Sources/OriginalInterfaces/Arm32DiskLayouts.h",
+      "sha256": "5d045620047e76abc4055ca86f9891fbf49e953438b41ed66937e58f7707c2c6"
+    },
+    {
+      "path": "Sources/OriginalInterfaces/OriginalClasses.h",
+      "sha256": "a7a55e1372b23661bcb1848de852404f033396918ba38867dbca22045146e970"
+    },
+    {
+      "path": "Sources/OriginalInterfaces/OriginalTypes.h",
+      "sha256": "5e82c64305d4c468820faa69337a56176dfaf33953f08d9e5608d139cd69c522"
+    },
+    {
+      "path": "Sources/OriginalInterfaces/method-address-map.json",
+      "sha256": "f2b1bcd2e980b8331475bed5a8c31aeda5e83a9eaf9881c34648e68cb68d72bd"
+    },
+    {
+      "path": "Sources/iOS/Application.mm",
+      "sha256": "5aca889bdd8b3775bd9ca90173b8169f1d54232503d88f142b0cb4a1ceb9f4b6"
+    },
+    {
+      "path": "Sources/iOS/HMButtonState.hpp",
+      "sha256": "8e8f3035cc7dd2fd422122d99d9ccb9278d629663035bce4f9543cfb83808e52"
+    },
+    {
+      "path": "Sources/iOS/HMCompatibilityPixels.hpp",
+      "sha256": "f1d6ae8c57861735e8ac450d72fbe4084ae7c252e54618ebf1398675cfe92879"
+    },
+    {
+      "path": "Sources/iOS/HMGLRenderer.h",
+      "sha256": "0ed6c19481bd22b9b39ba723be0763c53a497212f1150324c8dc4a0bb050c1fc"
+    },
+    {
+      "path": "Sources/iOS/HMGLRenderer.mm",
+      "sha256": "db41e13b52fb3b33650c321dc85393d1933d8f13221070d3388a5297a0c5d0e3"
+    },
+    {
+      "path": "Sources/iOS/HMGameHUD.h",
+      "sha256": "639c4b035bdb1c04b75b6e447ae485f843bffb67c1ad5f0f1660be978219970c"
+    },
+    {
+      "path": "Sources/iOS/HMGameHUD.mm",
+      "sha256": "a9223635bc4ef1522ca42be2f404bac552882adae3c02237d43080cafbb0986b"
+    },
+    {
+      "path": "Sources/iOS/HMGameView.h",
+      "sha256": "1d1ebc3e7e9a2be1961e87e8decb64a6222e5079272ed98b9ae6b749599c9a4b"
+    },
+    {
+      "path": "Sources/iOS/HMGameView.mm",
+      "sha256": "106ef8aaaae247129d87288a4740902f33e7d9205f75678de957667b0472330f"
+    },
+    {
+      "path": "Sources/iOS/HMMedia.h",
+      "sha256": "61b34d9eafdc95e889536db31b9ba82376f59c90cac2005330cc456f3f5a43bf"
+    },
+    {
+      "path": "Sources/iOS/HMMedia.mm",
+      "sha256": "85c0c96871deabe7cf9978776278acb8ccd78bcfd1c4185eb485170d707f56c9"
+    },
+    {
+      "path": "Sources/iOS/HMMenus.h",
+      "sha256": "fa0f864c33f2a5e26e5bb9bca14ce864c4b96245cdb4c5224a94fb5916a372cd"
+    },
+    {
+      "path": "Sources/iOS/HMMenus.mm",
+      "sha256": "37f00c8f22d29d1b9c1925f79a96b51333a719efd087abda303e20db43c2e636"
+    },
+    {
+      "path": "Sources/iOS/HMOpenALAudio.h",
+      "sha256": "9d187610970434e0a4295c406d14178b807a8fa159e0f06f12174e82a914f843"
+    },
+    {
+      "path": "Sources/iOS/HMOpenALAudio.mm",
+      "sha256": "1e11df290dc8c50984375a2ab62ecb3a0788452a51a374b3452819ca8d0455ec"
+    },
+    {
+      "path": "Sources/iOS/HMValidationControls.h",
+      "sha256": "31c86f41a0cad9b3d0d3650af8f5561a4bdcc8aa69174db6ff6862eccece60b2"
+    },
+    {
+      "path": "Sources/iOS/HMValidationControls.mm",
+      "sha256": "905c14bab6b20eee73079fe5d3951b0c0847d2bc68bd96c0045609f0591b5bea"
+    },
+    {
+      "path": "Sources/iOS/HMValidationPanel.h",
+      "sha256": "a9ecc001073ac1aed050561de67d4da6ddfc60969be2faa20163e918d931737b"
+    },
+    {
+      "path": "Sources/iOS/HMValidationPanel.mm",
+      "sha256": "cb0d4b2259a2ff7d38ea2ae8dfb4cb561ede50d1b274567a5539a7b66e215028"
+    }
+  ],
+  "product_trees": {
+    "Sources": {
+      "v0.9": "30075505aad1f941a78119eac22ea6ebfb5f5357",
+      "HEAD": "30075505aad1f941a78119eac22ea6ebfb5f5357",
+      "equal": true
+    },
+    "iOS": {
+      "v0.9": "da028d0f3ed163c95cc7765af89f75e210e2be0a",
+      "HEAD": "da028d0f3ed163c95cc7765af89f75e210e2be0a",
+      "equal": true
+    },
+    "Art": {
+      "v0.9": "03f390e4dc6a270e780fb017819a1be52f7bddf2",
+      "HEAD": "03f390e4dc6a270e780fb017819a1be52f7bddf2",
+      "equal": true
+    },
+    "Tests": {
+      "v0.9": "f75a457f387fedb98df790f8f0b836a53d2f3d92",
+      "HEAD": "f75a457f387fedb98df790f8f0b836a53d2f3d92",
+      "equal": true
+    }
+  },
+  "compatibility": [
+    {
+      "repository": "Compatibility/compat-source",
+      "head": "ebf9433e2bfd32071545bf49484b1345d15522a3",
+      "status": [
+        " M fresh-port/20-touchHLE-src/touchHLE/Cargo.lock",
+        " M fresh-port/20-touchHLE-src/touchHLE/Cargo.toml",
+        " M fresh-port/20-touchHLE-src/touchHLE/build.rs",
+        " M fresh-port/20-touchHLE-src/touchHLE/src/cpu/interpreter/mod.rs",
+        " M fresh-port/20-touchHLE-src/touchHLE/src/frameworks/opengles/eagl.rs",
+        " M fresh-port/20-touchHLE-src/touchHLE/src/lib.rs",
+        " M fresh-port/20-touchHLE-src/touchHLE/src/libc/time.rs",
+        " M fresh-port/20-touchHLE-src/touchHLE/src/mole_activity.rs",
+        " M fresh-port/20-touchHLE-src/touchHLE/src/mole_cheats.rs",
+        " M fresh-port/20-touchHLE-src/touchHLE/src/mole_dev.rs",
+        " M fresh-port/20-touchHLE-src/touchHLE/src/mole_items.rs",
+        " M fresh-port/20-touchHLE-src/touchHLE/src/mole_menu.rs",
+        " M fresh-port/20-touchHLE-src/touchHLE/src/mole_savebak.rs",
+        " M fresh-port/20-touchHLE-src/touchHLE/src/mole_uid.rs",
+        " M fresh-port/20-touchHLE-src/touchHLE/src/objc/classes.rs",
+        " M fresh-port/20-touchHLE-src/touchHLE/src/objc/messages.rs",
+        " M fresh-port/20-touchHLE-src/touchHLE/src/objc/selectors.rs",
+        " M fresh-port/20-touchHLE-src/touchHLE/src/window.rs",
+        " M fresh-port/20-touchHLE-src/touchHLE/vendor/SDL/src/video/uikit/SDL_uikitappdelegate.h",
+        " M fresh-port/20-touchHLE-src/touchHLE/vendor/SDL/src/video/uikit/SDL_uikitappdelegate.m",
+        " M fresh-port/20-touchHLE-src/touchHLE/vendor/SDL/src/video/uikit/SDL_uikitevents.m",
+        " M fresh-port/20-touchHLE-src/touchHLE/vendor/SDL/src/video/uikit/SDL_uikitvideo.m",
+        " M fresh-port/20-touchHLE-src/touchHLE/vendor/SDL/src/video/uikit/SDL_uikitwindow.m",
+        "?? fresh-port/20-touchHLE-src/touchHLE/vendor/rust-sdl2/"
+      ],
+      "modified_files": [
+        "fresh-port/20-touchHLE-src/touchHLE/Cargo.lock",
+        "fresh-port/20-touchHLE-src/touchHLE/Cargo.toml",
+        "fresh-port/20-touchHLE-src/touchHLE/build.rs",
+        "fresh-port/20-touchHLE-src/touchHLE/src/cpu/interpreter/mod.rs",
+        "fresh-port/20-touchHLE-src/touchHLE/src/frameworks/opengles/eagl.rs",
+        "fresh-port/20-touchHLE-src/touchHLE/src/lib.rs",
+        "fresh-port/20-touchHLE-src/touchHLE/src/libc/time.rs",
+        "fresh-port/20-touchHLE-src/touchHLE/src/mole_activity.rs",
+        "fresh-port/20-touchHLE-src/touchHLE/src/mole_cheats.rs",
+        "fresh-port/20-touchHLE-src/touchHLE/src/mole_dev.rs",
+        "fresh-port/20-touchHLE-src/touchHLE/src/mole_items.rs",
+        "fresh-port/20-touchHLE-src/touchHLE/src/mole_menu.rs",
+        "fresh-port/20-touchHLE-src/touchHLE/src/mole_savebak.rs",
+        "fresh-port/20-touchHLE-src/touchHLE/src/mole_uid.rs",
+        "fresh-port/20-touchHLE-src/touchHLE/src/objc/classes.rs",
+        "fresh-port/20-touchHLE-src/touchHLE/src/objc/messages.rs",
+        "fresh-port/20-touchHLE-src/touchHLE/src/objc/selectors.rs",
+        "fresh-port/20-touchHLE-src/touchHLE/src/window.rs",
+        "fresh-port/20-touchHLE-src/touchHLE/vendor/SDL/src/video/uikit/SDL_uikitappdelegate.h",
+        "fresh-port/20-touchHLE-src/touchHLE/vendor/SDL/src/video/uikit/SDL_uikitappdelegate.m",
+        "fresh-port/20-touchHLE-src/touchHLE/vendor/SDL/src/video/uikit/SDL_uikitevents.m",
+        "fresh-port/20-touchHLE-src/touchHLE/vendor/SDL/src/video/uikit/SDL_uikitvideo.m",
+        "fresh-port/20-touchHLE-src/touchHLE/vendor/SDL/src/video/uikit/SDL_uikitwindow.m"
+      ],
+      "patch": "Compatibility/patches/heavymach.patch",
+      "patch_sha256": "95b49a6659168733da9ffdb92dd75dded6bd459e896d746756698ba454434ccf",
+      "patched_contents_match_checkout": true
+    },
+    {
+      "repository": "Compatibility/compat-source/fresh-port/20-touchHLE-src/touchHLE/vendor/rust-sdl2",
+      "head": "b67f98fe6a147773b6f05d50ae775d9fe16561e7",
+      "status": [
+        " M sdl2-sys/build.rs"
+      ],
+      "modified_files": [
+        "sdl2-sys/build.rs"
+      ],
+      "patch": "Compatibility/patches/rust-sdl2.patch",
+      "patch_sha256": "3e785905098b9adaeee2ae04b12a1b370de2a98c8d39d53938ae9216f52ef994",
+      "patched_contents_match_checkout": true
+    }
+  ],
+  "errors": [],
+  "audit_started_main": "e4c30ad8d6c35e76995ac1d932f122181ef4ee78",
+  "audit_started_main_status": [],
+  "status_scope": "Audit branch working status after adding the source map and checker; not initial user changes",
+  "migration": {
+    "legacy_head": "90a7fc684571130e4209c86fe83f8f0b17250f3a",
+    "target_head": "e4c30ad8d6c35e76995ac1d932f122181ef4ee78",
+    "target_scope": "current working files, including uncommitted audit fixes",
+    "tracked_total": 595,
+    "tracked_status": {
+      "changed_review_required": 17,
+      "same": 578
+    },
+    "local_input_counts": {
+      "Resources": 1600,
+      "Analysis": 3571,
+      "compat-source": 5119,
+      "originals": 2
+    },
+    "local_input_status": {
+      "same": 10292
+    },
+    "related_root_documents": 3,
+    "documents_checked": 101,
+    "local_links": 398,
+    "site_links": 20,
+    "retained_archive_entries": 85848,
+    "retained_archive_bytes": 11243954093,
+    "archive_check_scope": "existence, type and size; no full cache/trace content hashing",
+    "errors": []
+  },
+  "final_migration": {
+    "legacy_head": "90a7fc684571130e4209c86fe83f8f0b17250f3a",
+    "target_head": "223b731542345d288f538473070fc767042e8792",
+    "target_scope": "current working files, including uncommitted audit fixes",
+    "tracked_total": 595,
+    "tracked_status": {
+      "changed_review_required": 17,
+      "same": 578
+    },
+    "local_input_counts": {
+      "Resources": 1600,
+      "Analysis": 3571,
+      "compat-source": 5119,
+      "originals": 2
+    },
+    "local_input_status": {
+      "same": 10292
+    },
+    "related_root_documents": 3,
+    "documents_checked": 103,
+    "local_links": 429,
+    "site_links": 22,
+    "retained_archive_entries": 85848,
+    "retained_archive_bytes": 11243954093,
+    "archive_check_scope": "existence, type and size; no full cache/trace content hashing",
+    "errors": []
+  }
+}

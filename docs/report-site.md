@@ -1,5 +1,15 @@
 # HeavyMach 보고 사이트
 
+## 최신 게시 — 2026-10-26 iOS 코드·문서 전수검사
+
+`/#ios-audit`와 `/ios-audit.html`에 소스·Xcode 등록·문서·미커밋 변경 검사 결과를 추가했다. 같은 Markdown을 다운로드로 제공한다.
+
+- 소스: `ce2f1deae96136d13ee5019c5c2d48b8b0ec4f76`.
+- 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_5774121bfd288191b08e2c35cc2c48be`.
+- 배포: `appgdep_6aded6230ea4819182b7b00779784dac`, `succeeded`, 2026-10-26T04:25:19.614754+00:00. 소유자 전용 유지.
+- Chrome 로컬 미리보기에서 본문·목차 이동·좁은 화면 표를 확인했다. 로컬 링크 156개, 기존 앵커·이미지 13개, 원고와 다운로드 일치 검사를 통과했다.
+- 배포 API 성공을 확인했다. 인증 후 게시 화면은 별도로 검사하지 않았다. 게임 코드·설치본은 변경하지 않았다.
+
 ## 최신 게시 — 2026-10-26 후속 타이틀·Android 계획
 
 `#android-plan`에 두 조사 요약을 추가하고 `/related-titles.html`, `/android-plan.html`에 전문과 동일 Markdown 다운로드를 게시했다. 원래 Archive 목록, 중단한 Defense 포크, Android 코어 컴파일 결과, 개발 단계·스킬·APK 검증 절차를 기록했다.
