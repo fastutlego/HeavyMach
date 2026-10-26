@@ -1,5 +1,17 @@
 # HeavyMach 보고 사이트
 
+## 최신 게시 — 2026-10-26 Apple 모듈·키보드·성능 검사
+
+`/apple-platforms.html`에 공용 모듈, 키보드, Mac·iPad·iPhone 검사, Instruments CPU·메모리 결과와 실패 범위를 게시했다. `/auto-aim.html`에 후속 개발 계획을 게시했다. 기존13개 이미지를 유지했다.
+
+- 제품 커밋: `58ade7ae` (`feat/apple-workspace-modules`). main·v0.9 변경 없음.
+- Sites 소스: `b190878370a67e873ecb8ea4632b54f7274ba97a`.
+- 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_6841e3631ff88191af66f80fa8e3185c`.
+- 배포: `appgdep_6adf500612f8819197f7cdb649d1c552`, `succeeded`, 2026-10-26T13:05:23.936746+00:00. 소유자 전용 유지.
+- 생성된 최상위 HTML의 로컬 링크141개와 새 원고2개의 다운로드 일치를 확인했다. Mac 잠금으로 새 브라우저 화면 검사는 수행하지 못했다.
+- 최종 커밋을 별도 export에 반영하고 기존 Git 폴더·Codex 원본 폴더·IPA 읽기를 차단해 Mac/iOS Simulator 치트 앱을 다시 빌드했다. 모두 `BUILD SUCCEEDED`. 로그는 `/private/tmp/heavymach-apple-clean.0bWLXm/final-mac.log`, `final-ios.log`다. 앞선 cold-cache 빌드와 구분하며 이번 재검사는 기존 export의 빌드 캐시를 사용했다.
+
+
 ## 최신 게시 — 2026-10-26 새 원격 clone 빌드
 
 `/clone-build.html`에 자원 Git 누락 수정, GitHub clone·LFS 다운로드, IPA 읽기 차단 상태의 빌드4개·코어17·iOS14·두 앱 Simulator 실행 결과를 게시했다. 설치 가이드에서 IPA 추출·자원 수동 복사 요구를 제거했다.
