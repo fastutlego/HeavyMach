@@ -1,0 +1,279 @@
+{
+  "root": "/private/tmp/heavymach-git-clone-20261026T103406Z",
+  "source_commit": "daf0c178248b262148ee56008ef743cf7be80f73",
+  "inputs": 1960,
+  "no_symlinks": true,
+  "no_ipa": true,
+  "input_method": "GitHub SSH clone and git lfs pull; no local asset copy",
+  "runs": [
+    {
+      "name": "deny-git-probe",
+      "command": [
+        "/usr/bin/sandbox-exec",
+        "-f",
+        "/private/tmp/heavymach-git-clone-20261026T103406Z/deny-originals.sb",
+        "/usr/bin/head",
+        "-c",
+        "1",
+        "/Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/Sources/Core/GameSession.cpp"
+      ],
+      "exit_code": 1,
+      "started": "2026-10-26T10:35:08.683635+00:00",
+      "finished": "2026-10-26T10:35:08.691869+00:00"
+    },
+    {
+      "name": "deny-ipa-probe",
+      "command": [
+        "/usr/bin/sandbox-exec",
+        "-f",
+        "/private/tmp/heavymach-git-clone-20261026T103406Z/deny-originals.sb",
+        "/usr/bin/head",
+        "-c",
+        "1",
+        "/Users/sokol/Documents/Codex/2026-10-24/rea-ready/Heavy_Mach_1.13_ios_2.1.ipa"
+      ],
+      "exit_code": 1,
+      "started": "2026-10-26T10:35:08.692088+00:00",
+      "finished": "2026-10-26T10:35:08.699308+00:00"
+    },
+    {
+      "name": "deny-ipa-extension-probe",
+      "command": [
+        "/usr/bin/sandbox-exec",
+        "-f",
+        "/private/tmp/heavymach-git-clone-20261026T103406Z/deny-originals.sb",
+        "/usr/bin/head",
+        "-c",
+        "1",
+        "/private/tmp/heavymach-git-clone-20261026T103406Z/blocked-input-probe.ipa"
+      ],
+      "exit_code": 1,
+      "started": "2026-10-26T10:35:08.699604+00:00",
+      "finished": "2026-10-26T10:35:08.706779+00:00"
+    },
+    {
+      "name": "allow-copy-probe",
+      "command": [
+        "/usr/bin/sandbox-exec",
+        "-f",
+        "/private/tmp/heavymach-git-clone-20261026T103406Z/deny-originals.sb",
+        "/usr/bin/head",
+        "-c",
+        "1",
+        "/private/tmp/heavymach-git-clone-20261026T103406Z/project/Sources/Core/GameSession.cpp"
+      ],
+      "exit_code": 0,
+      "started": "2026-10-26T10:35:08.707058+00:00",
+      "finished": "2026-10-26T10:35:08.714541+00:00"
+    },
+    {
+      "name": "verify-assets",
+      "command": [
+        "/usr/bin/sandbox-exec",
+        "-f",
+        "/private/tmp/heavymach-git-clone-20261026T103406Z/deny-originals.sb",
+        "python3",
+        "tools/verify_build_resources.py"
+      ],
+      "exit_code": 0,
+      "started": "2026-10-26T10:35:08.714750+00:00",
+      "finished": "2026-10-26T10:35:08.823261+00:00"
+    },
+    {
+      "name": "openal-iphonesimulator",
+      "command": [
+        "/usr/bin/sandbox-exec",
+        "-f",
+        "/private/tmp/heavymach-git-clone-20261026T103406Z/deny-originals.sb",
+        "/bin/bash",
+        "tools/build_openal.sh",
+        "iphonesimulator"
+      ],
+      "exit_code": 0,
+      "started": "2026-10-26T10:35:08.823537+00:00",
+      "finished": "2026-10-26T10:35:19.266637+00:00"
+    },
+    {
+      "name": "HeavyMachRestored-iphonesimulator",
+      "command": [
+        "/usr/bin/sandbox-exec",
+        "-f",
+        "/private/tmp/heavymach-git-clone-20261026T103406Z/deny-originals.sb",
+        "/usr/bin/xcodebuild",
+        "-project",
+        "iOS/HeavyMachRestored.xcodeproj",
+        "-scheme",
+        "HeavyMachRestored",
+        "-configuration",
+        "Debug",
+        "-sdk",
+        "iphonesimulator",
+        "-destination",
+        "generic/platform=iOS Simulator",
+        "-derivedDataPath",
+        "/private/tmp/heavymach-git-clone-20261026T103406Z/derived-iphonesimulator",
+        "ARCHS=arm64",
+        "ONLY_ACTIVE_ARCH=YES",
+        "CODE_SIGNING_ALLOWED=NO",
+        "CODE_SIGNING_REQUIRED=NO",
+        "COMPILER_INDEX_STORE_ENABLE=NO",
+        "build"
+      ],
+      "exit_code": 0,
+      "started": "2026-10-26T10:35:19.266943+00:00",
+      "finished": "2026-10-26T10:35:31.852118+00:00"
+    },
+    {
+      "name": "HeavyMachValidation-iphonesimulator",
+      "command": [
+        "/usr/bin/sandbox-exec",
+        "-f",
+        "/private/tmp/heavymach-git-clone-20261026T103406Z/deny-originals.sb",
+        "/usr/bin/xcodebuild",
+        "-project",
+        "iOS/HeavyMachRestored.xcodeproj",
+        "-scheme",
+        "HeavyMachValidation",
+        "-configuration",
+        "Debug",
+        "-sdk",
+        "iphonesimulator",
+        "-destination",
+        "generic/platform=iOS Simulator",
+        "-derivedDataPath",
+        "/private/tmp/heavymach-git-clone-20261026T103406Z/derived-iphonesimulator",
+        "ARCHS=arm64",
+        "ONLY_ACTIVE_ARCH=YES",
+        "CODE_SIGNING_ALLOWED=NO",
+        "CODE_SIGNING_REQUIRED=NO",
+        "COMPILER_INDEX_STORE_ENABLE=NO",
+        "build"
+      ],
+      "exit_code": 0,
+      "started": "2026-10-26T10:35:31.852459+00:00",
+      "finished": "2026-10-26T10:35:36.414622+00:00"
+    },
+    {
+      "name": "openal-iphoneos",
+      "command": [
+        "/usr/bin/sandbox-exec",
+        "-f",
+        "/private/tmp/heavymach-git-clone-20261026T103406Z/deny-originals.sb",
+        "/bin/bash",
+        "tools/build_openal.sh",
+        "iphoneos"
+      ],
+      "exit_code": 0,
+      "started": "2026-10-26T10:35:36.414965+00:00",
+      "finished": "2026-10-26T10:35:46.417957+00:00"
+    },
+    {
+      "name": "HeavyMachRestored-iphoneos",
+      "command": [
+        "/usr/bin/sandbox-exec",
+        "-f",
+        "/private/tmp/heavymach-git-clone-20261026T103406Z/deny-originals.sb",
+        "/usr/bin/xcodebuild",
+        "-project",
+        "iOS/HeavyMachRestored.xcodeproj",
+        "-scheme",
+        "HeavyMachRestored",
+        "-configuration",
+        "Debug",
+        "-sdk",
+        "iphoneos",
+        "-destination",
+        "generic/platform=iOS",
+        "-derivedDataPath",
+        "/private/tmp/heavymach-git-clone-20261026T103406Z/derived-iphoneos",
+        "ARCHS=arm64",
+        "ONLY_ACTIVE_ARCH=YES",
+        "CODE_SIGNING_ALLOWED=NO",
+        "CODE_SIGNING_REQUIRED=NO",
+        "COMPILER_INDEX_STORE_ENABLE=NO",
+        "build"
+      ],
+      "exit_code": 0,
+      "started": "2026-10-26T10:35:46.418280+00:00",
+      "finished": "2026-10-26T10:35:56.907955+00:00"
+    },
+    {
+      "name": "HeavyMachValidation-iphoneos",
+      "command": [
+        "/usr/bin/sandbox-exec",
+        "-f",
+        "/private/tmp/heavymach-git-clone-20261026T103406Z/deny-originals.sb",
+        "/usr/bin/xcodebuild",
+        "-project",
+        "iOS/HeavyMachRestored.xcodeproj",
+        "-scheme",
+        "HeavyMachValidation",
+        "-configuration",
+        "Debug",
+        "-sdk",
+        "iphoneos",
+        "-destination",
+        "generic/platform=iOS",
+        "-derivedDataPath",
+        "/private/tmp/heavymach-git-clone-20261026T103406Z/derived-iphoneos",
+        "ARCHS=arm64",
+        "ONLY_ACTIVE_ARCH=YES",
+        "CODE_SIGNING_ALLOWED=NO",
+        "CODE_SIGNING_REQUIRED=NO",
+        "COMPILER_INDEX_STORE_ENABLE=NO",
+        "build"
+      ],
+      "exit_code": 0,
+      "started": "2026-10-26T10:35:56.908286+00:00",
+      "finished": "2026-10-26T10:36:01.464738+00:00"
+    },
+    {
+      "name": "core-configure",
+      "command": [
+        "/usr/bin/sandbox-exec",
+        "-f",
+        "/private/tmp/heavymach-git-clone-20261026T103406Z/deny-originals.sb",
+        "/opt/homebrew/bin/cmake",
+        "-S",
+        ".",
+        "-B",
+        "build/core",
+        "-DCMAKE_BUILD_TYPE=Debug"
+      ],
+      "exit_code": 0,
+      "started": "2026-10-26T10:36:01.465255+00:00",
+      "finished": "2026-10-26T10:36:01.738408+00:00"
+    },
+    {
+      "name": "core-build",
+      "command": [
+        "/usr/bin/sandbox-exec",
+        "-f",
+        "/private/tmp/heavymach-git-clone-20261026T103406Z/deny-originals.sb",
+        "/opt/homebrew/bin/cmake",
+        "--build",
+        "build/core",
+        "-j",
+        "4"
+      ],
+      "exit_code": 0,
+      "started": "2026-10-26T10:36:01.738687+00:00",
+      "finished": "2026-10-26T10:36:10.290502+00:00"
+    },
+    {
+      "name": "core-tests",
+      "command": [
+        "/usr/bin/sandbox-exec",
+        "-f",
+        "/private/tmp/heavymach-git-clone-20261026T103406Z/deny-originals.sb",
+        "/opt/homebrew/bin/ctest",
+        "--test-dir",
+        "build/core",
+        "--output-on-failure"
+      ],
+      "exit_code": 0,
+      "started": "2026-10-26T10:36:10.290832+00:00",
+      "finished": "2026-10-26T10:36:20.469143+00:00"
+    }
+  ]
+}

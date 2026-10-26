@@ -5,7 +5,7 @@
 일반 앱과 치트 검증 앱을 iPhone Air에 설치했고, 사용자는 설치본의 모든 미션에서 크래시·오동작·적 이동 이상은 없는 것 같다고 보고했다. 이 제품 코드를 `v0.9`로 보존했다. 복원판은 C++20·Objective-C++로 작성했다.
 
 - [IPA 없는 빌드·실행 검증](docs/public/ipa-independent-build-20261026.md): 원본 접근 차단 상태에서 네 앱 빌드, 자원·REA 구현 대조.
-- [빌드와 설치](docs/public/build-and-install.md): 원본 자원 준비, 두 앱 빌드, Simulator·아이폰 설치.
+- [빌드와 설치](docs/public/build-and-install.md): Git LFS 자원 받기, 두 앱 빌드, Simulator·아이폰 설치.
 - [구현과 검증 범위](docs/public/implementation-status.md): 구현 기능, 실제 확인한 결과, 남은 작업과 배포 상태.
 - [SaaS 집필용 문서 안내](docs/public/publication-inventory.md): 읽기 순서·주제별 출처·이미지와 아직 없는 근거.
 
@@ -50,7 +50,15 @@ ctest --test-dir build/core --output-on-failure
 
 프로젝트 구성 변경 후 생성은 `xcodegen generate --spec iOS/project.yml`이다. 원본 IPA·추출본·사용자 저장·검증된 호환 실행본을 덮어쓰지 않는다. 최신 빌드·실행 성공 범위와 미확인 항목은 위 문서에서 확인한다.
 
-원본과 추출 자원 `Resources/`, 로컬 분석 `Analysis/`, `build/`는 Git에서 제외한다. 새 checkout에는 `Resources`가 없으므로 기존 프로젝트의 준비된 자원 폴더를 함께 가져온다. 준비된 자원이 있으면 IPA는 빌드·실행에 필요하지 않다. 자원을 다시 추출할 때는 [출처](docs/source-provenance.md)의 동일 SHA 원본을 사용하고 `python3 tools/export_resources.py --source <원본-추출-앱-폴더> --output Resources`로 파생 자원을 준비한다. 현재 렌더러에는 `OriginalImages`도 필요하다. [설치 가이드](docs/public/build-and-install.md)의 원본 이미지 복사 단계까지 수행한다. 기존 자원과 사용자 저장을 덮어쓰지 않는다. vendor의 라이선스를 유지한다.
+앱 빌드·검사에 필요한 이미지·음원·맵과 비교 자료는 Git/LFS에 포함한다. 새 clone에서 다음을 실행한다. IPA와 별도 자원 복사는 필요하지 않다.
+
+```sh
+git lfs install --local
+git lfs pull
+python3 tools/verify_build_resources.py
+```
+
+파일별 목록과 SHA-256은 [자원 목록](docs/build-resources.json)에 있다. 원본 IPA·분석 출력·빌드 캐시·사용자 저장은 Git에서 제외한다. vendor의 라이선스를 유지한다.
 
 업무별 읽기 목록과 문서 연결 검사:
 

@@ -11,7 +11,7 @@
 
 ## 복원
 
-`git worktree add --detach ../HeavyMach-v0.9 v0.9`로 별도 폴더에 그 버전을 꺼낸다. 필요한 원본 자원은 출처 문서의 해시와 대조한다. iPhone 재설치는 해당 소스를 빌드·서명하고 현재 저장을 백업한 뒤 진행한다. Git 태그만으로 폰 설치본이나 저장 데이터가 되돌아가지는 않는다.
+`git worktree add --detach ../HeavyMach-v0.9 v0.9`로 별도 폴더에 그 버전을 꺼낸다. `v0.9`는 자원을 Git에 넣기 전 태그다. 태그는 이동하지 않는다. 해당 worktree를 빌드하려면 현재 main에서 `git lfs pull`로 받은 `Resources`를 복사하고 현재 자원 목록의 SHA-256과 대조한다. 현재 main의 새 clone은 별도 복사 없이 빌드한다. iPhone 재설치는 해당 소스를 빌드·서명하고 현재 저장을 백업한 뒤 진행한다. Git 태그만으로 폰 설치본이나 저장 데이터가 되돌아가지는 않는다.
 
 후속 변경을 제품에서 취소할 때는 작업 브랜치에서 필요한 revert 커밋을 만들고 develop→main으로 전달한다. 공유 main을 reset하거나 force-push하지 않는다.
 

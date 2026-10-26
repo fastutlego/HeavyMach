@@ -1,0 +1,70 @@
+[
+  {
+    "sdk": "iphonesimulator",
+    "app_name": "HeavyMachRestored",
+    "bundle_identifier": "com.gelb2.heavymach.restored",
+    "resources": {
+      "OriginalImages": 695,
+      "Images": 695,
+      "Audio": 31,
+      "RawData": 46,
+      "Extensions": 4
+    },
+    "mismatches": 0,
+    "compiled_units": 29,
+    "original_executable_in_bundle": false,
+    "native_core_symbols_present": true,
+    "binary_sha256": "04ed70ed94db77db03613545f58aa0ccda872adf335f43b6516fbc35d0c2a4ed"
+  },
+  {
+    "sdk": "iphonesimulator",
+    "app_name": "HeavyMachValidation",
+    "bundle_identifier": "com.gelb2.heavymach.validation",
+    "resources": {
+      "OriginalImages": 695,
+      "Images": 695,
+      "Audio": 31,
+      "RawData": 46,
+      "Extensions": 4
+    },
+    "mismatches": 0,
+    "compiled_units": 29,
+    "original_executable_in_bundle": false,
+    "native_core_symbols_present": true,
+    "binary_sha256": "63c89edf24de3bc237a848e2cd9942f262449e98a562de499b0fcba001e0a0d1"
+  },
+  {
+    "sdk": "iphoneos",
+    "app_name": "HeavyMachRestored",
+    "bundle_identifier": "com.gelb2.heavymach.restored",
+    "resources": {
+      "OriginalImages": 695,
+      "Images": 695,
+      "Audio": 31,
+      "RawData": 46,
+      "Extensions": 4
+    },
+    "mismatches": 0,
+    "compiled_units": 29,
+    "original_executable_in_bundle": false,
+    "native_core_symbols_present": true,
+    "binary_sha256": "ccb80ccd7ff5da34224ae3780c3ec7a7df8568e5a9d42360bc30494c41e4e627"
+  },
+  {
+    "sdk": "iphoneos",
+    "app_name": "HeavyMachValidation",
+    "bundle_identifier": "com.gelb2.heavymach.validation",
+    "resources": {
+      "OriginalImages": 695,
+      "Images": 695,
+      "Audio": 31,
+      "RawData": 46,
+      "Extensions": 4
+    },
+    "mismatches": 0,
+    "compiled_units": 29,
+    "original_executable_in_bundle": false,
+    "native_core_symbols_present": true,
+    "binary_sha256": "ae32356abf87d43d99930d4c2d2f64aa6cabbe16da0dc495b02de7568424ca74"
+  }
+]

@@ -1,0 +1,4867 @@
+[
+  {
+    "name": "BG_City01.png",
+    "width": 877,
+    "height": 340,
+    "channels": 4,
+    "sha256": "247766763a85b25a15c0a4587dee68cba54ccc749dbccb70cdf6faada6fd2716"
+  },
+  {
+    "name": "BG_City02.png",
+    "width": 877,
+    "height": 340,
+    "channels": 4,
+    "sha256": "c4a8e28086f06b1d26c7204f3f5016414d4e8382b77379704fe02c96482f8463"
+  },
+  {
+    "name": "BG_City03.png",
+    "width": 794,
+    "height": 340,
+    "channels": 4,
+    "sha256": "b2be95724c72fc06d3ba516ef0ee2f10cb9c293019c8d7b53ac4eb5b9e29c949"
+  },
+  {
+    "name": "BG_Ruin01.png",
+    "width": 695,
+    "height": 340,
+    "channels": 4,
+    "sha256": "c21108207a998cf4610ddda511f2c14efdfda37692350428767652b5e204bcc5"
+  },
+  {
+    "name": "BG_map06.png",
+    "width": 858,
+    "height": 340,
+    "channels": 4,
+    "sha256": "7f0f82c01f0de7eb42f0a89bd3d673bf8066a2716c021769b653101139755c0c"
+  },
+  {
+    "name": "BG_map06a.png",
+    "width": 719,
+    "height": 340,
+    "channels": 4,
+    "sha256": "a7bf051ac3a8cd194918e1a754786b5b8179d9ef07ea7a203c77057d250cbee7"
+  },
+  {
+    "name": "BG_map06b.png",
+    "width": 719,
+    "height": 340,
+    "channels": 4,
+    "sha256": "dc245541bed520e758545530808da64b8ea6d03c06657e75cfabdb021b1ddc49"
+  },
+  {
+    "name": "BG_map06c.png",
+    "width": 719,
+    "height": 340,
+    "channels": 4,
+    "sha256": "7d27e8407109cff114f7cfbc8edfb3c41f0e87223d8baa79f8fc28693330ff14"
+  },
+  {
+    "name": "BG_map06d.png",
+    "width": 719,
+    "height": 340,
+    "channels": 4,
+    "sha256": "f543007fa460734224d9608c886799e3c9003378c8ac6a93b38938486cc5af35"
+  },
+  {
+    "name": "BG_map07.png",
+    "width": 699,
+    "height": 350,
+    "channels": 4,
+    "sha256": "d213baa5038cdbefcbfa4e63602ad5a3279d8b44bd84e099562543d4f803dd01"
+  },
+  {
+    "name": "BG_map07a.png",
+    "width": 699,
+    "height": 350,
+    "channels": 4,
+    "sha256": "8f855d0022a69feb64f83567bddc97ab23e8374eb71bf3a9e723b4eac4707980"
+  },
+  {
+    "name": "BG_map07b.png",
+    "width": 699,
+    "height": 350,
+    "channels": 4,
+    "sha256": "f40e5f582da27b4190b6ac1fadb196c71571d459d5f095f9116d57525062dff9"
+  },
+  {
+    "name": "BG_map07c.png",
+    "width": 679,
+    "height": 340,
+    "channels": 4,
+    "sha256": "06ae2320a82175710001a2eb85fb3f14ae5447f50aae3f7926a03e1d7e9e4b5f"
+  },
+  {
+    "name": "BG_map07d.png",
+    "width": 801,
+    "height": 340,
+    "channels": 4,
+    "sha256": "d75709c5bc7e379145bc69b13dbc0c7216aee1f5440b2b266e47783315c10ade"
+  },
+  {
+    "name": "BG_map08a.png",
+    "width": 676,
+    "height": 340,
+    "channels": 4,
+    "sha256": "a89da533aa3439c3b3d02e5021a6d13227fff87426e8b81f36c4a91b916209da"
+  },
+  {
+    "name": "BG_map08b.png",
+    "width": 648,
+    "height": 340,
+    "channels": 4,
+    "sha256": "732b3cf4495be01fc4aaacfad3de3efcfac687899d789080ce0433d5dcab1f1d"
+  },
+  {
+    "name": "BG_map08c.png",
+    "width": 580,
+    "height": 340,
+    "channels": 4,
+    "sha256": "1c6b5539816996da12ca19373a3dac504d168a0874d332af68ae4d9348c625b5"
+  },
+  {
+    "name": "BG_map08d.png",
+    "width": 676,
+    "height": 340,
+    "channels": 4,
+    "sha256": "582e5e10a68103b2a905657f0fc9e992f04e8060309a5edd63c9bf450719ec0d"
+  },
+  {
+    "name": "BG_map08e.png",
+    "width": 743,
+    "height": 340,
+    "channels": 4,
+    "sha256": "3142f7f0f01a371166339f7c7af1e8d17005d3adb632c9bb44ff3d860d1e040c"
+  },
+  {
+    "name": "BG_map09.png",
+    "width": 678,
+    "height": 340,
+    "channels": 4,
+    "sha256": "fa3c24ff0808e380c223558758bb75743735068129f1d767cac207cab3893949"
+  },
+  {
+    "name": "BG_map09a.png",
+    "width": 682,
+    "height": 340,
+    "channels": 4,
+    "sha256": "80e7788618285e5c7ba8a38b6add69f54171ed4629213ba1f6a1afcd0bda058d"
+  },
+  {
+    "name": "BG_map09b.png",
+    "width": 634,
+    "height": 340,
+    "channels": 4,
+    "sha256": "8ec760cdfa7616777992f8ee92594ed6a3d8df64b9ba2e88f7e6a224dfbe7aa1"
+  },
+  {
+    "name": "BG_map09c.png",
+    "width": 710,
+    "height": 340,
+    "channels": 4,
+    "sha256": "1e37f7f0b719a3bdb2abd1a79e427456a036a483b4cfc2bd86ff632bfd820bee"
+  },
+  {
+    "name": "BG_map09d.png",
+    "width": 665,
+    "height": 340,
+    "channels": 4,
+    "sha256": "27795aed1f8f7dced6a76cd60e3766d4cdc2388c65a85df06b46a03fad10627a"
+  },
+  {
+    "name": "BG_map11a.png",
+    "width": 600,
+    "height": 340,
+    "channels": 4,
+    "sha256": "0c4808f3843b62aa969f7d19c32e4a21f53bfd26b7c4500c19e3391e13c14e2d"
+  },
+  {
+    "name": "BG_map11b.png",
+    "width": 594,
+    "height": 340,
+    "channels": 4,
+    "sha256": "84d4a5e7b53a12047c41b60c1fea1149475cacab34dc7c390745dd53b1b687c0"
+  },
+  {
+    "name": "BG_map11c.png",
+    "width": 570,
+    "height": 340,
+    "channels": 4,
+    "sha256": "13c794126ce885b9286fbb5fd5219799c433086b5af778e612dd6b1f7161e8ac"
+  },
+  {
+    "name": "BG_map11d.png",
+    "width": 570,
+    "height": 340,
+    "channels": 4,
+    "sha256": "9e3aa13effee244fa7319c1eefe604be222ba629a08eaf62cf982db7e0e56a07"
+  },
+  {
+    "name": "BG_map11e.png",
+    "width": 570,
+    "height": 340,
+    "channels": 4,
+    "sha256": "b0954c81a46f2f81c657b44af3aff306fd6384686a79d20fe522bb7766a43c23"
+  },
+  {
+    "name": "BG_map12a.png",
+    "width": 555,
+    "height": 340,
+    "channels": 4,
+    "sha256": "829fade6ce7b389e66a881f2adf897b7fbe07548d7d64995131502859c486dc9"
+  },
+  {
+    "name": "BG_map12b.png",
+    "width": 555,
+    "height": 340,
+    "channels": 4,
+    "sha256": "96ab486cf27f66a68fd62d6481955541b72ebb6967233d33c5921007850d3674"
+  },
+  {
+    "name": "BG_map12c.png",
+    "width": 555,
+    "height": 340,
+    "channels": 4,
+    "sha256": "67832d36ab33b32494d18bc448c48b32afb1dbf0b1bb551d7905a967a4a051c5"
+  },
+  {
+    "name": "BG_map12d.png",
+    "width": 555,
+    "height": 340,
+    "channels": 4,
+    "sha256": "4149c6c57006a13d1264eabebacddfa05dd66e4fcfd9a750402a988d7ad46775"
+  },
+  {
+    "name": "BG_map12e.png",
+    "width": 555,
+    "height": 340,
+    "channels": 4,
+    "sha256": "617fc4c5a07bf34d568b4518dfbaa97697e3ccef4b9360eb774f3c85f3ad4eb4"
+  },
+  {
+    "name": "BG_map12f.png",
+    "width": 555,
+    "height": 340,
+    "channels": 4,
+    "sha256": "201444ab00c6df9ec7df15170e09a1a9b810bd89c80a1679b745963d7ae0a43e"
+  },
+  {
+    "name": "BG_map13a.png",
+    "width": 554,
+    "height": 340,
+    "channels": 4,
+    "sha256": "4a643961ffc8adfbe7ac2c39908d8fd1c030fd64dcad944479f1a8431296a870"
+  },
+  {
+    "name": "BG_map13b.png",
+    "width": 555,
+    "height": 340,
+    "channels": 4,
+    "sha256": "ef99084f5a42a18d96c8ace27fdc31c957d3979f5791842410220473172543c1"
+  },
+  {
+    "name": "BG_map13c.png",
+    "width": 555,
+    "height": 340,
+    "channels": 4,
+    "sha256": "bd0a64b59230b7a5210af9706513727d69f743baef218f541e67b8d9d1a8c4e2"
+  },
+  {
+    "name": "BG_map13d.png",
+    "width": 555,
+    "height": 340,
+    "channels": 4,
+    "sha256": "43dbdd9a02491ceca2673f3a73d81d37835ea2eca5ad5094c3b4106d2503c752"
+  },
+  {
+    "name": "BG_map13e.png",
+    "width": 555,
+    "height": 340,
+    "channels": 4,
+    "sha256": "8823c4cb064d90f06785d97e6a4bebc709ee099c60cea9e7ec76523964d8a35f"
+  },
+  {
+    "name": "BG_map13f.png",
+    "width": 555,
+    "height": 340,
+    "channels": 4,
+    "sha256": "6c7245383e3dacc1b4c9c643a7fd2f655d116b39c54cdb68067adeb2649e2734"
+  },
+  {
+    "name": "Btn_Booster.png",
+    "width": 136,
+    "height": 68,
+    "channels": 4,
+    "sha256": "5b92446c7e80fdd94525d627994795ce360fa4a285a9d0f5cbfe5f42277f5f96"
+  },
+  {
+    "name": "Btn_Empty.png",
+    "width": 64,
+    "height": 128,
+    "channels": 4,
+    "sha256": "e5518be620d0fc629bf9ac8606316e3a564597ced2b48c79d026393060530625"
+  },
+  {
+    "name": "Btn_Menu.png",
+    "width": 128,
+    "height": 64,
+    "channels": 4,
+    "sha256": "a56ef73619666b4bd85812740e14dd5d07f201236a86c299bfc2d826d48b24ff"
+  },
+  {
+    "name": "Btn_Weapon.png",
+    "width": 144,
+    "height": 62,
+    "channels": 4,
+    "sha256": "9ea9d0e2a3c59b66da8491d22f37afbc40fc0f81b17df963b35a0bc1e4f85962"
+  },
+  {
+    "name": "Bullet.png",
+    "width": 128,
+    "height": 128,
+    "channels": 4,
+    "sha256": "2ca9193a03805146d8398c72731da2948f08018be12a41f2538e8b82e1673c45"
+  },
+  {
+    "name": "BulletEffect.png",
+    "width": 16,
+    "height": 4,
+    "channels": 4,
+    "sha256": "1f54b2ede02aa421f6088dce38ee42cf01f7b17f41ba09d21624d2570279f171"
+  },
+  {
+    "name": "BulletEffect2.png",
+    "width": 64,
+    "height": 8,
+    "channels": 4,
+    "sha256": "7e27ff2ef6db085dcc9e501e7ffd9cf0d1b697fba72c6902d96766d3555cdd7b"
+  },
+  {
+    "name": "Common_Btn_DEL.png",
+    "width": 62,
+    "height": 78,
+    "channels": 4,
+    "sha256": "b245259f759b266d08a1cbeec49df8a17ea522ca4985850a1346f1d15ab9d843"
+  },
+  {
+    "name": "Common_Btn_NO.png",
+    "width": 62,
+    "height": 78,
+    "channels": 4,
+    "sha256": "13646adf43f2f3612fe83d3e69b55bd0da53bb1baa0ed6c733eac1df45a3887f"
+  },
+  {
+    "name": "Common_Btn_OK.png",
+    "width": 62,
+    "height": 78,
+    "channels": 4,
+    "sha256": "341880bc87bc3de911261b99374b591c3c705e66362f1694cc5286337262d6eb"
+  },
+  {
+    "name": "Common_Btn_YES.png",
+    "width": 62,
+    "height": 78,
+    "channels": 4,
+    "sha256": "16a843b40eb46cb79c23eb7f321b24be38e2ba367bfc01b9a6598a9abfc7eed2"
+  },
+  {
+    "name": "Default.png",
+    "width": 320,
+    "height": 480,
+    "channels": 4,
+    "sha256": "3376c686dfec7afb20177486a7714af224ada94a6544e91f54f4869025e83b5e"
+  },
+  {
+    "name": "Dummy.png",
+    "width": 32,
+    "height": 32,
+    "channels": 4,
+    "sha256": "72698e4e84d97016821697571a8779e17d13ab5352882809e254a9ffcd2cb6b6"
+  },
+  {
+    "name": "E_0501_Body.png",
+    "width": 41,
+    "height": 65,
+    "channels": 4,
+    "sha256": "c81b5ace59790e74efb729aae7d2d165aacd345b267285282733cf3cc92092d1"
+  },
+  {
+    "name": "E_0501_Wpn.png",
+    "width": 71,
+    "height": 28,
+    "channels": 4,
+    "sha256": "918f94a551bf189805b6400aed047a73187183775382e7cd4985e00bdea4e6dc"
+  },
+  {
+    "name": "E_0502_Body.png",
+    "width": 62,
+    "height": 67,
+    "channels": 4,
+    "sha256": "7180bbb4ab77b21658b6c6a14c60316cb0a5e562f29787ae7370d78740b7775e"
+  },
+  {
+    "name": "E_0502_Wpn.png",
+    "width": 47,
+    "height": 18,
+    "channels": 4,
+    "sha256": "7802e9c35712ca88b52fac85c27d485bc4daa289943516ec1196ec539073023a"
+  },
+  {
+    "name": "E_0503_Body.png",
+    "width": 54,
+    "height": 64,
+    "channels": 4,
+    "sha256": "e5b2ff8bda50684bc0038302e2948526c12088424af0b8fbd8243286dac40998"
+  },
+  {
+    "name": "E_0503_Wpn.png",
+    "width": 80,
+    "height": 25,
+    "channels": 4,
+    "sha256": "990cb01250016ed2f5e7e07008877ebb81b9795d6ac0ea1bd28817557453cc4f"
+  },
+  {
+    "name": "E_0504_Body.png",
+    "width": 82,
+    "height": 64,
+    "channels": 4,
+    "sha256": "93cae0a24b51308aaa1728e6edadf686a713ccbdc29689e3fe0ca2b67a3ccc08"
+  },
+  {
+    "name": "E_0505_Body.png",
+    "width": 208,
+    "height": 79,
+    "channels": 4,
+    "sha256": "25f4f8877a7d2aa3ed937b7aaeee84ea9cc97bf9108ce41e221ad182844d5aea"
+  },
+  {
+    "name": "E_0505_Wpn.png",
+    "width": 71,
+    "height": 23,
+    "channels": 4,
+    "sha256": "89bfdfd87d540109a886f2caadd2980f2590120d9f147d6af6d27c23d01122f4"
+  },
+  {
+    "name": "E_0506_Body.png",
+    "width": 210,
+    "height": 61,
+    "channels": 4,
+    "sha256": "bfbb0b90397b0580d94c060eaa4f0d54fc3db6506b5e2cd0ca3a4bc96f68b6b3"
+  },
+  {
+    "name": "E_0506_Wpn.png",
+    "width": 35,
+    "height": 9,
+    "channels": 4,
+    "sha256": "b32f86a94447948b65e245513a2c9aa6a900717bba6ee06164d2c1c18a1a8d23"
+  },
+  {
+    "name": "E_0507_Body.png",
+    "width": 222,
+    "height": 61,
+    "channels": 4,
+    "sha256": "3a4cf7af134911aa40ff688fa5a9703336130c8563f96ebc45b959c980bb77b9"
+  },
+  {
+    "name": "E_0508_Body.png",
+    "width": 232,
+    "height": 64,
+    "channels": 4,
+    "sha256": "16f25453185799ae509ece7aa6c5f0c71d5bc1b3de24bb24458834d18b7e27c4"
+  },
+  {
+    "name": "E_0508_Wpn.png",
+    "width": 54,
+    "height": 17,
+    "channels": 4,
+    "sha256": "07c426871a4e7fad73e015a3e9a4ac3f300fd308db9a1bf769be1e8d42de03ed"
+  },
+  {
+    "name": "E_0509_Body.png",
+    "width": 136,
+    "height": 67,
+    "channels": 4,
+    "sha256": "3b03fd9c22f68828e7b630feed91cbb55be3ef0aeb4c445c7f5c0e41cc5ebed8"
+  },
+  {
+    "name": "E_0509_Wpn.png",
+    "width": 36,
+    "height": 14,
+    "channels": 4,
+    "sha256": "e00c3f129bab18ef05041d671b13c7e6c8fba71c683fac73057c15828c486644"
+  },
+  {
+    "name": "E_0510_Body.png",
+    "width": 236,
+    "height": 60,
+    "channels": 4,
+    "sha256": "6f3f96ec6379370cbaa0789626f8596b6bf6324a4e47be952fb33d48703685ce"
+  },
+  {
+    "name": "E_0510_Wpn.png",
+    "width": 53,
+    "height": 11,
+    "channels": 4,
+    "sha256": "cf5e533ccbf3299050ee29b4917becf90b3dbd0521cca768dd3ac9813102de8e"
+  },
+  {
+    "name": "E_0511_Body.png",
+    "width": 123,
+    "height": 62,
+    "channels": 4,
+    "sha256": "1e68c602d0e4708a7f64467162a30bed435492a05162fecfc8c95b6955e1cb64"
+  },
+  {
+    "name": "E_0512_Body.png",
+    "width": 260,
+    "height": 66,
+    "channels": 4,
+    "sha256": "a1ca965105b2a3046b0d019a191a73005a3ee44933577b86559e3dfc7b630516"
+  },
+  {
+    "name": "E_05MB01_Body.png",
+    "width": 328,
+    "height": 48,
+    "channels": 4,
+    "sha256": "96eac13854d734d00e0d8b5d44b04688fb155a49cb6f8271a9deb1379da2a5b2"
+  },
+  {
+    "name": "E_05MB01_Msl.png",
+    "width": 38,
+    "height": 23,
+    "channels": 4,
+    "sha256": "d892215d26edb8f5ea0098051234b18d88721b6b2b90f763c49cc11399231662"
+  },
+  {
+    "name": "E_05MB01_Top.png",
+    "width": 50,
+    "height": 37,
+    "channels": 4,
+    "sha256": "270d061b6c45f0f66bbe4e161c73c5cfb025713b32eb8380c844e130d5b11af2"
+  },
+  {
+    "name": "E_05MB01_Wpn.png",
+    "width": 34,
+    "height": 10,
+    "channels": 4,
+    "sha256": "55e34418e4b2f6cb3d57c8224993934f49af95746aa46c68367a8be8ee3d3a5b"
+  },
+  {
+    "name": "E_05MB02_Body.png",
+    "width": 133,
+    "height": 113,
+    "channels": 4,
+    "sha256": "70c32476b7b7bd50c5e36207f9aa29aa98764813c7a12f4c3d9578b56a2efa2e"
+  },
+  {
+    "name": "E_05MB02_Wpn.png",
+    "width": 42,
+    "height": 11,
+    "channels": 4,
+    "sha256": "4a3ae3b05ddb60bda856e4a42907b8970760c088231750191f1adf86f0960140"
+  },
+  {
+    "name": "E_05MB03_Body.png",
+    "width": 308,
+    "height": 89,
+    "channels": 4,
+    "sha256": "5a74941c81b34afe0a5d7e2a7d4fc0df010f1e60ecca639903aa6a040d126ac5"
+  },
+  {
+    "name": "E_05MB03_Wpn.png",
+    "width": 23,
+    "height": 8,
+    "channels": 4,
+    "sha256": "eb8869f71579b054af971014a2f68fa679b3d2872af2853cd4ab30f2bdf453ee"
+  },
+  {
+    "name": "E_05MB04_Body.png",
+    "width": 290,
+    "height": 93,
+    "channels": 4,
+    "sha256": "31e6b26528f0ec853f07bfc9a79422ce58a54f631dabe30c7e082d46dd2d6fc6"
+  },
+  {
+    "name": "E_05MB04_Wpn.png",
+    "width": 28,
+    "height": 10,
+    "channels": 4,
+    "sha256": "37c6b6eec7aff6dc771563c3be202c02a58a86910c20c739b5c8bd1ebc3db2c2"
+  },
+  {
+    "name": "E_05MB05_Body.png",
+    "width": 316,
+    "height": 113,
+    "channels": 4,
+    "sha256": "c3a3b143b2b78524dba105c4140cbdd05a9ee1fb686fb2b380d9a29ee5bb8e48"
+  },
+  {
+    "name": "E_05MB05_Wpn.png",
+    "width": 52,
+    "height": 22,
+    "channels": 4,
+    "sha256": "b4566cc167e5185c55b198f9e2c71bb789eaa2e21416e5e0b23192195f339b10"
+  },
+  {
+    "name": "E_0601_Body.png",
+    "width": 82,
+    "height": 68,
+    "channels": 4,
+    "sha256": "4ef91a0b546e27557a55eccdef75a0c9cace223ed060b35391813cf4d189801c"
+  },
+  {
+    "name": "E_0601_Wpn.png",
+    "width": 78,
+    "height": 37,
+    "channels": 4,
+    "sha256": "caa05bc59e4765f57f9b57c8d4ce091a2341d02f003ac503b38e05eb138c0e42"
+  },
+  {
+    "name": "E_0602_Body.png",
+    "width": 89,
+    "height": 82,
+    "channels": 4,
+    "sha256": "dca2055fe35e7d5a9b98f6167fa5eeaf516c2c93d077ca9dccdf9fbc7f1c7edf"
+  },
+  {
+    "name": "E_0603_Body.png",
+    "width": 131,
+    "height": 47,
+    "channels": 4,
+    "sha256": "1ecc959a3377830c52b78517db8e52cb94e99b40f81637abe9c03aab2c9d9b8f"
+  },
+  {
+    "name": "E_0604_Body.png",
+    "width": 140,
+    "height": 53,
+    "channels": 4,
+    "sha256": "cc9e36298118ef3c15ff247a621d31160d5a09ca3212194a8790ac72df03ab56"
+  },
+  {
+    "name": "E_0605_Body.png",
+    "width": 128,
+    "height": 64,
+    "channels": 4,
+    "sha256": "75992c379a74652fb5e6ec41b06a7e5ba8d329a50f5ed2b372c7c648b5be135a"
+  },
+  {
+    "name": "E_0606_Body.png",
+    "width": 138,
+    "height": 67,
+    "channels": 4,
+    "sha256": "d06ce681d5eab5d28b9146c48b5c1e06e897bacaf8b0d6e9023d2ef9d82527f5"
+  },
+  {
+    "name": "E_0606_Wpn.png",
+    "width": 50,
+    "height": 24,
+    "channels": 4,
+    "sha256": "4672cf03b71a4c7950e7617f93d2c3d7ca4f09d74bf30855ef22d614bb747551"
+  },
+  {
+    "name": "E_06MB01_Body.png",
+    "width": 140,
+    "height": 41,
+    "channels": 4,
+    "sha256": "d2fe6a594611ce39e54df6126bfd8a1d564bebd02fccd10cc02ff35165bc8642"
+  },
+  {
+    "name": "E_06MB01_Wpn.png",
+    "width": 85,
+    "height": 22,
+    "channels": 4,
+    "sha256": "07aa1f0db352c1b4d6b3076f8e374bc3262295260097b09919d6954c353434f7"
+  },
+  {
+    "name": "E_06MB04_Body.png",
+    "width": 298,
+    "height": 64,
+    "channels": 4,
+    "sha256": "87691d4a89bcec9f90c1c09387629b97f19f970cc16cfca327de8cab311b6416"
+  },
+  {
+    "name": "E_0701_Body.png",
+    "width": 93,
+    "height": 77,
+    "channels": 4,
+    "sha256": "989e95c728afc3699d5d5989c584ae40fcbfaefbba768d8ca630300cb62c27f5"
+  },
+  {
+    "name": "E_0701_Wpn.png",
+    "width": 78,
+    "height": 34,
+    "channels": 4,
+    "sha256": "28de1ab35e636831476bf000c6a21120af8de9f117bc02160624fe03d25cf132"
+  },
+  {
+    "name": "E_0702_Body.png",
+    "width": 118,
+    "height": 60,
+    "channels": 4,
+    "sha256": "98c1657473e017b7527d5db80301f9a4ceb99a4ec43b35d28c5cd4debe1188cb"
+  },
+  {
+    "name": "E_0702_Wpn.png",
+    "width": 53,
+    "height": 11,
+    "channels": 4,
+    "sha256": "9ca41219891de3f74eb6f913a5e3869f5b82a2a6c2174af29dd3e6db3ff2a6fb"
+  },
+  {
+    "name": "E_0703_Body.png",
+    "width": 110,
+    "height": 74,
+    "channels": 4,
+    "sha256": "5bd41b3634706eaaf19235df3a9993ff04842e2c7d05485f27bcb93951fa9c33"
+  },
+  {
+    "name": "E_0703_Wpn.png",
+    "width": 24,
+    "height": 9,
+    "channels": 4,
+    "sha256": "a6dcb5ad2ae765129cb99155db472706b420a3d0486521c8ba8511f266c814ef"
+  },
+  {
+    "name": "E_0704_Body.png",
+    "width": 118,
+    "height": 71,
+    "channels": 4,
+    "sha256": "abe2e731a0c5f6bb905381f3ab77fecf55e876fb9e267cba4f3c55f6a99efbf4"
+  },
+  {
+    "name": "E_0704_Wpn.png",
+    "width": 41,
+    "height": 10,
+    "channels": 4,
+    "sha256": "409137f7d5ffae3ea251ce27136ce9ad3c5cfb11e737979286fa321441beaf40"
+  },
+  {
+    "name": "E_0705_Body.png",
+    "width": 122,
+    "height": 64,
+    "channels": 4,
+    "sha256": "bf8775018c587f5c734a859946c9737548f30d592db4fec3deb4b23bd87ec982"
+  },
+  {
+    "name": "E_0705_Wpn.png",
+    "width": 39,
+    "height": 13,
+    "channels": 4,
+    "sha256": "87d2a57e10ecf5106986871e2cec22dab5812724e2b9d769c1976f4f6d91badb"
+  },
+  {
+    "name": "E_0706_Body.png",
+    "width": 106,
+    "height": 62,
+    "channels": 4,
+    "sha256": "f779cc1d9af1cb54f86f4e8f105c06e50c79b2fd9974414bdc2fc67b064537b9"
+  },
+  {
+    "name": "E_07Boss_Body.png",
+    "width": 313,
+    "height": 132,
+    "channels": 4,
+    "sha256": "12a024e74b7c89eb54d1b62149aedf20656c4757c7dc6cb22b248e5f5eaa2c56"
+  },
+  {
+    "name": "E_07Boss_Wpn.png",
+    "width": 34,
+    "height": 10,
+    "channels": 4,
+    "sha256": "d904d613811e3867ade1eb9ed7463d39f90eb1fa37002df53239a0d63c0c908b"
+  },
+  {
+    "name": "E_07MB01_Body.png",
+    "width": 168,
+    "height": 87,
+    "channels": 4,
+    "sha256": "df48e12499876dba6d16be8b77ca54a2dc64463601353aac8df7aacde6ca1780"
+  },
+  {
+    "name": "E_07MB02_Body.png",
+    "width": 159,
+    "height": 93,
+    "channels": 4,
+    "sha256": "bd920e57ccb234a76c2cc52647ef140d360bbd357195964e31ae9c369151d2f2"
+  },
+  {
+    "name": "E_07MB02_Wpn1.png",
+    "width": 50,
+    "height": 13,
+    "channels": 4,
+    "sha256": "d52d064a54bbee779ae2df4e79e0c8d15e76b2e333b71bc2708900238002dd27"
+  },
+  {
+    "name": "E_07MB02_Wpn2.png",
+    "width": 57,
+    "height": 23,
+    "channels": 4,
+    "sha256": "2ace93044fafcc18466c3d30ac4ab2cb4a31a54405bf7b40162501d793dceda0"
+  },
+  {
+    "name": "E_07MB03_Body.png",
+    "width": 157,
+    "height": 95,
+    "channels": 4,
+    "sha256": "6058d8df0cf7ef1f883913d883b968bcdd175c8555dbe037c7866906aa99947c"
+  },
+  {
+    "name": "E_07MB03_Wpn.png",
+    "width": 32,
+    "height": 12,
+    "channels": 4,
+    "sha256": "343cd3f659a762ab4edcb5803ddd8af6aa108aced65e2b4e1d2b1036fd183178"
+  },
+  {
+    "name": "E_08Boss_Body.png",
+    "width": 414,
+    "height": 121,
+    "channels": 4,
+    "sha256": "5ec07abb4d03159365b8bc8c97b8ab19f8d544f046c4dffa643cd4f02e0a5b04"
+  },
+  {
+    "name": "E_08Boss_Wpn.png",
+    "width": 33,
+    "height": 10,
+    "channels": 4,
+    "sha256": "4e5da303a63af8faa7b67f84d4bf4dfd296771d0ddb0b485b60cf9ceca09e264"
+  },
+  {
+    "name": "E_08MB01_Body.png",
+    "width": 136,
+    "height": 137,
+    "channels": 4,
+    "sha256": "6ac5fcdece30ba01c8284be38aeb70a4409b86943f3ba68a5172559c53f7a432"
+  },
+  {
+    "name": "E_08MB01_Wpn.png",
+    "width": 71,
+    "height": 32,
+    "channels": 4,
+    "sha256": "f19679207465b46260cd0a5f64e355d4bff20aa564bd91a1686c0f6b295cbe32"
+  },
+  {
+    "name": "E_08MB02_Body.png",
+    "width": 155,
+    "height": 84,
+    "channels": 4,
+    "sha256": "82f4cd73368d31b94360fc3f7551e2198f7be99cc7dc0ccdf28eed682b7159c4"
+  },
+  {
+    "name": "E_08MB02_Wpn.png",
+    "width": 49,
+    "height": 17,
+    "channels": 4,
+    "sha256": "8169f595dfa728f98c47ac1859d8a5d9c051d327102277efe194ab7d973bcbb8"
+  },
+  {
+    "name": "E_08MB03_Body.png",
+    "width": 225,
+    "height": 62,
+    "channels": 4,
+    "sha256": "82a20443e4204414b94ca7b0259e7357c6b5883918dfe2139744d60615fb5a55"
+  },
+  {
+    "name": "E_08MB03_Wpn.png",
+    "width": 22,
+    "height": 7,
+    "channels": 4,
+    "sha256": "33b029d3a57fde83a8c55a2f7f4d64c787ab1215104cda9faffb3425c6bd9ffa"
+  },
+  {
+    "name": "E_08MB04_Body.png",
+    "width": 167,
+    "height": 93,
+    "channels": 4,
+    "sha256": "9e1a493356c82a4c29d685fdbbfcc4a41e100755d11a00b09ea7dda610f49dd9"
+  },
+  {
+    "name": "E_08MB04_Wpn.png",
+    "width": 31,
+    "height": 12,
+    "channels": 4,
+    "sha256": "53d3b9db9fea0f5e32dbae8e451dbdbee23606b8f207306eff6c78b37ad7c4b5"
+  },
+  {
+    "name": "E_08MB05_Body.png",
+    "width": 158,
+    "height": 84,
+    "channels": 4,
+    "sha256": "a7615bbcaba72704b1a6a3f3d12874ada3f2dd3a81d0c66690c2f430c160b89d"
+  },
+  {
+    "name": "E_08MB05_Wpn1.png",
+    "width": 30,
+    "height": 11,
+    "channels": 4,
+    "sha256": "d13c5379100230f39db66b809937855a3eeea31b6d5879050f503fc0ec1bc035"
+  },
+  {
+    "name": "E_08MB05_Wpn2.png",
+    "width": 52,
+    "height": 20,
+    "channels": 4,
+    "sha256": "2a90b6b48bd3125edc76b44c5f8404586b24a361cdbde12227083b1aad53ddd2"
+  },
+  {
+    "name": "E_ArmoCar_01.png",
+    "width": 128,
+    "height": 32,
+    "channels": 4,
+    "sha256": "81ffd129cc7e650afbfb88a6753c6da29689478dde4c62d90d10f79a2c3e37d5"
+  },
+  {
+    "name": "E_ArmoCar_02.png",
+    "width": 128,
+    "height": 32,
+    "channels": 4,
+    "sha256": "c36f502b6430949c4c41c5aba0a751043a17eea80c43f3bc7c9918e418afed66"
+  },
+  {
+    "name": "E_ArmoCar_03.png",
+    "width": 136,
+    "height": 30,
+    "channels": 4,
+    "sha256": "22e7b3f497717a90ea230233e226043454fb1ddff4f2adafc2806f3407b507fd"
+  },
+  {
+    "name": "E_ArmoCar_04.png",
+    "width": 128,
+    "height": 32,
+    "channels": 4,
+    "sha256": "f8fdf93c2e8e638a797363cf6917241a1737610fe4378563ff2042d6d3ab2d01"
+  },
+  {
+    "name": "E_ArmoCar_05.png",
+    "width": 128,
+    "height": 32,
+    "channels": 4,
+    "sha256": "58d2315ddca64bc800312e138022a3a4e6e51deb50c60184a5d4170514af8082"
+  },
+  {
+    "name": "E_ArmoCar_06.png",
+    "width": 146,
+    "height": 37,
+    "channels": 4,
+    "sha256": "1b700eb89bea5eeaaed757562538a7f2a5323053c3417f3529e7d4a05c603781"
+  },
+  {
+    "name": "E_ArmoCar_07.png",
+    "width": 146,
+    "height": 37,
+    "channels": 4,
+    "sha256": "bb899b7fe1b426292df4c77df5d37da7b237a370203a62db275fbc7a568d9d77"
+  },
+  {
+    "name": "E_ArmoCar_Msl_01.png",
+    "width": 36,
+    "height": 12,
+    "channels": 4,
+    "sha256": "1da3b4f599a77f617813814fcad277d5cae928b6414579a568a70f8d0e794016"
+  },
+  {
+    "name": "E_ArmoCar_Msl_02.png",
+    "width": 36,
+    "height": 14,
+    "channels": 4,
+    "sha256": "8b6486722c309eb2310d2cc232768682c176b9e576c46321397655d59090996c"
+  },
+  {
+    "name": "E_ArmoCar_Msl_03.png",
+    "width": 35,
+    "height": 12,
+    "channels": 4,
+    "sha256": "e9feafc95dcad9a48ddaa6a60a7724fe64861ae4f030ff4e55d813a9089b9732"
+  },
+  {
+    "name": "E_ArmoCar_Msl_04.png",
+    "width": 37,
+    "height": 12,
+    "channels": 4,
+    "sha256": "b052b88ca02a5aa0217dec2c168d06c9fd11eceabaf77ef64a8053567921bb7f"
+  },
+  {
+    "name": "E_ArmoCar_Msl_05.png",
+    "width": 31,
+    "height": 12,
+    "channels": 4,
+    "sha256": "8eb1695a412d2a486fe76379766201c392086662790f0f55807dc1efbb8c6621"
+  },
+  {
+    "name": "E_ArmoCar_Top_01.png",
+    "width": 27,
+    "height": 24,
+    "channels": 4,
+    "sha256": "d1396455ab1d63b3393ae4008f4b83577c7513f5ce969ee65d348f81aade5c3e"
+  },
+  {
+    "name": "E_ArmoCar_Top_02.png",
+    "width": 29,
+    "height": 17,
+    "channels": 4,
+    "sha256": "6b27af7013ba04335a91b2279af54ef09446b78aabd460f64b28d38e90378985"
+  },
+  {
+    "name": "E_ArmoCar_Top_03.png",
+    "width": 35,
+    "height": 22,
+    "channels": 4,
+    "sha256": "f7a233ad188ed25f86d3e8556e7abdd87855617d421a9ec99a91093b04a5c811"
+  },
+  {
+    "name": "E_ArmoCar_Top_04.png",
+    "width": 37,
+    "height": 17,
+    "channels": 4,
+    "sha256": "eb050a75cf54f2fb8b630232672d7e75cb276ffd17baf998a3f97da550bd95f9"
+  },
+  {
+    "name": "E_ArmoCar_Top_05.png",
+    "width": 36,
+    "height": 18,
+    "channels": 4,
+    "sha256": "920ed2e402f318e1a73993547812c5a3ada010fe0f63826591e70c3f267da457"
+  },
+  {
+    "name": "E_ArmoCar_Top_06.png",
+    "width": 48,
+    "height": 22,
+    "channels": 4,
+    "sha256": "6a26a21718c9f89c82b43070d81e314baca066785c7b130d1bec13b691cd683c"
+  },
+  {
+    "name": "E_ArmoCar_Top_07.png",
+    "width": 24,
+    "height": 17,
+    "channels": 4,
+    "sha256": "71754f5d8e986129dae10c0b2f45815a91114405165a1c5726fb3e6aa24f298d"
+  },
+  {
+    "name": "E_ArmoCar_Top_08.png",
+    "width": 44,
+    "height": 25,
+    "channels": 4,
+    "sha256": "50672d2cc8477934ea33fd3f432c5f21a7c6039e72ff7e1da4dd17ef372d57a6"
+  },
+  {
+    "name": "E_ArmoCar_Wpn_01.png",
+    "width": 18,
+    "height": 7,
+    "channels": 4,
+    "sha256": "1d2e7ed4efd216be6a6158a94748a983b213d8529632c09e3281643b097ae946"
+  },
+  {
+    "name": "E_ArmoCar_Wpn_02.png",
+    "width": 20,
+    "height": 7,
+    "channels": 4,
+    "sha256": "0397158fd7138efbbc563315efe80e0dfb61a69e21dbd2528ab4a24ea37e9602"
+  },
+  {
+    "name": "E_ArmoCar_Wpn_03.png",
+    "width": 26,
+    "height": 7,
+    "channels": 4,
+    "sha256": "1e1e5bf66c3a7aa164b23b18aa94368694a40b1a3de1c49b415b76a72e0a1463"
+  },
+  {
+    "name": "E_ArmoCar_Wpn_04.png",
+    "width": 22,
+    "height": 8,
+    "channels": 4,
+    "sha256": "02d4f13f328604f8913af6632ab6e0ec9bce9351df2540e7659046fbbdda8284"
+  },
+  {
+    "name": "E_Boss01.png",
+    "width": 512,
+    "height": 132,
+    "channels": 4,
+    "sha256": "a7e83e9dc5f6308319b8853ce78c77c19b3e40d5904ae9221ea2647e2f722890"
+  },
+  {
+    "name": "E_Boss01_Wpn_01.png",
+    "width": 23,
+    "height": 8,
+    "channels": 4,
+    "sha256": "9fb5f6c25d32338f7a35ab69c717e16d445d5c77c0d392e012765f03959f7880"
+  },
+  {
+    "name": "E_Boss01_Wpn_02.png",
+    "width": 41,
+    "height": 10,
+    "channels": 4,
+    "sha256": "fef838e2f479dc8593793719a762068af095055edd1858f430ce3bc40c29dc1b"
+  },
+  {
+    "name": "E_Boss01_Wpn_03.png",
+    "width": 21,
+    "height": 9,
+    "channels": 4,
+    "sha256": "d01ea6481abd746fa19a39f23014b135cfcc2f38e2abbd73c192c07e472ec9b6"
+  },
+  {
+    "name": "E_Boss01_Wpn_04.png",
+    "width": 32,
+    "height": 14,
+    "channels": 4,
+    "sha256": "8da7323cdd47434cb32b0a4a41dab0cbb0ccffe62af66827cce692c8b23f1d00"
+  },
+  {
+    "name": "E_Boss02.png",
+    "width": 289,
+    "height": 100,
+    "channels": 4,
+    "sha256": "6eb5b81e35f73b8ad958a4464fcdfd66d9b4793a209248f00a6812a5801b4a98"
+  },
+  {
+    "name": "E_Boss05.png",
+    "width": 291,
+    "height": 102,
+    "channels": 4,
+    "sha256": "a7b94067a0467dac67988a4300c5f002c7bc073d5cae9f017db616c32fead00d"
+  },
+  {
+    "name": "E_Boss07.png",
+    "width": 238,
+    "height": 79,
+    "channels": 4,
+    "sha256": "8491ba1ce72ba44356c769083ae9c529048be4de6a5a7342bf4df61fe8ff57bf"
+  },
+  {
+    "name": "E_Boss08.png",
+    "width": 208,
+    "height": 119,
+    "channels": 4,
+    "sha256": "a1e857c061f6b33696b06e60a9a2cacf05150e465a173ba716b47a80daf5de1f"
+  },
+  {
+    "name": "E_Boss08_Wpn_01.png",
+    "width": 27,
+    "height": 8,
+    "channels": 4,
+    "sha256": "b3ce423158902e17ce686f07422df3c72497d04554ab1b1933d9daf9e8c48118"
+  },
+  {
+    "name": "E_Boss08_Wpn_02.png",
+    "width": 30,
+    "height": 17,
+    "channels": 4,
+    "sha256": "1cce32cec81e4809b85f048eba53f621144a62ffd77ea593c804bd0b77941c9c"
+  },
+  {
+    "name": "E_Boss08_Wpn_03.png",
+    "width": 39,
+    "height": 16,
+    "channels": 4,
+    "sha256": "643fd1dccc2f1fb49c0314dc767ba24d3be15939310f2aa97b446683d4c45f14"
+  },
+  {
+    "name": "E_Boss09.png",
+    "width": 388,
+    "height": 104,
+    "channels": 4,
+    "sha256": "7d70175d332a0dba592d729a1669b5e21e3653f8db43dcd78edc4b5786f5db05"
+  },
+  {
+    "name": "E_Boss09_Wpn_01.png",
+    "width": 27,
+    "height": 8,
+    "channels": 4,
+    "sha256": "c2cc2a33e504e7c8a15dbea10e6d0d98d07c0b3f586915028a1673afe19c53a6"
+  },
+  {
+    "name": "E_Boss09_Wpn_02.png",
+    "width": 43,
+    "height": 12,
+    "channels": 4,
+    "sha256": "92cc026c64e73ccdcbee27d7a680bde8cf38b54a17d81672c1be0e17e3b3ddc8"
+  },
+  {
+    "name": "E_Boss09_Wpn_03.png",
+    "width": 23,
+    "height": 9,
+    "channels": 4,
+    "sha256": "0f75baf1557daec83920c4028bda26c77a84c03070c8eb15ced6ff5ce37a4d16"
+  },
+  {
+    "name": "E_Canon_01.png",
+    "width": 42,
+    "height": 36,
+    "channels": 4,
+    "sha256": "dd2ab7e3271471700a842f6f9b2a5dd1b8ea92989e8f6e2763527f2a018f95d8"
+  },
+  {
+    "name": "E_Canon_Wpn_01.png",
+    "width": 48,
+    "height": 9,
+    "channels": 4,
+    "sha256": "acd959f2ffb0c0cf3c9489cee2e9c114809e2f3b848f8689d2c44a1889135732"
+  },
+  {
+    "name": "E_Heli_Body_01.png",
+    "width": 99,
+    "height": 47,
+    "channels": 4,
+    "sha256": "e47fe8614262ce107dea75de984c0c10df941341a5fb5ffeaf15944b4f619214"
+  },
+  {
+    "name": "E_Heli_Body_02.png",
+    "width": 99,
+    "height": 47,
+    "channels": 4,
+    "sha256": "6ea6c09ba435cd09514e4a7adb948057d0ee09727b4913d3378859629dc0d623"
+  },
+  {
+    "name": "E_Heli_Body_03.png",
+    "width": 99,
+    "height": 47,
+    "channels": 4,
+    "sha256": "10a588bfde05f1c4d0dbbd88bc42f089d555a804124b16ed13023de139988c7e"
+  },
+  {
+    "name": "E_Heli_Body_04.png",
+    "width": 99,
+    "height": 47,
+    "channels": 4,
+    "sha256": "e9b33fdf92b96db2f2477fcd77622d3656f1c79fe4aa58de4120b776b54e99bf"
+  },
+  {
+    "name": "E_Heli_Body_05.png",
+    "width": 99,
+    "height": 47,
+    "channels": 4,
+    "sha256": "89ba20b04f787f57d80f4a270101615b55eed51e08cdfbc42622d7367418098b"
+  },
+  {
+    "name": "E_Heli_Body_06.png",
+    "width": 126,
+    "height": 48,
+    "channels": 4,
+    "sha256": "cda6ea7a12344eb1c3dbc5b18959c6e0588baaf2d9990d447b9ab23a0452f769"
+  },
+  {
+    "name": "E_Heli_Body_07.png",
+    "width": 144,
+    "height": 44,
+    "channels": 4,
+    "sha256": "a07fb52184184053e3a8697dbcdbcedcfad6a5cd7034c11da31b8843322229f3"
+  },
+  {
+    "name": "E_Heli_Body_08.png",
+    "width": 153,
+    "height": 38,
+    "channels": 4,
+    "sha256": "3152a61856b840ef521e0e90b988a1ce783ba801238f38051758860d637d3070"
+  },
+  {
+    "name": "E_Heli_Body_09.png",
+    "width": 171,
+    "height": 51,
+    "channels": 4,
+    "sha256": "994745de7f3dc5c4a0ff8cea85214c4c052ec554d679f86a1fef20d0cb0022bb"
+  },
+  {
+    "name": "E_Heli_Body_10.png",
+    "width": 199,
+    "height": 58,
+    "channels": 4,
+    "sha256": "c15dd222593e9df32c7fa81d0fea93fa113349abc218d5bebc2f225c1ac33d95"
+  },
+  {
+    "name": "E_Heli_Prop_01.png",
+    "width": 360,
+    "height": 15,
+    "channels": 4,
+    "sha256": "a82b95e8c2486fc491db0a5b12f28fb5c0bcd4c445d16d3046b15f3198d524a7"
+  },
+  {
+    "name": "E_Heli_Prop_02.png",
+    "width": 128,
+    "height": 64,
+    "channels": 4,
+    "sha256": "a302b0c5f4273407f076526c034d4f7855133e1528481e32d9005f4943c2fd65"
+  },
+  {
+    "name": "E_Howitzer_01.png",
+    "width": 44,
+    "height": 38,
+    "channels": 4,
+    "sha256": "aec3ac95f15127d70cfd21b12daf1fdccaaac3dc38590b30ec592afe4e071572"
+  },
+  {
+    "name": "E_Howitzer_02.png",
+    "width": 40,
+    "height": 41,
+    "channels": 4,
+    "sha256": "1718a945efa34aa8687bf64807100eeced72a19bcdcde2128288c3c52b7bc53e"
+  },
+  {
+    "name": "E_Howitzer_03.png",
+    "width": 47,
+    "height": 35,
+    "channels": 4,
+    "sha256": "83a8a9922e1659ca240ecff1f4e9e9b06600022d9c5ab89d87d603920e1ec4a7"
+  },
+  {
+    "name": "E_Howitzer_04.png",
+    "width": 44,
+    "height": 44,
+    "channels": 4,
+    "sha256": "cb6863ed55dd1bcc03a1c2bec9e9fda3c02153684534b986b43da94f04aedde7"
+  },
+  {
+    "name": "E_Howitzer_05.png",
+    "width": 39,
+    "height": 51,
+    "channels": 4,
+    "sha256": "1e1b932d0e6aa79d4ab228c0c173fc79ab58abaa642d35df13fa7c785bb37331"
+  },
+  {
+    "name": "E_Howitzer_06.png",
+    "width": 78,
+    "height": 39,
+    "channels": 4,
+    "sha256": "26e79e3774a5074150c15e68c67a0f045c59bbd0b93f2d61d1b1de21aa3384a7"
+  },
+  {
+    "name": "E_Howitzer_07.png",
+    "width": 99,
+    "height": 49,
+    "channels": 4,
+    "sha256": "f6b2e8434014d612297e3c0ae0221410789ac2335a944be995a2fcadf55b6094"
+  },
+  {
+    "name": "E_Howitzer_08.png",
+    "width": 85,
+    "height": 73,
+    "channels": 4,
+    "sha256": "83f542f49ed77e3bd17133463e4bed679822f4397739b9073af30e0d87f92087"
+  },
+  {
+    "name": "E_MBoss0501.png",
+    "width": 328,
+    "height": 48,
+    "channels": 4,
+    "sha256": "96eac13854d734d00e0d8b5d44b04688fb155a49cb6f8271a9deb1379da2a5b2"
+  },
+  {
+    "name": "E_MBoss0501_Msl.png",
+    "width": 38,
+    "height": 23,
+    "channels": 4,
+    "sha256": "d892215d26edb8f5ea0098051234b18d88721b6b2b90f763c49cc11399231662"
+  },
+  {
+    "name": "E_MBoss0501_Top.png",
+    "width": 50,
+    "height": 37,
+    "channels": 4,
+    "sha256": "270d061b6c45f0f66bbe4e161c73c5cfb025713b32eb8380c844e130d5b11af2"
+  },
+  {
+    "name": "E_MBoss0501_Wpn.png",
+    "width": 34,
+    "height": 10,
+    "channels": 4,
+    "sha256": "55e34418e4b2f6cb3d57c8224993934f49af95746aa46c68367a8be8ee3d3a5b"
+  },
+  {
+    "name": "E_MBoss0601.png",
+    "width": 324,
+    "height": 40,
+    "channels": 4,
+    "sha256": "08c103a16a8de4738ed7c7d357887592cd3f0daf43e4d5f709d48f31b0750907"
+  },
+  {
+    "name": "E_MBoss0601_Msl.png",
+    "width": 47,
+    "height": 24,
+    "channels": 4,
+    "sha256": "64e35d8699a024f6b65b68bbb376e0ce78c4664b329d4f4dcaa50a1c5b45d525"
+  },
+  {
+    "name": "E_MBoss0601_Top.png",
+    "width": 137,
+    "height": 47,
+    "channels": 4,
+    "sha256": "f3114436589170a5fa589a8b523800db33403945e6b95b11c733d98efa06a3a9"
+  },
+  {
+    "name": "E_MBoss0601_Wpn.png",
+    "width": 18,
+    "height": 8,
+    "channels": 4,
+    "sha256": "dd06e4b5aa7effe9ac36e7f4e01a6ee39704801f73f98eea8fd7f719a1b8c0d1"
+  },
+  {
+    "name": "E_MBoss0701.png",
+    "width": 312,
+    "height": 45,
+    "channels": 4,
+    "sha256": "366a006e38635de98722bbea4b109572d937430c9795f67e67cdd53431cce179"
+  },
+  {
+    "name": "E_MBoss0701_Bullet.png",
+    "width": 21,
+    "height": 12,
+    "channels": 4,
+    "sha256": "c9c1ddd0d413124c36b7b454dacf483d4b9bbf780f9e804f12523e2dcdf620c9"
+  },
+  {
+    "name": "E_MBoss0701_Msl.png",
+    "width": 37,
+    "height": 23,
+    "channels": 4,
+    "sha256": "722dc37ea48065c6189e38e89badfb12b8734f49663e8120708a7649e6a14a5a"
+  },
+  {
+    "name": "E_MBoss0701_Top.png",
+    "width": 124,
+    "height": 45,
+    "channels": 4,
+    "sha256": "fd75903f706982ccb5cdb6a385c31654089ab23b78fc7306b83a9631b432ecfb"
+  },
+  {
+    "name": "E_MBoss0801.png",
+    "width": 354,
+    "height": 43,
+    "channels": 4,
+    "sha256": "34327473691e96506ef46d7bd992100a79a6d7ba2340b521da49ff18018d9b7c"
+  },
+  {
+    "name": "E_MBoss0801_Bullet.png",
+    "width": 64,
+    "height": 12,
+    "channels": 4,
+    "sha256": "d7662d74027d7e5aa19f13a5f93d3b1f620f6394d79f6a4f348763dfe3a68575"
+  },
+  {
+    "name": "E_MBoss0801_Top.png",
+    "width": 162,
+    "height": 25,
+    "channels": 4,
+    "sha256": "a0f959014c4aa570ed9b8fdc5756477c9158a16776b7eff3b1907e4322c3f1c0"
+  },
+  {
+    "name": "E_MBoss0901.png",
+    "width": 338,
+    "height": 42,
+    "channels": 4,
+    "sha256": "b4e0173011cffe7254989a3eaeed7a16ca9f4906185082f1b9efa21a1f3e3279"
+  },
+  {
+    "name": "E_MBoss0901_Bullet.png",
+    "width": 44,
+    "height": 11,
+    "channels": 4,
+    "sha256": "3395867b049433408a0677f3ff74bcea4da0164f84b129ad44ac0fa4394bb5cc"
+  },
+  {
+    "name": "E_MBoss0901_Msl.png",
+    "width": 54,
+    "height": 20,
+    "channels": 4,
+    "sha256": "f48d044c8e2569b8d996b0d2ab222820889d57d5b8902c9e1ef6b4484e9a008e"
+  },
+  {
+    "name": "E_MBoss0901_Top.png",
+    "width": 72,
+    "height": 26,
+    "channels": 4,
+    "sha256": "25de5eef7cf386e945919b9911b22c590ec15abddd13ff53b4cac17335b7bbcb"
+  },
+  {
+    "name": "E_MBoss_01.png",
+    "width": 256,
+    "height": 77,
+    "channels": 4,
+    "sha256": "88007cf5366bd1cd09987f6b1320318bb1a0facad608e93dc9411ce313b3c228"
+  },
+  {
+    "name": "E_MBoss_02.png",
+    "width": 256,
+    "height": 78,
+    "channels": 4,
+    "sha256": "3d6454499fe7d915ef3e59d6810f0a750c77c460756ddcc30b3c93454f440e80"
+  },
+  {
+    "name": "E_MBoss_03.png",
+    "width": 268,
+    "height": 68,
+    "channels": 4,
+    "sha256": "ac02f7ffc9e1ac54887ed5c816925fa0c950e0fb1361895a7e4d3b332a18fcc2"
+  },
+  {
+    "name": "E_MBoss_03_Wpn.png",
+    "width": 33,
+    "height": 17,
+    "channels": 4,
+    "sha256": "2b82a2f96dfe116d6154d7095c2855fa9d2ba90a89968e6b68bb3de28fa946eb"
+  },
+  {
+    "name": "E_MBoss_04.png",
+    "width": 256,
+    "height": 94,
+    "channels": 4,
+    "sha256": "3a88ac0ef6ddaedd58194364f18b8832b45838d0481b6f729a869f0314e4d76d"
+  },
+  {
+    "name": "E_MBoss_04_Wpn.png",
+    "width": 70,
+    "height": 29,
+    "channels": 4,
+    "sha256": "6c9b57def6cf43888d3d139b0c3b82a1f7ef648cdb531ebbc861fa0ce2506732"
+  },
+  {
+    "name": "E_MBoss_05.png",
+    "width": 264,
+    "height": 69,
+    "channels": 4,
+    "sha256": "4ecb95c2c5f7b65ec940dd3d36f7b017de7bccce1be51894de5bf2a1749a1270"
+  },
+  {
+    "name": "E_MBoss_06.png",
+    "width": 234,
+    "height": 76,
+    "channels": 4,
+    "sha256": "149783ebd5ca05552a8c5ff4b0d6ed27f8c808979e4efa21b10ad9a2f315b080"
+  },
+  {
+    "name": "E_MBoss_07.png",
+    "width": 302,
+    "height": 92,
+    "channels": 4,
+    "sha256": "024c7447952f25cebaa240e7d21be9877d903b30b6c7704e113c92d648920136"
+  },
+  {
+    "name": "E_MBoss_07_Wpn.png",
+    "width": 69,
+    "height": 30,
+    "channels": 4,
+    "sha256": "006bfad5dc27e783671b6c494f35774f90ef71d023979fc209b9b9c2cdeb08c2"
+  },
+  {
+    "name": "E_MBoss_08.png",
+    "width": 256,
+    "height": 94,
+    "channels": 4,
+    "sha256": "ea1e64b8c1fc57e6797b278175c2b347d8c10ecc87bb31c93251ade772f05996"
+  },
+  {
+    "name": "E_MBoss_08_Wpn.png",
+    "width": 64,
+    "height": 29,
+    "channels": 4,
+    "sha256": "d1fb3856a21b204065f14beeddf98e57ccb07bdc41485737cc8ec3f721e278a7"
+  },
+  {
+    "name": "E_MBoss_09.png",
+    "width": 272,
+    "height": 66,
+    "channels": 4,
+    "sha256": "7ffa0af19d110ff2c86cfd5b6c9fe9a8569d709f9b6ebf18eeb9f2d134c92d43"
+  },
+  {
+    "name": "E_MBoss_10.png",
+    "width": 304,
+    "height": 80,
+    "channels": 4,
+    "sha256": "6f8bfd5a7af6ae8ed50accb3acc13726a2f80a247d5855ec801207e5f14fc730"
+  },
+  {
+    "name": "E_MobileGun_01.png",
+    "width": 97,
+    "height": 53,
+    "channels": 4,
+    "sha256": "eee6ba40e65b28a4b3b516e83f3eeb525c54ca1a44b7ac154412b4f8d7707154"
+  },
+  {
+    "name": "E_MobileGun_02.png",
+    "width": 90,
+    "height": 47,
+    "channels": 4,
+    "sha256": "6c1a9f2dc1c4939cff8f9538148020780e5365b8ec58dc9120e69ee80cae046e"
+  },
+  {
+    "name": "E_MobileGun_03.png",
+    "width": 103,
+    "height": 61,
+    "channels": 4,
+    "sha256": "b4772a354f1300559efda035398e3854ac67f8601b592d567a34fe12dcea58b4"
+  },
+  {
+    "name": "E_MobileGun_04.png",
+    "width": 100,
+    "height": 53,
+    "channels": 4,
+    "sha256": "195df84310a744b9d6e7e6ec0db137857b8b992d20983bf8abb47cde17adc998"
+  },
+  {
+    "name": "E_MobileGun_05.png",
+    "width": 105,
+    "height": 60,
+    "channels": 4,
+    "sha256": "e79460a62dd00d902be43a8ce779828816d4da051c1c9f75d373b2123ec8ef55"
+  },
+  {
+    "name": "E_MobileGun_06.png",
+    "width": 103,
+    "height": 61,
+    "channels": 4,
+    "sha256": "8beacff7ee63f67a907afeba4f8c1592c255e586362e2505b1c4a001e057a3b6"
+  },
+  {
+    "name": "E_MslTurret.png",
+    "width": 63,
+    "height": 62,
+    "channels": 4,
+    "sha256": "2ddbba6b09ba29ce0f8259ea5133b176dd58a0985e9aa5d180e7bfbddda1e00c"
+  },
+  {
+    "name": "E_Tank_Body_01.png",
+    "width": 170,
+    "height": 30,
+    "channels": 4,
+    "sha256": "cc628e4d2213202902cf2e7b6d037497a3587efffc082921a688068ab9ffc7f8"
+  },
+  {
+    "name": "E_Tank_Body_02.png",
+    "width": 170,
+    "height": 30,
+    "channels": 4,
+    "sha256": "bef105a1246f65dae64b304f6f47abcba4f2ca67f861a94f7921816340d6d826"
+  },
+  {
+    "name": "E_Tank_Body_03.png",
+    "width": 200,
+    "height": 51,
+    "channels": 4,
+    "sha256": "8d57e79918431a284f76d2e8f537ae03779cf713f6c2636d4cf24ccbe7c3f3c4"
+  },
+  {
+    "name": "E_Tank_Body_04.png",
+    "width": 200,
+    "height": 51,
+    "channels": 4,
+    "sha256": "b4b5e25a0b2e84c58be78f7339b2969c4393ccad0d3417cdb922ec4fa8af0885"
+  },
+  {
+    "name": "E_Tank_Body_05.png",
+    "width": 200,
+    "height": 51,
+    "channels": 4,
+    "sha256": "b5891c01235f4fbb7a6b12484df980837a05c1f7495ff83822db481020f89fa8"
+  },
+  {
+    "name": "E_Tank_Top_01.png",
+    "width": 42,
+    "height": 18,
+    "channels": 4,
+    "sha256": "ef6facdcd257967ed095a782962ff103cf8416221dbb4e60c0d736f29c7eb958"
+  },
+  {
+    "name": "E_Tank_Top_02.png",
+    "width": 45,
+    "height": 19,
+    "channels": 4,
+    "sha256": "2005e9938f72b649469a1ec0334f76cd0b9e3f9eacd43ffc0082bfa1135b81a0"
+  },
+  {
+    "name": "E_Tank_Top_03.png",
+    "width": 16,
+    "height": 11,
+    "channels": 4,
+    "sha256": "cf7560c2dc2891892ef743f3942206b93a70c9f90ad54694fea44a817c7b0722"
+  },
+  {
+    "name": "E_Tank_Top_04.png",
+    "width": 16,
+    "height": 12,
+    "channels": 4,
+    "sha256": "8c36fde7cd5e93e11afc389e3ecbfae68ed889f2a2d1de7641604f49c7beb07a"
+  },
+  {
+    "name": "E_Tank_Top_05.png",
+    "width": 20,
+    "height": 12,
+    "channels": 4,
+    "sha256": "10cae79c859e9a8e4081c28be84fef1226d79b259d84b10ae44dcca8c774717d"
+  },
+  {
+    "name": "E_Tank_Top_06.png",
+    "width": 26,
+    "height": 12,
+    "channels": 4,
+    "sha256": "e70bbf481990779b3fb8955cb223c8a604d59ca4ca5bb8b4f34e3155e9ea19f3"
+  },
+  {
+    "name": "E_Tank_Top_07.png",
+    "width": 39,
+    "height": 23,
+    "channels": 4,
+    "sha256": "e211f94ef4ea3aabcd4d22e0cd542ef8e3c8c1c3cff1177004e3982be1e84ce9"
+  },
+  {
+    "name": "E_Tank_Top_08.png",
+    "width": 48,
+    "height": 21,
+    "channels": 4,
+    "sha256": "9716ad6b91c891856b27d2309e61e409c3ca7b433889ab1668b30349ce38af26"
+  },
+  {
+    "name": "E_Tank_Top_09.png",
+    "width": 49,
+    "height": 21,
+    "channels": 4,
+    "sha256": "c23eb8c419bc00757a3df308b29da794f4b8681a949eca46467654aadd2e581f"
+  },
+  {
+    "name": "E_Tank_Top_10.png",
+    "width": 46,
+    "height": 22,
+    "channels": 4,
+    "sha256": "65caf567b35530b69f6909497d53b6c7a6f5a79f12e7ddd5d70a5e90ef6c4d96"
+  },
+  {
+    "name": "E_Tank_Top_11.png",
+    "width": 52,
+    "height": 22,
+    "channels": 4,
+    "sha256": "e0794695c8dbcc4d0943596c217bc832dd35b39320bd6c27a73ef658f3c09e78"
+  },
+  {
+    "name": "E_Tank_Top_12.png",
+    "width": 56,
+    "height": 25,
+    "channels": 4,
+    "sha256": "bb340644e0d4652d4545fb876d4f147fca23e6fc9b4473eb8e3dbaa393ad473e"
+  },
+  {
+    "name": "E_Tank_Wpn_01.png",
+    "width": 30,
+    "height": 6,
+    "channels": 4,
+    "sha256": "a4170135595816d6c0d015643ef2d72de611b2a0757f4c33a4dcc7fc6ee0f4ab"
+  },
+  {
+    "name": "E_Tank_Wpn_02.png",
+    "width": 30,
+    "height": 6,
+    "channels": 4,
+    "sha256": "4c94653f009403a8fb958e211e78f62d459523ef0b58d2a41e47bea9f70b845d"
+  },
+  {
+    "name": "E_Tank_Wpn_03.png",
+    "width": 13,
+    "height": 5,
+    "channels": 4,
+    "sha256": "91d4fe8330c8f8ca9e529e1e0f6294f535b642b860d892d4108dd0524033f064"
+  },
+  {
+    "name": "E_Tank_Wpn_04.png",
+    "width": 19,
+    "height": 7,
+    "channels": 4,
+    "sha256": "3fcc43f4a4b1b7071ad76c3d4763484ffbeef9b026e9b3146fd06aab87ee6b66"
+  },
+  {
+    "name": "E_Tank_Wpn_05.png",
+    "width": 36,
+    "height": 6,
+    "channels": 4,
+    "sha256": "187bfb3637f94be65749b2f087530642302af7f66752115114abdfe82cecdf46"
+  },
+  {
+    "name": "E_Tank_Wpn_06.png",
+    "width": 38,
+    "height": 6,
+    "channels": 4,
+    "sha256": "93641db2b89375daf07b09e33297fa5931c4414175717c1688eb4cccf3b93c4c"
+  },
+  {
+    "name": "E_Tank_Wpn_07.png",
+    "width": 44,
+    "height": 6,
+    "channels": 4,
+    "sha256": "c233e23ff9bd38353d67fead9d0646e362f589ae5db14ad7f45c2a16a5f93d15"
+  },
+  {
+    "name": "E_Tank_Wpn_08.png",
+    "width": 44,
+    "height": 6,
+    "channels": 4,
+    "sha256": "ffe1bb2ca64adb83d8901df864938c45bb66b7b80dad2708f503041b35638d0e"
+  },
+  {
+    "name": "E_Tank_Wpn_09.png",
+    "width": 44,
+    "height": 6,
+    "channels": 4,
+    "sha256": "5d2755cd5ed350a36c8941576758f66223d58539f5fe9c615d5606e11a422053"
+  },
+  {
+    "name": "E_Tank_Wpn_10.png",
+    "width": 53,
+    "height": 6,
+    "channels": 4,
+    "sha256": "0c99f90882f6bcddc5ebe8680bb1f8e0fe8dbed8d79fa7f0c9f0fe0bd9f282b3"
+  },
+  {
+    "name": "E_Tank_Wpn_11.png",
+    "width": 53,
+    "height": 7,
+    "channels": 4,
+    "sha256": "d892ffdec39b14e63390e00fc0169f0bf41c29c918eb15e977ec76a92add665e"
+  },
+  {
+    "name": "E_Truck_01.png",
+    "width": 120,
+    "height": 41,
+    "channels": 4,
+    "sha256": "65ee639e06128f21593db39e435458be6a557f00678d4de75120b3e1c949b6bd"
+  },
+  {
+    "name": "E_Truck_02.png",
+    "width": 180,
+    "height": 51,
+    "channels": 4,
+    "sha256": "9a89353e00672f47a01ae0e0bdb790e97bf1a98578c91a91222364d5f9808e67"
+  },
+  {
+    "name": "E_Truck_03.png",
+    "width": 134,
+    "height": 46,
+    "channels": 4,
+    "sha256": "71706e1c08a1c8aebbbe2263f25839657260ad563deeabb7f88d0d877e07f988"
+  },
+  {
+    "name": "E_Truck_04.png",
+    "width": 146,
+    "height": 46,
+    "channels": 4,
+    "sha256": "d7207d56a7221c09a80dd0a57d6cc2c79febf7b3526e037ccb7014c4c3722b47"
+  },
+  {
+    "name": "E_Truck_05.png",
+    "width": 194,
+    "height": 60,
+    "channels": 4,
+    "sha256": "4b9e1d4567b2e35e56f71285c2e54a45a38e313600871342a486d0f7d462151d"
+  },
+  {
+    "name": "E_Truck_Wpn_01.png",
+    "width": 40,
+    "height": 13,
+    "channels": 4,
+    "sha256": "c4aa995de3123c2d128fc652afe39b714a7d1f61f7897bdb0d144894656f5d11"
+  },
+  {
+    "name": "E_Truck_Wpn_02.png",
+    "width": 46,
+    "height": 16,
+    "channels": 4,
+    "sha256": "963340a6a31cca46fd9d7ac9705dff6b31d03678b7db3fae6f35b38f9da67b61"
+  },
+  {
+    "name": "E_Truck_Wpn_03.png",
+    "width": 47,
+    "height": 19,
+    "channels": 4,
+    "sha256": "89a337064ed59eacbc5dae027dfb6cfa2d7adb70a7cdf196d2cb9da81923f197"
+  },
+  {
+    "name": "E_Truck_Wpn_04.png",
+    "width": 46,
+    "height": 20,
+    "channels": 4,
+    "sha256": "e860fa8904421bedd1911c07ef46f3bf8114b448f62a31697710e4a2ceb7d9f8"
+  },
+  {
+    "name": "E_Truck_Wpn_05.png",
+    "width": 38,
+    "height": 19,
+    "channels": 4,
+    "sha256": "a450b46d1ae6a9803f483c43b9927ed52fefc91fb7cc3d0261254d0015f73eb6"
+  },
+  {
+    "name": "E_Truck_Wpn_06.png",
+    "width": 43,
+    "height": 23,
+    "channels": 4,
+    "sha256": "259a75c5df5cd1757376bd405658add84e69d87d0e0460935766d42f596c1296"
+  },
+  {
+    "name": "E_Turret_01.png",
+    "width": 45,
+    "height": 56,
+    "channels": 4,
+    "sha256": "58117108d1a7ed79416f1b4de40342b62b5aaf4c879be2208004d878f89f3edc"
+  },
+  {
+    "name": "E_Turret_02.png",
+    "width": 41,
+    "height": 54,
+    "channels": 4,
+    "sha256": "12fd6671b53650a80a9173b26fda3e6b2f61516e31caf35bdb6f80278604a958"
+  },
+  {
+    "name": "E_Turret_03.png",
+    "width": 38,
+    "height": 48,
+    "channels": 4,
+    "sha256": "2d7f3600c2c7c78c6023ccbd18b2d677394ee0b15580555e5ff9e153b63de92c"
+  },
+  {
+    "name": "E_Turret_04.png",
+    "width": 37,
+    "height": 51,
+    "channels": 4,
+    "sha256": "9f7c4c7c8ef244f3c9611e3d15181276a8e7b9c50a2a3af84b3972d8ab5cf728"
+  },
+  {
+    "name": "E_Turret_05.png",
+    "width": 32,
+    "height": 46,
+    "channels": 4,
+    "sha256": "a21ed7fd83e634ba4e4973f0ed90b022596088cc128c399c11ff03f7cabc5470"
+  },
+  {
+    "name": "E_Turret_06.png",
+    "width": 29,
+    "height": 50,
+    "channels": 4,
+    "sha256": "3f84c6b238ff07a7a2ab9a21d6ea95802364b30dce88a73d92a42df5775973f8"
+  },
+  {
+    "name": "E_Turret_07.png",
+    "width": 34,
+    "height": 49,
+    "channels": 4,
+    "sha256": "d7f53f9620e24a6ddc9df95bce9bdfa6ee1e4559249941320d0633acb41cb4bb"
+  },
+  {
+    "name": "E_Turret_08.png",
+    "width": 27,
+    "height": 46,
+    "channels": 4,
+    "sha256": "dc65fcfda0113e63ebf59d55ec43537e1f48750be5fe53b82e5a7b7955514337"
+  },
+  {
+    "name": "E_Turret_09.png",
+    "width": 43,
+    "height": 45,
+    "channels": 4,
+    "sha256": "d040966e250ab1dfffd5248113812f32b4f1c7ee80cc552e6963b3dce3d75d2e"
+  },
+  {
+    "name": "E_Turret_10.png",
+    "width": 40,
+    "height": 42,
+    "channels": 4,
+    "sha256": "d753f97770ed3789f62bc39e35e9ee91ae4bcb935f413c31c819475a66cbefe5"
+  },
+  {
+    "name": "E_Turret_Wpn_01.png",
+    "width": 55,
+    "height": 30,
+    "channels": 4,
+    "sha256": "f327aee71323961d94566d06196c9c74d6be6d8a65648b34c82e1aaa28b2e0cc"
+  },
+  {
+    "name": "E_Turret_Wpn_02.png",
+    "width": 62,
+    "height": 23,
+    "channels": 4,
+    "sha256": "5d335b1c1e318d8ec1167b4a944f6524ef5542c0163eba61b867c64d138532ba"
+  },
+  {
+    "name": "E_Turret_Wpn_03.png",
+    "width": 62,
+    "height": 21,
+    "channels": 4,
+    "sha256": "80fb6ab525f234cba00edc3d550436a1269ca91956116810173fdf62eff57bda"
+  },
+  {
+    "name": "E_Turret_Wpn_04.png",
+    "width": 63,
+    "height": 25,
+    "channels": 4,
+    "sha256": "66b577acc7d1fe7c6303b13d7cfb8bc10b7993d5f94f3f7771a64406ddf6e3b7"
+  },
+  {
+    "name": "E_Turret_Wpn_05.png",
+    "width": 57,
+    "height": 18,
+    "channels": 4,
+    "sha256": "f066ce6419d80a8a35ecf23260f3c9e1189e6180a181b5f1719cc05ae163d900"
+  },
+  {
+    "name": "E_Turret_Wpn_06.png",
+    "width": 56,
+    "height": 18,
+    "channels": 4,
+    "sha256": "176e12ae49193bb3eefb352c6120fbe4b83778c2ccb9938cc63645d45b8ab7d9"
+  },
+  {
+    "name": "E_Turret_Wpn_07.png",
+    "width": 56,
+    "height": 23,
+    "channels": 4,
+    "sha256": "bac61d55800dd68e9083dda32d6b09cdd09718553a797996f42f1493fed71a26"
+  },
+  {
+    "name": "E_Turret_Wpn_08.png",
+    "width": 51,
+    "height": 19,
+    "channels": 4,
+    "sha256": "68b318c5904725980d85bc58ee45fbed9ff6d894901bc976f1fc1b221e99a819"
+  },
+  {
+    "name": "Efx_Damage.png",
+    "width": 370,
+    "height": 64,
+    "channels": 4,
+    "sha256": "5c7731c074d442906d33d32f776f051f5a0c41a8d87120a07a8fd843d7eb40a4"
+  },
+  {
+    "name": "Efx_Explode01.png",
+    "width": 390,
+    "height": 512,
+    "channels": 4,
+    "sha256": "f22a45833d6502493c6c7cfa3bf1088ffcd895f22ed5a221ed6b5330ebaf2a62"
+  },
+  {
+    "name": "Efx_Explode02.png",
+    "width": 510,
+    "height": 512,
+    "channels": 4,
+    "sha256": "b788295856feb70a48130a3e860dd2cdd5eaaa6fe965f803194fef11997f4b2d"
+  },
+  {
+    "name": "Efx_Explode03.png",
+    "width": 512,
+    "height": 512,
+    "channels": 4,
+    "sha256": "48193b895a413665982a02bc0a680741689f5d275504c9eaefc38ab6cb296c02"
+  },
+  {
+    "name": "Efx_ExplodeNPC.png",
+    "width": 512,
+    "height": 512,
+    "channels": 4,
+    "sha256": "0bfa7ff69a179da07412885be15470c08b702805d1d55a1093934fa2ece5706c"
+  },
+  {
+    "name": "EnemyBullet.png",
+    "width": 128,
+    "height": 128,
+    "channels": 4,
+    "sha256": "bb9fa303d3846c56efada300cf9b3d0231b77c22858be296c86e8daa753687de"
+  },
+  {
+    "name": "EnemyBullet05.png",
+    "width": 128,
+    "height": 128,
+    "channels": 4,
+    "sha256": "14e519b6fb7cf188c0d46776c7759cb6aab5b216803060a42fd4caca087a7fa1"
+  },
+  {
+    "name": "EnemyBullet06.png",
+    "width": 128,
+    "height": 128,
+    "channels": 4,
+    "sha256": "5597dd22c1bc91d9c8a52b9c44c49a213603931ecfff6d1fd2e21cd455303e0a"
+  },
+  {
+    "name": "EnemyMissile.png",
+    "width": 128,
+    "height": 128,
+    "channels": 4,
+    "sha256": "4da02b1d50e79b06608e437656504bf8b2311813d6e66f49ae2b278d87c54f1e"
+  },
+  {
+    "name": "Explode.png",
+    "width": 128,
+    "height": 128,
+    "channels": 4,
+    "sha256": "19fcb0bb0e52507b74fa2d9de9c400ba93b2b4f9b17e2fc75cd3d650d1dbb1b7"
+  },
+  {
+    "name": "GameLoading_01.jpg",
+    "width": 484,
+    "height": 320,
+    "channels": 3,
+    "sha256": "523d86b38b7a7d53c2c3fcd99ef29c86a91b3cff2779f62f417c536e0848ee15"
+  },
+  {
+    "name": "GameLoading_01E.jpg",
+    "width": 484,
+    "height": 320,
+    "channels": 3,
+    "sha256": "357960ebb9c0886971de6daec51c637e1055bfcec5e8602d76e386e6b772b8b1"
+  },
+  {
+    "name": "GameLoading_02.jpg",
+    "width": 480,
+    "height": 324,
+    "channels": 3,
+    "sha256": "de1bd6146dac5b8d24dd917516cf730b47b4bdb336ca145e9214c44b77f775af"
+  },
+  {
+    "name": "GameLoading_02E.jpg",
+    "width": 480,
+    "height": 324,
+    "channels": 3,
+    "sha256": "e5ed272a16caba7f063fae3be98b658c8c118d886a2cc02b272d3945f31378e0"
+  },
+  {
+    "name": "GameLoading_03.jpg",
+    "width": 484,
+    "height": 320,
+    "channels": 3,
+    "sha256": "f21bdbf11c0822d34f4813bcc417a6b174f352be4c2d979d8a830bf1785ca973"
+  },
+  {
+    "name": "GameLoading_03E.jpg",
+    "width": 484,
+    "height": 320,
+    "channels": 3,
+    "sha256": "46974b455d68a2ce24858f13da9d2868557de7eae3199d0356be71074368ffc4"
+  },
+  {
+    "name": "GameLoading_04.jpg",
+    "width": 480,
+    "height": 324,
+    "channels": 3,
+    "sha256": "c387bddb880610a8242204c5dfaa40f3d79dadddeca3173e62ff45b5ab22c6d1"
+  },
+  {
+    "name": "GameLoading_04E.jpg",
+    "width": 475,
+    "height": 320,
+    "channels": 3,
+    "sha256": "8b87f98e1988abe34d31178b8e59b75de8149b6627d22bf050c348ef86af47b5"
+  },
+  {
+    "name": "GameLoading_05.jpg",
+    "width": 484,
+    "height": 320,
+    "channels": 3,
+    "sha256": "3a20da8fa463cc84e93b47721776c3e5809b545f8ffa911f6e9de5f9c8aadd9f"
+  },
+  {
+    "name": "GameLoading_05E.jpg",
+    "width": 484,
+    "height": 320,
+    "channels": 3,
+    "sha256": "989e8f6cf55500081a1a039af081ba4424b6dba7323e05fc68c1bed539c92b49"
+  },
+  {
+    "name": "GameLoading_06.jpg",
+    "width": 484,
+    "height": 320,
+    "channels": 3,
+    "sha256": "3ec7ed31c98e2870b1b16a78559d7dbd857d7ecacbd13c710234c669ea176156"
+  },
+  {
+    "name": "GameLoading_06E.jpg",
+    "width": 484,
+    "height": 320,
+    "channels": 3,
+    "sha256": "9972f4c749e62991c3bfe82bc0ab464b67dcdb82e51e35c2a9376817494367fd"
+  },
+  {
+    "name": "GameLoading_07.jpg",
+    "width": 484,
+    "height": 320,
+    "channels": 3,
+    "sha256": "5779f92db6e7ea2f3fb591a90ef933092dc7047bbe9606dbb883cee66996f906"
+  },
+  {
+    "name": "GameLoading_07E.jpg",
+    "width": 484,
+    "height": 320,
+    "channels": 3,
+    "sha256": "69c4dca06cf24f9ba4823ddb0477c6a4f0819d90503d5230d54fe2bf3f6b1e91"
+  },
+  {
+    "name": "GameMenu.png",
+    "width": 64,
+    "height": 64,
+    "channels": 4,
+    "sha256": "a264b802ba2d3f42178b54e4c3ce0d9919d725a0951125999a84caeab305311a"
+  },
+  {
+    "name": "GameMenuSub.png",
+    "width": 256,
+    "height": 240,
+    "channels": 4,
+    "sha256": "845c86cc7ad3652e96eb315b53d454176e945766c8c51c8efa6b07affca039f3"
+  },
+  {
+    "name": "GameUI_BlueLight.png",
+    "width": 38,
+    "height": 38,
+    "channels": 4,
+    "sha256": "e4f35624281690d066b3b4a7d3f6bddbc6996af26e5440ff5fd4bcaf38b8bb40"
+  },
+  {
+    "name": "GameUI_Btm.png",
+    "width": 480,
+    "height": 64,
+    "channels": 4,
+    "sha256": "b3000e3c298e252049e9935ffdbf728d904f208c40ebb03bf5815b9f9e823a0a"
+  },
+  {
+    "name": "GameUI_Exp.png",
+    "width": 70,
+    "height": 5,
+    "channels": 4,
+    "sha256": "78c9da0313ed9bd2780b08320d9ff4f8a72cfce5a95446917dcb0c2740ee9b9f"
+  },
+  {
+    "name": "GameUI_Gauge.png",
+    "width": 5,
+    "height": 32,
+    "channels": 4,
+    "sha256": "9b47b9a6fb86b189888bda5f8062ff070b4b9de6e06777c0c14572cd0dd37ab9"
+  },
+  {
+    "name": "GameUI_Gear.png",
+    "width": 16,
+    "height": 16,
+    "channels": 4,
+    "sha256": "29c1f3d4ae9ddf70cb30f912ab833383c49da4f363a91c597662bb5d999d97df"
+  },
+  {
+    "name": "GameUI_RedLight.png",
+    "width": 32,
+    "height": 32,
+    "channels": 4,
+    "sha256": "f34714ba9022ec93a4ea2c0c52fcc544f2440ffe7625c8f54deb919908bd006e"
+  },
+  {
+    "name": "GameUI_Top.png",
+    "width": 480,
+    "height": 64,
+    "channels": 4,
+    "sha256": "25880203adb150384e3ab602e35925562a64a13c72e76d705693039d6d359fc2"
+  },
+  {
+    "name": "HPGauge.png",
+    "width": 42,
+    "height": 10,
+    "channels": 4,
+    "sha256": "c83a105fe86801f419d5a0893008622ea2967c2d6522bfdaa9712c6737a9dc63"
+  },
+  {
+    "name": "HPGaugeBoss.png",
+    "width": 100,
+    "height": 12,
+    "channels": 4,
+    "sha256": "1f6d5dee19283b3a4be5394c0b414dd707de9ab93c9e93d499c78fee7e295164"
+  },
+  {
+    "name": "HPGaugeEnemy.png",
+    "width": 32,
+    "height": 6,
+    "channels": 4,
+    "sha256": "e40df5dfd0ea35d2741f9f498e49a98b931a678a4d8487924a22cb01f18118a9"
+  },
+  {
+    "name": "Icon.png",
+    "width": 512,
+    "height": 512,
+    "channels": 3,
+    "sha256": "06ba101747054e123c2391e1481a03c420b769a614970bc4682cd2b23c65367c"
+  },
+  {
+    "name": "Icon.png.orig",
+    "width": 57,
+    "height": 57,
+    "channels": 4,
+    "sha256": "c3a003164eed68780ed4896c74d86921e84de897e5dc365e704596384c35985e"
+  },
+  {
+    "name": "ItemBox.png",
+    "width": 32,
+    "height": 40,
+    "channels": 4,
+    "sha256": "cb7ab2db89df894ad6ba3ec75f7f9850697ce6e0bc43efacac66c7a801e664f6"
+  },
+  {
+    "name": "ItemTile.png",
+    "width": 245,
+    "height": 104,
+    "channels": 4,
+    "sha256": "e8cfe4e45f6b8e546e6878ca6efeb50b56869ad0211e7db64151b34e39d8adc8"
+  },
+  {
+    "name": "LaserTrail.png",
+    "width": 40,
+    "height": 64,
+    "channels": 4,
+    "sha256": "ba1f248c9a8c7ea67f5330a6e9cbd3b4b5fda9cc20c4f72ceca8da0b53ed4765"
+  },
+  {
+    "name": "Loading_Bottom.png",
+    "width": 480,
+    "height": 201,
+    "channels": 4,
+    "sha256": "c6d697b1f485ba433f917f4e724616b359f1bbdc36eb436291d30b00a85b7349"
+  },
+  {
+    "name": "Loading_Left.png",
+    "width": 480,
+    "height": 320,
+    "channels": 4,
+    "sha256": "bd1fdb18bec04e9a735537408772a448a313a1f13a0e88ff33326cf52286b237"
+  },
+  {
+    "name": "Loading_Right.png",
+    "width": 480,
+    "height": 320,
+    "channels": 4,
+    "sha256": "cc20a8554d1477b7fbf795d3f6e723385f7619fd23e6dd58876ec24509e27aa2"
+  },
+  {
+    "name": "Loading_Top.png",
+    "width": 480,
+    "height": 194,
+    "channels": 4,
+    "sha256": "26983c63ff7d7fe61b98ca86f7eabe91d33ae5612386f927990669273cc68f82"
+  },
+  {
+    "name": "Main_BG.png",
+    "width": 480,
+    "height": 320,
+    "channels": 4,
+    "sha256": "e0afdea7007f765c483443d228f51b2f3a0b13365dbff1250b06a2a17d420fbf"
+  },
+  {
+    "name": "Main_Copyright.png",
+    "width": 256,
+    "height": 16,
+    "channels": 4,
+    "sha256": "259a39ee95f621f7df234013b44ff7ff425891a11ae25f3b46a6d3da911feb4a"
+  },
+  {
+    "name": "Main_Episode.png",
+    "width": 256,
+    "height": 32,
+    "channels": 4,
+    "sha256": "5d537a29f5ea013bf4fff542cdc83c9fbe386e3433259a3b6b6550a556f3c4a7"
+  },
+  {
+    "name": "Main_TapToStart.png",
+    "width": 128,
+    "height": 32,
+    "channels": 4,
+    "sha256": "404e110ed940429ab5ee53eee1d6ecd60ac45c88b65d3f2b0626151a39782f65"
+  },
+  {
+    "name": "Main_Title.png",
+    "width": 512,
+    "height": 128,
+    "channels": 4,
+    "sha256": "764f3d79dbf06d2a848dc56efab7704ff91d46bbb84ef42490f0b335c928a5b4"
+  },
+  {
+    "name": "NumSet01.png",
+    "width": 256,
+    "height": 16,
+    "channels": 4,
+    "sha256": "a3696e21522930b65bfb94c085fec46d58deea279417334f4b2f0b661566ffa3"
+  },
+  {
+    "name": "NumSet02.png",
+    "width": 128,
+    "height": 8,
+    "channels": 4,
+    "sha256": "adde91f30079fcec223d36183261742ab6b655225b4825df536dbf81385e49d6"
+  },
+  {
+    "name": "NumSet02b.png",
+    "width": 128,
+    "height": 8,
+    "channels": 4,
+    "sha256": "554078db0857598afb2f826fbe239726a55d04312c462d7cea4965a17c2b3f04"
+  },
+  {
+    "name": "NumSet_Mission.png",
+    "width": 256,
+    "height": 64,
+    "channels": 4,
+    "sha256": "232b94d9e8698229fa64f8a3a051d14660dbd3c81e9241aaf6b059425ae62096"
+  },
+  {
+    "name": "Object_City01.png",
+    "width": 10,
+    "height": 124,
+    "channels": 4,
+    "sha256": "ba033a1ea845cecffd4c024a6457cd1546a441a657fe6009276e280dcd2a636d"
+  },
+  {
+    "name": "Object_City02.png",
+    "width": 19,
+    "height": 20,
+    "channels": 4,
+    "sha256": "ae8f899099676d25f05c8cfcea9cf686c2122bfb15119778759a4a0b501fedf4"
+  },
+  {
+    "name": "Object_City03.png",
+    "width": 34,
+    "height": 10,
+    "channels": 4,
+    "sha256": "b28f2e6cec0a80dbfacd9c89563d78fb991b04309e415646e64b3ce2a221d9f2"
+  },
+  {
+    "name": "Object_City04.png",
+    "width": 55,
+    "height": 19,
+    "channels": 4,
+    "sha256": "47546eea786f4cebc2767629b76925a3b031f0567cad67ce812d144f81195ddf"
+  },
+  {
+    "name": "Object_City05.png",
+    "width": 16,
+    "height": 10,
+    "channels": 4,
+    "sha256": "4984c79be8a61d8beda1c7ca1f6d5d6416bdd8539a918a0a73fe1194a3e0fc02"
+  },
+  {
+    "name": "Object_City06.png",
+    "width": 4,
+    "height": 15,
+    "channels": 4,
+    "sha256": "5feb07615b398107df6a888c70b4819a908e540bbfb800df3b827685791ab863"
+  },
+  {
+    "name": "Object_City07.png",
+    "width": 8,
+    "height": 9,
+    "channels": 4,
+    "sha256": "2d2ded63881f17e85d651efc43f9b68897f6a10398ae5579129454d1e8dc3261"
+  },
+  {
+    "name": "Object_City08.png",
+    "width": 13,
+    "height": 10,
+    "channels": 4,
+    "sha256": "2f39a0f0c6ac9db909c4e0e5d4fcd1be067127aadfc731538b677151a0ef5b27"
+  },
+  {
+    "name": "Object_City09.png",
+    "width": 10,
+    "height": 18,
+    "channels": 4,
+    "sha256": "dc4958c8d7b42e7edab2005817dfc9d556c411911026f2a29062c709fd7359db"
+  },
+  {
+    "name": "Object_City10.png",
+    "width": 25,
+    "height": 72,
+    "channels": 4,
+    "sha256": "babd4c5e2c1fd24b30234bf5af95a8b66370ff60f1c151fea3a5dbb322bf1956"
+  },
+  {
+    "name": "Object_Ruin01.png",
+    "width": 47,
+    "height": 42,
+    "channels": 4,
+    "sha256": "1976ebcbcc7fdfdabf8778be4e21453930cd949c4bed9acaf190f7e4f21dc5f4"
+  },
+  {
+    "name": "Object_Ruin02.png",
+    "width": 45,
+    "height": 54,
+    "channels": 4,
+    "sha256": "ac9f14a5004e7a11dabd61e189438737896885a79ce3ba673567e9114d894e49"
+  },
+  {
+    "name": "Object_Ruin03.png",
+    "width": 41,
+    "height": 46,
+    "channels": 4,
+    "sha256": "38a8cf4fe9998f91e4bd0be663ae9c03bd3b833cd89140591d70eab60bb73e2b"
+  },
+  {
+    "name": "Object_Ruin04.png",
+    "width": 51,
+    "height": 38,
+    "channels": 4,
+    "sha256": "c14fb161aa649aa9742a26bf89a56a358a901c5e95d3949217c9658e5b6d6118"
+  },
+  {
+    "name": "Object_Ruin05.png",
+    "width": 42,
+    "height": 32,
+    "channels": 4,
+    "sha256": "343a270d8cf73de50f3b454e0a3bae895fbb7d3a045ffb1548b63bcb2480d635"
+  },
+  {
+    "name": "Object_Ruin06.png",
+    "width": 31,
+    "height": 40,
+    "channels": 4,
+    "sha256": "37be85a65a771326ec014d110d427cd296a2fa67224ba79fefda22f34a16bf25"
+  },
+  {
+    "name": "Object_Ruin07.png",
+    "width": 35,
+    "height": 33,
+    "channels": 4,
+    "sha256": "ae1426b953473f0a0385d8fcc9d77d9c823f851f30ab02dc1824d42127721439"
+  },
+  {
+    "name": "Object_Ruin08.png",
+    "width": 40,
+    "height": 47,
+    "channels": 4,
+    "sha256": "aefd62d2d1cc7a5241208cbabb0e73024c9cb1a0d96d5fb11b733f5cea44aed8"
+  },
+  {
+    "name": "Object_Ruin09.png",
+    "width": 46,
+    "height": 41,
+    "channels": 4,
+    "sha256": "db48bb04097266a19b3436eeaef8e2387748032b975346024a2dea4dff908fda"
+  },
+  {
+    "name": "Object_map06_01.png",
+    "width": 60,
+    "height": 55,
+    "channels": 4,
+    "sha256": "b6269a58b1e3856cc826663e2d409501db4d4ffe5d487a92a31da15b0f1db261"
+  },
+  {
+    "name": "Object_map06_02.png",
+    "width": 61,
+    "height": 62,
+    "channels": 4,
+    "sha256": "865522adc5d62f9181a5ca4acb5a69af7c40cc97bffc0d212823c6a2d0f1ac1b"
+  },
+  {
+    "name": "Object_map07_01.png",
+    "width": 53,
+    "height": 73,
+    "channels": 4,
+    "sha256": "9af4dbf5e5704220356f001d9a4cc927b4e7d95bea4e06e1a2fa8fc0ba1879f2"
+  },
+  {
+    "name": "Object_map07_02.png",
+    "width": 50,
+    "height": 62,
+    "channels": 4,
+    "sha256": "c0f3f276299e1f84970417309626a9b906fb6be25c0c612c370c82d26452a9de"
+  },
+  {
+    "name": "Object_map07_03.png",
+    "width": 70,
+    "height": 63,
+    "channels": 4,
+    "sha256": "d6010989529397b73f27db16a6c1ac8014772c44145e805b4e69b74b0304c03d"
+  },
+  {
+    "name": "Object_map07_04.png",
+    "width": 55,
+    "height": 64,
+    "channels": 4,
+    "sha256": "01dcfb77fb41976d5684d6937320dd71aabad040cb2f6b7959eee268c3ad0f65"
+  },
+  {
+    "name": "Object_map07_05.png",
+    "width": 48,
+    "height": 56,
+    "channels": 4,
+    "sha256": "be76aa1bc1c8fd20d6b05fc9dc78575ba446a7359dde79a179df15db778d0ade"
+  },
+  {
+    "name": "Object_map07_06.png",
+    "width": 75,
+    "height": 32,
+    "channels": 4,
+    "sha256": "afc262c6850bb4b074c1002c02aced99d1e62d2b4691abf53650a023f52c7007"
+  },
+  {
+    "name": "Object_map07_07.png",
+    "width": 63,
+    "height": 25,
+    "channels": 4,
+    "sha256": "03eee18cd0781f8a8bd1fa99d771d75d42b06fa7505994b6e7e531ca2920f1f1"
+  },
+  {
+    "name": "Object_map08_01.png",
+    "width": 78,
+    "height": 79,
+    "channels": 4,
+    "sha256": "9a8b36e6aa910f97f4ad5ff5bc90e0972524b169f87f16884c4ba75362d4d2c0"
+  },
+  {
+    "name": "Object_map08_02.png",
+    "width": 130,
+    "height": 76,
+    "channels": 4,
+    "sha256": "170d72cdfa4de5b10686c6d9fb8d1e817604b4c9868ba0a59d364a13d8f80496"
+  },
+  {
+    "name": "Object_map08_03.png",
+    "width": 108,
+    "height": 199,
+    "channels": 4,
+    "sha256": "a70ec08faac9b60e9f3ceb9063c5604e94b683f73b96cc8a3b3bba752fc72803"
+  },
+  {
+    "name": "Object_map08_04.png",
+    "width": 49,
+    "height": 37,
+    "channels": 4,
+    "sha256": "9a8da67092953411c20404219580421f2ca6441d8955e937f3565af904b41f9a"
+  },
+  {
+    "name": "Object_map08_05.png",
+    "width": 29,
+    "height": 27,
+    "channels": 4,
+    "sha256": "e997bb04a50e46b5698fd17afe34d941029100b37fa8c88cb67f75cf5d885b40"
+  },
+  {
+    "name": "Object_map08_06.png",
+    "width": 73,
+    "height": 102,
+    "channels": 4,
+    "sha256": "491e40e7c3324d8a874f4ed548210def620448e883638d098aa4cc49fcba7c7f"
+  },
+  {
+    "name": "Object_map08_07.png",
+    "width": 224,
+    "height": 93,
+    "channels": 4,
+    "sha256": "fd6660108cdd7d37f38a056c4e67aeeb5e5ef380329bc573a5319e67012a6a84"
+  },
+  {
+    "name": "Object_map08_08.png",
+    "width": 108,
+    "height": 183,
+    "channels": 4,
+    "sha256": "81f731ec59e8fe5e6b8f59cc41b64b878a2d2dfbf1b6586704c55baad9fa1309"
+  },
+  {
+    "name": "Object_map08_09.png",
+    "width": 61,
+    "height": 41,
+    "channels": 4,
+    "sha256": "fa274a395a68a5395d0de11c60183e6ec421c9e600c42e382a1cc8a9d0ed240b"
+  },
+  {
+    "name": "Object_map08_10.png",
+    "width": 62,
+    "height": 35,
+    "channels": 4,
+    "sha256": "7d04713b5c294adc9dac1d7687d924db26366f05b62cc8818ba5d47a89a140d8"
+  },
+  {
+    "name": "Object_map08_11.png",
+    "width": 189,
+    "height": 57,
+    "channels": 4,
+    "sha256": "c2cd10483c9220dc65d432759093255c0e2048d67f988e633210d967cbbb63b8"
+  },
+  {
+    "name": "Object_map08_12.png",
+    "width": 80,
+    "height": 59,
+    "channels": 4,
+    "sha256": "ccc46529713f2e19d5b6ebfabe16e400c8a0a9422fd34eee8d9eacc3d110aa7b"
+  },
+  {
+    "name": "Object_map08_13.png",
+    "width": 62,
+    "height": 48,
+    "channels": 4,
+    "sha256": "77aaed5ec9a51de5b332cd12c754d95e7afe3367ae28c3f4c31d308870478f08"
+  },
+  {
+    "name": "Object_map08_14.png",
+    "width": 91,
+    "height": 150,
+    "channels": 4,
+    "sha256": "75f5e42a31216c48f0ccd31a22dbd194210e874467d772fc53f78c9455c5ebc2"
+  },
+  {
+    "name": "Object_map08_15.png",
+    "width": 67,
+    "height": 37,
+    "channels": 4,
+    "sha256": "03e1eb85ae6c71242c533794b1bdc4f944c4057302cf93637501720448414e1a"
+  },
+  {
+    "name": "Object_map08_16.png",
+    "width": 73,
+    "height": 29,
+    "channels": 4,
+    "sha256": "5a435ec18d137ed8e8a742ddc7be7eada2fc17df4680039477dedae59d140976"
+  },
+  {
+    "name": "Object_map08_17.png",
+    "width": 88,
+    "height": 58,
+    "channels": 4,
+    "sha256": "bf918f460c9c75dda5a49ebec08aac96a8c5b9649fb82709992f54e999ce5bea"
+  },
+  {
+    "name": "Object_map08_18.png",
+    "width": 55,
+    "height": 58,
+    "channels": 4,
+    "sha256": "cdb927e4655dc414f59024e5f98713e963f354374b077858c8415477471b5ddd"
+  },
+  {
+    "name": "Object_map08_19.png",
+    "width": 102,
+    "height": 114,
+    "channels": 4,
+    "sha256": "ebe2e8fad19e54de247b126e8dc39081d8b356a4aa0daa401ab58e16436fb5b2"
+  },
+  {
+    "name": "Object_map08_20.png",
+    "width": 53,
+    "height": 27,
+    "channels": 4,
+    "sha256": "d41758229bba66d9d989afab4dd34e2d5ef0e7976cddc382cb81d179ea539bcc"
+  },
+  {
+    "name": "Object_map09_11.png",
+    "width": 49,
+    "height": 75,
+    "channels": 4,
+    "sha256": "a612f09fff4e7664f0b90b1139b8443a3ddca619b7e9e8de401a35b63ab1cb2d"
+  },
+  {
+    "name": "Object_map09_16.png",
+    "width": 26,
+    "height": 74,
+    "channels": 4,
+    "sha256": "9551307294c7491c048c9a3e71449bd8e4b152f38c85bc31fdaf46211b083145"
+  },
+  {
+    "name": "Object_map11_01.png",
+    "width": 67,
+    "height": 173,
+    "channels": 4,
+    "sha256": "2687961c37cb657a5b8ec12b08844acdd0535493765df363a2dc4f64b304a473"
+  },
+  {
+    "name": "Object_map11_02.png",
+    "width": 160,
+    "height": 120,
+    "channels": 4,
+    "sha256": "ec07e7308ac342d6988442854aca14aa6eea09df0ae000f36e460cbece3db325"
+  },
+  {
+    "name": "Object_map11_03.png",
+    "width": 32,
+    "height": 28,
+    "channels": 4,
+    "sha256": "18d890cba0d25dfd58c2a306d6e0723f816c500a9f204eef0344ac514fc267b9"
+  },
+  {
+    "name": "Object_map11_04.png",
+    "width": 20,
+    "height": 26,
+    "channels": 4,
+    "sha256": "ad4d494ad5e9b823612c2be688f228fab59f525bd66735c6f4c67188585f8da0"
+  },
+  {
+    "name": "Object_map11_05.png",
+    "width": 40,
+    "height": 62,
+    "channels": 4,
+    "sha256": "192096e04c0b5daa6452658ea7be90527229449102a2676d26baf544a2d22da1"
+  },
+  {
+    "name": "Object_map11_06.png",
+    "width": 57,
+    "height": 14,
+    "channels": 4,
+    "sha256": "332467934e2caebd614df8010d774ae43ec414d78e8de5082aca66de029cbfeb"
+  },
+  {
+    "name": "Object_map11_07.png",
+    "width": 52,
+    "height": 32,
+    "channels": 4,
+    "sha256": "66afdf672e0cd6567ea395993bb74ae2e1fedc862e4a1efa7d54ac1b17f8f569"
+  },
+  {
+    "name": "Object_map11_08.png",
+    "width": 44,
+    "height": 72,
+    "channels": 4,
+    "sha256": "ab37bf65300ad0446f06ff0504d56f85f1b7de95dd216baeff803621df20674a"
+  },
+  {
+    "name": "Object_map11_09.png",
+    "width": 71,
+    "height": 54,
+    "channels": 4,
+    "sha256": "f0794422ab1ed1a0630d28a862612586d14a969b6c26b2433ed3f7c6529df2e4"
+  },
+  {
+    "name": "Object_map11_10.png",
+    "width": 23,
+    "height": 28,
+    "channels": 4,
+    "sha256": "1c830337528d29bebfae7eb285738c888ea724216012d573666b4d82d2b90e4a"
+  },
+  {
+    "name": "Object_map11_11.png",
+    "width": 85,
+    "height": 63,
+    "channels": 4,
+    "sha256": "47411a52575c14a1900a66717a2bbf8f9332b3a320a5cd7d471eea5fd8923ac1"
+  },
+  {
+    "name": "Object_map11_12.png",
+    "width": 100,
+    "height": 176,
+    "channels": 4,
+    "sha256": "6226e400acf7f419742b2bd67f3cec5b127b9f957a862a8bbd41f202c2aa2a14"
+  },
+  {
+    "name": "Object_map12_s1_01.png",
+    "width": 343,
+    "height": 175,
+    "channels": 4,
+    "sha256": "057383817aff563e11127d2ec86e9c24150fe1ac4768050a4a760689b58498da"
+  },
+  {
+    "name": "Object_map12_s1_02.png",
+    "width": 200,
+    "height": 237,
+    "channels": 4,
+    "sha256": "324fe86fc80d08b574607f79fe32ec4ae3046722465b8124522f43fb890c720a"
+  },
+  {
+    "name": "Object_map12_s1_03.png",
+    "width": 232,
+    "height": 255,
+    "channels": 4,
+    "sha256": "50da344c202faa74f95de00f191d8116aa67a7dad2da5aefc7dc06ae72cdfc3c"
+  },
+  {
+    "name": "Object_map12_s1_04.png",
+    "width": 416,
+    "height": 206,
+    "channels": 4,
+    "sha256": "63bab61b16af6710a74edda8539d95a2a2c3c3c6661fcc82832e5ae02803cb0f"
+  },
+  {
+    "name": "Object_map12_s1_05.png",
+    "width": 306,
+    "height": 256,
+    "channels": 4,
+    "sha256": "2713ed3c13b0340599f241f3a53a90f31d3e0173802aac5495eb5ab2b83ff4b9"
+  },
+  {
+    "name": "Object_map12_s1_06.png",
+    "width": 512,
+    "height": 256,
+    "channels": 4,
+    "sha256": "e2642de1e9a1a656bf0bcf67ad03233babb0a7bed152f6ace5682fce2c4744bf"
+  },
+  {
+    "name": "Object_map12_s1_06a.png",
+    "width": 94,
+    "height": 158,
+    "channels": 4,
+    "sha256": "dceca6b819b679b6c8ab7b6e3b8605464b69381ab877099aaf85b14fcbab9c7b"
+  },
+  {
+    "name": "Object_map12_s1_07.png",
+    "width": 128,
+    "height": 59,
+    "channels": 4,
+    "sha256": "673de6223e899c9342bcf216c63125e19162e096663fab58348bb721813cf0ea"
+  },
+  {
+    "name": "Object_map12_s1_08.png",
+    "width": 125,
+    "height": 60,
+    "channels": 4,
+    "sha256": "e697d1a3a24b091974fd016eb824412fdae6c12ffcc4cc39c3f1a92e76d04e1f"
+  },
+  {
+    "name": "Object_map12_s1_09.png",
+    "width": 193,
+    "height": 31,
+    "channels": 4,
+    "sha256": "7bd44765e36663e6c5534e0371f34aa76cc08c52e80413dbf8e35ccd1146e2fe"
+  },
+  {
+    "name": "Object_map12_s1_10.png",
+    "width": 369,
+    "height": 31,
+    "channels": 4,
+    "sha256": "2a572da13194a3b2e207eaa6bddebcccc78c2b132564026031ae7350d6fce19f"
+  },
+  {
+    "name": "Object_map12_s1_11.png",
+    "width": 187,
+    "height": 315,
+    "channels": 4,
+    "sha256": "21e2f0b24f9ce7ea6069452e157a5c0f3e33185046b90995b79b8194b5eb111b"
+  },
+  {
+    "name": "Object_map12_s2_01.png",
+    "width": 303,
+    "height": 421,
+    "channels": 4,
+    "sha256": "785c681fae6cdd9516b76b3bad9d82a4df5ebbd28b1fdc1f62de99448c53b8ca"
+  },
+  {
+    "name": "Object_map12_s2_02.png",
+    "width": 328,
+    "height": 296,
+    "channels": 4,
+    "sha256": "5c1fb56bd08cde72a78613db9bf9850faeb020040353255ed1fc0ebeb77cd6b5"
+  },
+  {
+    "name": "Object_map12_s2_03.png",
+    "width": 244,
+    "height": 395,
+    "channels": 4,
+    "sha256": "9e17ef06e20e50530348ecccc55beaea48fb55eb63be1cc32bbb861af4a748e2"
+  },
+  {
+    "name": "Object_map12_s2_04.png",
+    "width": 127,
+    "height": 61,
+    "channels": 4,
+    "sha256": "9c89641be5181288d8b430f849f050379ba74e7106cf7bc1578af3a2cbe8928a"
+  },
+  {
+    "name": "Object_map12_s2_05.png",
+    "width": 125,
+    "height": 59,
+    "channels": 4,
+    "sha256": "8a7d893343b5fc6244522795d0852b4b370e2899807c8bcd8870b1dbfac4c5bc"
+  },
+  {
+    "name": "Object_map12_s2_06.png",
+    "width": 193,
+    "height": 29,
+    "channels": 4,
+    "sha256": "eb8bbb55180eac5db70604c48d3eee812c9c0edadd1a9aaf29281e5627e00c47"
+  },
+  {
+    "name": "Object_map12_s2_07.png",
+    "width": 369,
+    "height": 32,
+    "channels": 4,
+    "sha256": "0b3e039ccd297386a7bf83470f5dfd4f507f4882a06b03b6e6bf4dd241f1f10c"
+  },
+  {
+    "name": "Object_map12_s2_08.png",
+    "width": 212,
+    "height": 64,
+    "channels": 4,
+    "sha256": "1212ff5ed9eb48313fdd23e537bf0561f15c310e673d2108332f6f1f20219961"
+  },
+  {
+    "name": "Object_map12_s3_01.png",
+    "width": 512,
+    "height": 256,
+    "channels": 4,
+    "sha256": "5f0e47fef4024001d306506865ba7d69ed5472af2de743648259ecffa5ea1c28"
+  },
+  {
+    "name": "Object_map12_s3_01a.png",
+    "width": 445,
+    "height": 254,
+    "channels": 4,
+    "sha256": "9bd407e1de7a6a666bcb5750b77f5f9cfb2b1e5be7b5f000f0c451a24683d380"
+  },
+  {
+    "name": "Object_map12_s3_02.png",
+    "width": 512,
+    "height": 256,
+    "channels": 4,
+    "sha256": "63e0fac0042d5ce3b79883ab89ba9fb82973fdcb3e593fc8e16b9986e3493080"
+  },
+  {
+    "name": "Object_map12_s3_02a.png",
+    "width": 238,
+    "height": 256,
+    "channels": 4,
+    "sha256": "dc47153dfd8bc0562c54c305ea6084bc02cd33adcf15d29bb2c7df48a1bbc3b5"
+  },
+  {
+    "name": "Object_map12_s3_03.png",
+    "width": 408,
+    "height": 305,
+    "channels": 4,
+    "sha256": "5dab9654007c4564b0d44bfa317d5d7c0b5a51bf2e2b74f5b6e434c5fcb56e90"
+  },
+  {
+    "name": "Object_map12_s3_04.png",
+    "width": 326,
+    "height": 84,
+    "channels": 4,
+    "sha256": "3acf29c9a204e46cd1ef4508bb8b05b941573f870e2697a7e25fd1d151c5b3f5"
+  },
+  {
+    "name": "Object_map12_s3_05.png",
+    "width": 512,
+    "height": 128,
+    "channels": 4,
+    "sha256": "a780dd7eadcd0c51e1dd789f0431241ee1fdde94d536c183c36cb24ddcbafa63"
+  },
+  {
+    "name": "Object_map12_s3_05a.png",
+    "width": 86,
+    "height": 85,
+    "channels": 4,
+    "sha256": "c546fc4d5b1679d0bd3e4b39df2a7ddfae6d715579f543a81587394174b3f187"
+  },
+  {
+    "name": "Object_map12_s3_06.png",
+    "width": 512,
+    "height": 256,
+    "channels": 4,
+    "sha256": "211241bec28ff35217d709e5fee85d6b94a62bc8ff6867a6e0998c482e27c930"
+  },
+  {
+    "name": "Object_map12_s3_06a.png",
+    "width": 366,
+    "height": 193,
+    "channels": 4,
+    "sha256": "39939d40257d54610b8a14a4eaf4ce50510cd82eb165394f06356409cce96854"
+  },
+  {
+    "name": "Object_map12_s3_07.png",
+    "width": 167,
+    "height": 301,
+    "channels": 4,
+    "sha256": "ee3b5823337c6ca37d7bf929e61070cadd4a99da3bf30897d7686bb43707fe34"
+  },
+  {
+    "name": "Object_map12_s3_08.png",
+    "width": 414,
+    "height": 384,
+    "channels": 4,
+    "sha256": "c93510a917540f54967c370efe7f11f0cf160adcdaee1ae367c8453a6170f69f"
+  },
+  {
+    "name": "Object_map12_s3_09.png",
+    "width": 206,
+    "height": 391,
+    "channels": 4,
+    "sha256": "060fbcd5ec7b5e8207e35dccba94313fb3eb7b06f689239d7f99b72b3721cf7c"
+  },
+  {
+    "name": "Object_map12_s3_10.png",
+    "width": 109,
+    "height": 384,
+    "channels": 4,
+    "sha256": "cf1df057e5d1201e7b3801aa28ed1404b3940f3baa13640192a685011482a149"
+  },
+  {
+    "name": "Object_map12_s4_01.png",
+    "width": 215,
+    "height": 123,
+    "channels": 4,
+    "sha256": "3528f36403470d54705b5e85c5d5f3f674fbb9c6b0c8e7d30ed6cabed2f71267"
+  },
+  {
+    "name": "Object_map12_s4_02.png",
+    "width": 212,
+    "height": 55,
+    "channels": 4,
+    "sha256": "183d8c1a2a1355a466b6f3d4ba538b11b53a2e740859c10530ca9ac914098e36"
+  },
+  {
+    "name": "Object_map12_s4_03.png",
+    "width": 512,
+    "height": 128,
+    "channels": 4,
+    "sha256": "d6abb66f3dbd5696bfa5a26de27e2ff7d14911c7713cd0318af3c2e856c37e22"
+  },
+  {
+    "name": "Object_map12_s4_03a.png",
+    "width": 120,
+    "height": 125,
+    "channels": 4,
+    "sha256": "26980d0c4a29b637fe36175e374ef85b6730d6ad2f5358dba5b7909e3209a0b4"
+  },
+  {
+    "name": "Object_map13_s1_01.png",
+    "width": 158,
+    "height": 28,
+    "channels": 4,
+    "sha256": "0b7515642ff2e365cd656fa343cd9f8998db3a55759b584a39cae6bc4d499a00"
+  },
+  {
+    "name": "Object_map13_s1_02.png",
+    "width": 151,
+    "height": 33,
+    "channels": 4,
+    "sha256": "866787a702ca370939acd08c5d718b9053afeab8608581d471e341db5ddf46fd"
+  },
+  {
+    "name": "Object_map13_s1_03.png",
+    "width": 51,
+    "height": 30,
+    "channels": 4,
+    "sha256": "df7ff223e1bd9a07d5c599eb820a3a3cf27f389431d1966445edf30577807e9e"
+  },
+  {
+    "name": "Object_map13_s1_04.png",
+    "width": 54,
+    "height": 32,
+    "channels": 4,
+    "sha256": "5dfcfc600d10b79c5c27a43bc2f3865007f2e6efbde154fa2f39eb126baffebc"
+  },
+  {
+    "name": "Object_map13_s1_05.png",
+    "width": 57,
+    "height": 20,
+    "channels": 4,
+    "sha256": "39e44d6f5be9d9debdbc4ecafa743b4b024e0b93ae25ec4ac836de78923df21c"
+  },
+  {
+    "name": "Object_map13_s1_06.png",
+    "width": 98,
+    "height": 24,
+    "channels": 4,
+    "sha256": "55071e0da0ce04df2cb32cc938884b4561dfb9cb7e487d479101a09cda350932"
+  },
+  {
+    "name": "Object_map13_s1_07.png",
+    "width": 103,
+    "height": 231,
+    "channels": 4,
+    "sha256": "3703b6cdc1b837b2bab2a54b2d9fc76d48c09077f7c9dedb1aca698425b3333a"
+  },
+  {
+    "name": "Object_map13_s1_08.png",
+    "width": 194,
+    "height": 233,
+    "channels": 4,
+    "sha256": "654c9233f8dcd8b99913839a51aab59865e0ac34962f6a30e82561c589f6bcd5"
+  },
+  {
+    "name": "Object_map13_s1_09.png",
+    "width": 493,
+    "height": 177,
+    "channels": 4,
+    "sha256": "43850b7b5cb96bfd463bc6e9ad34ab9f7b5a9df8bd769c80216ddf4fb5df934a"
+  },
+  {
+    "name": "Object_map13_s1_10.png",
+    "width": 251,
+    "height": 241,
+    "channels": 4,
+    "sha256": "dac7635d10a23fbce2b299bc14fbc9e3894405a247f799de77316dd488a5bf19"
+  },
+  {
+    "name": "Object_map13_s2_01.png",
+    "width": 56,
+    "height": 20,
+    "channels": 4,
+    "sha256": "9aae0cee2ccda863fc7d7f7158b425c1d390da40471c6cb1670684354fc578fc"
+  },
+  {
+    "name": "Object_map13_s2_02.png",
+    "width": 123,
+    "height": 23,
+    "channels": 4,
+    "sha256": "0e274fc8e79be2c5e9ae1faabfa2e3ff01551c38d17355d6e16c29d09dafa087"
+  },
+  {
+    "name": "Object_map13_s2_03.png",
+    "width": 97,
+    "height": 24,
+    "channels": 4,
+    "sha256": "953250391d65773afcde3159ceb0e36196a3037a9bffbc79d2c832d87e43baae"
+  },
+  {
+    "name": "Object_map13_s2_04.png",
+    "width": 158,
+    "height": 27,
+    "channels": 4,
+    "sha256": "bbc5928bf0187487618ca7cb56a02e22d2e6865033c64d80885ae0636d7d2c49"
+  },
+  {
+    "name": "Object_map13_s2_05.png",
+    "width": 157,
+    "height": 30,
+    "channels": 4,
+    "sha256": "679eee1ffd4a42df5a5e0a19ae224e569f8f627f3460be816234e89d2c8c5935"
+  },
+  {
+    "name": "Object_map13_s2_06.png",
+    "width": 54,
+    "height": 32,
+    "channels": 4,
+    "sha256": "5f036b78aa541956d547c4c26e41576385a5a5ecda17fd5fd5ad60b906d772f8"
+  },
+  {
+    "name": "Object_map13_s2_07.png",
+    "width": 51,
+    "height": 31,
+    "channels": 4,
+    "sha256": "1aa894c305881b5b46665f719398c5d424f0a18250d5c7a991776b76a0a0974e"
+  },
+  {
+    "name": "Object_map13_s2_08.png",
+    "width": 114,
+    "height": 48,
+    "channels": 4,
+    "sha256": "3b2d19384e6595657b8de603c64dba4a4742b45f3fdcd474219c4ff88028edd0"
+  },
+  {
+    "name": "Object_map13_s2_09.png",
+    "width": 56,
+    "height": 20,
+    "channels": 4,
+    "sha256": "a172266d0b3d057ddf94e69f96f6fda01b751fe813de00ae15b0c19b922d7239"
+  },
+  {
+    "name": "Object_map13_s2_10.png",
+    "width": 404,
+    "height": 207,
+    "channels": 4,
+    "sha256": "a23f43433578670b5d413301130f29bf0d717b998d830caa8d92f767efafb202"
+  },
+  {
+    "name": "Object_map13_s2_11.png",
+    "width": 505,
+    "height": 193,
+    "channels": 4,
+    "sha256": "f4b0227eb5dc9c199780dc1f31a5048121768acde2cba0ee52654e02610df346"
+  },
+  {
+    "name": "Object_map13_s2_12.png",
+    "width": 171,
+    "height": 227,
+    "channels": 4,
+    "sha256": "d957c45575acb487f13a513ed8002a36b973712f5cff5b5b2b66c5ce4d2245e2"
+  },
+  {
+    "name": "Object_map13_s2_13.png",
+    "width": 191,
+    "height": 157,
+    "channels": 4,
+    "sha256": "4943ccabbf6dac81391b8d45bdf3533357fc3777c02f4e8817edeb8955acae78"
+  },
+  {
+    "name": "Object_map13_s2_14.png",
+    "width": 198,
+    "height": 243,
+    "channels": 4,
+    "sha256": "b3a8818ac4bffa9ec0c3c2ef38033006709a0e443168bb18ccf37069976c2ae4"
+  },
+  {
+    "name": "Object_map13_s2_15.png",
+    "width": 171,
+    "height": 216,
+    "channels": 4,
+    "sha256": "9e2407b382f45814d742473fc26324e7a5a8955ce7476483da6a7103d4b6bc46"
+  },
+  {
+    "name": "Object_map13_s3_01.png",
+    "width": 248,
+    "height": 247,
+    "channels": 4,
+    "sha256": "720e37817585643205ba374d2f2b3f5b5b4cd7eab3122740c10516267877e9a2"
+  },
+  {
+    "name": "Object_map13_s3_02.png",
+    "width": 199,
+    "height": 246,
+    "channels": 4,
+    "sha256": "13ea7da6358bb4091d20dd194067e160583cab3139caa56e70773e3a3b3ed46d"
+  },
+  {
+    "name": "Object_map13_s3_03.png",
+    "width": 199,
+    "height": 247,
+    "channels": 4,
+    "sha256": "04185b95676bb139f53b59b33fede3218d9dc848097c912437686063c28270ee"
+  },
+  {
+    "name": "Object_map13_s3_04.png",
+    "width": 191,
+    "height": 206,
+    "channels": 4,
+    "sha256": "794fafc27c5d18fd44133915a6b258181aab477dfa37dbd71cb5eb172d379aa6"
+  },
+  {
+    "name": "Object_map13_s3_05.png",
+    "width": 175,
+    "height": 203,
+    "channels": 4,
+    "sha256": "978717b60b02f2fc42e59fe71e92f3fe8e62f5527f6365278e88c90691debbb7"
+  },
+  {
+    "name": "Object_map13_s4_01.png",
+    "width": 253,
+    "height": 231,
+    "channels": 4,
+    "sha256": "2eb77f309b5d5393199837622b38e095ecb05315a9913175e313686a6de72748"
+  },
+  {
+    "name": "Object_map13_s4_02.png",
+    "width": 219,
+    "height": 215,
+    "channels": 4,
+    "sha256": "6448e4c1244715384747d1a2a063f8ed79831ecd37dd57af2134dd6ba215e054"
+  },
+  {
+    "name": "Object_map13_s4_03.png",
+    "width": 226,
+    "height": 222,
+    "channels": 4,
+    "sha256": "1893cbcc884c0f0780cd0c7210cab9973e2094c2265503f847aa081445107235"
+  },
+  {
+    "name": "Object_map13_s5_01.png",
+    "width": 247,
+    "height": 196,
+    "channels": 4,
+    "sha256": "1b604e14ed484e116d7ed5fb82307fa68e77534c4fb5d656ed783bc57ff7f404"
+  },
+  {
+    "name": "Object_map13_s5_02.png",
+    "width": 236,
+    "height": 220,
+    "channels": 4,
+    "sha256": "56f5b2c01204e84c328507d34ef9f6a5e6141366fd09739c144dc9b8041fb696"
+  },
+  {
+    "name": "Object_map13_s6_01.png",
+    "width": 221,
+    "height": 176,
+    "channels": 4,
+    "sha256": "27199ab83940d610b76d1ba8858768bb2a26b30d48fd1b8e50ee9fda473a918c"
+  },
+  {
+    "name": "Object_map13_s6_02.png",
+    "width": 128,
+    "height": 27,
+    "channels": 4,
+    "sha256": "3e26c4fd945de84037be865be5036ca4112876b7469d57efc1ec79f923d344e9"
+  },
+  {
+    "name": "Object_map13_s6_03.png",
+    "width": 155,
+    "height": 23,
+    "channels": 4,
+    "sha256": "27aea972f272265535a69ed08ad4595d831a549d6280d319406b3fcfac554bce"
+  },
+  {
+    "name": "Object_map13_s6_04.png",
+    "width": 102,
+    "height": 43,
+    "channels": 4,
+    "sha256": "0a49b48302dd4dcf0f750d86c0a13c1470512987d21c9008803fd835a0d568c2"
+  },
+  {
+    "name": "P_Body_01.png",
+    "width": 128,
+    "height": 28,
+    "channels": 4,
+    "sha256": "1897e5b5653327753d2bad8f6500b2d579c8237fcea2a1835cf922e904fd8714"
+  },
+  {
+    "name": "P_Body_02.png",
+    "width": 128,
+    "height": 28,
+    "channels": 4,
+    "sha256": "114f88a24c7327cac9620a93340d30c2969e23f40fefd10054a2d20afddf8882"
+  },
+  {
+    "name": "P_Body_03.png",
+    "width": 128,
+    "height": 28,
+    "channels": 4,
+    "sha256": "f5f2471b3fdec40c9b17c8d603eb15514293d93e521f55e72dc3d96db41023a3"
+  },
+  {
+    "name": "P_Body_04.png",
+    "width": 136,
+    "height": 35,
+    "channels": 4,
+    "sha256": "70d2660db1e330cd58784d1abd96aca54f57126a28b89561df904a049c557585"
+  },
+  {
+    "name": "P_Body_05.png",
+    "width": 140,
+    "height": 35,
+    "channels": 4,
+    "sha256": "164e014662034893fb21ad134a08733c50c93a457f429c558f7c12e201332727"
+  },
+  {
+    "name": "P_Body_06.png",
+    "width": 154,
+    "height": 34,
+    "channels": 4,
+    "sha256": "3df94656e36855fdb77a827e2a7607083163b7a4603e46be3338d384519f9ddf"
+  },
+  {
+    "name": "P_Body_07.png",
+    "width": 164,
+    "height": 41,
+    "channels": 4,
+    "sha256": "60675fc1e855bee2debc688d1a275b82bf26e4542ffed727d081a676ddc0fc4b"
+  },
+  {
+    "name": "P_Top_01.png",
+    "width": 45,
+    "height": 28,
+    "channels": 4,
+    "sha256": "f44d1918fd201d83dec47d10c9f107456a73016c57c1470e50d79c53fcf8a5b1"
+  },
+  {
+    "name": "P_Top_02.png",
+    "width": 51,
+    "height": 30,
+    "channels": 4,
+    "sha256": "68cb98047505d5d0b971f35b6e70e8d813426ed5042ebcfdf2246e4d9c338f3a"
+  },
+  {
+    "name": "P_Top_03.png",
+    "width": 56,
+    "height": 30,
+    "channels": 4,
+    "sha256": "e6f0a234cb032ba05e40a1dc4b5f1ac2a2bdc50cddb487a619f3f5ca593e3f3f"
+  },
+  {
+    "name": "P_Top_04.png",
+    "width": 55,
+    "height": 33,
+    "channels": 4,
+    "sha256": "15d249578998918e346394d78584ac202e7b7a10d5040911dc47583cdd560bc1"
+  },
+  {
+    "name": "P_Top_05.png",
+    "width": 57,
+    "height": 38,
+    "channels": 4,
+    "sha256": "ba061af6121f249e9a332db4279a64d724361cc6febc3e3457671a37384d7bfd"
+  },
+  {
+    "name": "P_Top_06.png",
+    "width": 55,
+    "height": 35,
+    "channels": 4,
+    "sha256": "a78dd24bcac8c544be51a5a146b2608044769b47a3b0be4651404ee038f0f80a"
+  },
+  {
+    "name": "P_Top_07.png",
+    "width": 55,
+    "height": 39,
+    "channels": 4,
+    "sha256": "92401bd186f7a518018e31e0d3944820f20f95f02b8e3addbcc1dc782aa64602"
+  },
+  {
+    "name": "P_Weapon_01.png",
+    "width": 41,
+    "height": 12,
+    "channels": 4,
+    "sha256": "2592cdf4d1ee48a3674a916d90d244f81d46d1789b07ec8b3f36c7f42873b5be"
+  },
+  {
+    "name": "P_Weapon_02.png",
+    "width": 34,
+    "height": 9,
+    "channels": 4,
+    "sha256": "814a2af6d22488e8adbc51f4d1b9357953f88477c27ebd0fd4fbafcda52e4e40"
+  },
+  {
+    "name": "P_Weapon_03.png",
+    "width": 34,
+    "height": 9,
+    "channels": 4,
+    "sha256": "814a2af6d22488e8adbc51f4d1b9357953f88477c27ebd0fd4fbafcda52e4e40"
+  },
+  {
+    "name": "P_Wpn_Canon.png",
+    "width": 38,
+    "height": 9,
+    "channels": 4,
+    "sha256": "28d75c0f6bc3d065e95d82899582148b1acd2cdf2bd115a6197efd74f68f5349"
+  },
+  {
+    "name": "P_Wpn_Canon01.png",
+    "width": 38,
+    "height": 9,
+    "channels": 4,
+    "sha256": "28d75c0f6bc3d065e95d82899582148b1acd2cdf2bd115a6197efd74f68f5349"
+  },
+  {
+    "name": "P_Wpn_Canon02.png",
+    "width": 38,
+    "height": 9,
+    "channels": 4,
+    "sha256": "28d75c0f6bc3d065e95d82899582148b1acd2cdf2bd115a6197efd74f68f5349"
+  },
+  {
+    "name": "P_Wpn_Canon03.png",
+    "width": 38,
+    "height": 9,
+    "channels": 4,
+    "sha256": "28d75c0f6bc3d065e95d82899582148b1acd2cdf2bd115a6197efd74f68f5349"
+  },
+  {
+    "name": "P_Wpn_ElShock.png",
+    "width": 39,
+    "height": 17,
+    "channels": 4,
+    "sha256": "025958a8024a13ed0b32538293a2efc3a92dc13da5f4e8d45046d69301ec82d4"
+  },
+  {
+    "name": "P_Wpn_Gun.png",
+    "width": 41,
+    "height": 11,
+    "channels": 4,
+    "sha256": "bb985bf334f5e93f7fd7948fe672f39677e583365f04985dff3c4105ace529b6"
+  },
+  {
+    "name": "P_Wpn_Gun01.png",
+    "width": 28,
+    "height": 9,
+    "channels": 4,
+    "sha256": "6f1389339b75e2c75503db34d2f28cc672ca620539e57a70ce8ae3dcf3e86931"
+  },
+  {
+    "name": "P_Wpn_Gun02.png",
+    "width": 33,
+    "height": 11,
+    "channels": 4,
+    "sha256": "bc23c5a2b0687131c859d4449248497db54f045ee8257e53b56663d630184f98"
+  },
+  {
+    "name": "P_Wpn_Gun03.png",
+    "width": 38,
+    "height": 12,
+    "channels": 4,
+    "sha256": "5952b926dcf156cff5ef9559662e7031aea97d2600650262ec8ba8bcd5b0b151"
+  },
+  {
+    "name": "P_Wpn_Gun04.png",
+    "width": 41,
+    "height": 12,
+    "channels": 4,
+    "sha256": "f0e62ccba58b383c4666f0163e52e67845cd458011b7eaf8c2c4d6360b25244f"
+  },
+  {
+    "name": "P_Wpn_Gun05.png",
+    "width": 43,
+    "height": 14,
+    "channels": 4,
+    "sha256": "36072417f9336cb136092cfcd79623f5cc36c75397cde4ba1d7cc447f9a53f18"
+  },
+  {
+    "name": "P_Wpn_Gun06.png",
+    "width": 44,
+    "height": 16,
+    "channels": 4,
+    "sha256": "c5ff415dbc0ec48e56cd26cf7cd30cdf3e3117c9bb895af85663f84500b770c5"
+  },
+  {
+    "name": "P_Wpn_Gun07.png",
+    "width": 52,
+    "height": 19,
+    "channels": 4,
+    "sha256": "bafe69d97506b98af5b90b41f7a5772d309be5088db6ec8d3920463d2f4c6ddc"
+  },
+  {
+    "name": "P_Wpn_Laser.png",
+    "width": 45,
+    "height": 16,
+    "channels": 4,
+    "sha256": "b2b927156f253d8b3597fc9cfde1a73c6868a794f2ea7cafab4fd642868b96ee"
+  },
+  {
+    "name": "P_Wpn_Missile.png",
+    "width": 38,
+    "height": 15,
+    "channels": 4,
+    "sha256": "007cccecec19fd42efa2aaa3ba9708495236bb1de24900725d4ae60349cd3e97"
+  },
+  {
+    "name": "P_Wpn_Missile01.png",
+    "width": 38,
+    "height": 15,
+    "channels": 4,
+    "sha256": "007cccecec19fd42efa2aaa3ba9708495236bb1de24900725d4ae60349cd3e97"
+  },
+  {
+    "name": "P_Wpn_Missile02.png",
+    "width": 38,
+    "height": 15,
+    "channels": 4,
+    "sha256": "007cccecec19fd42efa2aaa3ba9708495236bb1de24900725d4ae60349cd3e97"
+  },
+  {
+    "name": "P_Wpn_Missile03.png",
+    "width": 38,
+    "height": 15,
+    "channels": 4,
+    "sha256": "007cccecec19fd42efa2aaa3ba9708495236bb1de24900725d4ae60349cd3e97"
+  },
+  {
+    "name": "P_Wpn_NuBomb.png",
+    "width": 24,
+    "height": 13,
+    "channels": 4,
+    "sha256": "c509bb017a8b6fd31d3c2d14517faf2569ef8a37c1dfdcc629fff3814344430e"
+  },
+  {
+    "name": "P_Wpn_Rader.png",
+    "width": 24,
+    "height": 13,
+    "channels": 4,
+    "sha256": "c509bb017a8b6fd31d3c2d14517faf2569ef8a37c1dfdcc629fff3814344430e"
+  },
+  {
+    "name": "P_Wpn_RaderBomb.png",
+    "width": 24,
+    "height": 13,
+    "channels": 4,
+    "sha256": "c509bb017a8b6fd31d3c2d14517faf2569ef8a37c1dfdcc629fff3814344430e"
+  },
+  {
+    "name": "P_Wpn_RaderLsr.png",
+    "width": 24,
+    "height": 13,
+    "channels": 4,
+    "sha256": "c509bb017a8b6fd31d3c2d14517faf2569ef8a37c1dfdcc629fff3814344430e"
+  },
+  {
+    "name": "P_Wpn_RaderMsl.png",
+    "width": 24,
+    "height": 13,
+    "channels": 4,
+    "sha256": "c509bb017a8b6fd31d3c2d14517faf2569ef8a37c1dfdcc629fff3814344430e"
+  },
+  {
+    "name": "P_Wpn_Shotgun.png",
+    "width": 39,
+    "height": 13,
+    "channels": 4,
+    "sha256": "b1ee6e3acbc12e0e7944e1e874807b03d7780e2755e2e3ea63e607a55c62b1cc"
+  },
+  {
+    "name": "P_Wpn_Shotgun01.png",
+    "width": 39,
+    "height": 13,
+    "channels": 4,
+    "sha256": "b1ee6e3acbc12e0e7944e1e874807b03d7780e2755e2e3ea63e607a55c62b1cc"
+  },
+  {
+    "name": "P_Wpn_Shotgun02.png",
+    "width": 39,
+    "height": 13,
+    "channels": 4,
+    "sha256": "b1ee6e3acbc12e0e7944e1e874807b03d7780e2755e2e3ea63e607a55c62b1cc"
+  },
+  {
+    "name": "ResultTypo.png",
+    "width": 512,
+    "height": 250,
+    "channels": 4,
+    "sha256": "817e5c89b48599bd339e2d18ad6b24f8383434b54105732e6244c62bf2f73298"
+  },
+  {
+    "name": "SelMission_BG.png",
+    "width": 480,
+    "height": 320,
+    "channels": 4,
+    "sha256": "2eb3b8cf6eb9685a4896bc70535f89d9aa375ce099eda04bf2fd8958e4d0687a"
+  },
+  {
+    "name": "SelMission_Btn_Dn.png",
+    "width": 55,
+    "height": 82,
+    "channels": 4,
+    "sha256": "7971a1c54132b9f3cf9962a7321397d83cc3824443089d7666da188689c2055e"
+  },
+  {
+    "name": "SelMission_Btn_Left.png",
+    "width": 59,
+    "height": 56,
+    "channels": 4,
+    "sha256": "16f4261f9ab770abdd7fa475732c5988e456ea1129577de0ab4d843f05f53689"
+  },
+  {
+    "name": "SelMission_Btn_Right.png",
+    "width": 59,
+    "height": 56,
+    "channels": 4,
+    "sha256": "018cba1e470daef94b0d9feef21d280a3c15120625e3d717de1945969eed67e2"
+  },
+  {
+    "name": "SelMission_Btn_Up.png",
+    "width": 55,
+    "height": 82,
+    "channels": 4,
+    "sha256": "ca228fb8ecaae1364215ac8d24094847d19d0c0fb6ba2a37952feec555c1d47c"
+  },
+  {
+    "name": "SelMission_Slot.png",
+    "width": 512,
+    "height": 256,
+    "channels": 4,
+    "sha256": "ab3ebaa416cbbff7d106759b02064846e4a5a31d0c7d9f85efb5b36b2f4880e1"
+  },
+  {
+    "name": "SelMission_Stage01.png",
+    "width": 32,
+    "height": 60,
+    "channels": 4,
+    "sha256": "54c3a6011e35c6936cc42f918aec996fbefe5cb24e67d86ccaa99d329282913c"
+  },
+  {
+    "name": "SelMission_Stage02.png",
+    "width": 32,
+    "height": 60,
+    "channels": 4,
+    "sha256": "171851c62bb7f3b32dde565d5e3b677e7b6b43cdf37f2573f51f32efec26f3c0"
+  },
+  {
+    "name": "SelMission_Stage03.png",
+    "width": 32,
+    "height": 60,
+    "channels": 4,
+    "sha256": "8ddb0b1c7e6e08aad8731844ac9470eaaf47cdbac0d6f5f84b4c29b3a7ca7e7c"
+  },
+  {
+    "name": "SelMission_Stage04.png",
+    "width": 32,
+    "height": 60,
+    "channels": 4,
+    "sha256": "e5e0aebdd4e846f5bd2b7e976821d8f67a4c1c17ec6810983f94d07f8549cecc"
+  },
+  {
+    "name": "SelMission_Stage05.png",
+    "width": 32,
+    "height": 60,
+    "channels": 4,
+    "sha256": "a30e77956fa4e8ff1b3833a460c2db186771fe22b30b7b754640672e891d33d2"
+  },
+  {
+    "name": "SelMission_Stage06.png",
+    "width": 32,
+    "height": 60,
+    "channels": 4,
+    "sha256": "2f7fea9501055e51c1dd4603f7f16eaaef68beeeac1dfa9558b9a3f23d3731b7"
+  },
+  {
+    "name": "SelMission_Text.png",
+    "width": 128,
+    "height": 128,
+    "channels": 4,
+    "sha256": "bb55c465a27a5dba0bc6d59865f044767c6f38e5f92f4b559fe6cb28d6d28faf"
+  },
+  {
+    "name": "SelMission_TileMission.png",
+    "width": 98,
+    "height": 195,
+    "channels": 4,
+    "sha256": "2c2bbea852358ca412b1100ee47b6bca29737f78eb3216cfec686e84f14c09a0"
+  },
+  {
+    "name": "SelMission_TileMission01.png",
+    "width": 98,
+    "height": 195,
+    "channels": 4,
+    "sha256": "a616a319b6cfdd2434c752cb58be63706e1268bf1e689b0d335f9ddf7501b075"
+  },
+  {
+    "name": "SelMission_TileMission02.png",
+    "width": 98,
+    "height": 195,
+    "channels": 4,
+    "sha256": "58a8524fa0c934a3e2b5bbfe774ab56acbd2e2ef2670e84f9ac747f977cf8ee4"
+  },
+  {
+    "name": "SelMission_TileMission03.png",
+    "width": 98,
+    "height": 195,
+    "channels": 4,
+    "sha256": "9faed80f6a8ab520132cd64e8b13a1a7012942e63ea8bc920aeede5514445067"
+  },
+  {
+    "name": "SelMission_TileMission04.png",
+    "width": 98,
+    "height": 195,
+    "channels": 4,
+    "sha256": "c50c178bcd316438d724e8545d1154d46a6cee66808b45d13a968b8d5c924b45"
+  },
+  {
+    "name": "SelMission_TileMission05.png",
+    "width": 98,
+    "height": 195,
+    "channels": 4,
+    "sha256": "c1f682ee801ea987f834a67a868d9a123ef69ff75df356778efadcb9d79bcb8e"
+  },
+  {
+    "name": "SelMission_TileMission06.png",
+    "width": 98,
+    "height": 195,
+    "channels": 4,
+    "sha256": "c85ace072de60b5f86bd5cc0bf9a1ca3b46adff95361224b9b0e247b6ff4f4eb"
+  },
+  {
+    "name": "SelMission_TileMission07.png",
+    "width": 98,
+    "height": 195,
+    "channels": 4,
+    "sha256": "adf178a0dea800ea161c8a767813fc8c5319026103c22fd3d7c5f77c53136676"
+  },
+  {
+    "name": "SelMode_BG.png",
+    "width": 480,
+    "height": 320,
+    "channels": 4,
+    "sha256": "a548001be732778ffe6033eb5fa534c8b4a7575e6292a115dae968bbf73870ec"
+  },
+  {
+    "name": "SelMode_Btn_Scenario.png",
+    "width": 263,
+    "height": 82,
+    "channels": 4,
+    "sha256": "4a304757e34f8f207e3168df5a4a7c9b2c984f238f5916c859734196e511f3fb"
+  },
+  {
+    "name": "SelMode_Btn_Survival.png",
+    "width": 263,
+    "height": 84,
+    "channels": 4,
+    "sha256": "5f498c02870dcb66d4beb648e34f19e4f8fb31e2b9ae262e00d2b7d51b68d6bf"
+  },
+  {
+    "name": "SelSlot_BG.png",
+    "width": 480,
+    "height": 320,
+    "channels": 4,
+    "sha256": "59c76b77b02c29692a17531c638b229c8a4df53558dc0126d0bcb4029b8b6e18"
+  },
+  {
+    "name": "SelSlot_Btn.png",
+    "width": 128,
+    "height": 190,
+    "channels": 4,
+    "sha256": "572a601695d8dd96558fa3e69f82d9d4396abb0a6b0e48cdfec7b1d5011e58cf"
+  },
+  {
+    "name": "SelSlot_DelSlot.png",
+    "width": 344,
+    "height": 256,
+    "channels": 4,
+    "sha256": "9f949481681395a4af035e76fe58bd7c6a43d9938a3f2d7b97cce26a55df6e50"
+  },
+  {
+    "name": "SelSlot_Empty.png",
+    "width": 128,
+    "height": 128,
+    "channels": 4,
+    "sha256": "d849e880b8fe11de314f6b40c35b7ae5a7b0ef9731f6e6faacdb55a3dc778f42"
+  },
+  {
+    "name": "SelSlot_ExpGauge.png",
+    "width": 64,
+    "height": 5,
+    "channels": 4,
+    "sha256": "44c679b1200d5c21499bf6741dbe076aafef377b9aa64f973ddf7527589e8382"
+  },
+  {
+    "name": "SelSlot_Sel.png",
+    "width": 256,
+    "height": 256,
+    "channels": 4,
+    "sha256": "f5c4778d6ebb3060e5cf5246d47fae701eab398cbc538113084c5adf98f4744e"
+  },
+  {
+    "name": "SelWeapon.png",
+    "width": 36,
+    "height": 26,
+    "channels": 4,
+    "sha256": "34365a45cf403cf89efae216009efb3a104e0aa9d04d6d055e7e9f8954a1da5d"
+  },
+  {
+    "name": "SmokeEffect.png",
+    "width": 64,
+    "height": 64,
+    "channels": 4,
+    "sha256": "d4ca9d18fb82d5b4f97a11370f101bcd94bb82ec34bebd08848291a2ba91577c"
+  },
+  {
+    "name": "SmokeEffect2.png",
+    "width": 128,
+    "height": 128,
+    "channels": 4,
+    "sha256": "3af72c03453b15dfeafe0aca926e5eb74ce3e6968efa99aa137d8a689f228331"
+  },
+  {
+    "name": "SmokeTrail.png",
+    "width": 32,
+    "height": 32,
+    "channels": 4,
+    "sha256": "062dcc7be0e0fec2b620672a2a416e27788c5b5ead80c4662c197576f911ed78"
+  },
+  {
+    "name": "SmokeTrail1.png",
+    "width": 40,
+    "height": 64,
+    "channels": 4,
+    "sha256": "87040eba56267844eb72d010b22bbe87e15296ab99de4482efd4ebacc0f6732c"
+  },
+  {
+    "name": "SmokeTrail2.png",
+    "width": 40,
+    "height": 64,
+    "channels": 4,
+    "sha256": "eac8630c679e5e4486ce7349670abd8f48b9e23b16582bd484d1405f1d0ae1dd"
+  },
+  {
+    "name": "StageClear.jpg",
+    "width": 480,
+    "height": 320,
+    "channels": 3,
+    "sha256": "29ea3796c2cd09c1dea6d61bda84368eb24338d62b222ea92172ba29ce9ecca6"
+  },
+  {
+    "name": "StageClearBtn.png",
+    "width": 256,
+    "height": 256,
+    "channels": 4,
+    "sha256": "2eecd567841565e56ad9d07786b9262b3c12229735604e024bf2c3737f008e8f"
+  },
+  {
+    "name": "StageClear_BG.png",
+    "width": 480,
+    "height": 320,
+    "channels": 4,
+    "sha256": "5456d2401daf314f6db58e8c24de8c80876f233e219ede2bd0b0326443f2dfdd"
+  },
+  {
+    "name": "Terrain_City01.png",
+    "width": 128,
+    "height": 256,
+    "channels": 4,
+    "sha256": "a110c66a0b57d31da8c6269e99d8755907803f72f792fdffafa1fc722109c65a"
+  },
+  {
+    "name": "Terrain_City02.png",
+    "width": 128,
+    "height": 128,
+    "channels": 4,
+    "sha256": "c0e0a04f73bd0454130af963d1306ed37f7cb00e6d2636de786de4d20bda0399"
+  },
+  {
+    "name": "Terrain_City03.png",
+    "width": 64,
+    "height": 64,
+    "channels": 4,
+    "sha256": "3c57c43815e629da73781909382d6b03d19b496e63d4157c9b08dce593921775"
+  },
+  {
+    "name": "Terrain_City04.png",
+    "width": 128,
+    "height": 32,
+    "channels": 4,
+    "sha256": "ebfdfffbb2a866735c2b70a09bdbc2e983adec6a81063fcaf58064743637540b"
+  },
+  {
+    "name": "Terrain_City05.png",
+    "width": 256,
+    "height": 32,
+    "channels": 4,
+    "sha256": "a4f951575ed13e806871cd056f6936688b65c5190a7a5de221575343639fb162"
+  },
+  {
+    "name": "Terrain_City06.png",
+    "width": 128,
+    "height": 64,
+    "channels": 4,
+    "sha256": "876052066e388aaecdbf2f55e23df41d5c984beb5d3ae57516f21f3a0a4ab8f6"
+  },
+  {
+    "name": "Terrain_City07.png",
+    "width": 128,
+    "height": 32,
+    "channels": 4,
+    "sha256": "15bddd9480a6409a5567fdeb50a65960e228bdbc1b9cea95404f6e3dd2852b3f"
+  },
+  {
+    "name": "Terrain_City08.png",
+    "width": 128,
+    "height": 64,
+    "channels": 4,
+    "sha256": "c9f06fa5a8031b7bf5247c0d7367e2cc5a913705b44fe2824a366ba610cd4d21"
+  },
+  {
+    "name": "Terrain_City09.png",
+    "width": 128,
+    "height": 32,
+    "channels": 4,
+    "sha256": "c96357c24e60504f6d4d5ae5b295d4d6d852a79d28dc95832708b9699f18ecce"
+  },
+  {
+    "name": "Terrain_City10.png",
+    "width": 128,
+    "height": 256,
+    "channels": 4,
+    "sha256": "d28e0002d8735adb4a020077bcd3ab208e47b01db297a1cead31f230b00cfae6"
+  },
+  {
+    "name": "Terrain_City11.png",
+    "width": 128,
+    "height": 128,
+    "channels": 4,
+    "sha256": "1411ef166265853dd18d865c85dd5976503acfac1fed00ba2de6a224c6e51778"
+  },
+  {
+    "name": "Terrain_City12.png",
+    "width": 64,
+    "height": 64,
+    "channels": 4,
+    "sha256": "0c6b57a865464327d83a94c8e1eb6e015561008a998347f594e2201767c448cf"
+  },
+  {
+    "name": "Terrain_City13.png",
+    "width": 128,
+    "height": 32,
+    "channels": 4,
+    "sha256": "0737a5cfa4ced238b6dab1c7cf596c5216b89e2a45d66a3777ab079d67589d36"
+  },
+  {
+    "name": "Terrain_City14.png",
+    "width": 128,
+    "height": 64,
+    "channels": 4,
+    "sha256": "6723f292fdb0daf53304cbd1045c21829a366676b8e14420eb3560480b59faa8"
+  },
+  {
+    "name": "Terrain_City15.png",
+    "width": 128,
+    "height": 32,
+    "channels": 4,
+    "sha256": "023ca41878ad5f02663bae8092b36873d85d15b6a7be89fed8010385e370e86b"
+  },
+  {
+    "name": "Terrain_City16.png",
+    "width": 128,
+    "height": 64,
+    "channels": 4,
+    "sha256": "92a021a1cce5c77795256ce056bcb063c06f8bca7244a90ad437e0e4a2c5e984"
+  },
+  {
+    "name": "Terrain_City17.png",
+    "width": 128,
+    "height": 128,
+    "channels": 4,
+    "sha256": "49f2721a9cd20213930d952238af6c9dbc0806813a428170105009faa692db44"
+  },
+  {
+    "name": "Terrain_City18.png",
+    "width": 128,
+    "height": 64,
+    "channels": 4,
+    "sha256": "51af95edce99d6621d7b1a7b322dda7a1e0c24fe7dcae94aa69ac9e5b70ff1f2"
+  },
+  {
+    "name": "Terrain_City19.png",
+    "width": 64,
+    "height": 128,
+    "channels": 4,
+    "sha256": "b343b2592d40122d2596f1b51b459f337df076a574aaf5339f757c42d6c44745"
+  },
+  {
+    "name": "Terrain_City20.png",
+    "width": 64,
+    "height": 128,
+    "channels": 4,
+    "sha256": "d70c0d9f94881ea84c725e12909e2dd09c443697a4b08ebbdf3c4efc2249d11b"
+  },
+  {
+    "name": "Terrain_City21.png",
+    "width": 128,
+    "height": 64,
+    "channels": 4,
+    "sha256": "6716879dec211ad284338638327149ff5c7746bf6b9f74e9ef9dd33a918be548"
+  },
+  {
+    "name": "Terrain_City22.png",
+    "width": 128,
+    "height": 64,
+    "channels": 4,
+    "sha256": "94784ca4bd252ad8265714b9bd86bb68f8a361f5cc612a3dbbb9aef7474e824f"
+  },
+  {
+    "name": "Terrain_City23.png",
+    "width": 128,
+    "height": 64,
+    "channels": 4,
+    "sha256": "a77c880124c78e069ad32dabe5004b423aca086c16532606ee3639125323a4bf"
+  },
+  {
+    "name": "Terrain_Ruin01.png",
+    "width": 512,
+    "height": 128,
+    "channels": 4,
+    "sha256": "fa25c22353fd3fbc7a8fad9c5c0a3ae703ee05b5195e26d8fada715e07c5f8d3"
+  },
+  {
+    "name": "Terrain_Ruin02.png",
+    "width": 512,
+    "height": 128,
+    "channels": 4,
+    "sha256": "805cf2255f065eb2a544761c36ac9e0935cb334f869abd86032c63f1d0e4365d"
+  },
+  {
+    "name": "Terrain_Ruin03.png",
+    "width": 512,
+    "height": 64,
+    "channels": 4,
+    "sha256": "9da2102911e44c7df3b2810cc87eaba7d5b93c0b8abf953287121227009f4f5d"
+  },
+  {
+    "name": "Terrain_Ruin04.png",
+    "width": 128,
+    "height": 64,
+    "channels": 4,
+    "sha256": "95bc3b9533edb50b733a6c09bcd3a132c12adff72b7a3118580b87d705559857"
+  },
+  {
+    "name": "Terrain_RuinBridge01.png",
+    "width": 256,
+    "height": 64,
+    "channels": 4,
+    "sha256": "db905acd442d35ebcac15980ba2f5fa7513e2898cd790fa79f6958eb35fa8879"
+  },
+  {
+    "name": "Terrain_RuinBridge02.png",
+    "width": 128,
+    "height": 64,
+    "channels": 4,
+    "sha256": "2cfa2e4d22af627a64115cc511245690f9aba6bae68d0bac93319bdafda39e8d"
+  },
+  {
+    "name": "Terrain_map06_01.png",
+    "width": 256,
+    "height": 64,
+    "channels": 4,
+    "sha256": "5e5d188eaae6d6d667c99af2afd1cd10fbf999c86b4f1193ddcd18a01835495c"
+  },
+  {
+    "name": "Terrain_map06_02.png",
+    "width": 256,
+    "height": 64,
+    "channels": 4,
+    "sha256": "472917be703cc29bc67a32305efdf03da40090f2325867a6d1a547fd4c1515c4"
+  },
+  {
+    "name": "Terrain_map06_03.png",
+    "width": 256,
+    "height": 64,
+    "channels": 4,
+    "sha256": "df4e7df0d2029ab6d31e1bc0c646f04de57560fbe62be22753f713eda051fbc6"
+  },
+  {
+    "name": "Terrain_map06_04.png",
+    "width": 512,
+    "height": 64,
+    "channels": 4,
+    "sha256": "dc68561b32c4f37fce2d61227755589e5ec02997eefb0fde30dc4c50bce07674"
+  },
+  {
+    "name": "Terrain_map06_05.png",
+    "width": 256,
+    "height": 64,
+    "channels": 4,
+    "sha256": "ad39289be67c56deaaadca844182fc2686f0cf0456c1d764df716160b64f4674"
+  },
+  {
+    "name": "Terrain_map06_06.png",
+    "width": 64,
+    "height": 256,
+    "channels": 4,
+    "sha256": "97d3701fe32b04614b24fbdd5ac858995f5c26311e614ec0628fe8681467271f"
+  },
+  {
+    "name": "Terrain_map06_07.png",
+    "width": 32,
+    "height": 128,
+    "channels": 4,
+    "sha256": "ce5ca874c54749251771e1d727a12c9b3d41587aa7c887a1ee525680284b4bed"
+  },
+  {
+    "name": "Terrain_map06_08.png",
+    "width": 512,
+    "height": 64,
+    "channels": 4,
+    "sha256": "d20066e05dff77a1b046bfed80ddbadf406264bf7dd9d42c3f775d91e625ea8b"
+  },
+  {
+    "name": "Terrain_map06_09.png",
+    "width": 256,
+    "height": 64,
+    "channels": 4,
+    "sha256": "4addd479f689869c610df850c110706291051b5d1eb066e63d7281420214e9fe"
+  },
+  {
+    "name": "Terrain_map06_10.png",
+    "width": 128,
+    "height": 64,
+    "channels": 4,
+    "sha256": "495c608843c18c4e24435737a957ff7544d5f61a55f8cf8efe8da962436cb1ad"
+  },
+  {
+    "name": "Terrain_map06_11.png",
+    "width": 128,
+    "height": 64,
+    "channels": 4,
+    "sha256": "6d285e2bb8a684bc80753aee43358cb8684da105393459c3b56c72212547a2c3"
+  },
+  {
+    "name": "Terrain_map06_12.png",
+    "width": 128,
+    "height": 64,
+    "channels": 4,
+    "sha256": "a6f619121fc4c8e8260832b71b0696948481f21a673a8e3da654a175753ce013"
+  },
+  {
+    "name": "Terrain_map06_13.png",
+    "width": 512,
+    "height": 256,
+    "channels": 4,
+    "sha256": "13c277513bb7d1d2e2e14eed80c4074124263de1dafac8685af2bee5e8a2c260"
+  },
+  {
+    "name": "Terrain_map06_14.png",
+    "width": 512,
+    "height": 256,
+    "channels": 4,
+    "sha256": "3240ade0bef7e06b911795101a7a55a13161fd7acbfc8deef4fd93fbe6a3a721"
+  },
+  {
+    "name": "Terrain_map06_15.png",
+    "width": 512,
+    "height": 128,
+    "channels": 4,
+    "sha256": "feb75e7c24cf5721ebfa3274b8c89d60fb2384fd1bfadc103f16df6db8544635"
+  },
+  {
+    "name": "Terrain_map06_16.png",
+    "width": 512,
+    "height": 256,
+    "channels": 4,
+    "sha256": "64339172669c10bc7fba0dc6ff783b7860fd64b9336794654ea7a85799d27ea8"
+  },
+  {
+    "name": "Terrain_map06_17.png",
+    "width": 512,
+    "height": 256,
+    "channels": 4,
+    "sha256": "deeab134b7f7c736883df7c534a201beafbfaa1d9f5549d2e13f95a4cbd9cd7e"
+  },
+  {
+    "name": "Terrain_map06_18.png",
+    "width": 512,
+    "height": 256,
+    "channels": 4,
+    "sha256": "ab6b899d068c6d0c5a48d501462eccbcb5bb81b66393a34c7ba43faf26f58ccb"
+  },
+  {
+    "name": "Terrain_map06_19.png",
+    "width": 256,
+    "height": 256,
+    "channels": 4,
+    "sha256": "2aced2648f65036ccc78263016afab72026aa5f236c8e1570e4d7d1b95d6723f"
+  },
+  {
+    "name": "Terrain_map06_20.png",
+    "width": 128,
+    "height": 256,
+    "channels": 4,
+    "sha256": "7d2ccdfdffcb370b92f9503387bb750cfc53e23f61c492f4dfe8306389ce017e"
+  },
+  {
+    "name": "Terrain_map06_21.png",
+    "width": 512,
+    "height": 256,
+    "channels": 4,
+    "sha256": "208da26163de273f05c5f0284c4bb941bd715047ac23f7233fc2b28310b94af9"
+  },
+  {
+    "name": "Terrain_map06_22.png",
+    "width": 256,
+    "height": 256,
+    "channels": 4,
+    "sha256": "8348e8fbf06711ae72aabbd1d1de388adacb8031a3a9a743845a35200bd9c2c2"
+  },
+  {
+    "name": "Terrain_map07_01.png",
+    "width": 189,
+    "height": 169,
+    "channels": 4,
+    "sha256": "af87c92e9604b3e498451c22364c36f5e557bab22f8686c76b226f522f2d11f5"
+  },
+  {
+    "name": "Terrain_map07_02.png",
+    "width": 203,
+    "height": 178,
+    "channels": 4,
+    "sha256": "cfa89e28cc3407c577f71fe5d1fddd611d84be37f01ea35c75af8bcff739d17d"
+  },
+  {
+    "name": "Terrain_map07_03.png",
+    "width": 190,
+    "height": 177,
+    "channels": 4,
+    "sha256": "194e629bc53b6483beda7dc7df3912b60b7def9c18cc984636093478fcfbd188"
+  },
+  {
+    "name": "Terrain_map07_04.png",
+    "width": 189,
+    "height": 170,
+    "channels": 4,
+    "sha256": "1dac15e41b49d19e3914f889c680d4120c0e72a1d17acd9660963c51a9c4667d"
+  },
+  {
+    "name": "Terrain_map07_05.png",
+    "width": 171,
+    "height": 59,
+    "channels": 4,
+    "sha256": "f0ccd3328660470e83ff2be8cfdb1ecc884a8b2c7ff6c8130090bb3daf004402"
+  },
+  {
+    "name": "Terrain_map07_06.png",
+    "width": 100,
+    "height": 62,
+    "channels": 4,
+    "sha256": "575b30cf6f67f4c9ae4906bf246c8a13a9b0dcfef8d0c5fa3404e1bb844e8c27"
+  },
+  {
+    "name": "Terrain_map07_07.png",
+    "width": 101,
+    "height": 58,
+    "channels": 4,
+    "sha256": "347dbac790375ac110653913ca6ec812330e1a968c87f8cc8098a2e680a4cfc6"
+  },
+  {
+    "name": "Terrain_map07_08.png",
+    "width": 199,
+    "height": 58,
+    "channels": 4,
+    "sha256": "73f82375bea8641317f221bec708ce1256ab0edfe24c381f3739f4be27faa264"
+  },
+  {
+    "name": "Terrain_map07_09.png",
+    "width": 101,
+    "height": 64,
+    "channels": 4,
+    "sha256": "98fa57271761c825027e587bfea30fec02aa259c06d5f67a10c59741abc81ab7"
+  },
+  {
+    "name": "Terrain_map07_10.png",
+    "width": 48,
+    "height": 68,
+    "channels": 4,
+    "sha256": "5635676b4e680746cd66f6fbc8cb9eba5daf3d6429d6094fa5a5009edfc5335f"
+  },
+  {
+    "name": "Terrain_map07_11.png",
+    "width": 45,
+    "height": 64,
+    "channels": 4,
+    "sha256": "5a19f1babd229026cc20f455c4910f05796ab58adf5c444597d3cc27645373fa"
+  },
+  {
+    "name": "Terrain_map07_12.png",
+    "width": 44,
+    "height": 76,
+    "channels": 4,
+    "sha256": "83e4cdd27bf48a0e20da97f88c9b7d0703d1f48910ac094c41879db58730d481"
+  },
+  {
+    "name": "Terrain_map08_01.png",
+    "width": 252,
+    "height": 78,
+    "channels": 4,
+    "sha256": "cd9290c8ee378225ad02a0844f1e1f475d3658633cbc514000e3a081efc6cfb4"
+  },
+  {
+    "name": "Terrain_map08_02.png",
+    "width": 252,
+    "height": 79,
+    "channels": 4,
+    "sha256": "07cf1d91c4ffab577401fce2d5be412a3632a81e1218dd2e5985ef26b320a857"
+  },
+  {
+    "name": "Terrain_map08_03.png",
+    "width": 128,
+    "height": 81,
+    "channels": 4,
+    "sha256": "c494e35a26dcc03f2673ef4f32efc9aca38316bbc22dffdb5801db2aadf1e05d"
+  },
+  {
+    "name": "Terrain_map08_04.png",
+    "width": 64,
+    "height": 92,
+    "channels": 4,
+    "sha256": "38f1a0e0d03e56c5476ab8dc15f27751e6e088599f14d5fab0dfe1a67bedad87"
+  },
+  {
+    "name": "Terrain_map08_05.png",
+    "width": 64,
+    "height": 92,
+    "channels": 4,
+    "sha256": "70240c347b9dc076a4ebb3f991e3e94bc7e37e73bbbcc401fc27c14222ec1582"
+  },
+  {
+    "name": "Terrain_map08_06.png",
+    "width": 24,
+    "height": 91,
+    "channels": 4,
+    "sha256": "9d73ffcea983ed9630e52f8e1479b7be08a578dbffabf000d01586bb405c5904"
+  },
+  {
+    "name": "Terrain_map08_07.png",
+    "width": 60,
+    "height": 103,
+    "channels": 4,
+    "sha256": "c3777ccf5108a8e72855950fd81dddcc69a292bcf4f5e706891f68097a643600"
+  },
+  {
+    "name": "Terrain_map08_08.png",
+    "width": 255,
+    "height": 237,
+    "channels": 4,
+    "sha256": "0878384d2e8a980fc23aa2bb027c61de0d9ed50c04eebea61889c8743d2d90ef"
+  },
+  {
+    "name": "Terrain_map08_09.png",
+    "width": 253,
+    "height": 230,
+    "channels": 4,
+    "sha256": "64709e5bb7a0b6b4324567c81739be871dde25345e8edfe6bdeca0b2034168f4"
+  },
+  {
+    "name": "Terrain_map08_10.png",
+    "width": 250,
+    "height": 236,
+    "channels": 4,
+    "sha256": "f7a34b3c82941835d12c8eda6cb0682e7a8977f29e7cb9ea84859bc2cfb6634e"
+  },
+  {
+    "name": "Terrain_map08_11.png",
+    "width": 254,
+    "height": 233,
+    "channels": 4,
+    "sha256": "142bf0937c2f62c39c47345bde53bb92f5bab1545282279fddf5921bb250fdfe"
+  },
+  {
+    "name": "Terrain_map09_01.png",
+    "width": 128,
+    "height": 128,
+    "channels": 4,
+    "sha256": "5d6000bfd5583d53ade4f83a2915a01d2abfa3d9cec5c2d4a5b08cf4de8abec6"
+  },
+  {
+    "name": "Terrain_map09_02.png",
+    "width": 256,
+    "height": 64,
+    "channels": 4,
+    "sha256": "3b30019e62b352171af858047229686e7c9c2576a55070bd268a6252d3db6a78"
+  },
+  {
+    "name": "Terrain_map09_03.png",
+    "width": 256,
+    "height": 128,
+    "channels": 4,
+    "sha256": "228c133df2bef0ddcaf52cf6150529829e8ee4efaf6900c42db34ba8bab8be6e"
+  },
+  {
+    "name": "Terrain_map09_04.png",
+    "width": 256,
+    "height": 128,
+    "channels": 4,
+    "sha256": "35dfbb45a6a5b0bdb7ac94b039627f6fca5fbc9f069910ef9b93cbc8b974c91d"
+  },
+  {
+    "name": "Terrain_map09_05.png",
+    "width": 256,
+    "height": 128,
+    "channels": 4,
+    "sha256": "a1b1a2d3514b74d3fc0770ac24d00a8b9d58d9ce8117dfadbce752c672069211"
+  },
+  {
+    "name": "Terrain_map09_06.png",
+    "width": 128,
+    "height": 128,
+    "channels": 4,
+    "sha256": "20c83c33e50cf2c48338a4f043cfcf742c63c500d912c88ce1326b25df5c9680"
+  },
+  {
+    "name": "Terrain_map09_07.png",
+    "width": 512,
+    "height": 128,
+    "channels": 4,
+    "sha256": "278fbde396da189a3c381a22aa31459a1927bb708afb80029c0573e193f6ea31"
+  },
+  {
+    "name": "Terrain_map09_08.png",
+    "width": 512,
+    "height": 128,
+    "channels": 4,
+    "sha256": "d8a5427724e819a170c6e68b5bd5cab2176636bfd997fc901c044dc150b814be"
+  },
+  {
+    "name": "Terrain_map09_09.png",
+    "width": 128,
+    "height": 128,
+    "channels": 4,
+    "sha256": "2b4104164b2007fb27cd74b615819b20039d70aeb0c3e36bffee332a496e89ee"
+  },
+  {
+    "name": "Terrain_map09_10.png",
+    "width": 256,
+    "height": 128,
+    "channels": 4,
+    "sha256": "e265db8ff4f2053b2de849200cb0b1920e9afd949e92fa7adf4e19f41ff459d5"
+  },
+  {
+    "name": "Terrain_map09_12.png",
+    "width": 256,
+    "height": 128,
+    "channels": 4,
+    "sha256": "52792e1d3228829ea18fd44e49386943b7b2869e34d3878830e0f37ae7d35d4d"
+  },
+  {
+    "name": "Terrain_map09_13.png",
+    "width": 256,
+    "height": 128,
+    "channels": 4,
+    "sha256": "7d1d7fb9cd54a6e3cdb334c9130ddc027fc5b5195da2de104a23c17ca0e75cd6"
+  },
+  {
+    "name": "Terrain_map09_14.png",
+    "width": 256,
+    "height": 64,
+    "channels": 4,
+    "sha256": "2db5bd2dee3baf8eae29eecd89eb6b2282687931273006e5813d90301abee183"
+  },
+  {
+    "name": "Terrain_map09_15.png",
+    "width": 256,
+    "height": 64,
+    "channels": 4,
+    "sha256": "80b0d2600db78d586c5c7fc4575188687901cec741de124c56ec03834c767309"
+  },
+  {
+    "name": "Terrain_map09_17.png",
+    "width": 128,
+    "height": 128,
+    "channels": 4,
+    "sha256": "2ae377e674af080442dfeda0f778ae7cc0a4fdcd30bbaf06aa1aae5eee808006"
+  },
+  {
+    "name": "Terrain_map09_18.png",
+    "width": 128,
+    "height": 128,
+    "channels": 4,
+    "sha256": "d2772eaedd10df713320e9ad42587368a692326822c17fca2823b08916b95f30"
+  },
+  {
+    "name": "Terrain_map09_19.png",
+    "width": 256,
+    "height": 128,
+    "channels": 4,
+    "sha256": "12282b324e8e04f63fe4e66e1283bb5f57294d2f2cbd5d193ef5a790289d44dc"
+  },
+  {
+    "name": "Terrain_map09_20.png",
+    "width": 128,
+    "height": 128,
+    "channels": 4,
+    "sha256": "2bed5cddec3ff760035dec649cc04ef6184edb8d27ac9044fc6f97d4e7e28abe"
+  },
+  {
+    "name": "Terrain_map09_21.png",
+    "width": 128,
+    "height": 64,
+    "channels": 4,
+    "sha256": "2c1d7749d20b2202a9a21f09f6de1414d358e7b2efea6a139f221bab83f0655e"
+  },
+  {
+    "name": "Terrain_map09_22.png",
+    "width": 256,
+    "height": 64,
+    "channels": 4,
+    "sha256": "c2fc4971663c92b5a0ed0f1de3aec701cba656d749819fcd900499f6f2126111"
+  },
+  {
+    "name": "Terrain_map09_23.png",
+    "width": 128,
+    "height": 128,
+    "channels": 4,
+    "sha256": "12da9b76078ce9317bc2064d976f4fa13c3834c342d59290abe154ad4db87119"
+  },
+  {
+    "name": "Terrain_map09_24.png",
+    "width": 128,
+    "height": 64,
+    "channels": 4,
+    "sha256": "4ea807ccfbfcebcaee0ba999a2754d63afc9bfecedd224d2d44150b95b5cac6b"
+  },
+  {
+    "name": "Terrain_map09_25.png",
+    "width": 128,
+    "height": 64,
+    "channels": 4,
+    "sha256": "f1967a143bb88125a89c990778b4530f1fd2989bfac0a84a5e5f6c9c56afe3f5"
+  },
+  {
+    "name": "Terrain_map09_26.png",
+    "width": 128,
+    "height": 128,
+    "channels": 4,
+    "sha256": "9b96612593a8aba6abc09c72951a87d53be285c18ce8ba7c44cb2667dec22c7d"
+  },
+  {
+    "name": "Terrain_map09_27.png",
+    "width": 64,
+    "height": 128,
+    "channels": 4,
+    "sha256": "fd8f3af610ad68a0657ae30e2f33c210d2174ea3fdeeacbb129388cc17927065"
+  },
+  {
+    "name": "Terrain_map09_28.png",
+    "width": 64,
+    "height": 128,
+    "channels": 4,
+    "sha256": "17a4ea73702714ff72a61021024c0d86fd953ed12bc991a60dd8c0d7356402bb"
+  },
+  {
+    "name": "Terrain_map11_01.png",
+    "width": 171,
+    "height": 23,
+    "channels": 4,
+    "sha256": "cdfda6f5f1a2f58b272d070c1a0cbc786715daccae479ce5bc3bee1bed4cf6e1"
+  },
+  {
+    "name": "Terrain_map11_02.png",
+    "width": 165,
+    "height": 58,
+    "channels": 4,
+    "sha256": "eb5e333840c2398c1f86e39a585ca824d34006cf28f4d13e0a45cb26dfc6f171"
+  },
+  {
+    "name": "Terrain_map11_03.png",
+    "width": 165,
+    "height": 58,
+    "channels": 4,
+    "sha256": "2f3499d5bc0655372f32e9ae11c8393bafe590bc7bedadec1b3a564d628d66ae"
+  },
+  {
+    "name": "Terrain_map11_04.png",
+    "width": 505,
+    "height": 55,
+    "channels": 4,
+    "sha256": "b0235788a7d1eff2b1464515dfe88235c5a2181681258b40d5967ed420d3bb86"
+  },
+  {
+    "name": "Terrain_map11_05.png",
+    "width": 337,
+    "height": 30,
+    "channels": 4,
+    "sha256": "c36366ac1fa5344774dc37c2ed6e25fd04c16c77a4852559ec5f20f9a38de33f"
+  },
+  {
+    "name": "Terrain_map11_06.png",
+    "width": 195,
+    "height": 197,
+    "channels": 4,
+    "sha256": "f6a3466fd030cd72e6a5a4c8ab0a511df0b4bc8a745878bd9ee43e4833bee27e"
+  },
+  {
+    "name": "Terrain_map11_07.png",
+    "width": 126,
+    "height": 215,
+    "channels": 4,
+    "sha256": "77e8322e92b19a9d8047ee3682a52e50540c473fb8d1665cb554b6bdc2f09bf7"
+  },
+  {
+    "name": "Terrain_map11_08.png",
+    "width": 446,
+    "height": 116,
+    "channels": 4,
+    "sha256": "e5bade985aff4b01518907bcfcf491eaf497e7c8ecd6d2f206cee5d64ab1d604"
+  },
+  {
+    "name": "Terrain_map11_09.png",
+    "width": 200,
+    "height": 202,
+    "channels": 4,
+    "sha256": "960e0dd4a9cc8c66ace1954a6e3cb62a3b8abd056368e6d9e125437994fc6680"
+  },
+  {
+    "name": "Terrain_map11_10.png",
+    "width": 441,
+    "height": 205,
+    "channels": 4,
+    "sha256": "3c87351e5b4122952dabcedfa55c0a353804c35eae873b4e5680b75c49509980"
+  },
+  {
+    "name": "Terrain_map11_11.png",
+    "width": 247,
+    "height": 102,
+    "channels": 4,
+    "sha256": "d402f29f1da6a122406baa42a65a4f75e529df44b040cfca23655bb3f564e422"
+  },
+  {
+    "name": "Terrain_map11_12.png",
+    "width": 139,
+    "height": 93,
+    "channels": 4,
+    "sha256": "d440ac0ddac8c85fa57e0ba58fe918ca3eca5b296c06ab0f7b25f550e31cab19"
+  },
+  {
+    "name": "Terrain_map11_13.png",
+    "width": 354,
+    "height": 81,
+    "channels": 4,
+    "sha256": "f6b8a9ae873dede1ea671ef5d3d559b884424c85ca92f0e9995cda282b62b4ac"
+  },
+  {
+    "name": "Terrain_map11_14.png",
+    "width": 238,
+    "height": 62,
+    "channels": 4,
+    "sha256": "c17dddb0cd93c7f7d8b9aa0c4d240944dd26e4dadef1a1106c9070d795602b0b"
+  },
+  {
+    "name": "Terrain_map11_15.png",
+    "width": 244,
+    "height": 45,
+    "channels": 4,
+    "sha256": "e68d9e591f9e0eeccb349faf66a0a00eaa1888bbe153d7e131219ea93ca16d31"
+  },
+  {
+    "name": "Terrain_map11_16.png",
+    "width": 256,
+    "height": 58,
+    "channels": 4,
+    "sha256": "4bd94caadfb8ab03fd86e3e80826b5cac2f52d8b01ddfd9eadbf82d54dcea4b7"
+  },
+  {
+    "name": "Terrain_map11_17.png",
+    "width": 442,
+    "height": 93,
+    "channels": 4,
+    "sha256": "10c815b6103f6882de631d7d1bbed7aa82142481a2863e8cbd5df083fabb0830"
+  },
+  {
+    "name": "Terrain_map11_18.png",
+    "width": 178,
+    "height": 64,
+    "channels": 4,
+    "sha256": "c8f907efeb4db63914bbeba4b6cff15d9908e575ddadfccf389d47085d277998"
+  },
+  {
+    "name": "Terrain_map11_19.png",
+    "width": 86,
+    "height": 200,
+    "channels": 4,
+    "sha256": "35c7ba7369dba9eb6078b8bb8d0483c01cd4887c35d9f8695292ef7632ba8a7f"
+  },
+  {
+    "name": "Terrain_map11_20.png",
+    "width": 254,
+    "height": 64,
+    "channels": 4,
+    "sha256": "5318fb346fbf4519b2b58e58c965bf052e4ef7ec32d5fd65b1a7ddbf4fecac0c"
+  },
+  {
+    "name": "Terrain_map11_21.png",
+    "width": 179,
+    "height": 162,
+    "channels": 4,
+    "sha256": "9c50a21c8ab14bd0adb57844d1b2167940bf32b7d2ca1fbffd06e1776e987e4f"
+  },
+  {
+    "name": "Terrain_map11_22.png",
+    "width": 236,
+    "height": 87,
+    "channels": 4,
+    "sha256": "efa34c60374f5f7a3a0679d3670bb36dc344835de7366f7471ad694ca9db146d"
+  },
+  {
+    "name": "Text_Mission.png",
+    "width": 256,
+    "height": 32,
+    "channels": 4,
+    "sha256": "bbf92e6c3333078791dd86ae65b0c1d4aaffa88520912dc3b67e700f94d50470"
+  },
+  {
+    "name": "Upgrade_BG.png",
+    "width": 344,
+    "height": 256,
+    "channels": 4,
+    "sha256": "61ea011d9f495bdcb136401b23880ff44bf556aec9a859a1f3b421611c3b2549"
+  },
+  {
+    "name": "Upgrade_Body.png",
+    "width": 100,
+    "height": 350,
+    "channels": 4,
+    "sha256": "a1acaf5e3cb660a30ff19f0bf82372d2f228e639fbb1291afe6c38af725f9805"
+  },
+  {
+    "name": "Upgrade_Gauge.png",
+    "width": 63,
+    "height": 6,
+    "channels": 4,
+    "sha256": "e0b4b06c16dd03e51bda965cf6b6886e44fc8a413e5c20e7abf2daf37ce49065"
+  },
+  {
+    "name": "Upgrade_Sel.png",
+    "width": 128,
+    "height": 256,
+    "channels": 4,
+    "sha256": "e77e98e283d6c321c604924b3c690fb0584f052995600fe309ebec9b9073b115"
+  },
+  {
+    "name": "Upgrade_Top.png",
+    "width": 64,
+    "height": 350,
+    "channels": 4,
+    "sha256": "111eb2ea1dcdf9f81c144865e006351afcf262f0e3d89896d09ab8c9df9dcca5"
+  },
+  {
+    "name": "Upgrade_Weapon.png",
+    "width": 64,
+    "height": 175,
+    "channels": 4,
+    "sha256": "19ede5eed48494031e2493d7b7733681d9742e9edfb40541544dadb3bd5b45e6"
+  },
+  {
+    "name": "Weapon.png",
+    "width": 50,
+    "height": 10,
+    "channels": 4,
+    "sha256": "999ecdc7c3c18b0a8b400f85d0cd597b87127997cde56909ef28759ec224c5f8"
+  },
+  {
+    "name": "WeaponTile.png",
+    "width": 245,
+    "height": 104,
+    "channels": 4,
+    "sha256": "10b1b7952d4978587dfda6c2658270be18c374cecdc8657ff51aa9e0645331ff"
+  }
+]

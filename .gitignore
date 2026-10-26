@@ -7,8 +7,14 @@ DerivedDataDevice/
 *.p12
 __pycache__/
 
-# User originals and local analysis are preserved outside version control.
-/Resources/
+# Original packages and analysis stay local. Build/test assets are tracked.
+/Resources/*
+!/Resources/OriginalImages/
+!/Resources/Images/
+!/Resources/Audio/
+!/Resources/RawData/
+!/Resources/Assets.xcassets/
+!/Resources/Validation/
 /Analysis/
 *.ipa
 *.app/

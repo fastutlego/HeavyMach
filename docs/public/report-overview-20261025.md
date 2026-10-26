@@ -4,6 +4,12 @@
 
 제품 코드 `72e8c68e` · 2026년 10월 25일 기준
 
+## 새 clone 빌드 {#clone-build}
+
+Git에서 빠졌던 앱 자원1,471개를 추가했다. GitHub에서 새로 받은 소스·LFS 자원만으로 일반·치트 앱의 Simulator·iPhone용 빌드4개가 성공했다. 새 Simulator의 두 앱 실행, 코어17·iOS14 검사도 통과했다. IPA나 기존 Mac의 자원 복사는 필요하지 않다.
+
+[수정과 검사 결과](clone-build.html) · [빌드·설치](installation.html)
+
 ## IPA 없는 빌드·실행 검증 {#independence}
 
 원본 IPA와 기존 프로젝트 폴더의 읽기를 차단한 새 복사본에서 일반·치트 앱의 Simulator·iPhone용 빌드 4개가 성공했다. 이미지·음원·맵·게임 데이터의 앱 내 해시가 모두 일치했다. 새 Simulator 실행과 코어17·iOS14 검사도 통과했다. REA 분석 기록과 실제 게임 코드의 연결을 재검사했다.
