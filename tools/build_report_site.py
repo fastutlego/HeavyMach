@@ -11,6 +11,14 @@ ROOT=Path(__file__).resolve().parents[1]
 def render(text):
     return BeautifulSoup(markdown.markdown(text,extensions=['tables','fenced_code','attr_list']), 'html.parser')
 
+def deduplicate_styles(soup):
+    # Keep the last occurrence so CSS precedence stays unchanged on regeneration.
+    seen=set()
+    for style in reversed(soup.select('head style')):
+        css=style.get_text()
+        if css in seen: style.decompose()
+        else: seen.add(css)
+
 def tables(soup):
     for table in soup.select('table'):
         headers=[h.get_text(' ',strip=True) for h in table.select('th')]
@@ -39,6 +47,7 @@ def article(source,dest,download,template):
     page.title.string=title+' | HeavyMach'
     # Keep long hashes, code, and tables within narrow mobile screens.
     style=page.new_tag('style');style.string='main{min-width:0}code,a{overflow-wrap:anywhere}pre{white-space:pre-wrap}nav{display:block}nav ol{padding-left:0;list-style:none;columns:2}nav li{break-inside:avoid}@media(max-width:700px){table thead{display:none}table tbody tr:first-child{display:block}nav ol{columns:1}}';page.head.append(style)
+    deduplicate_styles(page)
     dest.write_text(str(page));shutil.copyfile(source,dest.parent/download)
 
 def main():
@@ -66,6 +75,7 @@ def main():
     old.title.string='HeavyMach 복원과 아이폰 검증'
     old.select_one('meta[name="description"]')['content']='HeavyMach 원본 분석, 사용자 지시별 수정, 아이폰 검증과 남은 작업'
     style=old.new_tag('style');style.string='figure{margin:0;min-width:0}figure img{width:100%;height:auto;display:block}figcaption{font-size:12px;color:var(--muted);margin-top:6px}aside{overflow:auto}nav{margin:24px 0}nav a{line-height:1.4}code,a{overflow-wrap:anywhere}@media(max-width:540px){table thead{display:none}table tr{display:block;border-top:1px solid var(--line);padding:10px 0}table td{display:block;border:0;padding:5px 0}table td:before{content:attr(data-label);display:block;font-size:11px;color:var(--muted)}}';old.head.append(style)
+    deduplicate_styles(old)
     (dist/'index.html').write_text(str(old))
     retro=(dist/'retrospective.html').read_text();doc=(dist/'documentation.html').read_text()
     article(ROOT/'docs/public/engineering-retrospective-20261025.md',dist/'retrospective.html','engineering-retrospective.md',retro)

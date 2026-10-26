@@ -964,5 +964,159 @@
       ]
     ],
     "scope": "CPU samples; inclusive stacks overlap. No GPU time or wall-clock FPS inference."
+  },
+  "mac_lifetime_followup": {
+    "log": "build/apple-performance-20261026/mac-lifetime-final.log",
+    "passed_test": "testMacPresentedFrameCostsWithProductionTimer",
+    "conditions": 6,
+    "released_objects_per_condition": [
+      "HMGameView",
+      "HMMedia",
+      "HMGLRenderer",
+      "HMOpenALAudio"
+    ],
+    "teardown_assertions": 24,
+    "fullscreen_test": "skipped: CGSSessionScreenIsLocked=true; earlier timeout preserved",
+    "frames": [
+      {
+        "size": "1200x800",
+        "scene": "title_animation",
+        "frame_work": {
+          "max_ms": 6.5695419907569885,
+          "mean_ms": 3.886411147606042,
+          "p95_ms": 5.271082976832986,
+          "samples": 180
+        },
+        "callback_intervals": {
+          "max_ms": 18.389042001217604,
+          "mean_ms": 16.669288193548304,
+          "p95_ms": 18.261583987623453,
+          "samples": 180
+        },
+        "game_save_calls": 0,
+        "max_bullets": 0
+      },
+      {
+        "size": "1200x800",
+        "scene": "slot_preview",
+        "frame_work": {
+          "max_ms": 9.06733307056129,
+          "mean_ms": 7.17276045276473,
+          "p95_ms": 8.063583169132471,
+          "samples": 180
+        },
+        "callback_intervals": {
+          "max_ms": 18.021041061729193,
+          "mean_ms": 16.667613888987237,
+          "p95_ms": 17.208124976605177,
+          "samples": 180
+        },
+        "game_save_calls": 0,
+        "max_bullets": 0
+      },
+      {
+        "size": "1200x800",
+        "scene": "stage01_firing",
+        "frame_work": {
+          "max_ms": 24.90383293479681,
+          "mean_ms": 7.465315039735287,
+          "p95_ms": 10.077791986986995,
+          "samples": 180
+        },
+        "callback_intervals": {
+          "max_ms": 25.27058287523687,
+          "mean_ms": 16.667615972821498,
+          "p95_ms": 17.415541922673583,
+          "samples": 180
+        },
+        "game_save_calls": 0,
+        "max_bullets": 8
+      },
+      {
+        "size": "screen_size",
+        "scene": "title_animation",
+        "frame_work": {
+          "max_ms": 12.104333145543933,
+          "mean_ms": 5.431790070401298,
+          "p95_ms": 8.341749897226691,
+          "samples": 180
+        },
+        "callback_intervals": {
+          "max_ms": 28.8758329115808,
+          "mean_ms": 16.66963565059834,
+          "p95_ms": 18.35999987088144,
+          "samples": 180
+        },
+        "game_save_calls": 0,
+        "max_bullets": 0
+      },
+      {
+        "size": "screen_size",
+        "scene": "slot_preview",
+        "frame_work": {
+          "max_ms": 12.56333407945931,
+          "mean_ms": 6.275224993522796,
+          "p95_ms": 10.908834170550108,
+          "samples": 180
+        },
+        "callback_intervals": {
+          "max_ms": 18.59108405187726,
+          "mean_ms": 16.67745208315965,
+          "p95_ms": 18.23083288036287,
+          "samples": 180
+        },
+        "game_save_calls": 0,
+        "max_bullets": 0
+      },
+      {
+        "size": "screen_size",
+        "scene": "stage01_firing",
+        "frame_work": {
+          "max_ms": 6.842375034466386,
+          "mean_ms": 4.641340482824792,
+          "p95_ms": 5.273541202768683,
+          "samples": 180
+        },
+        "callback_intervals": {
+          "max_ms": 18.72999989427626,
+          "mean_ms": 16.666696527196716,
+          "p95_ms": 18.411707831546664,
+          "samples": 180
+        },
+        "game_save_calls": 0,
+        "max_bullets": 8
+      }
+    ]
+  },
+  "mac_normal_app_memory_followup": {
+    "xctest_loaded": false,
+    "configuration": "Debug; ad-hoc signing; get-task-allow enabled for profiling build only",
+    "physical_footprint_mb": [
+      313.3,
+      313.3
+    ],
+    "leak_objects": [
+      416,
+      417
+    ],
+    "leak_bytes": [
+      19968,
+      20016
+    ],
+    "roots": "three NSXPCConnection cycles: com.apple.linkd.autoShortcut / LNDaemonApplicationInterface",
+    "trace_exit": 54,
+    "trace_toc_export_exit": 0,
+    "trace_duration_seconds": 35.748183,
+    "trace_end_reason": "Time limit reached",
+    "target_termination": "SIGKILL (recorded by xctrace)",
+    "conclusion": "Readable Allocations trace and two live-process leaks snapshots. Does not establish leak-free behavior or explain the system connection cycles."
+  },
+  "followup_log_sha256": {
+    "build/apple-performance-20261026/mac-lifetime-final.log": "dfe6c67f139bb390fb4846878672507f01f340ddbfbd6feaaecbd396bf792d3b",
+    "build/apple-performance-20261026/mac-lifetime-fullscreen.log": "2dfb373247de3a516add120ff4c5c706349f62962dfea6775bbb091ee351dc25",
+    "build/apple-performance-20261026/mac-app-direct/record.log": "c28da6aa56e89c531c3030221dca9f915b1c284fae5e2e7c7b8510ce049c1eb5",
+    "build/apple-performance-20261026/mac-app-direct/leaks-1.txt": "838597d2848244b02e5a454683797c87ce23733b6fb422fde169ddfd88c81b4a",
+    "build/apple-performance-20261026/mac-app-direct/leaks-2.txt": "620287004c8883a0b9ccfb185b5c002c4c3c4d45def87d7c14a103ad4e8159fa",
+    "build/apple-performance-20261026/mac-app-direct/toc.xml": "66894a400c742562465d77eadfabf421e0b37c8f441217912e3aadcf52fabbfa"
   }
 }

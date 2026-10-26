@@ -104,8 +104,11 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  for(NSString* size in @[@"1200x800",@"screen_size"]){
   NSRect rectangle=[size isEqualToString:@"screen_size"]?NSScreen.mainScreen.frame:NSMakeRect(50,50,1200,800);
   [window setFrame:rectangle display:YES];
-  for(NSString* scene in @[@"title_animation",@"slot_preview",@"stage01_firing"]){@autoreleasepool{
+  for(NSString* scene in @[@"title_animation",@"slot_preview",@"stage01_firing"]){
+  __weak HMGameView* releasedView;__weak HMMedia* releasedMedia;__weak HMGLRenderer* releasedRenderer;__weak HMOpenALAudio* releasedAudio;
+  @autoreleasepool{
    HMMacTimedInputView* view=[[HMMacTimedInputView alloc]initWithFrame:window.contentView.bounds];
+   releasedView=view;releasedMedia=[view valueForKey:@"media"];releasedRenderer=[view valueForKey:@"glRenderer"];releasedAudio=releasedMedia.audio;
    [view setApplicationActive:NO];window.contentView=view;[window makeKeyAndOrderFront:nil];[NSApp activateIgnoringOtherApps:YES];
    auto& save=storage<heavymach::SaveData>(view,"_save");save={};for(auto& slot:save.slots)heavymach::GlobalInfo(slot).selectSlot(1);
    [view setValue:@11 forKey:@"randomState"];
@@ -125,9 +128,54 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
    XCTAssertEqual(view.gameSaveCalls,NSUInteger(0));
    XCTAssertLessThan([macFrameMetrics(view->work)[@"p95_ms"]doubleValue],1000.0/60.0,@"Native Mac frame work budget");
    window.contentView=nil;
-  }}
+  }
+  XCTAssertNil(releasedView,@"Game view must be released after scene teardown");
+  XCTAssertNil(releasedMedia,@"Media must be released after scene teardown");
+  XCTAssertNil(releasedRenderer,@"GL renderer must be released after scene teardown");
+  XCTAssertNil(releasedAudio,@"OpenAL owner must be released after scene teardown");
+  NSLog(@"HM_MAC_TEARDOWN %@ %@ view=%d media=%d renderer=%d audio=%d",size,scene,releasedView==nil,releasedMedia==nil,releasedRenderer==nil,releasedAudio==nil);
+  }
  }
  } @finally {[window close];[original.window makeKeyAndOrderFront:nil];[original setApplicationActive:YES];}
+}
+- (void)testMacNativeFullscreenUsesEntireDrawableAndRestoresWindow {
+ NSDictionary* desktop=CFBridgingRelease(CGSessionCopyCurrentDictionary());
+ XCTSkipIf([desktop[@"CGSSessionScreenIsLocked"] boolValue],@"macOS desktop is locked; native fullscreen transition requires an unlocked session");
+ NSWindow* window=[(NSObject*)NSApp.delegate valueForKey:@"window"];
+ HMGameView* view=[(NSObject*)NSApp.delegate valueForKey:@"game"];
+ XCTAssertNotNil(window);XCTAssertNotNil(view);if(!window||!view)return;
+ NSRect initial=window.frame;
+ BOOL wasFull=(window.styleMask&NSWindowStyleMaskFullScreen)!=0;
+ @try {
+  if(!wasFull){
+   XCTestExpectation* entered=[self expectationForNotification:NSWindowDidEnterFullScreenNotification object:window handler:nil];
+   [window toggleFullScreen:nil];[self waitForExpectations:@[entered] timeout:15];
+  }
+  XCTAssertTrue((window.styleMask&NSWindowStyleMaskFullScreen)!=0);
+  [window.contentView layoutSubtreeIfNeeded];[view setApplicationActive:YES];[view frame:nil];
+  NSRect screen=window.screen.frame,content=window.contentView.bounds,backing=[view convertRectToBacking:view.bounds];
+  XCTAssertEqualWithAccuracy(window.frame.size.width,screen.size.width,1);
+  XCTAssertEqualWithAccuracy(window.frame.size.height,screen.size.height,1);
+  XCTAssertEqualWithAccuracy(content.size.width,view.bounds.size.width,.01);
+  XCTAssertEqualWithAccuracy(content.size.height,view.bounds.size.height,.01);
+  auto& viewport=storage<heavymach::Viewport>(view,"_viewport");
+  XCTAssertEqualWithAccuracy(viewport.x,0,.01);XCTAssertEqualWithAccuracy(viewport.y,0,.01);
+  XCTAssertEqualWithAccuracy(viewport.logicalWidth*viewport.scale,content.size.width,.01);
+  XCTAssertEqualWithAccuracy(viewport.logicalHeight*viewport.verticalScale(),content.size.height,.01);
+  HMGLRenderer* gl=[view valueForKey:@"glRenderer"];
+  XCTAssertEqualWithAccuracy([[gl valueForKey:@"displayWidth"]doubleValue],backing.size.width,1);
+  XCTAssertEqualWithAccuracy([[gl valueForKey:@"displayHeight"]doubleValue],backing.size.height,1);
+  XCTAssertEqualObjects([gl diagnostics][@"lastError"],@"");
+  NSLog(@"HM_MAC_FULLSCREEN window=%@ content=%@ view=%@ backing=%@ viewport=(%.3f,%.3f,%.3f,%.3f) renderer=%@",NSStringFromRect(window.frame),NSStringFromRect(content),NSStringFromRect(view.bounds),NSStringFromRect(backing),viewport.x,viewport.y,viewport.logicalWidth*viewport.scale,viewport.logicalHeight*viewport.verticalScale(),[gl diagnostics][@"renderer"]);
+ } @finally {
+  [view setApplicationActive:NO];
+  if(!wasFull&&(window.styleMask&NSWindowStyleMaskFullScreen)){
+   XCTestExpectation* exited=[self expectationForNotification:NSWindowDidExitFullScreenNotification object:window handler:nil];
+   [window toggleFullScreen:nil];[self waitForExpectations:@[exited] timeout:15];
+   XCTAssertEqualWithAccuracy(window.frame.size.width,initial.size.width,1);
+   XCTAssertEqualWithAccuracy(window.frame.size.height,initial.size.height,1);
+  }
+ }
 }
 - (void)testValidationPanelStartsWithChosenWeaponAtEveryGrade {
  auto& data=storage<heavymach::GameData>(self.game,"_data");
