@@ -4,6 +4,14 @@
 
 제품 코드 `72e8c68e` · 2026년 10월 25일 기준
 
+## 후속 타이틀·Android APK 계획 {#android-plan}
+
+원래 Archive 모음에 Heavy Mach 2, Heavy Mach 2 HD, Mach Defense, Heavy MACH: Defense가 있다. IPA 19개 목록과 네 대표 파일의 다운로드 응답을 확인했다. 중단한 Defense 포크는 로컬에 Android 개발 브랜치와 기존 debug APK가 남아 있으며 이번 조사에서 보존했다.
+
+현재 HeavyMach의 C++ 코어 20개 파일은 수정 없이 Android ARM64 정적 라이브러리로 컴파일됐다. 다음은 기존 GLES·OpenAL 동작을 유지하면서 플랫폼 연결과 메뉴·HUD를 이식하는 작업이다. 일반·치트 APK 생성, 저장·생명주기·전체 무기·실기기 성능 검사까지의 단계와 전용 스킬을 작성했다. Android APK는 아직 만들지 않았다.
+
+[타이틀·Defense 조사 전문](related-titles.html) · [Android 개발 계획 전문](android-plan.html)
+
 ## 분리 후 전수검사·REA 실행 확인 {#migration-audit}
 
 분리 전 Git 대상 595개를 전수 대조했고 누락은 없었다. OpenAL 소스 4개가 제외 규칙에 걸린 것은 복구했다. 새 폴더에 없던 REA 분석 자료 3,571개와 호환판 소스·링크 5,119개, 상위 iOS 지침도 복원했다. 끊긴 문서 경로와 Unity용 스킬 배정을 수정했다. 로컬 입력 10,292항목을 원본과 대조했고, REA 증거 부록 6개가 동일하게 재생성됐다. 게임 코드와 v0.9 태그는 바꾸지 않았다.

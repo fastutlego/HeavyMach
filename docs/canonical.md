@@ -44,3 +44,7 @@
 - [IPA 포팅과 네이티브 앱 복원](public/ipa-port-and-native-app-20261026.md): 두 판본의 제작·비교·수정과 최종 설치를 정리한 기술 블로그 원고. 현행 정책은 위 문서들을 따른다.
 
 - [저장소 관리·v0.9 복원](repository-management.md): develop→main 병합, 태그 고정, 별도 worktree와 저장 보존.
+
+## Android 후속 계획
+
+2026-10-26 요청으로 [Android APK 개발 계획](android-port-plan-20261026.md)과 [후속 타이틀 조사](related-titles-20261026.md)를 추가했다. Android는 C++ 코어 컴파일 조사까지 완료했으며 APK는 미구현이다. 관련 업무는 document-map의 android와 port-heavymach-android 스킬을 읽는다. 현행 iOS 완료 상태와 후속 계획을 구분한다.
