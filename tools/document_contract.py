@@ -44,7 +44,7 @@ def plan(data, tasks, files):
         docs.extend(data['domains'][key]['read'])
     print('\n실제로 읽을 문서:')
     for name in dict.fromkeys(docs):
-        print('  HeavyMach/' + name)
+        print('  ' + str(ROOT / name))
     for key in selected:
         domain = data['domains'][key]
         print('\n' + domain['label'])

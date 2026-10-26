@@ -1,5 +1,10 @@
 # 2026-10-25 문서·코드·앱 일치 체계 점검 및 보완
 
+## 2026-10-26 분리 후 전수검사
+
+Git 대상 595개에 누락은 없었고 게임 코드·아트·검사는 v0.9와 같다. Git 제외 규칙에 걸린 OpenAL 소스 4개, 새 폴더에 없던 REA 분석·호환 소스, 상위 iOS 지침, 끊긴 문서 경로와 스킬 배정을 복구했다. 로컬 입력 10,292항목을 대조하고 REA 증거 부록6개의 동일 재생성을 확인했다. [전수검사와 보존 범위](migration/completeness-audit-20261026.md)를 따른다.
+
+
 ## 2026-10-26 독립 저장소·v0.9
 
 현재 저장소는 `gelb2/HeavyMach`, 작업 위치는 `/Users/sokol/Git/ProjectGameDev-Hub/HeavyMach`다. 원본 호환 실행판은 `Compatibility/`에 있다. `feat/import-heavymach → develop → main`을 PR로 병합하고 main 병합 커밋 `4e17f5efd786095dfcd74a7334229908954da930`에 `v0.9`를 붙였다. 이후 문서 변경이 main에 들어가도 이 태그는 이동하지 않는다.
