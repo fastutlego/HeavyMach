@@ -1,0 +1,46 @@
+{
+  "source_commit": "264a410e432adb4e7c3f1dc040fbfedbe1ffcfa6",
+  "isolated_input_file_count": 2050,
+  "input_manifest_sha256": "5825ef377c02a388300bb63e2af15fbcf577dc6d2bf46f844c7226dea9053d85",
+  "negative_controls": {
+    "deny-git-probe": 1,
+    "deny-ipa-probe": 1,
+    "deny-ipa-extension-probe": 1,
+    "allow-copy-probe": 0
+  },
+  "builds": [
+    {
+      "name": "HeavyMachRestored-iphonesimulator",
+      "exit_code": 0
+    },
+    {
+      "name": "HeavyMachValidation-iphonesimulator",
+      "exit_code": 0
+    },
+    {
+      "name": "HeavyMachRestored-iphoneos",
+      "exit_code": 0
+    },
+    {
+      "name": "HeavyMachValidation-iphoneos",
+      "exit_code": 0
+    }
+  ],
+  "core_passed": 17,
+  "core_failed": 0,
+  "ios_passed": 14,
+  "ios_failed": 0,
+  "local_sources": 68,
+  "compiled_units_per_app": 29,
+  "git_tracked_resource_files": 0,
+  "source_symlinks": 0,
+  "resources_symlinks": 0,
+  "native_core_symbols_confirmed": true,
+  "input_contains_ipa_or_compatibility": false,
+  "resource_bundle_hash_mismatches": 0,
+  "device_build_signed": false,
+  "fresh_simulator_install_and_launch": [
+    "HeavyMachRestored",
+    "HeavyMachValidation"
+  ]
+}

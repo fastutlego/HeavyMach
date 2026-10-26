@@ -1,5 +1,15 @@
 # HeavyMach 보고 사이트
 
+## 최신 게시 — 2026-10-26 IPA 없는 빌드·REA 구현 검증
+
+`/independence.html`에 원본 읽기 차단·4개 빌드·앱 자원 해시·Simulator 실행·Core17/iOS14 검사와 Git 자원 상태를 게시했다. `/rea-implementation.html`에 25함수군·증거140건·산출물2,067개·REA 함수 재조회 결과를 연결했다. 설치 문서의 IPA 필수 표현을 수정했다.
+
+- 소스: `a8240d47748ed67d8a63b80950906f5252a182c9`.
+- 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_c61cacdce1f48191a953becc27710c04`.
+- 배포: `appgdep_6adf27b486c48191a2cacdd71f37495b`, `succeeded`, 2026-10-26T10:13:22.069962+00:00. 소유자 전용 유지.
+- 새 보고·REA 상세·설치 원고와 웹 본문/다운로드 일치, 로컬 링크226개, 기존 앵커·이미지 보존 검사 통과. 새 실행 화면2개와 증거JSON을 함께 게시했다.
+- 게임 빌드와 Simulator 검사는 실제 실행했다. 새 웹페이지의 브라우저 화면 검사는 수행하지 않았다.
+
 ## 최신 게시 — 2026-10-26 집필 자료·설치 안내·영상 준비
 
 `/publication.html`에 SaaS 담당 세션의 읽기 순서·주제별 근거·미확보 자료를 정리했다. `/installation.html`에는 GitHub용 설치 가이드, `/implementation.html`에는 구현·검증 범위, `/media-preparation.html`에는 후속 영상의 추출·README 배치 절차를 게시했다. SaaS Apps·Mags 본문은 이번 게시 대상이 아니다.

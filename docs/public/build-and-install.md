@@ -8,7 +8,7 @@ Apple Silicon Mac, iOS SDK와 Simulator 런타임을 설치한 Xcode, Python 3, 
 
 2026년 10월 26일 작성 환경은 macOS 27.0.1, Xcode 27.1, CMake 4.4.4, Python 3.14.6, XcodeGen 2.45.4다. 앱의 deployment target은 iOS 15.0이다. 현재 OpenAL 빌드 스크립트는 arm64를 대상으로 한다.
 
-원본 HeavyMach 1.13 IPA도 필요하다. 이미지·음원·맵은 저장소에 포함하지 않는다. 사용한 IPA의 SHA-256은 `477c672f92110c6020be3f744dfa7a3456739e6f970c66715e3b7b3cd32b7776`이다. [원본 출처와 식별 정보](https://github.com/gelb2/HeavyMach/blob/main/docs/source-provenance.md)에서 대조한다.
+이미 준비된 `Resources` 폴더가 있으면 원본 IPA는 필요하지 않다. 현재 Mac 프로젝트는 이 상태로 빌드·실행된다. Git에는 이미지·음원·맵을 포함하지 않으므로 새 clone에는 준비된 `Resources`를 함께 가져온다. 자원이 없는 경우에는 원본 HeavyMach 1.13 IPA에서 다시 추출할 수 있다. 사용한 IPA의 SHA-256은 `477c672f92110c6020be3f744dfa7a3456739e6f970c66715e3b7b3cd32b7776`이다. [원본 출처와 식별 정보](https://github.com/gelb2/HeavyMach/blob/main/docs/source-provenance.md)에서 대조한다.
 
 ## 소스 받기
 
@@ -21,7 +21,7 @@ git lfs pull
 
 현재 저장소는 비공개이므로 접근 가능한 GitHub 계정으로 인증해야 한다. 재현 기준을 고정하려면 clone 직후 `git switch --detach v0.9`를 실행한다. `v0.9`는 정상 플레이를 확인한 제품 코드의 태그이며, `main`에는 그 뒤의 문서·저장소 정리가 추가돼 있다. GitHub Releases에 설치 파일은 아직 등록하지 않았다.
 
-## 원본 자원 준비
+## 자원이 없을 때 원본에서 다시 준비
 
 이 절은 `Resources`가 없는 새 checkout에서 실행한다. `HM_IPA`에는 보관한 IPA의 실제 경로를 지정한다. 원본은 읽기만 하고 추출·변환 결과는 별도 폴더에 만든다.
 
@@ -121,3 +121,5 @@ ctest --test-dir build/core --output-on-failure
 ```
 
 기존 분리 작업에서 일반·치트 arm64 Simulator 빌드와 코어 17개 검사를 통과했다. 이 문서 작성에서는 스크립트·프로젝트 설정·명령 도움말을 대조하고, 위 이미지 복사 코드를 별도 임시 폴더에서 실행해 695개 파일의 원본 해시 일치를 확인했다. 외부 사용자의 새 clone에서 위 순서 전체를 실행한 기록은 아직 없다.
+
+[2026-10-26 독립 빌드 검증](ipa-independent-build-20261026.md)에서 IPA·포팅판 폴더 접근을 차단하고 일반·치트 앱의 두 SDK 빌드, 새 Simulator 실행과 코어17·iOS14 검사를 통과했다. 기존 프로젝트와 같은 소스·준비된 자원을 복사한 검사이며 Git clone만으로 자원이 제공된다는 뜻은 아니다.
