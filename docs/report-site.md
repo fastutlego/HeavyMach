@@ -350,3 +350,61 @@ macOS 자체 전체 화면 캡처에서 게임이 화면 끝까지 표시됨을 
 - 배포: `appgdep_6addcdb603a48191855e52d73a06dbf6`, API `succeeded`, 소유자 전용 유지.
 - 관련27개 검사와 후속 경로·타이머 검사 통과를 기록했다. Simulator의 타이틀·슬롯 약27~30ms는 60Hz 통과로 표시하지 않았다. 새 치트 앱은 아이폰 설치 성공, 잠금 때문에 실행 검사 대기다.
 - HTML 파싱과 이미지 참조 파일을 확인했다. 새 보고서의 브라우저 시각 검수는 `cgWindowNotFound`로 완료하지 못했다. 현재 앱 목록 조회는 성공했고 서비스/CLI 버전·서명 일치 및 최근 인증 거절0을 확인했다. 근거 없이 서버를 재시작하지 않았다. 진단은 `build/menu-extension-20261025/cua-window-diagnostic.json`에 남겼다.
+
+## 2026-10-27 자동조준 치트 브랜치 보고
+
+- `auto-aim-progress.html`: 전용 브랜치, 입력·표적·탄도, 실제 iPad 초기 검사와 캡처3장, 시뮬레이터 회귀, 보정 후보의 222발 비교, 미완료 실기기 계측을 게시했다.
+- 소스: `2bd29c1e17635efbbab8b43a59dd0394ca34f150`.
+- 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_56fe815dc260819188f80a04f13d2ea5`.
+- 배포: `appgdep_6adfc4b563948191bf42e0ef2b5a2ec5`, API `succeeded`. 소유자 전용 유지.
+- Markdown·HTML·이미지 링크를 검사했다. Mac 잠금으로 새 브라우저 화면 검수는 하지 못했다. 이미지 원본은 실제 iPad GL 캡처로 확인했다.
+- 게임 구현 커밋은 `314acca5`, 브랜치는 `feat/auto-aim-ipad-validation`이다. develop/main에는 병합하지 않았다. 사이트 소스 저장소의 main 갱신과 게임 저장소의 병합을 구분한다.
+
+### 2026-10-27 06:34 KST — 자동조준 최신 iPad 설치 결과
+
+기존 `/auto-aim-progress.html`에 최신 기기 설치, 기능4개 통과, Device Hub 직접 조작, 실기기 프레임 기준 실패와 후속 계측 항목을 반영했다. 원고와 JSON 증거를 함께 갱신했다. 로컬 Chrome에서 본문·캡처를 확인했고 HTTP200을 확인했다. 기존 소유자 비공개 범위를 유지했다.
+
+- Site source: `565354a483a6c46dbd7b1847281aec941fa2ed33`
+- Version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_934dc28f599c81919609f3163c5d0ea9`
+- Deployment: `appgdep_6adfc75cb454819197af26fe1dc673e1`, `succeeded`
+- URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/auto-aim-progress.html
+
+게임 소스는 `feat/auto-aim-ipad-validation`에 유지한다. develop/main 병합은 하지 않았다.
+
+### 2026-10-27 06:57 KST — 자동조준 버튼 통합·HUD 부착
+
+기존 `/auto-aim-progress.html`과 계획 원고에 M·C 삭제, 명중 보정 통합, A OFF 시 터치 사격 복귀, 금속 패널과 HUD 하단 부착을 반영했다. 실제 iPad 캡처와 시뮬레이터/실기기 각4개 검사 결과를 게시했다. Chrome AX에서 최신 본문·캡처 링크를 확인했다. 마지막 상단 화면 캡처 시 CUA `noWindowsAvailable`이 발생해 상단 레이아웃의 추가 브라우저 캡처는 남기지 못했다. 실제 게임 캡처와 기기 화면은 앞서 확인했다. 기존 소유자 비공개 범위를 유지했다.
+
+- Site source: `60c56de3a74af75ecdc839ad860ce4888e71693b`
+- Version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_29ca0d8812dc8191ac944421048cb6ac`
+- Deployment: `appgdep_6adfccd43cfc8191be3969e3a48759f8`, `succeeded`
+- URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/auto-aim-progress.html
+
+### 2026-10-27 07:36 KST — 표적 상태 표지·버튼 순서·두 기기 설치
+
+A·표적 전환·사격 순서, 사선과 LOCKED/TRACK/BLOCKED 표시, 세 환경의 검사 각3개, iPhone·iPad 정식·치트 앱4건의 무선 설치·실행을 반영했다. 실제 iPad GL 캡처를 추가했다. 기존 절 앵커 section-0~3을 유지했다. Chrome에서 최신 본문과 상단 레이아웃을 확인했고, 후속 캡처는 noWindowsAvailable로 추가 확인하지 못했다. 소유자 비공개 범위를 유지했다.
+
+- Site source: `556af79be53abb32e0fc946c4799ab7d00d2fb5c`
+- Version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_d18b29a66c6c8191babbfec9c604e8dc`
+- Deployment: `appgdep_6adfd5f5fa9481918fbb77621f06ea31`, `succeeded`
+- URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/auto-aim-progress.html
+
+### 2026-10-27 08:02 KST — 정식 앱 자동조준 추가
+
+정식 앱의 A ON/OFF, 공용 입력 검사 4개 통과, iPhone·iPad 무선 업데이트 설치·실행, 실제 정식 앱 조작 결과를 기존 보고서에 추가했다. iPad에서는 이동·LOCKED·F 사격·적 폭발을, iPhone에서는 A 전환·TRACK 표시를 확인했다. Chrome에서 최신 본문과 상단 배치를 확인했다. 기존 절 앵커와 소유자 비공개 범위를 유지했다.
+
+- Site source: `fce36528d8e6e1d1dc7af4c32c678d68493660d9`
+- Version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_5fca48b310c0819189274d781fd82a6b`
+- Deployment: `appgdep_6adfdc0506a48191a365a3efc0a0d995`, `succeeded`
+- URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/auto-aim-progress.html
+
+게임 저장소의 develop/main에는 병합하지 않았다.
+
+### 2026-10-27 08:24 KST — C 삭제·수동 사격 비교·4건 설치
+
+C 보정 삭제와 원래 탄속·분산 유지, 자동조준 추가 전 코드와 수동 사격 25,200프레임 일치, 시뮬레이터·iPhone·iPad 입력 검사 각 4개, 두 기기 정식·치트 앱의 무선 설치·실행을 반영했다. 과거 보정 비교는 삭제 전 기록으로 표시했다. Chrome에서 최신 본문과 기존 절 앵커를 확인했다. 소유자 비공개 범위를 유지했다.
+
+- Site source: `89b59fef56ab3166cca04c98f988cc3664b460cb`
+- Version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_1fdb12683a688191bd10cf7052bb61b5`
+- Deployment: `appgdep_6adfe139d06081918b60398bdbb5dcb8`, `succeeded`
+- URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/auto-aim-progress.html

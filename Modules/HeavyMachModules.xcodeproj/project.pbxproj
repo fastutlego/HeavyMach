@@ -14,6 +14,7 @@
 		02171E93AC8BABBEC4BF0981 /* HMGLRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 271EEB91F21E2BAA6B1E779C /* HMGLRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02CCC6FDB8B886F4C6E222B7 /* Viewport.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 4585948009A22F29F058D449 /* Viewport.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		02DA970652D7552713486A76 /* HMPlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = 995C582EF39E9482190955DC /* HMPlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		03EC4BDD053D298CD224E9E8 /* AutoAim.hpp in Headers */ = {isa = PBXBuildFile; fileRef = E214BF6EB3909E650831F5BC /* AutoAim.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		044575F289D59DACE3170CEE /* TitleState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 895906159717AAAA102AA98F /* TitleState.cpp */; };
 		04698EBC25A6FDCB6E4BF48D /* ItemBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5DF279CAF40743F5079F08F9 /* ItemBox.cpp */; };
 		063C4FA769A2AD3C4BF0FD12 /* LoadingTransition.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 8C9CAFE98FC03BD476E1EEE1 /* LoadingTransition.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -214,10 +215,12 @@
 		9B47AD1DB0201295EAC59B8F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0172C006091CE6FE723564F8 /* CoreGraphics.framework */; };
 		9B8C7582BE2D7AD8954719D1 /* HMValidationPanel.mm in Sources */ = {isa = PBXBuildFile; fileRef = B57F2891D89BB12C9473FC92 /* HMValidationPanel.mm */; };
 		9D525F6E4D26E5D5058D65D7 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 849D05E2233B97E99C6E4026 /* Player.cpp */; };
+		9DF19759270A2E2F6DB7627E /* AutoAim.hpp in Headers */ = {isa = PBXBuildFile; fileRef = E214BF6EB3909E650831F5BC /* AutoAim.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F707F6FA7955D40D3FCF4A4 /* RawData in Resources */ = {isa = PBXBuildFile; fileRef = AD556407F8F4C33C20D89390 /* RawData */; };
 		9FB5A750682A8CC2F35321DE /* HMOpenALAudio.mm in Sources */ = {isa = PBXBuildFile; fileRef = 111F6F6E702E81B273A01EBC /* HMOpenALAudio.mm */; };
 		9FC9325948FD253ABBFB75D8 /* Player.hpp in Headers */ = {isa = PBXBuildFile; fileRef = D3B89488A5C1461E6381FA14 /* Player.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		A064E585241D62387067F705 /* Audio in Resources */ = {isa = PBXBuildFile; fileRef = DE8B4B05E6A6786A83653E1D /* Audio */; };
+		A14D5065B8A2C9B2EDA881A8 /* AutoAim.hpp in Headers */ = {isa = PBXBuildFile; fileRef = E214BF6EB3909E650831F5BC /* AutoAim.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		A310617ED5FD6C7DAE4ECB01 /* HMGLRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 271EEB91F21E2BAA6B1E779C /* HMGLRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A32293D7F99EB1CF8EC1F5D5 /* World.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F63E48573B7B99BA9E16C6DD /* World.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		A40B1B9F1C770D6DE6A2535C /* GameSession.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 9243DC891FCB44C01DAAB05F /* GameSession.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -314,6 +317,7 @@
 		E34A6C400F1EF5C9CB9B9981 /* SpriteRaster.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 55E72B84FB53C7A82D2667D5 /* SpriteRaster.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		E3E943B7AA278C1446832722 /* Player.hpp in Headers */ = {isa = PBXBuildFile; fileRef = D3B89488A5C1461E6381FA14 /* Player.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		E4423C49DE374DC3A6811C5C /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6E8AA0384E913E91D56F4A9 /* CoreMotion.framework */; };
+		E5F13885514B17003BB88AF5 /* AutoAim.hpp in Headers */ = {isa = PBXBuildFile; fileRef = E214BF6EB3909E650831F5BC /* AutoAim.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		E8692B656A04968E48C82916 /* HMValidationPanel.mm in Sources */ = {isa = PBXBuildFile; fileRef = B57F2891D89BB12C9473FC92 /* HMValidationPanel.mm */; };
 		E99EE1632B1333198C9F71BD /* GlobalInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F03E3B5D2219BA910BC9641 /* GlobalInfo.cpp */; };
 		EB1624A7DD0211B4152102F8 /* HMOpenALAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = 389380EEF7305391318926E8 /* HMOpenALAudio.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -469,6 +473,7 @@
 		DCA8B52DA62F700F45E45BB1 /* HMGLPlatform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMGLPlatform.h; sourceTree = "<group>"; };
 		DE8B4B05E6A6786A83653E1D /* Audio */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Audio; path = ../Resources/Audio; sourceTree = SOURCE_ROOT; };
 		DF6A5664FBC53E8CC90C20F7 /* Enemy.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy.cpp; sourceTree = "<group>"; };
+		E214BF6EB3909E650831F5BC /* AutoAim.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AutoAim.hpp; sourceTree = "<group>"; };
 		E2183F26EE878410C5E54F97 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E2AF7D132F67FED3A9126A53 /* HMGameHUD.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMGameHUD.mm; sourceTree = "<group>"; };
 		E2C85ADB55551A301079F8D1 /* CanvasGeometry.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CanvasGeometry.hpp; sourceTree = "<group>"; };
@@ -654,6 +659,7 @@
 			isa = PBXGroup;
 			children = (
 				11971E9EFEB15E978F03EF43 /* AudioContract.hpp */,
+				E214BF6EB3909E650831F5BC /* AutoAim.hpp */,
 				86456FA0664F04D594427D3D /* BulletVisual.cpp */,
 				44A9267DB2855E16552DA8BA /* BulletVisual.hpp */,
 				7DF792FE9F01C97A48E46F9F /* CameraShake.cpp */,
@@ -723,6 +729,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22A6354D3EC68D9D46B5DC2B /* AudioContract.hpp in Headers */,
+				9DF19759270A2E2F6DB7627E /* AutoAim.hpp in Headers */,
 				39EABD44723E93991E80E87A /* BulletVisual.hpp in Headers */,
 				4C5E203130BCA5F26E7C0ABA /* CameraShake.hpp in Headers */,
 				8F48C70393B62A6BF223E33E /* CanvasGeometry.hpp in Headers */,
@@ -758,6 +765,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FDB5E544868FF402339694E /* AudioContract.hpp in Headers */,
+				A14D5065B8A2C9B2EDA881A8 /* AutoAim.hpp in Headers */,
 				42A2CB20FAB2B39CA208074D /* BulletVisual.hpp in Headers */,
 				173ECA7D627AA0E67A4C236A /* CameraShake.hpp in Headers */,
 				C6D3062BADE08B2BC5E9FF8C /* CanvasGeometry.hpp in Headers */,
@@ -833,6 +841,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF4F83B31972710BE9D21D51 /* AudioContract.hpp in Headers */,
+				03EC4BDD053D298CD224E9E8 /* AutoAim.hpp in Headers */,
 				CCFB87B8A4FAA91A7EBB72FB /* BulletVisual.hpp in Headers */,
 				86B71A53419979003533F296 /* CameraShake.hpp in Headers */,
 				3BF37609FE254BC880DC198A /* CanvasGeometry.hpp in Headers */,
@@ -908,6 +917,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8828AFEF7EDE330D71A012B7 /* AudioContract.hpp in Headers */,
+				E5F13885514B17003BB88AF5 /* AutoAim.hpp in Headers */,
 				CFAD2BE318EF2134B2B3C5CC /* BulletVisual.hpp in Headers */,
 				734B686C0A56534969EA5161 /* CameraShake.hpp in Headers */,
 				DC3A4E023B3E97276CFFBCD6 /* CanvasGeometry.hpp in Headers */,

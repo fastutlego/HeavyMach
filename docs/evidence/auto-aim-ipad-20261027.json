@@ -1,0 +1,1461 @@
+{
+  "date": "2026-10-27",
+  "branch": "feat/auto-aim-ipad-validation",
+  "base": "8fdeb629",
+  "merged_to_develop": false,
+  "merged_to_main": false,
+  "core_suites": {
+    "passed": 20,
+    "failed": 0
+  },
+  "core_conditions_per_candidate": {
+    "hit": 210,
+    "unreachable_blocked": 30,
+    "total": 240
+  },
+  "projectile_comparison": [
+    {
+      "weapon": "P_Wpn_Missile01",
+      "correction": false,
+      "tracked": 4,
+      "hits": 3
+    },
+    {
+      "weapon": "P_Wpn_Laser",
+      "correction": false,
+      "tracked": 2,
+      "hits": 2
+    },
+    {
+      "weapon": "P_Wpn_Gun02",
+      "correction": false,
+      "tracked": 13,
+      "hits": 13
+    },
+    {
+      "weapon": "P_Wpn_Gun01",
+      "correction": false,
+      "tracked": 13,
+      "hits": 13
+    },
+    {
+      "weapon": "P_Wpn_Missile02",
+      "correction": false,
+      "tracked": 4,
+      "hits": 3
+    },
+    {
+      "weapon": "P_Wpn_Gun04",
+      "correction": false,
+      "tracked": 13,
+      "hits": 12
+    },
+    {
+      "weapon": "P_Wpn_ElShock",
+      "correction": false,
+      "tracked": 13,
+      "hits": 13
+    },
+    {
+      "weapon": "P_Wpn_Canon01",
+      "correction": false,
+      "tracked": 4,
+      "hits": 3
+    },
+    {
+      "weapon": "P_Wpn_RaderBomb",
+      "correction": false,
+      "tracked": 7,
+      "hits": 6
+    },
+    {
+      "weapon": "P_Wpn_Missile03",
+      "correction": false,
+      "tracked": 6,
+      "hits": 5
+    },
+    {
+      "weapon": "P_Wpn_RaderLsr",
+      "correction": false,
+      "tracked": 10,
+      "hits": 9
+    },
+    {
+      "weapon": "P_Wpn_Gun06",
+      "correction": false,
+      "tracked": 13,
+      "hits": 12
+    },
+    {
+      "weapon": "P_Wpn_Shotgun01",
+      "correction": false,
+      "tracked": 25,
+      "hits": 21
+    },
+    {
+      "weapon": "P_Wpn_RaderMsl",
+      "correction": false,
+      "tracked": 7,
+      "hits": 4
+    },
+    {
+      "weapon": "P_Wpn_Gun03",
+      "correction": false,
+      "tracked": 13,
+      "hits": 12
+    },
+    {
+      "weapon": "P_Wpn_Canon03",
+      "correction": false,
+      "tracked": 5,
+      "hits": 3
+    },
+    {
+      "weapon": "P_Wpn_Gun07",
+      "correction": false,
+      "tracked": 13,
+      "hits": 13
+    },
+    {
+      "weapon": "P_Wpn_Shotgun02",
+      "correction": false,
+      "tracked": 40,
+      "hits": 30
+    },
+    {
+      "weapon": "P_Wpn_Gun05",
+      "correction": false,
+      "tracked": 13,
+      "hits": 13
+    },
+    {
+      "weapon": "P_Wpn_Canon02",
+      "correction": false,
+      "tracked": 4,
+      "hits": 3
+    },
+    {
+      "weapon": "P_Wpn_Missile01",
+      "correction": true,
+      "tracked": 4,
+      "hits": 4
+    },
+    {
+      "weapon": "P_Wpn_Laser",
+      "correction": true,
+      "tracked": 2,
+      "hits": 2
+    },
+    {
+      "weapon": "P_Wpn_Gun02",
+      "correction": true,
+      "tracked": 13,
+      "hits": 13
+    },
+    {
+      "weapon": "P_Wpn_Gun01",
+      "correction": true,
+      "tracked": 13,
+      "hits": 13
+    },
+    {
+      "weapon": "P_Wpn_Missile02",
+      "correction": true,
+      "tracked": 4,
+      "hits": 4
+    },
+    {
+      "weapon": "P_Wpn_Gun04",
+      "correction": true,
+      "tracked": 13,
+      "hits": 13
+    },
+    {
+      "weapon": "P_Wpn_ElShock",
+      "correction": true,
+      "tracked": 13,
+      "hits": 13
+    },
+    {
+      "weapon": "P_Wpn_Canon01",
+      "correction": true,
+      "tracked": 4,
+      "hits": 4
+    },
+    {
+      "weapon": "P_Wpn_RaderBomb",
+      "correction": true,
+      "tracked": 7,
+      "hits": 7
+    },
+    {
+      "weapon": "P_Wpn_Missile03",
+      "correction": true,
+      "tracked": 6,
+      "hits": 6
+    },
+    {
+      "weapon": "P_Wpn_RaderLsr",
+      "correction": true,
+      "tracked": 10,
+      "hits": 10
+    },
+    {
+      "weapon": "P_Wpn_Gun06",
+      "correction": true,
+      "tracked": 13,
+      "hits": 13
+    },
+    {
+      "weapon": "P_Wpn_Shotgun01",
+      "correction": true,
+      "tracked": 25,
+      "hits": 25
+    },
+    {
+      "weapon": "P_Wpn_RaderMsl",
+      "correction": true,
+      "tracked": 7,
+      "hits": 7
+    },
+    {
+      "weapon": "P_Wpn_Gun03",
+      "correction": true,
+      "tracked": 13,
+      "hits": 13
+    },
+    {
+      "weapon": "P_Wpn_Canon03",
+      "correction": true,
+      "tracked": 5,
+      "hits": 5
+    },
+    {
+      "weapon": "P_Wpn_Gun07",
+      "correction": true,
+      "tracked": 13,
+      "hits": 13
+    },
+    {
+      "weapon": "P_Wpn_Shotgun02",
+      "correction": true,
+      "tracked": 40,
+      "hits": 40
+    },
+    {
+      "weapon": "P_Wpn_Gun05",
+      "correction": true,
+      "tracked": 13,
+      "hits": 13
+    },
+    {
+      "weapon": "P_Wpn_Canon02",
+      "correction": true,
+      "tracked": 4,
+      "hits": 4
+    }
+  ],
+  "simulator_functional": {
+    "passed": 13,
+    "failed": 0,
+    "device": "iPad Pro 13-inch (M5) simulator",
+    "os": "27.1"
+  },
+  "physical_initial": {
+    "device": "iPad Air 13-inch (M2)",
+    "os": "27.0.1",
+    "transport": "wired",
+    "passed": 2,
+    "failed": 0,
+    "scope": "Initial auto-aim: all 20 weapons with move/jump/fire, mode-switch and mixed touch/keyboard ownership. Later held-finger clearing, high-arc fallback and stage-reset changes await a fresh signed build."
+  },
+  "simulator_presentation": {
+    "status": "failed_60hz_budget",
+    "renderer": "Apple Software Renderer",
+    "samples": [
+      {
+        "candidate": "manual",
+        "frame_work": {
+          "frames": 180,
+          "max_ms": 58.453333331272006,
+          "mean_ms": 43.5062902707917,
+          "over_60hz_budget": 180,
+          "p95_ms": 44.20958342961967
+        },
+        "callback_intervals": {
+          "frames": 180,
+          "max_ms": 58.62370831891894,
+          "mean_ms": 43.65846296229089,
+          "over_60hz_budget": 180,
+          "p95_ms": 44.3514168728143
+        },
+        "assisted_shots": 0,
+        "target_hits": 0
+      },
+      {
+        "candidate": "prediction",
+        "frame_work": {
+          "frames": 180,
+          "max_ms": 56.86508328653872,
+          "mean_ms": 43.83884004782885,
+          "over_60hz_budget": 180,
+          "p95_ms": 44.835083186626434
+        },
+        "callback_intervals": {
+          "frames": 180,
+          "max_ms": 57.065666653215885,
+          "mean_ms": 43.995028703163065,
+          "over_60hz_budget": 180,
+          "p95_ms": 44.96929165907204
+        },
+        "assisted_shots": 21,
+        "target_hits": 18
+      },
+      {
+        "candidate": "correction",
+        "frame_work": {
+          "frames": 180,
+          "max_ms": 56.8707084748894,
+          "mean_ms": 43.65288981158907,
+          "over_60hz_budget": 180,
+          "p95_ms": 44.42291660234332
+        },
+        "callback_intervals": {
+          "frames": 180,
+          "max_ms": 57.08570848219097,
+          "mean_ms": 43.80371805616758,
+          "over_60hz_budget": 180,
+          "p95_ms": 44.61858328431845
+        },
+        "assisted_shots": 21,
+        "target_hits": 18
+      }
+    ],
+    "note": "All three modes exceed 16.67ms in software presentation. This is not a physical iPad frame measurement."
+  },
+  "physical_final_presentation": {
+    "status": "failed_60hz_budget",
+    "with_device_screen_open": [
+      {
+        "assisted_shots": 0,
+        "callback_intervals": {
+          "frames": 180,
+          "max_ms": 28.262708334295894,
+          "mean_ms": 16.740377546304646,
+          "over_60hz_budget": 84,
+          "p95_ms": 17.17258333337668
+        },
+        "candidate": "manual",
+        "frame_work": {
+          "frames": 180,
+          "max_ms": 28.205791668369784,
+          "mean_ms": 9.553734953634477,
+          "over_60hz_budget": 17,
+          "p95_ms": 17.1332916670508
+        },
+        "phase": "autoaim_production_timer",
+        "renderer": {
+          "backend": "OpenGL ES 1.1",
+          "bufferHeight": 360,
+          "bufferWidth": 480,
+          "drawableInternalFormat": 36194,
+          "drawCalls": 38,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 359.8243103027344,
+          "logicalWidth": 480,
+          "presentation_timings_ms": {
+            "copy": 7.88500000089698,
+            "quad": 0.060874999689986,
+            "swap": 0.05570833309320733,
+            "wait_and_restore": 9.264833333872957
+          },
+          "renderer": "Apple M2 GPU",
+          "sceneReallocations": 2,
+          "textureCount": 46,
+          "textureUploads": 46,
+          "vendor": "Apple Inc.",
+          "version": "OpenGL ES-CM 1.1 Metal - 105"
+        },
+        "target_hits": 0
+      },
+      {
+        "assisted_shots": 21,
+        "callback_intervals": {
+          "frames": 180,
+          "max_ms": 25.4954166666721,
+          "mean_ms": 16.660159259259267,
+          "over_60hz_budget": 89,
+          "p95_ms": 20.369874999232707
+        },
+        "candidate": "prediction",
+        "frame_work": {
+          "frames": 180,
+          "max_ms": 25.418250001166598,
+          "mean_ms": 16.57917847223871,
+          "over_60hz_budget": 90,
+          "p95_ms": 20.26333333196817
+        },
+        "phase": "autoaim_production_timer",
+        "renderer": {
+          "backend": "OpenGL ES 1.1",
+          "bufferHeight": 360,
+          "bufferWidth": 480,
+          "drawableInternalFormat": 36194,
+          "drawCalls": 62,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 359.8243103027344,
+          "logicalWidth": 480,
+          "presentation_timings_ms": {
+            "copy": 7.3817916672851425,
+            "quad": 1.7156666672235588,
+            "swap": 0.04958333374815993,
+            "wait_and_restore": 8.729708331884467
+          },
+          "renderer": "Apple M2 GPU",
+          "sceneReallocations": 2,
+          "textureCount": 47,
+          "textureUploads": 47,
+          "vendor": "Apple Inc.",
+          "version": "OpenGL ES-CM 1.1 Metal - 105"
+        },
+        "target_hits": 18
+      },
+      {
+        "assisted_shots": 21,
+        "callback_intervals": {
+          "frames": 180,
+          "max_ms": 29.026083333519637,
+          "mean_ms": 16.66628333333493,
+          "over_60hz_budget": 86,
+          "p95_ms": 17.938999999387306
+        },
+        "candidate": "correction",
+        "frame_work": {
+          "frames": 180,
+          "max_ms": 28.96333333410439,
+          "mean_ms": 16.568360416567884,
+          "over_60hz_budget": 77,
+          "p95_ms": 17.84662499994738
+        },
+        "phase": "autoaim_production_timer",
+        "renderer": {
+          "backend": "OpenGL ES 1.1",
+          "bufferHeight": 360,
+          "bufferWidth": 480,
+          "drawableInternalFormat": 36194,
+          "drawCalls": 62,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 359.8243103027344,
+          "logicalWidth": 480,
+          "presentation_timings_ms": {
+            "copy": 6.856166666693753,
+            "quad": 0.06312500045169145,
+            "swap": 0.050208333050250076,
+            "wait_and_restore": 8.782708333455957
+          },
+          "renderer": "Apple M2 GPU",
+          "sceneReallocations": 2,
+          "textureCount": 47,
+          "textureUploads": 47,
+          "vendor": "Apple Inc.",
+          "version": "OpenGL ES-CM 1.1 Metal - 105"
+        },
+        "target_hits": 18
+      },
+      {
+        "correction_ms": 0.7133333328965819,
+        "phase": "autoaim_p95_added_cost",
+        "prediction_ms": 3.1300416649173712
+      }
+    ],
+    "after_device_screen_closed": [
+      {
+        "assisted_shots": 0,
+        "callback_intervals": {
+          "frames": 180,
+          "max_ms": 39.00900000007823,
+          "mean_ms": 16.81058032407034,
+          "over_60hz_budget": 89,
+          "p95_ms": 26.828208332517534
+        },
+        "candidate": "manual",
+        "frame_work": {
+          "frames": 180,
+          "max_ms": 38.9322083319712,
+          "mean_ms": 16.641086574024182,
+          "over_60hz_budget": 81,
+          "p95_ms": 26.672541665902827
+        },
+        "phase": "autoaim_production_timer",
+        "renderer": {
+          "backend": "OpenGL ES 1.1",
+          "bufferHeight": 360,
+          "bufferWidth": 480,
+          "drawableInternalFormat": 36194,
+          "drawCalls": 38,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 359.8243103027344,
+          "logicalWidth": 480,
+          "presentation_timings_ms": {
+            "copy": 5.844499999511754,
+            "quad": 0.10345833470637444,
+            "swap": 0.08312499994644895,
+            "wait_and_restore": 0.0006249993020901456
+          },
+          "renderer": "Apple M2 GPU",
+          "sceneReallocations": 2,
+          "textureCount": 46,
+          "textureUploads": 46,
+          "vendor": "Apple Inc.",
+          "version": "OpenGL ES-CM 1.1 Metal - 105"
+        },
+        "target_hits": 0
+      },
+      {
+        "assisted_shots": 21,
+        "callback_intervals": {
+          "frames": 180,
+          "max_ms": 33.917499999006395,
+          "mean_ms": 16.75951365741639,
+          "over_60hz_budget": 83,
+          "p95_ms": 17.206458333021146
+        },
+        "candidate": "prediction",
+        "frame_work": {
+          "frames": 180,
+          "max_ms": 33.83887499876437,
+          "mean_ms": 16.542058333288878,
+          "over_60hz_budget": 30,
+          "p95_ms": 16.806833335067495
+        },
+        "phase": "autoaim_production_timer",
+        "renderer": {
+          "backend": "OpenGL ES 1.1",
+          "bufferHeight": 360,
+          "bufferWidth": 480,
+          "drawableInternalFormat": 36194,
+          "drawCalls": 62,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 359.8243103027344,
+          "logicalWidth": 480,
+          "presentation_timings_ms": {
+            "copy": 5.780416666311794,
+            "quad": 0.09812499956751708,
+            "swap": 0.11087500024586916,
+            "wait_and_restore": 9.873583334410796
+          },
+          "renderer": "Apple M2 GPU",
+          "sceneReallocations": 2,
+          "textureCount": 47,
+          "textureUploads": 47,
+          "vendor": "Apple Inc.",
+          "version": "OpenGL ES-CM 1.1 Metal - 105"
+        },
+        "target_hits": 18
+      },
+      {
+        "assisted_shots": 21,
+        "callback_intervals": {
+          "frames": 180,
+          "max_ms": 35.603208334578085,
+          "mean_ms": 16.76269398148078,
+          "over_60hz_budget": 95,
+          "p95_ms": 17.64187499975378
+        },
+        "candidate": "correction",
+        "frame_work": {
+          "frames": 180,
+          "max_ms": 35.514791667083045,
+          "mean_ms": 16.383773148219106,
+          "over_60hz_budget": 70,
+          "p95_ms": 17.492916666014935
+        },
+        "phase": "autoaim_production_timer",
+        "renderer": {
+          "backend": "OpenGL ES 1.1",
+          "bufferHeight": 360,
+          "bufferWidth": 480,
+          "drawableInternalFormat": 36194,
+          "drawCalls": 62,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 359.8243103027344,
+          "logicalWidth": 480,
+          "presentation_timings_ms": {
+            "copy": 5.194458333789953,
+            "quad": 0.7561249985883478,
+            "swap": 0.08541666829842143,
+            "wait_and_restore": 8.734166665817611
+          },
+          "renderer": "Apple M2 GPU",
+          "sceneReallocations": 2,
+          "textureCount": 47,
+          "textureUploads": 47,
+          "vendor": "Apple Inc.",
+          "version": "OpenGL ES-CM 1.1 Metal - 105"
+        },
+        "target_hits": 18
+      },
+      {
+        "correction_ms": -9.179624999887892,
+        "phase": "autoaim_p95_added_cost",
+        "prediction_ms": -9.865708330835332
+      }
+    ],
+    "interpretation": "frame_work includes the pre-existing renderer sleep. Both manual and automatic failed the 16.67ms p95 assertion. No renderer or threshold change was made. The two runs do not establish automatic-aim regression or its CPU cost.",
+    "next": "Separate explicit sleep, update/aim, GL work, and actual presentation intervals; compare equivalent scenes before deciding any rendering change."
+  },
+  "artifacts": [
+    {
+      "path": "build/auto-aim-20261027/core-final.log",
+      "sha256": "575ce73c62da705c954ee32f815eb294cd99b103fab79e470307c0416eb9be3d"
+    },
+    {
+      "path": "build/auto-aim-20261027/core-autoaim-final.log",
+      "sha256": "c6ddb8e0bcb7c3e318668c44208795de2bc0c5e31eda77d13d64fa54a950546a"
+    },
+    {
+      "path": "build/auto-aim-20261027/sim-regression.log",
+      "sha256": "ddc1e338651659b1d7d2981d90752d86d19b486268729e2a67c1f482aa11b3f7"
+    },
+    {
+      "path": "build/auto-aim-20261027/ipad-tests.log",
+      "sha256": "41c2beba28ea7b4e7a4ec484d0f2f1a75079bde2fde15ff54fa218da6a080c34"
+    },
+    {
+      "path": "build/auto-aim-20261027/sim-presentation.log",
+      "sha256": "2db1782c2edb98ff6fef1b58ca481dd6eb9e6df44068b1aa03f7e98a6bad9968"
+    },
+    {
+      "path": "build/auto-aim-20261027/ipad-tests-2.log",
+      "sha256": "45ef33b041a4fb0786cbed9e8072bb3e3d84fec883f91636e54c7f6d48e5e488"
+    },
+    {
+      "path": "build/auto-aim-20261027/ipad-build-cli-2.log",
+      "sha256": "ac2cf1b4ea234a8494143bd86d452b849c8b08a7535263b641e062495477bf88"
+    },
+    {
+      "path": "build/auto-aim-20261027/sim-safe-area.log",
+      "sha256": "7f969db39cd9928279ce277adfee32dd7891a2bfec8cc7bd5e8b24d541a9a30c"
+    },
+    {
+      "path": "build/auto-aim-install-20261027/ipad-tests.log",
+      "sha256": "92d332a4b290deab899a4eec14a894adf6c5e416853d5b6542d621ba97bb5648"
+    },
+    {
+      "path": "build/auto-aim-install-20261027/ipad-no-mirror.log",
+      "sha256": "e42e200a1357534a695b832c5a11bcec717b490ea09d1765fbada4e40dd4f932"
+    },
+    {
+      "path": "build/auto-aim-single-toggle-20261027/simulator-hud.log",
+      "sha256": "df40a2d8992e431c1b21d049262dfa27fdfe6705ae06131490bda56914a8f3b1"
+    },
+    {
+      "path": "build/auto-aim-single-toggle-20261027/ipad-hud.log",
+      "sha256": "1c3a4c3e09c5ec5ca2e3ba9bb51686fb51319176114bd7ae2f54f69a144b1530"
+    }
+  ],
+  "simulator_safe_area_followup": {
+    "passed": 3,
+    "failed": 0,
+    "scope": "Latest safe-area controls: all weapons with movement/jump, held-input cancellation, fullscreen inverse mapping"
+  },
+  "source_sha256": {
+    "Sources/Core/AutoAim.hpp": "569620ed92a561560ed469a10d3a91be335bbc1a62f30816069b164e26ef3cba",
+    "Sources/Core/GameSession.cpp": "e130c93149a557b73ab64c252aedef6c429b83a4ea58409c1c6d9391bdcc1d01",
+    "Sources/iOS/HMGameView.mm": "9559dce92d8e4965da9cb697964639f9420b4e61035101bd814f5927ab732dcf",
+    "Tests/AutoAimTests.cpp": "b3fe55bb1d9429cddde8edc41432847d799bed420ce9ef80c21d5f57e933836d",
+    "Tests/Apple/HMAppleInputTests.mm": "77c82a737d9fd0316d28b9092dbb2795d03b206984ee1374388290ffce9d2efa",
+    "Tests/iOS/HMFramePerformanceTests.mm": "2841256ecf46d59a32fd391177e52c59ce9b4bf92fd3bc7ac7dcb3cb1bdf2e04"
+  },
+  "physical_final_functional": {
+    "status": "passed",
+    "passed": 4,
+    "failed": 0,
+    "source_commit": "3fcd1805",
+    "device": "iPad Air 13-inch (M2)",
+    "os": "27.0.1",
+    "transport": "wired",
+    "build": "Xcode Build For Testing 2026-10-27 06:26 KST, signature verified",
+    "scope": "20 weapons automatic movement/jump/fire/damage; manual keyboard 20 weapons; keyboard movement/jump/fire/release; mode and mixed touch/keyboard ownership. Shot-loop saveCalls=0."
+  },
+  "physical_direct_ui": {
+    "tool": "CUA Device Hub real-device screen",
+    "observed": [
+      "title and validation panel",
+      "Stage01 start with all weapons",
+      "forward movement and stop",
+      "automatic green reticle",
+      "fire-button hold followed by target disappearance and XP increase",
+      "booster jump",
+      "weapon change and support attack",
+      "manual/automatic switch",
+      "pause menu"
+    ],
+    "final_state": "Automatic mode enabled; paused at Resume Game",
+    "limitations": "Short Stage01 interaction, not all missions or sustained frame assessment."
+  },
+  "hud_integration": {
+    "date": "2026-10-27 06:54 KST",
+    "changes": [
+      "M and C buttons removed",
+      "A OFF restores manual touch aim/fire",
+      "A ON includes trajectory correction",
+      "3 metal controls mounted to original HUD offset/scale"
+    ],
+    "simulator": {
+      "passed": 4,
+      "failed": 0
+    },
+    "physical_ipad": {
+      "passed": 4,
+      "failed": 0,
+      "model": "iPad Air 13-inch (M2)",
+      "os": "27.0.1",
+      "installed": true
+    },
+    "tests": [
+      "testAutoAimControlsAttachToHUDAndNextTargetTouch",
+      "testAutoAimSingleToggleRestoresManualTouchFire",
+      "testAutoAimModeSwitchAndTouchKeyboardOwnership",
+      "testAutoAimEveryWeaponWithMovementAndJump"
+    ],
+    "direct_screen": "CUA real iPad: new metal HUD buttons visible, M/C absent, A toggles secondary controls visibility, existing cheat save resumed, final pause menu.",
+    "performance": "Not rerun for this UI change; earlier failed frame budget remains open.",
+    "art_manifest": "Art/AutoAim/20261027/manifest.json",
+    "capture": "docs/public/media/auto-aim/hud-integrated-ipad.png",
+    "source_sha256": {
+      "Sources/iOS/HMGameView.mm": "2e3d4e79a3610f7e75125143d618307f6657eeabae1aa1b8617e843a8bb7b103",
+      "Sources/iOS/HMMedia.mm": "0cfa86c73695e652020e2f88df8eb3756b6c6c0beb61646d3412f6bbeba1bc57",
+      "Tests/Apple/HMAppleInputTests.mm": "5bda3eecb1d4ac33053ac5df5591c37b8b4456b53d613731145ed31c3f96b3ed"
+    }
+  },
+  "lock_label_and_four_installs": {
+    "date": "2026-10-27",
+    "requirement": "HM-AIM",
+    "changes": "사용자 지시로 버튼 순서를 A → 표적 전환 화살표 → 사격 조준경으로 바꿨다. 표적 네 모서리에 사선과 상태 표지를 연결했다. LOCKED는 조준 가능, TRACK은 추적 중, BLOCKED는 지형·사거리 등으로 발사할 수 없는 상태다. 표적 획득 때 사선을 0.15초 동안 그리고 표지를 한 번 점등한다. 화면 가장자리에서는 글자를 안쪽에 배치한다. 기존 OpenGL 선 그리기를 사용하며 프레임마다 파일을 쓰거나 이미지를 생성하지 않는다.",
+    "result": "시뮬레이터·실제 iPad·실제 iPhone에서 관련3개씩 통과했다. 버튼 순서와 터치 판정, 상태 표지와 화면 경계,20종 무기 이동·점프·사격·피해를 검사했다. 두 기기에 치트·정식 앱4건을 무선으로 업데이트 설치하고 각각 실행했다. 기존 앱 삭제·저장 초기화는 하지 않았다. 자동조준 UI는 치트 앱에만 제공하며 정식 앱은 기존 터치 조작을 유지한다. develop/main에는 병합하지 않는다. 이전 프레임 기준 실패는 이번 검사 범위에 포함하지 않았다.",
+    "branch": "feat/auto-aim-ipad-validation",
+    "base_commit": "5fce9205",
+    "sources": {
+      "Sources/iOS/HMGameView.mm": "294126d6cbbad56749ec7a3cdb43047bfa247b84a39681f16995d5adf598afae",
+      "Sources/iOS/HMAimOverlay.hpp": "bfb02fd0eaece8d7f909ed4dab340f1e8ff85328c4071ce9eb15e631f58ae638",
+      "Tests/Apple/HMAppleInputTests.mm": "d445b2f4c09b32f0949f026c702b66e643fe027111f3f9dace9293a799ddab6b"
+    },
+    "tests": {
+      "simulator": {
+        "passed": 3,
+        "failed": 0,
+        "raw_log": "build/auto-aim-lock-label-20261027/simulator.log",
+        "sha256": "0ba78572851e581280d69b8e4fc20e8e36afa7a4a6420269695f75b828b06775"
+      },
+      "ipad": {
+        "passed": 3,
+        "failed": 0,
+        "raw_log": "build/auto-aim-lock-label-20261027/ipad.log",
+        "sha256": "93b27211bab30c6526e4a5dd0cc496b9f370fd01312fd50f0aa26600f3b1194f"
+      },
+      "iphone": {
+        "passed": 3,
+        "failed": 0,
+        "raw_log": "build/auto-aim-lock-label-20261027/iphone.log",
+        "sha256": "3e5d6dfcf1f24f2b3f05fd2726fe7750c81ce3d6c0e7baddf09a88980876d676"
+      }
+    },
+    "installs": [
+      {
+        "device": "ipad",
+        "app": "restored",
+        "action": "install",
+        "transport": "localNetwork",
+        "outcome": null,
+        "raw": "build/auto-aim-lock-label-20261027/ipad-restored-install-final.json",
+        "sha256": "060708c050af631e32b3e5ef5f672018239e85eecdac9d6ae7f40c4e3a178b6b"
+      },
+      {
+        "device": "ipad",
+        "app": "restored",
+        "action": "launch",
+        "transport": "localNetwork",
+        "outcome": null,
+        "raw": "build/auto-aim-lock-label-20261027/ipad-restored-launch-final.json",
+        "sha256": "a301805c8b2164ae05d2c8945b298d872570a351a75e2ddf5da1d1b09b2f587c"
+      },
+      {
+        "device": "ipad",
+        "app": "validation",
+        "action": "install",
+        "transport": "localNetwork",
+        "outcome": null,
+        "raw": "build/auto-aim-lock-label-20261027/ipad-validation-install-final.json",
+        "sha256": "4267c14f10a91af28b9445de5fef41b50ff100de0c3e491f1745500d3f779d76"
+      },
+      {
+        "device": "ipad",
+        "app": "validation",
+        "action": "launch",
+        "transport": "localNetwork",
+        "outcome": null,
+        "raw": "build/auto-aim-lock-label-20261027/ipad-validation-launch-final.json",
+        "sha256": "fef9fe06d56fd71edcdac83354a93df5d9c2db6d314ac06d49675ff9d94fc123"
+      },
+      {
+        "device": "iphone",
+        "app": "restored",
+        "action": "install",
+        "transport": "localNetwork",
+        "outcome": null,
+        "raw": "build/auto-aim-lock-label-20261027/iphone-restored-install-final.json",
+        "sha256": "e4fb93b0ccf1460672d6b5b00156467e5fae1db9de80853ac0877e61020d1be0"
+      },
+      {
+        "device": "iphone",
+        "app": "restored",
+        "action": "launch",
+        "transport": "localNetwork",
+        "outcome": null,
+        "raw": "build/auto-aim-lock-label-20261027/iphone-restored-launch-final.json",
+        "sha256": "418fcca6e1c9f9a3a6268c6a75e540b346f8b7d214367f20066c1f911263597f"
+      },
+      {
+        "device": "iphone",
+        "app": "validation",
+        "action": "install",
+        "transport": "localNetwork",
+        "outcome": null,
+        "raw": "build/auto-aim-lock-label-20261027/iphone-validation-install-final.json",
+        "sha256": "71eea02ae69731c5b39d71486a94eb463970715fa5266674e2cb3168678d49c0"
+      },
+      {
+        "device": "iphone",
+        "app": "validation",
+        "action": "launch",
+        "transport": "localNetwork",
+        "outcome": null,
+        "raw": "build/auto-aim-lock-label-20261027/iphone-validation-launch-final.json",
+        "sha256": "c6195d09b8c4c4c8cc0f3fa683b109dd64863384aa8f82411a3b36f08d3d4ff5"
+      }
+    ],
+    "screenshots": {
+      "docs/public/media/auto-aim/lock-label-iphone.png": "1ba1f85bbbf1494e07c90c989b4f67437f52200e8de5e408764b95d582b53f8a",
+      "docs/public/media/auto-aim/lock-label-ipad.png": "1ba1f85bbbf1494e07c90c989b4f67437f52200e8de5e408764b95d582b53f8a"
+    },
+    "apps": {
+      "HeavyMachValidation": {
+        "bundle_id": "com.gelb2.heavymach.validation",
+        "binary_sha256": "d6c683a182672c8ed1508c8f16ffa602e88bf876a4c1b40fa1ae50121962a143",
+        "configuration": "Debug, development signing"
+      },
+      "HeavyMachRestored": {
+        "bundle_id": "com.gelb2.heavymach.restored",
+        "binary_sha256": "dea1374b1db0a62094f6313979a9612950d21555f6928821c381cbcb07ef449e",
+        "configuration": "Debug, development signing"
+      }
+    }
+  },
+  "production_auto_aim": {
+    "date": "2026-10-27",
+    "branch": "feat/auto-aim-ipad-validation",
+    "change": "정식 앱 자동조준 UI·터치·키보드 입력을 활성화. A 기본 OFF. 치트 기능 제외.",
+    "source_sha256": "9f20bf4bf7822db9458933536c845cd104b3c1befc457d86631158e417ae7153",
+    "app": {
+      "bundle_id": "com.gelb2.heavymach.restored",
+      "configuration": "Debug, development signing",
+      "executable_sha256": "199cfda2267d2620b894ec29302d31cdfffd87871f656b47bddd75f92f201034",
+      "debug_dylib_sha256": "ae6d0fce26a1f4d3bfa2a3924daebe628a62467fce0ffff097281a652991253c",
+      "symbol_evidence": "build/auto-aim-production-20261027/production-symbols.txt"
+    },
+    "shared_input_tests": {
+      "host": "HeavyMachValidation, iOS Simulator",
+      "passed": 4,
+      "failed": 0,
+      "result_bundle": "build/auto-aim-production-20261027/SharedInput.xcresult",
+      "log": "build/auto-aim-production-20261027/shared-input.log",
+      "scope": [
+        "HUD placement and next target touch",
+        "single A toggle and manual touch restoration",
+        "touch/keyboard ownership",
+        "20 weapons with movement/jump/fire/damage"
+      ]
+    },
+    "device_actions": [
+      {
+        "device": "ipad",
+        "action": "install",
+        "outcome": "success",
+        "transport": "localNetwork",
+        "raw": "build/auto-aim-production-20261027/ipad-install.json",
+        "sha256": "75a4bcca21b1018ee2ac0b6d6b433ee6263b153a15dbdb6b4f769cbc95d0534c"
+      },
+      {
+        "device": "ipad",
+        "action": "launch",
+        "outcome": "success",
+        "transport": "localNetwork",
+        "raw": "build/auto-aim-production-20261027/ipad-launch.json",
+        "sha256": "67e46c78b8069b6c6c7642a207bea304f0f0d82b3925601ed59e2ab62c7ef5e3"
+      },
+      {
+        "device": "iphone",
+        "action": "install",
+        "outcome": "success",
+        "transport": "localNetwork",
+        "raw": "build/auto-aim-production-20261027/iphone-install.json",
+        "sha256": "4e8344775b6edd3b76a840f201688ef45af9ddfd3b18060c1550a639563e36e4"
+      },
+      {
+        "device": "iphone",
+        "action": "launch",
+        "outcome": "success",
+        "transport": "localNetwork",
+        "raw": "build/auto-aim-production-20261027/iphone-launch.json",
+        "sha256": "faabc85595572c4fd11b2e249ffef299b64796d03bc3ed2a5414ad129f589bdd"
+      }
+    ],
+    "ui_observations": {
+      "method": "Device Hub through CUA, actual normal app, existing saves",
+      "ipad": [
+        "A ON/OFF",
+        "movement with keyboard",
+        "LOCKED target label",
+        "F fire and enemy explosion"
+      ],
+      "iphone": [
+        "A initially OFF",
+        "A ON reveals next-target and fire controls",
+        "TRACK label follows target",
+        "A OFF hides controls and label",
+        "menu pause"
+      ],
+      "limits": [
+        "iPhone fire button was tapped; hit outcome was not established by the screenshot.",
+        "No new performance measurement or full-mission pass claimed.",
+        "No app uninstall or save reset."
+      ]
+    },
+    "merged": false
+  },
+  "correction_removed": {
+    "date": "2026-10-27",
+    "branch": "feat/auto-aim-ipad-validation",
+    "removed": [
+      "spawn-time velocity/angle override",
+      "support-bomb X override",
+      "per-tick homing velocity",
+      "correction flag and API"
+    ],
+    "retained": [
+      "target selection and cycling",
+      "turret prediction",
+      "A toggle, fire button and F",
+      "offscreen target collision tracking"
+    ],
+    "core_tests": {
+      "passed": 20,
+      "failed": 0,
+      "log": "build/auto-aim-no-c-20261027/core-tests.log"
+    },
+    "manual_parity": {
+      "baseline_commit": "8fdeb629ac5a5cf0a871425f8044b7654b74c5da",
+      "test_source": "Tests/ManualCombatTrace.cpp",
+      "test_source_sha256": "340e39831fd5ce52ba2d5b78dff2dae601e4628ca217480828370b4f338f2bd1",
+      "weapons": 20,
+      "seeds": 3,
+      "frames_each": 420,
+      "frames_total": 25200,
+      "byte_identical": true,
+      "trace_sha256": "8c3381e397310c60555878ceb6e2fd4a3eff8809e6222e56d112b0095f981d34",
+      "baseline_trace": "build/auto-aim-no-c-20261027/manual-baseline.trace",
+      "current_trace": "build/auto-aim-no-c-20261027/manual-current.trace",
+      "minimum_player_bullet_samples_per_case": 343,
+      "compared": [
+        "RNG state",
+        "player position/HP",
+        "bullet position/velocity/angle/alpha/removal",
+        "enemy position/HP",
+        "charge/reload/fire state",
+        "events",
+        "final SaveSlot bytes"
+      ]
+    },
+    "tests": {
+      "ipad": {
+        "passed": 4,
+        "failed": 0,
+        "result_bundle": "build/auto-aim-no-c-20261027/iPadInput.xcresult",
+        "weapons": [
+          {
+            "weapon": "P_Wpn_Canon01",
+            "shots": 6,
+            "tracked": 6,
+            "target_hits": 5,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Canon02",
+            "shots": 6,
+            "tracked": 6,
+            "target_hits": 5,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Canon03",
+            "shots": 7,
+            "tracked": 7,
+            "target_hits": 6,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_ElShock",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Gun01",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Gun02",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Gun03",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Gun04",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Gun05",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Gun06",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Gun07",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Laser",
+            "shots": 3,
+            "tracked": 3,
+            "target_hits": 3,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Missile01",
+            "shots": 6,
+            "tracked": 6,
+            "target_hits": 6,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Missile02",
+            "shots": 6,
+            "tracked": 6,
+            "target_hits": 6,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Missile03",
+            "shots": 7,
+            "tracked": 7,
+            "target_hits": 6,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_RaderBomb",
+            "shots": 14,
+            "tracked": 14,
+            "target_hits": 7,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_RaderLsr",
+            "shots": 20,
+            "tracked": 20,
+            "target_hits": 19,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_RaderMsl",
+            "shots": 14,
+            "tracked": 14,
+            "target_hits": 11,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Shotgun01",
+            "shots": 40,
+            "tracked": 40,
+            "target_hits": 33,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Shotgun02",
+            "shots": 56,
+            "tracked": 56,
+            "target_hits": 47,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          }
+        ]
+      },
+      "iphone": {
+        "passed": 4,
+        "failed": 0,
+        "result_bundle": "build/auto-aim-no-c-20261027/iPhoneInput.xcresult",
+        "weapons": [
+          {
+            "weapon": "P_Wpn_Canon01",
+            "shots": 6,
+            "tracked": 6,
+            "target_hits": 5,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Canon02",
+            "shots": 6,
+            "tracked": 6,
+            "target_hits": 5,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Canon03",
+            "shots": 7,
+            "tracked": 7,
+            "target_hits": 6,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_ElShock",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Gun01",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Gun02",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Gun03",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Gun04",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Gun05",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Gun06",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Gun07",
+            "shots": 19,
+            "tracked": 19,
+            "target_hits": 18,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Laser",
+            "shots": 3,
+            "tracked": 3,
+            "target_hits": 3,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Missile01",
+            "shots": 6,
+            "tracked": 6,
+            "target_hits": 6,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Missile02",
+            "shots": 6,
+            "tracked": 6,
+            "target_hits": 6,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Missile03",
+            "shots": 7,
+            "tracked": 7,
+            "target_hits": 6,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_RaderBomb",
+            "shots": 14,
+            "tracked": 14,
+            "target_hits": 7,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_RaderLsr",
+            "shots": 20,
+            "tracked": 20,
+            "target_hits": 19,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_RaderMsl",
+            "shots": 14,
+            "tracked": 14,
+            "target_hits": 11,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Shotgun01",
+            "shots": 40,
+            "tracked": 40,
+            "target_hits": 33,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          },
+          {
+            "weapon": "P_Wpn_Shotgun02",
+            "shots": 56,
+            "tracked": 56,
+            "target_hits": 47,
+            "jump": 59.6,
+            "moved": true,
+            "game_save_writes": 0
+          }
+        ]
+      },
+      "simulator": {
+        "passed": 4,
+        "failed": 0,
+        "result_bundle": "build/auto-aim-no-c-20261027/Input.xcresult"
+      }
+    },
+    "device_actions": [
+      {
+        "device": "ipad",
+        "app": "restored",
+        "action": "install",
+        "outcome": "success",
+        "transport": "localNetwork",
+        "raw": "build/auto-aim-no-c-20261027/ipad-restored-install.json",
+        "sha256": "a14b022d8a924f635e14d773769d2fc2ff18d9f12e658d616d5d386367676f9e"
+      },
+      {
+        "device": "ipad",
+        "app": "restored",
+        "action": "launch",
+        "outcome": "success",
+        "transport": "localNetwork",
+        "raw": "build/auto-aim-no-c-20261027/ipad-restored-launch.json",
+        "sha256": "d26c2269e1c86f8420a5443d42a5811d759c2492c660bcee8c5cfb8a5b71aae5"
+      },
+      {
+        "device": "ipad",
+        "app": "validation",
+        "action": "install",
+        "outcome": "success",
+        "transport": "localNetwork",
+        "raw": "build/auto-aim-no-c-20261027/ipad-validation-install.json",
+        "sha256": "2d56ec97c03b3f1a5f2a405e1efacff8323552213ad639144f3810d75c9ed56a"
+      },
+      {
+        "device": "ipad",
+        "app": "validation",
+        "action": "launch",
+        "outcome": "success",
+        "transport": "localNetwork",
+        "raw": "build/auto-aim-no-c-20261027/ipad-validation-launch.json",
+        "sha256": "a962d03d332763b3e4cd3507eaa246d5c9556da9d47c8ae44f7b36c5cfcc807a"
+      },
+      {
+        "device": "iphone",
+        "app": "restored",
+        "action": "install",
+        "outcome": "success",
+        "transport": "localNetwork",
+        "raw": "build/auto-aim-no-c-20261027/iphone-restored-install.json",
+        "sha256": "039aff8bd25b668db6fe1bf34a724bb76e63ee7c1d5910bf0da518a6ad73d262"
+      },
+      {
+        "device": "iphone",
+        "app": "restored",
+        "action": "launch",
+        "outcome": "success",
+        "transport": "localNetwork",
+        "raw": "build/auto-aim-no-c-20261027/iphone-restored-launch.json",
+        "sha256": "16c8efa9535b9cd879bf00ebb33e06ae394d3179b829994a80282c2b29e2678c"
+      },
+      {
+        "device": "iphone",
+        "app": "validation",
+        "action": "install",
+        "outcome": "success",
+        "transport": "localNetwork",
+        "raw": "build/auto-aim-no-c-20261027/iphone-validation-install.json",
+        "sha256": "3c52c76b4f028305dd4561d5794df100839312fc4434f16a686021d0ef64056c"
+      },
+      {
+        "device": "iphone",
+        "app": "validation",
+        "action": "launch",
+        "outcome": "success",
+        "transport": "localNetwork",
+        "raw": "build/auto-aim-no-c-20261027/iphone-validation-launch.json",
+        "sha256": "7a930c0c2d45f6f8164a28aa22cfbc9c8e2122ba9a4962c04c9932db999a805b"
+      }
+    ],
+    "apps": {
+      "HeavyMachRestored": {
+        "configuration": "Debug, development signed",
+        "executable_sha256": "0ef1143426608cea0ec577c91ad00985696c1a4becd3795a165de2b5b62cec23",
+        "debug_dylib_sha256": "99b7f54b37f42b910944177d647a36be26f261fc68d8236199cc0770e3857aac",
+        "correction_symbols_absent": true
+      },
+      "HeavyMachValidation": {
+        "configuration": "Debug, development signed",
+        "executable_sha256": "653d3bacdde7a2a56d50323059757eabbf81c1a7096364912bfa5c10008ac3ca",
+        "debug_dylib_sha256": "123ed7d85963daa2882e62cf79053d643505f18e1a280baf3f8061d8cf82d90f",
+        "correction_symbols_absent": true
+      }
+    },
+    "merged": false,
+    "limits": [
+      "No new frame-time benchmark or full-mission run.",
+      "Manual trace compares the pre-auto-aim source revision; it is not a fresh IPA runtime comparison."
+    ]
+  }
+}

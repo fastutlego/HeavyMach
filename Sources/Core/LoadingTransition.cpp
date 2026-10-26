@@ -1,4 +1,5 @@
 #include "LoadingTransition.hpp"
+#include <algorithm>
 namespace heavymach {
 namespace {
 // Separate binary32 subtract/divide/add, as the ARM VFP helper calls.
@@ -12,6 +13,21 @@ LoadingTransition::LoadingTransition(){
 bool LoadingTransition::changeScreen(int screen){
  if(screen<1||screen>7)return false;
  screen_=screen;state_=0;return true;
+}
+std::array<LoadingPanelDraw,4> LoadingTransition::expandedPanels(float width,float height) const {
+ const float ex=std::max(0.f,width-480)*.5f,ey=std::max(0.f,height-320)*.5f;
+ std::array<LoadingPanelDraw,4> result;
+ for(size_t i=0;i<result.size();++i){
+  auto& d=result[i];d.sprite=sprites_[i];d.left=d.right=ex;
+  // At the screen swap the four opaque edges must meet. The original recurrence
+  // stops a fraction of a pixel before the top/bottom endpoints. Snap presentation only.
+  if((ex>0||ey>0)&&(state_==3||state_==4)&&i<2)d.sprite.position.y=i==0?223:101;
+  d.sprite.position.x+=ex;d.sprite.position.y+=ey;
+  if(i==0){d.top=ey;d.sprite.position.y+=(d.sprite.position.y-ey-223)*ey/200;}
+  else if(i==1){d.bottom=ey;d.sprite.position.y+=(d.sprite.position.y-ey-101)*ey/201;}
+  else {d.top=d.bottom=ey;d.sprite.position.x+=(sprites_[i].position.x-240)*ex/340;}
+ }
+ return result;
 }
 void LoadingTransition::tick(const EventSink& sink){
  auto event=[&](LoadingEventKind kind){if(sink)sink({kind,screen_});};

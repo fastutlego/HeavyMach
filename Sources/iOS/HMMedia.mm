@@ -112,6 +112,7 @@ template<class Raster> static void HMDrawRaster(Raster& raster,CGPoint offset,CG
     int spriteWidth=0;
     if([name hasPrefix:@"Extensions/VTOL_"])for(const auto& spec:heavymach::vtolSpecs())
         if([name isEqualToString:[NSString stringWithUTF8String:spec.tile]]){spriteWidth=int(std::lround(spec.width));break;}
+    if([name isEqualToString:@"Extensions/AutoAimControls.png"])spriteWidth=138; // 3 columns of 46 logical pixels, cached once.
     if(decoded&&spriteWidth>0&&width>spriteWidth){
         int smallWidth=spriteWidth,smallHeight=std::max(1,int(std::lround(double(height)*spriteWidth/width)));
         NSMutableData *small=[NSMutableData dataWithLength:size_t(smallWidth)*smallHeight*4];
@@ -203,6 +204,12 @@ template<class Raster> static void HMDrawRaster(Raster& raster,CGPoint offset,CG
     if(![self prepareTexture:name renderer:self.glRenderer])return;
     NSString* key=[self resourceKey:name];
     [self.glRenderer drawJoinedBackground:key position:CGPointMake(x-_cameraOffset.x,y-_cameraOffset.y) scale:scale rotation:rotation rgb565:[_rgb565Images containsObject:key]];
+}
+- (void)drawExpandedPanel:(NSString*)name x:(CGFloat)x y:(CGFloat)y left:(CGFloat)left right:(CGFloat)right top:(CGFloat)top bottom:(CGFloat)bottom {
+    if(!self.glRenderer){[self draw:name x:x y:y];return;} // Original 480 comparison path.
+    if(![self prepareTexture:name renderer:self.glRenderer])return;
+    NSString* key=[self resourceKey:name];
+    [self.glRenderer drawExpandedPanel:key position:CGPointMake(x,y) left:left right:right top:top bottom:bottom rgb565:[_rgb565Images containsObject:key]];
 }
 - (void)drawEdgeContinuation:(NSString*)name x:(CGFloat)x y:(CGFloat)y scale:(CGFloat)scale rotation:(CGFloat)rotation width:(CGFloat)width {
     if(!self.glRenderer||![self prepareTexture:name renderer:self.glRenderer])return;

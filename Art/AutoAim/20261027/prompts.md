@@ -1,0 +1,13 @@
+# 자동조준 HUD 버튼 생성
+
+도구: built-in image_gen. 원본 참조는 manifest.json의 Btn_Weapon, Btn_Booster, GameUI_Btm, GameMenu다. 원본 파일은 수정하지 않았다. 출력은 별도 Extensions/AutoAimControls.png다.
+
+## 첫 생성
+
+Create a game-ready transparent PNG sprite sheet for HeavyMach's 2009 mechanical tank HUD, closely matching the supplied original pixel-art HUD assets: worn silver/grey bevelled steel rectangular edges, dark olive-black inset face, tiny screws, industrial yellow stencil icon. NOT round blue/neon buttons. Output ONE perfectly aligned uniform 3-column by 2-row sheet, each cell exactly square, all six cells same dimensions, no margins between cells. Top row normal unpressed states: left letter A (auto aim toggle); middle simple target crosshair (fire); right right-facing arrow with a vertical starting bar (next target). Bottom row exact same 3 designs and locations, pressed/active states with recessed metal and amber/yellow inner highlight. Each square contains a chunky RECTANGULAR control casing occupying x=4%..96%, y=3%..100%, with a flat horizontal bottom metal mounting foot flush with bottom of the cell, for attaching directly to the game's horizontal lower HUD rail. Fully orthographic 2D front view, no perspective. All icons are large readable yellow stencil symbols, only A letter, crosshair, and next arrow, no extra words or captions. Use identical frame shape and pixel-art detail for all buttons, original 2009 low-resolution industrial game art character, not glossy modern interface. Transparent only outside casing; dark opaque interior. This is a tightly packed 6-cell production spritesheet, not a presentation mockup. Preserve the reference assets unchanged; generate new complementary controls.
+
+## 시트 정렬·투명 배경 수정
+
+Correct this production sprite sheet. Remove ALL dark background outside the six metal button casings, replacing it with fully transparent alpha. Keep the dark inset face INSIDE each button opaque. No black background, no shadows outside the casings. EXACT 3 columns x 2 rows uniform grid. Each cell is one square containing ONE button completely inside it; no side pipe may cross a cell boundary. Center all six casings identically within their cell. Each cell's casing spans 90% width and 90% height, at same offsets for all six. TOP row A, crosshair, next arrow normal. BOTTOM row same buttons active. Retain the silver weathered bevelled metal frames and yellow symbols. Equal sized top/bottom cells. Fully transparent exterior. Output game sprite sheet only.
+
+출력의 알파 채널을 직접 읽어 완전 투명 픽셀267,867개를 확인했다. 앱은 원본 시트를 최초 로드 때138×92로 축소해 캐시하고46×46 셀로 표시한다. 별도 이미지 편집 스크립트는 사용하지 않았다.

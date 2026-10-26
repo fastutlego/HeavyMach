@@ -70,7 +70,7 @@ def main():
         current.append(child)
     nav=old.select_one('aside nav');nav.clear()
     for section in main.select('section'):
-        a=old.new_tag('a',href='#'+section['id']);a.string={'apple-platforms':'Apple·키보드·투두', 'clone-build':'새 clone 빌드', 'independence':'IPA 없는 빌드 검증', 'publication':'집필 자료·설치 안내', 'developer-story':'개발자의 변', 'ios-audit':'iOS 코드·문서 검사', 'android-plan':'타이틀·Android', 'migration-audit':'전수검사·REA', 'repositories':'저장소·v0.9','port-and-native':'포팅·복원 과정','retrospective':'기술 회고','rea':'REA 활용','documentation':'문서 체계','menu-joins':'배경 연결 수정','menu-result':'메뉴 확장','phone':'아이폰 검사','ai':'적 이동','rotation':'가로 회전','screens':'남은 화면','evidence':'남은 작업'}[section['id']];nav.append(a)
+        a=old.new_tag('a',href='#'+section['id']);a.string={'apple-platforms':'Apple·키보드·투두', 'clone-build':'새 clone 빌드', 'independence':'IPA 없는 빌드 검증', 'publication':'집필 자료·설치 안내', 'developer-story':'개발자의 변', 'ios-audit':'iOS 코드·문서 검사', 'android-plan':'타이틀·Android', 'migration-audit':'전수검사·REA', 'repositories':'저장소·버전','port-and-native':'포팅·복원 과정','retrospective':'기술 회고','rea':'REA 활용','documentation':'문서 체계','menu-joins':'배경 연결 수정','menu-result':'메뉴 확장','phone':'아이폰 검사','ai':'적 이동','rotation':'가로 회전','screens':'남은 화면','evidence':'남은 작업'}[section['id']];nav.append(a)
     old.select_one('.sidefoot').string='2026.10.26 · 개발·검증 기록'
     old.title.string='HeavyMach 복원과 아이폰 검증'
     old.select_one('meta[name="description"]')['content']='HeavyMach 원본 분석, 사용자 지시별 수정, 아이폰 검증과 남은 작업'
@@ -89,6 +89,8 @@ def main():
     article(ROOT/'docs/RESTORATION.md',dist/'restoration.html','RESTORATION.md',retro)
     public_articles = [
         ('apple-platform-progress-20261026.md', 'apple-platforms.html'),
+        ('fullscreen-transitions-20261027.md', 'fullscreen.html'),
+        ('auto-aim-ipad-20261027.md', 'auto-aim-progress.html'),
         ('vtol-art-and-loadout-20261027.md', 'vtol-art.html'),
         ('clone-build-20261026.md', 'clone-build.html'),
         ('ipa-independent-build-20261026.md', 'independence.html'),
@@ -101,6 +103,10 @@ def main():
         article(ROOT/'docs/public'/source_name, dist/page_name, source_name, retro)
         page = BeautifulSoup((dist/page_name).read_text(), 'html.parser')
         if page.footer: page.footer.decompose()
+        if page_name in ('fullscreen.html','auto-aim-progress.html'):
+            style=page.new_tag('style');style.string='main img{display:block;max-width:100%;height:auto;margin:16px 0}';page.head.append(style)
+            for img in page.select('main img'):
+                link=page.new_tag('a',href=img['src']);img.wrap(link)
         for link in page.select('a[href]'):
             if link['href'].startswith('../evidence/'): link['href']=link['href'][3:]
             if link['href'] in ('../apple-platforms.md','../keyboard-input-policy.md','../current-status.md','../auto-aim-plan-20261026.md','../wireless-device-workflow.md'):
@@ -115,8 +121,10 @@ def main():
     shutil.copytree(ROOT/'docs/public/independence',dist/'independence',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/clone',dist/'clone',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/media/vtol',dist/'media/vtol',dirs_exist_ok=True)
+    shutil.copytree(ROOT/'docs/public/media/fullscreen',dist/'media/fullscreen',dirs_exist_ok=True)
+    shutil.copytree(ROOT/'docs/public/media/auto-aim',dist/'media/auto-aim',dirs_exist_ok=True)
     (dist/'evidence').mkdir(exist_ok=True)
-    for name in ['apple-platform-performance-20261026.json', 'mac-fullscreen-capture-20261027.json', 'physical-apple-20261027.json', 'wireless-apple-20261027.json', 'vtol-feasibility-20261027.json', 'vtol-art-plan-20261027.json', 'vtol-helicopter-density-20261027.json', 'vtol-implementation-20261027.json', 'vtol-refinement-20261027.json']:
+    for name in ['apple-platform-performance-20261026.json', 'mac-fullscreen-capture-20261027.json', 'physical-apple-20261027.json', 'wireless-apple-20261027.json', 'vtol-feasibility-20261027.json', 'vtol-art-plan-20261027.json', 'vtol-helicopter-density-20261027.json', 'vtol-implementation-20261027.json', 'vtol-refinement-20261027.json', 'fullscreen-transitions-20261027.json', 'auto-aim-ipad-20261027.json']:
         shutil.copyfile(ROOT/'docs/evidence'/name,dist/'evidence'/name)
     for name in ['game-design.md','document-governance.md','document-map.json','apple-platforms.md','keyboard-input-policy.md','current-status.md','wireless-device-workflow.md']:
         shutil.copyfile(ROOT/'docs'/name,dist/name)

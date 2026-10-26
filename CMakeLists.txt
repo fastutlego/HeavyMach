@@ -48,3 +48,10 @@ endif()
 add_executable(HeavyMachKeyboardInputTests Tests/KeyboardInputTests.cpp)
 target_link_libraries(HeavyMachKeyboardInputTests PRIVATE HeavyMachCore)
 add_test(NAME HeavyMachKeyboardInputTests COMMAND HeavyMachKeyboardInputTests)
+
+add_executable(HeavyMachAutoAimTests Tests/AutoAimTests.cpp)
+target_link_libraries(HeavyMachAutoAimTests PRIVATE HeavyMachCore)
+add_test(NAME HeavyMachAutoAimTests COMMAND HeavyMachAutoAimTests ${CMAKE_CURRENT_SOURCE_DIR})
+
+add_executable(HeavyMachManualCombatTrace Tests/ManualCombatTrace.cpp)
+target_link_libraries(HeavyMachManualCombatTrace PRIVATE HeavyMachCore)

@@ -1,0 +1,206 @@
+{
+  "date": "2026-10-27",
+  "baseline": {
+    "tag": "v0.10",
+    "main": "76cbd21c17d077d385be5a4695b0a598fc8e9aba",
+    "develop": "63afa4f5cfe2c32bf6fa147ba1bdfc8d897da6a5",
+    "feature": "6404c999",
+    "remote_confirmed": true
+  },
+  "fix_branch": "fix/fullscreen-transitions",
+  "environment": "One iPhone Air Simulator, iOS 26.5; Apple Silicon Mac",
+  "closed_canvas_cases": {
+    "sizes": [
+      [
+        695,
+        320
+      ],
+      [
+        480,
+        360
+      ],
+      [
+        960,
+        320
+      ],
+      [
+        569,
+        320
+      ],
+      [
+        694.857142857,
+        320
+      ]
+    ],
+    "menu_and_game": true,
+    "background_pixels_exposed": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "selected_tests": {
+    "core": {
+      "passed": 19,
+      "total": 19
+    },
+    "ios_latest_per_test": {
+      "passed": 19,
+      "total": 19,
+      "reuse": "16 unchanged regression checks from regression.xcresult; closed/menu coverage from final.xcresult; opening from opening.xcresult"
+    }
+  },
+  "art_originals_changed": false,
+  "device_installation": "No new device installation in this fullscreen fix; previous VTOL v0.10 apps remain installed.",
+  "captures": [
+    {
+      "path": "docs/public/media/fullscreen/door-world-state6-480x360.png",
+      "sha256": "a002e5f91583381b61a601c9e1987842157d529fcf26de8facbc492500433f8c",
+      "test": "HMFramePerformanceTests/testDoorOpeningRevealsWorldAtExpandedEdges"
+    },
+    {
+      "path": "docs/public/media/fullscreen/door-world-state5-480x360.png",
+      "sha256": "eb510b6747ba89a842636458d00c4a97fe1aa089ea32d95d084269102d9989b8",
+      "test": "HMFramePerformanceTests/testDoorOpeningRevealsWorldAtExpandedEdges"
+    },
+    {
+      "path": "docs/public/media/fullscreen/door-world-state3-480x360.png",
+      "sha256": "a5ef299c59a57f833e4470cab608e156edde5438f5bf9f507d717de9408df796",
+      "test": "HMFramePerformanceTests/testDoorOpeningRevealsWorldAtExpandedEdges"
+    },
+    {
+      "path": "docs/public/media/fullscreen/door-world-state6-695x320.png",
+      "sha256": "3978a5945917b15a15e5824ae077a0f7251f35410e752b10ed2660dc9abc65a1",
+      "test": "HMFramePerformanceTests/testDoorOpeningRevealsWorldAtExpandedEdges"
+    },
+    {
+      "path": "docs/public/media/fullscreen/door-world-state5-695x320.png",
+      "sha256": "678bbcb9ccf479ee9389101abca20de8df35418fcd08f931ba7315cdd5aa8e09",
+      "test": "HMFramePerformanceTests/testDoorOpeningRevealsWorldAtExpandedEdges"
+    },
+    {
+      "path": "docs/public/media/fullscreen/door-world-state3-695x320.png",
+      "sha256": "7478381f9b03ce8597fcd3039aaa301de85c14c6ed5b126e09260da45e81435a",
+      "test": "HMFramePerformanceTests/testDoorOpeningRevealsWorldAtExpandedEdges"
+    },
+    {
+      "path": "docs/public/media/fullscreen/door-closed-480x360-game1.png",
+      "sha256": "a5ef299c59a57f833e4470cab608e156edde5438f5bf9f507d717de9408df796",
+      "test": "HMFramePerformanceTests/testClosedDoorCoversCanvasOutsideHUDInMenusAndGame"
+    },
+    {
+      "path": "docs/public/media/fullscreen/door-closed-695x320-game1.png",
+      "sha256": "90dcf24ea87049f2e00cdbe6da45b715bb9613457918a4b69dc2830c7b0fa41b",
+      "test": "HMFramePerformanceTests/testClosedDoorCoversCanvasOutsideHUDInMenusAndGame"
+    },
+    {
+      "path": "docs/public/media/fullscreen/screen4-480x360.png",
+      "sha256": "d33fbc52dad01240c5c52bb665fdebf2dc93f23d7c426e228a4d68c3aaa30952",
+      "test": "HMFramePerformanceTests/testTitleAndSelectionScreensCoverWideAndTallCanvas"
+    },
+    {
+      "path": "docs/public/media/fullscreen/screen3-480x360.png",
+      "sha256": "8801cd0fc9e8770dc000cfe8cd562957a247dcda9506e5c34bb9f8f51ef29adb",
+      "test": "HMFramePerformanceTests/testTitleAndSelectionScreensCoverWideAndTallCanvas"
+    },
+    {
+      "path": "docs/public/media/fullscreen/screen2-480x360.png",
+      "sha256": "21461bdcc33e39a536e9cc06a94d59244850633824f0e687acbbeab3eda4af8d",
+      "test": "HMFramePerformanceTests/testTitleAndSelectionScreensCoverWideAndTallCanvas"
+    },
+    {
+      "path": "docs/public/media/fullscreen/screen1-480x360.png",
+      "sha256": "6389fa4e976742646233ee307301f633243fb328422cb6bfee5f7c71bad76d41",
+      "test": "HMFramePerformanceTests/testTitleAndSelectionScreensCoverWideAndTallCanvas"
+    },
+    {
+      "path": "docs/public/media/fullscreen/screen4-695x320.png",
+      "sha256": "2e10dc53d0d1da6d561f0c4edfc5a51106e83a2b79a5c1963a3ba8f1f74f079f",
+      "test": "HMFramePerformanceTests/testTitleAndSelectionScreensCoverWideAndTallCanvas"
+    },
+    {
+      "path": "docs/public/media/fullscreen/screen3-695x320.png",
+      "sha256": "dfc2d41c99c33da7bdfa7634add9832f1cba1b41ed849244c35fad82278e3012",
+      "test": "HMFramePerformanceTests/testTitleAndSelectionScreensCoverWideAndTallCanvas"
+    },
+    {
+      "path": "docs/public/media/fullscreen/screen2-695x320.png",
+      "sha256": "912a8904033fdb82571e46ee776c40fb69970d6fb81aabebf7cf2dd593fe560d",
+      "test": "HMFramePerformanceTests/testTitleAndSelectionScreensCoverWideAndTallCanvas"
+    },
+    {
+      "path": "docs/public/media/fullscreen/screen1-695x320.png",
+      "sha256": "e8de6ff66e1825ae008fb69c8510c6d0f082cb9a0078b59a70b08825f54a3af0",
+      "test": "HMFramePerformanceTests/testTitleAndSelectionScreensCoverWideAndTallCanvas"
+    }
+  ],
+  "logs": [
+    {
+      "path": "build/fullscreen-20261027/before.log",
+      "sha256": "d36feb9376e7605b919774ca4974a582ec8f8d832fcb0157dcc304ae266ebbe7"
+    },
+    {
+      "path": "build/fullscreen-20261027/after.log",
+      "sha256": "9e703a2851232f9ddcdb2c2a447f4f1210ed62364217a19b48c55820cc9bfdb3"
+    },
+    {
+      "path": "build/fullscreen-20261027/edges.log",
+      "sha256": "eaa6854a63d4b22a1d1aa721ce5b9384a784e5e7510bd30e06881a5cfb3ae562"
+    },
+    {
+      "path": "build/fullscreen-20261027/pixel-locations.log",
+      "sha256": "da024dd845cc466e0f54b1fbf384386694b20bacb529937fe97acb7ef0983a68"
+    },
+    {
+      "path": "build/fullscreen-20261027/closed-snap.log",
+      "sha256": "c4961b74a16aa14914cb8b574ecd57d7ab022adad90341491935a2b090a3b6d5"
+    },
+    {
+      "path": "build/fullscreen-20261027/regression.log",
+      "sha256": "a121ae83c026a9bbfeeda9da4b953469607c4ccbf3c559156f019114a34424f6"
+    },
+    {
+      "path": "build/fullscreen-20261027/final.log",
+      "sha256": "3f4f53f1154f0f16d2ab22ce547d22db30a19a0c519c45147eca3ca4a304edd5"
+    },
+    {
+      "path": "build/fullscreen-20261027/opening.log",
+      "sha256": "9423ecb93647b955c6ca3e0da2a36a2afef169c736d5e194dc715f89d8ac99f3"
+    },
+    {
+      "path": "build/fullscreen-20261027/core-ctest.log",
+      "sha256": "2eee8f678883936724a6613e3b7d8acd9eead1ce8855f84caca9c622bdd4b989"
+    },
+    {
+      "path": "build/fullscreen-20261027/mac-build.log",
+      "sha256": "f66c5abaf535d8d5142643e50aaf2d4a7fe1226efb2572c626ffb4051505cf92"
+    },
+    {
+      "path": "build/fullscreen-20261027/normal-build.log",
+      "sha256": "7de18792176bbd954b72034182a5e1a4aa9b4d914a05bc403fedb1120e4e0b19"
+    },
+    {
+      "path": "build/fullscreen-20261027/normal-arm64-build.log",
+      "sha256": "a50f50bec0f70081e2cc56b745658409a25cb080b3af123434fbdc5c5d4968e9"
+    }
+  ],
+  "failed_attempts": [
+    "before: original implementation failed eight closed-door coverage cases",
+    "after/edges/pixel-locations: alpha edge and fractional vertical endpoint gaps, fixed in expanded presentation",
+    "regression/final opening fixture: render cache not advanced, then sampled state5 before vertical opening; fixture corrected, opening.xcresult passed",
+    "generic Simulator normal build included x86_64 but existing OpenAL archive is arm64; arm64 destination selected explicitly"
+  ],
+  "builds": {
+    "arm64_simulator_normal": "passed",
+    "arm64_simulator_cheat": "passed",
+    "native_mac_normal": "passed",
+    "generic_simulator_x86_64": "failed: existing OpenAL library arm64 only"
+  }
+}
