@@ -25,3 +25,5 @@
 - HeavyMach Android 이식·APK 작업에는 `.agents/skills/port-heavymach-android/SKILL.md`와 `docs/android-port-plan-20261026.md`를 읽고 `document_contract.py plan --task android`로 연결을 확인한다. 조사·예정 단계와 실제 APK 완료를 구분한다.
 
 - 개발자의 변·README 소개·GitHub 회고·SaaS Apps·Mags 작성은 `python3 tools/document_contract.py plan --task developer_story`의 자료를 읽는다. [개발 동기 원문과 작성 순서](docs/developer-background.md)를 따르고, 기술 학습 목적만으로 개인적인 동기를 대신하지 않는다. 받지 않은 다음 문단을 추측해 쓰지 않는다.
+
+- SaaS 담당 세션에 집필 자료를 전달할 때는 [집필용 문서 안내](docs/public/publication-inventory.md)와 developer_story 경로를 사용한다. Apps·Mags 본문 작성은 SaaS 세션의 업무다. 플레이 영상·README 이미지 작업은 [영상 작업 절차](docs/media-publication.md)와 document-map의 media 업무를 읽고 원본·타임코드·파생 파일을 연결한다.

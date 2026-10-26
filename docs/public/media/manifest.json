@@ -1,0 +1,110 @@
+{
+  "captured_at": "2026-10-26",
+  "source_site": "https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site",
+  "items": [
+    {
+      "path": "menu-joins/before-wide-title-912-0.png",
+      "caption": "타이틀 수정 전 · Simulator 실제 GL",
+      "sha256": "13b22798a94f31c7d9207482ef24c94c15f50608b6c6d98f3e748f38bcecc98f",
+      "source_site_path": "menu-joins/before-wide-title-912-0.png",
+      "source_site_commit": "72e77e1e20b13cb1675840c61f7ebc71650d30ae",
+      "kind": "game_capture"
+    },
+    {
+      "path": "menu-joins/after-wide-title-912-0.png",
+      "caption": "타이틀 수정 후 · iPhone Air에서 실행한 GL 검사",
+      "sha256": "67181dd83dac02d0bf4fb5c42dc754b34eaebd69de29f425235ca83aa5699974",
+      "source_site_path": "menu-joins/after-wide-title-912-0.png",
+      "source_site_commit": "72e77e1e20b13cb1675840c61f7ebc71650d30ae",
+      "kind": "game_capture"
+    },
+    {
+      "path": "menu-joins/before-wide-mode-912-0.png",
+      "caption": "모드 선택 수정 전 · Simulator 실제 GL",
+      "sha256": "fb1465ff1287cb858179c36631b7953864321067344e06c0d8813ffbd1ebc55f",
+      "source_site_path": "menu-joins/before-wide-mode-912-0.png",
+      "source_site_commit": "72e77e1e20b13cb1675840c61f7ebc71650d30ae",
+      "kind": "game_capture"
+    },
+    {
+      "path": "menu-joins/after-wide-mode-912-0.png",
+      "caption": "모드 선택 수정 후 · iPhone Air에서 실행한 GL 검사",
+      "sha256": "fbc7a5e03fde59f7f59613feacf2efa3e79737dff81173300daa1f285c9520f7",
+      "source_site_path": "menu-joins/after-wide-mode-912-0.png",
+      "source_site_commit": "72e77e1e20b13cb1675840c61f7ebc71650d30ae",
+      "kind": "game_capture"
+    },
+    {
+      "path": "menu-joins/before-wide-mission-912-0.png",
+      "caption": "미션 선택 수정 전 · Simulator 실제 GL",
+      "sha256": "30f9e12f8dd21abe99306f4aa7ea33faf8f2b13894e7a017ef204e9423376d4e",
+      "source_site_path": "menu-joins/before-wide-mission-912-0.png",
+      "source_site_commit": "72e77e1e20b13cb1675840c61f7ebc71650d30ae",
+      "kind": "game_capture"
+    },
+    {
+      "path": "menu-joins/after-wide-mission-912-0.png",
+      "caption": "미션 선택 수정 후 · iPhone Air에서 실행한 GL 검사",
+      "sha256": "a8033ff6a7980784bb945dac395f5699568fe33888e48e7fe4cb149e3fdad92c",
+      "source_site_path": "menu-joins/after-wide-mission-912-0.png",
+      "source_site_commit": "72e77e1e20b13cb1675840c61f7ebc71650d30ae",
+      "kind": "game_capture"
+    },
+    {
+      "path": "menu-art/wide-title-912-0.png",
+      "caption": "원본 중앙 그림과 생성된 좌우 배경을 합성한 타이틀 실제 GL 캡처",
+      "sha256": "13b22798a94f31c7d9207482ef24c94c15f50608b6c6d98f3e748f38bcecc98f",
+      "source_site_path": "menu-art/wide-title-912-0.png",
+      "source_site_commit": "72e77e1e20b13cb1675840c61f7ebc71650d30ae",
+      "kind": "game_capture"
+    },
+    {
+      "path": "menu-art/wide-slots-912-0.png",
+      "caption": "세 슬롯 카드와 양쪽 하단 버튼을 재배치한 게임 화면",
+      "sha256": "1c11ddada736d74b29ed3b214f43257ac01ec204943c2f657d38cf7dc6bac012",
+      "source_site_path": "menu-art/wide-slots-912-0.png",
+      "source_site_commit": "72e77e1e20b13cb1675840c61f7ebc71650d30ae",
+      "kind": "game_capture"
+    },
+    {
+      "path": "menu-art/wide-slots-480-0.png",
+      "caption": "유지된 원본480 슬롯 배치",
+      "sha256": "70e46e99be7370b626d83cd7f006661fe99a44221565a8e9996775f336accd63",
+      "source_site_path": "menu-art/wide-slots-480-0.png",
+      "source_site_commit": "72e77e1e20b13cb1675840c61f7ebc71650d30ae",
+      "kind": "game_capture"
+    },
+    {
+      "path": "menu-art/wide-mode-912-0.png",
+      "caption": "확장된 모드 선택 화면",
+      "sha256": "fb1465ff1287cb858179c36631b7953864321067344e06c0d8813ffbd1ebc55f",
+      "source_site_path": "menu-art/wide-mode-912-0.png",
+      "source_site_commit": "72e77e1e20b13cb1675840c61f7ebc71650d30ae",
+      "kind": "game_capture"
+    },
+    {
+      "path": "menu-art/wide-mission-912-0.png",
+      "caption": "확장된 미션 선택 화면",
+      "sha256": "30f9e12f8dd21abe99306f4aa7ea33faf8f2b13894e7a017ef204e9423376d4e",
+      "source_site_path": "menu-art/wide-mission-912-0.png",
+      "source_site_commit": "72e77e1e20b13cb1675840c61f7ebc71650d30ae",
+      "kind": "game_capture"
+    },
+    {
+      "path": "menu-art/title-a.png",
+      "caption": "imagegen 타이틀 후보A",
+      "sha256": "03ce72c951431b7a51d13b329c950b67ee635842e22630f7ec9d61097aefdf6b",
+      "source_site_path": "menu-art/title-a.png",
+      "source_site_commit": "72e77e1e20b13cb1675840c61f7ebc71650d30ae",
+      "kind": "generated_candidate"
+    },
+    {
+      "path": "menu-art/title-b.png",
+      "caption": "imagegen 타이틀 후보B",
+      "sha256": "3b409dc984d732a2c422969d972dc5af98d59e6b5fcd6ce40003ad2ed5a1d674",
+      "source_site_path": "menu-art/title-b.png",
+      "source_site_commit": "72e77e1e20b13cb1675840c61f7ebc71650d30ae",
+      "kind": "generated_candidate"
+    }
+  ]
+}

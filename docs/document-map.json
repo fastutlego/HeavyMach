@@ -20,7 +20,12 @@
     "docs/android-port-plan-20261026.md",
     "docs/related-titles-20261026.md",
     "docs/ios-source-map.md",
-    "docs/developer-background.md"
+    "docs/developer-background.md",
+    "docs/public/build-and-install.md",
+    "docs/public/implementation-status.md",
+    "docs/public/publication-inventory.md",
+    "docs/media-publication.md",
+    "docs/public/media/README.md"
   ],
   "base_read": [
     "AGENTS.md",
@@ -207,7 +212,11 @@
       "read": [
         "docs/report-site.md",
         "docs/developer-background.md",
-        "docs/RESTORATION.md"
+        "docs/RESTORATION.md",
+        "docs/public/build-and-install.md",
+        "docs/public/implementation-status.md",
+        "docs/public/publication-inventory.md",
+        "docs/public/media/README.md"
       ],
       "sources": [
         "docs/*",
@@ -263,7 +272,12 @@
         "docs/references/developer-background/sass-mutiny-source.txt",
         "docs/references/developer-background/unity-planning-origin.md",
         ".agents/skills/write-project-text/SKILL.md",
-        "docs/references/developer-background/user-restoration-reason-20261026.md"
+        "docs/references/developer-background/user-restoration-reason-20261026.md",
+        "docs/public/build-and-install.md",
+        "docs/public/implementation-status.md",
+        "docs/public/publication-inventory.md",
+        "docs/public/media/README.md",
+        "docs/media-publication.md"
       ],
       "sources": [
         "docs/RESTORATION.md",
@@ -275,6 +289,26 @@
       "tests": [],
       "evidence": [
         "docs/references/developer-background/source-manifest.json",
+        "docs/current-status.md"
+      ]
+    },
+    "media": {
+      "label": "플레이 영상·README 이미지·캡션",
+      "read": [
+        "docs/media-publication.md",
+        "docs/media-scenes.example.json",
+        "docs/public/media/README.md",
+        ".agents/skills/write-project-text/SKILL.md",
+        "docs/public/publication-inventory.md"
+      ],
+      "sources": [
+        "docs/public/media/*",
+        "docs/media*",
+        "README.md"
+      ],
+      "tests": [],
+      "evidence": [
+        "docs/public/media/manifest.json",
         "docs/current-status.md"
       ]
     }
