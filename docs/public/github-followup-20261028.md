@@ -1,6 +1,6 @@
 # GitHub 구성과 v0.12 소스 릴리스
 
-README와 개발자의 변 첫머리에 같은 도입문을 넣었다. 꿈에서 아이팟터치를 처음 쓰던 나를 보았다는 이야기, Mesabloo보다 시작점이 나았다는 설명, 원작에서 벗어난 Codex의 구현을 지적하며 고친 경험을 담았다. [README](../../README.md) · [개발자의 변](../RESTORATION.md)
+README와 개발자의 변에 복원 시작 이야기를 같은 문장으로 실었다. README의 첫 본문에는 개발자의 변에서 “요즘 나는 내게 남은 시간이”로 시작하는 문단을 그대로 옮겼다. 꿈에서 아이팟터치를 처음 쓰던 나를 보았다는 이야기, Mesabloo보다 시작점이 나았다는 설명, 원작에서 벗어난 Codex의 구현을 지적하며 고친 경험을 담았다. [README](../../README.md) · [개발자의 변](../RESTORATION.md)
 
 ## 저장소 소개와 기여 안내
 
@@ -55,7 +55,7 @@ GitHub가 반환한 사유는 계정의 최근 결제 실패 또는 사용 한�
 | Mac | HeavyMachMac·HeavyMachMacValidation 빌드 통과 |
 | 도구 | Apple Silicon, Xcode 27.1, Debug·서명 없음 |
 
-검사는 `.git`과 기존 빌드 결과가 없는 새 폴더에 압축을 풀어 실행했다. 이번 결과는 컴파일·링크 검사다. 기기 플레이 결과는 [기존 검증 기록](validation.md)에 있다. [릴리스 검사 근거](../evidence/source-release-v0.12-20261028.json)
+검사는 `.git`과 기존 빌드 결과가 없는 새 폴더에 압축을 풀어 실행했다. 컴파일·링크는 위 표의 네 앱에서 통과했다. 기기 플레이 결과는 [기존 검증 기록](validation.md)에 있다. [릴리스 검사 근거](../evidence/source-release-v0.12-20261028.json)
 
 ## OpenAL 수정 후 재링크
 
@@ -69,9 +69,9 @@ python3 tools/verify_openal_relink.py --source /path/to/unpacked/HeavyMach-v0.12
 
 OpenAL 소스는 압축본의 `vendor/openal-soft`에 있고, 빌드 설정은 `tools/build_openal.sh`에 있다. 소스를 수정한 라이브러리로 다시 링크할 수 있음을 확인했다. [재링크 결과](../evidence/openal-relink-20261028.json) · [LGPL 원문](../../LICENSES/OpenAL-Soft-LGPL-2.0.txt)
 
-## 공개 준비
+## 저장소 공개
 
-[자원 목록](../rights-manifest.json)에 원작 그림·음원·데이터, 추가 그림, 캡처·영상의 출처와 확보할 공개 범위를 정리했다. 현재 자료에는 원작 자원의 공개·재배포 허락 문건이 없다. 제작자에게 새 메시지를 보내지는 않았다.
+[자원 목록](../rights-manifest.json)에 원작 그림·음원·데이터, 추가 그림, 캡처·영상의 출처와 확보할 공개 범위를 정리했다. 현재 자료에는 원작 자원의 공개·재배포 허락 문건이 없다.
 
 외부 구현의 참조 커밋과 실제 파일을 대조하고 touchHLE MPL-2.0, rust-sdl2 MIT 원문을 보관했다. `HMCompatibilityPixels.hpp`에는 MPL-2.0을 표시했다. [외부 코드 고지](../../THIRD_PARTY_NOTICES.md)
 

@@ -28,7 +28,7 @@ HeavyMach.xcworkspace
 
 Workspace는 여러 프로젝트와 빌드 의존 관계를 묶는다. 코드 공유는 정적 framework를 링크하는 방식으로, 자원 공유는 bundle을 앱에 포함하는 방식으로 구현했다. SPM 없이도 이 구성이 가능하다. Apple의 [복수 프로젝트 관리](https://developer.apple.com/documentation/xcode/managing-multiple-projects-and-their-dependencies)도 프로젝트 간 의존 관계와 공용 산출물을 다룬다.
 
-공통 게임 규칙을 공유하고 운영체제 연결을 나누는 요구는 이 프로젝트에 맞는다. iPhone·iPad는 같은 iOS target의 기기군 1·2를 사용하며, Mac은 AppKit 앱으로 실행한다. Catalyst는 사용하지 않는다. 공용 코드는 플랫폼별 SDK로 각각 컴파일한다.
+iPhone·iPad는 같은 iOS target의 기기군 1·2를 사용하며, Mac은 AppKit 앱으로 실행한다. Catalyst는 사용하지 않는다. 공용 코드는 플랫폼별 SDK로 각각 컴파일한다.
 
 ## 소스와 자원
 

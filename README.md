@@ -1,5 +1,11 @@
 # HeavyMach
 
+[![Git tag v0.12](docs/public/media/badges/version.svg)](https://github.com/gelb2/HeavyMach/tree/v0.12)
+[![Platforms iOS iPadOS macOS](docs/public/media/badges/platforms.svg)](docs/public/validation.md)
+[![Architecture arm64](docs/public/media/badges/arch.svg)](docs/public/build-and-install.md)
+[![C++20 and Objective-C++](docs/public/media/badges/code.svg)](docs/public/architecture.md)
+[![Code license MIT](docs/public/media/badges/license.svg)](LICENSE-SCOPE.md)
+
 요즘 나는 내게 남은 시간이 많지 않다는 느낌을 받는다. 건강 문제 때문도, 극단적인 무기력 때문도 아니다. 오히려 내 정신은 한 달 전, 두 달 전, 반년 전보다 명료하다고 느낀다. 그래서 지금 무엇을 해보고, 무엇을 남기고 싶은지 생각한다. 내가 택한 일 중 하나가 HeavyMach 복원이다. 한때 내게 방향을 보여준 게임을, 개발자가 된 내가 다시 작동하게 만드는 것. 나는 이 연결을 수미상관이라고 생각한다.
 
 이와 비슷한 프로젝트를 진행한 [mesabloo](https://github.com/Mesabloo/hm-defense)라는 사람이 있었다. 그는 HeavyMach Defense의 에셋을 구하고 소스코드를 밑바닥부터 새로 작성했다. 유닛 간 교전 알고리즘을 구현하다가 멈춘 듯했다. 나는 소스코드를 밑바닥부터 새로 작성해야 했던 그 보다는 시작점이 더 나은 상황이었다.
@@ -12,13 +18,7 @@
 
 2009년의 횡스크롤 전차 게임 **HeavyMach**를 현재의 iPhone·iPad·Mac에서 실행하도록 다시 만들었다. 전차를 움직이고 뛰어오르며, 무기를 바꿔 지상·공중의 적과 싸운다. 원작의 전투와 성장 구조에 넓은 화면, 키보드 조작, 자동조준과 새로운 항공기를 추가했다.
 
-[![Git tag v0.12](docs/public/media/badges/version.svg)](https://github.com/gelb2/HeavyMach/tree/v0.12)
-[![Platforms iOS iPadOS macOS](docs/public/media/badges/platforms.svg)](docs/public/validation.md)
-[![Architecture arm64](docs/public/media/badges/arch.svg)](docs/public/build-and-install.md)
-[![C++20 and Objective-C++](docs/public/media/badges/code.svg)](docs/public/architecture.md)
-[![Code license MIT](docs/public/media/badges/license.svg)](LICENSE-SCOPE.md)
-
-대학생 때 iPod touch로 하던 HeavyMach를 2026년의 아이폰에서 다시 실행하고 싶었다. 이 게임은 내가 2017년 7월 iOS 개발자로 전업하는 데 영향을 준 작품이다. 구현은 Codex에 맡겼다. 나는 직접 플레이하면서 원작과 달라진 움직임·성능·그림을 확인하고 수정을 지시했다. [개발자의 변 전문](docs/RESTORATION.md)
+[개발자의 변 전문](docs/RESTORATION.md)
 
 ![공중의 적을 향해 사격하는 탱크. 녹색 모서리와 LOCKED 문구가 표적을 표시한다.](docs/public/media/gameplay-20261027/01-auto-aim.png)
 
@@ -66,7 +66,7 @@ Yak-141·Harrier GR3·F-35B는 기존 적 배치 사이에 추가했다. F-22·S
 
 [추가 항공기 전투 영상 — 13초](docs/public/media/gameplay-20261027/07-fighters.mp4) · [기획·수치·등장 미션](docs/public/features.md)
 
-이미지 8장과 영상은 Codex가 내 플레이 녹화에서 추출했다. 나는 이미지를 확인하고 모두 README에 넣도록 했다. GIF는 원래 속도로 재생하며 소리는 MP4에 있다. [원본 시간·캡션·파일 목록](docs/public/media/gameplay-20261027/README.md)
+내 플레이 녹화에서 추출한 장면이다. GIF는 원래 속도로 재생하며 소리는 MP4에 있다. [영상 시간·파일 목록](docs/public/media/gameplay-20261027/README.md)
 
 ## 플랫폼과 개발 상태
 
@@ -113,7 +113,7 @@ Xcode에서 본인의 개발 팀을 지정하고 실행 대상을 선택한다. 
 
 Codex는 파일 쓰기를 저장 시점에만 실행하도록 분리했다. 게임 그림은 OpenGL 텍스처로 그리고, 효과음은 OpenAL 버퍼와 소스를 재사용하도록 바꿨다. 화면 확장 뒤 생긴 특수무기 좌표·보스 접근·그림 경계 문제도 같은 방식으로 수정했다.
 
-[트러블슈팅 17개 항목](docs/public/troubleshooting.md)에는 내가 본 증상과 질문, 코드 원인, Codex의 변경과 검사 결과를 정리했다. [개발 과정](docs/public/development-history.md)에는 비교 순서와 사용한 분석·구현·검사 도구를 정리했다.
+[트러블슈팅 17건](docs/public/troubleshooting.md) · [분석·구현·검증 과정](docs/public/development-history.md)
 
 ## 코드 구조와 버전
 
