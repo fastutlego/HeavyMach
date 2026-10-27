@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-27",
+  "source_commit": "8c0672e86e284df7cad012f7c0ac92a9cc12ba90",
+  "version_id": "appgprj_6addbf55aea081918d3d182d7e496e88~appgver_c00a9f4d592c81918e565feac27a8fa0",
+  "deployment_id": "appgdep_6ae0a9012ef48191b4dc1902e7371539",
+  "status": "succeeded",
+  "url": "https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/github-documentation.html",
+  "scope": [
+    "자동조준 의도·목표·구현",
+    "VTOL 및 전투기 의도·목표·구현",
+    "workspace·모듈화 기술적 근거와 타당성"
+  ],
+  "checks": {
+    "document_contract": "pass",
+    "local_links": 549,
+    "markdown_matches": true,
+    "local_chrome": "새 절·구조·표 표시 확인"
+  },
+  "code_changed": false
+}

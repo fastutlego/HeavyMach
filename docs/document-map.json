@@ -31,7 +31,17 @@
     "docs/wireless-device-workflow.md",
     "docs/vtol-expansion.md",
     "docs/lux-lunae-plan-20261027.md",
-    "docs/public/gameplay-media-20261027.md"
+    "docs/public/gameplay-media-20261027.md",
+    "docs/public/github-documentation-plan-20261027.md",
+    "docs/README.md",
+    "CHANGELOG.md",
+    "CREDITS.md",
+    "docs/public/features.md",
+    "docs/public/gameplay-guide.md",
+    "docs/public/architecture.md",
+    "docs/public/troubleshooting.md",
+    "docs/public/development-history.md",
+    "docs/public/validation.md"
   ],
   "base_read": [
     "AGENTS.md",
@@ -245,7 +255,17 @@
         "docs/public/ipa-independent-build-20261026.md",
         "docs/public/rea-implementation-audit-20261026.md",
         "docs/public/clone-build-20261026.md",
-        "docs/lux-lunae-plan-20261027.md"
+        "docs/lux-lunae-plan-20261027.md",
+        "docs/public/github-documentation-plan-20261027.md",
+        "docs/README.md",
+        "CHANGELOG.md",
+        "CREDITS.md",
+        "docs/public/features.md",
+        "docs/public/gameplay-guide.md",
+        "docs/public/architecture.md",
+        "docs/public/troubleshooting.md",
+        "docs/public/development-history.md",
+        "docs/public/validation.md"
       ],
       "sources": [
         "docs/*",
@@ -309,7 +329,17 @@
         "docs/media-publication.md",
         "docs/public/ipa-independent-build-20261026.md",
         "docs/public/rea-implementation-audit-20261026.md",
-        "docs/public/clone-build-20261026.md"
+        "docs/public/clone-build-20261026.md",
+        "docs/public/github-documentation-plan-20261027.md",
+        "docs/README.md",
+        "CHANGELOG.md",
+        "CREDITS.md",
+        "docs/public/features.md",
+        "docs/public/gameplay-guide.md",
+        "docs/public/architecture.md",
+        "docs/public/troubleshooting.md",
+        "docs/public/development-history.md",
+        "docs/public/validation.md"
       ],
       "sources": [
         "docs/RESTORATION.md",
@@ -332,7 +362,8 @@
         "docs/public/media/README.md",
         ".agents/skills/write-project-text/SKILL.md",
         "docs/public/publication-inventory.md",
-        "docs/public/gameplay-media-20261027.md"
+        "docs/public/gameplay-media-20261027.md",
+        "docs/public/github-documentation-plan-20261027.md"
       ],
       "sources": [
         "docs/public/media/*",

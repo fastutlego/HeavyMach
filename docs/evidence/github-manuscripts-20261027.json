@@ -1,0 +1,81 @@
+{
+  "date": "2026-10-27",
+  "branch": "docs/github-publication",
+  "game_version": "v0.12",
+  "game_source_changed": false,
+  "scope": "GitHub reader manuscripts, screenshots, GIFs, installation and SaaS writing sources",
+  "manuscripts": [
+    {
+      "path": "README.md",
+      "sha256": "418262492015ea0f6a4a0c792e70ab7030ed34094c016ff0f3c49dcaecbbc467"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "ed4dbdf9f1231017d7371ad93f0cb086dcb28933aa884440b68355d2c2b6aaaa"
+    },
+    {
+      "path": "CREDITS.md",
+      "sha256": "d38b686f953eeca028b02467e1532e9ae99b075109d7753da31f8e09e65affcf"
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "059ac036a518c6903b73e8056df24f466e68abd82c2ec3a75b3ae284ce8a1c6a"
+    },
+    {
+      "path": "docs/public/features.md",
+      "sha256": "f71d095378053c03dbce8a9ff9245ad372fd9cb1462ad070acacb165a879d9b4"
+    },
+    {
+      "path": "docs/public/gameplay-guide.md",
+      "sha256": "bcda6c23546c11b4f9be33af95b2437006ec6220a5f68f8f4cca16f3371d4dfe"
+    },
+    {
+      "path": "docs/public/architecture.md",
+      "sha256": "984ebdda785320e09cff6e34471b38eb3399cbcd258bdc112ce0d5ff4575e332"
+    },
+    {
+      "path": "docs/public/troubleshooting.md",
+      "sha256": "b650522f3de2188d086fdd709706ac036bed2cabb7295cc2ed3cab819bd305b1"
+    },
+    {
+      "path": "docs/public/development-history.md",
+      "sha256": "b1b21704b25b83315eab20f34652c5cc06f0a50fa113cc92e984be0f25c80428"
+    },
+    {
+      "path": "docs/public/validation.md",
+      "sha256": "14eb3bd2b073a2aa51de9dd167e84dba10196a12cbc1b6e9e5a774b1e024b1d7"
+    },
+    {
+      "path": "docs/public/implementation-status.md",
+      "sha256": "f3612c0974e8a2a9c40efc18767ffce3676f40eba4cd265e9f7052a53e5b5444"
+    },
+    {
+      "path": "docs/public/publication-inventory.md",
+      "sha256": "fa1d56b40a67f0db3c1afde0e455933cc8567df9f3668e9e8a0f9dbafa1da627"
+    },
+    {
+      "path": "docs/public/build-and-install.md",
+      "sha256": "79d018f77c9334b705b4f5b3c55053b001012b2eb6087ff34651e548ae5d2dab"
+    }
+  ],
+  "checks": {
+    "document_contract": "passed: 13 task routes, 99 referenced files",
+    "relative_manuscript_links": "passed for 13 reader documents",
+    "readme_media": {
+      "png": 8,
+      "gif": 2,
+      "mp4": 3
+    },
+    "resources": "1482 hashes matched",
+    "workspace_schemes": "xcodebuild -list -json passed",
+    "mac_install_command": "unsigned HeavyMachMac build passed; build/documentation-check/mac-build.log",
+    "gif_decode": "both passed, 5s and 6s at original speed",
+    "gif_visual": "contact sheets checked for aim, projectiles, jump and landing",
+    "browser": "CUA Chrome returned cgWindowNotFound; browser inventory empty; layout validation pending",
+    "editorial": "read reader manuscripts against current code, dated evidence, user scope; removed editorial disclaimers and IPA topic"
+  },
+  "publication": {
+    "github": "pending push",
+    "site": "pending publish"
+  }
+}

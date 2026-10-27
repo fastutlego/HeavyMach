@@ -102,6 +102,7 @@ def main():
         ('implementation-status.md', 'implementation.html'),
         ('publication-inventory.md', 'publication.html'),
         ('gameplay-media-20261027.md', 'gameplay-media.html'),
+        ('github-documentation-plan-20261027.md', 'github-documentation.html'),
     ]
     for source_name, page_name in public_articles:
         article(ROOT/'docs/public'/source_name, dist/page_name, source_name, retro)
@@ -124,6 +125,48 @@ def main():
             if link['href'] in ('../apple-platforms.md','../keyboard-input-policy.md','../current-status.md','../auto-aim-plan-20261026.md','../wireless-device-workflow.md'):
                 link['href']=link['href'].removeprefix('../')
         (dist/page_name).write_text(str(page))
+    reader_sources = {
+        'README.md': 'github.html', 'docs/README.md': 'docs-index.html',
+        'CHANGELOG.md': 'changelog.html', 'CREDITS.md': 'credits.html',
+        'docs/public/features.md': 'features.html',
+        'docs/public/gameplay-guide.md': 'gameplay-guide.html',
+        'docs/public/architecture.md': 'architecture.html',
+        'docs/public/troubleshooting.md': 'troubleshooting.html',
+        'docs/public/development-history.md': 'development-history.html',
+        'docs/public/validation.md': 'validation.html',
+    }
+    routes = {**reader_sources, **{'docs/public/'+src: page for src, page in public_articles},
+              'docs/RESTORATION.md': 'restoration.html', 'docs/auto-aim-plan-20261026.md': 'auto-aim.html',
+              'docs/android-port-plan-20261026.md': 'android-plan.html'}
+    for source_name, page_name in reader_sources.items():
+        article(ROOT/source_name, dist/page_name, page_name.replace('.html', '.md'), retro)
+    # Resolve relative Markdown paths from each manuscript's original directory.
+    from urllib.parse import urlsplit, unquote, quote
+    for source_name, page_name in routes.items():
+        if page_name not in list(reader_sources.values()) + ['installation.html', 'implementation.html', 'publication.html', 'gameplay-media.html', 'github-documentation.html']:
+            continue
+        page = BeautifulSoup((dist/page_name).read_text(), 'html.parser')
+        if page.footer: page.footer.decompose()
+        for node in page.select('main a[href], main img[src]'):
+            attr = 'src' if node.name == 'img' else 'href'
+            raw = node[attr]
+            if node.find_parent(class_='top') or node.find_parent('nav'): continue
+            url = urlsplit(raw)
+            if url.scheme or url.netloc or not url.path: continue
+            target = (ROOT/source_name).parent / unquote(url.path)
+            try: rel = target.resolve().relative_to(ROOT).as_posix()
+            except ValueError: continue
+            if rel in routes: node[attr] = routes[rel]
+            elif rel.startswith('docs/public/media/'):
+                node[attr] = rel.removeprefix('docs/public/')
+            else:
+                node[attr] = 'https://github.com/gelb2/HeavyMach/blob/docs/github-publication/'+quote(rel, safe='/')
+            if url.fragment: node[attr] += '#'+url.fragment
+        style = page.new_tag('style')
+        style.string = 'main img,main video{display:block;max-width:100%;height:auto;margin:18px 0}main h1{line-height:1.25}'
+        page.head.append(style)
+        deduplicate_styles(page)
+        (dist/page_name).write_text(str(page))
     article(ROOT/'docs/media-publication.md', dist/'media-preparation.html', 'media-publication.md', retro)
     preparation=dist/'media-preparation.html'
     preparation.write_text(preparation.read_text().replace('href="public/gameplay-media-20261027.md"', 'href="gameplay-media.html"'))
@@ -138,6 +181,7 @@ def main():
     shutil.copytree(ROOT/'docs/public/media/fullscreen',dist/'media/fullscreen',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/media/auto-aim',dist/'media/auto-aim',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/media/lux-lunae',dist/'media/lux-lunae',dirs_exist_ok=True)
+    shutil.copyfile(ROOT/'docs/public/media/README.md', dist/'media/README.md')
     shutil.copytree(ROOT/'docs/public/media/gameplay-20261027',dist/'media/gameplay-20261027',dirs_exist_ok=True)
     shutil.copyfile(ROOT/'docs/lux-lunae-plan-20261027.md',dist/'lux-lunae-plan-20261027.md')
     (dist/'evidence').mkdir(exist_ok=True)
@@ -150,8 +194,8 @@ def main():
     for name in ['game-design.md','document-governance.md','document-map.json','apple-platforms.md','keyboard-input-policy.md','current-status.md','wireless-device-workflow.md','usability-todo.md']:
         shutil.copyfile(ROOT/'docs'/name,dist/name)
     report={'pages':['index.html','retrospective.html','documentation.html','rea.html','port-and-native.html','related-titles.html','android-plan.html','ios-audit.html','restoration.html'],'manuscripts':['report-overview-20261025.md','engineering-retrospective-20261025.md','rea-restoration-method-20261025.md','ipa-port-and-native-app-20261026.md','related-titles-20261026.md','android-port-plan-20261026.md','ios-completeness-audit-20261026.md','RESTORATION.md'],'image_count_before':len(BeautifulSoup(original,'html.parser').select('img')),'image_count_after':len(old.select('img'))}
-    report['pages'] += [page for _, page in public_articles] + ['media-preparation.html']
-    report['manuscripts'] += [source for source, _ in public_articles] + ['media-publication.md']
+    report['pages'] += [page for _, page in public_articles] + list(reader_sources.values()) + ['media-preparation.html']
+    report['manuscripts'] += [source for source, _ in public_articles] + [page.replace('.html', '.md') for page in reader_sources.values()] + ['media-publication.md']
     assert report['image_count_before']==report['image_count_after']
     catalog=BeautifulSoup((dist/'index.html').read_text(),'html.parser')
     listed={a['href'].split('#')[0] for a in catalog.select('#reports a[href]')}

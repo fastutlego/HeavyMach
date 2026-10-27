@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "candidate_selection",
+  "status": "selected_for_github",
   "sources": [
     {
       "id": "v1",
@@ -353,6 +353,44 @@
           "full_decode": "passed"
         }
       ]
+    }
+  ],
+  "animations": [
+    {
+      "path": "01-auto-aim.gif",
+      "scene_id": "01-auto-aim",
+      "source_clip": "01-auto-aim.mp4",
+      "source_id": "v2",
+      "source_start_seconds": 9.5,
+      "source_end_seconds": 14.5,
+      "duration_seconds": 5.0,
+      "fps": 12,
+      "width": 768,
+      "height": 354,
+      "speed": 1,
+      "audio": false,
+      "filter": "[0:v]fps=12,scale=768:-1:flags=lanczos,split[a][b];[a]palettegen=max_colors=128:stats_mode=diff[p];[b][p]paletteuse=dither=bayer:bayer_scale=3",
+      "sha256": "04c04d0685168942795430c7bfefddad031f2bcf24103ca5d8e4a6a6c486bf2a",
+      "bytes": 3320299,
+      "full_decode": "passed"
+    },
+    {
+      "path": "08-jump-clip.gif",
+      "scene_id": "08-jump-clip",
+      "source_clip": "08-jump-clip.mp4",
+      "source_id": "v2",
+      "source_start_seconds": 37,
+      "source_end_seconds": 43,
+      "duration_seconds": 6.0,
+      "fps": 12,
+      "width": 768,
+      "height": 354,
+      "speed": 1,
+      "audio": false,
+      "filter": "[0:v]fps=12,scale=768:-1:flags=lanczos,split[a][b];[a]palettegen=max_colors=128:stats_mode=diff[p];[b][p]paletteuse=dither=bayer:bayer_scale=3",
+      "sha256": "94513e2da2bc45819b6ee045791adb71be0bd3ec0055e35163e948c57d6edcd0",
+      "bytes": 3223384,
+      "full_decode": "passed"
     }
   ]
 }

@@ -1,14 +1,28 @@
 # HeavyMach 개발 보고
 
-현재 릴리스는 **v0.12**다. 완성분을 develop→main 순서로 병합하고 main에 태그를 붙였다. 자동조준과 추가 항공기까지 포함한다. [플레이 이미지8장·클립3개](gameplay-media.html)를 새로 정리했다.
+현재 릴리스는 **v0.12**다. 완성분을 develop→main 순서로 병합하고 main에 태그를 붙였다. 자동조준과 추가 항공기까지 포함한다. [GitHub 본문](github.html)에 플레이 이미지8장·GIF2개·MP4 3개를 배치했다.
 
 일반 앱과 치트 앱을 아이폰·아이패드에 설치했다. 사용자는 최신 설치본에서 프레임 드랍이나 오작동이 보이지 않았다고 보고했다. 과거 계측 수치와 당시 실패는 각 보고서에 남아 있다.
 
 ## 전체 보고서 {#reports}
 
+### GitHub 원고
+
+- [README와 플레이 화면](github.html) — 소개·기능·설치·상태와 이미지8장·GIF2개.
+- [전체 문서 목차](docs-index.html) — 독자용 문서·개발 정책·증거.
+- [기능과 추가 기획](features.html) — 자동조준·VTOL·전투기의 의도·구현·수정·검사.
+- [조작 안내](gameplay-guide.html) — 터치·틸트·키보드·자동조준.
+- [코드 구조](architecture.html) — workspace·공용 모듈·자원·플랫폼.
+- [트러블슈팅17개](troubleshooting.html) — 사용자 지적, 원인·변경·결과.
+- [개발 과정](development-history.html) — 비교 순서와 사용 도구·스킬.
+- [검증 결과](validation.html) — 날짜·기기·조건별 성공과 남은 검사.
+- [변경 이력](changelog.html) — v0.9~v0.12.
+- [제작자·자원](credits.html) — 원작·추가 작업·라이브러리.
+
+
 ### 플레이 화면·이미지
 
-- [플레이 영상에서 고른 이미지8장·클립3개](gameplay-media.html) — 선정 이유, 원본 시각, GitHub·Sass 배치안.
+- [플레이 영상에서 고른 이미지8장·클립3개](gameplay-media.html) — 이미지 8장 전체 배치, GIF2개·MP4 3개, GitHub 운영 절차와 스킬 조사.
 - [전체 화면·도어 전환 수정](fullscreen.html) — 게임 진입 전 화면 전환.
 - [야크·해리어·F35B](vtol-art.html) — 시안, 무장·미션 배치, 크기·외곽선·불꽃 수정과 설치.
 - [럭스루나에 전투기3종](lux-lunae.html) — F-22·Su-57·MiG-31, 묶음 연사, 화면 밖 진입과 설치.
@@ -36,6 +50,8 @@
 - [REA 분석과 구현 대조](rea-implementation.html) — 분석 기록과 실제 코드의 연결.
 
 ### 문서·Sass·후속 계획
+
+- [GitHub 문서 작성 계획](github-documentation.html) — 문서별 내용, 트러블슈팅·추가 기능 목록, 완료·진행·남은 과제, 작성 순서.
 
 - [Sass 집필 자료](publication.html) — Apps·Mags 담당 세션의 읽는 순서와 자료 위치.
 - [영상·README 작업 절차](media-preparation.html) — 원본 보관·추출·캡션 규칙.

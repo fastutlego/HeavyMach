@@ -1,5 +1,45 @@
 # HeavyMach 보고 사이트
 
+## 2026-10-27 문장 수정
+
+GitHub 문서 계획·미디어 보고·SaaS 집필 안내에서 작성자 지침과 자기설명을 제거하고 기능의 실제 동작·구현·현재 상태로 고쳤다. 링크549개·Markdown3개 일치·기존 제목·이미지8장·영상3개를 확인했다.
+
+- source: `e4565639655b06c99825bde6806444bfb7f8c2d0`
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_9ce728519f988191a6b496f70f14b631`
+- deployment: `appgdep_6ae0acfadf9c81918f43a3b72f4f1e63`, `succeeded`.
+- [변경·검사 기록](evidence/editorial-copyedit-20261027.json)
+
+
+## 2026-10-27 기능 설계·모듈화 집필 보강
+
+`/github-documentation.html`의 9~12절에 자동조준·VTOL·전투기 요구와 코드 구현, workspace·모듈화의 기술적 근거·판단을 추가했다. 내부 링크549개·다운로드 일치·로컬 Chrome의 새 절과 구조 표시를 확인했다.
+
+- source: `8c0672e86e284df7cad012f7c0ac92a9cc12ba90`
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_c00a9f4d592c81918e565feac27a8fa0`
+- deployment: `appgdep_6ae0a9012ef48191b4dc1902e7371539`, `succeeded`, 소유자 전용 유지.
+- [검사·배포 기록](evidence/design-and-modules-writing-20261027.json)
+
+
+## 2026-10-27 GitHub 전체 문서 작성 계획
+
+`/github-documentation.html`을 기존 전체 목차에 추가했다. 보고서23개와 내부 링크543개, Markdown 다운로드 일치, 로컬 Chrome의 본문·목차·표를 확인했다. Apps 기술 설명·Mags 매거진 인터뷰 형식을 집필 안내에도 반영했다.
+
+- source: `de9ab502b15e893c4b864b3c53d0e9538c09eaa9`
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_a5941af819d08191b5dbbeca5844aa7f`
+- deployment: `appgdep_6ae0a641cbd48191b60e55cd935b1c9b`, `succeeded`, 소유자 전용 유지.
+- [검사·배포 기록](evidence/github-documentation-plan-20261027.json)
+
+
+## 2026-10-27 GitHub 문서 구성·스킬 조사
+
+기존 `/gameplay-media.html`에 이미지8장 전체 배치, GIF 제작 계획, GitHub 운영 절차와 스킬 후보를 추가했다. 공개 원고의 IPA 제외 지시를 집필 안내에도 기록했다. 로컬 Chrome 본문·목차·좁은 창 배치, 내부 링크529개와 Markdown 일치를 확인했다. 이미지8장·영상3개를 유지했다.
+
+- source: `638d33c3b66423dd20bb24a52aeaff35d50ab928`
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_66e602f6b7a8819193697dd5863c95e3`
+- deployment: `appgdep_6ae09d0b35a08191a19eacc8856a9ffe`, `succeeded`, 소유자 전용 유지.
+- [검사·배포 기록](evidence/github-publication-plan-20261027.json)
+
+
 ## 사이트 통합 규칙 — 2026-10-27
 
 사용자에게 전달하는 HeavyMach 보고서는 기존 Site `appgprj_6addbf55aea081918d3d182d7e496e88` 하나에 둔다. 첫 화면 `index.html#reports`에서 모든 보고서를 찾을 수 있게 한다. 새 보고서·이미지·다운로드를 추가할 때 목차도 갱신하며, 각 보고서에는 전체 목차로 돌아가는 링크를 둔다. 기존 URL·절 앵커와 비공개 범위는 유지한다.

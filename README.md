@@ -1,90 +1,101 @@
-# HeavyMach 1.13 소스 복원
+# HeavyMach
 
-원본 IPA를 REA로 분석하여 게임 코드를 소스로 복원하고, 최신 iPhone과 iOS 시뮬레이터에서 빌드·실행하는 프로젝트다. 2026-10-24 사용자는 HeavyMach 1을 GameDev 초기 기획의 참고 원본이라고 확인했다. Unity는 별도 ProjectGameDevUnity 저장소에서 관리한다.
+2009년의 횡스크롤 전차 게임 **HeavyMach**를 현재의 iPhone·iPad·Mac에서 실행하도록 다시 만들었다. 전차를 움직이고 뛰어오르며, 무기를 바꿔 지상·공중의 적과 싸운다. 원작의 전투와 성장 구조에 넓은 화면, 키보드 조작, 자동조준과 새로운 항공기를 추가했다.
 
-일반 앱과 치트 검증 앱을 iPhone Air에 설치했고, 사용자는 설치본의 모든 미션에서 크래시·오동작·적 이동 이상은 없는 것 같다고 보고했다. 이 제품 코드를 `v0.9`로 보존했다. 복원판은 C++20·Objective-C++로 작성했다.
+이 게임은 프로젝트를 시작한 개발자가 2017년 7월 iOS 개발자로 전업하는 데 영향을 준 작품이다. 대학생 때 iPod touch로 하던 게임을 2026년의 아이폰에서 다시 실행하고 싶었다. 구현은 Codex가 맡았고, 사용자는 원작과 달라진 움직임·성능·그림을 직접 확인하며 수정을 지시했다. [개발자의 변 전문](docs/RESTORATION.md)
 
-- [IPA 없는 빌드·실행 검증](docs/public/ipa-independent-build-20261026.md): 원본 접근 차단 상태에서 네 앱 빌드, 자원·REA 구현 대조.
-- [빌드와 설치](docs/public/build-and-install.md): Git LFS 자원 받기, 두 앱 빌드, Simulator·아이폰 설치.
-- [구현과 검증 범위](docs/public/implementation-status.md): 구현 기능, 실제 확인한 결과, 남은 작업과 배포 상태.
-- [SaaS 집필용 문서 안내](docs/public/publication-inventory.md): 읽기 순서·주제별 출처·이미지와 아직 없는 근거.
+![공중의 적을 향해 사격하는 탱크. 녹색 모서리와 LOCKED 문구가 표적을 표시한다.](docs/public/media/gameplay-20261027/01-auto-aim.png)
 
-기존 [HeavyMachRecovery](Compatibility/README.md)는 원본 ARMv6 바이너리를 인터프리터로 실행한다. 그 실행본은 동작 비교 기준이며, 소스 복원 완료를 뜻하지 않는다. 이 프로젝트의 완료 여부는 소스로 빌드한 게임의 증거로 판단한다.
+**현재 게임 버전은 [v0.12](https://github.com/gelb2/HeavyMach/tree/v0.12)**다. 일반 앱과 치트 검증 앱을 각각 설치할 수 있다. 치트 앱에서는 미션·무기·강화 조건을 지정해 같은 게임을 검사한다.
 
-[개발자의 변](docs/RESTORATION.md)에 HeavyMach를 선택한 개인적인 배경을 기록한다. 소개·회고·SaaS Apps·Mags를 작성할 때는 [원문과 출처](docs/developer-background.md)를 함께 읽는다.
+[설치](docs/public/build-and-install.md) · [조작](docs/public/gameplay-guide.md) · [기능](docs/public/features.md) · [트러블슈팅](docs/public/troubleshooting.md) · [전체 문서](docs/README.md)
 
-| 문서 | 내용 |
-| --- | --- |
-| [game-design](docs/game-design.md) | 게임 기획·화면 의도·요구 ID·승인/미구현 범위 |
-| [document-governance](docs/document-governance.md) | 문서 위계·업무별 읽기·변경 전파·문서/코드/앱 대조 |
-| [document-map](docs/document-map.json) | 현행 문서와 업무별 소스·검사·증거 연결 |
-| [source-provenance](docs/source-provenance.md) | 사용자 제공 링크, 원본 식별·해시, REA 증거 위치 |
-| [current-status](docs/current-status.md) | 정적 분석·사용자 관측·남은 검증 |
-| [restoration-contract](docs/restoration-contract.md) | 보존 요구와 소스 복원 완료 기준 |
-| [design](docs/design.md) | 확인한 함수·데이터와 복원 설계 |
-| [verification](docs/verification.md) | 과거 빌드·동작 비교·저장 실행 이력. 현행은 current-status와 분야 정책 |
-| [validation-mode](docs/validation-mode.md) | 조건 설정 패널·실제 레벨업·외형·저장 검사 결과 |
-| [source-coverage](docs/source-coverage.md) | 과거 원본 함수 대응·당시 검사 범위 |
-| [ios-source-map](docs/ios-source-map.md) | 현행 iOS 소스 68개·정책·검사 연결 |
-| [iOS 전수검사](docs/ios-completeness-audit-20261026.md) | 파일 누락·Xcode 등록·문서·미커밋 변경 확인 |
-| [boss-battles-v6](docs/boss-battles-v6.md) | 최신 코어의 보스 48개 실제 처치 검사 |
-| [runtime-policy](docs/runtime-policy.md) | 시간·저장·OpenAL 음향 정책 |
-| [stage-transition-contract](docs/stage-transition-contract.md) | 전체맵의 출구·미션말·최종clamp 조건검사 |
-| [rendering-policy](docs/rendering-policy.md) | 현행 OpenGL 렌더링·자원 수명 |
-| [coordinate-policy](docs/coordinate-policy.md) | 월드·화면·터치·틸트 좌표 |
-| [game-calculation-policy](docs/game-calculation-policy.md) | 데미지·HP·EXP·강화·난수 계산 |
-| [usability-todo](docs/usability-todo.md) | 발열·전환음·잠금·미사용 후속 과제 |
-| [wide-canvas-plan](docs/wide-canvas-plan.md) | 디바이스 전체 캔버스의 시야 확장 조사·계획 |
-| [stage-journeys](docs/stage-journeys.md) | 정상 시작 위치부터 진행한 맵별 성공·실패 |
-| [hud-event-order](docs/hud-event-order.md) | HP·강화·메뉴 이벤트 수정과 최종 빌드·검사 |
+## 전투와 조작
 
-게임 핵심 소스는 `Sources/Core/`, iOS 화면·입력·음향 연결은 `Sources/iOS/`, Apple 작업은 `HeavyMach.xcworkspace`를 연다. 공용 모듈·iOS/iPadOS·native Mac 프로젝트를 함께 관리한다. [구조와 실행](docs/apple-platforms.md), [키 배치](docs/keyboard-input-policy.md)를 참고한다. Xcode에서 일반 실행은 `HeavyMachRestored`, 조건별 검사는 `HeavyMachValidation` scheme을 선택한다. 검증 앱은 별도 저장을 사용한다.
+iPhone·iPad에서는 기기를 기울여 이동하고 화면을 터치해 조준·발사한다. 점프와 무기 선택은 화면 버튼으로 조작한다. 키보드를 연결하면 이동·점프·조준·발사·무기 전환과 메뉴를 모두 키로 다룰 수 있다.
 
-이 저장소 루트에서 코어 검사:
+![경사로 위로 뛰어오른 탱크가 오른쪽 적을 향해 사격한다.](docs/public/media/gameplay-20261027/02-jump.png)
+
+자동조준을 켜면 전방의 적을 추적하고 무기의 탄도를 계산해 포신을 조절한다. 플레이어는 이동·점프·무기 선택·발사를 맡는다. 표적 전환 버튼으로 다른 적을 선택할 수 있다.
+
+![자동조준한 공중 적에게 사격하는 5초 장면](docs/public/media/gameplay-20261027/01-auto-aim.gif)
+
+[소리 있는 자동조준 영상 — 7초](docs/public/media/gameplay-20261027/01-auto-aim.mp4)
+
+![공중 적과 싸우며 점프하는 탱크](docs/public/media/gameplay-20261027/08-jump-clip.png)
+
+![사격 중 점프하고 착지하는 6초 장면](docs/public/media/gameplay-20261027/08-jump-clip.gif)
+
+[점프·사격·무기 목록 영상 — 7초](docs/public/media/gameplay-20261027/08-jump-clip.mp4)
+
+## 무기와 성장
+
+무기마다 탄속·분산·중력·연사 간격이 다르다. 자동조준도 같은 탄환 규칙을 사용하므로 적의 움직임과 무기 분산에 따라 빗나갈 수 있다. 무기를 바꾸고 위치를 옮기며 공격 방법을 고른다.
+
+![상단 무기 목록과 선택 테두리. 흰 궤적이 전장을 가로지른다.](docs/public/media/gameplay-20261027/03-weapon.png)
+
+![푸른 광선 여러 줄이 상공에서 지상으로 내려온다.](docs/public/media/gameplay-20261027/04-special.png)
+
+경험치를 얻어 레벨이 오르면 이동·방어·공격을 강화한다. 미션을 끝내면 결과 그림과 다음 스테이지 선택 화면이 나온다.
+
+![MOVEMENT, DEFENSE, ATTACK을 고르는 업그레이드 창](docs/public/media/gameplay-20261027/05-upgrade.png)
+
+![전차 일러스트 위에 STAGE CLEAR와 다음 스테이지 버튼이 표시된다.](docs/public/media/gameplay-20261027/06-stage-clear.png)
+
+## 추가한 항공기
+
+Yak-141·Harrier GR3·F-35B는 기존 적 배치 사이에 추가했다. F-22·Su-57·MiG-31은 보스전과 직전 미션의 마지막 구간에 증원으로 등장한다. 기존 헬기의 무기를 재사용하고, 전투기에는 미사일 묶음 발사와 금색 조종석 유리를 적용했다.
+
+![화면 오른쪽의 검은 항공기 여러 대를 향해 탱크가 광선을 발사한다.](docs/public/media/gameplay-20261027/07-fighters.png)
+
+[추가 항공기 전투 영상 — 13초](docs/public/media/gameplay-20261027/07-fighters.mp4) · [기획·수치·등장 미션](docs/public/features.md)
+
+이미지 8장과 영상은 사용자가 제공한 실제 플레이 녹화에서 골랐다. GIF는 원래 속도로 재생하며 소리는 MP4에 있다. [원본 시간·캡션·파일 목록](docs/public/media/gameplay-20261027/README.md)
+
+## 플랫폼과 개발 상태
+
+| 대상 | 지원 내용 | 확인한 범위 |
+|---|---|---|
+| iPhone | 가로 회전, 터치·틸트, 키보드, 일반·치트 앱 | iPhone Air 설치·입력·전투 검사, 사용자 플레이 |
+| iPad | 화면 비율에 맞춘 캔버스, 터치·틸트·키보드 병용 | iPad Air 13형 M2 설치·입력·전투 검사, 사용자 플레이 |
+| Mac | AppKit 앱, 창·전체 화면, 키보드 조작 | Mac mini 실행·33개 검사, 개발 서명 앱 누수 0건 |
+| Android | 공용 C++ 코어를 활용하는 개발 계획 | 앱·APK 미구현 |
+
+사용자는 설치한 iPhone·iPad 앱에서 프레임 드랍이나 오작동이 보이지 않았다고 확인했다. 기기별 자동 검사에는 표시시간 기준 실패가 남아 있다. [측정 조건과 결과](docs/public/validation.md)
+
+자동조준·공용 모듈·Apple 세 플랫폼·항공기 6종·전체 화면 도어는 구현됐다. HUD 위치 편집, 자동조준 상태 안내 개선, 튜토리얼 0-0~0-4, 글자를 뺀 앱 아이콘과 Android는 후속 과제다. [완료·진행·남은 과제](docs/public/implementation-status.md)
+
+## 빌드하기
+
+Apple Silicon Mac, Xcode, CMake 3.20 이상, Python 3, Git LFS를 사용한다. 소스·게임 이미지·음원·맵·빌드 프로젝트는 이 저장소에 들어 있다.
 
 ```sh
-cmake -S . -B build/core -DCMAKE_BUILD_TYPE=Debug
-cmake --build build/core -j 4
-ctest --test-dir build/core --output-on-failure
-```
-
-프로젝트 구성 변경 후 생성은 `xcodegen generate --spec iOS/project.yml`이다. 원본 IPA·추출본·사용자 저장·검증된 호환 실행본을 덮어쓰지 않는다. 최신 빌드·실행 성공 범위와 미확인 항목은 위 문서에서 확인한다.
-
-앱 빌드·검사에 필요한 이미지·음원·맵과 비교 자료는 Git/LFS에 포함한다. 새 clone에서 다음을 실행한다. IPA와 별도 자원 복사는 필요하지 않다.
-
-```sh
+git clone https://github.com/gelb2/HeavyMach.git
+cd HeavyMach
 git lfs install --local
 git lfs pull
 python3 tools/verify_build_resources.py
+open HeavyMach.xcworkspace
 ```
 
-파일별 목록과 SHA-256은 [자원 목록](docs/build-resources.json)에 있다. 원본 IPA·분석 출력·빌드 캐시·사용자 저장은 Git에서 제외한다. vendor의 라이선스를 유지한다.
+Xcode에서 본인의 개발 팀을 지정하고 실행 대상을 선택한다. iPhone·iPad 일반 앱은 `HeavyMachRestored`, 치트 앱은 `HeavyMachValidation`이다. Mac은 `HeavyMachMac`, `HeavyMachMacValidation`이다. 현재 저장소 접근에는 GitHub 권한이 필요하며 설치 파일은 Releases에 등록하지 않았다.
 
-업무별 읽기 목록과 문서 연결 검사:
+[시뮬레이터 명령·기기 설치·서명·오류 해결](docs/public/build-and-install.md)
 
-```sh
-python3 tools/document_contract.py plan --task rendering
-python3 tools/document_contract.py check
-```
+## 개발 중 고친 문제
 
-이 명령은 문서 연결을 검사한다. 기능 의미와 앱 실행의 정상 여부는 관련 정책·코드·실행 증거를 대조한다.
+초기 구현에는 사격·피격 때마다 파일을 쓰는 경로, CPU에서 그림을 다시 만드는 렌더링, 음원 재시작 지연이 있었다. 사용자는 정상적으로 플레이한 기준과 비교해 왜 동작이 달라졌는지 물었고, 저장·그래픽·음향·시간 계산을 각각 대조하게 했다.
 
-- [REA 분석·복원 방법과 전체 증거 색인](docs/public/rea-restoration-method-20261025.md): 사용한 스킬·도구, 25개 함수군, 실패 수정, 구현·검증 기록.
-- [IPA 포팅과 네이티브 앱 복원](docs/public/ipa-port-and-native-app-20261026.md): 호환판 제작, 새 앱의 성능 문제와 비교·수정 순서, 치트·일반 앱 설치를 설명한 기술 블로그 원고.
+파일 쓰기는 저장 시점에만 실행하도록 분리했다. 게임 그림은 OpenGL 텍스처로 그리고, 효과음은 OpenAL 버퍼와 소스를 재사용하도록 바꿨다. 화면 확장 뒤 생긴 특수무기 좌표·보스 접근·그림 경계 문제도 같은 방식으로 수정했다.
 
-독립 저장소의 브랜치·태그·롤백은 [저장소 관리](docs/repository-management.md)를 따른다. 분리 전 경로와 커밋 해시는 당시 증거이며 [이력 대응](docs/migration/commit-map.txt)에서 새 해시를 찾는다.
+[트러블슈팅 17개 항목](docs/public/troubleshooting.md)에는 증상, 사용자의 질문과 지시, 코드 원인, 변경, 확인 결과를 기록했다. [개발 과정](docs/public/development-history.md)에는 비교 순서와 사용한 분석·구현·검사 도구를 정리했다.
 
-Apple Silicon 시뮬레이터에서 새 checkout을 빌드할 때는 먼저 음향 라이브러리를 준비한다.
+## 코드 구조와 버전
 
-```sh
-bash tools/build_openal.sh iphonesimulator
-xcodebuild -project iOS/HeavyMachRestored.xcodeproj -scheme HeavyMachRestored -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' ARCHS=arm64 ONLY_ACTIVE_ARCH=YES CODE_SIGNING_ALLOWED=NO build
-```
+하나의 workspace에서 공용 모듈·iOS/iPadOS 앱·native Mac 앱을 관리한다. C++ 게임 코어와 이미지·음원·맵은 공유하고, 플랫폼별 창·입력·그래픽 컨텍스트를 연결한다. 공용 코드는 정적 framework, 자원은 `HeavyMachAssets.bundle`로 앱에 포함한다.
 
-치트 앱은 같은 명령의 scheme을 HeavyMachValidation으로 바꾼다. 현재 OpenAL 빌드 스크립트의 대상은 arm64다. 최초 일반 generic 명령의 라이브러리 입력 누락 실패는 개편 기록에 보존했다.
+[구조와 모듈화 이유](docs/public/architecture.md) · [검증](docs/public/validation.md) · [변경 이력](CHANGELOG.md)
 
-[분리 후 전수검사](docs/migration/completeness-audit-20261026.md)에 파일 보존·복구·경로 수정과 로컬 증거 위치를 기록했다. 과거 build/ 증거는 기존 제작 폴더에 보존하며 새 빌드 출력과 구분한다.
+작업 브랜치는 `develop`에 병합하고 `develop`만 `main`에 병합한다. 출시 태그는 `main`의 병합 커밋에 붙인다. [태그에서 다시 빌드하는 방법](docs/repository-management.md)
 
-코드를 수정할 때는 [AGENTS.md](AGENTS.md), [정본](docs/canonical.md), [현재 상태](docs/current-status.md)와 관련 정책을 읽는다.
-
-기존 화면 자료는 [이미지 색인](docs/public/media/README.md), 후속 플레이 영상의 추출·배치는 [영상·README 작업 절차](docs/media-publication.md)를 따른다.
+[원작 제작자·추가 작업·라이브러리](CREDITS.md) · [SaaS Apps·Mags 집필 자료](docs/public/publication-inventory.md)
