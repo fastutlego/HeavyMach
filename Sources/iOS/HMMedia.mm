@@ -2,7 +2,7 @@
 #import "HMMedia.h"
 #import "HMGLRenderer.h"
 #import "HMOpenALAudio.h"
-#include "VTOL.hpp"
+#include "Fighters.hpp"
 #import <objc/runtime.h>
 #define STB_IMAGE_IMPLEMENTATION
 #define STB_IMAGE_STATIC
@@ -111,6 +111,8 @@ template<class Raster> static void HMDrawRaster(Raster& raster,CGPoint offset,CG
     // 512px texture into ~110 scene pixels skipped thin edges and fine details.
     int spriteWidth=0;
     if([name hasPrefix:@"Extensions/VTOL_"])for(const auto& spec:heavymach::vtolSpecs())
+        if([name isEqualToString:[NSString stringWithUTF8String:spec.tile]]){spriteWidth=int(std::lround(spec.width));break;}
+    if([name hasPrefix:@"Extensions/Lux_"])for(const auto& spec:heavymach::fighterSpecs())
         if([name isEqualToString:[NSString stringWithUTF8String:spec.tile]]){spriteWidth=int(std::lround(spec.width));break;}
     if([name isEqualToString:@"Extensions/AutoAimControls.png"])spriteWidth=138; // 3 columns of 46 logical pixels, cached once.
     if(decoded&&spriteWidth>0&&width>spriteWidth){

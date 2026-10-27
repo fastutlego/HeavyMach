@@ -31,12 +31,20 @@
 | 검증 조건 구성 | `Sources/Core/ValidationScenario.cpp`, `Sources/Core/ValidationScenario.hpp` | [weapon-validation-procedure.md](weapon-validation-procedure.md) | Tests/iOS/HMFramePerformanceTests.mm |
 | 원본 클래스·메서드 주소·디스크 구조 | `Sources/OriginalInterfaces/OriginalClasses.h`, `Sources/OriginalInterfaces/OriginalTypes.h`, `Sources/OriginalInterfaces/Arm32DiskLayouts.h`, `Sources/OriginalInterfaces/method-address-map.json` | [source-provenance.md](source-provenance.md) | 원본 분석 참조. 앱 컴파일 대상에서 제외 |
 
+## 추가 공용 기능
+
+| 기능 | 소스 | 문서·검사 |
+|---|---|---|
+| 자동조준·상태 표지 | `Sources/Core/AutoAim.hpp`, `Sources/iOS/HMAimOverlay.hpp` | [자동조준](auto-aim-plan-20261026.md), Tests/AutoAimTests.cpp |
+| 수직이착륙기 | `Sources/Core/VTOL.cpp`, `Sources/Core/VTOL.hpp` | [VTOL](vtol-expansion.md), Tests/VTOLTests.cpp |
+| 럭스루나에 증원 | `Sources/Core/Fighters.cpp`, `Sources/Core/Fighters.hpp` | [기체·무기·배치](lux-lunae-plan-20261027.md), Tests/FightersTests.cpp |
+
 ## 빌드와 자원
 
 - `Modules/project.yml`, `iOS/project.yml`, `macOS/project.yml`이 Xcode 생성 입력이며 각 하위 project.pbxproj가 등록 결과다. 구성 변경 시 둘을 함께 검토한다.
-- `HeavyMachRestored`, `HeavyMachValidation`은 각각 C++ 20개·Objective-C++ 9개를 컴파일한다. `HeavyMachRenderTests`는 `Tests/iOS/`의 12개 파일을 컴파일한다.
+- iOS·macOS 일반/치트 앱은 공용 코어 22개와 각 플랫폼 런타임을 연결한다. 현재 대상별 파일 수는 `tools/audit_ios_sources.py` 결과를 따른다.
 - `vendor/openal-soft/`와 `vendor/stb/`의 소스·라이선스를 보존한다. OpenAL 빌드 명령과 arm64 대상은 [README](../README.md)에 있다.
-- `Resources/`, `Analysis/`, 원본 IPA와 호환판 checkout은 별도 보존 입력이다. Git 제외는 누락 여부와 별도로 판정한다. 출처·해시는 [출처 문서](source-provenance.md), 호환 소스 재구성은 [호환판 안내](../Compatibility/README.md)를 따른다.
+- `Resources/`와 `Art/Extensions/`는 저장소에 포함된 빌드 입력이다. `Analysis/`, 원본 IPA와 호환판 checkout은 복원 조사 자료이며 새 앱 빌드에 필요하지 않다. Git 제외는 누락 여부와 별도로 판정한다. 출처·해시는 [출처 문서](source-provenance.md), 호환 소스 재구성은 [호환판 안내](../Compatibility/README.md)를 따른다.
 - Git 태그 `v0.9`는 정상 플레이 기준 릴리스다. iOS plist의 `CFBundleShortVersionString=1.13`, `CFBundleVersion=1`과 별개다. 이번 검사는 버전 값을 변경하지 않았다.
 
 ## 재검사

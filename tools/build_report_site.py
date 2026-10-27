@@ -132,6 +132,7 @@ def main():
     shutil.copytree(ROOT/'docs/public/media/lux-lunae',dist/'media/lux-lunae',dirs_exist_ok=True)
     shutil.copyfile(ROOT/'docs/lux-lunae-plan-20261027.md',dist/'lux-lunae-plan-20261027.md')
     (dist/'evidence').mkdir(exist_ok=True)
+    shutil.copyfile(ROOT/'docs/evidence/lux-lunae-implementation-20261027.json',dist/'evidence/lux-lunae-implementation-20261027.json')
     for suffix in ['txt','cpp']:
         name='lux-lunae-inventory-20261027.'+suffix
         shutil.copyfile(ROOT/'docs/evidence'/name,dist/'evidence'/name)

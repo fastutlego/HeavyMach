@@ -22,6 +22,9 @@ struct WeaponInfo {
     std::string effectType, effectTile;
     int16_t effectTileNo = 0, shell = 0;
     std::string fireSFX;
+    // Approved new aircraft only. Original binary readers leave these defaults.
+    float aiTimeScale=1,burstGroupDelay=0;
+    uint8_t burstGroupSize=0;
     int effectTypeNumber() const;
 };
 struct PartsInfo {

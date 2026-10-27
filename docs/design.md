@@ -72,3 +72,7 @@ MAP/MCH 관찰 구조는 LE u32 `declared_size,type,data_size`, payload, LE u32 
 ## 전체 화면 도어
 
 원본 전환 상태는 `LoadingTransition`, 캔버스별 패널 배치는 `expandedPanels`, 실제 제출은 `HMMedia.drawExpandedPanel → HMGLRenderer.drawExpandedPanel`이 담당한다. 원본 네 PNG의 중앙 장식을 유지하고 외곽 부분만 늘린다. 각 패널54정점을 한 draw로 제출하며 추가 이미지나 프레임별 파일 쓰기는 없다. 화면 교체·효과음·게임 상태는 기존 전환 이벤트를 사용한다. [결과](public/fullscreen-transitions-20261027.md).
+
+## 럭스루나에 전투기
+
+`Fighters.cpp`는 신규 3종과 무기 복사본·14개 증원표를 제공한다. `GameSession`은 원본 맵을 수정하지 않고 대형보스 활성/마지막 구간 진입 때 증원한다. `aircraftSpec`은 신규 전투기와 기존 VTOL의 자세·발사점·피격·그리기를 연결한다. 신규 후방 배기만 가로 방향으로 그린다. 증원은 화면 오른쪽 밖에서 생성하고 `aircraftEntering` 동안 기존 비행 위치 갱신으로 진입한다. 목표점 도착 때 무기 AI 대기 시각을 시작한다. [수치·배치·검사](lux-lunae-plan-20261027.md).

@@ -1,0 +1,259 @@
+{
+  "date": "2026-10-27",
+  "branch": "feat/lux-lunae-fighters",
+  "baseline": "1ca5e8c9",
+  "core_tests": {
+    "passed": 21,
+    "log_sha256": "d7d751a23de46691c49d09bce28418d4d4c8bb669cda93250c892c87520f56b5"
+  },
+  "waves": {
+    "maps": 14,
+    "aircraft": 72,
+    "boss_counts": [
+      2,
+      4,
+      6,
+      8,
+      8,
+      8,
+      8
+    ],
+    "preboss_counts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "original_and_vtol_entries_preserved": true
+  },
+  "manual_trace": {
+    "frames": 25200,
+    "weapons": 20,
+    "seeds": 3,
+    "baseline_identical": true,
+    "sha256": "8c3381e397310c60555878ceb6e2fd4a3eff8809e6222e56d112b0095f981d34"
+  },
+  "tests": {
+    "simulator": {
+      "passed": 4,
+      "log_sha256": "1b9b92bc52dbf86707407d6159247eb6571d80ca200fc7c5e9a9bbcda79d41f4",
+      "wave": {
+        "aircraft": 8,
+        "max_bullets": 27,
+        "samples": 420,
+        "mean_ms": 4.364,
+        "p95_ms": 5.175,
+        "save_calls": 0
+      }
+    },
+    "ipad": {
+      "passed": 4,
+      "log_sha256": "448a658d571066fc6b663637a157b049c90d8973cc1512ecd35a9c6939e0e4d8",
+      "wave": {
+        "aircraft": 8,
+        "max_bullets": 27,
+        "samples": 420,
+        "mean_ms": 1.395,
+        "p95_ms": 1.599,
+        "save_calls": 0
+      }
+    },
+    "iphone": {
+      "passed": 4,
+      "log_sha256": "e8d062aef29e8506fd153df22a4edee5edc843deceb7b486976e996787326bbe",
+      "wave": {
+        "aircraft": 8,
+        "max_bullets": 27,
+        "samples": 420,
+        "mean_ms": 0.984,
+        "p95_ms": 1.069,
+        "save_calls": 0
+      }
+    },
+    "mac": {
+      "passed": 4,
+      "log_sha256": "2000a193370c4709272f718ea9e13e3c760935bf791ef7a10ac4da121592bf6b",
+      "wave": {
+        "aircraft": 8,
+        "max_bullets": 27,
+        "samples": 420,
+        "mean_ms": 1.025,
+        "p95_ms": 1.181,
+        "save_calls": 0
+      }
+    },
+    "mac_hud": {
+      "passed": 1,
+      "log_sha256": "e08347cacf3708ce5b661c066d111b1c67ac45c1b49d165325cc8f0bc6b80984"
+    }
+  },
+  "installs": [
+    {
+      "device": "ipad",
+      "app": "HeavyMachValidation",
+      "transport": "wired",
+      "install": "success",
+      "launch": "success",
+      "binary_sha256": "b65b4f14acb9ec16942eeeed7253c9ff632f55c07bbd378429b241b77c84f242",
+      "binary_mtime": 1793061292.1792145
+    },
+    {
+      "device": "ipad",
+      "app": "HeavyMachRestored",
+      "transport": "wired",
+      "install": "success",
+      "launch": "success",
+      "binary_sha256": "45e8c447c0c33867f8efde75f11df775f85dc65f4d521b155ac01925a9c1033c",
+      "binary_mtime": 1793061403.9628825
+    },
+    {
+      "device": "iphone",
+      "app": "HeavyMachValidation",
+      "transport": "localNetwork",
+      "install": "success",
+      "launch": "success",
+      "binary_sha256": "b65b4f14acb9ec16942eeeed7253c9ff632f55c07bbd378429b241b77c84f242",
+      "binary_mtime": 1793061292.1792145
+    },
+    {
+      "device": "iphone",
+      "app": "HeavyMachRestored",
+      "transport": "localNetwork",
+      "install": "success",
+      "launch": "success",
+      "binary_sha256": "45e8c447c0c33867f8efde75f11df775f85dc65f4d521b155ac01925a9c1033c",
+      "binary_mtime": 1793061403.9628825
+    }
+  ],
+  "limitations": [
+    "Short synchronous game update and GL work measurements exclude display scheduling and do not prove sustained 60fps.",
+    "No long-duration thermal or memory trace for the new aircraft.",
+    "Full regular-difficulty campaign balance with the reinforcements not completed."
+  ],
+  "preserved_failures": [
+    "core-tests.log: fixture used one-based mission arguments",
+    "fighter-test-4.log: fixture skipped earlier boss arena release",
+    "mac.log: old HUD test used iOS-only NSValue CGSize API",
+    "build-device.log: CLI signing failed; same device builds signed in Xcode GUI"
+  ],
+  "latest_revision": {
+    "reason": "User observed pop-in and requested fire rate +10%",
+    "fire_rate_multiplier": 1.1,
+    "missile_speed_multiplier": 1.25,
+    "entry": "off-screen right; 2.5 world units per tick; weapons wait until entry ends",
+    "core_tests": 21,
+    "core_log_sha256": "d9f48d7320c1a1c59d8f8d3008908d5bed27ca361d6935fc0be5760b52fc77d2",
+    "tests": {
+      "simulator": {
+        "passed": 2,
+        "log_sha256": "8aea2b0ab6b05e1f35e3c0c55e919223c98eea822f3c90cb3aa18b8e8ba29d4e",
+        "wave": {
+          "aircraft": 8,
+          "max_bullets": 21,
+          "samples": 420,
+          "mean_ms": 4.476,
+          "p95_ms": 5.065,
+          "save_calls": 0
+        }
+      },
+      "ipad": {
+        "passed": 1,
+        "log_sha256": "abd2fd9443d3ba3235a1f2c8850398bad05f427f4914a9b141163924a0ef9712",
+        "wave": {
+          "aircraft": 8,
+          "max_bullets": 21,
+          "samples": 420,
+          "mean_ms": 1.445,
+          "p95_ms": 1.49,
+          "save_calls": 0
+        }
+      },
+      "iphone": {
+        "passed": 1,
+        "log_sha256": "7dc179bf31ad562fdab1ec8bdcb4a52fedb6a02ca0a2fccabbaf91f0cbd34867",
+        "wave": {
+          "aircraft": 8,
+          "max_bullets": 21,
+          "samples": 420,
+          "mean_ms": 0.925,
+          "p95_ms": 0.9,
+          "save_calls": 0
+        }
+      },
+      "mac": {
+        "passed": 1,
+        "log_sha256": "b7c2d12bccb8c7c5279e783b17068015345ab4ff1c83dad52707ab8f51f9d017",
+        "wave": {
+          "aircraft": 8,
+          "max_bullets": 21,
+          "samples": 420,
+          "mean_ms": 1.116,
+          "p95_ms": 1.146,
+          "save_calls": 0
+        }
+      }
+    }
+  },
+  "first_installs": [
+    {
+      "device": "ipad",
+      "app": "HeavyMachValidation",
+      "transport": "wired",
+      "install": "success",
+      "launch": "success",
+      "binary_sha256": "bc45d277cf3dca392d6530aaba8415c69c3943c660c44903e399b286c4f6881b",
+      "asset_sha256": {
+        "F22": "8cf228dafd366849f50ce623901a1106dad35df4ccb451e1de6e346c79f6f082",
+        "Su57": "d8797d4559d71df8923e3d755f4f51237053a3ec1d374f0022834111b775a197",
+        "MiG31": "ef9351c5bb4112c0bc10befa489ae989d3b341e69da29a047c6570d3c468260d"
+      }
+    },
+    {
+      "device": "ipad",
+      "app": "HeavyMachRestored",
+      "transport": "wired",
+      "install": "success",
+      "launch": "success",
+      "binary_sha256": "ae18b220e68b9806c37b75783da8f53db276a9c1d3c335d11616cb6ec75965db",
+      "asset_sha256": {
+        "F22": "8cf228dafd366849f50ce623901a1106dad35df4ccb451e1de6e346c79f6f082",
+        "Su57": "d8797d4559d71df8923e3d755f4f51237053a3ec1d374f0022834111b775a197",
+        "MiG31": "ef9351c5bb4112c0bc10befa489ae989d3b341e69da29a047c6570d3c468260d"
+      }
+    },
+    {
+      "device": "iphone",
+      "app": "HeavyMachValidation",
+      "transport": "localNetwork",
+      "install": "success",
+      "launch": "success",
+      "binary_sha256": "bc45d277cf3dca392d6530aaba8415c69c3943c660c44903e399b286c4f6881b",
+      "asset_sha256": {
+        "F22": "8cf228dafd366849f50ce623901a1106dad35df4ccb451e1de6e346c79f6f082",
+        "Su57": "d8797d4559d71df8923e3d755f4f51237053a3ec1d374f0022834111b775a197",
+        "MiG31": "ef9351c5bb4112c0bc10befa489ae989d3b341e69da29a047c6570d3c468260d"
+      }
+    },
+    {
+      "device": "iphone",
+      "app": "HeavyMachRestored",
+      "transport": "localNetwork",
+      "install": "success",
+      "launch": "success",
+      "binary_sha256": "ae18b220e68b9806c37b75783da8f53db276a9c1d3c335d11616cb6ec75965db",
+      "asset_sha256": {
+        "F22": "8cf228dafd366849f50ce623901a1106dad35df4ccb451e1de6e346c79f6f082",
+        "Su57": "d8797d4559d71df8923e3d755f4f51237053a3ec1d374f0022834111b775a197",
+        "MiG31": "ef9351c5bb4112c0bc10befa489ae989d3b341e69da29a047c6570d3c468260d"
+      }
+    }
+  ],
+  "source_sha256": {
+    "Sources/Core/Fighters.cpp": "b41c4026325727804ec70b711894c74bb2c6da8e4e269db53132df1454c8a904",
+    "Sources/Core/GameSession.cpp": "39a3be2d680c37a227edc5e9dcf5a4fb914b75915c8c0d772d4796ab545404b6",
+    "Sources/Core/Combat.cpp": "0566f3fa7e40b671cb38631be4a9dce65aa9823ef60da66ad4e1cc5617f1b1f9"
+  }
+}
