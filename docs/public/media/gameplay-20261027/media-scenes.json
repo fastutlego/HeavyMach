@@ -90,8 +90,8 @@
       "alt_text": "탱크가 공중의 적을 향해 사격한다. 녹색 표적 표시와 LOCKED 문구가 보인다.",
       "selection_reason": "탱크, 공중 적, 조준 표지와 하단 버튼이 함께 보여 자동조준 설명에 적합하다.",
       "selected_for": [
-        "GitHub 대표 이미지 후보",
-        "Sass Apps 기능 소개"
+        "GitHub 자동조준 소개",
+        "Sass Apps 추가 기능"
       ],
       "outputs": [
         "01-auto-aim.png",
@@ -118,7 +118,8 @@
           "audio_codec": "aac",
           "full_decode": "passed"
         }
-      ]
+      ],
+      "readme_section": "내가 추가한 자동조준"
     },
     {
       "id": "02-jump",
@@ -148,7 +149,8 @@
           "height": 1260,
           "codec": "png"
         }
-      ]
+      ],
+      "readme_section": "원작의 전투와 조작"
     },
     {
       "id": "03-weapon",
@@ -178,7 +180,8 @@
           "height": 1260,
           "codec": "png"
         }
-      ]
+      ],
+      "readme_section": "원작의 무기와 성장"
     },
     {
       "id": "04-special",
@@ -208,7 +211,8 @@
           "height": 1260,
           "codec": "png"
         }
-      ]
+      ],
+      "readme_section": "원작의 무기와 성장"
     },
     {
       "id": "05-upgrade",
@@ -238,7 +242,8 @@
           "height": 1260,
           "codec": "png"
         }
-      ]
+      ],
+      "readme_section": "원작의 무기와 성장"
     },
     {
       "id": "06-stage-clear",
@@ -268,7 +273,8 @@
           "height": 1260,
           "codec": "png"
         }
-      ]
+      ],
+      "readme_section": "원작의 무기와 성장"
     },
     {
       "id": "07-fighters",
@@ -310,7 +316,8 @@
           "audio_codec": "aac",
           "full_decode": "passed"
         }
-      ]
+      ],
+      "readme_section": "내가 추가한 항공기"
     },
     {
       "id": "08-jump-clip",
@@ -324,8 +331,8 @@
       "alt_text": "공중 적과 싸우며 점프하는 탱크.",
       "selection_reason": "사격, 점프, 착지와 무기 목록 표시가 이어진다.",
       "selected_for": [
-        "GitHub 조작 클립",
-        "Sass Apps 플레이 소개"
+        "GitHub 자동조준 중 점프·사격",
+        "Sass Apps 추가 기능"
       ],
       "outputs": [
         "08-jump-clip.png",
@@ -352,7 +359,8 @@
           "audio_codec": "aac",
           "full_decode": "passed"
         }
-      ]
+      ],
+      "readme_section": "내가 추가한 자동조준"
     }
   ],
   "animations": [

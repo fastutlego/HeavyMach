@@ -32,9 +32,17 @@ def article(source,dest,download,template):
     old=BeautifulSoup(template,'html.parser')
     if old.h1 and old.h1.get('id') and content.h1: content.h1['id']=old.h1['id']
     ids=[x.get('id') for x in old.select('h2')]
+    # README sections keep their existing URLs when gameplay sections move.
+    readme_ids = {
+        '원작의 전투와 조작': 'section-0', '원작의 무기와 성장': 'section-1',
+        '내가 추가한 항공기': 'section-2', '내가 추가한 자동조준': 'auto-aim',
+        '플랫폼과 개발 상태': 'section-3', '빌드하기': 'section-4',
+        '개발 중 고친 문제': 'section-5', '코드 구조와 버전': 'section-6',
+        '라이선스와 자원': 'section-7',
+    } if source == ROOT/'README.md' else {}
     nav=BeautifulSoup('<nav aria-label="본문 목차"><ol></ol></nav>','html.parser')
     for i,h in enumerate(content.select('h2')):
-        h['id']=ids[i] if i<len(ids) and ids[i] else f'section-{i}'
+        h['id']=readme_ids.get(h.get_text(), ids[i] if i<len(ids) and ids[i] else f'section-{i}')
         li=nav.new_tag('li');a=nav.new_tag('a',href='#'+h['id']);a.string=h.get_text();li.append(a);nav.ol.append(li)
     tables(content)
     page=BeautifulSoup(template,'html.parser');main=page.main;main.clear()
