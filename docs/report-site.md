@@ -536,3 +536,15 @@ VTOL 첫 생성 프롬프트와 스킬 수정 커밋을 대조했다. 요청에 
 - deployment: `appgdep_6ae0c7e0bd6c819193e579859ce25915`, `succeeded`, 2026-10-27T15:49:01.709916+00:00.
 - [트러블슈팅16절](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/troubleshooting.html#section-15), [라이선스·배지 조사](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/github-licenses-and-badges.html). 기존 소유자 비공개 범위 유지.
 - 게시 후 Chrome 접속은 `ERR_INTERNET_DISCONNECTED`로 실패했다. 배포 성공은 Sites 응답으로 확인했으며, 실제 화면 검사는 로컬 미리보기 결과다.
+
+
+## 코드·에셋 포함 공개 목적과 Mesabloo 사례 — 2026-10-28
+
+개발자의 변과 라이선스 조사에 코드·에셋을 함께 공개해 누구나 빌드·플레이하고 개발 기록을 유지하려는 목적을 반영했다. 향후 허락받은 앱스토어 배포도 무료로 제공하려는 의향을 반영했다. Mesabloo의 README·BSD-3-Clause·core/assets를 확인해 공개 사례와 자원 이용허락 범위를 설명했다. 실제 라이선스 부여·저장소 공개·앱 배포는 하지 않았다.
+
+- 원고: `95052a55`, `docs/github-publication` 푸시. 관련 원고2개 원격·다운로드 바이트 일치.
+- 문서 검사 통과. 사이트35페이지·내부 링크787개·다운로드35개 경로 확인, 기존 이미지·앵커 보존. Chrome 로컬 화면에서 수정 도입 확인.
+- Site source: `70026ca8359e144a5ce7061961286baf0fd50359`.
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_f7edcc06502881919ebd96fd2ea4b1d3`.
+- deployment: `appgdep_6ae0cb1337008191bdc9f2544856df44`, `succeeded`, 2026-10-27T16:02:43.709196+00:00.
+- [개발자의 변](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/restoration.html), [공개 조건 조사](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/github-licenses-and-badges.html). 소유자 비공개 범위 유지. 배포 성공은 Sites 응답으로 확인했다.
