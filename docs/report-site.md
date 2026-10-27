@@ -8,7 +8,7 @@ F-22·Su-57·MiG-31 시안, 원본 헬기와 웹 축소 비교, HP765·미사일
 - Site source: `03d3a62c0761a21f40d77c64533c8b820198045c`
 - Version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_52726aeefc388191a9f9576fb72edc49`
 - Deployment: `appgdep_6adfea8e25ac8191baa570a8f7347293`, `succeeded`, 2026-10-27T00:04:46.725318+00:00. 소유자 전용 유지.
-- 상대 링크·앵커448개, 원고·그림 바이트 일치, 기존 메인 이미지13개 보존 확인. 로컬 Chrome에서 큰 그림3종·축소 비교·묶음 연사 본문을 확인했다. 게시본 인증 후 화면의 추가 검사는 하지 않았다.
+- 상대 링크·앵커448개, 원고·그림 바이트 일치, 기존 메인 이미지13개 보존 확인. 로컬 Chrome에서 큰 그림3종·축소 비교·묶음 연사 본문을 확인했다. 게시 URL을 Chrome에서 열 때 ERR_INTERNET_DISCONNECTED가 발생해 게시본 화면은 확인하지 못했다. Sites의 공식 배포 결과는 succeeded다.
 - 생성 원본과 프롬프트는 `Art/LuxLunae/20261027/`, 요구·수치·배치 근거는 `docs/lux-lunae-plan-20261027.md`에 보존했다.
 
 ## 최신 게시 — 2026-10-27 VTOL 외곽선·크기·불꽃 수정
