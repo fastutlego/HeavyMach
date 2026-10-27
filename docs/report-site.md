@@ -520,3 +520,19 @@ Git 추적 Markdown 173개를 분류하고 독자용·보고 원고 37개 중 36
 - version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_39c2450954b88191bf47eb6dc0721cee`.
 - deployment: `appgdep_6ae0c4373338819192f094cdf2366cf6`, `succeeded`, 2026-10-27T15:33:24.328871+00:00.
 - [통합 원고](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/github.html). 소유자 비공개 유지. [검사 기록](evidence/narrative-voice-audit-20261028.json).
+
+
+## 라이선스·배지 조사와 VTOL 재해석 경위 보강 — 2026-10-28
+
+라이선스 조사 원고를 전체 목차에 추가했다. 코드·원작 자원·추가 그림·외부 라이브러리의 조건과 필요한 문건, README 배지 위치·예시를 정리했다. LICENSE 부여나 배지 적용, 저장소 공개, 앱 외부 배포는 하지 않았다.
+
+VTOL 첫 생성 프롬프트와 스킬 수정 커밋을 대조했다. 요청에 없던 외형 재해석, 실물 형상 보존 규칙 추가, 채택 뒤 후속 작업에도 같은 절차를 적용하라는 지시를 트러블슈팅·VTOL 기록·기능 설명에 반영했다.
+
+- 원고: `73ca4cc7`, `907e4160`, `fa581322`; `docs/github-publication` 원격의 관련 문서4개 바이트 일치 확인.
+- 문서 검사 통과. 사이트35페이지·내부 링크787개·다운로드35개 경로 확인. 이번 관련 원고4개 다운로드 바이트 일치, 기존 이미지·앵커 보존 확인.
+- Chrome 로컬 화면에서 라이선스 조사 및 트러블슈팅16절 본문·배치 확인. Shields 예시 SVG의 별도 HTTP 요청은403이어서 배지 그림의 렌더링 검사는 미완료다. 해당 예시는 코드 블록이며 README에 배지를 적용하지 않았다.
+- Site source: `d4f635a313eae0ea45b72a57c4d7009335526820`.
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_cbb929d71440819198f1f85a50547cc6`.
+- deployment: `appgdep_6ae0c7e0bd6c819193e579859ce25915`, `succeeded`, 2026-10-27T15:49:01.709916+00:00.
+- [트러블슈팅16절](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/troubleshooting.html#section-15), [라이선스·배지 조사](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/github-licenses-and-badges.html). 기존 소유자 비공개 범위 유지.
+
