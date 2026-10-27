@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-28",
+  "url": "https://github.com/gelb2/HeavyMach",
+  "visibility": "public",
+  "default_branch": "main",
+  "authentication_used": false,
+  "release": "v0.12",
+  "release_downloads": [
+    {
+      "name": "HeavyMach-v0.12-notices.zip",
+      "http": 200,
+      "bytes": 27763,
+      "sha256": "6dc12cd4c37cf9e26fb13cc959e3a5e83daed21d3a2b4bebef30901822070607",
+      "matches_verified_release": true
+    },
+    {
+      "name": "HeavyMach-v0.12-source-with-assets.tar.gz",
+      "http": 200,
+      "bytes": 146187445,
+      "sha256": "06ef5e0f0fb31e7fe4f716293030a9d76dee4d3d0c45ac0d56f7ed4f672d5296",
+      "matches_verified_release": true
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "http": 200,
+      "bytes": 202,
+      "sha256": "e537b8f177fbe99f3fed43a28794f063a944058c2ed25f07ded0228c8a6e025f",
+      "matches_verified_release": true
+    }
+  ],
+  "og": {
+    "url": "https://repository-images.githubusercontent.com/1433401742/e8786db1-fd5b-49d7-8b57-98b2af9d388c",
+    "http": 200,
+    "bytes": 914281,
+    "sha256": "465c605835e4d1907cb07ee95a61f2a474665274e1da6c798c58b8f5a717d7d3",
+    "matches_local_card": true
+  },
+  "readme_http": 200
+}
