@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-28",
+  "status": "concept_review",
+  "tool": "image_gen",
+  "requirements": "newly drawn body and parts; reuse original assembly/motion/weapon/effects code",
+  "files": [
+    {
+      "path": "docs/public/media/ground-aa/shilka-concept-v1.png",
+      "sha256": "83023952f71802209fe197a5c7881c4bf4523ea0d11497952c8be311c8ef55f6",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "path": "docs/public/media/ground-aa/tunguska-concept-v1.png",
+      "sha256": "08b4385d21ccb86a108ebee21bc2611d80e4947d24eeaec22c24deaa498d9747",
+      "width": 1536,
+      "height": 1024
+    }
+  ],
+  "geometry_references": [
+    "https://www.kskdivniy.ru/museum/eksponaty/zsu-23-4-shilka/",
+    "https://www.kskdivniy.ru/museum/eksponaty/tunguska/"
+  ],
+  "style_references": [
+    "Resources/Images/E_0505_Body.png",
+    "Resources/Images/E_Tank_Body_03.png"
+  ],
+  "assembly_evidence": "docs/evidence/ground-original-assembly-20261028.json",
+  "review": {
+    "shilka": "corrected detached chassis from five to six road wheels and removed invented hull gun; retained four turret barrels and circular rear radar",
+    "tunguska": "corrected detached missile bank from three to four tubes; six road wheels, paired gun, forward circular radar and rear search radar"
+  },
+  "remaining": [
+    "transparent component export",
+    "pixel-scale edge check",
+    "socket and collision integration",
+    "motion comparison in game"
+  ]
+}
