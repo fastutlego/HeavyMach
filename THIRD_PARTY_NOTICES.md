@@ -19,10 +19,10 @@ OpenAL Soft는 [빌드 스크립트](tools/build_openal.sh)에서 정적 라이�
 | `.agents/skills/write-project-text/references/upstream` | SaaS·Candidate 작업 지침 | [복사 출처와 해시](.agents/skills/write-project-text/references/source-manifest.json) 보존. 코드용 MIT 적용 제외 |
 | `Analysis`, `Sources/OriginalInterfaces`, `Resources/Evidence` | 원작 동작·인터페이스 분석 자료 | 원작 유래 자료. 코드용 MIT 적용 제외 |
 
-외부 라이선스는 해당 파일의 고지가 우선한다. 위 표는 새 MIT를 외부 코드에 덮어쓰지 않도록 구성요소와 고지를 연결한다. 원작 이미지·음원은 [자원 조건](ASSET-LICENSES.md), 새 코드의 범위는 [코드 라이선스](LICENSE-SCOPE.md)에 있다.
+외부 라이선스는 해당 파일의 고지가 우선한다. 원작 이미지·음원은 [자원 조건](ASSET-LICENSES.md), 새 코드의 범위는 [코드 라이선스](LICENSE-SCOPE.md)에 있다.
 
 ## 참조 소스 대조 — 2026-10-28
 
-`HMCompatibilityPixels.hpp`는 256개 입력값에 대해 `powf(powf(x, 2.2), 1/2.2)`를 계산하고 바이트로 자른다. [참조 커밋의 image.rs](https://github.com/moleworld-dev/MoleWorld-5.5.0-touchHLE-offline/blob/ebf9433e2bfd32071545bf49484b1345d15522a3/fresh-port/20-touchHLE-src/touchHLE/src/image.rs)의 `gamma_decode`·`gamma_encode`와 `cg_bitmap_context.rs`의 변환 순서를 대조했다. Rust 구현 전체를 옮긴 파일은 아니며, 현재 C++ 구현에는 MPL-2.0을 표시했다. [대조 파일 해시](docs/evidence/publication-source-audit-20261028.json)
+`HMCompatibilityPixels.hpp`는 256개 입력값에 대해 `powf(powf(x, 2.2), 1/2.2)`를 계산하고 바이트로 자른다. [참조 커밋의 image.rs](https://github.com/moleworld-dev/MoleWorld-5.5.0-touchHLE-offline/blob/ebf9433e2bfd32071545bf49484b1345d15522a3/fresh-port/20-touchHLE-src/touchHLE/src/image.rs)의 `gamma_decode`·`gamma_encode`와 `cg_bitmap_context.rs`의 변환 순서를 대조했다. 현재 C++ 구현에는 MPL-2.0을 표시했다. [대조 파일 해시](docs/evidence/publication-source-audit-20261028.json)
 
 `Compatibility/patches/rust-sdl2.patch`의 대상은 `b67f98fe6a147773b6f05d50ae775d9fe16561e7`의 `sdl2-sys/build.rs`다. 해당 프로젝트는 Copyright © 2013 Mozilla Foundation의 MIT를 사용한다. [고지 사본](LICENSES/rust-sdl2-MIT.txt), [참조 저장소](https://github.com/touchHLE/rust-sdl2/tree/b67f98fe6a147773b6f05d50ae775d9fe16561e7).

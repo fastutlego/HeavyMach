@@ -76,7 +76,10 @@ def check(root):
             dest = path.parent / unquote(url.path)
             if not dest.exists():
                 errors.append(f'{name}: missing local link {target}')
-    readme_paragraphs = (root / 'README.md').read_text().split('\n\n')
+    readme_blocks = (root / 'README.md').read_text().split('\n\n')
+    if len(readme_blocks) < 2 or not readme_blocks[1].startswith('[!['):
+        errors.append('README badges must follow the title')
+    readme_paragraphs = [p for p in readme_blocks if not p.startswith('[![')]
     restoration_paragraphs = (root / 'docs/RESTORATION.md').read_text().split('\n\n')
     motive = next(p for p in restoration_paragraphs if p.startswith('요즘 나는 내게 남은 시간이'))
     if readme_paragraphs[1] != motive:

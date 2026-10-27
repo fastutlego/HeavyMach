@@ -2,7 +2,7 @@
 
 현재 README에는 개발 동기, 실제 플레이 이미지 8장·GIF 2개·영상 3개, 기능·설치·트러블슈팅·검증 문서가 연결돼 있다. 2026-10-28에 문서 브랜치를 develop `0a2c0e33`을 거쳐 main `db634ce6`으로 병합했다. GitHub 기본 화면의 README도 갱신됐다. 게임 코드와 자원은 v0.12와 같다.
 
-이번 후속 작업에는 새 코드용 MIT와 적용 범위, 자원별 조건, 외부 라이브러리 고지, 기술 배지 5개를 추가했다. 이후2026-10-28 저장소를 공개했다. 게임 기능은 v0.12를 유지한다.
+이번 후속 작업에는 새 코드용 MIT와 적용 범위, 자원별 조건, 외부 라이브러리 고지, 기술 배지 5개를 추가했다. 이후 2026-10-28 저장소를 공개했다. 게임 기능은 v0.12를 유지한다.
 
 ## 다른 게임 저장소에서 참고한 구성
 
@@ -38,7 +38,7 @@ GitHub Community Profile은 기본 브랜치의 안내 파일 존재를 확인�
 
 ## README 배치
 
-제목 바로 아래에는 개발자의 변과 같은 도입문을 두었다. 게임 소개 다음에 기술 배지가 이어진다. 다음에는 개발 동기, 대표 게임 화면, 버전·설치·조작 링크가 이어진다. 전투·성장·새 적을 보여주는 이미지와 영상은 각 기능 설명 옆에 유지한다. 뒤에는 지원 환경, 빌드, 트러블슈팅, 구조·버전, 라이선스를 둔다.
+제목 바로 아래에 기술 배지 5개를 모았다. 첫 본문에는 개발자의 변에서 옮긴 복원 동기를 두고, 복원 시작 이야기와 게임 소개를 이어 배치했다. 그다음은 대표 게임 화면, 버전·설치·조작 링크다. 전투·성장·새 적을 보여주는 이미지와 영상은 각 기능 설명 옆에 유지한다. 뒤에는 지원 환경, 빌드, 트러블슈팅, 구조·버전, 라이선스를 둔다.
 
 배지는 외부 서비스 요청 없이 저장소의 SVG를 표시한다. 플랫폼 배지는 iOS·iPadOS·macOS를 표시한다. 검사한 OS 버전은 검증 문서에 있다. Game tag v0.12와 앱 번들 버전 1.13·빌드 번호 1은 서로 다른 값이다. 게임 태그가 바뀌면 버전 SVG와 README·CHANGELOG를 함께 갱신한다.
 
@@ -70,6 +70,6 @@ Git 태그는 코드의 특정 시점을 가리키고, Release는 그 태그의 
 
 현재 iPhone·iPad 앱은 Xcode에서 본인의 개발 팀으로 빌드해 설치한다. Mac도 설치 파일을 올리기 전에 서명·공증과 새 환경에서의 실행을 확인한다. Android APK는 개발 후 제공한다.
 
-공유 미리보기는 기존 플레이 화면으로 준비한다. 원본 캡처는 보존하고 별도 배치 파일을 만든다. 게임 이름·전투 장면이 작은 카드에서도 읽히는지 확인한다. [GitHub 공유 이미지 안내](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/customizing-your-repositorys-social-media-preview)
+공유 미리보기에는 메인 화면의 전차 일러스트와 기존 로고를 사용했다. 1280×640 PNG를 GitHub Social preview에 등록했다. [GitHub 공유 이미지 안내](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/customizing-your-repositorys-social-media-preview)
 
 [전체 문서](../README.md) · [라이선스·배지 조사](github-licenses-and-badges-20261028.md) · [남은 과제](../usability-todo.md)

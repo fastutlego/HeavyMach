@@ -1,10 +1,10 @@
 # GitHub 공개·배포 라이선스와 README 배지
 
-나는 코드와 원작 에셋을 함께 공개해, 다른 사람이 저장소를 받아 직접 빌드하고 플레이할 수 있게 하려 한다. 개발 과정과 수정 기록도 계속 남기고 싶다. 이 복원판으로 돈을 벌 생각은 없다. 원작자와 이해관계자들이 앱스토어 배포를 허락하더라도 무료로 제공할 생각이다.
+나는 코드와 원작 에셋을 함께 공개했다. 저장소를 받아 직접 빌드하고 플레이할 수 있다. 개발 과정과 수정 기록도 계속 남기고 싶다. 이 복원판으로 돈을 벌 생각은 없다. 원작자와 이해관계자들이 앱스토어 배포를 허락하더라도 무료로 제공할 생각이다.
 
 이 목적에는 **새 코드의 라이선스, 이 복원판에 원작 자원을 포함해 공개하는 허락, 외부 라이브러리의 배포 조건**이 필요하다. 이번 작업에서 새 코드 기여분에 MIT를 적용하고, 원작 자원의 조건은 별도로 기록했다. [코드 적용 범위](../../LICENSE-SCOPE.md), [자원 조건](../../ASSET-LICENSES.md), [외부 고지](../../THIRD_PARTY_NOTICES.md). 코드와 에셋을 같은 저장소에서 내려받아 빌드하는 구성을 택했다.
 
-버전·OS를 작은 칩 모양으로 표시하는 것은 **배지(badge)**다. 필수는 아니지만 README에서 실행 환경을 빠르게 찾는 데 도움이 된다. HeavyMach에는 제목 아래에 버전·플랫폼·아키텍처·언어를 표시하고, 실제 검사 환경은 본문의 표로 설명하는 안을 제안한다.
+버전·OS를 작은 칩 모양으로 표시하는 것은 **배지(badge)**다. 필수는 아니지만 README에서 실행 환경을 빠르게 찾는 데 도움이 된다. HeavyMach는 제목 아래에 버전·플랫폼·아키텍처·언어·코드 라이선스 배지를 모았다. 실제 검사 환경은 본문의 표에 있다.
 
 Codex가 2026-10-28에 저장소 파일과 GitHub·GNU·Creative Commons·Apple 공식 자료를 대조했다. README에 기술 배지4개와 코드 라이선스 배지1개, 최소 OS·실제 검사 환경 표를 추가했다. [GitHub 구성 점검·후속 계획](github-repository-plan-20261028.md).
 
@@ -18,7 +18,7 @@ Codex가 2026-10-28에 저장소 파일과 GitHub·GNU·Creative Commons·Apple 
 | 새 그림 | 메뉴 확장, VTOL, 전투기. 원작·실물·편대 도색을 참조한 제작 기록이 있음 | [VTOL](vtol-art-and-loadout-20261027.md), [전투기](lux-lunae-design-20261027.md) |
 | OpenAL Soft | 1.22.2. 주된 소스 헤더는 LGPL-2.0-or-later. 정적 라이브러리로 빌드해 앱에 링크 | [COPYING](../../vendor/openal-soft/COPYING), [소스 헤더](../../vendor/openal-soft/al/source.cpp), [빌드 스크립트](../../tools/build_openal.sh) |
 | stb | MIT 또는 Public Domain 중 선택하는 이중 라이선스 | [LICENSE](../../vendor/stb/LICENSE) |
-| 자동화 | GitHub Actions에는 main 병합 출발 브랜치를 확인하는 작업만 있음 | [branch-flow.yml](../../.github/workflows/branch-flow.yml) |
+| 자동화 | main 병합 경로, 문서·자원, 코어·Apple 빌드 workflow 구성. 빌드 실행은 계정 제한으로 차단 | [branch-flow.yml](../../.github/workflows/branch-flow.yml) |
 | 버전 | Git 태그 v0.12. 앱 번들 표시는 1.13, 빌드 번호 1 | [변경 이력](../../CHANGELOG.md), [iOS 명세](../../iOS/project.yml), [Mac 명세](../../macOS/project.yml) |
 
 ## 공개 저장소와 자유 재배포
@@ -38,7 +38,7 @@ GitHub 공개 저장소는 다른 사람이 내용을 보고 fork할 수 있게 
 
 새 코드의 MIT 적용 범위와 원작 에셋의 이용 조건은 각각 LICENSE-SCOPE.md와 ASSET-LICENSES.md에 기록했다. [저작권법 제46조](https://law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0046&lsiSeq=283335&urlMode=lsScJoRltInfoR)
 
-새 C++ 구현도 파일별 출처를 확인해야 한다. 독자적으로 작성한 부분과 원작 표현·외부 코드에서 옮긴 부분을 구분한 뒤 적용 라이선스를 정한다. 동작이 같다는 사실이나 소스를 새로 작성했다는 사실 하나만으로 저장소 전체의 권리를 판정할 수는 없다.
+새 C++ 구현의 MIT 적용 범위와 외부 구현을 참조한 파일의 출처·고지는 [코드 적용 범위](../../LICENSE-SCOPE.md)와 [외부 고지](../../THIRD_PARTY_NOTICES.md)에 있다.
 
 ## 필요한 문건
 
@@ -74,7 +74,7 @@ Creative Commons는 소프트웨어에는 전용 소프트웨어 라이선스를
 
 배포 버전의 OpenAL 소스·수정분·빌드 설정, 앱 소스 또는 재링크 가능한 오브젝트, 연결에 필요한 자료를 같은 릴리스에서 받을 수 있도록 구성한다. 새 clone에서 라이브러리를 수정해 다시 빌드·링크하는 검사도 필요하다. 라이브러리를 이용한 부분의 수정과 그 디버깅을 위한 역분석을 배포 조건으로 금지하지 않아야 한다. 2026-10-28에 자원 포함 v0.12 압축본으로 라이브러리를 수정해 Simulator·Mac 앱에 다시 링크했고, 앱 코드에서 변경한 표식을 확인했다. [재링크 결과](github-followup-20261028.md).
 
-추가 확인 대상은 `Compatibility/patches`, 외부 구현을 참조한 `HMCompatibilityPixels.hpp`, `.agents/skills`의 복사 원문이다. 예를 들어 touchHLE의 공식 라이선스는 MPL-2.0이므로 실제로 옮긴 코드가 있다면 해당 파일의 고지와 소스 제공 조건을 대조해야 한다. [touchHLE 저장소](https://github.com/touchHLE/touchHLE)
+`Compatibility/patches`의 touchHLE·rust-sdl2 출처와 `HMCompatibilityPixels.hpp`의 참조 코드를 대조했다. touchHLE에는 MPL-2.0, rust-sdl2에는 MIT가 적용된다. 복사한 스킬의 고지도 [외부 고지](../../THIRD_PARTY_NOTICES.md)에 연결했다. [touchHLE 저장소](https://github.com/touchHLE/touchHLE)
 
 ## 원작 자원을 함께 배포하는 방법
 
@@ -102,7 +102,7 @@ Mac 다운로드판은 Developer ID 서명·공증과 새 Mac에서의 실행 �
 
 배지는 선택 사항이다. SDL은 짧은 소개와 설치·라이선스 링크를 쓰며, OpenRCT2는 게임 이미지 다음 Download 절에 릴리스·개발 버전 배지를 배치한다. 모든 프로젝트가 같은 배지 구성을 써야 하는 규칙은 없다. [SDL README](https://github.com/libsdl-org/SDL/blob/main/README.md), [OpenRCT2 README](https://github.com/OpenRCT2/OpenRCT2/blob/develop/readme.md)
 
-HeavyMach는 **제목 → 게임 소개 → 배지 → 개발 동기·대표 게임 화면 → 설치·조작 링크** 순서로 배치했다. 기술 배지4개와 코드 라이선스 배지1개를 각각 상세 문서에 연결했다.
+HeavyMach는 **제목 → 기술 배지 → 개발 동기 → 게임 소개·대표 화면 → 설치·조작 링크** 순서로 배치했다. 기술 배지4개와 코드 라이선스 배지1개를 각각 상세 문서에 연결했다.
 
 | 배지 문구 | 연결 위치 | 표시 근거 |
 |---|---|---|
@@ -116,7 +116,7 @@ OS 숫자는 README의 플랫폼 표와 설치 문서에서 나눠 쓴다.
 
 | 플랫폼 | 프로젝트의 최소 설정 | 실제 검사 기록 | 남은 범위 |
 |---|---|---|---|
-| iPhone·iPad | iOS/iPadOS 15.0 | iPhone Air·iPad Air 13형 M2, 27.0.1 | 15.0부터 모든 OS에서 실행한 결과는 아님 |
+| iPhone·iPad | iOS/iPadOS 15.0 | iPhone Air·iPad Air 13형 M2, 27.0.1 | 최소 OS 15.0 기기 검사 미실행 |
 | Mac | macOS 12.0 | Mac mini M4 Pro, macOS 27.0.1 | 12.0 실기기·Intel 검사 없음 |
 | Android | 개발 계획 | C++ 코어 NDK 컴파일 | 앱·APK·실기기 플레이 미구현 |
 
@@ -145,4 +145,4 @@ Shields의 정적 배지는 문구와 색을 URL에 넣는다. 현재는 같은 
 4. 공개할 Git 이력·LFS·문서·미디어 범위를 확인하고, 소스 공개와 플랫폼별 앱 배포를 각각 준비한다.
 5. README에 추가한 배지5개와 환경 표를 버전 변경 때 갱신한다. 실제 빌드 CI·다운로드가 준비되면 해당 배지를 추가한다.
 
-새 코드 기여분의 MIT, 적용 범위·자원·외부 고지 문건과 README 배지를 추가했다. 저장소는2026-10-28 공개했다. 앱 설치 파일 배포는 후속 과제다. [투두](../usability-todo.md)
+새 코드 기여분의 MIT, 적용 범위·자원·외부 고지 문건과 README 배지를 추가했다. 저장소는 2026-10-28 공개했다. 앱 설치 파일 배포는 후속 과제다. [투두](../usability-todo.md)
