@@ -73,5 +73,12 @@
       "size": 202,
       "state": "uploaded"
     }
-  ]
+  ],
+  "github_generated_archive": {
+    "bytes": 146028884,
+    "sha256": "624574a230e8b7b7d434e7aaf3b98e76783c774f2987a28eb32dbf4b40aec0d0",
+    "verified_assets": 1482,
+    "all_tracked_files_match": 2366,
+    "github_include_lfs": true
+  }
 }
