@@ -110,6 +110,7 @@ def main():
         ('rea-implementation-audit-20261026.md', 'rea-implementation.html'),
         ('build-and-install.md', 'installation.html'),
         ('implementation-status.md', 'implementation.html'),
+        ('ground-units-research-20261028.md', 'ground-units.html'),
         ('publication-inventory.md', 'publication.html'),
         ('gameplay-media-20261027.md', 'gameplay-media.html'),
         ('github-documentation-plan-20261027.md', 'github-documentation.html'),
@@ -134,7 +135,7 @@ def main():
             style=page.new_tag('style');style.string='.lux-small{display:flex;gap:24px;flex-wrap:wrap;align-items:center;padding:20px;background:#4c524f}.lux-small figure{margin:0}.lux-small img{max-width:none}.lux-small figcaption{font-size:12px;color:#fff}.lux-small a{display:block}'
             page.head.append(style)
         for link in page.select('a[href]'):
-            if link['href'].startswith('../evidence/') and page_name not in ('installation.html', 'implementation.html', 'publication.html', 'gameplay-media.html', 'github-documentation.html', 'github-licenses-and-badges.html', 'github-followup.html'):
+            if link['href'].startswith('../evidence/') and page_name not in ('installation.html', 'implementation.html', 'ground-units.html', 'publication.html', 'gameplay-media.html', 'github-documentation.html', 'github-licenses-and-badges.html', 'github-followup.html'):
                 link['href']=link['href'][3:]
             if link['href'] in ('../apple-platforms.md','../keyboard-input-policy.md','../current-status.md','../auto-aim-plan-20261026.md','../wireless-device-workflow.md'):
                 link['href']=link['href'].removeprefix('../')
@@ -160,7 +161,7 @@ def main():
     # Resolve relative Markdown paths from each manuscript's original directory.
     from urllib.parse import urlsplit, unquote, quote
     for source_name, page_name in routes.items():
-        if page_name not in list(reader_sources.values()) + ['restoration.html', 'installation.html', 'implementation.html', 'publication.html', 'gameplay-media.html', 'github-documentation.html', 'github-licenses-and-badges.html', 'github-repository-plan.html', 'github-followup.html']:
+        if page_name not in list(reader_sources.values()) + ['restoration.html', 'installation.html', 'implementation.html', 'ground-units.html', 'publication.html', 'gameplay-media.html', 'github-documentation.html', 'github-licenses-and-badges.html', 'github-repository-plan.html', 'github-followup.html']:
             continue
         page = BeautifulSoup((dist/page_name).read_text(), 'html.parser')
         if page.footer: page.footer.decompose()
