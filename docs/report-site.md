@@ -509,3 +509,14 @@ C 보정 삭제와 원래 탄속·분산 유지, 자동조준 추가 전 코드�
 - version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_c2bc302a73308191884f2da936f0d939`.
 - deployment: `appgdep_6ae0bfda4bd48191a2174bffb0689851`, `succeeded`, 2026-10-27T15:14:50.179882+00:00.
 - [개발자의 변](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/restoration.html), [수정안](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/github-documentation.html). 기존 소유자 비공개 범위 유지.
+
+
+## 원고 인칭 전수검사 — 2026-10-28
+
+Git 추적 Markdown 173개를 분류하고 독자용·보고 원고 37개 중 36개를 수정했다. 개발자의 1인칭과 Codex의 분석·구현·검사, 일반 플레이어를 구분했다. 원문·게임 코드·에셋은 보존했다. 문서 검사와 사이트 내부 링크 766개, 원고 다운로드34개 바이트 일치, 기존 이미지·앵커 보존을 확인했다. Chrome 로컬 화면에서 README 도입·트러블슈팅 본문·목차 이동을 확인했다.
+
+- 원고: `036be6af`, `docs/github-publication` 원격 반영. GitHub 서버 README의 인칭·이미지10개 확인.
+- Site source: `6f96b8503c6d8bfcdb6e9f16233999a832a5217e`.
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_39c2450954b88191bf47eb6dc0721cee`.
+- deployment: `appgdep_6ae0c4373338819192f094cdf2366cf6`, `succeeded`, 2026-10-27T15:33:24.328871+00:00.
+- [통합 원고](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/github.html). 소유자 비공개 유지. [검사 기록](evidence/narrative-voice-audit-20261028.json).

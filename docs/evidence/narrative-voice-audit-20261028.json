@@ -1273,7 +1273,7 @@
     }
   ],
   "site": {
-    "status": "local_verified",
+    "status": "succeeded",
     "html_pages": 34,
     "internal_links": 766,
     "missing_links": 0,
@@ -1292,6 +1292,17 @@
         "narrow_window_layout"
       ],
       "environment": "local HTTP :8877"
-    }
+    },
+    "source_commit": "6f96b8503c6d8bfcdb6e9f16233999a832a5217e",
+    "version_id": "appgprj_6addbf55aea081918d3d182d7e496e88~appgver_39c2450954b88191bf47eb6dc0721cee",
+    "deployment_id": "appgdep_6ae0c4373338819192f094cdf2366cf6",
+    "url": "https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site"
+  },
+  "github": {
+    "commit": "036be6af",
+    "branch": "docs/github-publication",
+    "pushed": true,
+    "server_readme_first_person": true,
+    "server_readme_images": 10
   }
 }
