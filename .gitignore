@@ -27,3 +27,28 @@ account.md
 .ops/
 
 *.log
+
+# Xcode local products and generated indexes.
+*.xcarchive/
+*.xcresult/
+*.dSYM/
+*.dSYM.zip
+*.hmap
+.build/
+
+# Legacy per-user Xcode preferences (keep shared project settings).
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+*.xccheckout
+*.xcscmblueprint
+
+# Signing exports and Apple API private keys.
+*.provisionprofile
+*.p8
+*.pfx
