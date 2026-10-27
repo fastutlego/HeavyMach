@@ -548,3 +548,16 @@ VTOL 첫 생성 프롬프트와 스킬 수정 커밋을 대조했다. 요청에 
 - version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_f7edcc06502881919ebd96fd2ea4b1d3`.
 - deployment: `appgdep_6ae0cb1337008191bdc9f2544856df44`, `succeeded`, 2026-10-27T16:02:43.709196+00:00.
 - [개발자의 변](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/restoration.html), [공개 조건 조사](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/github-licenses-and-badges.html). 소유자 비공개 범위 유지. 배포 성공은 Sites 응답으로 확인했다.
+
+
+## main 문서·라이선스·README 배지 — 2026-10-28
+
+기존 문서·플레이 자료를 develop `0a2c0e33`→main `db634ce6`으로 반영했다. 이어 새 코드용 MIT·적용 범위·자원 조건·외부 고지와 README 배지5개·환경 표, 다른 게임 사례와 GitHub 구성 계획을 develop `aa48d672`→main `a784c4ba`으로 반영했다. 두 main 병합의 두 번째 부모가 develop인 것을 확인했다. 게임 코드·자원은 v0.12와 같다.
+
+- GitHub 기본 README: 배지5개·게임 이미지/GIF10개, 관련 문서6개 원격 바이트 일치, MIT 인식 확인.
+- 사이트39페이지·내부 링크847개·다운로드39개 경로, 기존 이미지·앵커 유지 확인. 라이선스 원문 사본3개 바이트 일치.
+- Chrome 로컬 미리보기에서 배지 배치와 MIT 배지→적용 범위 문서 이동 확인. 앱 빌드·실기기 검사는 실행하지 않았다.
+- Site source: `8451169bc090d315b36181f25befdad8fd5393b4`.
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_ca4393fbaa188191a99da0717ab811bf`.
+- deployment: `appgdep_6ae0ced02618819185d59dd7239986b5`, `succeeded`, 2026-10-27T16:18:37.883815+00:00.
+- [README](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/github.html), [GitHub 구성 계획](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/github-repository-plan.html), [검사 기록](evidence/github-presentation-20261028.json). 소유자 비공개 범위 유지. GitHub 저장소도 비공개다.
