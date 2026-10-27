@@ -1,5 +1,62 @@
 # HeavyMach 보고 사이트
 
+## 2026-10-27 문장 수정
+
+GitHub 문서 계획·미디어 보고·SaaS 집필 안내에서 작성자 지침과 자기설명을 제거하고 기능의 실제 동작·구현·현재 상태로 고쳤다. 링크549개·Markdown3개 일치·기존 제목·이미지8장·영상3개를 확인했다.
+
+- source: `e4565639655b06c99825bde6806444bfb7f8c2d0`
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_9ce728519f988191a6b496f70f14b631`
+- deployment: `appgdep_6ae0acfadf9c81918f43a3b72f4f1e63`, `succeeded`.
+- [변경·검사 기록](evidence/editorial-copyedit-20261027.json)
+
+
+## 2026-10-27 기능 설계·모듈화 집필 보강
+
+`/github-documentation.html`의 9~12절에 자동조준·VTOL·전투기 요구와 코드 구현, workspace·모듈화의 기술적 근거·판단을 추가했다. 내부 링크549개·다운로드 일치·로컬 Chrome의 새 절과 구조 표시를 확인했다.
+
+- source: `8c0672e86e284df7cad012f7c0ac92a9cc12ba90`
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_c00a9f4d592c81918e565feac27a8fa0`
+- deployment: `appgdep_6ae0a9012ef48191b4dc1902e7371539`, `succeeded`, 소유자 전용 유지.
+- [검사·배포 기록](evidence/design-and-modules-writing-20261027.json)
+
+
+## 2026-10-27 GitHub 전체 문서 작성 계획
+
+`/github-documentation.html`을 기존 전체 목차에 추가했다. 보고서23개와 내부 링크543개, Markdown 다운로드 일치, 로컬 Chrome의 본문·목차·표를 확인했다. Apps 기술 설명·Mags 매거진 인터뷰 형식을 집필 안내에도 반영했다.
+
+- source: `de9ab502b15e893c4b864b3c53d0e9538c09eaa9`
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_a5941af819d08191b5dbbeca5844aa7f`
+- deployment: `appgdep_6ae0a641cbd48191b60e55cd935b1c9b`, `succeeded`, 소유자 전용 유지.
+- [검사·배포 기록](evidence/github-documentation-plan-20261027.json)
+
+
+## 2026-10-27 GitHub 문서 구성·스킬 조사
+
+기존 `/gameplay-media.html`에 이미지8장 전체 배치, GIF 제작 계획, GitHub 운영 절차와 스킬 후보를 추가했다. 공개 원고의 IPA 제외 지시를 집필 안내에도 기록했다. 로컬 Chrome 본문·목차·좁은 창 배치, 내부 링크529개와 Markdown 일치를 확인했다. 이미지8장·영상3개를 유지했다.
+
+- source: `638d33c3b66423dd20bb24a52aeaff35d50ab928`
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_66e602f6b7a8819193697dd5863c95e3`
+- deployment: `appgdep_6ae09d0b35a08191a19eacc8856a9ffe`, `succeeded`, 소유자 전용 유지.
+- [검사·배포 기록](evidence/github-publication-plan-20261027.json)
+
+
+## 사이트 통합 규칙 — 2026-10-27
+
+사용자에게 전달하는 HeavyMach 보고서는 기존 Site `appgprj_6addbf55aea081918d3d182d7e496e88` 하나에 둔다. 첫 화면 `index.html#reports`에서 모든 보고서를 찾을 수 있게 한다. 새 보고서·이미지·다운로드를 추가할 때 목차도 갱신하며, 각 보고서에는 전체 목차로 돌아가는 링크를 둔다. 기존 URL·절 앵커와 비공개 범위는 유지한다.
+
+## 최신 게시 — 2026-10-27 플레이 후보·통합 목차
+
+기존 Site에 이미지8장·클립3개와 출처·시각·캡션을 추가했다. 첫 화면에 보고서22개를 주제별로 모았고 모든 보고서에서 전체 목차로 돌아갈 수 있다. 생성 도구가 목차 누락과 복귀 링크를 검사한다.
+
+- 통합 URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/#reports
+- 후보: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/gameplay-media.html
+- Site source: `5d796ed8992c68b39db9c6697ea0f6b601470af4`
+- Version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_dd4ce9703d9c8191be0fe4fa34a5346c`
+- Deployment: `appgdep_6ae08e445a2c81918eabe8df86159541`, `succeeded`, 소유자 전용 유지.
+- 사이트 상대 링크525개·문서 연결 검사 통과. 원고·미디어 바이트 일치. 로컬 Chrome에서 좁은 창의 대표 이미지·통합 목차와 목차→후보 이동, 클립3개 재생 시작을 확인했다. 게시 URL을 열 때 Chrome이 ERR_INTERNET_DISCONNECTED를 반환해 로그인 후 화면은 확인하지 못했다.
+- 첫 배포 `appgdep_6ae08cc203e48191a2a0bbd377550ca6`은 Cloudflare unknown error로 실패했다. 이후 통합 목차를 포함한 위 버전의 게시가 성공했다.
+- 게임 코드·앱·릴리스 태그는 바꾸지 않았다. 원본영상은 `build/media/user-gameplay-20261027/original/`에서 Git 제외로 보존한다.
+
 ## 최신 게시 — 2026-10-27 럭스루나에 구현·진입 수정
 
 3종 금색 조종석 PNG, 최종 무장(연사10% 증가), 14개 구간 편성, 두 기기 크기 비교·화면 밖 진입·전투 캡처와 실행 증거를 게시했다. 치트·정식 앱4건 재설치와 사용자 최초 정식 앱 확인을 구분했다.
@@ -430,3 +487,64 @@ C 보정 삭제와 원래 탄속·분산 유지, 자동조준 추가 전 코드�
 - Version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_1fdb12683a688191bd10cf7052bb61b5`
 - Deployment: `appgdep_6adfe139d06081918b60398bdbb5dcb8`, `succeeded`
 - URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/auto-aim-progress.html
+
+## GitHub 원고·플레이 자료 게시 — 2026-10-27
+
+- GitHub: `docs/github-publication`, 본문 커밋 `a1e41320` 푸시. README·상세 원고13개를 원격 바이트와 대조했다. GitHub 서버 렌더에서 이미지8장·GIF2개·MP4 링크3개를 확인했다.
+- 기존 Site의 `github.html`, `docs-index.html`, `features.html`, `gameplay-guide.html`, `architecture.html`, `troubleshooting.html`, `development-history.html`, `validation.html`, `changelog.html`, `credits.html`과 기존 설치·상태·집필 자료를 갱신했다.
+- 전체 목차33개 보고서, 내부 링크765개, 원고 다운로드13개 일치를 확인했다. 원래 루트의 이미지13개와 기존 앵커를 보존했다.
+- source: `fed35b8a4902d4aa02e525b5983a26d55dd091eb`.
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_a008bdaab0b48191890d2d43c80d308d`.
+- deployment: `appgdep_6ae0b4ce2d38819184fec216f4e70eb9`, `succeeded`, 2026-10-27T14:28:02.874465+00:00.
+- [게시 원고](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/github.html). 기존 소유자 비공개 범위 유지.
+- 이번 직접 브라우저 검사는 Chrome `cgWindowNotFound`와 빈 브라우저 목록으로 실행하지 못했다. GitHub 서버 HTML·문서·링크 검사는 통과했다. [결과](evidence/github-manuscripts-20261027.json).
+
+## 매거진 링크·서술 시점 수정안 — 2026-10-28
+
+개발자의 변의 잡지사 문단 뒤에 `https://sass.studio/magazine/cerulean`을 추가했다. HTTP 200 응답과 페이지의 「항명의 대가」·Cerulean 제목을 확인했다. SaaS 소스는 V09→cerulean과 해당 본문을 읽기만 했다. 문서 계획13절에는 개발자 1인칭 회고, 기능·검사 중심 기술 설명, Codex의 실제 구현·검사 역할을 구분하는 수정안과 예문을 추가했다. 전체 원고의 인칭 변경은 적용 전이다.
+
+- 원고 커밋: `2505e0aa`, `docs/github-publication`에 푸시.
+- 로컬 Chrome에서 링크 문단 표시 확인. 문서 검사·다운로드2개 일치 확인.
+- Site source: `595361c32e17ad1e9f108969c1cb1f01f4aad1d4`.
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_c2bc302a73308191884f2da936f0d939`.
+- deployment: `appgdep_6ae0bfda4bd48191a2174bffb0689851`, `succeeded`, 2026-10-27T15:14:50.179882+00:00.
+- [개발자의 변](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/restoration.html), [수정안](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/github-documentation.html). 기존 소유자 비공개 범위 유지.
+
+
+## 원고 인칭 전수검사 — 2026-10-28
+
+Git 추적 Markdown 173개를 분류하고 독자용·보고 원고 37개 중 36개를 수정했다. 개발자의 1인칭과 Codex의 분석·구현·검사, 일반 플레이어를 구분했다. 원문·게임 코드·에셋은 보존했다. 문서 검사와 사이트 내부 링크 766개, 원고 다운로드34개 바이트 일치, 기존 이미지·앵커 보존을 확인했다. Chrome 로컬 화면에서 README 도입·트러블슈팅 본문·목차 이동을 확인했다.
+
+- 원고: `036be6af`, `docs/github-publication` 원격 반영. GitHub 서버 README의 인칭·이미지10개 확인.
+- Site source: `6f96b8503c6d8bfcdb6e9f16233999a832a5217e`.
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_39c2450954b88191bf47eb6dc0721cee`.
+- deployment: `appgdep_6ae0c4373338819192f094cdf2366cf6`, `succeeded`, 2026-10-27T15:33:24.328871+00:00.
+- [통합 원고](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/github.html). 소유자 비공개 유지. [검사 기록](evidence/narrative-voice-audit-20261028.json).
+
+
+## 라이선스·배지 조사와 VTOL 재해석 경위 보강 — 2026-10-28
+
+라이선스 조사 원고를 전체 목차에 추가했다. 코드·원작 자원·추가 그림·외부 라이브러리의 조건과 필요한 문건, README 배지 위치·예시를 정리했다. LICENSE 부여나 배지 적용, 저장소 공개, 앱 외부 배포는 하지 않았다.
+
+VTOL 첫 생성 프롬프트와 스킬 수정 커밋을 대조했다. 요청에 없던 외형 재해석, 실물 형상 보존 규칙 추가, 채택 뒤 후속 작업에도 같은 절차를 적용하라는 지시를 트러블슈팅·VTOL 기록·기능 설명에 반영했다.
+
+- 원고: `73ca4cc7`, `907e4160`, `fa581322`; `docs/github-publication` 원격의 관련 문서4개 바이트 일치 확인.
+- 문서 검사 통과. 사이트35페이지·내부 링크787개·다운로드35개 경로 확인. 이번 관련 원고4개 다운로드 바이트 일치, 기존 이미지·앵커 보존 확인.
+- Chrome 로컬 화면에서 라이선스 조사 및 트러블슈팅16절 본문·배치 확인. Shields 예시 SVG의 별도 HTTP 요청은403이어서 배지 그림의 렌더링 검사는 미완료다. 해당 예시는 코드 블록이며 README에 배지를 적용하지 않았다.
+- Site source: `d4f635a313eae0ea45b72a57c4d7009335526820`.
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_cbb929d71440819198f1f85a50547cc6`.
+- deployment: `appgdep_6ae0c7e0bd6c819193e579859ce25915`, `succeeded`, 2026-10-27T15:49:01.709916+00:00.
+- [트러블슈팅16절](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/troubleshooting.html#section-15), [라이선스·배지 조사](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/github-licenses-and-badges.html). 기존 소유자 비공개 범위 유지.
+- 게시 후 Chrome 접속은 `ERR_INTERNET_DISCONNECTED`로 실패했다. 배포 성공은 Sites 응답으로 확인했으며, 실제 화면 검사는 로컬 미리보기 결과다.
+
+
+## 코드·에셋 포함 공개 목적과 Mesabloo 사례 — 2026-10-28
+
+개발자의 변과 라이선스 조사에 코드·에셋을 함께 공개해 누구나 빌드·플레이하고 개발 기록을 유지하려는 목적을 반영했다. 향후 허락받은 앱스토어 배포도 무료로 제공하려는 의향을 반영했다. Mesabloo의 README·BSD-3-Clause·core/assets를 확인해 공개 사례와 자원 이용허락 범위를 설명했다. 실제 라이선스 부여·저장소 공개·앱 배포는 하지 않았다.
+
+- 원고: `95052a55`, `docs/github-publication` 푸시. 관련 원고2개 원격·다운로드 바이트 일치.
+- 문서 검사 통과. 사이트35페이지·내부 링크787개·다운로드35개 경로 확인, 기존 이미지·앵커 보존. Chrome 로컬 화면에서 수정 도입 확인.
+- Site source: `70026ca8359e144a5ce7061961286baf0fd50359`.
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_f7edcc06502881919ebd96fd2ea4b1d3`.
+- deployment: `appgdep_6ae0cb1337008191bdc9f2544856df44`, `succeeded`, 2026-10-27T16:02:43.709196+00:00.
+- [개발자의 변](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/restoration.html), [공개 조건 조사](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/github-licenses-and-badges.html). 소유자 비공개 범위 유지. 배포 성공은 Sites 응답으로 확인했다.

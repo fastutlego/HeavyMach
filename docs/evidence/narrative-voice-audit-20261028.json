@@ -1,0 +1,1308 @@
+{
+  "date": "2026-10-28",
+  "base_commit": "0dfd91e5",
+  "branch": "docs/github-publication",
+  "tracked_markdown_inventory_count": 173,
+  "reader_manuscript_count": 37,
+  "changed_manuscripts": 36,
+  "changed_lines": 257,
+  "scope": "GitHub reader manuscripts, SaaS editorial handoff, and unified report manuscripts. Agent instructions, original personal material and raw evidence retain their role terms.",
+  "preservation": {
+    "original_personal_essay_unchanged": true,
+    "original_quotes_and_raw_sources_not_edited": true,
+    "product_code_assets_not_edited": true,
+    "fenced_code_unchanged": true,
+    "technical_numeric_tokens_unchanged_except_added_readme_image_count_and_audit_metadata": true
+  },
+  "additional_correction": {
+    "files": [
+      "docs/public/features.md",
+      "docs/public/gameplay-guide.md"
+    ],
+    "detail": "Target switch is arrow; fire is crosshair. Corrected labels against HMGameView aimControlRect/drawAimControls and original auto-aim implementation report."
+  },
+  "files": [
+    {
+      "path": "CHANGELOG.md",
+      "before_sha256": "ed4dbdf9f1231017d7371ad93f0cb086dcb28933aa884440b68355d2c2b6aaaa",
+      "after_sha256": "d970813c8e97ae319c3a6663669e280349b511156b738aa1fb7706a7ac614f42",
+      "changed": true,
+      "added_or_replaced_lines": 1,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "CREDITS.md",
+      "before_sha256": "d38b686f953eeca028b02467e1532e9ae99b075109d7753da31f8e09e65affcf",
+      "after_sha256": "fa21b43f64689bbbd42142fedceaef71affcc6cc8fd3da1b42134babf38cc790",
+      "changed": true,
+      "added_or_replaced_lines": 3,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "README.md",
+      "before_sha256": "418262492015ea0f6a4a0c792e70ab7030ed34094c016ff0f3c49dcaecbbc467",
+      "after_sha256": "c134f6d47e2573ed6676ef38ee8bb0bc379ab37f6a89015f20fefec40f481768",
+      "changed": true,
+      "added_or_replaced_lines": 8,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/README.md",
+      "before_sha256": "059ac036a518c6903b73e8056df24f466e68abd82c2ec3a75b3ae284ce8a1c6a",
+      "after_sha256": "69f9c7699ccefbd98d4764c02d86ae51097380a3a298542f3008d18ba538f70b",
+      "changed": true,
+      "added_or_replaced_lines": 2,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/RESTORATION.md",
+      "before_sha256": "168ec177824e60164ec5b1c403bbfa491a4384ffaae84fc202a28a5d290168d5",
+      "after_sha256": "168ec177824e60164ec5b1c403bbfa491a4384ffaae84fc202a28a5d290168d5",
+      "changed": false,
+      "added_or_replaced_lines": 0,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/android-port-plan-20261026.md",
+      "before_sha256": "56fbf07a5188d474062d70645d892d5529e3ac7eeb1f60bf94a20b308c5853b6",
+      "after_sha256": "04dc0a5739760eaaaed9cca5477a154d690eb3691656fe549c06578a2dc6f712",
+      "changed": true,
+      "added_or_replaced_lines": 1,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/auto-aim-plan-20261026.md",
+      "before_sha256": "79a82ca5ca1838ac6c24fe2b441848ac4df1db6b105a4aa492108de256a22251",
+      "after_sha256": "1d8881e0ac766e1fa0d9a49166b80c080f84fcbd40076abf85c3a8d4b67684fa",
+      "changed": true,
+      "added_or_replaced_lines": 5,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/documentation-audit-20261025.md",
+      "before_sha256": "eb6f389af1ce0a30a849bfcd02cd38965d62114dc29fdaf5acad96db858b44e5",
+      "after_sha256": "f5bff6a2ad322224bba37a6b3438c56cd1a13173a9d1d4ab136fd4f424c43ee5",
+      "changed": true,
+      "added_or_replaced_lines": 7,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/ios-completeness-audit-20261026.md",
+      "before_sha256": "f8fd1e0035c133b97c7ed2d8754b7fb9ad852888de317bc53eb43366f8414e0a",
+      "after_sha256": "9f54a93bf89e557c6088f3bfdd4b2bfba1dd57f26ad1db2344f3ef94f22a0522",
+      "changed": true,
+      "added_or_replaced_lines": 5,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/media-publication.md",
+      "before_sha256": "29a8a6935f7b95bec3f6dd4693a719113f3ab9299371767e806f13e32c785bbd",
+      "after_sha256": "7eb03a1b3f77b9a96decd1e7040899a2bf6325145099a3432ba6dde72beef600",
+      "changed": true,
+      "added_or_replaced_lines": 3,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/public/apple-platform-progress-20261026.md",
+      "before_sha256": "d3ef68f0a81af7d7569ac88b6cea0bd580eb1ac549c05ab934f037ecd99a9a79",
+      "after_sha256": "80e7728f8bf8d436fa62d6880463fa2093b63cc9c1f8c445f06e0230b9e5ce9d",
+      "changed": true,
+      "added_or_replaced_lines": 7,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/public/architecture.md",
+      "before_sha256": "984ebdda785320e09cff6e34471b38eb3399cbcd258bdc112ce0d5ff4575e332",
+      "after_sha256": "306f6c8d366578115d9a16ebb5073e3347d3f0be6da00ab0ada4f7a7f22a8728",
+      "changed": true,
+      "added_or_replaced_lines": 1,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/public/auto-aim-ipad-20261027.md",
+      "before_sha256": "8185c4727c53a9a398c55f1990b69b8eb68b7c12c7111c7e3afcc66ee6464903",
+      "after_sha256": "e8a3161f28dc52fb4e74b29179055664ab8960a37636997e9dbf4b861334071d",
+      "changed": true,
+      "added_or_replaced_lines": 4,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/public/build-and-install.md",
+      "before_sha256": "79d018f77c9334b705b4f5b3c55053b001012b2eb6087ff34651e548ae5d2dab",
+      "after_sha256": "a236e19e5dd9c77e2d6ac57e59845c96598a4cf8c9ca07d1d5396b47278f258f",
+      "changed": true,
+      "added_or_replaced_lines": 2,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/public/clone-build-20261026.md",
+      "before_sha256": "07b4be1aef099ab2537a21cdcf5f721656991a949bc7bd51b9c2f224da840b37",
+      "after_sha256": "4d8dda8a3f3d17a6bf3e3386e0363b7ed95d190fcd0617810ceb69a913e3e240",
+      "changed": true,
+      "added_or_replaced_lines": 2,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/public/development-history.md",
+      "before_sha256": "b1b21704b25b83315eab20f34652c5cc06f0a50fa113cc92e984be0f25c80428",
+      "after_sha256": "80f52fa57caa490a116f610d89e70b6564397d69c3884c9ef730da605f43301e",
+      "changed": true,
+      "added_or_replaced_lines": 17,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/public/engineering-retrospective-20261025.md",
+      "before_sha256": "86dcd7d036bf3772bdd804f9b064199c87deb9cc8b13fa0ae277bea40c20339b",
+      "after_sha256": "992a0c5ce153358e758cc8816b73af776f3fa0a7c5e47cda94514c0c69187755",
+      "changed": true,
+      "added_or_replaced_lines": 28,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/public/features.md",
+      "before_sha256": "f71d095378053c03dbce8a9ff9245ad372fd9cb1462ad070acacb165a879d9b4",
+      "after_sha256": "89f5c7beb582a466e61204ba942d744803a500585ab36173d4ce53a83d822e53",
+      "changed": true,
+      "added_or_replaced_lines": 16,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/public/fullscreen-transitions-20261027.md",
+      "before_sha256": "37e006309b51e93391d8f2166a51b9893c9b3e1c8368531653e08f46cf87047c",
+      "after_sha256": "055604730064304bbbaf3c56d4dc55aa76a8a2f8d19647e257e49a4771037066",
+      "changed": true,
+      "added_or_replaced_lines": 1,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/public/gameplay-guide.md",
+      "before_sha256": "bcda6c23546c11b4f9be33af95b2437006ec6220a5f68f8f4cca16f3371d4dfe",
+      "after_sha256": "b36497fc118622d51703c1749ec74767bd5dbab14273b75a25d6bad8e2996aab",
+      "changed": true,
+      "added_or_replaced_lines": 2,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/public/gameplay-media-20261027.md",
+      "before_sha256": "ed3c1f3a2abc547aed74196268bd1a2453b488e1383eefe46fd01c260ca53af5",
+      "after_sha256": "13274de54de1dfc054a73452d21fb1927bacc7f663f668381ac2b1bd7c44ecf5",
+      "changed": true,
+      "added_or_replaced_lines": 4,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/public/github-documentation-plan-20261027.md",
+      "before_sha256": "441faede3260be8574efb92c751262810821eda58a11c2a482449b185558811f",
+      "after_sha256": "c886ea97cd66765bf846dd92a2ad02440490c298fd7d35c54ee332f4bb8feaf8",
+      "changed": true,
+      "added_or_replaced_lines": 31,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/public/implementation-status.md",
+      "before_sha256": "f3612c0974e8a2a9c40efc18767ffce3676f40eba4cd265e9f7052a53e5b5444",
+      "after_sha256": "97147c144dd458cabe16115d302aa47bc182df36570a2480d2b82c8fbf943032",
+      "changed": true,
+      "added_or_replaced_lines": 3,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/public/ipa-independent-build-20261026.md",
+      "before_sha256": "b9089c83ae2489de10af661a4ee5001c3e16ca67fb6fdecaf5bf7a530e8dc615",
+      "after_sha256": "45d768876feb6fdca5449ec5ea4b7413057a1d3a4a39bcb9e66b5d1612d0f547",
+      "changed": true,
+      "added_or_replaced_lines": 2,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/public/ipa-port-and-native-app-20261026.md",
+      "before_sha256": "b4b82250d31175b15f7d9d696b97937cfdd3ec1f46b7f0feb6a8160429d29808",
+      "after_sha256": "e4b592381cde0fd82bc8037dbcdb9200ea47a8db3130c5f6e7e44db362c947ac",
+      "changed": true,
+      "added_or_replaced_lines": 11,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/public/lux-lunae-design-20261027.md",
+      "before_sha256": "3e58a8e97e81e44e061bbd863639e69f126e0de9ecbe4fa658b7e5c797bddccb",
+      "after_sha256": "5a25049d55777cd767a9d49d0eff66d9b716aac6a6980c3d64c431bb814613e7",
+      "changed": true,
+      "added_or_replaced_lines": 3,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/public/media/README.md",
+      "before_sha256": "c3ad4d9a37c320d3bd954131689d5ae7313411a018b83a23541d81cd2c26ad4d",
+      "after_sha256": "cbea63376fa055ea4e53d632871902ffed9cc9d36b3456f3771e1638a237f4a8",
+      "changed": true,
+      "added_or_replaced_lines": 1,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/public/media/gameplay-20261027/README.md",
+      "before_sha256": "be6065853dcafd783a0557ea9252d7bc043a1b3bd496f2bcb74d39f66cfb2ccc",
+      "after_sha256": "032da31ac57924b49ee594e13cc20a51a938c24bf2981de2a0bddab94cca9a78",
+      "changed": true,
+      "added_or_replaced_lines": 1,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/public/publication-inventory.md",
+      "before_sha256": "fa1d56b40a67f0db3c1afde0e455933cc8567df9f3668e9e8a0f9dbafa1da627",
+      "after_sha256": "c19f71525eb4b0c003467ead7ade8f7c6b13dd1e93e4934887b21d3272d04d4b",
+      "changed": true,
+      "added_or_replaced_lines": 10,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/public/rea-implementation-audit-20261026.md",
+      "before_sha256": "cf5c36cc006dcf6aa2b2f6fc7e526608eb33aaba0b4f16de4d97f981e7305e55",
+      "after_sha256": "aac7e433aadf0fd32a14bf0073e599b878d0166bbeb21b064af20b886bec85c5",
+      "changed": true,
+      "added_or_replaced_lines": 1,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/public/rea-restoration-method-20261025.md",
+      "before_sha256": "b5ab18b9386ce1fcf39e87ea66b737d1dcfe7dcde8b01e4c6c737adb28263de4",
+      "after_sha256": "720798d67b354b0afc99b075129defca64c61e9e13c14627144baec1cde2a0a3",
+      "changed": true,
+      "added_or_replaced_lines": 10,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/public/report-overview-20261025.md",
+      "before_sha256": "bbd088f0bacc434555dcbe7a15301d68097c8d60992b306421f6bfb25c83e6a6",
+      "after_sha256": "6333fe655239a3ae98953f5052e4e5c287242448576909ddfb92bbcc84d4e963",
+      "changed": true,
+      "added_or_replaced_lines": 10,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/public/troubleshooting.md",
+      "before_sha256": "b650522f3de2188d086fdd709706ac036bed2cabb7295cc2ed3cab819bd305b1",
+      "after_sha256": "50472ba7d1d5e2709a45294ce442fa3b27008297929f458e114a3d586fdb5909",
+      "changed": true,
+      "added_or_replaced_lines": 35,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/public/validation.md",
+      "before_sha256": "14eb3bd2b073a2aa51de9dd167e84dba10196a12cbc1b6e9e5a774b1e024b1d7",
+      "after_sha256": "5fa06912175a8f9b62648dce804b8029b8412c4ac31c8ee260fd00d23fb87606",
+      "changed": true,
+      "added_or_replaced_lines": 7,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/public/vtol-art-and-loadout-20261027.md",
+      "before_sha256": "4435104bd7ef6e4f7b9fbf2ad941755ef22d64ce036814921582522c7165bf97",
+      "after_sha256": "297f75e8dc85feac66b8d9f1548a340437c063bb4b99d9d11383893f5ffd4a57",
+      "changed": true,
+      "added_or_replaced_lines": 3,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/related-titles-20261026.md",
+      "before_sha256": "3374de44d725796b1afd6f1efc2f4293573e1d4c85d47de77fb818481239ab88",
+      "after_sha256": "6497705e3d69a21b55b7a57858ca3147cf71ea0dbc6e3353a7978d402194a99c",
+      "changed": true,
+      "added_or_replaced_lines": 4,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    },
+    {
+      "path": "docs/repository-management.md",
+      "before_sha256": "e3d63ad4691718579edf08af6a8cdb0978bb5a4e96fee497888d5f3b96d04f48",
+      "after_sha256": "eb8ff1138de43386a128a490202aee75090cb73cd2e144f6512c88dbf6a165cb",
+      "changed": true,
+      "added_or_replaced_lines": 6,
+      "fenced_code_unchanged": true,
+      "review": [
+        "narrator_reference",
+        "actor_after_subject_change",
+        "observation_vs_tool_test",
+        "generic_player",
+        "headings_tables_captions"
+      ]
+    }
+  ],
+  "repository_markdown_inventory": [
+    {
+      "path": ".agents/policy.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": ".agents/project.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": ".agents/skills/apple-wireless-device/SKILL.md",
+      "category": "preserved_source_or_agent_skill"
+    },
+    {
+      "path": ".agents/skills/engineering-browser/SKILL.md",
+      "category": "preserved_source_or_agent_skill"
+    },
+    {
+      "path": ".agents/skills/engineering-debug/SKILL.md",
+      "category": "preserved_source_or_agent_skill"
+    },
+    {
+      "path": ".agents/skills/engineering-debug/references/upstream.md",
+      "category": "preserved_source_or_agent_skill"
+    },
+    {
+      "path": ".agents/skills/engineering-review/SKILL.md",
+      "category": "preserved_source_or_agent_skill"
+    },
+    {
+      "path": ".agents/skills/engineering-review/references/upstream.md",
+      "category": "preserved_source_or_agent_skill"
+    },
+    {
+      "path": ".agents/skills/engineering-test/SKILL.md",
+      "category": "preserved_source_or_agent_skill"
+    },
+    {
+      "path": ".agents/skills/engineering-test/references/upstream.md",
+      "category": "preserved_source_or_agent_skill"
+    },
+    {
+      "path": ".agents/skills/game-keyboard-input/SKILL.md",
+      "category": "preserved_source_or_agent_skill"
+    },
+    {
+      "path": ".agents/skills/integrate-game-art/SKILL.md",
+      "category": "preserved_source_or_agent_skill"
+    },
+    {
+      "path": ".agents/skills/integrate-game-art/references/unity-original.md",
+      "category": "preserved_source_or_agent_skill"
+    },
+    {
+      "path": ".agents/skills/port-heavymach-android/SKILL.md",
+      "category": "preserved_source_or_agent_skill"
+    },
+    {
+      "path": ".agents/skills/present-game-artifacts/SKILL.md",
+      "category": "preserved_source_or_agent_skill"
+    },
+    {
+      "path": ".agents/skills/write-project-text/SKILL.md",
+      "category": "preserved_source_or_agent_skill"
+    },
+    {
+      "path": ".agents/skills/write-project-text/references/upstream/candidate-editorial-rules.md",
+      "category": "preserved_source_or_agent_skill"
+    },
+    {
+      "path": ".agents/skills/write-project-text/references/upstream/present-candidate-review/SKILL.md",
+      "category": "preserved_source_or_agent_skill"
+    },
+    {
+      "path": ".agents/skills/write-project-text/references/upstream/present-candidate-review/references/materials.md",
+      "category": "preserved_source_or_agent_skill"
+    },
+    {
+      "path": ".agents/skills/write-project-text/references/upstream/sass-application-writing.md",
+      "category": "preserved_source_or_agent_skill"
+    },
+    {
+      "path": ".agents/skills/write-project-text/references/upstream/sass-applications/SKILL.md",
+      "category": "preserved_source_or_agent_skill"
+    },
+    {
+      "path": ".agents/skills/write-project-text/references/upstream/sass-authoring-workflows.md",
+      "category": "preserved_source_or_agent_skill"
+    },
+    {
+      "path": ".agents/skills/write-project-text/references/upstream/sass-content-authoring-canon.md",
+      "category": "preserved_source_or_agent_skill"
+    },
+    {
+      "path": ".agents/skills/write-project-text/references/upstream/sass-content/SKILL.md",
+      "category": "preserved_source_or_agent_skill"
+    },
+    {
+      "path": ".agents/skills/write-project-text/references/upstream/sass-proposal-authoring-canon.md",
+      "category": "preserved_source_or_agent_skill"
+    },
+    {
+      "path": ".agents/skills/write-project-text/references/upstream/sass-review-materials.md",
+      "category": "preserved_source_or_agent_skill"
+    },
+    {
+      "path": ".agents/skills/write-project-text/references/upstream/sass-review-publication/SKILL.md",
+      "category": "preserved_source_or_agent_skill"
+    },
+    {
+      "path": ".agents/skills/write-project-text/references/upstream/write-candidate-report/SKILL.md",
+      "category": "preserved_source_or_agent_skill"
+    },
+    {
+      "path": "AGENTS.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "Art/AutoAim/20261027/prompts.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "CLAUDE.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "CREDITS.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "Compatibility/AGENTS.md",
+      "category": "source_analysis_or_test_record"
+    },
+    {
+      "path": "Compatibility/README.md",
+      "category": "source_analysis_or_test_record"
+    },
+    {
+      "path": "Compatibility/originals/README.md",
+      "category": "source_analysis_or_test_record"
+    },
+    {
+      "path": "README.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "Tests/HighLevelEvidence.md",
+      "category": "source_analysis_or_test_record"
+    },
+    {
+      "path": "docs/README.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/RESTORATION.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/android-port-plan-20261026.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/apple-platforms.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/audio-fidelity.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/audio-preload.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/auto-aim-plan-20261026.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/blend-reachability.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/boss-battles-v1.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/boss-battles-v5.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/boss-battles-v6.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/boss-motion-fix-20261025.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/camera-integration.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/canonical.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/canvas-ai-and-rotation-research-20261025.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/cheat-stage-check.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/clear-illustration-fix-20261025.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/compat-source-comparison-20261024.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/coordinate-policy.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/core-bullet-visual.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/core-camera.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/core-enemy.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/core-geometry.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/core-items.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/core-loading-transition.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/core-motion.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/core-player.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/core-session.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/core-title.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/core-trail-raster.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/core-trail.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/core-visuals.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/core-world.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/current-status.md",
+      "category": "dated_work_log"
+    },
+    {
+      "path": "docs/design.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/developer-background.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/device-validation-ready.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/document-governance.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/documentation-audit-20261025.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/frame-drop-investigation-20261024.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/game-calculation-policy.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/game-design.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/gauge-registration.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/handoff-20261024-rea-install.md",
+      "category": "dated_work_log"
+    },
+    {
+      "path": "docs/handover-20261024.md",
+      "category": "dated_work_log"
+    },
+    {
+      "path": "docs/heavy-mach-113-assault-analysis-20261024.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/heavymach-recovery-20261024.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/hud-event-order.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/instruments-validation-20261024.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/ios-completeness-audit-20261026.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/ios-source-map.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/keyboard-input-policy.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/lux-lunae-plan-20261027.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/media-publication.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/menu-art-extension-20261025.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/menu-joins-20261025.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/migration/completeness-audit-20261026.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/named-machine-bounds.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/native-hud.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/native-menus.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/nil-parts-boundary.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/nil-parts-observation.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/nil-parts-runtime-analysis.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/normal-fidelity-ui-check.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/objc-reconstruction.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/opengl-migration-20261024.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/physical-edge-check-20261025.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/physical-self-test-20261025.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/player-gauge.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/presentation-ab-20261024.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/public/apple-platform-progress-20261026.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/public/architecture.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/public/auto-aim-ipad-20261027.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/public/build-and-install.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/public/clone-build-20261026.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/public/development-history.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/public/engineering-retrospective-20261025.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/public/features.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/public/fullscreen-transitions-20261027.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/public/gameplay-guide.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/public/gameplay-media-20261027.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/public/github-documentation-plan-20261027.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/public/implementation-status.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/public/ipa-independent-build-20261026.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/public/ipa-port-and-native-app-20261026.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/public/lux-lunae-design-20261027.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/public/media/README.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/public/media/gameplay-20261027/README.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/public/publication-inventory.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/public/rea-implementation-audit-20261026.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/public/rea-restoration-method-20261025.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/public/report-overview-20261025.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/public/troubleshooting.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/public/validation.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/public/vtol-art-and-loadout-20261027.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/rea-availability-20261026.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/references/developer-background/hm-defense-origin.md",
+      "category": "preserved_source_or_agent_skill"
+    },
+    {
+      "path": "docs/references/developer-background/unity-planning-origin.md",
+      "category": "preserved_source_or_agent_skill"
+    },
+    {
+      "path": "docs/references/developer-background/user-background-20261026.md",
+      "category": "preserved_source_or_agent_skill"
+    },
+    {
+      "path": "docs/references/developer-background/user-restoration-reason-20261026.md",
+      "category": "preserved_source_or_agent_skill"
+    },
+    {
+      "path": "docs/related-titles-20261026.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/release-review-20261025.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/release-v0.9.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/render-fidelity-audit.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/render-performance.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/rendering-policy.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/report-site.md",
+      "category": "dated_work_log"
+    },
+    {
+      "path": "docs/repository-management.md",
+      "category": "reader_manuscript_reviewed"
+    },
+    {
+      "path": "docs/repository-split-20261026.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/resource-formats.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/restoration-contract.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/runtime-policy.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/same-save-comparison.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/scene-render-comparison.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/session-lifecycle.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/source-coverage.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/source-provenance.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/sprite-gl-reference.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/sprite-native-integration.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/sprite-raster.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/stage-journeys.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/stage-transition-contract.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/status-history-20261024.md",
+      "category": "dated_work_log"
+    },
+    {
+      "path": "docs/survival-audit.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/survival-native-check.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/texture-sampling-diagnosis.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/usability-todo.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/validation-mode.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/verification.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/vtol-expansion.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/weapon-result-fix-20261025.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/weapon-validation-procedure.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/wide-canvas-plan.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "docs/wireless-device-workflow.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    },
+    {
+      "path": "vendor/openal-soft/README.md",
+      "category": "technical_contract_policy_or_internal_reference"
+    }
+  ],
+  "site": {
+    "status": "succeeded",
+    "html_pages": 34,
+    "internal_links": 766,
+    "missing_links": 0,
+    "download_manuscripts_byte_equal": 34,
+    "anchors_and_image_sources_preserved": true,
+    "browser": {
+      "method": "CUA native Chrome",
+      "pages": [
+        "github.html",
+        "troubleshooting.html"
+      ],
+      "checked": [
+        "first_person_introduction",
+        "Codex_attribution",
+        "table_of_contents_anchor_navigation",
+        "narrow_window_layout"
+      ],
+      "environment": "local HTTP :8877"
+    },
+    "source_commit": "6f96b8503c6d8bfcdb6e9f16233999a832a5217e",
+    "version_id": "appgprj_6addbf55aea081918d3d182d7e496e88~appgver_39c2450954b88191bf47eb6dc0721cee",
+    "deployment_id": "appgdep_6ae0c4373338819192f094cdf2366cf6",
+    "url": "https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site"
+  },
+  "github": {
+    "commit": "036be6af",
+    "branch": "docs/github-publication",
+    "pushed": true,
+    "server_readme_first_person": true,
+    "server_readme_images": 10
+  }
+}

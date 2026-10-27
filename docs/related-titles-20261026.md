@@ -1,10 +1,10 @@
 # Heavy Mach 후속 타이틀과 Defense 포크 조사
 
-2026-10-26 조사. 사용자가 처음 준 Internet Archive 검색과 그 검색에서 선택한 모음을 확인했다. **Heavy Mach 2, Heavy Mach 2 HD, Mach Defense, Heavy MACH: Defense의 IPA가 모두 있다.** 중단한 Defense 작업도 원격 저장소와 로컬 폴더에서 찾았다.
+2026-10-26에 Codex가 내가 전달한 Internet Archive 검색과 그 검색에서 선택한 모음을 조사했다. **Heavy Mach 2, Heavy Mach 2 HD, Mach Defense, Heavy MACH: Defense의 IPA가 모두 있다.** 중단한 Defense 작업도 원격 저장소와 로컬 폴더에서 찾았다.
 
 ## 원래 링크에서 확인한 파일
 
-출발점은 [사용자 제공 검색](https://archive.org/search?query=heavy+mach&tab=all), 파일 모음은 [Heavy MACH IPA Archive](https://archive.org/details/heavy-mach-archive_202406)다. 상세 페이지의 브라우징 도구 조회는 실패했으나 [Archive 메타데이터 API](https://archive.org/metadata/heavy-mach-archive_202406)를 직접 조회해 IPA 19개의 이름·크기·SHA-1을 받았다.
+출발점은 [내가 전달한 검색](https://archive.org/search?query=heavy+mach&tab=all), 파일 모음은 [Heavy MACH IPA Archive](https://archive.org/details/heavy-mach-archive_202406)다. 상세 페이지의 브라우징 도구 조회는 실패했으나 [Archive 메타데이터 API](https://archive.org/metadata/heavy-mach-archive_202406)를 직접 조회해 IPA 19개의 이름·크기·SHA-1을 받았다.
 
 | 아카이브 분류 | 확인한 버전 | IPA 수 | 기록된 번들 ID |
 |---|---|---:|---|
@@ -32,7 +32,7 @@
 
 ## 중단한 Defense 작업
 
-사용자 포크는 [gelb2/hm-defense](https://github.com/gelb2/hm-defense), 원본은 [Mesabloo/hm-defense](https://github.com/Mesabloo/hm-defense)다. GitHub API로 부모 저장소 관계를 확인했다. 원격 README는 Desktop·Android용 재개발을 설명하지만 Android 설치 절은 오래된 TODO다. 이 README만으로 로컬 작업 상태를 판단하면 안 된다.
+내 포크는 [gelb2/hm-defense](https://github.com/gelb2/hm-defense), 원본은 [Mesabloo/hm-defense](https://github.com/Mesabloo/hm-defense)다. GitHub API로 부모 저장소 관계를 확인했다. 원격 README는 Desktop·Android용 재개발을 설명하지만 Android 설치 절은 오래된 TODO다. 이 README만으로 로컬 작업 상태를 판단하면 안 된다.
 
 | 위치 | 확인한 상태 |
 |---|---|
@@ -51,7 +51,7 @@
 ## 다음 복원에 쓰는 방법
 
 1. Heavy Mach 2는 2.0.1을 우선 조사 후보로 두고 1.0.0/1.3.0, HD 1.0.3과 자원·데이터·함수 차이를 비교한다. 최신 파일명이 곧 정상 실행본이라는 뜻은 아니다.
-2. Defense는 사용자 포크가 대상으로 삼은 WeMade `HeavyMachDefence` 판본과 먼저 대조한다. `kr.indieapps.MachDefense`의 규칙·에셋을 확인 없이 섞지 않는다.
+2. Defense는 내 포크가 대상으로 삼은 WeMade `HeavyMachDefence` 판본과 먼저 대조한다. `kr.indieapps.MachDefense`의 규칙·에셋을 확인 없이 섞지 않는다.
 3. 선택한 IPA별 해시·Info.plist·Mach-O 아키텍처·암호화·자원 목록을 REA 기록으로 남긴다. 실행 가능한 비교판을 확보한 뒤 저장·메뉴·전투·수치를 대조한다.
 4. Defense는 현재 Kotlin 소스와 남은 TODO를 이어서 조사한다. 현재 HeavyMach 1의 C++ 소스와는 다른 게임이다. 두 프로젝트의 게임 로직을 합치지 않는다.
 

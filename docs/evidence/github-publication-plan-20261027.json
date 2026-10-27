@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-27",
+  "source_commit": "638d33c3b66423dd20bb24a52aeaff35d50ab928",
+  "version_id": "appgprj_6addbf55aea081918d3d182d7e496e88~appgver_66e602f6b7a8819193697dd5863c95e3",
+  "deployment_id": "appgdep_6ae09d0b35a08191a19eacc8856a9ffe",
+  "status": "succeeded",
+  "url": "https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/gameplay-media.html",
+  "verification": {
+    "document_contract": "pass",
+    "local_links": 529,
+    "images": 8,
+    "videos": 3,
+    "download_matches": true,
+    "local_chrome": "본문·목차·좁은 창 배치 확인",
+    "github_readme_changed": false,
+    "gif_created": false,
+    "external_skills_installed": false,
+    "published_chrome": "ERR_INTERNET_DISCONNECTED; Sites API succeeded, local preview verified"
+  }
+}
