@@ -67,4 +67,4 @@ GitHub 게임 태그는 v0.12이며 이 원고는 `docs/github-publication`에�
 
 ## GitHub 후속 자료 — 2026-10-28
 
-[도입문 원문·정정](../references/developer-background/user-project-origin-20261028.md), [GitHub 구성·소스 릴리스 검사](github-followup-20261028.md), [자원 공개 범위](../rights-manifest.json)를 추가했다. README와 개발자의 변 첫 세 문단은 같다. Apps·Mags 집필은 SaaS 담당 세션에서 진행한다.
+[도입문 원문·정정](../references/developer-background/user-project-origin-20261028.md), [GitHub 구성·소스 릴리스 검사](github-followup-20261028.md), [자원 공개 범위](../rights-manifest.json)를 추가했다. README의 첫 본문은 개발자의 변에서 “요즘 나는 내게 남은 시간이”로 시작하는 문단을 그대로 옮겼다. 그 뒤의 복원 시작에 관한 세 문단도 두 문서에 같은 문장으로 실었다. Apps·Mags 집필은 SaaS 담당 세션에서 진행한다.

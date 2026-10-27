@@ -21,4 +21,4 @@ The MIT license in `LICENSE` applies to original software contributions made by 
 - `Sources/iOS/HMCompatibilityPixels.hpp`: touchHLE의 감마 변환을 참조한 파일이다. MPL-2.0을 적용하고 루트 MIT에서 제외한다. [외부 고지](THIRD_PARTY_NOTICES.md)를 따른다.
 - 개발자의 변, 인터뷰 원문, 문서 본문과 인용 자료: 코드 라이선스로 일괄 재허락하지 않는다.
 
-MIT가 부여하는 권리는 이 프로젝트의 새 코드 기여분에 한정된다. 원작 이름·그림·음원과 함께 앱을 공개하거나 배포하는 범위는 [자원 이용 조건](ASSET-LICENSES.md)에서 확인한다. 코드·에셋을 갖춘 저장소로 빌드·플레이를 제공하려는 공개 계획은 [배포 조사](docs/public/github-licenses-and-badges-20261028.md)에 있다.
+MIT가 부여하는 권리는 이 프로젝트의 새 코드 기여분에 한정된다. 원작 이름·그림·음원과 함께 앱을 공개하거나 배포하는 범위는 [자원 이용 조건](ASSET-LICENSES.md)에서 확인한다. 코드·에셋 공개와 배포 조건 조사 기록은 [배포 조사](docs/public/github-licenses-and-badges-20261028.md)에 있다.
