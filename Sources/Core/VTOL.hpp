@@ -9,6 +9,7 @@ struct VTOLSpec {
  const char* name; const char* tile; const char* statsSource; const char* weapon;
  float width,aspect; ObjectBounds bounds; Vector2 muzzle;
  std::array<Vector2,1> exhaust;
+ bool aftExhaust=false; // Fixed-wing jets emit along +X; preserve original VTOL exhaust.
 };
 const std::array<VTOLSpec,3>& vtolSpecs();
 const VTOLSpec* vtolSpec(std::string_view name);

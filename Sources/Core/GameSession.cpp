@@ -1,5 +1,5 @@
 #include "GameSession.hpp"
-#include "VTOL.hpp"
+#include "Fighters.hpp"
 #include "BulletVisual.hpp"
 #include "CameraShake.hpp"
 #include <algorithm>
@@ -17,6 +17,7 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
   uintptr_t id=0;size_t mapEnemyIndex=SIZE_MAX;bool bossActivationPending=false;std::unique_ptr<GobHvM_Enemy> enemy;
   std::vector<std::unique_ptr<Part>> parts;std::vector<Part*> drawOrder;bool drawOrderDirty=true;ObjectBounds bounds{};bool removed=false,inScreen=true;
   const VTOLSpec* vtol=nullptr;float vtolRotation=0;uint32_t vtolRandom=1;
+  bool aircraftEntering=false;float aircraftEntryEndX=0;
   Vector2 aimStep{};
   float gauge=1;std::array<bool,2> gaugeQueued{};const MachDefinition* definition=nullptr;
 #if defined(HM_VALIDATION) && HM_VALIDATION
@@ -34,6 +35,7 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
  AimMode aimMode=AimMode::manual;uintptr_t aimTarget=0,excludedTarget=0;bool autoFire=false;
  AimSnapshot aimState{};Dynamic* assistedBullet=nullptr;
  Machine* current=nullptr;const MachDefinition* building=nullptr;ParticleState* acquired=nullptr;
+ const FighterWave* reinforcement=nullptr;bool reinforcementSpawned=false;
  int selected=0,charge=0;bool replaceWeapon=false,active=false;double globalTime=0;
 #if defined(HM_VALIDATION) && HM_VALIDATION
  bool validationCheats=false;
@@ -75,7 +77,7 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
   auto size=info.tileCnt?tileSize(info.tileName()):Vector2{};float columns=info.tileCnt?info.tileCnt:1;part->bounds=partsBounds(size.x/columns,size.y,socket(&info,0));
   part->armed=info.partsType==2;
   if(part->armed){initializeWeapon(part->weapon,world.gameTime,*this);auto w=data.weapons.find(info.name);if(w==data.weapons.end())w=data.weapons.find("E_Default_Wpn");
-   if(w==data.weapons.end())throw std::runtime_error("Missing weapon definition: "+info.name);part->weapon.weaponInfo=&w->second;
+   if(w==data.weapons.end())throw std::runtime_error("Missing weapon definition: "+info.name);part->weapon.weaponInfo=&w->second;if(w->second.aiTimeScale!=1)part->weapon.delayTime*=w->second.aiTimeScale;
    if(machType!=3){setWeaponAim(part->weapon,float(std::numbers::pi));part->weapon.aimDir=part->weapon.aimDirDest-.01f;}}
   graph.parts.push_back(std::move(owned));graph.drawOrderDirty=true;
   if(base){attachParts(part->visual,&base->visual,baseSocket);base->visual.offset=partsSocketPosition(base->visual,0);base->visual.rotatedPosition=base->visual.offset;}
@@ -119,14 +121,14 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
  void spawnEnemy(const EnemyDefinition& definition)override{
   auto found=data.machines.find(definition.name);if(found==data.machines.end())throw std::runtime_error("Missing machine: "+definition.name);
   enemies.emplace_back();auto& m=enemies.back();m.id=nextID++;m.enemy=std::make_unique<GobHvM_Enemy>();m.definition=&found->second;
-  m.vtol=vtolSpec(definition.name);if(m.vtol){m.vtolRandom=2166136261u;for(unsigned char c:definition.name)m.vtolRandom=(m.vtolRandom^c)*16777619u;m.vtolRandom^=uint32_t(int32_t(definition.position.x*16));}
+  m.vtol=aircraftSpec(definition.name);if(m.vtol){m.vtolRandom=2166136261u;for(unsigned char c:definition.name)m.vtolRandom=(m.vtolRandom^c)*16777619u;m.vtolRandom^=uint32_t(int32_t(definition.position.x*16));}
   auto prev=current;current=&m;building=&found->second;m.enemy->makeMachFromDefinition(found->second,*this);building=nullptr;current=prev;
 #if defined(HM_VALIDATION) && HM_VALIDATION
   m.validationSpawnPosition=definition.position;
 #endif
   m.enemy->position=definition.position;m.enemy->machState=2;m.enemy->isBoss=definition.isBoss;
   m.enemy->hasWeapon=std::any_of(m.parts.begin(),m.parts.end(),[](const auto& p){return p&&p->armed;});
-  m.vtol=vtolSpec(definition.name);if(m.vtol){m.bounds=m.vtol->bounds;m.enemy->gaugeY=-24;}
+  m.vtol=aircraftSpec(definition.name);if(m.vtol){m.bounds=m.vtol->bounds;m.enemy->gaugeY=-24;}
  }
  void spawnMapEnemy(const EnemyDefinition& definition,size_t index)override{
   spawnEnemy(definition);enemies.back().mapEnemyIndex=index;enemies.back().bossActivationPending=definition.isBoss;
@@ -298,7 +300,7 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
   w.fireTarget=center;w.isFire=autoFire&&clear;
  }
  CombatFrame frame(GobHvMach& owner,Machine& graph,Part& p){
-  CombatFrame f;f.time=world.gameTime;f.paused=world.paused||waitingForBossEncounter(graph);f.playerPos=player?player->position:Vector2{};f.ownerPos=owner.position;f.weaponPos=owner.position;f.rotPos=p.visual.rotatedPosition;f.socket0=socket(p.visual.info,0);f.socket1=socket(p.visual.info,1);f.machType=owner.machType;f.isPlayer=owner.player;f.isMainPlayer=&graph==&playerGraph;f.ownerInScreen=graph.inScreen;f.weaponUpgrade=slot.bytes[0x2d];
+  CombatFrame f;f.time=world.gameTime;f.paused=world.paused||waitingForBossEncounter(graph)||graph.aircraftEntering;f.playerPos=player?player->position:Vector2{};f.ownerPos=owner.position;f.weaponPos=owner.position;f.rotPos=p.visual.rotatedPosition;f.socket0=socket(p.visual.info,0);f.socket1=socket(p.visual.info,1);f.machType=owner.machType;f.isPlayer=owner.player;f.isMainPlayer=&graph==&playerGraph;f.ownerInScreen=graph.inScreen;f.weaponUpgrade=slot.bytes[0x2d];
   if(graph.vtol){auto anchor=vtolRotate(graph.vtol->muzzle,owner.rotation);f.weaponPos={owner.position.x+anchor.x,owner.position.y+anchor.y};f.rotPos={};f.socket0={};f.socket1={};}
   if(player){f.damageBoost=player->passives.active(1);f.shield=player->passives.active(0);}f.selectedWeapon=int16_t(selected);f.selectedCharge=&charge;return f;
  }
@@ -336,12 +338,45 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
   }
  }
  void open(StagePosition pos){stage=pos;char key[32];if(world.gameMode==1)std::snprintf(key,sizeof(key),"Survival");else std::snprintf(key,sizeof(key),"Stage%02d",GlobalInfo::mapNumber(stage));
-  auto it=data.maps.find(key);if(it==data.maps.end())throw std::runtime_error("Missing original map: "+std::string(key));world.openMap(it->second,world.gameMode,*this);active=true;
+  auto it=data.maps.find(key);if(it==data.maps.end())throw std::runtime_error("Missing original map: "+std::string(key));reinforcement=data.machines.contains("Lux_F22")?fighterWave(key):nullptr;reinforcementSpawned=false;world.openMap(it->second,world.gameMode,*this);active=true;
  }
  void start(int mode,StagePosition pos,double retainedWorldTime){if(!std::isfinite(retainedWorldTime)||retainedWorldTime<0)throw std::invalid_argument("invalid retained World time");events.clear();unsupported.clear();auto retainedCamera=world.camera;auto retainedWidth=world.canvasWidth;auto retainedHeight=world.canvasHeight;world=WorldState{};world.setCanvasWidth(retainedWidth);world.canvasHeight=retainedHeight;world.camera=retainedCamera;world.gameTime=retainedWorldTime;world.gameMode=mode;world.configureSurvival(slot.level());enemies.clear();dynamic.clear();mapSprites.clear();player.reset();playerGraph.parts.clear();nextID=2;selected=0;charge=0;replaceWeapon=false;acquired=nullptr;particleQueued.fill(false);aimTarget=excludedTarget=0;autoFire=false;aimState={};aimState.mode=aimMode;assistedBullet=nullptr;open(pos);
   // Original openMap0xe3f4 creates objects only. drawVisual follows tick once
   // in renderScene0x21e0; collecting here advances weapon aim/recoil twice.
   draws.clear();render.clear();}
+ void spawnReinforcements(){
+  if(!reinforcement||reinforcementSpawned||!player||world.paused||world.gameState!=0||player->hp<=0)return;
+  bool ready=false;
+  if(reinforcement->boss[0]){
+   for(size_t n=0;n<world.map.enemies.size();++n)if(world.map.enemies[n].name==reinforcement->boss&&world.bossEncounterActivated[n]&&!world.mapEnemiesDefeated[n]){ready=true;break;}
+  }else ready=player->position.x>=world.map.right-800;
+  if(!ready)return;
+  reinforcementSpawned=true;int index=0;
+  for(size_t type=0;type<reinforcement->counts.size();++type)for(int n=0;n<reinforcement->counts[type];++n,++index){
+   const auto& spec=fighterSpecs()[type];
+   const float screenRight=std::max(world.camera.x+world.canvasWidth*.5f,
+    std::min(world.frontLine,player->position.x+140+world.canvasWidth*.5f));
+   const float endX=std::min(world.frontLine-90,screenRight-spec.width*.6f);
+   // The entire aircraft begins beyond the visible right edge. Boss arena
+   // limits constrain its destination, never its off-screen spawn position.
+   const float x=std::max(screenRight+spec.width*.5f+40,player->position.x+180)+float(index%4)*90;
+   float ground=world.mapHeight(endX);if(ground==10000)ground=player->position.y-10;
+   float y=std::min({world.map.top-35,world.camera.y+130,ground+115+float(index/4)*55});
+   spawnEnemy({spec.name,{x,y},false});
+   auto& aircraft=enemies.back();aircraft.aircraftEntering=true;aircraft.aircraftEntryEndX=endX;aircraft.inScreen=false;
+  }
+ }
+ MotionEvents advanceAircraftEntry(Machine& m){
+  if(!world.paused){
+   m.enemy->speed=-2.5f;m.enemy->velocity.y=0;
+  }
+  auto events=m.enemy->GobHvMach::tick(enemyFrame(m).motion);
+  if(!world.paused&&m.enemy->position.x<=m.aircraftEntryEndX){
+   m.aircraftEntering=false;m.enemy->speed=m.enemy->speedDest=-.5f;
+   for(auto& p:m.parts)if(p&&p->armed)p->weapon.resetTime=float(world.gameTime);
+  }
+  return events;
+ }
  void tick(double time,float tilt){
 #if defined(HM_VALIDATION) && HM_VALIDATION
   // Invulnerability alone leaves a fallen player descending forever. Rescue
@@ -357,6 +392,7 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
   globalTime=time;if(!active)return;playerGraph.gaugeQueued.fill(false);for(auto& m:enemies)m.gaugeQueued.fill(false);
   if(player&&!world.paused&&world.gameState==0)player->setMoveVel(WorldState::moveInput(tilt),player->passives.active(3));
   world.tick(player?std::optional<Vector2>(player->position):std::nullopt,stage,*this,[this]{return random31();});
+  spawnReinforcements();
   for(auto it=enemies.begin();it!=enemies.end();){if(it->removed){it=enemies.erase(it);continue;}auto& m=*it;
    if(m.bossActivationPending&&!waitingForBossEncounter(m)&&!world.paused){
     // Prefetch prepares visuals, not elapsed weapon-AI delay. Keep each
@@ -364,7 +400,7 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
     for(auto& p:m.parts)if(p&&p->armed)p->weapon.resetTime=float(world.gameTime);
     m.bossActivationPending=false;
    }
-   current=&m;auto before=m.enemy->position;auto motion=m.enemy->tick(enemyFrame(m),*this);
+   current=&m;auto before=m.enemy->position;auto motion=m.aircraftEntering?advanceAircraftEntry(m):m.enemy->tick(enemyFrame(m),*this);
    if(!world.paused)m.aimStep={m.enemy->position.x-before.x,m.enemy->position.y-before.y};
    if(m.vtol){
     if(!world.paused)m.vtolRotation=vtolPitch(m.vtolRotation,m.enemy->speed,m.enemy->velocity.y);
@@ -421,8 +457,8 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
    // Existing missile flame, separate from body/collision; world time freezes on pause.
    for(auto nozzle:v.exhaust){
     float length=12.f+std::clamp(owner.velocity.y/20.f,-1.f,1.f)*4.f+std::sin(float(world.gameTime)*45.f)*1.2f;
-    auto local=vtolRotate({nozzle.x,nozzle.y-length*.5f},owner.rotation);
-    auto size=tileSize("BulletEffect2.png");DrawSprite flame;flame.tile="BulletEffect2.png";flame.cols=2;flame.position={owner.position.x+local.x,owner.position.y+local.y};flame.rotation=owner.rotation+float(std::numbers::pi/2);flame.scale={length/std::max(1.f,size.x/2),6.f/std::max(1.f,size.y)};flame.blend=2;flame.alpha=.8f;flame.z=1;append(std::move(flame));
+    auto local=vtolRotate(v.aftExhaust?Vector2{nozzle.x+length*.5f,nozzle.y}:Vector2{nozzle.x,nozzle.y-length*.5f},owner.rotation);
+    auto size=tileSize("BulletEffect2.png");DrawSprite flame;flame.tile="BulletEffect2.png";flame.cols=2;flame.position={owner.position.x+local.x,owner.position.y+local.y};flame.rotation=owner.rotation+(v.aftExhaust?float(std::numbers::pi):float(std::numbers::pi/2));flame.scale={length/std::max(1.f,size.x/2),6.f/std::max(1.f,size.y)};flame.blend=2;flame.alpha=.8f;flame.z=1;append(std::move(flame));
    }
    auto size=tileSize(v.tile);DrawSprite body;body.tile=v.tile;body.position=owner.position;body.rotation=owner.rotation;body.scale={v.width/std::max(1.f,size.x),v.width*v.aspect/std::max(1.f,size.y)};body.z=1;append(std::move(body));
   }

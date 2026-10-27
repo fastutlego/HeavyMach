@@ -1,0 +1,36 @@
+{
+  "tool": "built-in imagegen",
+  "change": "Gold reflective canopy glass; preserve shape, frame and livery",
+  "assets": [
+    {
+      "id": "F22",
+      "source": "Art/LuxLunae/20261027-gold/F22.png",
+      "runtime": "Art/Extensions/Lux_F22.png",
+      "dimensions": [
+        1902,
+        827
+      ],
+      "sha256": "8cf228dafd366849f50ce623901a1106dad35df4ccb451e1de6e346c79f6f082"
+    },
+    {
+      "id": "Su57",
+      "source": "Art/LuxLunae/20261027-gold/Su57.png",
+      "runtime": "Art/Extensions/Lux_Su57.png",
+      "dimensions": [
+        2079,
+        756
+      ],
+      "sha256": "d8797d4559d71df8923e3d755f4f51237053a3ec1d374f0022834111b775a197"
+    },
+    {
+      "id": "MiG31",
+      "source": "Art/LuxLunae/20261027-gold/MiG31.png",
+      "runtime": "Art/Extensions/Lux_MiG31.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "sha256": "ef9351c5bb4112c0bc10befa489ae989d3b341e69da29a047c6570d3c468260d"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # 자동조준 개발 계획
 
-2026-10-26 요청을 정리했고, 2026-10-27부터 `feat/auto-aim-ipad-validation`에서 구현·검증한다. 분기 기준은 develop `8fdeb629`다. 완성 전 develop/main에 병합하지 않는다. [현재 구현과 검사](public/auto-aim-ipad-20261027.md)를 따른다. iPhone·iPad·Mac은 같은 코어 계산을 사용하고 입력과 버튼 배치만 플랫폼에 맞춘다.
+2026-10-26 요청을 정리했고, 2026-10-27부터 `feat/auto-aim-ipad-validation`에서 구현·검증한다. 분기 기준은 develop `8fdeb629`다. 완성 전 미병합 지시 이후 사용자가 릴리스를 요청해 develop→main 병합과 v0.11 태그를 완료했다. [현재 구현과 검사](public/auto-aim-ipad-20261027.md)를 따른다. iPhone·iPad·Mac은 같은 코어 계산을 사용하고 입력과 버튼 배치만 플랫폼에 맞춘다.
 
 ## 목표 선택
 

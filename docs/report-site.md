@@ -1,5 +1,27 @@
 # HeavyMach 보고 사이트
 
+## 최신 게시 — 2026-10-27 럭스루나에 구현·진입 수정
+
+3종 금색 조종석 PNG, 최종 무장(연사10% 증가), 14개 구간 편성, 두 기기 크기 비교·화면 밖 진입·전투 캡처와 실행 증거를 게시했다. 치트·정식 앱4건 재설치와 사용자 최초 정식 앱 확인을 구분했다.
+
+- URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/lux-lunae.html#section-10
+- Site source: `abcb7864cfc36ac52bc53b2cfdfb4c8daba9f802`
+- Version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_4927a9426a408191b711a778b586d7b3`
+- Deployment: `appgdep_6adff34726ec81919ea26294817a17df`, `succeeded`, 2026-10-27T00:41:56.266033+00:00. 소유자 전용 유지.
+- 상대 링크·앵커462개와 원고·그림 바이트 일치 검사 통과. 기존 메인 이미지13개 유지. 로컬 Chrome에서 새 본문·GPU 비교·진입 캡처 배치를 확인했다. 게시 URL은 Chrome의 ERR_INTERNET_DISCONNECTED로 화면 확인을 완료하지 못했다. 공식 배포 결과는 succeeded다.
+- 제품 구현 커밋: `45befedc`. `feat/lux-lunae-fighters`에 유지하며 develop/main에 병합하지 않았다.
+
+## 최신 게시 — 2026-10-27 럭스루나에 전투기 시안·계획
+
+F-22·Su-57·MiG-31 시안, 원본 헬기와 웹 축소 비교, HP765·미사일25% 증속, 대형보스전/직전구간의 총72대 배치안, 후속 3연사·2발×3묶음 구성을 게시했다. 게임 적용 전 계획이다. 기존 완성분의 develop→main 병합과 v0.11 태그 완료도 반영했다.
+
+- URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/lux-lunae.html
+- Site source: `03d3a62c0761a21f40d77c64533c8b820198045c`
+- Version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_52726aeefc388191a9f9576fb72edc49`
+- Deployment: `appgdep_6adfea8e25ac8191baa570a8f7347293`, `succeeded`, 2026-10-27T00:04:46.725318+00:00. 소유자 전용 유지.
+- 상대 링크·앵커448개, 원고·그림 바이트 일치, 기존 메인 이미지13개 보존 확인. 로컬 Chrome에서 큰 그림3종·축소 비교·묶음 연사 본문을 확인했다. 게시 URL을 Chrome에서 열 때 ERR_INTERNET_DISCONNECTED가 발생해 게시본 화면은 확인하지 못했다. Sites의 공식 배포 결과는 succeeded다.
+- 생성 원본과 프롬프트는 `Art/LuxLunae/20261027/`, 요구·수치·배치 근거는 `docs/lux-lunae-plan-20261027.md`에 보존했다.
+
 ## 최신 게시 — 2026-10-27 VTOL 외곽선·크기·불꽃 수정
 
 V3 그림3개, Heli001/Heli006과의 실제 GPU 비교, 줄어든 기체와 후방 불꽃 전투 캡처, 두 기기 일반·치트 앱 업데이트 결과를 게시했다. 이전 설치 캡처는 첫 적용 이력으로 남겼다.
