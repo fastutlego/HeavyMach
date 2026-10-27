@@ -99,7 +99,7 @@ python3 tools/verify_build_resources.py
 open HeavyMach.xcworkspace
 ```
 
-Xcode에서 본인의 개발 팀을 지정하고 실행 대상을 선택한다. iPhone·iPad 일반 앱은 `HeavyMachRestored`, 치트 앱은 `HeavyMachValidation`이다. Mac은 `HeavyMachMac`, `HeavyMachMacValidation`이다. 현재 저장소 접근에는 GitHub 권한이 필요하며 설치 파일은 Releases에 등록하지 않았다.
+Xcode에서 본인의 개발 팀을 지정하고 실행 대상을 선택한다. iPhone·iPad 일반 앱은 `HeavyMachRestored`, 치트 앱은 `HeavyMachValidation`이다. Mac은 `HeavyMachMac`, `HeavyMachMacValidation`이다. 현재 저장소 접근에는 GitHub 권한이 필요하다. [v0.12 Releases](https://github.com/gelb2/HeavyMach/releases/tag/v0.12)에서 소스·자원 압축본과 고지를 받을 수 있다. 설치용 서명 앱은 포함하지 않았다.
 
 [시뮬레이터 명령·기기 설치·서명·오류 해결](docs/public/build-and-install.md)
 
