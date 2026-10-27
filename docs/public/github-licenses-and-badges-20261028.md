@@ -2,17 +2,17 @@
 
 나는 코드와 원작 에셋을 함께 공개해, 다른 사람이 저장소를 받아 직접 빌드하고 플레이할 수 있게 하려 한다. 개발 과정과 수정 기록도 계속 남기고 싶다. 이 복원판으로 돈을 벌 생각은 없다. 원작자와 이해관계자들이 앱스토어 배포를 허락하더라도 무료로 제공할 생각이다.
 
-이 목적에는 **새 코드의 라이선스, 이 복원판에 원작 자원을 포함해 공개하는 허락, 외부 라이브러리의 배포 조건**이 필요하다. 새 코드에는 MIT나 BSD-3-Clause를 검토하고, 원작 자원에는 이 프로젝트에서 허용된 이용 범위를 따로 적는다. 누구나 빌드·플레이하게 하는 데 원작 그림을 다른 상품에 재사용할 권리까지 허용할 필요는 없다. 에셋을 제외하고 각자 구하게 하는 방식은 이번 공개 목표에 맞지 않는다.
+이 목적에는 **새 코드의 라이선스, 이 복원판에 원작 자원을 포함해 공개하는 허락, 외부 라이브러리의 배포 조건**이 필요하다. 이번 작업에서 새 코드 기여분에 MIT를 적용하고, 원작 자원의 조건은 별도로 기록했다. [코드 적용 범위](../../LICENSE-SCOPE.md), [자원 조건](../../ASSET-LICENSES.md), [외부 고지](../../THIRD_PARTY_NOTICES.md). 누구나 빌드·플레이하게 하는 데 원작 그림을 다른 상품에 재사용할 권리까지 허용할 필요는 없다. 에셋을 제외하고 각자 구하게 하는 방식은 이번 공개 목표에 맞지 않는다.
 
 버전·OS를 작은 칩 모양으로 표시하는 것은 **배지(badge)**다. 필수는 아니지만 README에서 실행 환경을 빠르게 찾는 데 도움이 된다. HeavyMach에는 제목 아래에 버전·플랫폼·아키텍처·언어를 표시하고, 실제 검사 환경은 본문의 표로 설명하는 안을 제안한다.
 
-Codex가 2026-10-28에 저장소 파일과 GitHub·GNU·Creative Commons·Apple 공식 자료를 대조했다. 아래는 조사 결과와 적용안이다.
+Codex가 2026-10-28에 저장소 파일과 GitHub·GNU·Creative Commons·Apple 공식 자료를 대조했다. 아래는 조사 결과와 적용 내역이다. README에 기술 배지4개와 코드 라이선스 배지1개, 최소 OS·실제 검사 환경 표를 추가했다. [GitHub 구성 점검·후속 계획](github-repository-plan-20261028.md).
 
 ## 현재 저장소에서 확인한 내용
 
 | 항목 | 확인한 상태 | 근거 |
 |---|---|---|
-| 공개 상태·라이선스 | 비공개 저장소. 루트 LICENSE 없음. GitHub `licenseInfo`는 null | GitHub 저장소 조회, [제작자·자원](../../CREDITS.md) |
+| 공개 상태·라이선스 | 비공개 저장소. 새 코드용 MIT와 별도 적용 범위를 이번 문서 변경에 추가 | GitHub 저장소 조회, [제작자·자원](../../CREDITS.md) |
 | 원작 자원 | 기존 이미지·WAV·맵·데이터와 앱 아이콘이 Git/LFS에 포함됨 | [빌드 자원 목록](../build-resources.json) |
 | 원작 배포 허락 | 개발자의 변에는 향후 배포를 허락받는 조건이 적혀 있음. 확인한 원고·자료에 허락받았다는 기록은 없음 | [개발자의 변](../RESTORATION.md) |
 | 새 그림 | 메뉴 확장, VTOL, 전투기. 원작·실물·편대 도색을 참조한 제작 기록이 있음 | [VTOL](vtol-art-and-loadout-20261027.md), [전투기](lux-lunae-design-20261027.md) |
@@ -44,13 +44,13 @@ GitHub 공개 저장소는 다른 사람이 내용을 보고 fork할 수 있게 
 
 | 문건·위치 | 담을 내용 | 현재 제안 |
 |---|---|---|
-| 루트 `LICENSE` | 권리를 보유하거나 허락받은 새 코드의 표준 라이선스 원문 | MIT 우선 검토. 저작권자와 적용 파일 범위를 확인한 뒤 채움 |
-| 루트 `ASSET-LICENSES.md` | 원작·추가·참조 이미지, 음원, 맵, 아이콘, 스크린샷의 출처와 이용 조건 | 자원 경로별로 구분. MIT 코드 범위에 자동 포함하지 않음 |
-| 루트 `THIRD_PARTY_NOTICES.md` | 라이브러리명·버전·출처·라이선스·수정 여부와 고지 | OpenAL Soft와 stb부터 기록. 분석·호환 도구 패치와 복사한 스킬도 저장소 공개 범위에 포함해 조사 |
-| `LICENSES/` | 적용되는 외부 라이선스의 원문 | vendor의 기존 고지와 원문을 함께 보존 |
+| 루트 `LICENSE` | 권리를 보유하거나 허락받은 새 코드의 표준 라이선스 원문 | 추가 완료. 새 코드 기여분과 제외 대상은 LICENSE-SCOPE.md에 명시 |
+| 루트 `ASSET-LICENSES.md` | 원작·추가·참조 이미지, 음원, 맵, 아이콘, 스크린샷의 출처와 이용 조건 | 추가 완료. 자원 경로별 출처·이용허락 확인 상태 기록 |
+| 루트 `THIRD_PARTY_NOTICES.md` | 라이브러리명·버전·출처·라이선스·수정 여부와 고지 | 추가 완료. OpenAL Soft·stb와 외부 도구·스킬의 고지·확인할 범위 연결 |
+| `LICENSES/` | 적용되는 외부 라이선스의 원문 | OpenAL Soft·stb·외부 스킬 MIT의 원문 사본 추가 |
 | `docs/rights-manifest.json` | 파일/경로·출처·권리자·허락 범위·근거 문건·배포 가능 여부 | 기존 자원 SHA-256 목록과 연결 |
 | 기존 `CREDITS.md` | 원작 제작자, 기획·구현·미술 담당과 출처 | 저작권 이용허락 문건과 함께 읽도록 연결 |
-| README의 라이선스 절 | 코드 라이선스와 자원 조건의 요약·링크 | 루트 LICENSE와 ASSET-LICENSES로 연결 |
+| README의 라이선스 절 | 코드 라이선스와 자원 조건의 요약·링크 | README에 추가. LICENSE-SCOPE·ASSET-LICENSES·외부 고지로 연결 |
 | 배포 묶음의 고지·소스 | 앱에 포함된 라이브러리의 고지, 해당 버전 소스와 재빌드 자료 | Git 태그·자원·바이너리 해시를 연결 |
 
 `LICENSE`에는 표준 원문을 유지하고, 파일별 예외와 설명은 별도 문건에 둔다. GitHub의 자동 라이선스 인식도 이 구성을 권한다. [GitHub의 라이선스 위치·인식](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
@@ -102,7 +102,7 @@ Mac 다운로드판은 Developer ID 서명·공증과 새 Mac에서의 실행 �
 
 배지는 선택 사항이다. SDL은 짧은 소개와 설치·라이선스 링크를 쓰며, OpenRCT2는 게임 이미지 다음 Download 절에 릴리스·개발 버전 배지를 배치한다. 모든 프로젝트가 같은 배지 구성을 써야 하는 규칙은 없다. [SDL README](https://github.com/libsdl-org/SDL/blob/main/README.md), [OpenRCT2 README](https://github.com/OpenRCT2/OpenRCT2/blob/develop/readme.md)
 
-HeavyMach에는 **제목 → 한 문장 소개 → 배지 한 줄 → 개발 동기·대표 게임 화면 → 설치·조작 링크** 순서를 제안한다. 배지는 4개 정도로 시작하고 각 배지를 상세 문서에 연결한다.
+HeavyMach는 **제목 → 게임 소개 → 배지 → 개발 동기·대표 게임 화면 → 설치·조작 링크** 순서로 배치했다. 기술 배지4개와 코드 라이선스 배지1개를 각각 상세 문서에 연결했다.
 
 | 배지 문구 | 연결 위치 | 표시 근거 |
 |---|---|---|
@@ -110,6 +110,7 @@ HeavyMach에는 **제목 → 한 문장 소개 → 배지 한 줄 → 개발 동
 | Platforms · iOS / iPadOS / macOS | 기능·검증 문서 | 구현된 Apple 세 플랫폼 |
 | Arch · arm64 | 설치 문서 | 현재 빌드 스크립트와 검사 아키텍처 |
 | Code · C++20 / Objective-C++ | 구조 문서 | 현재 소스 구성 |
+| Code license · MIT | LICENSE-SCOPE.md | 새 코드 기여분의 MIT. 원작 자원·외부 코드 제외 |
 
 OS 숫자는 README의 플랫폼 표와 설치 문서에서 나눠 쓴다.
 
@@ -125,7 +126,7 @@ GitHub의 workflow 배지는 실제 작업 결과를 표시하며 `branch`로 �
 
 ### 적용할 Markdown 예시
 
-아래는 루트 README에 붙일 수 있는 예시다. 현재 README에는 아직 추가하지 않았다.
+아래는 최초 조사에서 비교한 Shields 형식이다. 실제 README에는 같은 문구의 저장소 내 SVG를 사용했다. 외부 이미지 서비스 없이 표시되며 링크는 버전·설치·구조·라이선스 범위로 연결된다.
 
 ```markdown
 [![Git tag v0.12](https://img.shields.io/badge/Git_tag-v0.12-48664d)](https://github.com/gelb2/HeavyMach/tree/v0.12)
@@ -134,14 +135,14 @@ GitHub의 workflow 배지는 실제 작업 결과를 표시하며 `branch`로 �
 [![C++20 and Objective-C++](https://img.shields.io/badge/Code-C%2B%2B20%20%7C%20Objective--C%2B%2B-526577)](docs/public/architecture.md)
 ```
 
-Shields의 정적 배지는 문구와 색을 URL에 넣는다. 라이선스 확정 뒤에는 `Code license · MIT`처럼 적용 범위를 표시한 배지를 추가할 수 있다. 현재는 실제 LICENSE가 없으므로 MIT 배지를 붙이지 않는다. 릴리스 때 Git 태그 배지를 갱신하고, 실제 빌드 CI가 생기면 그 workflow의 배지를 추가한다. [Shields 정적 배지 형식](https://shields.io/badges/static-badge)
+Shields의 정적 배지는 문구와 색을 URL에 넣는다. 현재는 같은 목적의 로컬 SVG5개를 사용하며 `Code license · MIT`는 적용 범위 문서로 연결된다. 릴리스 때 Git 태그 배지를 갱신하고, 실제 빌드 CI가 생기면 그 workflow의 배지를 추가한다. [Shields 정적 배지 형식](https://shields.io/badges/static-badge)
 
 ## 다음 작업
 
 1. 코드·에셋을 함께 공개하고 누구나 clone·fork·빌드·플레이할 수 있는 범위를 기준으로 원작·추가 자원의 출처와 허락 근거를 정리한다. 무료 앱스토어 배포와 수정본 공유 조건은 별도 항목으로 확인한다.
-2. 새 코드의 라이선스를 선택하고 LICENSE·ASSET-LICENSES·THIRD_PARTY_NOTICES와 파일별 적용 범위를 작성한다.
+2. 추가한 LICENSE·LICENSE-SCOPE·ASSET-LICENSES·THIRD_PARTY_NOTICES의 경로별 조건을 유지하고, 원작·외부 코드의 확인 결과를 보강한다.
 3. OpenAL 정적 링크의 재빌드·재링크 자료를 준비하고 배포용 소스 묶음에서 검사한다.
 4. 공개할 Git 이력·LFS·문서·미디어 범위를 확인하고, 소스 공개와 플랫폼별 앱 배포를 각각 준비한다.
-5. README에 배지 4개와 환경 표를 적용한다. 실제 빌드 CI·라이선스·다운로드가 준비되면 해당 배지만 추가한다.
+5. README에 추가한 배지5개와 환경 표를 버전 변경 때 갱신한다. 실제 빌드 CI·다운로드가 준비되면 해당 배지를 추가한다.
 
-조사는 완료했다. 라이선스 부여, 저장소 공개 전환, 앱의 외부 배포와 README 배지 적용은 아직 실행하지 않았다. [투두](../usability-todo.md)
+새 코드 기여분의 MIT, 적용 범위·자원·외부 고지 문건과 README 배지를 추가했다. 저장소 공개 전환과 앱의 외부 배포는 아직 실행하지 않았다. [투두](../usability-todo.md)

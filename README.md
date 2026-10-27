@@ -2,6 +2,12 @@
 
 2009년의 횡스크롤 전차 게임 **HeavyMach**를 현재의 iPhone·iPad·Mac에서 실행하도록 다시 만들었다. 전차를 움직이고 뛰어오르며, 무기를 바꿔 지상·공중의 적과 싸운다. 원작의 전투와 성장 구조에 넓은 화면, 키보드 조작, 자동조준과 새로운 항공기를 추가했다.
 
+[![Git tag v0.12](docs/public/media/badges/version.svg)](https://github.com/gelb2/HeavyMach/tree/v0.12)
+[![Platforms iOS iPadOS macOS](docs/public/media/badges/platforms.svg)](docs/public/validation.md)
+[![Architecture arm64](docs/public/media/badges/arch.svg)](docs/public/build-and-install.md)
+[![C++20 and Objective-C++](docs/public/media/badges/code.svg)](docs/public/architecture.md)
+[![Code license MIT](docs/public/media/badges/license.svg)](LICENSE-SCOPE.md)
+
 대학생 때 iPod touch로 하던 HeavyMach를 2026년의 아이폰에서 다시 실행하고 싶었다. 이 게임은 내가 2017년 7월 iOS 개발자로 전업하는 데 영향을 준 작품이다. 구현은 Codex에 맡겼다. 나는 직접 플레이하면서 원작과 달라진 움직임·성능·그림을 확인하고 수정을 지시했다. [개발자의 변 전문](docs/RESTORATION.md)
 
 ![공중의 적을 향해 사격하는 탱크. 녹색 모서리와 LOCKED 문구가 표적을 표시한다.](docs/public/media/gameplay-20261027/01-auto-aim.png)
@@ -65,6 +71,15 @@ Yak-141·Harrier GR3·F-35B는 기존 적 배치 사이에 추가했다. F-22·S
 
 자동조준·공용 모듈·Apple 세 플랫폼·항공기 6종·전체 화면 도어는 구현됐다. HUD 위치 편집, 자동조준 상태 안내 개선, 튜토리얼 0-0~0-4, 글자를 뺀 앱 아이콘과 Android는 후속 과제다. [완료·진행·남은 과제](docs/public/implementation-status.md)
 
+**빌드 설정과 검사 환경**
+
+| 플랫폼 | 프로젝트 최소 OS | 실제 검사 기록 |
+|---|---|---|
+| iPhone·iPad | iOS/iPadOS 15.0 | iPhone Air·iPad Air 13형 M2, OS 27.0.1 |
+| Mac | macOS 12.0 | Mac mini M4 Pro, macOS 27.0.1 |
+
+현재 빌드는 Apple Silicon·arm64 대상이다. 최소 OS 설정과 같은 버전의 실기기를 모두 검사한 것은 아니다. 빌드 도구 버전은 [설치 문서](docs/public/build-and-install.md)에 있다.
+
 ## 빌드하기
 
 Apple Silicon Mac, Xcode, CMake 3.20 이상, Python 3, Git LFS를 사용한다. 소스·게임 이미지·음원·맵·빌드 프로젝트는 이 저장소에 들어 있다.
@@ -99,3 +114,10 @@ Codex는 파일 쓰기를 저장 시점에만 실행하도록 분리했다. 게�
 작업 브랜치는 `develop`에 병합하고 `develop`만 `main`에 병합한다. 출시 태그는 `main`의 병합 커밋에 붙인다. [태그에서 다시 빌드하는 방법](docs/repository-management.md)
 
 [원작 제작자·추가 작업·라이브러리](CREDITS.md) · [SaaS Apps·Mags 집필 자료](docs/public/publication-inventory.md)
+
+
+## 라이선스와 자원
+
+이 프로젝트에서 새로 작성한 코드에는 [MIT](LICENSE)를 적용한다. [적용 범위](LICENSE-SCOPE.md)에 원작 유래 자료·외부 코드·문서를 구분했다. 원작 그림·음원·게임 데이터와 추가 그림은 [자원 이용 조건](ASSET-LICENSES.md), OpenAL Soft·stb 등은 [외부 라이브러리 고지](THIRD_PARTY_NOTICES.md)를 따른다.
+
+코드와 에셋을 함께 공개해 누구나 빌드하고 플레이할 수 있도록 준비하고 있다. 원작 에셋의 공개 이용허락은 아직 확인 중이다. 나는 이 복원판으로 돈을 벌 생각이 없으며, 향후 허락받은 앱스토어 배포도 무료로 제공할 생각이다.
