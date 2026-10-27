@@ -86,12 +86,15 @@ def main():
     article(ROOT/'docs/android-port-plan-20261026.md',dist/'android-plan.html','android-port-plan-20261026.md',retro)
     article(ROOT/'docs/ios-completeness-audit-20261026.md',dist/'ios-audit.html','ios-completeness-audit-20261026.md',retro)
     article(ROOT/'docs/auto-aim-plan-20261026.md',dist/'auto-aim.html','auto-aim-plan-20261026.md',retro)
+    aim_page=dist/'auto-aim.html'
+    aim_page.write_text(aim_page.read_text().replace('href="public/auto-aim-ipad-20261027.md"', 'href="auto-aim-progress.html"'))
     article(ROOT/'docs/RESTORATION.md',dist/'restoration.html','RESTORATION.md',retro)
     public_articles = [
         ('apple-platform-progress-20261026.md', 'apple-platforms.html'),
         ('fullscreen-transitions-20261027.md', 'fullscreen.html'),
         ('auto-aim-ipad-20261027.md', 'auto-aim-progress.html'),
         ('vtol-art-and-loadout-20261027.md', 'vtol-art.html'),
+        ('lux-lunae-design-20261027.md', 'lux-lunae.html'),
         ('clone-build-20261026.md', 'clone-build.html'),
         ('ipa-independent-build-20261026.md', 'independence.html'),
         ('rea-implementation-audit-20261026.md', 'rea-implementation.html'),
@@ -103,10 +106,13 @@ def main():
         article(ROOT/'docs/public'/source_name, dist/page_name, source_name, retro)
         page = BeautifulSoup((dist/page_name).read_text(), 'html.parser')
         if page.footer: page.footer.decompose()
-        if page_name in ('fullscreen.html','auto-aim-progress.html'):
+        if page_name in ('fullscreen.html','auto-aim-progress.html','lux-lunae.html'):
             style=page.new_tag('style');style.string='main img{display:block;max-width:100%;height:auto;margin:16px 0}';page.head.append(style)
             for img in page.select('main img'):
                 link=page.new_tag('a',href=img['src']);img.wrap(link)
+        if page_name == 'lux-lunae.html':
+            style=page.new_tag('style');style.string='.lux-small{display:flex;gap:24px;flex-wrap:wrap;align-items:center;padding:20px;background:#4c524f}.lux-small figure{margin:0}.lux-small img{max-width:none}.lux-small figcaption{font-size:12px;color:#fff}.lux-small a{display:block}'
+            page.head.append(style)
         for link in page.select('a[href]'):
             if link['href'].startswith('../evidence/'): link['href']=link['href'][3:]
             if link['href'] in ('../apple-platforms.md','../keyboard-input-policy.md','../current-status.md','../auto-aim-plan-20261026.md','../wireless-device-workflow.md'):
@@ -123,7 +129,12 @@ def main():
     shutil.copytree(ROOT/'docs/public/media/vtol',dist/'media/vtol',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/media/fullscreen',dist/'media/fullscreen',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/media/auto-aim',dist/'media/auto-aim',dirs_exist_ok=True)
+    shutil.copytree(ROOT/'docs/public/media/lux-lunae',dist/'media/lux-lunae',dirs_exist_ok=True)
+    shutil.copyfile(ROOT/'docs/lux-lunae-plan-20261027.md',dist/'lux-lunae-plan-20261027.md')
     (dist/'evidence').mkdir(exist_ok=True)
+    for suffix in ['txt','cpp']:
+        name='lux-lunae-inventory-20261027.'+suffix
+        shutil.copyfile(ROOT/'docs/evidence'/name,dist/'evidence'/name)
     for name in ['apple-platform-performance-20261026.json', 'mac-fullscreen-capture-20261027.json', 'physical-apple-20261027.json', 'wireless-apple-20261027.json', 'vtol-feasibility-20261027.json', 'vtol-art-plan-20261027.json', 'vtol-helicopter-density-20261027.json', 'vtol-implementation-20261027.json', 'vtol-refinement-20261027.json', 'fullscreen-transitions-20261027.json', 'auto-aim-ipad-20261027.json']:
         shutil.copyfile(ROOT/'docs/evidence'/name,dist/'evidence'/name)
     for name in ['game-design.md','document-governance.md','document-map.json','apple-platforms.md','keyboard-input-policy.md','current-status.md','wireless-device-workflow.md']:
