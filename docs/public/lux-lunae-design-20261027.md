@@ -8,7 +8,7 @@ Codex는 F-22·Su-57·MiG-31을 구현하고 아이폰·아이패드에 치트·
 
 [반다이남코 공식 소개](https://www.bandainamcoent.com/news/ace-combat-8-wings-of-theve-game-overview)의 럭스루나에 55부대 이미지를 참조했다. 짙은 회색·올리브색 동체, 가는 금색 선, 꼬리의 방패 문양과 흰색 055를 적용했다. 공식 이미지에서 보이는 MiG-31 도색을 F-22·Su-57에도 옮긴 시안이다.
 
-실제 기체 사진은 형태 참조로, HeavyMach 헬기는 색조·금속 질감 참조로 사용했다. 기체 비례를 줄이거나 다른 날개를 붙이는 재설계는 하지 않는다. 생성된 MiG-31의 여분 꼬리날개와 배경 번짐은 다시 그려 수정했다. 기체에 불꽃은 그리지 않았다. 게임에서는 뒤쪽 엔진 위치에 별도로 붙인다.
+실제 기체 사진은 형태 참조로, HeavyMach 헬기는 색조·금속 질감 참조로 사용했다. 기수·날개·꼬리의 비례와 위치는 실물 형태를 따른다. 생성된 MiG-31의 여분 꼬리날개와 배경 번짐은 다시 그려 수정했다. 기체에 불꽃은 그리지 않았다. 게임에서는 뒤쪽 엔진 위치에 별도로 붙인다.
 
 ## F-22
 
@@ -30,7 +30,7 @@ Codex는 F-22·Su-57·MiG-31을 구현하고 아이폰·아이패드에 치트·
 
 ## 표시 크기 비교
 
-게임 표시 길이는 F-22 112, Su-57 116, MiG-31 120 논리 단위다. 높이는 비례 조절한다. 아래는 웹에서 축소한 그림이며 실제 게임 렌더 결과는 아니다. 두 기기에서 원본 헬기와 함께 그려 크기와 외곽선을 확인했다. 실제 GPU 캡처는 아래에 있다.
+게임 표시 길이는 F-22 112, Su-57 116, MiG-31 120 논리 단위다. 높이는 비례 조절한다. 기존 헬기 사이에 세 기체의 축소 시안을 배치했다.
 
 <div class="lux-small">
 <figure><img src="media/lux-lunae/heli001.png" style="width:99px" alt="원본 Heli001"><figcaption>Heli001 · 원본</figcaption></figure>
@@ -87,7 +87,7 @@ F-22·Su-57은 약0.455초 간격으로3발 발사한다. MiG-31은 약0.455초 
 - [원본 헬기·무기·맵 수치](evidence/lux-lunae-inventory-20261027.txt), [추출 코드](evidence/lux-lunae-inventory-20261027.cpp)
 - [세부 구현 계획](lux-lunae-plan-20261027.md)
 
-[금색 유리 편집 프롬프트](media/lux-lunae/gold-prompt.txt), [최종 PNG 해시](media/lux-lunae/gold-manifest.json), [실행 증거](evidence/lux-lunae-implementation-20261027.json). 위 큰 그림은 제품 PNG이며 아래는 실제 기기 GPU 캡처다.
+[금색 유리 편집 프롬프트](media/lux-lunae/gold-prompt.txt), [최종 PNG 해시](media/lux-lunae/gold-manifest.json), [실행 증거](evidence/lux-lunae-implementation-20261027.json).
 
 ## 실제 기기 화면과 진입 수정
 
@@ -95,7 +95,7 @@ F-22·Su-57은 약0.455초 간격으로3발 발사한다. MiG-31은 약0.455초 
 
 ![아이패드 기존 헬기와 신규3종 크기·금색 유리 비교](media/lux-lunae/ipad-size.png)
 
-위부터 Heli001, Heli006, F-22, Su-57, MiG-31이다. 각 기체의 수평·기울어진 상태를 같은 GPU 화면에 표시했다.
+위부터 Heli001, Heli006, F-22, Su-57, MiG-31이다. 각 기체의 수평 자세와 기울어진 자세를 나란히 놓았다.
 
 ![아이패드 화면 밖 진입 첫 구간](media/lux-lunae/ipad-entry-030.png)
 
@@ -105,4 +105,4 @@ F-22·Su-57은 약0.455초 간격으로3발 발사한다. MiG-31은 약0.455초 
 
 ![아이폰 보스와 증원 전투](media/lux-lunae/iphone-combat.png)
 
-검사는8대 증원과 보스가 함께 있는 조건이다. 갱신·GL 처리시간은420회 표본으로 기록했다. 표시 주기와 대기를 포함한 실제 FPS 측정은 아니며, 수치는 실행 증거에 보존했다. 사격 구간의 게임 저장 호출은0회였다. 장시간 발열·메모리 추적과 추가 적을 포함한 정식 난이도 전체 캠페인 검사는 남아 있다.
+검사는8대 증원과 보스가 함께 있는 조건이다. 갱신·GL 처리시간은420회 표본으로 기록했다. 측정값은 [실행 기록](evidence/lux-lunae-implementation-20261027.json)에 있다. 사격 구간의 게임 저장 호출은0회였다. 장시간 발열·메모리 추적과 추가 적을 포함한 정식 난이도 전체 캠페인 검사는 남아 있다.

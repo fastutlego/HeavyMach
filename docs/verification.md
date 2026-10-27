@@ -54,7 +54,7 @@
 | 데이터 reader | 기존 46개 원작 MAP/MCH의 원시 offset·개수 대조 | 전 파일 경계 준수, 미해석 필드 명시, Assault 데이터 혼입 없음 |
 | 산술·입력 | 원작 경계값과 동작을 함수 단위 비교 | 임계치·부호·clamp·터치 해제·회전 좌표 일치 |
 | 소스 빌드 | iOS simulator ARM64, device ARM64 분리 | 현재 소스에서 빌드 성공; 원작 ARM 해석기로 게임 실행을 대체하지 않음 |
-| 서명·설치 | 서명 검증·실기기 설치·콜드 실행 | 해당 빌드 실행 확인. 시뮬레이터 무서명 성공을 기기 성공으로 세지 않음 |
+| 서명·설치 | 서명 검증·실기기 설치·콜드 실행 | 해당 빌드의 실기기 실행 확인 |
 | 화면 | 타이틀→슬롯→시나리오→미션→HUD 캡처 비교 | 배치·비율·타일·알파·방향·아이콘 확인 |
 | 조작·전투 | 기울기/대체입력·사격유지/해제·부스터·피격·벽/계단·낙사 | 정상 경로, 입력을 떼면 동작 종료, 원작 규칙 유지 |
 | 진행·성장 | 오른쪽 끝·보스 조건, 아이템·새 무기·EXP 축적 | 스테이지 전환과 정상 레벨업·업그레이드 |
@@ -67,7 +67,7 @@
 
 호환 실행본에서 사용자는 다음 미션·낙사 실패·아이템·새 무기·재실행 저장을 확인했다. 레벨업은 미확인이다. 에이전트의 첫 시뮬레이터 Stage1 시도는 HP 소진으로 실패했다. 이 기록은 새 소스 빌드에서 같은 항목을 이미 통과했다는 뜻이 아니다.
 
-전체 메서드 목록, 대표19쌍 분석, 데이터92파일 파싱은 각각 범위가 다르다. 함수 수를 게임 완성도로 환산하지 않는다. 자동 검사 통과 뒤에도 실제 화면·기기 조작·사용자 저장 결과를 별도로 확인한다.
+전체 메서드 목록, 대표19쌍 분석, 데이터92파일 파싱은 각각 범위가 다르다. 자동 검사 통과 뒤에도 실제 화면·기기 조작·사용자 저장 결과를 별도로 확인한다.
 
 초기 사용자 보고에서 호환 실행본의 iPhone Air 좌우 화면 잘림을 확인했다. 후속 소스 앱의 짧은 Air 검사에서는 좌우·하단 HUD 전체를 확인했다. 이후 변경된 빌드는 실기기에 추가 설치하지 않았으므로 최신 전체 화면·회전·터치 좌표 검증은 남아 있다. 사용자가 확인한 기존 적 피격·애니메이션 효과는 호환 실행본의 비교 근거로 구분한다.
 
@@ -94,7 +94,7 @@
 - NEXT STAGE를 눌러 MISSION 1:2와 다른 지형·적을 확인했다.
 - MENU → SAVE & EXIT GAME으로 저장한 뒤 `simctl terminate`/`launch`로 앱 프로세스를 재시작했다. 동일 슬롯에서 Stage02가 선택되며 다시 MISSION 1:2에 진입했다. `build/air-native-save-relaunch.log` 12:42:29 EXP44/level0 보존. 정상 스테이지 시작 시 HP256으로 초기화됨.
 - Air 게임 화면에서 원작 480×320 전체와 HUD가 보였다. 실기기 화면·틸트 검증은 아직 남음.
-- device ARM64 코드 빌드: `xcodebuild -project HeavyMach/iOS/HeavyMachRestored.xcodeproj -scheme HeavyMachRestored -destination 'generic/platform=iOS' -derivedDataPath HeavyMach/DerivedDataDevice CODE_SIGNING_ALLOWED=NO build` 성공. 로그 `build/native-device-unsigned.log`. 서명·실기기 설치 성공으로 세지 않는다.
+- device ARM64 코드 빌드: `xcodebuild -project HeavyMach/iOS/HeavyMachRestored.xcodeproj -scheme HeavyMachRestored -destination 'generic/platform=iOS' -derivedDataPath HeavyMach/DerivedDataDevice CODE_SIGNING_ALLOWED=NO build` 성공. 로그 `build/native-device-unsigned.log`. 이 빌드는 서명 없이 컴파일·링크를 확인했다.
 - 첫 레벨업, 보스, 새 무기 획득 후 재실행, 전체 영상·음향 동등성은 미확인이다. 현재 함수군별 복원 범위는 [source-coverage](source-coverage.md)를 따른다.
 
 위 실행본 기준 CTest 6개(Core/Combat/Visuals/World/GameSession/AmmoSync)가 통과했다. 탄약 pickup 후 cache 동기화 회귀와 원본 고레벨 VFP 변환 경계를 포함한다. 이후 변경 검사는 별도로 기록한다.
@@ -135,7 +135,7 @@ Xcode의 HeavyMachRestored scheme과 실제 PaleMirror/Air 대상에서 Build Su
 
 신뢰 완료 후 일반 복원 앱의 cold launch→기존 두번째슬롯 LV07/부품03·03·03→Scenario→Mission03 Stage01→실제게임을 CUA로 확인했다. 키보드 대체 이동·터치 사격·일시정지·SAVE & EXIT를 실행했다. 좌우와 하단 HUD가 모두 표시됐다. 이후 저장 읽기에서 EXP6654/internal level6/부품grade2·2·2/mission2 stage0/무기12종 유지 확인. `build/air-native-device-relaunch.log`, `build/air-native-save-after-play.json`. 실제 틸트 방향·감도, 장시간 플레이, 홈 아이콘은 이번 검사에 포함하지 않았다.
 
-검증 앱 실기기 서명·설치·실행·패널·EXP299 조건 시작 성공. 버튼으로 경험치를 얻은 결과를 확인하기 전에 기기 잠금으로 중단했다. 실기기 레벨업·외형 변경 통과로 세지 않는다. 로그 `build/air-validation-device-play.log`. 사용자의10분 이내 제한에 따라 실기기 조작을 종료했다.
+검증 앱 실기기 서명·설치·실행·패널·EXP299 조건 시작 성공. 버튼으로 경험치를 얻은 결과를 확인하기 전에 기기 잠금으로 중단했다. 실기기 레벨업·외형 변경 확인은 남았다. 로그 `build/air-validation-device-play.log`. 사용자의10분 이내 제한에 따라 실기기 조작을 종료했다.
 
 시뮬레이터의 추가 성장 검사에서는 body/top/weapon grade5·5·5,EXP299로 시작→실제 EXP1 획득→LV02→DEFENSE 선택/OK→상체 외형 변경·저장을 확인했다. `build/air-validation-ground-relaunch.log`. 전체18개 외형 화면 비교는 미완료다.
 
@@ -183,4 +183,4 @@ Stage01/28/35의 같은 native draw list를 실제 CGL과 CPU+CG에 각각 그�
 
 검사기의 업그레이드 즉시 확인·위치 리셋·session tick 전 닫힘과 화면 밖 결과 버튼 호출을 수정했다. 실제 `HMGameHUD`와 테스트 모델을 비교한 iOS 검사3개가 통과했다. 제품 소스는 변경하지 않았다. 기존 카메라 반영 조건의 대조 실행은 이전 JSON/CSV 값을 모두 재현했다.
 
-최신 카메라·HUD 순서35맵 결과는23클리어(다음맵18·미션메뉴요청5)·12사망, exit1이다. Stage11이 성공으로, Stage06이 실패로 바뀌었다. 최신 실패는Stage06/16/17/21/22/23/24/31/32/33/34/35다. 결과를 서로 합쳐 전체 성공으로 세지 않는다. [조건·실제 HUD 검사·재현 근거](stage-journeys.md)를 따른다. 한tick당draw1회 모델, 직접API입력, 메뉴요청까지의 관측과 연속캠페인 미검증이라는 제한은 남아 있다.
+최신 카메라·HUD 순서35맵 결과는23클리어(다음맵18·미션메뉴요청5)·12사망, exit1이다. Stage11이 성공으로, Stage06이 실패로 바뀌었다. 최신 실패는Stage06/16/17/21/22/23/24/31/32/33/34/35다. [조건·실제 HUD 검사·재현 근거](stage-journeys.md)를 따른다. 한tick당draw1회 모델, 직접API입력, 메뉴요청까지의 관측과 연속캠페인 미검증이라는 제한은 남아 있다.

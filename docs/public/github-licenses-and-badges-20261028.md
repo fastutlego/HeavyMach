@@ -2,17 +2,17 @@
 
 나는 코드와 원작 에셋을 함께 공개해, 다른 사람이 저장소를 받아 직접 빌드하고 플레이할 수 있게 하려 한다. 개발 과정과 수정 기록도 계속 남기고 싶다. 이 복원판으로 돈을 벌 생각은 없다. 원작자와 이해관계자들이 앱스토어 배포를 허락하더라도 무료로 제공할 생각이다.
 
-이 목적에는 **새 코드의 라이선스, 이 복원판에 원작 자원을 포함해 공개하는 허락, 외부 라이브러리의 배포 조건**이 필요하다. 이번 작업에서 새 코드 기여분에 MIT를 적용하고, 원작 자원의 조건은 별도로 기록했다. [코드 적용 범위](../../LICENSE-SCOPE.md), [자원 조건](../../ASSET-LICENSES.md), [외부 고지](../../THIRD_PARTY_NOTICES.md). 누구나 빌드·플레이하게 하는 데 원작 그림을 다른 상품에 재사용할 권리까지 허용할 필요는 없다. 에셋을 제외하고 각자 구하게 하는 방식은 이번 공개 목표에 맞지 않는다.
+이 목적에는 **새 코드의 라이선스, 이 복원판에 원작 자원을 포함해 공개하는 허락, 외부 라이브러리의 배포 조건**이 필요하다. 이번 작업에서 새 코드 기여분에 MIT를 적용하고, 원작 자원의 조건은 별도로 기록했다. [코드 적용 범위](../../LICENSE-SCOPE.md), [자원 조건](../../ASSET-LICENSES.md), [외부 고지](../../THIRD_PARTY_NOTICES.md). 코드와 에셋을 같은 저장소에서 내려받아 빌드하는 구성을 택했다.
 
 버전·OS를 작은 칩 모양으로 표시하는 것은 **배지(badge)**다. 필수는 아니지만 README에서 실행 환경을 빠르게 찾는 데 도움이 된다. HeavyMach에는 제목 아래에 버전·플랫폼·아키텍처·언어를 표시하고, 실제 검사 환경은 본문의 표로 설명하는 안을 제안한다.
 
-Codex가 2026-10-28에 저장소 파일과 GitHub·GNU·Creative Commons·Apple 공식 자료를 대조했다. 아래는 조사 결과와 적용 내역이다. README에 기술 배지4개와 코드 라이선스 배지1개, 최소 OS·실제 검사 환경 표를 추가했다. [GitHub 구성 점검·후속 계획](github-repository-plan-20261028.md).
+Codex가 2026-10-28에 저장소 파일과 GitHub·GNU·Creative Commons·Apple 공식 자료를 대조했다. README에 기술 배지4개와 코드 라이선스 배지1개, 최소 OS·실제 검사 환경 표를 추가했다. [GitHub 구성 점검·후속 계획](github-repository-plan-20261028.md).
 
 ## 현재 저장소에서 확인한 내용
 
 | 항목 | 확인한 상태 | 근거 |
 |---|---|---|
-| 공개 상태·라이선스 | 비공개 저장소. 새 코드용 MIT와 별도 적용 범위를 이번 문서 변경에 추가 | GitHub 저장소 조회, [제작자·자원](../../CREDITS.md) |
+| 공개 상태·라이선스 | 2026-10-28 공개. 새 코드용 MIT와 자원별 이용 조건 기록 | GitHub 저장소 조회, [제작자·자원](../../CREDITS.md) |
 | 원작 자원 | 기존 이미지·WAV·맵·데이터와 앱 아이콘이 Git/LFS에 포함됨 | [빌드 자원 목록](../build-resources.json) |
 | 원작 배포 허락 | 개발자의 변에는 향후 배포를 허락받는 조건이 적혀 있음. 확인한 원고·자료에 허락받았다는 기록은 없음 | [개발자의 변](../RESTORATION.md) |
 | 새 그림 | 메뉴 확장, VTOL, 전투기. 원작·실물·편대 도색을 참조한 제작 기록이 있음 | [VTOL](vtol-art-and-loadout-20261027.md), [전투기](lux-lunae-design-20261027.md) |
@@ -25,7 +25,7 @@ Codex가 2026-10-28에 저장소 파일과 GitHub·GNU·Creative Commons·Apple 
 
 GitHub 공개 저장소는 다른 사람이 내용을 보고 fork할 수 있게 한다. 코드의 수정·재배포를 허용하는 조건은 라이선스가 정한다. GitHub도 라이선스가 없는 저장소와 오픈소스 라이선스를 제공하는 저장소를 구분한다. [GitHub 라이선스 안내](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
 
-원작 자원은 권리자가 허락한 이용 방법과 조건에 따라 쓸 수 있다. 무료 배포라는 이유만으로 이용허락을 대신할 수는 없다. HeavyMach를 그림·음원까지 포함해 공개하려면 해당 자원의 현재 저작재산권자와 공개 범위를 확인해야 한다. 제작자 이름이 알려져 있다는 사실만으로 현재 권리 귀속까지 확정되지는 않는다. [저작권법 제46조](https://law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0046&lsiSeq=283335&urlMode=lsScJoRltInfoR)
+저작권법 제46조는 권리자가 허락한 이용 방법과 조건 안에서 저작물을 이용하도록 정한다. 현재 원작 자원의 권리 귀속과 재배포 허락 여부는 미확인이다. [저작권법 제46조](https://law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0046&lsiSeq=283335&urlMode=lsScJoRltInfoR)
 
 허락 문건에는 다음 범위를 구체적으로 적는 것이 좋다.
 
@@ -36,7 +36,7 @@ GitHub 공개 저장소는 다른 사람이 내용을 보고 fork할 수 있게 
 
 이번에 확보하려는 자원 이용 범위는 GitHub에서 코드와 에셋을 함께 보관·공개하고, 방문자가 clone·fork한 뒤 자신의 기기에서 빌드·플레이하는 것이다. 수정본 공유도 허용하려면 그 범위를 함께 정한다. 앱스토어의 무료 배포는 별도 항목으로 둔다. 원작 에셋의 단독 판매나 다른 게임에서의 재사용까지 허용하는 조건은 목표에 포함하지 않는다.
 
-무료 배포 의향은 개발 목적을 설명한다. 원작 자원을 포함한 공개의 근거는 권리자가 허락한 이용 범위에서 확인한다. 코드용 MIT·BSD 파일이나 무료 배포 문구 자체가 그 허락을 대신하지는 않는다. [저작권법 제46조](https://law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0046&lsiSeq=283335&urlMode=lsScJoRltInfoR)
+새 코드의 MIT 적용 범위와 원작 에셋의 이용 조건은 각각 LICENSE-SCOPE.md와 ASSET-LICENSES.md에 기록했다. [저작권법 제46조](https://law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0046&lsiSeq=283335&urlMode=lsScJoRltInfoR)
 
 새 C++ 구현도 파일별 출처를 확인해야 한다. 독자적으로 작성한 부분과 원작 표현·외부 코드에서 옮긴 부분을 구분한 뒤 적용 라이선스를 정한다. 동작이 같다는 사실이나 소스를 새로 작성했다는 사실 하나만으로 저장소 전체의 권리를 판정할 수는 없다.
 
@@ -74,7 +74,7 @@ Creative Commons는 소프트웨어에는 전용 소프트웨어 라이선스를
 
 배포 버전의 OpenAL 소스·수정분·빌드 설정, 앱 소스 또는 재링크 가능한 오브젝트, 연결에 필요한 자료를 같은 릴리스에서 받을 수 있도록 구성한다. 새 clone에서 라이브러리를 수정해 다시 빌드·링크하는 검사도 필요하다. 라이브러리를 이용한 부분의 수정과 그 디버깅을 위한 역분석을 배포 조건으로 금지하지 않아야 한다. 2026-10-28에 자원 포함 v0.12 압축본으로 라이브러리를 수정해 Simulator·Mac 앱에 다시 링크했고, 앱 코드에서 변경한 표식을 확인했다. [재링크 결과](github-followup-20261028.md).
 
-추가 확인 대상은 `Compatibility/patches`, 외부 구현을 참조한 `HMCompatibilityPixels.hpp`, `.agents/skills`의 복사 원문이다. 예를 들어 touchHLE의 공식 라이선스는 MPL-2.0이므로 실제로 옮긴 코드가 있다면 해당 파일의 고지와 소스 제공 조건을 대조해야 한다. 참조 주석만으로 코드 복제 여부를 단정하지 않는다. [touchHLE 저장소](https://github.com/touchHLE/touchHLE)
+추가 확인 대상은 `Compatibility/patches`, 외부 구현을 참조한 `HMCompatibilityPixels.hpp`, `.agents/skills`의 복사 원문이다. 예를 들어 touchHLE의 공식 라이선스는 MPL-2.0이므로 실제로 옮긴 코드가 있다면 해당 파일의 고지와 소스 제공 조건을 대조해야 한다. [touchHLE 저장소](https://github.com/touchHLE/touchHLE)
 
 ## 원작 자원을 함께 배포하는 방법
 
@@ -84,19 +84,19 @@ Creative Commons는 소프트웨어에는 전용 소프트웨어 라이선스를
 
 Mesabloo의 `hm-defense` README는 어린 시절 즐겼던 게임이 앱스토어에서 사라져 복원을 시작했다고 설명한다. 원작 스튜디오에 알렸으며 문제가 있으면 저장소를 삭제하거나 비우겠다고 적었다. 수익을 받지 않는다는 설명과 코드의 BSD-3-Clause 라이선스도 있다. 공개 `main`의 `core/assets`에는 그림·음원 파일이 포함돼 있다. README에는 스튜디오로부터 자원 공개 허락을 받았다는 내용은 적혀 있지 않다. [README](https://github.com/Mesabloo/hm-defense#additional-notes), [코드 라이선스](https://github.com/Mesabloo/hm-defense/blob/main/LICENSE), [에셋 폴더](https://github.com/Mesabloo/hm-defense/tree/main/core/assets)
 
-나는 문제가 생기면 프로젝트 전체를 없애는 방식으로 끝내고 싶지 않다. 복원판을 무료로 제공하고 개발 기록도 유지하려 한다. 따라서 HeavyMach는 코드·에셋을 함께 공개하는 범위와 조건을 정리한다. Mesabloo의 사례는 복원 동기와 공개 구성의 참고이며, HeavyMach 에셋에 대한 이용허락 근거로 쓰지는 않는다.
+2026-10-28 코드와 에셋을 함께 공개했다. 만일 원작자 혹은 다른 이해관계자가 게시 중단을 요청하면, 난 미련없이 이 레포지토리를 지울 것이다.
 
 필요한 문건은 원작 자원의 대상 경로·버전, GitHub 보관·공개·clone·fork, 개인 빌드·플레이, 수정본 공유 범위, 제작자 표시, 허락 기간·종료 조건을 명시한 이용허락이다. 무료 앱스토어 배포와 소개용 캡처·영상 사용은 각각 포함 여부를 정한다. 이 내용을 `ASSET-LICENSES.md`에 요약하고 허락 근거와 연결한다. 권리 확인 목록에서 각 항목의 답변 여부를 관리한다.
 
-GitHub는 신고가 저장소 일부를 대상으로 하면 수정 기회를 줄 수 있지만, 전체를 대상으로 하면 전체 접근을 비활성화할 수 있다고 설명한다. 그러므로 “문제가 생겨도 저장소는 반드시 유지된다”는 보장을 LICENSE 문구로 만들 수는 없다. 이번 준비는 공개 대상과 허락 범위를 먼저 확인해 게임과 기록을 계속 공개할 근거를 갖추는 데 목적이 있다. [GitHub 처리 절차](https://docs.github.com/en/site-policy/content-removal-policies/dmca-takedown-policy#a-how-does-this-actually-work)
+GitHub는 신고가 저장소 일부를 대상으로 하면 수정 기회를 줄 수 있지만, 전체를 대상으로 하면 전체 접근을 비활성화할 수 있다고 설명한다. [GitHub 처리 절차](https://docs.github.com/en/site-policy/content-removal-policies/dmca-takedown-policy#a-how-does-this-actually-work)
 
-파일을 공개 대상에서 빼야 한다면 현재 폴더만 지워서는 부족하다. 과거 Git 커밋·태그·LFS에도 남는지 검사하고, 기존 비공개 복원 자료를 보존한 상태에서 공개할 범위를 별도로 준비한다. 이번 조사에서는 자원·이력·공개 범위를 변경하지 않았다.
+파일을 공개 대상에서 빼야 한다면 현재 폴더만 지워서는 부족하다. 과거 Git 커밋·태그·LFS에도 남는지 검사하고, 기존 비공개 복원 자료를 보존한 상태에서 공개할 범위를 별도로 준비한다. 최초 조사 후 2026-10-28 저장소를 공개했다.
 
 ## 플랫폼별 앱 배포
 
-소스 이용허락과 기기 설치 방식은 별도로 준비한다. 현재 iPhone·iPad 설치본은 개발 서명 앱이다. 개발 프로파일은 앱 ID·인증서·등록 기기를 포함하므로 그대로 올린 앱이 모든 아이폰에서 설치되는 것은 아니다. 소스 공개 시에는 각자가 Xcode에서 본인 개발 팀으로 빌드하는 방법을 제공하고, 일반 이용자용 앱 배포는 별도의 배포 채널을 정한다. [Apple 개발 프로파일](https://developer.apple.com/help/account/provisioning-profiles/create-a-development-provisioning-profile/)
+소스 이용허락과 기기 설치 방식은 별도로 준비한다. 현재 iPhone·iPad 설치본은 개발 서명 앱이다. 개발 프로파일에는 앱 ID·인증서·등록 기기가 연결된다. 소스 공개 시에는 각자가 Xcode에서 본인 개발 팀으로 빌드하는 방법을 제공하고, 일반 이용자용 앱 배포는 별도의 배포 채널을 정한다. [Apple 개발 프로파일](https://developer.apple.com/help/account/provisioning-profiles/create-a-development-provisioning-profile/)
 
-Mac 다운로드판은 Developer ID 서명·공증과 새 Mac에서의 실행 검사를 준비한다. Apple은 Mac App Store 밖 배포에 이 절차를 제공한다. Android는 아직 APK가 없으므로 현재 다운로드 항목에 넣을 단계가 아니다. [Apple Developer ID 배포](https://developer.apple.com/developer-id/), [현재 구현 범위](implementation-status.md)
+Mac 다운로드판은 Developer ID 서명·공증과 새 Mac에서의 실행 검사를 준비한다. Apple은 Mac App Store 밖 배포에 이 절차를 제공한다. Android APK 제작은 후속 과제다. [Apple Developer ID 배포](https://developer.apple.com/developer-id/), [현재 구현 범위](implementation-status.md)
 
 ## README 배지의 내용과 위치
 
@@ -120,9 +120,9 @@ OS 숫자는 README의 플랫폼 표와 설치 문서에서 나눠 쓴다.
 | Mac | macOS 12.0 | Mac mini M4 Pro, macOS 27.0.1 | 12.0 실기기·Intel 검사 없음 |
 | Android | 개발 계획 | C++ 코어 NDK 컴파일 | 앱·APK·실기기 플레이 미구현 |
 
-최소 설정을 “검증 완료 OS” 배지로 쓰지 않는다. iPhone·iPad의 일부 표시시간 실패는 검증 문서에 유지하고, 전체 통과를 뜻하는 초록색 Tests passing 배지는 붙이지 않는다. 현재 Actions의 Branch flow는 빌드 검사가 아니므로 Build passing으로 이름을 바꾸지 않는다.
+README에는 버전·플랫폼·아키텍처·언어·라이선스 배지5개가 있다. 최소 OS와 검사한 OS는 환경 표에 각각 적었다. iPhone·iPad의 표시시간 기준 실패는 검증 문서에 기록했다. Actions의 Branch flow는 병합 경로를 검사한다.
 
-GitHub의 workflow 배지는 실제 작업 결과를 표시하며 `branch`로 기준 브랜치를 지정할 수 있다. 비공개 저장소의 배지는 외부 사이트에서 접근되지 않는다. 현재 검수 사이트에는 비공개 API 토큰 없이 표시할 수 있는 정적 배지가 적합하다. [GitHub 상태 배지](https://docs.github.com/en/actions/how-tos/monitor-workflows/add-a-status-badge)
+GitHub의 workflow 배지는 실제 작업 결과를 표시하며 `branch`로 기준 브랜치를 지정할 수 있다. 현재 README와 보고 사이트는 저장소에 포함된 정적 SVG 배지를 사용한다. [GitHub 상태 배지](https://docs.github.com/en/actions/how-tos/monitor-workflows/add-a-status-badge)
 
 ### 적용할 Markdown 예시
 
@@ -145,4 +145,4 @@ Shields의 정적 배지는 문구와 색을 URL에 넣는다. 현재는 같은 
 4. 공개할 Git 이력·LFS·문서·미디어 범위를 확인하고, 소스 공개와 플랫폼별 앱 배포를 각각 준비한다.
 5. README에 추가한 배지5개와 환경 표를 버전 변경 때 갱신한다. 실제 빌드 CI·다운로드가 준비되면 해당 배지를 추가한다.
 
-새 코드 기여분의 MIT, 적용 범위·자원·외부 고지 문건과 README 배지를 추가했다. 저장소 공개 전환과 앱의 외부 배포는 아직 실행하지 않았다. [투두](../usability-todo.md)
+새 코드 기여분의 MIT, 적용 범위·자원·외부 고지 문건과 README 배지를 추가했다. 저장소는2026-10-28 공개했다. 앱 설치 파일 배포는 후속 과제다. [투두](../usability-todo.md)

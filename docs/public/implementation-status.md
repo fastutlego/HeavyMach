@@ -1,6 +1,6 @@
 # HeavyMach 구현 상태
 
-2026-10-27, 게임 버전 **v0.12** 기준이다. main은 `eedf245f`, 제품 구현은 `45befedc`다. 일반·치트 앱은 iPhone·iPad에 설치했고 Mac 앱도 빌드·실행했다. 이후 `docs/github-publication`에서 GitHub 문서와 플레이 미디어를 정리했다.
+2026-10-27, 게임 버전 **v0.12** 기준이다. v0.12 태그는 `eedf245f`, 제품 구현은 `45befedc`다. 일반·치트 앱은 iPhone·iPad에 설치했고 Mac 앱도 빌드·실행했다. 이후 `docs/github-publication`에서 GitHub 문서와 플레이 미디어를 정리했다.
 
 ## 구현된 기능
 
@@ -25,7 +25,7 @@
 
 README, 기능·조작·설치·구조·트러블슈팅·개발 과정·검증·상태표, 변경 이력과 제작자 안내를 작성했다. 실제 플레이 이미지 8장·GIF 2개·MP4 3개를 연결했다. SaaS 담당 세션이 Apps·Mags를 작성할 수 있게 [집필 자료](publication-inventory.md)를 정리했다.
 
-문서 작업 브랜치는 `docs/github-publication`이다. 게임 릴리스 태그는 v0.12를 유지한다.
+GitHub 문서와 플레이 미디어는 main에 반영했다. 게임 릴리스 태그는 v0.12다.
 
 ## 남은 기능과 연구
 
@@ -44,4 +44,4 @@ README, 기능·조작·설치·구조·트러블슈팅·개발 과정·검증·
 
 ## 배포와 버전
 
-저장소와 보고 사이트는 비공개다. Git 태그 v0.9~v0.12가 있고 GitHub Releases의 설치 파일·App Store 배포는 없다. 새 clone은 Git/LFS 자원으로 빌드한다. v0.9는 자원 등록 이전 태그이므로 당시 코드를 빌드할 때 자원 준비가 추가로 필요하다. [설치](build-and-install.md) · [버전 복원](../repository-management.md)
+저장소는2026-10-28 공개했다. 통합 보고 사이트는 소유자 로그인으로 열람한다. Git 태그는 v0.9~v0.12이며, v0.12 Releases에서 소스·자원 압축본을 받을 수 있다. iPhone·iPad·Mac 앱은 Xcode에서 빌드해 설치한다. 새 clone은 Git/LFS 자원으로 빌드한다. v0.9는 자원 등록 이전 태그이므로 당시 코드를 빌드할 때 자원 준비가 추가로 필요하다. [설치](build-and-install.md) · [버전 복원](../repository-management.md)

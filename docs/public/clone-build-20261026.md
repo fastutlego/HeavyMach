@@ -36,7 +36,7 @@ Codex가 앱 빌드에 필요한 자원을 Git에서 제외한 저장소 구성�
 
 ## 재현 방법과 버전
 
-[빌드와 설치](build-and-install.md)의 clone·LFS·자원 검사·빌드 순서를 따른다. 저장소 접근 권한, Apple Silicon Mac, Xcode, CMake, Python, Git LFS가 필요하다. 아이폰에 설치하려면 본인의 개발 서명을 설정한다.
+[빌드와 설치](build-and-install.md)의 clone·LFS·자원 검사·빌드 순서를 따른다. Apple Silicon Mac, Xcode, CMake, Python, Git LFS가 필요하다. 아이폰에 설치하려면 본인의 개발 서명을 설정한다.
 
 `v0.9`는 자원을 Git에 넣기 전의 태그다. 태그를 이동하지 않았다. 현재 main으로 새 빌드를 준비하며, v0.9 소스 복원 시 자원 준비는 [저장소 관리](https://github.com/gelb2/HeavyMach/blob/main/docs/repository-management.md)를 따른다.
 

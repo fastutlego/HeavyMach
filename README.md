@@ -86,7 +86,7 @@ Yak-141·Harrier GR3·F-35B는 기존 적 배치 사이에 추가했다. F-22·S
 | iPhone·iPad | iOS/iPadOS 15.0 | iPhone Air·iPad Air 13형 M2, OS 27.0.1 |
 | Mac | macOS 12.0 | Mac mini M4 Pro, macOS 27.0.1 |
 
-현재 빌드는 Apple Silicon·arm64 대상이다. 최소 OS 설정과 같은 버전의 실기기를 모두 검사한 것은 아니다. 빌드 도구 버전은 [설치 문서](docs/public/build-and-install.md)에 있다.
+현재 빌드는 Apple Silicon·arm64 대상이다. 기기별 검사 환경은 [검증 기록](docs/public/validation.md)에 있다. 빌드 도구 버전은 [설치 문서](docs/public/build-and-install.md)에 있다.
 
 ## 빌드하기
 
@@ -101,7 +101,7 @@ python3 tools/verify_build_resources.py
 open HeavyMach.xcworkspace
 ```
 
-Xcode에서 본인의 개발 팀을 지정하고 실행 대상을 선택한다. iPhone·iPad 일반 앱은 `HeavyMachRestored`, 치트 앱은 `HeavyMachValidation`이다. Mac은 `HeavyMachMac`, `HeavyMachMacValidation`이다. 현재 저장소 접근에는 GitHub 권한이 필요하다. [v0.12 Releases](https://github.com/gelb2/HeavyMach/releases/tag/v0.12)에서 소스·자원 압축본과 고지를 받을 수 있다. 설치용 서명 앱은 포함하지 않았다.
+Xcode에서 본인의 개발 팀을 지정하고 실행 대상을 선택한다. iPhone·iPad 일반 앱은 `HeavyMachRestored`, 치트 앱은 `HeavyMachValidation`이다. Mac은 `HeavyMachMac`, `HeavyMachMacValidation`이다. 저장소를 clone하거나 [v0.12 Releases](https://github.com/gelb2/HeavyMach/releases/tag/v0.12)에서 소스·자원 압축본을 내려받은 뒤, Xcode에서 빌드해 설치한다.
 
 [시뮬레이터 명령·기기 설치·서명·오류 해결](docs/public/build-and-install.md)
 
@@ -128,4 +128,4 @@ Codex는 파일 쓰기를 저장 시점에만 실행하도록 분리했다. 게�
 
 이 프로젝트에서 새로 작성한 코드에는 [MIT](LICENSE)를 적용한다. [적용 범위](LICENSE-SCOPE.md)에 원작 유래 자료·외부 코드·문서를 구분했다. 원작 그림·음원·게임 데이터와 추가 그림은 [자원 이용 조건](ASSET-LICENSES.md), OpenAL Soft·stb 등은 [외부 라이브러리 고지](THIRD_PARTY_NOTICES.md)를 따른다.
 
-코드와 에셋을 함께 공개해 누구나 빌드하고 플레이할 수 있도록 준비하고 있다. 원작 에셋의 공개 이용허락은 아직 확인 중이다. 나는 이 복원판으로 돈을 벌 생각이 없으며, 향후 허락받은 앱스토어 배포도 무료로 제공할 생각이다.
+나는 이 복원판으로 돈을 벌 생각이 없으며, 향후 허락받은 앱스토어 배포도 무료로 제공할 생각이다.

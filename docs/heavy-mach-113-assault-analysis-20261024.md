@@ -59,7 +59,7 @@ Objective-C 메서드 이름을 맞췄을 때 511개 이름이 대응한다. 원
 | 터치 | Assault는 TapID 인수를 받아 사격 터치를 `_shootTapID`로 구분하고 해제 시 초기화한다. 원작은 인수가 두 개다. | original/assault-function-19.json |
 | 스테이지 전환·점수 | Assault의 setNextStage에 reportScore 호출이 있다. GameCenterManager의 점수 보고는 GKScore와 완료 콜백을 사용한다. | assault-function-13.json, -21.json, -22.json |
 | 광고·다른 게임 | 배너의 로드·표시 검사와 프레임 애니메이션, 다른 게임 버튼·타일 생성 코드가 있다. 서비스 동작은 미확인이다. | assault-function-23.json, -24.json |
-| 경험치 | 의사 코드의 차이를 어셈블리로 재확인했다. 양쪽에서 초기 배수 1.5, 1.25와의 비교, 조건부 0.01 감소와 300×pow 항을 확인했다. 이 항목을 난이도 변경으로 판정하지 않았다. | original/assault-level-assembly.json |
+| 경험치 | 의사 코드의 차이를 어셈블리로 재확인했다. 양쪽에서 초기 배수 1.5, 1.25와의 비교, 조건부 0.01 감소와 300×pow 항을 확인했다. 두 판본의 해당 연산은 같았다. | original/assault-level-assembly.json |
 
 원작 발사 Evidence: `ev_47881b28d7c619f4223326f2606d3a9cdb6b2a0be8a24cf35a448d1318744730`. Assault 발사 Evidence: `ev_c7257682edb1c65523ca98cd76121248ea679c977c2d15a79002df1a6c402485`.
 
