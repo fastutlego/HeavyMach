@@ -35,6 +35,7 @@ def article(source,dest,download,template):
     # README sections keep their existing URLs when gameplay sections move.
     readme_ids = {
         'HeavyMach를 다시 만든 이유': 'restoration-motive',
+        '간단한 설명과 설치': 'introduction-and-installation',
         '원작의 전투와 조작': 'section-0', '원작의 무기와 성장': 'section-1',
         '내가 추가한 항공기': 'section-2', '내가 추가한 자동조준': 'auto-aim',
         '플랫폼과 개발 상태': 'section-3', '빌드하기': 'section-4',
