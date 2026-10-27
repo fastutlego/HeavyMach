@@ -3,7 +3,7 @@
     1280,
     640
   ],
-  "method": "SVG layout rendered with CairoSVG; embedded original assets preserve aspect ratio and full image bounds",
+  "method": "Original title illustration fills 1280x640 with proportional centered cropping; original logo only. No added panel or platform labels.",
   "files": [
     {
       "path": "Resources/Images/Main_BG.png",
@@ -17,13 +17,13 @@
     },
     {
       "path": "docs/public/media/github-social-preview.svg",
-      "bytes": 585747,
-      "sha256": "c75f9e5110be7365a0e84eb13210deb79ffbe2896c20c2b3cf8ae483ed17f85c"
+      "bytes": 585376,
+      "sha256": "09541574c4b1b982cb3430c3a8108962289d724019ff7110d580ded4c6b5b767"
     },
     {
       "path": "docs/public/media/github-social-preview.png",
-      "bytes": 672150,
-      "sha256": "2b43f16cd8b95a1f60cfc9c2e6a333d3d6f390c2cf950aad2fbea21ee4d51a0b"
+      "bytes": 914281,
+      "sha256": "465c605835e4d1907cb07ee95a61f2a474665274e1da6c798c58b8f5a717d7d3"
     }
   ],
   "original_assets_modified": false
