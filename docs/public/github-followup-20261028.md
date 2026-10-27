@@ -12,7 +12,7 @@ About를 현재 iPhone·iPad·Mac 앱과 공용 C++ 코어·입력·자동조준
 
 [PNG 원본](media/github-social-preview.png) · [SVG 배치 파일](media/github-social-preview.svg) · [이전 플레이 캡처 카드](media/github-social-preview-gameplay.png)
 
-GitHub는 이미지를 등록한 적 없는 비공개 저장소에 최초 업로드를 제공하지 않는다. 설정 화면에서도 Social preview 항목이 없었다. 저장소를 공개할 때 이 파일을 등록한다. [GitHub 공식 안내](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/customizing-your-repositorys-social-media-preview)
+2026-10-28 저장소를 공개하고 이 카드를 GitHub Social preview에 등록했다. 로그인 없는 저장소 페이지의 OG 이미지가 등록한 PNG와 일치한다. [공개 저장소](https://github.com/gelb2/HeavyMach) · [확인 기록](../evidence/public-repository-20261028.json)
 
 ### Xcode 파일 제외 점검
 
@@ -77,8 +77,8 @@ OpenAL 소스는 압축본의 `vendor/openal-soft`에 있고, 빌드 설정은 `
 
 전체 브랜치·태그의 145개 커밋과 연결된 파일 내용 3,054개, 현재 추적 파일 2,439개, LFS 실파일 1,524개, v0.12 릴리스 첨부 파일 3개를 검사했다. Gitleaks 8.30.1에서 탐지한 비밀값은 0건이다. 개인 키·프로비저닝·환경변수 파일명도 Git 이력에서 발견되지 않았다. 검사 오류와 LFS 누락은 없었다. [전면 검사 기록](../evidence/secret-audit-20261028.json)
 
-Git 차이 검사는 병합 등을 제외한 99개 커밋을 처리했다. 누락 여부를 확인하려고 전체 참조에 연결된 파일 내용도 따로 꺼내 검사했다. 저장소의 공개 범위는 비공개다. 로컬 경로·개발 팀 ID가 있는 기존 문서·설정 49개는 [기존 목록](../evidence/publication-source-audit-20261028.json)에 남아 있다.
+Git 차이 검사는 병합 등을 제외한 99개 커밋을 처리했다. 누락 여부를 확인하려고 전체 참조에 연결된 파일 내용도 따로 꺼내 검사했다. 2026-10-28 저장소를 공개로 전환했다. 로컬 경로·개발 팀 ID가 있는 기존 문서·설정 49개는 [기존 목록](../evidence/publication-source-audit-20261028.json)에 남아 있다.
 
-남은 일은 GitHub Actions 계정 제한 해소 후 실행, 공유 이미지 등록, 원작·참조 그림의 공개 범위 확정이다. 앱 설치 파일의 일반 배포에는 플랫폼별 서명·설치 검사가 추가로 필요하다.
+공유 이미지 등록은 완료했다. GitHub Actions의 기존 실행 제한과 원작·참조 그림의 이용 조건 확인 기록은 남아 있다. 앱 설치 파일의 일반 배포에는 플랫폼별 서명·설치 검사가 추가로 필요하다.
 
 [전체 문서](../README.md) · [GitHub 구성 계획](github-repository-plan-20261028.md) · [빌드·설치](build-and-install.md)
