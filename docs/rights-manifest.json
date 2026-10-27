@@ -1,0 +1,66 @@
+{
+  "updated_at": "2026-10-28",
+  "asset_hash_manifest": "docs/build-resources.json",
+  "asset_count": 1482,
+  "groups": [
+    {
+      "paths": [
+        "Resources/OriginalImages/**",
+        "Resources/Images/**",
+        "Resources/Audio/**",
+        "Resources/RawData/**",
+        "Resources/Data/**",
+        "Resources/Assets.xcassets/**"
+      ],
+      "origin": "HeavyMach original game and derived data",
+      "credited_creators": [
+        "변해준",
+        "박재철"
+      ],
+      "current_rightsholder": "not confirmed",
+      "permission_evidence": null,
+      "requested_scope": [
+        "GitHub history and LFS publication",
+        "clone/fork/download",
+        "local build and play",
+        "screenshots and video publication",
+        "modified source and app redistribution"
+      ],
+      "status": "permission document not received"
+    },
+    {
+      "paths": [
+        "Art/Extensions/**",
+        "Art/VTOL/**",
+        "Art/LuxLunae/**",
+        "Art/AutoAim/**",
+        "Art/Candidates/**"
+      ],
+      "origin": "generated/edited art; source prompts and references retained",
+      "permission_evidence": null,
+      "status": "review original-game extensions and referenced livery/marks",
+      "source_records": [
+        "docs/lux-lunae-plan-20261027.md"
+      ]
+    },
+    {
+      "paths": [
+        "docs/public/media/gameplay-20261027/**",
+        "docs/public/media/github-social-preview.*"
+      ],
+      "origin": "developer gameplay recording; includes game art",
+      "permission_evidence": null,
+      "status": "include in original-game publication request"
+    },
+    {
+      "paths": [
+        "docs/public/media/badges/*.svg"
+      ],
+      "origin": "new vector code",
+      "license": "MIT",
+      "evidence": "LICENSE-SCOPE.md"
+    }
+  ],
+  "separate_app_store_distribution": "requires its own agreed scope",
+  "approval_messages_sent": false
+}

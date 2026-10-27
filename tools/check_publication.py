@@ -14,7 +14,7 @@ FILES = ['README.md', 'CONTRIBUTING.md', 'LICENSE-SCOPE.md', 'ASSET-LICENSES.md'
          'docs/public/build-and-install.md', 'docs/public/architecture.md',
          'docs/public/troubleshooting.md', 'docs/public/development-history.md',
          'docs/public/validation.md', 'docs/public/implementation-status.md',
-         'docs/public/github-repository-plan-20261028.md']
+         'docs/public/github-repository-plan-20261028.md', 'docs/public/github-followup-20261028.md']
 
 
 def check(root):

@@ -6,6 +6,8 @@ Codex가 일반 앱과 치트 앱을 아이폰·아이패드에 설치했다. �
 
 ## 전체 보고서 {#reports}
 
+- [GitHub 구성과 v0.12 소스 릴리스](github-followup.html): 도입문·기여 안내·자동 검사·자원 포함 소스 빌드.
+
 ### GitHub 원고
 
 - [README와 플레이 화면](github.html) — 소개·기능·설치·상태와 이미지8장·GIF2개.
