@@ -14,6 +14,7 @@
 | [트러블슈팅](public/troubleshooting.md) | 17개 문제의 증상·내 지적·원인·수정·결과 |
 | [개발 과정](public/development-history.md) | 분석·구현·비교·검증 순서와 도구·스킬 |
 | [검증](public/validation.md) | 기기·조건·빌드별 결과와 남은 검사 |
+| [지상 유닛 추가 연구](public/ground-units-research-20261028.md) | 쉴카·퉁구스카, 원작 파츠·무기·움직임 재사용과 남은 TODO |
 | [구현 상태](public/implementation-status.md) | 구현·문서 작업·후속 과제 |
 | [변경 이력](../CHANGELOG.md) | v0.9~v0.12와 미출시 문서 변경 |
 | [제작자·자원](../CREDITS.md) | 원작, 기획·구현 역할, 그림·라이브러리 |
