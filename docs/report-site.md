@@ -487,3 +487,14 @@ C 보정 삭제와 원래 탄속·분산 유지, 자동조준 추가 전 코드�
 - Version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_1fdb12683a688191bd10cf7052bb61b5`
 - Deployment: `appgdep_6adfe139d06081918b60398bdbb5dcb8`, `succeeded`
 - URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/auto-aim-progress.html
+
+## GitHub 원고·플레이 자료 게시 — 2026-10-27
+
+- GitHub: `docs/github-publication`, 본문 커밋 `a1e41320` 푸시. README·상세 원고13개를 원격 바이트와 대조했다. GitHub 서버 렌더에서 이미지8장·GIF2개·MP4 링크3개를 확인했다.
+- 기존 Site의 `github.html`, `docs-index.html`, `features.html`, `gameplay-guide.html`, `architecture.html`, `troubleshooting.html`, `development-history.html`, `validation.html`, `changelog.html`, `credits.html`과 기존 설치·상태·집필 자료를 갱신했다.
+- 전체 목차33개 보고서, 내부 링크765개, 원고 다운로드13개 일치를 확인했다. 원래 루트의 이미지13개와 기존 앵커를 보존했다.
+- source: `fed35b8a4902d4aa02e525b5983a26d55dd091eb`.
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_a008bdaab0b48191890d2d43c80d308d`.
+- deployment: `appgdep_6ae0b4ce2d38819184fec216f4e70eb9`, `succeeded`, 2026-10-27T14:28:02.874465+00:00.
+- [게시 원고](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/github.html). 기존 소유자 비공개 범위 유지.
+- 이번 직접 브라우저 검사는 Chrome `cgWindowNotFound`와 빈 브라우저 목록으로 실행하지 못했다. GitHub 서버 HTML·문서·링크 검사는 통과했다. [결과](evidence/github-manuscripts-20261027.json).

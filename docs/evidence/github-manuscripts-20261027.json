@@ -71,11 +71,37 @@
     "mac_install_command": "unsigned HeavyMachMac build passed; build/documentation-check/mac-build.log",
     "gif_decode": "both passed, 5s and 6s at original speed",
     "gif_visual": "contact sheets checked for aim, projectiles, jump and landing",
-    "browser": "CUA Chrome returned cgWindowNotFound; browser inventory empty; layout validation pending",
-    "editorial": "read reader manuscripts against current code, dated evidence, user scope; removed editorial disclaimers and IPA topic"
+    "browser": "CUA Chrome returned cgWindowNotFound and browser inventory was empty. Direct browser layout check not completed; GitHub-rendered HTML and local site structure verified.",
+    "editorial": "read reader manuscripts against current code, dated evidence, user scope; removed editorial disclaimers and IPA topic",
+    "github_remote_manuscripts": "13 files matched local bytes via GitHub Contents API",
+    "github_server_render": {
+      "readme_images": 10,
+      "png": 8,
+      "gif": 2,
+      "mp4_links": 3
+    },
+    "site_links": {
+      "checked": 765,
+      "broken": 0,
+      "catalog_reports": 33,
+      "identical_downloads": 13
+    }
   },
   "publication": {
-    "github": "pending push",
-    "site": "pending publish"
+    "github": {
+      "branch": "docs/github-publication",
+      "content_commit": "a1e41320430b5d5a123b77b8c98947c44ac2620e",
+      "url": "https://github.com/gelb2/HeavyMach/tree/docs/github-publication",
+      "lfs": "2 GIF objects, 6.5MB uploaded"
+    },
+    "site": {
+      "source_commit": "fed35b8a4902d4aa02e525b5983a26d55dd091eb",
+      "version_id": "appgprj_6addbf55aea081918d3d182d7e496e88~appgver_a008bdaab0b48191890d2d43c80d308d",
+      "deployment_id": "appgdep_6ae0b4ce2d38819184fec216f4e70eb9",
+      "status": "succeeded",
+      "url": "https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/github.html",
+      "updated_at": "2026-10-27T14:28:02.874465+00:00",
+      "audience": "existing owner-private"
+    }
   }
 }
