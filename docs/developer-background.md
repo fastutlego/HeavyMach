@@ -14,6 +14,8 @@
 
 6. [복원 시작과 꿈에 관한 글감·정정](references/developer-background/user-project-origin-20261028.md). 복원 시작에 관한 세 문단은 README와 개발자의 변에 같은 문장으로 싣는다. 2026-10-28 추가 지시에 따라 README의 제목·기술 배지 다음 첫 본문에는 개발자의 변의 “요즘 나는 내게 남은 시간이”로 시작하는 문단을 그대로 싣는다.
 
+7. [위메이드 인수 인지 시점 정정](references/developer-background/user-wemade-discovery-20261028.md). Mesabloo의 복원 작업은 알고 있었지만, 위메이드 인수 사실은 2026-10-28 크레딧 조사에서 처음 알았다고 밝혔다. 두 제작자의 이름을 먼저 기록한 경위도 개발자의 변에 반영했다.
+
 ## 경위
 
 | 시점 | 기록된 내용 | 근거 |

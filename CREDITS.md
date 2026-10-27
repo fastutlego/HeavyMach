@@ -4,6 +4,11 @@
 
 - 게임 개발: **변해준**
 - 일러스트: **박재철**
+- 2009년 출시 표기: **IndieAn**
+- 2011년 IP 인수: **위메이드 크리에이티브** — 당시 위메이드 엔터테인먼트 자회사
+- 2011년 시리즈 리뉴얼 발표: **위메이드 엔터테인먼트**
+
+[2009년 제작자 인터뷰](https://www.koreajoongangdaily.com/lifestyle/korean-game-developers-shoot-for-success/10531072)와 [출시 기사](https://toucharcade.com/2009/02/10/first-look-at-heavy-mach-side-scrolling-tank-shooter/)에 제작자와 출시 주체가 기록돼 있다. 2011년에는 위메이드 크리에이티브가 HeavyMach·HeavyMach 2의 IP를 포함한 인디앱스 자산을 인수했다. [인수 보도](https://zdnet.co.kr/view/?no=20110512162801). 같은 해 위메이드 엔터테인먼트는 Assault·Battle·Defense 리뉴얼을 발표했다. [당시 보도자료](https://www.newswire.co.kr/newsRead.php?no=575013)
 
 이 프로젝트는 HeavyMach의 전투·성장·미션과 그림을 현재 Apple 기기에서 실행하도록 재구현했다. 개발을 시작한 개인적인 이유와 원작자에게 전하고 싶은 이야기는 [개발자의 변](docs/RESTORATION.md)에 있다.
 
