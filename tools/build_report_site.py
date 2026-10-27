@@ -45,6 +45,7 @@ def article(source,dest,download,template):
     if source == ROOT/'docs/public/ground-aa-art-20261028.md':
         readme_ids.update({name:f'section-{i}' for i,name in enumerate(['쉴카','퉁구스카','확인한 원작 조립 구조','덜컹거림과 파츠 조립','제작 자료','초기 게임 화면과 무장','미션별 수량','구현 검사 결과','초기 실기기 검사'])})
         readme_ids['크기·연결부·레이더·포신 수정']='refinement'
+        readme_ids['포신 단축·접합부 재수정과 외형 개선 계획']='barrels-and-art-plan'
     if source == ROOT/'docs/ground-aa-expansion.md':
         readme_ids.update({name:f'section-{i}' for i,name in enumerate(['요구와 무장','파츠와 움직임','체력과 배치','검사'])})
         readme_ids['크기와 연결부 수정 · 2026-10-28']='refinement'

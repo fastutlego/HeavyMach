@@ -27,10 +27,12 @@ int main(){auto root=std::filesystem::path(__FILE__).parent_path().parent_path()
   std::string id=unit;PartsState body,top;body.info=&data.parts.at(id+"_Body");top.info=&data.parts.at(id+"_Turret");
   attachParts(top,&body,1);body.offset=partsSocketPosition(body,0);
   auto b=*groundAAPartSize(id+"_Body"),t=*groundAAPartSize(id+"_Turret");assert(b.x<=85);
+  PartsState radar;radar.info=&data.parts.at(id+"_Radar");attachParts(radar,&top,2);
   for(float angle:{-.4f,0.f,.4f})for(float bounce:{-1.f,0.f,1.f}){
    auto bd=drawParts(body,{100,50},angle,bounce,1,1,1),td=drawParts(top,{100,50},angle,bounce,1,1,1);
    float dx=td.position.x-bd.position.x,dy=td.position.y-bd.position.y;Vector2 relative{dx*std::cos(angle)+dy*std::sin(angle),-dx*std::sin(angle)+dy*std::cos(angle)};
-   assert(std::abs(relative.x)<.001f);assert(relative.y-t.y/2<=b.y/2-1.9f);
+   for(int frame=0;frame<8;++frame){auto rd=drawParts(radar,{100,50},angle,bounce,1,1,frame*.25);configureGroundAADraw(rd,radar,frame*.25);const auto* art=groundAAImage(rd.tile);float rx=rd.position.x-td.position.x,ry=rd.position.y-td.position.y;float baseY=-rx*std::sin(angle)+ry*std::cos(angle)-art->size.y/2;assert(baseY<=2.1f);}
+   assert(std::abs(relative.x)<.001f);assert(relative.y-t.y/2<=b.y/2-(id.find("Shilka")!=std::string::npos?3.9f:1.9f));
   }
  }
  for(const auto& art:groundAAImages())assert(std::filesystem::exists(root/"Art"/art.source));

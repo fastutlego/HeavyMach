@@ -546,5 +546,91 @@
       }
     ],
     "cheat_apps": "Updated and launched by test-without-building on both physical devices; two tests each passed."
+  },
+  "barrel_and_join_followup_20261028": {
+    "gun_widths": {
+      "Shilka": [
+        38,
+        32
+      ],
+      "Tunguska": [
+        40,
+        37
+      ]
+    },
+    "turret_overlap": {
+      "Shilka": 4,
+      "Tunguska": 2
+    },
+    "radar_socket_y": 2,
+    "radar_surface_y": {
+      "Shilka": 3.46,
+      "Tunguska": 3.74
+    },
+    "length_reference": {
+      "Shilka": {
+        "hull_mm": 6495,
+        "barrel_catalog_max_mm": 1900,
+        "art_tube_estimate_px_before": 27.4,
+        "art_tube_estimate_px_after": 23.1,
+        "catalog": "https://docs.tuyap.online/FDOCS/90009.pdf#page=21"
+      },
+      "Tunguska": {
+        "hull_mm": 7880,
+        "whole_2A38_mm": 3434,
+        "scaled_whole_gun_px": 37.04,
+        "source": "1991 Soviet Ministry of Defense textbook, printed pages 11 and 160"
+      }
+    },
+    "motion_comparison": {
+      "fixture": "flat, fixed velocity +/-0.6, 120 ticks per direction; direct GobHvMach base tick",
+      "distance_per_direction": 72.0117,
+      "originals": [
+        "Tank001",
+        "Tank030",
+        "E0505"
+      ],
+      "original_additional_body_y_range": [
+        0,
+        0
+      ],
+      "new_additional_body_y_range": [
+        0,
+        1.35
+      ],
+      "body_frames_each": 2,
+      "conclusion": "Whole vehicle bounce exists; new art poses and shared turret/body displacement weaken relative rattling."
+    },
+    "tests": {
+      "core_ground_aa": {
+        "passed": 2,
+        "log": "build/barrel-audit/core-tests.log"
+      },
+      "ipad_simulator": {
+        "passed": 2,
+        "xcresult": "build/barrel-audit/ipad-sim.xcresult"
+      },
+      "iphone_device": {
+        "passed": 2,
+        "xcresult": "build/barrel-audit/iphone-device.xcresult"
+      },
+      "ipad_device": {
+        "passed": 2,
+        "xcresult": "build/barrel-audit/ipad-device.xcresult"
+      }
+    },
+    "pending": [
+      "24 consistent radar views and fixed base",
+      "original palette and shading",
+      "common body-frame canvas and compressed/rebound poses"
+    ],
+    "iphone_normal": {
+      "install": "success",
+      "launch": "success"
+    },
+    "ipad_normal": {
+      "install": "success",
+      "launch": "success"
+    }
   }
 }

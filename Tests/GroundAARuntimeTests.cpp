@@ -13,6 +13,7 @@
 #include <cassert>
 #include <fstream>
 #include <iostream>
+#include <set>
 using namespace heavymach;
 struct TerrainHost:WorldHost {Vector2 tileSize(std::string_view)override{return {480,320};}void spawnMapObject(const MapObjectDefinition&,int)override{}void spawnEnemy(const EnemyDefinition&)override{}void spawnPlayer(Vector2)override{}void event(const WorldEvent&)override{}};
 int main(){const auto root=std::filesystem::path(__FILE__).parent_path().parent_path();auto data=GameData::loadDirectory(root/"Resources/RawData");addVTOLExpansion(data);addFighterExpansion(data);addGroundAAExpansion(data);int landed=0;
@@ -29,6 +30,17 @@ int main(){const auto root=std::filesystem::path(__FILE__).parent_path().parent_
  // Actual session collision/damage path, all twenty player weapons, both units.
  // Flat fixture isolates hit registration from terrain interception and aiming.
  auto& map=data.maps.at("Stage01");map.enemies.clear();map.objects.clear();map.left=0;map.right=3000;map.bottom=-200;map.collisionPaths={{{0,0},{3000,0}}};
+ // Compare actual movement/draw offsets with original ground enemies.
+ for(const char* unit:{"Tank001","Tank030","E0505","GAA_Shilka_M1","GAA_Tunguska_M1"})for(float speed:{-.6f,.6f}){
+  SaveSlot save;GlobalInfo(save).selectSlot(0);GameSession game(data,save,dims,[]{return 1;});game.setCanvasWidth(900);game.start(0,0,0);auto& i=*game.impl_;i.enemies.clear();i.spawnEnemy({unit,{400,4},false});auto& m=i.enemies.back();
+  for(int n=0;n<60;++n){i.world.gameTime+=1./60;m.enemy->GobHvMach::tick(i.world.motionWorld(m.enemy->position.x,i.world.gameTime,[]{return 1;}));}
+  float low=100,high=-100,bodyLow=100,bodyHigh=-100;std::set<int> bodyFrames;float start=m.enemy->position.x;
+  for(int n=0;n<120;++n){i.world.gameTime+=1./60;i.globalTime=i.world.gameTime;m.enemy->speed=speed;m.enemy->GobHvMach::tick(i.world.motionWorld(m.enemy->position.x,i.world.gameTime,[]{return 1;}));i.collect();low=std::min(low,m.enemy->engineBounce);high=std::max(high,m.enemy->engineBounce);
+   for(auto& p:m.parts)if(p->visual.info->partsType==0){auto d=drawParts(p->visual,m.enemy->position,m.enemy->rotation,m.enemy->engineBounce,m.enemy->machState,m.enemy->speed,i.globalTime);float relative=d.position.y-m.enemy->position.y;bodyLow=std::min(bodyLow,relative);bodyHigh=std::max(bodyHigh,relative);bodyFrames.insert(p->visual.tileFrame);}
+  }
+  std::cout<<"motion,"<<unit<<","<<speed<<",distance="<<m.enemy->position.x-start<<",bounce="<<low<<":"<<high<<",body_y="<<bodyLow<<":"<<bodyHigh<<",frames="<<bodyFrames.size()<<'\n';
+  if(isGroundAA(unit)){assert(high-low>1.3f);assert(bodyHigh-bodyLow>1.3f);assert(bodyFrames.size()==2);}
+ }
  std::vector<std::string> weapons;for(const auto& [name,w]:data.weapons)if(name.starts_with("P_")&&data.parts.contains(name))weapons.push_back(name);std::sort(weapons.begin(),weapons.end());
  int hits=0;
  for(const char* unit:{"GAA_Shilka_M1","GAA_Tunguska_M1"})for(const auto& name:weapons){

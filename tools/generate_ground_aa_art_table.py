@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 r=json.load((ROOT / 'Art/GroundAA/20261028-runtime/manifest.json').open())
-widths={'Shilka_Body':80,'Shilka_Body2':80,'Tunguska_Body':85,'Tunguska_Body2':85,'Shilka_Turret':51,'Tunguska_Turret':50,'Shilka_Gun':38,'Tunguska_Gun':40,'Tunguska_Missile':30}
+widths={'Shilka_Body':80,'Shilka_Body2':80,'Tunguska_Body':85,'Tunguska_Body2':85,'Shilka_Turret':51,'Tunguska_Turret':50,'Shilka_Gun':32,'Tunguska_Gun':37,'Tunguska_Missile':30}
 baseXs={'Shilka_Radar':[224,696,1115,1556,224,688,1100,1536],'Tunguska_Radar':[233,633,969,1338,233,638,964,1345]}
 lines=[]
 for a in r:

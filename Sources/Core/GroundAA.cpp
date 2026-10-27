@@ -71,9 +71,9 @@ void addGroundAAExpansion(GameData& data){
   for(bool tung:{false,true}){
    std::string id=std::string(tung?"GAA_Tunguska_M":"GAA_Shilka_M")+std::to_string(mission+1);
    auto part=[&](const char* suffix,int type,int count,std::vector<Vector2> sockets){PartsInfo p;p.name=id+suffix;p.partsType=type;p.tileCnt=count;p.sockets=std::move(sockets);data.parts.emplace(p.name,p);return p.name;};
-   auto body=part("_Body",0,2,{{0,tung?-11.f:-9.f},{0,tung?9.f:7.f}});
-   auto top=part("_Turret",1,1,{{0,tung?-11.5f:-7.f},{tung?-18.f:-19.f,-1.f},{14,tung?10.f:7.f},{12,0}});
-   auto gun=part("_Gun",2,1,{{tung?15.f:13.f,-2.f},{tung?-20.f:-19.f,1.f}});
+   auto body=part("_Body",0,2,{{0,tung?-11.f:-9.f},{0,tung?9.f:5.f}});
+   auto top=part("_Turret",1,1,{{0,tung?-11.5f:-7.f},{tung?-18.f:-19.f,-1.f},{14,2.f},{12,0}});
+   auto gun=part("_Gun",2,1,{{tung?14.f:11.f,-2.f},{tung?-18.5f:-16.f,1.f}});
    auto radar=part("_Radar",1,1,{{0,tung?-6.5f:-8.f}});
    char original[40];snprintf(original,sizeof(original),"E_Tank_Wpn_%02d",mission+1);auto w=data.weapons.at("E_Tank_Wpn_01");w.dmg=data.weapons.at(original).dmg;w.spd=data.weapons.at(original).spd;w.name=gun;w.shotCnt=tung?4:6;w.shotDly=data.weapons.at("E_0505_Wpn").shotDly;data.weapons.emplace(gun,w);
    MachPartDefinition turret{top,1,1,{{radar,2,0,{}},{gun,1,2,{}}}};
