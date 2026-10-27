@@ -1,0 +1,480 @@
+[
+  {
+    "depth": 0,
+    "name": "E0505",
+    "hpMax": 700,
+    "giveExp": 50,
+    "machType": 0,
+    "parts": {}
+  },
+  {
+    "depth": 1,
+    "name": "E_0505_Body",
+    "baseSocket": 0,
+    "zOrder": 0,
+    "parts": {
+      "name": "E_0505_Body",
+      "partsType": 0,
+      "tileCnt": 2,
+      "socketCnt": 2,
+      "sockets": [
+        [
+          -1.0,
+          -37.0
+        ],
+        [
+          1.0,
+          36.0
+        ]
+      ]
+    }
+  },
+  {
+    "depth": 2,
+    "name": "E_0505_Wpn",
+    "baseSocket": 1,
+    "zOrder": 0,
+    "parts": {
+      "name": "E_0505_Wpn",
+      "partsType": 2,
+      "tileCnt": 1,
+      "socketCnt": 2,
+      "sockets": [
+        [
+          12.0,
+          -2.0
+        ],
+        [
+          -34.0,
+          0.0
+        ]
+      ]
+    },
+    "weapon": {
+      "rotWpn": 1,
+      "wpnType": 0,
+      "shotCnt": 3,
+      "shotDly": 0.20000000298023224
+    }
+  },
+  {
+    "depth": 0,
+    "name": "MBoss0501",
+    "hpMax": 8000,
+    "giveExp": 400,
+    "machType": 0,
+    "parts": {}
+  },
+  {
+    "depth": 1,
+    "name": "E_MBoss0501",
+    "baseSocket": 0,
+    "zOrder": 2,
+    "parts": {
+      "name": "E_MBoss0501",
+      "partsType": 0,
+      "tileCnt": 2,
+      "socketCnt": 2,
+      "sockets": [
+        [
+          -2.0,
+          -19.0
+        ],
+        [
+          16.0,
+          19.0
+        ]
+      ]
+    }
+  },
+  {
+    "depth": 2,
+    "name": "E_MBoss0501_Top",
+    "baseSocket": 1,
+    "zOrder": 0,
+    "parts": {
+      "name": "E_MBoss0501_Top",
+      "partsType": 1,
+      "tileCnt": 1,
+      "socketCnt": 3,
+      "sockets": [
+        [
+          -1.0,
+          -18.0
+        ],
+        [
+          11.0,
+          5.0
+        ],
+        [
+          -13.5,
+          8.5
+        ]
+      ]
+    }
+  },
+  {
+    "depth": 3,
+    "name": "E_MBoss0501_Wpn",
+    "baseSocket": 2,
+    "zOrder": 0,
+    "parts": {
+      "name": "E_MBoss0501_Wpn",
+      "partsType": 2,
+      "tileCnt": 1,
+      "socketCnt": 2,
+      "sockets": [
+        [
+          12.0,
+          0.0
+        ],
+        [
+          -17.0,
+          0.0
+        ]
+      ]
+    },
+    "weapon": {
+      "rotWpn": 1,
+      "wpnType": 2,
+      "shotCnt": 1,
+      "shotDly": 0.0
+    }
+  },
+  {
+    "depth": 3,
+    "name": "E_MBoss0501_Msl",
+    "baseSocket": 1,
+    "zOrder": 0,
+    "parts": {
+      "name": "E_MBoss0501_Msl",
+      "partsType": 2,
+      "tileCnt": 1,
+      "socketCnt": 3,
+      "sockets": [
+        [
+          1.0,
+          1.0
+        ],
+        [
+          -19.0,
+          7.0
+        ],
+        [
+          -19.0,
+          -5.0
+        ]
+      ]
+    },
+    "weapon": {
+      "rotWpn": 1,
+      "wpnType": 3,
+      "shotCnt": 1,
+      "shotDly": 0.0
+    }
+  },
+  {
+    "depth": 0,
+    "name": "MBoss0601",
+    "hpMax": 11000,
+    "giveExp": 500,
+    "machType": 0,
+    "parts": {}
+  },
+  {
+    "depth": 1,
+    "name": "E_MBoss0601",
+    "baseSocket": 0,
+    "zOrder": 1,
+    "parts": {
+      "name": "E_MBoss0601",
+      "partsType": 0,
+      "tileCnt": 2,
+      "socketCnt": 2,
+      "sockets": [
+        [
+          0.0,
+          -18.0
+        ],
+        [
+          0.0,
+          16.0
+        ]
+      ]
+    }
+  },
+  {
+    "depth": 2,
+    "name": "E_MBoss0601_Top",
+    "baseSocket": 1,
+    "zOrder": 0,
+    "parts": {
+      "name": "E_MBoss0601_Top",
+      "partsType": 1,
+      "tileCnt": 1,
+      "socketCnt": 3,
+      "sockets": [
+        [
+          -6.0,
+          -24.0
+        ],
+        [
+          -38.0,
+          -13.0
+        ],
+        [
+          48.0,
+          20.5
+        ]
+      ]
+    }
+  },
+  {
+    "depth": 3,
+    "name": "E_MBoss0601_Wpn",
+    "baseSocket": 1,
+    "zOrder": 0,
+    "parts": {
+      "name": "E_MBoss0601_Wpn",
+      "partsType": 2,
+      "tileCnt": 1,
+      "socketCnt": 2,
+      "sockets": [
+        [
+          5.0,
+          -1.0
+        ],
+        [
+          -9.0,
+          1.0
+        ]
+      ]
+    },
+    "weapon": {
+      "rotWpn": 1,
+      "wpnType": 0,
+      "shotCnt": 2,
+      "shotDly": 0.20000000298023224
+    }
+  },
+  {
+    "depth": 3,
+    "name": "E_MBoss0701_Msl",
+    "baseSocket": 2,
+    "zOrder": 0,
+    "parts": {
+      "name": "E_MBoss0701_Msl",
+      "partsType": 2,
+      "tileCnt": 1,
+      "socketCnt": 3,
+      "sockets": [
+        [
+          2.0,
+          -1.0
+        ],
+        [
+          -18.0,
+          7.0
+        ],
+        [
+          -18.5,
+          -4.5
+        ]
+      ]
+    },
+    "weapon": {
+      "rotWpn": 1,
+      "wpnType": 3,
+      "shotCnt": 1,
+      "shotDly": 0.0
+    }
+  },
+  {
+    "depth": 3,
+    "name": "E_MBoss0701_Mot",
+    "baseSocket": 3,
+    "zOrder": 0,
+    "parts": {
+      "name": "E_MBoss0701_Mot",
+      "partsType": 2,
+      "tileCnt": 0,
+      "socketCnt": 2,
+      "sockets": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "weapon": {
+      "rotWpn": 1,
+      "wpnType": 7,
+      "shotCnt": 1,
+      "shotDly": 0.5
+    }
+  },
+  {
+    "depth": 0,
+    "name": "Tank001",
+    "hpMax": 100,
+    "giveExp": 5,
+    "machType": 0,
+    "parts": {}
+  },
+  {
+    "depth": 1,
+    "name": "E_Tank_Body_01",
+    "baseSocket": 0,
+    "zOrder": 0,
+    "parts": {
+      "name": "E_Tank_Body_01",
+      "partsType": 0,
+      "tileCnt": 2,
+      "socketCnt": 2,
+      "sockets": [
+        [
+          0.0,
+          -10.0
+        ],
+        [
+          1.0,
+          12.0
+        ]
+      ]
+    }
+  },
+  {
+    "depth": 2,
+    "name": "E_Tank_Top_01",
+    "baseSocket": 1,
+    "zOrder": 0,
+    "parts": {
+      "name": "E_Tank_Top_01",
+      "partsType": 1,
+      "tileCnt": 1,
+      "socketCnt": 2,
+      "sockets": [
+        [
+          -7.0,
+          -9.0
+        ],
+        [
+          -11.0,
+          4.0
+        ]
+      ]
+    }
+  },
+  {
+    "depth": 3,
+    "name": "E_Tank_Wpn_01",
+    "baseSocket": 1,
+    "zOrder": 0,
+    "parts": {
+      "name": "E_Tank_Wpn_01",
+      "partsType": 2,
+      "tileCnt": 1,
+      "socketCnt": 2,
+      "sockets": [
+        [
+          12.0,
+          0.0
+        ],
+        [
+          -16.0,
+          1.0
+        ]
+      ]
+    },
+    "weapon": {
+      "rotWpn": 1,
+      "wpnType": 0,
+      "shotCnt": 1,
+      "shotDly": 0.0
+    }
+  },
+  {
+    "depth": 0,
+    "name": "Tank030",
+    "hpMax": 150,
+    "giveExp": 8,
+    "machType": 0,
+    "parts": {}
+  },
+  {
+    "depth": 1,
+    "name": "E_Tank_Body_03",
+    "baseSocket": 0,
+    "zOrder": 0,
+    "parts": {
+      "name": "E_Tank_Body_03",
+      "partsType": 0,
+      "tileCnt": 2,
+      "socketCnt": 2,
+      "sockets": [
+        [
+          -4.0,
+          -20.0
+        ],
+        [
+          -3.0,
+          2.0
+        ]
+      ]
+    }
+  },
+  {
+    "depth": 2,
+    "name": "E_Tank_Top_02",
+    "baseSocket": 1,
+    "zOrder": 0,
+    "parts": {
+      "name": "E_Tank_Top_02",
+      "partsType": 1,
+      "tileCnt": 1,
+      "socketCnt": 2,
+      "sockets": [
+        [
+          -8.0,
+          -9.0
+        ],
+        [
+          -12.0,
+          4.0
+        ]
+      ]
+    }
+  },
+  {
+    "depth": 3,
+    "name": "E_Tank_Wpn_02",
+    "baseSocket": 1,
+    "zOrder": 0,
+    "parts": {
+      "name": "E_Tank_Wpn_02",
+      "partsType": 2,
+      "tileCnt": 1,
+      "socketCnt": 2,
+      "sockets": [
+        [
+          11.0,
+          0.0
+        ],
+        [
+          -14.0,
+          0.0
+        ]
+      ]
+    },
+    "weapon": {
+      "rotWpn": 1,
+      "wpnType": 0,
+      "shotCnt": 1,
+      "shotDly": 0.0
+    }
+  }
+]
