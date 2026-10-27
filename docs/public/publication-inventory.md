@@ -63,4 +63,4 @@ GitHub 게임 태그는 v0.12이며 이 원고는 `docs/github-publication`에�
 
 ## 공개·배포 준비 자료
 
-[라이선스·README 배지 조사](github-licenses-and-badges-20261028.md)에 코드·자원·외부 라이브러리의 배포 조건과 필요한 문건, 기술 배지·환경 표를 정리했다. 라이선스 부여와 공개 전환은 아직 실행하지 않았다.
+[라이선스·README 배지 조사](github-licenses-and-badges-20261028.md)에 코드·자원·외부 라이브러리의 배포 조건과 필요한 문건, 기술 배지·환경 표를 정리했다. 새 코드용 MIT·적용 범위·자원 조건·외부 고지와 README 배지를 추가했다. 공개 전환은 아직 실행하지 않았다. [GitHub 구성 점검·후속 계획](github-repository-plan-20261028.md).
