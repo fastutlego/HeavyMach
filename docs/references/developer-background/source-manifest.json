@@ -79,6 +79,11 @@
       "copy": "user-wemade-discovery-20261028.md",
       "source": "2026-10-28 현재 대화의 위메이드 인수 인지 시점에 관한 사용자 정정과 반영 지시",
       "sha256": "4eaca4daf73a7195023cf566b077ea079713d88c3e8db0f2769ff77ca7cf0cfe"
+    },
+    {
+      "copy": "approved-readme-opening-20261028.md",
+      "source": "2026-10-28 사용자가 “써봐” 요청으로 작성된 원고를 “그렇게 써라”로 채택. 제목은 후속 요청에 따라 HeavyMach를 다시 만든 이유로 설정.",
+      "sha256": "122fab61f86912566370f9a27d881166ace66946d6b812cf7766e0a54a17d8e3"
     }
   ]
 }
