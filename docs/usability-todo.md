@@ -4,7 +4,7 @@
 
 - [x] **HM-PUBLISH 조사** — 코드·원작 자원·추가 그림·OpenAL Soft·stb의 현재 조건과 공개·자유배포에 필요한 문건을 조사했다. MIT 후보, 자원 이용허락, LGPL 정적 링크 재빌드·재링크 자료와 배포 경로를 구분했다. [조사 결과](public/github-licenses-and-badges-20261028.md).
 - [x] **HM-BADGE 조사** — GitHub·Shields와 SDL·OpenRCT2를 확인했다. README 제목·한 문장 소개 뒤에 Git 태그·플랫폼·arm64·언어 배지 4개를 두고 실제 검사 OS는 표에 적는 안을 작성했다.
-- [ ] **HM-PUBLISH 적용** — 파일별 권리·허락 범위 확인, LICENSE·ASSET-LICENSES·THIRD_PARTY_NOTICES·권리 목록 작성, OpenAL 재링크 검사, 공개 Git/LFS 범위와 플랫폼별 배포 묶음 준비. 현재 비공개 저장소와 자원·이력은 유지한다.
+- [ ] **HM-PUBLISH 적용** — 파일별 권리·허락 범위 확인, LICENSE·ASSET-LICENSES·THIRD_PARTY_NOTICES·권리 목록 작성, OpenAL 재링크 검사, 코드·에셋을 함께 공개해 누구나 clone·fork·빌드·플레이할 수 있는 Git/LFS 구성과 허락 범위 준비. 무료 앱스토어 배포·수정본 공유 범위 별도 확인. 개발 기록과 저장소의 지속 공개를 목표로 하며, 에셋 별도 입수 방식으로 바꾸지 않는다. 현재 비공개 저장소와 자원·이력은 유지한다.
 - [ ] **HM-BADGE 적용** — 제안한 배지와 환경 표를 README에 추가한다. 실제 라이선스·빌드 CI·배포 파일을 준비한 뒤 해당 배지를 추가한다.
 
 
