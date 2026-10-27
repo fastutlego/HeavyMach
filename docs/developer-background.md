@@ -12,7 +12,7 @@
 
 복사 범위·출처 커밋·파일 해시는 [출처 목록](references/developer-background/source-manifest.json)에 있다. hm-defense의 기존 RESTORATION.md와 SaaS 소스는 수정하지 않는다. 외부 폴더가 없어도 위 발췌로 작성 근거를 확인할 수 있다.
 
-6. [복원 시작과 꿈에 관한 글감·정정](references/developer-background/user-project-origin-20261028.md). README와 개발자의 변 첫 세 문단은 같은 문장을 사용한다.
+6. [복원 시작과 꿈에 관한 글감·정정](references/developer-background/user-project-origin-20261028.md). 복원 시작에 관한 세 문단은 README와 개발자의 변에 같은 문장으로 싣는다. 2026-10-28 추가 지시에 따라 README 첫 문단에는 개발자의 변의 “요즘 나는 내게 남은 시간이”로 시작하는 문단을 그대로 싣는다.
 
 ## 경위
 
