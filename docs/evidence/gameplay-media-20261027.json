@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "task": "gameplay-media-selection-and-unified-report-catalog",
+  "date": "2026-10-27",
+  "site_source": "5d796ed8992c68b39db9c6697ea0f6b601470af4",
+  "deployment": {
+    "id": "appgdep_6ae08e445a2c81918eabe8df86159541",
+    "project_id": "appgprj_6addbf55aea081918d3d182d7e496e88",
+    "title": "HeavyMach 개발 보고",
+    "version_id": "appgprj_6addbf55aea081918d3d182d7e496e88~appgver_dd4ce9703d9c8191be0fe4fa34a5346c",
+    "type": "publish",
+    "status": "succeeded",
+    "url": "https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site",
+    "has_mcp": false,
+    "screenshot_asset_pointer": null,
+    "provider_deployment_id": "site---6addbf55aea081918d3d182d7e496e88",
+    "failure_message": null,
+    "env_set_revision": 0,
+    "updated_at": "2026-10-27T11:43:19.613980+00:00"
+  },
+  "previous_failed_deployment": {
+    "id": "appgdep_6ae08cc203e48191a2a0bbd377550ca6",
+    "project_id": "appgprj_6addbf55aea081918d3d182d7e496e88",
+    "title": "HeavyMach 개발 보고",
+    "version_id": "appgprj_6addbf55aea081918d3d182d7e496e88~appgver_df1d1e6cea248191a09c2aafd970d279",
+    "type": "publish",
+    "status": "failed",
+    "url": null,
+    "has_mcp": false,
+    "screenshot_asset_pointer": null,
+    "provider_deployment_id": "site---6addbf55aea081918d3d182d7e496e88",
+    "failure_message": "An unknown error has occurred. If this error persists, please file a report in workers-sdk (https://github.com/cloudflare/workers-sdk/issues) or reach out to your account team.",
+    "env_set_revision": 0,
+    "updated_at": "2026-10-27T11:37:47.014783+00:00"
+  },
+  "checks": {
+    "source_count": 2,
+    "overview_frames": 76,
+    "full_resolution_stills": 8,
+    "short_clips": 3,
+    "clip_full_decode": "passed",
+    "media_source_hashes": "matched",
+    "relative_site_links": 525,
+    "broken_site_links": 0,
+    "catalog_reports": 22,
+    "catalog_missing": 0,
+    "all_reports_link_back": true,
+    "site_manuscript_and_media_bytes": "matched",
+    "browser": "Local Chrome: narrow-width hero and catalog viewed; catalog link opened gameplay report; all three video play controls entered playing state; first clip reached 0:07. Wide-window and authenticated hosted-page visual check not completed. Jump clip reached 0:07. Hosted URL handoff returned ERR_INTERNET_DISCONNECTED; official deployment succeeded."
+  },
+  "product_code_changed": false,
+  "original_videos_git_ignored": true
+}

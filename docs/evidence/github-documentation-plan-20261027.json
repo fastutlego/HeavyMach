@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-27",
+  "source_commit": "de9ab502b15e893c4b864b3c53d0e9538c09eaa9",
+  "version_id": "appgprj_6addbf55aea081918d3d182d7e496e88~appgver_a5941af819d08191b5dbbeca5844aa7f",
+  "deployment_id": "appgdep_6ae0a641cbd48191b60e55cd935b1c9b",
+  "status": "succeeded",
+  "url": "https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/github-documentation.html",
+  "scope": "GitHub 문서 계획 작성, Apps·Mags 집필 범위 정정; 본문 집필 전",
+  "checks": {
+    "document_contract": "pass",
+    "local_links": 543,
+    "catalog_reports": 23,
+    "markdown_matches": true,
+    "local_chrome": "본문·목차·표의 좁은 창 배치 확인"
+  }
+}

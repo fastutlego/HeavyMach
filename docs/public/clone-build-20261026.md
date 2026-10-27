@@ -1,6 +1,6 @@
 # 새 clone의 빌드 검증
 
-앱 빌드에 필요한 자원을 Git에서 제외한 저장소 구성을 수정했다. 이미지·음원·맵·앱 아이콘·이미지 비교 자료를 Git/LFS에 넣었다. 원본 IPA와 기존 Mac의 자원 폴더를 따로 가져올 필요가 없다.
+Codex가 앱 빌드에 필요한 자원을 Git에서 제외한 저장소 구성을 수정했다. 이미지·음원·맵·앱 아이콘·이미지 비교 자료를 Git/LFS에 넣었다. 원본 IPA와 기존 Mac의 자원 폴더를 따로 가져올 필요가 없다.
 
 ## 빠졌던 파일과 수정
 
@@ -42,6 +42,6 @@
 
 ## 실행 기록
 
-원시 로그, 입력 해시, 접근 차단 규칙, XCTest 결과와 실행 스크립트는 로컬 `build/clone-build-20261026/`에 보존한다. 이 검사의 iPhone용 빌드는 서명하지 않았으며 실제 아이폰 재설치는 하지 않았다. 기존 사용자 전체 미션 플레이 결과는 [구현과 검증 범위](implementation-status.md)에 있다.
+원시 로그, 입력 해시, 접근 차단 규칙, XCTest 결과와 실행 스크립트는 로컬 `build/clone-build-20261026/`에 보존한다. 이 검사의 iPhone용 빌드는 서명하지 않았으며 실제 아이폰 재설치는 하지 않았다. 내가 직접 한 전체 미션 플레이 결과는 [구현과 검증 범위](implementation-status.md)에 있다.
 
 [빌드 실행 기록](clone/summary.json) · [앱 자원·바이너리 검사](clone/bundle-audit.json) · [Simulator 설치·실행·검사](clone/runtime-summary.json)

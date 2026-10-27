@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-27",
+  "source_commit": "e4565639655b06c99825bde6806444bfb7f8c2d0",
+  "version_id": "appgprj_6addbf55aea081918d3d182d7e496e88~appgver_9ce728519f988191a6b496f70f14b631",
+  "deployment_id": "appgdep_6ae0acfadf9c81918f43a3b72f4f1e63",
+  "status": "succeeded",
+  "url": "https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/github-documentation.html",
+  "files": [
+    "docs/public/github-documentation-plan-20261027.md",
+    "docs/public/gameplay-media-20261027.md",
+    "docs/public/publication-inventory.md"
+  ],
+  "checks": {
+    "local_links": 549,
+    "downloads_match": 3,
+    "headings_preserved": true,
+    "media": "8 images / 3 videos",
+    "local_chrome": "자동조준 변경 문장 표시 확인",
+    "document_contract": "pass"
+  }
+}
