@@ -79,15 +79,19 @@ def check(root):
     readme_blocks = (root / 'README.md').read_text().split('\n\n')
     if len(readme_blocks) < 2 or not readme_blocks[1].startswith('[!['):
         errors.append('README badges must follow the title')
-    readme_paragraphs = [p for p in readme_blocks if not p.startswith('[![')]
+    readme_text = (root / 'README.md').read_text()
+    approved = (root / 'docs/references/developer-background/approved-readme-opening-20261028.md').read_text().strip()
+    expected = '#' + approved
+    if len(readme_blocks) < 3 or readme_blocks[2] != '## HeavyMach를 다시 만든 이유':
+        errors.append('README motive heading must follow the badges')
+    if expected not in readme_text:
+        errors.append('README opening differs from the approved manuscript')
     restoration_paragraphs = (root / 'docs/RESTORATION.md').read_text().split('\n\n')
-    motive = next(p for p in restoration_paragraphs if p.startswith('요즘 나는 내게 남은 시간이'))
-    if readme_paragraphs[1] != motive:
-        errors.append('README opening differs from the restoration motive')
-    first = readme_paragraphs[2:5]
-    second = (root / 'docs/RESTORATION.md').read_text().split('\n\n')[1:4]
-    if len(first) != 3 or first != second or '꿈' not in first[1]:
-        errors.append('README and restoration introduction differ')
+    shared = restoration_paragraphs[1:4]
+    shared += [next(p for p in restoration_paragraphs if p.startswith(start)) for start in
+               ('지인들과 소주잔을', 'HeavyMach를 만든 두 제작자는', '요즘 나는 내게 남은 시간이')]
+    if any(p not in expected for p in shared):
+        errors.append('README and restoration shared paragraphs differ')
     sources = root / 'docs/references/developer-background'
     manifest = json.loads((sources / 'source-manifest.json').read_text())
     entries = manifest['sources'] + [manifest['user_statement']] + manifest['user_followups']
