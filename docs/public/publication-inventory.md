@@ -78,7 +78,7 @@ python3 tools/document_contract.py check
 
 ## GitHub 후속 자료 — 2026-10-28
 
-[도입문 원문·정정](../references/developer-background/user-project-origin-20261028.md), [GitHub 구성·소스 릴리스 검사](github-followup-20261028.md), [자원 공개 범위](../rights-manifest.json)를 추가했다. README의 첫 본문은 개발자의 변에서 “요즘 나는 내게 남은 시간이”로 시작하는 문단을 그대로 옮겼다. 그 뒤의 복원 시작에 관한 세 문단도 두 문서에 같은 문장으로 실었다. Apps·Mags 집필은 SaaS 담당 세션에서 진행한다.
+[도입문 원문·정정](../references/developer-background/user-project-origin-20261028.md), [GitHub 구성·소스 릴리스 검사](github-followup-20261028.md), [자원 공개 범위](../rights-manifest.json)를 추가했다. README는 「HeavyMach를 다시 만든 이유」 아래에 2017년 7월 전업, HeavyMach의 영향, 지인들의 말과 9년 3개월, 현재 복원 이유, Mesabloo와 꿈의 순서로 배치했다. [채택 원고](../references/developer-background/approved-readme-opening-20261028.md)에 전문이 있다. 개발자의 변과 공유하는 문단은 같은 문장을 유지했다. Apps·Mags 집필은 SaaS 담당 세션에서 진행한다.
 
 
 ## 원작 기능과 추가 기능
@@ -94,7 +94,7 @@ python3 tools/document_contract.py check
 
 ## 원문과 집필 범위
 
-개인 경험 원문 7개와 SaaS·Candidate에서 가져온 글쓰기 자료는 저장소 안에 있다. [원문 목록](../references/developer-background/source-manifest.json)과 [스킬 출처](../../.agents/skills/write-project-text/references/source-manifest.json)에서 복사 범위와 해시를 확인할 수 있다. Unity 초기 기획은 개인적인 시작 배경을 설명하는 별도 프로젝트 자료다.
+개인 경험 원문과 채택 원고 8개, SaaS·Candidate에서 가져온 글쓰기 자료는 저장소 안에 있다. [원문 목록](../references/developer-background/source-manifest.json)과 [스킬 출처](../../.agents/skills/write-project-text/references/source-manifest.json)에서 복사 범위와 해시를 확인할 수 있다. Unity 초기 기획은 개인적인 시작 배경을 설명하는 별도 프로젝트 자료다.
 
 Mags의 답변은 개발자의 변과 제공 원문을 바탕으로 쓴다. 추가로 물을 내용은 질문안으로 정리한다. Apps는 현재 기능·기술 구성·시정 과정·검사 결과를 설명한다. 개발자의 판단과 직접 플레이, Codex의 구현과 검사를 구분한다. 문장 규칙은 [글쓰기 스킬](../../.agents/skills/write-project-text/SKILL.md)에 있다.
 

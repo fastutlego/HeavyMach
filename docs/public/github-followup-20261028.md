@@ -1,6 +1,6 @@
 # GitHub 구성과 v0.12 소스 릴리스
 
-README와 개발자의 변에 복원 시작 이야기를 같은 문장으로 실었다. README의 첫 본문에는 개발자의 변에서 “요즘 나는 내게 남은 시간이”로 시작하는 문단을 그대로 옮겼다. 꿈에서 아이팟터치를 처음 쓰던 나를 보았다는 이야기, Mesabloo보다 시작점이 나았다는 설명, 원작에서 벗어난 Codex의 구현을 지적하며 고친 경험을 담았다. [README](../../README.md) · [개발자의 변](../RESTORATION.md)
+README와 개발자의 변에 복원 시작 이야기를 같은 문장으로 실었다. README의 「HeavyMach를 다시 만든 이유」는 2017년 7월 개발자로 전업한 경위로 시작한다. HeavyMach의 영향, 지인들의 말과 9년 3개월, 현재 복원 이유를 이어 배치했다. 꿈에서 아이팟터치를 처음 쓰던 나를 보았다는 이야기, Mesabloo보다 시작점이 나았다는 설명, 원작에서 벗어난 Codex의 구현을 지적하며 고친 경험을 담았다. [README](../../README.md) · [개발자의 변](../RESTORATION.md)
 
 ## 저장소 소개와 기여 안내
 
@@ -151,3 +151,8 @@ CREDITS의 원작 항목은 다음 역할로 나눴다.
 자원 문서·권리 목록·SaaS 집필 자료에도 인수 근거를 연결했다. 새 코드의 MIT 라이선스와 원작 자원 구분은 유지했다.
 
 README·개발자의 변·CREDITS·자원 출처 문서에 반영했다. 기존 비영리·게시 중단 문장은 그대로다. [사용자 정정 원문](../references/developer-background/user-wemade-discovery-20261028.md).
+
+
+## README 도입 원고 — 2026-10-28
+
+「HeavyMach를 다시 만든 이유」라는 제목을 붙이고 채택한 여덟 문단을 README 앞부분에 반영했다. 2017년 7월 전업을 먼저 설명한 뒤 지인들의 말과 “내 수명을 9년 하고도 3개월 더 연장해 주었다”는 문장을 배치했다. 이어 현재 복원 이유, Mesabloo, 꿈에서 시작된 경위를 썼다. 문단에 별도 강조 상자나 굵은 글씨는 넣지 않았다. [README](../../README.md) · [채택 원고](../references/developer-background/approved-readme-opening-20261028.md).
