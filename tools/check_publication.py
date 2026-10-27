@@ -76,7 +76,12 @@ def check(root):
             dest = path.parent / unquote(url.path)
             if not dest.exists():
                 errors.append(f'{name}: missing local link {target}')
-    first = (root / 'README.md').read_text().split('\n\n')[1:4]
+    readme_paragraphs = (root / 'README.md').read_text().split('\n\n')
+    restoration_paragraphs = (root / 'docs/RESTORATION.md').read_text().split('\n\n')
+    motive = next(p for p in restoration_paragraphs if p.startswith('요즘 나는 내게 남은 시간이'))
+    if readme_paragraphs[1] != motive:
+        errors.append('README opening differs from the restoration motive')
+    first = readme_paragraphs[2:5]
     second = (root / 'docs/RESTORATION.md').read_text().split('\n\n')[1:4]
     if len(first) != 3 or first != second or '꿈' not in first[1]:
         errors.append('README and restoration introduction differ')
