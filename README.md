@@ -26,11 +26,13 @@ HeavyMach를 만든 두 제작자는 내 수명을 9년 하고도 3개월 더 �
 
 만일 원작자 혹은 다른 이해관계자가 게시 중단을 요청하면, 난 미련없이 이 레포지토리를 지울 것이다.
 
-2009년의 횡스크롤 전차 게임 **HeavyMach**를 현재의 iPhone·iPad·Mac에서 실행하도록 다시 만들었다. 전차를 움직이고 뛰어오르며, 무기를 바꿔 지상·공중의 적과 싸운다. 원작의 전투와 성장 구조에 넓은 화면, 키보드 조작, 자동조준과 새로운 항공기를 추가했다.
-
 [개발자의 변 전문](docs/RESTORATION.md)
 
-**현재 게임 버전은 [v0.12](https://github.com/gelb2/HeavyMach/tree/v0.12)**다. 일반 앱과 치트 검증 앱을 각각 설치할 수 있다. 치트 앱에서는 미션·무기·강화 조건을 지정해 같은 게임을 검사한다.
+## 간단한 설명과 설치
+
+2009년의 횡스크롤 전차 게임 **HeavyMach**를 현재의 iPhone·iPad·Mac에서 실행하도록 다시 만들었다. 전차를 움직이고 뛰어오르며, 무기를 바꿔 지상·공중의 적과 싸운다. 원작의 전투와 성장 구조에 넓은 화면, 키보드 조작, 자동조준과 새로운 항공기를 추가했다.
+
+현재 게임 버전은 [v0.12](https://github.com/gelb2/HeavyMach/tree/v0.12)다. 일반 앱과 치트 검증 앱을 각각 설치할 수 있다. 치트 앱에서는 미션·무기·강화 조건을 지정해 같은 게임을 검사한다.
 
 [설치](docs/public/build-and-install.md) · [조작](docs/public/gameplay-guide.md) · [기능](docs/public/features.md) · [트러블슈팅](docs/public/troubleshooting.md) · [전체 문서](docs/README.md)
 
