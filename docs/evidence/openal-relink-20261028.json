@@ -1,0 +1,30 @@
+{
+  "source_template_restored": true,
+  "results": [
+    {
+      "sdk": "iphonesimulator",
+      "scheme": "HeavyMachRestored",
+      "modified_library_marker_in_app": true,
+      "linked_files": [
+        {
+          "path": "HeavyMachRestored.debug.dylib",
+          "sha256": "8e396f22e7a5d49585b45875274069485fe1c09279f4c6e3f0e68904949a0ae2"
+        }
+      ],
+      "log_sha256": "387a371f0c85eb1ae307fa0bd085e37d00e89cb0d7ccf54666ca3ad8cb6aca2d"
+    },
+    {
+      "sdk": "macosx",
+      "scheme": "HeavyMachMac",
+      "modified_library_marker_in_app": true,
+      "linked_files": [
+        {
+          "path": "Contents/MacOS/HeavyMachMac.debug.dylib",
+          "sha256": "b386c7c090eed8f218db199b8ec826ea4435c5afbea40f497022e880e3884308"
+        }
+      ],
+      "log_sha256": "97a4d8bf2eb95edb95d7ee16dc5a88151e0601ecd2e4ec1f176d07fa9d671b2c"
+    }
+  ],
+  "scope": "unsigned link verification; no device install or gameplay run"
+}

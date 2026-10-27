@@ -1,0 +1,51 @@
+{
+  "source": "eedf245f859a5224adf8f1c4a4b010eda1b5a5bb",
+  "files": 2366,
+  "archive": "HeavyMach-v0.12-source-with-assets.tar.gz",
+  "bytes": 146187445,
+  "sha256": "06ef5e0f0fb31e7fe4f716293030a9d76dee4d3d0c45ac0d56f7ed4f672d5296",
+  "verified_at": "2026-10-28",
+  "resource_count": 1482,
+  "core_tests": {
+    "passed": 21,
+    "failed": 0
+  },
+  "builds": [
+    {
+      "scheme": "HeavyMachRestored",
+      "configuration": "Debug",
+      "signing": false,
+      "result": "passed",
+      "log_sha256": "520dca9bef76c440f79036dccd99cffa9681be06386f1a7428d40efa021adc32"
+    },
+    {
+      "scheme": "HeavyMachValidation",
+      "configuration": "Debug",
+      "signing": false,
+      "result": "passed",
+      "log_sha256": "37bfa89015de27aa41f658537628bb9f98046406d727a17c2049e7b291aa24da"
+    },
+    {
+      "scheme": "HeavyMachMac",
+      "configuration": "Debug",
+      "signing": false,
+      "result": "passed",
+      "log_sha256": "3b4153971c4e3b8ee19f901033d9c08bc33813ed11b289fadd3296289482858a"
+    },
+    {
+      "scheme": "HeavyMachMacValidation",
+      "configuration": "Debug",
+      "signing": false,
+      "result": "passed",
+      "log_sha256": "90cb649c5134ff12be786ef3a1ebbb5c6f4083db29d8b340ea3c3c5b09fa7aca"
+    }
+  ],
+  "xcode": "Xcode 27.1\nBuild version 27A9275",
+  "source_root": "freshly extracted archive, no .git directory",
+  "gameplay_test": "not rerun; build-only verification",
+  "github_actions": {
+    "documentation_run": 40542759494,
+    "build_run": 40542759541,
+    "result": "not started: account payment/spending limit restriction"
+  }
+}

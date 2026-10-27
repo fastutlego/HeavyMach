@@ -1,0 +1,24 @@
+name: Documentation and resources
+on:
+  push:
+    branches: [main, develop, 'docs/**', 'fix/**']
+  pull_request:
+    branches: [develop, main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: docs-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  documentation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+          persist-credentials: false
+      - run: python3 tools/document_contract.py check
+      - run: python3 tools/check_publication.py
+      - run: python3 tools/verify_build_resources.py

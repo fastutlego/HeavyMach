@@ -54,3 +54,5 @@ python3 tools/document_contract.py check
 - [소스 대응](ios-source-map.md), [분리 후 전수검사](migration/completeness-audit-20261026.md): 파일과 문서 보존 내역.
 
 과거 보고의 최초 결과 뒤에는 후속 수정이 이어진다. 현재 기능은 [구현 상태](public/implementation-status.md), 수치별 조건은 [검증](public/validation.md)에서 찾을 수 있다.
+
+- [GitHub 구성과 v0.12 소스 릴리스](public/github-followup-20261028.md): 도입문, 기여 안내, 자동 검사, 압축본 빌드·OpenAL 재링크.

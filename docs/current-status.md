@@ -1,5 +1,9 @@
 # 2026-10-25 문서·코드·앱 일치 체계 점검 및 보완
 
+## 2026-10-28 GitHub 후속 구성·소스 릴리스 검사
+
+README·개발자의 변에 동일한 도입문을 반영했다. 꿈이었다는 정정과 지정한 시작점 비교 문장을 유지했다. About·Topics·기여 양식과 자동 검사 workflow를 추가했다. v0.12 압축본의 자원1,482개, 코어21개, Simulator·Mac 일반/치트 빌드4개와 OpenAL 재링크2개를 통과했다. 게임 소스 변경은 `HMCompatibilityPixels.hpp`의 라이선스 주석3줄뿐이며 실행 코드는 그대로다. GitHub Actions는 계정 결제·사용 한도로 실행 전 차단됐다. 공유 이미지 파일은 완성했으며 비공개 저장소의 최초 업로드 제한으로 등록이 남았다. [실행 결과](public/github-followup-20261028.md)
+
 ## 2026-10-28 GitHub 문서 main 반영·라이선스·배지
 
 문서·플레이 자료를 develop `0a2c0e33`→main `db634ce6`으로 병합·푸시하고 GitHub 기본 README의 원고 바이트와 렌더를 확인했다. 게임 코드·자원은 v0.12와 같다. 후속 `docs/github-licenses-and-presentation`에서 새 코드용 MIT, 적용 범위, 자원 조건, 외부 고지·원문 사본, README 배지5개와 환경 표를 추가했다. [GitHub 점검·보완 계획](public/github-repository-plan-20261028.md)에 다른 게임 사례와 About·릴리스·기여·CI 작업 순서를 기록했다. 저장소는 비공개이며 원작 자원의 공개 이용허락 확인과 앱 외부 배포는 남았다.

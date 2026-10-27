@@ -1,0 +1,28 @@
+name: 버그 제보
+description: 게임의 오류와 재현 조건
+title: "[Bug] "
+body:
+  - type: input
+    id: environment
+    attributes:
+      label: 앱·버전·기기·OS
+      placeholder: 일반 v0.12 / iPad Air M2 / iPadOS 버전
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 미션과 재현 순서
+      description: 무기·자동조준·입력 방식도 적어 주세요.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: 예상한 동작과 실제 동작
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 화면·영상·로그

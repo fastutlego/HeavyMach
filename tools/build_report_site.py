@@ -105,6 +105,7 @@ def main():
         ('github-documentation-plan-20261027.md', 'github-documentation.html'),
         ('github-licenses-and-badges-20261028.md', 'github-licenses-and-badges.html'),
         ('github-repository-plan-20261028.md', 'github-repository-plan.html'),
+        ('github-followup-20261028.md', 'github-followup.html'),
     ]
     for source_name, page_name in public_articles:
         article(ROOT/'docs/public'/source_name, dist/page_name, source_name, retro)
@@ -123,7 +124,7 @@ def main():
             style=page.new_tag('style');style.string='.lux-small{display:flex;gap:24px;flex-wrap:wrap;align-items:center;padding:20px;background:#4c524f}.lux-small figure{margin:0}.lux-small img{max-width:none}.lux-small figcaption{font-size:12px;color:#fff}.lux-small a{display:block}'
             page.head.append(style)
         for link in page.select('a[href]'):
-            if link['href'].startswith('../evidence/') and page_name not in ('installation.html', 'implementation.html', 'publication.html', 'gameplay-media.html', 'github-documentation.html', 'github-licenses-and-badges.html'):
+            if link['href'].startswith('../evidence/') and page_name not in ('installation.html', 'implementation.html', 'publication.html', 'gameplay-media.html', 'github-documentation.html', 'github-licenses-and-badges.html', 'github-followup.html'):
                 link['href']=link['href'][3:]
             if link['href'] in ('../apple-platforms.md','../keyboard-input-policy.md','../current-status.md','../auto-aim-plan-20261026.md','../wireless-device-workflow.md'):
                 link['href']=link['href'].removeprefix('../')
@@ -149,7 +150,7 @@ def main():
     # Resolve relative Markdown paths from each manuscript's original directory.
     from urllib.parse import urlsplit, unquote, quote
     for source_name, page_name in routes.items():
-        if page_name not in list(reader_sources.values()) + ['installation.html', 'implementation.html', 'publication.html', 'gameplay-media.html', 'github-documentation.html', 'github-licenses-and-badges.html', 'github-repository-plan.html']:
+        if page_name not in list(reader_sources.values()) + ['installation.html', 'implementation.html', 'publication.html', 'gameplay-media.html', 'github-documentation.html', 'github-licenses-and-badges.html', 'github-repository-plan.html', 'github-followup.html']:
             continue
         page = BeautifulSoup((dist/page_name).read_text(), 'html.parser')
         if page.footer: page.footer.decompose()
@@ -190,6 +191,8 @@ def main():
     shutil.copyfile(ROOT/'docs/public/media/README.md', dist/'media/README.md')
     shutil.copytree(ROOT/'docs/public/media/gameplay-20261027',dist/'media/gameplay-20261027',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/media/badges',dist/'media/badges',dirs_exist_ok=True)
+    for name in ('github-social-preview.svg', 'github-social-preview.png'):
+        shutil.copyfile(ROOT/'docs/public/media'/name,dist/'media'/name)
     shutil.copyfile(ROOT/'docs/lux-lunae-plan-20261027.md',dist/'lux-lunae-plan-20261027.md')
     (dist/'evidence').mkdir(exist_ok=True)
     shutil.copyfile(ROOT/'docs/evidence/lux-lunae-implementation-20261027.json',dist/'evidence/lux-lunae-implementation-20261027.json')

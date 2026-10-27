@@ -18,7 +18,7 @@ The MIT license in `LICENSE` applies to original software contributions made by 
 - 원작 이미지·음원·맵·수치 데이터, 추가 그림, 게임 캡처·영상: [ASSET-LICENSES.md](ASSET-LICENSES.md).
 - `vendor`, 외부 구현 패치와 복사한 스킬: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). 각 파일의 기존 고지를 유지한다.
 - `Analysis`, `Resources/Evidence`, `Sources/OriginalInterfaces`, `Compatibility`: 원작 분석 결과·외부 실행 도구·참고 자료. 루트 MIT의 적용 대상에서 제외한다.
-- `Sources/iOS/HMCompatibilityPixels.hpp`: touchHLE 구현을 참조한 파일이다. 외부 코드와의 대응 검토가 끝날 때까지 루트 MIT 적용에서 제외한다.
+- `Sources/iOS/HMCompatibilityPixels.hpp`: touchHLE의 감마 변환을 참조한 파일이다. MPL-2.0을 적용하고 루트 MIT에서 제외한다. [외부 고지](THIRD_PARTY_NOTICES.md)를 따른다.
 - 개발자의 변, 인터뷰 원문, 문서 본문과 인용 자료: 코드 라이선스로 일괄 재허락하지 않는다.
 
 MIT가 부여하는 권리는 이 프로젝트의 새 코드 기여분에 한정된다. 원작 이름·그림·음원과 함께 앱을 공개하거나 배포하는 범위는 [자원 이용 조건](ASSET-LICENSES.md)에서 확인한다. 코드·에셋을 갖춘 저장소로 빌드·플레이를 제공하려는 공개 계획은 [배포 조사](docs/public/github-licenses-and-badges-20261028.md)에 있다.
