@@ -1,17 +1,56 @@
 # 버그 수정·사용성 개선 과제
 
+## HM-SASS-HANDOFF — Apps·Mags 집필 자료 검사 (2026-10-28 완료)
+
+- [x] 최신 개발 동기·개인 원문과 정정, 원작 기능·추가 기능, 트러블슈팅, 구조·설치·검증·남은 과제를 연결한다.
+- [x] 선정 이미지8장·GIF2개·MP4 3개, 비교 그림13개와 원문6개·글쓰기 자료14개의 파일·해시를 확인한다.
+- [x] 최신 main 문서를 집필 기준으로 안내하고, 업무별 읽기 목록에 누락된 원문·미디어·TODO를 추가한다.
+- [x] Apps 기술 설명과 Mags 인터뷰 자료를 구분하고 SaaS 세션의 시작점을 지정한다.
+
+[집필 자료](public/publication-inventory.md) · [검사 결과](evidence/sass-handoff-audit-20261028.json). Apps·Mags 원고 작성과 서비스 반영은 SaaS 담당 세션에서 진행한다.
+
+## 빌드 경고·빌드 및 실행 스크립트 — 2026-10-28
+
+### HM-BUILD-WARNINGS — 빌드 경고 전수조사와 수정
+
+원작 복원과 정상 플레이 구현을 우선해 빌드 경고를 전면 조사·수정하지 못했다. deprecated API와 관련된 것으로 추정하며, 추가 기능 개발과 병행해 원인을 조사하고 수정한다.
+
+- [ ] iPhone·iPad·Simulator·Mac의 일반·치트 앱을 Debug·Release로 빌드해 경고 로그를 수집한다. 기기군별 공용 target은 동일 로그의 중복 여부를 기록한다.
+- [ ] 경고를 파일·줄·컴파일러 항목·플랫폼별로 분류한다. deprecated API, 타입·변환, 빌드 설정, 외부 라이브러리 경고를 구분하고 실제 원인을 확인한다.
+- [ ] 게임 동작·렌더링·음향·입력·저장에 미치는 영향을 확인한 뒤 수정한다. 경고 숨김이나 일괄 API 교체로 처리하지 않는다.
+- [ ] 수정 전후 경고 목록과 관련 회귀 검사 결과를 남긴다. 대체가 필요한 API는 최소 OS·현재 구현과의 호환성을 검토한다.
+
+상태: 전수조사 전. deprecated 원인은 추정이며 경고 수·종류는 아직 집계하지 않았다.
+
+### HM-BUILD-LAUNCHER — 다운로드·빌드·실행 절차 통합
+
+- [x] Mesabloo hm-defense, DevilutionX, OpenRCT2의 설치·빌드 안내를 비교했다. [사례와 적용안](public/github-followup-20261028.md#빌드실행-스크립트-조사--2026-10-28).
+- [ ] 하나의 실행 진입점에서 Mac 실행 또는 iPhone·iPad 설치, 일반·치트 앱을 선택하게 한다.
+- [ ] Xcode·CMake·Python·Git LFS와 필요한 SDK를 확인하고 누락된 준비 항목을 안내한다. Git clone과 자원 포함 릴리스 압축본을 모두 지원한다.
+- [ ] LFS 자원 다운로드·해시 검사, OpenAL 준비, workspace 빌드, 실행·기기 설치를 순서대로 연결한다. 실패한 단계와 로그 경로를 표시한다.
+- [ ] iPhone·iPad 설치 시 기기 선택·개발 팀·서명 설정을 안내한다. 특정 개인 기기·팀 ID에 고정하지 않는다.
+- [ ] 새 폴더에 받은 소스·자원으로 최초 실행과 반복 실행을 검사한다. 기존 저장·개인 서명 자료를 보존한다.
+- [ ] README 설치 안내를 실행 진입점 중심으로 고치고 기존 수동 명령은 상세 문서에 남긴다.
+
+상태: 사례 조사 완료, 스크립트 미구현.
+
+### HM-BRANCH-CLEANUP — 병합 브랜치 정리·최신 상태 확인
+
+- [x] origin fetch 후 main·develop의 로컬/원격 차이가 각각 0/0이고 두 브랜치의 파일 내용이 같음을 확인했다.
+- [x] develop·main에 모두 병합된 기존 작업 브랜치 로컬 10개·origin 4개를 정리했다. 태그·migration-source·릴리스 worktree는 유지했다. [정리 기록](evidence/branch-cleanup-20261028.json).
+
 ## GitHub 공개 라이선스·기술 배지 — 2026-10-28
 
 - [x] **HM-PUBLISH 조사** — 코드·원작 자원·추가 그림·OpenAL Soft·stb의 현재 조건과 공개·자유배포에 필요한 문건을 조사했다. MIT 후보, 자원 이용허락, LGPL 정적 링크 재빌드·재링크 자료와 배포 경로를 구분했다. [조사 결과](public/github-licenses-and-badges-20261028.md).
-- [x] **HM-BADGE 조사** — GitHub·Shields와 SDL·OpenRCT2를 확인했다. README 제목·한 문장 소개 뒤에 Git 태그·플랫폼·arm64·언어 배지 4개를 두고 실제 검사 OS는 표에 적는 안을 작성했다.
-- [ ] **HM-PUBLISH 공개** — 자원별 [출처·허락 목록](rights-manifest.json)을 작성했다. 원작·참조 그림의 공개 범위 확정이 남았다. 현재 비공개 저장소의 코드·에셋·이력은 유지한다.
+- [x] **HM-BADGE 조사** — GitHub·Shields와 SDL·OpenRCT2를 확인했다. README 제목 아래에 기술 배지 4개와 코드 라이선스 배지 1개를 두고 실제 검사 OS는 표에 적었다.
+- [x] **HM-PUBLISH 공개** — 2026-10-28 코드·에셋을 포함한 저장소를 공개했다. 자원별 출처·허락 기록은 [목록](rights-manifest.json)에 있다. 게시 중단 요청 시 삭제한다는 의사를 README·개발자의 변에 실었다.
 - [x] **HM-GITHUB 구성** — About·Topics, CONTRIBUTING·이슈·PR 양식, 문서·자원·코어·Apple 빌드 workflow를 추가했다.
 - [x] **HM-SOURCE 릴리스** — v0.12 Release의 소스·자원 압축본과 고지·해시 파일을 등록하고 재다운로드 해시를 확인했다. 압축본에서 자원1,482개·코어21개·앱 빌드4개·OpenAL 재링크2개를 통과했다.
 - [ ] **HM-CI 원격 실행** — GitHub 계정 결제·사용 한도 해소 후 Actions를 실행한다. 현재 실패는 실행 전 계정 제한이며 로컬 검사는 통과했다.
-- [ ] **HM-SOCIAL 등록** — 공유 카드 1280×640 파일은 완성했다. GitHub는 최초 공유 이미지가 없는 비공개 저장소의 업로드를 지원하지 않아 공개 전환 시 등록한다. [후속 결과](public/github-followup-20261028.md)
+- [x] **HM-SOCIAL 등록** — 메인 화면 일러스트와 기존 로고로 만든 1280×640 카드를 GitHub Social preview에 등록하고 공개 OG 이미지와 파일 해시를 대조했다. [후속 결과](public/github-followup-20261028.md)
 - [x] **HM-BADGE 적용** — 기술4개·코드 라이선스1개의 로컬 SVG 배지와 최소 OS·실제 검사 환경 표를 README에 추가했다.
-- [x] **HM-LICENSE 문건** — 새 코드용 MIT·LICENSE-SCOPE·ASSET-LICENSES·THIRD_PARTY_NOTICES와 외부 라이선스 사본을 추가했다. 원작 에셋 공개 허락과 OpenAL 재링크 검사는 남았다.
-- [ ] **HM-GITHUB 정리** — About·Topics·공유 이미지, 기여·이슈·PR 양식, 문서·자원·빌드 CI, 소스 릴리스를 순서대로 준비한다. [점검·계획](public/github-repository-plan-20261028.md).
+- [x] **HM-LICENSE 문건** — 새 코드용 MIT·LICENSE-SCOPE·ASSET-LICENSES·THIRD_PARTY_NOTICES와 외부 라이선스 사본을 추가했다. OpenAL 재링크 검사는 통과했다. 원작 에셋의 재배포 허락 기록은 없다.
+- [x] **HM-GITHUB 정리** — About·Topics·공유 이미지, 기여·이슈·PR 양식, 문서·자원·빌드 workflow와 소스 릴리스를 등록했다. 원격 CI 실행은 HM-CI 과제로 남아 있다. [점검·계획](public/github-repository-plan-20261028.md).
 
 
 ## GitHub 플레이 자료 — 2026-10-27
@@ -31,11 +70,13 @@
 
 | 과제 | 남은 일 |
 |---|---|
+| 빌드 경고 | HM-BUILD-WARNINGS: 플랫폼별 경고 로그 수집·원인 조사·수정 |
+| 빌드·실행 스크립트 | HM-BUILD-LAUNCHER: 자원 준비부터 빌드·실행·설치까지 통합 |
 | 자동조준 시각 안내 | 동작을 유지하면서 대상 없음·화면 밖·지형에 가린 상태를 설명할 표시 연구 |
 | 튜토리얼0-0~0-4 | 기존 미션·저장 보존, 학습 목표·UI·스프라이트·클리어 조건과 제작 절차 연구 |
 | 앱 아이콘 | 현행 일러스트에서 글자를 제거하고 Apple·Android용으로 파생 |
 | HUD 편집 | 요소 분할, 시작 전 미리보기·드래그 이동, 실제 터치 위치 연결, 기본 배치 복원 |
-| 영상 자료 | 영상 2개 판독, 후보 이미지 8장·클립 3개·출처 명세 작성. 최종 게시 컷 선정 남음 |
+| 영상 자료 | 영상 2개 판독 후 이미지 8장·GIF 2개·MP4 3개 게시 완료. 추가 기능은 후속 촬영 |
 | Android | 공용 코어를 연결한 일반·치트 APK 구현·설치·검증 |
 | 성능·난도·기존 동작 검사 | 표시시간 기준 실패 후속 계측, 발열·메모리·추가 적 난도, 전체화면/적 AI 고정값·수동 실기기 검수 |
 | 추가 기기 대응 | 접힌 화면의 게임/조작부 분리 연구, Intel Simulator/OpenAL 아키텍처 정리 |

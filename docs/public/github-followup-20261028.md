@@ -82,3 +82,18 @@ Git 차이 검사는 병합 등을 제외한 99개 커밋을 처리했다. 누�
 공유 이미지 등록은 완료했다. GitHub Actions의 기존 실행 제한과 원작·참조 그림의 이용 조건 확인 기록은 남아 있다. 앱 설치 파일의 일반 배포에는 플랫폼별 서명·설치 검사가 추가로 필요하다.
 
 [전체 문서](../README.md) · [GitHub 구성 계획](github-repository-plan-20261028.md) · [빌드·설치](build-and-install.md)
+
+
+## 빌드·실행 스크립트 조사 — 2026-10-28
+
+| 프로젝트 | 실제 설치·실행 방식 |
+|---|---|
+| [Mesabloo/hm-defense](https://github.com/Mesabloo/hm-defense#installation) | Gradle Wrapper의 `./gradlew :desktop:dist`로 JAR을 만든 뒤 Java로 실행한다. 실행용 wrapper는 README의 TODO다. |
+| [DevilutionX](https://github.com/diasurgical/devilutionX/blob/master/docs/installing.md) | 운영체제별 실행 파일에 원작 데이터를 넣어 실행한다. GameShell에는 빌드·업데이트를 처리하는 실행 도구가 있다. |
+| [OpenRCT2](https://github.com/OpenRCT2/OpenRCT2#2-downloading-the-game-pre-built) | 설치 프로그램·휴대용 빌드를 제공하고 원작 게임 파일의 위치를 지정한다. |
+
+HeavyMach에는 자원 다운로드·검사, OpenAL과 앱 빌드, Mac 실행 또는 iPhone·iPad 설치를 묶는 스크립트를 추가할 예정이다. 필요한 도구와 SDK, 개발 팀·서명 설정을 안내하고 일반·치트 앱을 선택하게 한다. 스크립트는 아직 구현하지 않았다. [내부 TODO](../usability-todo.md#hm-build-launcher--다운로드빌드실행-절차-통합).
+
+## 브랜치 정리 — 2026-10-28
+
+origin을 갱신한 뒤 main·develop의 로컬/원격 차이가 각각 0/0임을 확인했다. 두 브랜치의 파일 내용도 같았다. develop·main에 모두 병합된 기존 문서 브랜치 로컬 10개와 origin 4개를 정리했다. 삭제한 브랜치의 마지막 커밋과 병합 여부는 [정리 기록](../evidence/branch-cleanup-20261028.json)에 있다. v0.9~v0.12 태그와 릴리스 worktree, migration-source는 유지했다.

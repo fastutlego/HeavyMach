@@ -352,7 +352,12 @@
         "docs/public/architecture.md",
         "docs/public/troubleshooting.md",
         "docs/public/development-history.md",
-        "docs/public/validation.md"
+        "docs/public/validation.md",
+        "docs/references/developer-background/user-project-origin-20261028.md",
+        "docs/public/media/gameplay-20261027/README.md",
+        "docs/public/media/gameplay-20261027/media-scenes.json",
+        "docs/usability-todo.md",
+        "docs/public/github-followup-20261028.md"
       ],
       "sources": [
         "docs/RESTORATION.md",
@@ -361,10 +366,13 @@
         "README.md",
         "docs/public/*"
       ],
-      "tests": [],
+      "tests": [
+        "tools/check_publication.py"
+      ],
       "evidence": [
         "docs/references/developer-background/source-manifest.json",
-        "docs/current-status.md"
+        "docs/current-status.md",
+        "docs/evidence/sass-handoff-audit-20261028.json"
       ]
     },
     "media": {

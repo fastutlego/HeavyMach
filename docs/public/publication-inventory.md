@@ -2,6 +2,15 @@
 
 HeavyMach에 관해 내가 쓴 원문과 기술 설명·수정 과정·이미지를 이 저장소에 모았다. Apps는 기술 설명, Mags는 매거진 인터뷰 형식이다. 두 곳 모두 현재 기능과 시정 과정을 다룬다. SaaS 담당 세션이 이 자료로 원고를 작성하고 서비스에 반영한다.
 
+집필은 이 저장소 **main의 최신 문서**에서 시작한다. 게임 릴리스는 **v0.12**다. 이후 추가한 글과 이미지 설명은 main에 있다.
+
+```sh
+python3 tools/document_contract.py plan --task developer_story
+python3 tools/document_contract.py check
+```
+
+첫 명령은 원문·기술 문서·그림·글쓰기 스킬의 읽기 목록을 출력한다. 아래 순서로 읽고, 기능의 세부 조건은 연결된 정책과 코드에서 확인한다.
+
 ## 읽는 순서
 
 1. [개발자의 변](../RESTORATION.md)과 [개발 동기 자료](../developer-background.md): 내가 제공한 원문, 연도 정정, 잡지사·필리핀 근무와 개발자 전업, HeavyMach를 선택한 이유.
@@ -56,7 +65,9 @@ HeavyMach에 관해 내가 쓴 원문과 기술 설명·수정 과정·이미지
 
 ## 버전과 남은 근거
 
-GitHub 게임 태그는 v0.12이며 이 원고는 `docs/github-publication`에서 작성했다. [변경 이력](../../CHANGELOG.md)과 [전체 문서 목차](../README.md)로 연결된다.
+게임 버전은 v0.12다. 현재 구현과 남은 일은 [구현 상태](implementation-status.md)와 [내부 TODO](../usability-todo.md), 변경 순서는 [작업 이력](../current-status.md)에 있다. 작업 이력의 날짜별 항목은 당시 상태를 담고 있다. [변경 이력](../../CHANGELOG.md)과 [전체 문서 목차](../README.md)로 연결된다.
+
+빌드 경고는 아직 전수조사하지 않았다. deprecated API 관련이라는 추정을 확인하고 추가 기능 개발과 병행해 수정할 예정이다. 빌드·실행 스크립트는 사례 조사를 마쳤고 구현이 남았다. [스크립트 조사·브랜치 정리](github-followup-20261028.md).
 
 추가로 필요한 자료는 장시간 발열·전력 비교, 추가 적의 전체 미션 난도 검사, 실제 Bluetooth·USB 키보드 조작, 촬영 환경 정보, 원작자 답변이다. 현재의 실행 수치와 실패는 [검증](validation.md)에 모았다.
 
@@ -68,3 +79,27 @@ GitHub 게임 태그는 v0.12이며 이 원고는 `docs/github-publication`에�
 ## GitHub 후속 자료 — 2026-10-28
 
 [도입문 원문·정정](../references/developer-background/user-project-origin-20261028.md), [GitHub 구성·소스 릴리스 검사](github-followup-20261028.md), [자원 공개 범위](../rights-manifest.json)를 추가했다. README의 첫 본문은 개발자의 변에서 “요즘 나는 내게 남은 시간이”로 시작하는 문단을 그대로 옮겼다. 그 뒤의 복원 시작에 관한 세 문단도 두 문서에 같은 문장으로 실었다. Apps·Mags 집필은 SaaS 담당 세션에서 진행한다.
+
+
+## 원작 기능과 추가 기능
+
+| 구분 | 설명할 내용 | 원고·그림 |
+|---|---|---|
+| 원작에서 이어온 기능 | 틸트 이동·점프·터치 사격, 무기 전환·지원 공격, 강화·미션 진행 | [조작](gameplay-guide.md), 플레이 이미지 02~06 |
+| 내가 요구한 추가 기능 | 화면 확장, 가로 회전, iPad·Mac·키보드, 자동조준, VTOL·전투기 | [기획 의도·조건·구현](features.md), [공용 모듈](architecture.md), 플레이 이미지 07→01·08 |
+| 개발 중 발견하고 고친 문제 | 발사마다 저장, 렌더링·갱신 주기, 좌표·그림·입력, 임의로 바꾼 기체 외형과 탄도 | [트러블슈팅](troubleshooting.md), [수정 순서](development-history.md) |
+| 아직 남은 기능·검사 | HUD 편집, 조준 상태 안내, 튜토리얼, 아이콘, Android, 빌드 경고·실행 스크립트 등 | [상태표](implementation-status.md), [상세 TODO](../usability-todo.md) |
+
+자동조준은 표적 선택·추적과 포신 각도 조절을 맡는다. 이동·점프·무기 선택·발사는 플레이어가 한다. 탄속·탄도·분산을 바꾸던 C 기능은 삭제했다. 추가 유닛의 기획 조건과 실제 채택 수치는 기능 문서에서 각각 설명한다.
+
+## 원문과 집필 범위
+
+개인 경험 원문 6개와 SaaS·Candidate에서 가져온 글쓰기 자료는 저장소 안에 있다. [원문 목록](../references/developer-background/source-manifest.json)과 [스킬 출처](../../.agents/skills/write-project-text/references/source-manifest.json)에서 복사 범위와 해시를 확인할 수 있다. Unity 초기 기획은 개인적인 시작 배경을 설명하는 별도 프로젝트 자료다.
+
+Mags의 답변은 개발자의 변과 제공 원문을 바탕으로 쓴다. 추가로 물을 내용은 질문안으로 정리한다. Apps는 현재 기능·기술 구성·시정 과정·검사 결과를 설명한다. 개발자의 판단과 직접 플레이, Codex의 구현과 검사를 구분한다. 문장 규칙은 [글쓰기 스킬](../../.agents/skills/write-project-text/SKILL.md)에 있다.
+
+과거 분석 기록에는 당시 도구와 원본 파일을 다룬 내용이 있다. 새 원고의 범위는 복원 동기, 현재 기능, 구현·수정 과정과 설치 방법이다. 기술 사실을 확인할 때는 분석 기록을 참고하고, 집필에는 위에 연결한 원고와 최신 사용자 정정을 사용한다.
+
+## 2026-10-28 자료 검사
+
+최신 개발 동기 원문, 선정 미디어, 내부 TODO와 GitHub 후속 조사 문서를 업무별 읽기 목록에 추가했다. 이전 집필 브랜치 안내를 최신 main 기준으로 바꿨다. 개인 원문·스킬 사본·선정 미디어·비교 그림의 해시와 문서 연결을 검사했다. [검사 파일과 결과](../evidence/sass-handoff-audit-20261028.json).

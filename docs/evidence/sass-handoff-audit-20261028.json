@@ -1,0 +1,2626 @@
+{
+  "date": "2026-10-28",
+  "scope": "SaaS Apps·Mags 집필 자료와 출처 연결 검사",
+  "baseline_main": "333eea417dd782fab14d23668d7f4b42b9bc2f09",
+  "documents_checked": [
+    ".agents/skills/write-project-text/SKILL.md",
+    "ASSET-LICENSES.md",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "CREDITS.md",
+    "LICENSE-SCOPE.md",
+    "README.md",
+    "THIRD_PARTY_NOTICES.md",
+    "docs/README.md",
+    "docs/RESTORATION.md",
+    "docs/developer-background.md",
+    "docs/media-publication.md",
+    "docs/public/architecture.md",
+    "docs/public/build-and-install.md",
+    "docs/public/clone-build-20261026.md",
+    "docs/public/development-history.md",
+    "docs/public/features.md",
+    "docs/public/gameplay-guide.md",
+    "docs/public/github-documentation-plan-20261027.md",
+    "docs/public/github-followup-20261028.md",
+    "docs/public/github-repository-plan-20261028.md",
+    "docs/public/implementation-status.md",
+    "docs/public/ipa-independent-build-20261026.md",
+    "docs/public/media/README.md",
+    "docs/public/media/gameplay-20261027/README.md",
+    "docs/public/media/gameplay-20261027/media-scenes.json",
+    "docs/public/publication-inventory.md",
+    "docs/public/rea-implementation-audit-20261026.md",
+    "docs/public/troubleshooting.md",
+    "docs/public/validation.md",
+    "docs/references/developer-background/hm-defense-origin.md",
+    "docs/references/developer-background/sass-mutiny-source.txt",
+    "docs/references/developer-background/unity-planning-origin.md",
+    "docs/references/developer-background/user-background-20261026.md",
+    "docs/references/developer-background/user-project-origin-20261028.md",
+    "docs/references/developer-background/user-restoration-reason-20261026.md",
+    "docs/usability-todo.md"
+  ],
+  "source_and_media_checks": [
+    {
+      "group": "personal_sources",
+      "path": "docs/references/developer-background/hm-defense-origin.md",
+      "sha256": "b367b77dedadfec8a47072fbb0cbb9de35d81622c240ede3ea4cebe5e7d77c8a",
+      "matches_manifest": true
+    },
+    {
+      "group": "personal_sources",
+      "path": "docs/references/developer-background/unity-planning-origin.md",
+      "sha256": "a6d1a5cd927a754aa13132a5005b662ac59dcce66af12eb8c2f9b91a073d19f9",
+      "matches_manifest": true
+    },
+    {
+      "group": "personal_sources",
+      "path": "docs/references/developer-background/sass-mutiny-source.txt",
+      "sha256": "c7b2313b3c7b29ee3368a24a2f58d1d0a2143954a25fe4a26e50e5a36c3547d2",
+      "matches_manifest": true
+    },
+    {
+      "group": "personal_sources",
+      "path": "docs/references/developer-background/user-background-20261026.md",
+      "sha256": "b6b2f0b6dc8c7901eae894701b8f40f7b1becc64cb406f255865708e19335c7d",
+      "matches_manifest": true
+    },
+    {
+      "group": "personal_sources",
+      "path": "docs/references/developer-background/user-restoration-reason-20261026.md",
+      "sha256": "61673e2d0515843ab3b4ab0783157fedc984dbcb8c711b13e16ea3b6c4f21e83",
+      "matches_manifest": true
+    },
+    {
+      "group": "personal_sources",
+      "path": "docs/references/developer-background/user-project-origin-20261028.md",
+      "sha256": "c3743dfb6f18c3dae26209c70e99abb52297d4cb643e40ce8b814d711bddcd82",
+      "matches_manifest": true
+    },
+    {
+      "group": "writing_skill_sources",
+      "path": ".agents/skills/write-project-text/references/upstream/sass-applications/SKILL.md",
+      "sha256": "e81514c9c8805b104f07e338ea5de10ec1b980ea049dc05cdadbbca08332fcd4",
+      "matches_manifest": true
+    },
+    {
+      "group": "writing_skill_sources",
+      "path": ".agents/skills/write-project-text/references/upstream/sass-review-publication/SKILL.md",
+      "sha256": "4c3db2e438a50847f74662d899ec168c79835c7a82d71e13d9de7a1e82f3bde7",
+      "matches_manifest": true
+    },
+    {
+      "group": "writing_skill_sources",
+      "path": ".agents/skills/write-project-text/references/upstream/sass-content/SKILL.md",
+      "sha256": "d18cba3532092899e79bcdf48498b5d88ffe2e645669b400e208bdc985b47b64",
+      "matches_manifest": true
+    },
+    {
+      "group": "writing_skill_sources",
+      "path": ".agents/skills/write-project-text/references/upstream/write-candidate-report/SKILL.md",
+      "sha256": "2e07e21d7b8a4a4257ccdb3a891c290ea7a21ae6b6a47e5f0fe12f373ed3008f",
+      "matches_manifest": true
+    },
+    {
+      "group": "writing_skill_sources",
+      "path": ".agents/skills/write-project-text/references/upstream/write-candidate-report/agents/openai.yaml",
+      "sha256": "bdf0f811f0cd75de12eef9f44a3e564b944e818bcffcbd633cd63b8b6620b5ad",
+      "matches_manifest": true
+    },
+    {
+      "group": "writing_skill_sources",
+      "path": ".agents/skills/write-project-text/references/upstream/present-candidate-review/SKILL.md",
+      "sha256": "c56905a19a56e572699b21a31523553696b92812e9c5ecd24dd0db818ffac7f2",
+      "matches_manifest": true
+    },
+    {
+      "group": "writing_skill_sources",
+      "path": ".agents/skills/write-project-text/references/upstream/present-candidate-review/agents/openai.yaml",
+      "sha256": "a0e1ec7def8b7d41862db0628b6bc92e197e361ca91c3adbcb6e746f49d2252a",
+      "matches_manifest": true
+    },
+    {
+      "group": "writing_skill_sources",
+      "path": ".agents/skills/write-project-text/references/upstream/present-candidate-review/references/materials.md",
+      "sha256": "44c746d4bcaa3ea4369a64856882d5aa89afd7ac71c776e0925d0f947cfbc4a9",
+      "matches_manifest": true
+    },
+    {
+      "group": "writing_skill_sources",
+      "path": ".agents/skills/write-project-text/references/upstream/sass-application-writing.md",
+      "sha256": "fa34c468fb7869cf5a9c12251c2849ab7372349bf401ad490da908d35a78771e",
+      "matches_manifest": true
+    },
+    {
+      "group": "writing_skill_sources",
+      "path": ".agents/skills/write-project-text/references/upstream/sass-authoring-workflows.md",
+      "sha256": "d191a6c72a7cf12e7b23d05a363186f87d795736ca6198ee9a74c1ae8cd6e722",
+      "matches_manifest": true
+    },
+    {
+      "group": "writing_skill_sources",
+      "path": ".agents/skills/write-project-text/references/upstream/sass-review-materials.md",
+      "sha256": "66e6ff081972a4459fd69e172eca8277f798d5f17990f4880bb1d42ed6aeed7c",
+      "matches_manifest": true
+    },
+    {
+      "group": "writing_skill_sources",
+      "path": ".agents/skills/write-project-text/references/upstream/sass-content-authoring-canon.md",
+      "sha256": "0b45c89db38f7c1c621212710de924ffdbfb1ed1220dfdbbadcce5f1bb089a0a",
+      "matches_manifest": true
+    },
+    {
+      "group": "writing_skill_sources",
+      "path": ".agents/skills/write-project-text/references/upstream/sass-proposal-authoring-canon.md",
+      "sha256": "35ce8471032461e7346e10f98b69cba87897fc00854fabacf69924e2df67605e",
+      "matches_manifest": true
+    },
+    {
+      "group": "writing_skill_sources",
+      "path": ".agents/skills/write-project-text/references/upstream/candidate-editorial-rules.md",
+      "sha256": "1fba3fc1f22c6b952e70f84057975b2bcc06efd420577f31e418c032cc5b2c76",
+      "matches_manifest": true
+    },
+    {
+      "group": "comparison_images",
+      "path": "docs/public/media/menu-joins/before-wide-title-912-0.png",
+      "sha256": "13b22798a94f31c7d9207482ef24c94c15f50608b6c6d98f3e748f38bcecc98f",
+      "matches_manifest": true
+    },
+    {
+      "group": "comparison_images",
+      "path": "docs/public/media/menu-joins/after-wide-title-912-0.png",
+      "sha256": "67181dd83dac02d0bf4fb5c42dc754b34eaebd69de29f425235ca83aa5699974",
+      "matches_manifest": true
+    },
+    {
+      "group": "comparison_images",
+      "path": "docs/public/media/menu-joins/before-wide-mode-912-0.png",
+      "sha256": "fb1465ff1287cb858179c36631b7953864321067344e06c0d8813ffbd1ebc55f",
+      "matches_manifest": true
+    },
+    {
+      "group": "comparison_images",
+      "path": "docs/public/media/menu-joins/after-wide-mode-912-0.png",
+      "sha256": "fbc7a5e03fde59f7f59613feacf2efa3e79737dff81173300daa1f285c9520f7",
+      "matches_manifest": true
+    },
+    {
+      "group": "comparison_images",
+      "path": "docs/public/media/menu-joins/before-wide-mission-912-0.png",
+      "sha256": "30f9e12f8dd21abe99306f4aa7ea33faf8f2b13894e7a017ef204e9423376d4e",
+      "matches_manifest": true
+    },
+    {
+      "group": "comparison_images",
+      "path": "docs/public/media/menu-joins/after-wide-mission-912-0.png",
+      "sha256": "a8033ff6a7980784bb945dac395f5699568fe33888e48e7fe4cb149e3fdad92c",
+      "matches_manifest": true
+    },
+    {
+      "group": "comparison_images",
+      "path": "docs/public/media/menu-art/wide-title-912-0.png",
+      "sha256": "13b22798a94f31c7d9207482ef24c94c15f50608b6c6d98f3e748f38bcecc98f",
+      "matches_manifest": true
+    },
+    {
+      "group": "comparison_images",
+      "path": "docs/public/media/menu-art/wide-slots-912-0.png",
+      "sha256": "1c11ddada736d74b29ed3b214f43257ac01ec204943c2f657d38cf7dc6bac012",
+      "matches_manifest": true
+    },
+    {
+      "group": "comparison_images",
+      "path": "docs/public/media/menu-art/wide-slots-480-0.png",
+      "sha256": "70e46e99be7370b626d83cd7f006661fe99a44221565a8e9996775f336accd63",
+      "matches_manifest": true
+    },
+    {
+      "group": "comparison_images",
+      "path": "docs/public/media/menu-art/wide-mode-912-0.png",
+      "sha256": "fb1465ff1287cb858179c36631b7953864321067344e06c0d8813ffbd1ebc55f",
+      "matches_manifest": true
+    },
+    {
+      "group": "comparison_images",
+      "path": "docs/public/media/menu-art/wide-mission-912-0.png",
+      "sha256": "30f9e12f8dd21abe99306f4aa7ea33faf8f2b13894e7a017ef204e9423376d4e",
+      "matches_manifest": true
+    },
+    {
+      "group": "comparison_images",
+      "path": "docs/public/media/menu-art/title-a.png",
+      "sha256": "03ce72c951431b7a51d13b329c950b67ee635842e22630f7ec9d61097aefdf6b",
+      "matches_manifest": true
+    },
+    {
+      "group": "comparison_images",
+      "path": "docs/public/media/menu-art/title-b.png",
+      "sha256": "3b409dc984d732a2c422969d972dc5af98d59e6b5fcd6ce40003ad2ed5a1d674",
+      "matches_manifest": true
+    },
+    {
+      "group": "selected_gameplay",
+      "path": "docs/public/media/gameplay-20261027/01-auto-aim.png",
+      "sha256": "5071ef182d6cc71aebdb7ab393234e9794215db58f7d40646fa14b4f8b21c37d",
+      "matches_manifest": true
+    },
+    {
+      "group": "selected_gameplay",
+      "path": "docs/public/media/gameplay-20261027/01-auto-aim.mp4",
+      "sha256": "ab1ac656a915f2b8dcfc628afe92a15b1c79c269b0f12ae06f69b24a5bd49865",
+      "matches_manifest": true
+    },
+    {
+      "group": "selected_gameplay",
+      "path": "docs/public/media/gameplay-20261027/02-jump.png",
+      "sha256": "9808808e9d7196cc00bfc9700b9bb97f93231dcde2fffeb2cfcaa18b8e2cb28f",
+      "matches_manifest": true
+    },
+    {
+      "group": "selected_gameplay",
+      "path": "docs/public/media/gameplay-20261027/03-weapon.png",
+      "sha256": "7d931ba573b149e49808fb382c48ce6fe213a309e1a64577e14e3b0caba329f4",
+      "matches_manifest": true
+    },
+    {
+      "group": "selected_gameplay",
+      "path": "docs/public/media/gameplay-20261027/04-special.png",
+      "sha256": "9d27b429e5343414aa24809cb1300e3bbd3479f48f06186cd53fbce44c984243",
+      "matches_manifest": true
+    },
+    {
+      "group": "selected_gameplay",
+      "path": "docs/public/media/gameplay-20261027/05-upgrade.png",
+      "sha256": "c2c860f83ee29fa0d6cf3b2a71c2b18d890e52be9306ec91bffe52884cbffaf9",
+      "matches_manifest": true
+    },
+    {
+      "group": "selected_gameplay",
+      "path": "docs/public/media/gameplay-20261027/06-stage-clear.png",
+      "sha256": "81b3e616b7a17d1b2081d7a90ca2c78e35bb8919a582ba57c740a2e1fdf147ee",
+      "matches_manifest": true
+    },
+    {
+      "group": "selected_gameplay",
+      "path": "docs/public/media/gameplay-20261027/07-fighters.png",
+      "sha256": "4980378f751ab160fdccd997552f9654ac15f9669569c5cc21c8dff1dcfcc552",
+      "matches_manifest": true
+    },
+    {
+      "group": "selected_gameplay",
+      "path": "docs/public/media/gameplay-20261027/07-fighters.mp4",
+      "sha256": "e8f4a50f26f549248bf77c22258576c4645de6d7c552a7def69e340a07d70aec",
+      "matches_manifest": true
+    },
+    {
+      "group": "selected_gameplay",
+      "path": "docs/public/media/gameplay-20261027/08-jump-clip.png",
+      "sha256": "81f595db5b236d888a0178fce6f4bb7419b4e12df70e14d9cdd71a091c2f2bc5",
+      "matches_manifest": true
+    },
+    {
+      "group": "selected_gameplay",
+      "path": "docs/public/media/gameplay-20261027/08-jump-clip.mp4",
+      "sha256": "60cc2ac7996ad781557c63cfe9992f1b91f990577414a4df08db3e1bd47e404c",
+      "matches_manifest": true
+    },
+    {
+      "group": "selected_gameplay",
+      "path": "docs/public/media/gameplay-20261027/01-auto-aim.gif",
+      "sha256": "04c04d0685168942795430c7bfefddad031f2bcf24103ca5d8e4a6a6c486bf2a",
+      "matches_manifest": true
+    },
+    {
+      "group": "selected_gameplay",
+      "path": "docs/public/media/gameplay-20261027/08-jump-clip.gif",
+      "sha256": "94513e2da2bc45819b6ee045791adb71be0bd3ec0055e35163e948c57d6edcd0",
+      "matches_manifest": true
+    }
+  ],
+  "local_links": [
+    {
+      "from": ".agents/skills/write-project-text/SKILL.md",
+      "target": "references/upstream/candidate-editorial-rules.md",
+      "exists": true
+    },
+    {
+      "from": ".agents/skills/write-project-text/SKILL.md",
+      "target": "references/upstream/write-candidate-report/SKILL.md",
+      "exists": true
+    },
+    {
+      "from": ".agents/skills/write-project-text/SKILL.md",
+      "target": "references/upstream/sass-content/SKILL.md",
+      "exists": true
+    },
+    {
+      "from": ".agents/skills/write-project-text/SKILL.md",
+      "target": "references/upstream/sass-content-authoring-canon.md",
+      "exists": true
+    },
+    {
+      "from": ".agents/skills/write-project-text/SKILL.md",
+      "target": "references/upstream/sass-application-writing.md",
+      "exists": true
+    },
+    {
+      "from": ".agents/skills/write-project-text/SKILL.md",
+      "target": "references/upstream/sass-proposal-authoring-canon.md",
+      "exists": true
+    },
+    {
+      "from": ".agents/skills/write-project-text/SKILL.md",
+      "target": "references/upstream/sass-review-publication/SKILL.md",
+      "exists": true
+    },
+    {
+      "from": ".agents/skills/write-project-text/SKILL.md",
+      "target": "references/upstream/present-candidate-review/references/materials.md",
+      "exists": true
+    },
+    {
+      "from": ".agents/skills/write-project-text/SKILL.md",
+      "target": "references/source-manifest.json",
+      "exists": true
+    },
+    {
+      "from": "ASSET-LICENSES.md",
+      "target": "LICENSE",
+      "exists": true
+    },
+    {
+      "from": "ASSET-LICENSES.md",
+      "target": "CREDITS.md",
+      "exists": true
+    },
+    {
+      "from": "ASSET-LICENSES.md",
+      "target": "docs/build-resources.json",
+      "exists": true
+    },
+    {
+      "from": "ASSET-LICENSES.md",
+      "target": "docs/public/media/README.md",
+      "exists": true
+    },
+    {
+      "from": "ASSET-LICENSES.md",
+      "target": "docs/public/github-licenses-and-badges-20261028.md",
+      "exists": true
+    },
+    {
+      "from": "ASSET-LICENSES.md",
+      "target": "docs/rights-manifest.json",
+      "exists": true
+    },
+    {
+      "from": "CHANGELOG.md",
+      "target": "docs/public/github-followup-20261028.md",
+      "exists": true
+    },
+    {
+      "from": "CHANGELOG.md",
+      "target": "docs/public/features.md",
+      "exists": true
+    },
+    {
+      "from": "CHANGELOG.md",
+      "target": "docs/public/fullscreen-transitions-20261027.md",
+      "exists": true
+    },
+    {
+      "from": "CHANGELOG.md",
+      "target": "docs/public/auto-aim-ipad-20261027.md",
+      "exists": true
+    },
+    {
+      "from": "CHANGELOG.md",
+      "target": "docs/public/apple-platform-progress-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "CHANGELOG.md",
+      "target": "docs/public/vtol-art-and-loadout-20261027.md",
+      "exists": true
+    },
+    {
+      "from": "CHANGELOG.md",
+      "target": "docs/repository-management.md",
+      "exists": true
+    },
+    {
+      "from": "CONTRIBUTING.md",
+      "target": "docs/public/implementation-status.md",
+      "exists": true
+    },
+    {
+      "from": "CONTRIBUTING.md",
+      "target": "docs/public/build-and-install.md",
+      "exists": true
+    },
+    {
+      "from": "CONTRIBUTING.md",
+      "target": "docs/developer-background.md",
+      "exists": true
+    },
+    {
+      "from": "CONTRIBUTING.md",
+      "target": "docs/public/publication-inventory.md",
+      "exists": true
+    },
+    {
+      "from": "CONTRIBUTING.md",
+      "target": "LICENSE-SCOPE.md",
+      "exists": true
+    },
+    {
+      "from": "CREDITS.md",
+      "target": "docs/RESTORATION.md",
+      "exists": true
+    },
+    {
+      "from": "CREDITS.md",
+      "target": "docs/public/troubleshooting.md",
+      "exists": true
+    },
+    {
+      "from": "CREDITS.md",
+      "target": "docs/build-resources.json",
+      "exists": true
+    },
+    {
+      "from": "CREDITS.md",
+      "target": "docs/public/vtol-art-and-loadout-20261027.md",
+      "exists": true
+    },
+    {
+      "from": "CREDITS.md",
+      "target": "docs/public/lux-lunae-design-20261027.md",
+      "exists": true
+    },
+    {
+      "from": "CREDITS.md",
+      "target": "docs/public/media/gameplay-20261027/media-scenes.json",
+      "exists": true
+    },
+    {
+      "from": "CREDITS.md",
+      "target": "vendor/openal-soft/COPYING",
+      "exists": true
+    },
+    {
+      "from": "CREDITS.md",
+      "target": "vendor/stb/LICENSE",
+      "exists": true
+    },
+    {
+      "from": "CREDITS.md",
+      "target": "LICENSE",
+      "exists": true
+    },
+    {
+      "from": "CREDITS.md",
+      "target": "LICENSE-SCOPE.md",
+      "exists": true
+    },
+    {
+      "from": "CREDITS.md",
+      "target": "ASSET-LICENSES.md",
+      "exists": true
+    },
+    {
+      "from": "CREDITS.md",
+      "target": "THIRD_PARTY_NOTICES.md",
+      "exists": true
+    },
+    {
+      "from": "LICENSE-SCOPE.md",
+      "target": "LICENSE",
+      "exists": true
+    },
+    {
+      "from": "LICENSE-SCOPE.md",
+      "target": "ASSET-LICENSES.md",
+      "exists": true
+    },
+    {
+      "from": "LICENSE-SCOPE.md",
+      "target": "THIRD_PARTY_NOTICES.md",
+      "exists": true
+    },
+    {
+      "from": "LICENSE-SCOPE.md",
+      "target": "THIRD_PARTY_NOTICES.md",
+      "exists": true
+    },
+    {
+      "from": "LICENSE-SCOPE.md",
+      "target": "ASSET-LICENSES.md",
+      "exists": true
+    },
+    {
+      "from": "LICENSE-SCOPE.md",
+      "target": "docs/public/github-licenses-and-badges-20261028.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/media/badges/version.svg",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/media/badges/platforms.svg",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/validation.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/media/badges/arch.svg",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/build-and-install.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/media/badges/code.svg",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/architecture.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/media/badges/license.svg",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "LICENSE-SCOPE.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/RESTORATION.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/build-and-install.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/gameplay-guide.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/features.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/troubleshooting.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/README.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/media/gameplay-20261027/02-jump.png",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/media/gameplay-20261027/03-weapon.png",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/media/gameplay-20261027/04-special.png",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/media/gameplay-20261027/05-upgrade.png",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/media/gameplay-20261027/06-stage-clear.png",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/media/gameplay-20261027/07-fighters.png",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/media/gameplay-20261027/07-fighters.mp4",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/features.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/media/gameplay-20261027/01-auto-aim.png",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/media/gameplay-20261027/01-auto-aim.gif",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/media/gameplay-20261027/01-auto-aim.mp4",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/media/gameplay-20261027/08-jump-clip.png",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/media/gameplay-20261027/08-jump-clip.gif",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/media/gameplay-20261027/08-jump-clip.mp4",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/features.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/media/gameplay-20261027/README.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/validation.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/implementation-status.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/usability-todo.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/validation.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/build-and-install.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/build-and-install.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/troubleshooting.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/development-history.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/architecture.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/validation.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "CHANGELOG.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/repository-management.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "CREDITS.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/public/publication-inventory.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "LICENSE",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "LICENSE-SCOPE.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "ASSET-LICENSES.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "THIRD_PARTY_NOTICES.md",
+      "exists": true
+    },
+    {
+      "from": "THIRD_PARTY_NOTICES.md",
+      "target": "vendor/openal-soft/COPYING",
+      "exists": true
+    },
+    {
+      "from": "THIRD_PARTY_NOTICES.md",
+      "target": "LICENSES/OpenAL-Soft-LGPL-2.0.txt",
+      "exists": true
+    },
+    {
+      "from": "THIRD_PARTY_NOTICES.md",
+      "target": "vendor/stb/LICENSE",
+      "exists": true
+    },
+    {
+      "from": "THIRD_PARTY_NOTICES.md",
+      "target": "LICENSES/stb.txt",
+      "exists": true
+    },
+    {
+      "from": "THIRD_PARTY_NOTICES.md",
+      "target": "tools/build_openal.sh",
+      "exists": true
+    },
+    {
+      "from": "THIRD_PARTY_NOTICES.md",
+      "target": "docs/public/github-followup-20261028.md",
+      "exists": true
+    },
+    {
+      "from": "THIRD_PARTY_NOTICES.md",
+      "target": "docs/public/github-licenses-and-badges-20261028.md",
+      "exists": true
+    },
+    {
+      "from": "THIRD_PARTY_NOTICES.md",
+      "target": "Compatibility/upstream.json",
+      "exists": true
+    },
+    {
+      "from": "THIRD_PARTY_NOTICES.md",
+      "target": "LICENSES/touchHLE-MPL-2.0.txt",
+      "exists": true
+    },
+    {
+      "from": "THIRD_PARTY_NOTICES.md",
+      "target": "LICENSES/engineering-skills-MIT.txt",
+      "exists": true
+    },
+    {
+      "from": "THIRD_PARTY_NOTICES.md",
+      "target": ".agents/skills/write-project-text/references/source-manifest.json",
+      "exists": true
+    },
+    {
+      "from": "THIRD_PARTY_NOTICES.md",
+      "target": "ASSET-LICENSES.md",
+      "exists": true
+    },
+    {
+      "from": "THIRD_PARTY_NOTICES.md",
+      "target": "LICENSE-SCOPE.md",
+      "exists": true
+    },
+    {
+      "from": "THIRD_PARTY_NOTICES.md",
+      "target": "docs/evidence/publication-source-audit-20261028.json",
+      "exists": true
+    },
+    {
+      "from": "THIRD_PARTY_NOTICES.md",
+      "target": "LICENSES/rust-sdl2-MIT.txt",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "../README.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "RESTORATION.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "public/features.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "public/gameplay-guide.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "public/build-and-install.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "public/architecture.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "public/troubleshooting.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "public/development-history.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "public/validation.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "public/implementation-status.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "../CHANGELOG.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "../CREDITS.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "repository-management.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "canonical.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "game-design.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "document-governance.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "document-map.json",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "coordinate-policy.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "keyboard-input-policy.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "stage-transition-contract.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "rendering-policy.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "vtol-expansion.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "lux-lunae-plan-20261027.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "game-calculation-policy.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "auto-aim-plan-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "weapon-validation-procedure.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "runtime-policy.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "apple-platforms.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "wireless-device-workflow.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "usability-todo.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "android-port-plan-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "../LICENSE-SCOPE.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "../LICENSE",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "../ASSET-LICENSES.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "../THIRD_PARTY_NOTICES.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "public/github-repository-plan-20261028.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "public/github-licenses-and-badges-20261028.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "public/publication-inventory.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "public/media/gameplay-20261027/README.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "public/media/README.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "current-status.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "public",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "evidence",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "ios-source-map.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "migration/completeness-audit-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "public/implementation-status.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "public/validation.md",
+      "exists": true
+    },
+    {
+      "from": "docs/README.md",
+      "target": "public/github-followup-20261028.md",
+      "exists": true
+    },
+    {
+      "from": "docs/developer-background.md",
+      "target": "references/developer-background/user-background-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "docs/developer-background.md",
+      "target": "references/developer-background/hm-defense-origin.md",
+      "exists": true
+    },
+    {
+      "from": "docs/developer-background.md",
+      "target": "references/developer-background/sass-mutiny-source.txt",
+      "exists": true
+    },
+    {
+      "from": "docs/developer-background.md",
+      "target": "references/developer-background/unity-planning-origin.md",
+      "exists": true
+    },
+    {
+      "from": "docs/developer-background.md",
+      "target": "RESTORATION.md",
+      "exists": true
+    },
+    {
+      "from": "docs/developer-background.md",
+      "target": "references/developer-background/user-restoration-reason-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "docs/developer-background.md",
+      "target": "references/developer-background/source-manifest.json",
+      "exists": true
+    },
+    {
+      "from": "docs/developer-background.md",
+      "target": "references/developer-background/user-project-origin-20261028.md",
+      "exists": true
+    },
+    {
+      "from": "docs/developer-background.md",
+      "target": "public/ipa-port-and-native-app-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "docs/developer-background.md",
+      "target": "current-status.md",
+      "exists": true
+    },
+    {
+      "from": "docs/developer-background.md",
+      "target": "public/publication-inventory.md",
+      "exists": true
+    },
+    {
+      "from": "docs/media-publication.md",
+      "target": "public/gameplay-media-20261027.md",
+      "exists": true
+    },
+    {
+      "from": "docs/media-publication.md",
+      "target": "media-scenes.example.json",
+      "exists": true
+    },
+    {
+      "from": "docs/media-publication.md",
+      "target": "public/gameplay-media-20261027.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/architecture.md",
+      "target": "../../Modules/project.yml",
+      "exists": true
+    },
+    {
+      "from": "docs/public/architecture.md",
+      "target": "../../iOS/project.yml",
+      "exists": true
+    },
+    {
+      "from": "docs/public/architecture.md",
+      "target": "../../macOS/project.yml",
+      "exists": true
+    },
+    {
+      "from": "docs/public/architecture.md",
+      "target": "../../Sources/Core",
+      "exists": true
+    },
+    {
+      "from": "docs/public/architecture.md",
+      "target": "../../Sources/iOS",
+      "exists": true
+    },
+    {
+      "from": "docs/public/architecture.md",
+      "target": "../../Sources/Apple",
+      "exists": true
+    },
+    {
+      "from": "docs/public/architecture.md",
+      "target": "../../Sources/Mac",
+      "exists": true
+    },
+    {
+      "from": "docs/public/architecture.md",
+      "target": "../../Resources",
+      "exists": true
+    },
+    {
+      "from": "docs/public/architecture.md",
+      "target": "../../Art/Extensions",
+      "exists": true
+    },
+    {
+      "from": "docs/public/architecture.md",
+      "target": "../../Tests",
+      "exists": true
+    },
+    {
+      "from": "docs/public/architecture.md",
+      "target": "../build-resources.json",
+      "exists": true
+    },
+    {
+      "from": "docs/public/architecture.md",
+      "target": "../coordinate-policy.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/architecture.md",
+      "target": "../rendering-policy.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/architecture.md",
+      "target": "../runtime-policy.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/architecture.md",
+      "target": "../game-calculation-policy.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/architecture.md",
+      "target": "../android-port-plan-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/build-and-install.md",
+      "target": "../weapon-validation-procedure.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/build-and-install.md",
+      "target": "clone-build-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/build-and-install.md",
+      "target": "validation.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/build-and-install.md",
+      "target": "apple-platform-progress-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/build-and-install.md",
+      "target": "gameplay-guide.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/build-and-install.md",
+      "target": "../wireless-device-workflow.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/build-and-install.md",
+      "target": "architecture.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/clone-build-20261026.md",
+      "target": "clone/HeavyMachRestored-title.png",
+      "exists": true
+    },
+    {
+      "from": "docs/public/clone-build-20261026.md",
+      "target": "clone/HeavyMachValidation-title.png",
+      "exists": true
+    },
+    {
+      "from": "docs/public/clone-build-20261026.md",
+      "target": "build-and-install.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/clone-build-20261026.md",
+      "target": "implementation-status.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/clone-build-20261026.md",
+      "target": "clone/summary.json",
+      "exists": true
+    },
+    {
+      "from": "docs/public/clone-build-20261026.md",
+      "target": "clone/bundle-audit.json",
+      "exists": true
+    },
+    {
+      "from": "docs/public/clone-build-20261026.md",
+      "target": "clone/runtime-summary.json",
+      "exists": true
+    },
+    {
+      "from": "docs/public/development-history.md",
+      "target": "../RESTORATION.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/development-history.md",
+      "target": "troubleshooting.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/development-history.md",
+      "target": "validation.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/development-history.md",
+      "target": "features.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/development-history.md",
+      "target": "../source-coverage.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/development-history.md",
+      "target": "../ios-source-map.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/development-history.md",
+      "target": "../../CHANGELOG.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/development-history.md",
+      "target": "implementation-status.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/features.md",
+      "target": "fullscreen-transitions-20261027.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/features.md",
+      "target": "../coordinate-policy.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/features.md",
+      "target": "gameplay-guide.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/features.md",
+      "target": "architecture.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/features.md",
+      "target": "../validation-mode.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/features.md",
+      "target": "media/gameplay-20261027/01-auto-aim.png",
+      "exists": true
+    },
+    {
+      "from": "docs/public/features.md",
+      "target": "../../Sources/Core/AutoAim.hpp",
+      "exists": true
+    },
+    {
+      "from": "docs/public/features.md",
+      "target": "../../Sources/Core/GameSession.cpp",
+      "exists": true
+    },
+    {
+      "from": "docs/public/features.md",
+      "target": "auto-aim-ipad-20261027.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/features.md",
+      "target": "vtol-art-and-loadout-20261027.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/features.md",
+      "target": "vtol-art-and-loadout-20261027.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/features.md",
+      "target": "../../Sources/Core/VTOL.cpp",
+      "exists": true
+    },
+    {
+      "from": "docs/public/features.md",
+      "target": "media/gameplay-20261027/07-fighters.png",
+      "exists": true
+    },
+    {
+      "from": "docs/public/features.md",
+      "target": "lux-lunae-design-20261027.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/features.md",
+      "target": "../../Sources/Core/Fighters.cpp",
+      "exists": true
+    },
+    {
+      "from": "docs/public/features.md",
+      "target": "implementation-status.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/gameplay-guide.md",
+      "target": "../keyboard-input-policy.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/gameplay-guide.md",
+      "target": "validation.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/gameplay-guide.md",
+      "target": "../../README.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/gameplay-guide.md",
+      "target": "features.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/gameplay-guide.md",
+      "target": "build-and-install.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/github-documentation-plan-20261027.md",
+      "target": "../README.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/github-documentation-plan-20261027.md",
+      "target": "../evidence/narrative-voice-audit-20261028.json",
+      "exists": true
+    },
+    {
+      "from": "docs/public/github-followup-20261028.md",
+      "target": "../../README.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/github-followup-20261028.md",
+      "target": "../RESTORATION.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/github-followup-20261028.md",
+      "target": "../../CONTRIBUTING.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/github-followup-20261028.md",
+      "target": "media/github-social-preview.png",
+      "exists": true
+    },
+    {
+      "from": "docs/public/github-followup-20261028.md",
+      "target": "media/github-social-preview.png",
+      "exists": true
+    },
+    {
+      "from": "docs/public/github-followup-20261028.md",
+      "target": "media/github-social-preview.svg",
+      "exists": true
+    },
+    {
+      "from": "docs/public/github-followup-20261028.md",
+      "target": "media/github-social-preview-gameplay.png",
+      "exists": true
+    },
+    {
+      "from": "docs/public/github-followup-20261028.md",
+      "target": "../evidence/public-repository-20261028.json",
+      "exists": true
+    },
+    {
+      "from": "docs/public/github-followup-20261028.md",
+      "target": "../evidence/xcode-ignore-audit-20261028.json",
+      "exists": true
+    },
+    {
+      "from": "docs/public/github-followup-20261028.md",
+      "target": "../../.gitignore",
+      "exists": true
+    },
+    {
+      "from": "docs/public/github-followup-20261028.md",
+      "target": "validation.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/github-followup-20261028.md",
+      "target": "../evidence/source-release-v0.12-20261028.json",
+      "exists": true
+    },
+    {
+      "from": "docs/public/github-followup-20261028.md",
+      "target": "../evidence/openal-relink-20261028.json",
+      "exists": true
+    },
+    {
+      "from": "docs/public/github-followup-20261028.md",
+      "target": "../../LICENSES/OpenAL-Soft-LGPL-2.0.txt",
+      "exists": true
+    },
+    {
+      "from": "docs/public/github-followup-20261028.md",
+      "target": "../rights-manifest.json",
+      "exists": true
+    },
+    {
+      "from": "docs/public/github-followup-20261028.md",
+      "target": "../../THIRD_PARTY_NOTICES.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/github-followup-20261028.md",
+      "target": "../evidence/secret-audit-20261028.json",
+      "exists": true
+    },
+    {
+      "from": "docs/public/github-followup-20261028.md",
+      "target": "../evidence/publication-source-audit-20261028.json",
+      "exists": true
+    },
+    {
+      "from": "docs/public/github-followup-20261028.md",
+      "target": "../README.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/github-followup-20261028.md",
+      "target": "github-repository-plan-20261028.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/github-followup-20261028.md",
+      "target": "build-and-install.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/github-followup-20261028.md",
+      "target": "../usability-todo.md#hm-build-launcher--다운로드빌드실행-절차-통합",
+      "exists": true
+    },
+    {
+      "from": "docs/public/github-followup-20261028.md",
+      "target": "../evidence/branch-cleanup-20261028.json",
+      "exists": true
+    },
+    {
+      "from": "docs/public/github-repository-plan-20261028.md",
+      "target": "github-followup-20261028.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/github-repository-plan-20261028.md",
+      "target": "../README.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/github-repository-plan-20261028.md",
+      "target": "github-licenses-and-badges-20261028.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/github-repository-plan-20261028.md",
+      "target": "../usability-todo.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/implementation-status.md",
+      "target": "features.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/implementation-status.md",
+      "target": "validation.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/implementation-status.md",
+      "target": "publication-inventory.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/implementation-status.md",
+      "target": "../usability-todo.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/implementation-status.md",
+      "target": "build-and-install.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/implementation-status.md",
+      "target": "../repository-management.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/ipa-independent-build-20261026.md",
+      "target": "independence/HeavyMachRestored-title.png",
+      "exists": true
+    },
+    {
+      "from": "docs/public/ipa-independent-build-20261026.md",
+      "target": "independence/HeavyMachValidation-title.png",
+      "exists": true
+    },
+    {
+      "from": "docs/public/ipa-independent-build-20261026.md",
+      "target": "rea-implementation-audit-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/ipa-independent-build-20261026.md",
+      "target": "independence/rea-provenance.json",
+      "exists": true
+    },
+    {
+      "from": "docs/public/ipa-independent-build-20261026.md",
+      "target": "build-and-install.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/ipa-independent-build-20261026.md",
+      "target": "independence/summary.json",
+      "exists": true
+    },
+    {
+      "from": "docs/public/ipa-independent-build-20261026.md",
+      "target": "independence/bundle-audit.json",
+      "exists": true
+    },
+    {
+      "from": "docs/public/ipa-independent-build-20261026.md",
+      "target": "independence/rea-provenance.json",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/README.md",
+      "target": "manifest.json",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/README.md",
+      "target": "menu-joins/before-wide-title-912-0.png",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/README.md",
+      "target": "menu-joins/after-wide-title-912-0.png",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/README.md",
+      "target": "menu-joins/before-wide-mode-912-0.png",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/README.md",
+      "target": "menu-joins/after-wide-mode-912-0.png",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/README.md",
+      "target": "menu-joins/before-wide-mission-912-0.png",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/README.md",
+      "target": "menu-joins/after-wide-mission-912-0.png",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/README.md",
+      "target": "menu-art/wide-title-912-0.png",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/README.md",
+      "target": "menu-art/wide-slots-912-0.png",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/README.md",
+      "target": "menu-art/wide-slots-480-0.png",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/README.md",
+      "target": "menu-art/wide-mode-912-0.png",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/README.md",
+      "target": "menu-art/wide-mission-912-0.png",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/README.md",
+      "target": "menu-art/title-a.png",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/README.md",
+      "target": "menu-art/title-b.png",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/README.md",
+      "target": "../gameplay-media-20261027.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/README.md",
+      "target": "gameplay-20261027/media-scenes.json",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/README.md",
+      "target": "gameplay-20261027/README.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/gameplay-20261027/README.md",
+      "target": "../../../../README.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/gameplay-20261027/README.md",
+      "target": "media-scenes.json",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/gameplay-20261027/README.md",
+      "target": "01-auto-aim.png",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/gameplay-20261027/README.md",
+      "target": "01-auto-aim.gif",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/gameplay-20261027/README.md",
+      "target": "01-auto-aim.mp4",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/gameplay-20261027/README.md",
+      "target": "02-jump.png",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/gameplay-20261027/README.md",
+      "target": "03-weapon.png",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/gameplay-20261027/README.md",
+      "target": "04-special.png",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/gameplay-20261027/README.md",
+      "target": "05-upgrade.png",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/gameplay-20261027/README.md",
+      "target": "06-stage-clear.png",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/gameplay-20261027/README.md",
+      "target": "07-fighters.png",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/gameplay-20261027/README.md",
+      "target": "07-fighters.mp4",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/gameplay-20261027/README.md",
+      "target": "08-jump-clip.png",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/gameplay-20261027/README.md",
+      "target": "08-jump-clip.gif",
+      "exists": true
+    },
+    {
+      "from": "docs/public/media/gameplay-20261027/README.md",
+      "target": "08-jump-clip.mp4",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "../RESTORATION.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "../developer-background.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "../../README.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "features.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "implementation-status.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "development-history.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "troubleshooting.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "architecture.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "build-and-install.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "validation.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "media/gameplay-20261027/media-scenes.json",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "../../.agents/skills/write-project-text/SKILL.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "features.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "gameplay-guide.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "features.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "features.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "architecture.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "troubleshooting.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "build-and-install.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "../repository-management.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "implementation-status.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "validation.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "../RESTORATION.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "../developer-background.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "troubleshooting.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "troubleshooting.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "features.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "development-history.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "troubleshooting.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "validation.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "implementation-status.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "../references/developer-background/source-manifest.json",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "media/gameplay-20261027/README.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "media/README.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "vtol-art-and-loadout-20261027.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "lux-lunae-design-20261027.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "implementation-status.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "../usability-todo.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "../current-status.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "../../CHANGELOG.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "../README.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "github-followup-20261028.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "validation.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "github-licenses-and-badges-20261028.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "github-repository-plan-20261028.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "../references/developer-background/user-project-origin-20261028.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "github-followup-20261028.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "../rights-manifest.json",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "gameplay-guide.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "features.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "architecture.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "troubleshooting.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "development-history.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "implementation-status.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "../usability-todo.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "../references/developer-background/source-manifest.json",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "../../.agents/skills/write-project-text/references/source-manifest.json",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "../../.agents/skills/write-project-text/SKILL.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/publication-inventory.md",
+      "target": "../evidence/sass-handoff-audit-20261028.json",
+      "exists": true
+    },
+    {
+      "from": "docs/public/rea-implementation-audit-20261026.md",
+      "target": "ipa-independent-build-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/rea-implementation-audit-20261026.md",
+      "target": "ipa-independent-build-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "../runtime-policy.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "../../Tests/iOS/HMSaveParityTests.mm",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "../rendering-policy.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "../opengl-migration-20261024.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "../runtime-policy.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "../../Tests/iOS/HMOpenALAudioTests.mm",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "../runtime-policy.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "validation.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "../coordinate-policy.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "../keyboard-input-policy.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "../weapon-result-fix-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "../weapon-validation-procedure.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "../clear-illustration-fix-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "../weapon-result-fix-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "../boss-motion-fix-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "../menu-joins-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "fullscreen-transitions-20261027.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "../../Tests/iOS/HMPassiveLifecycleTests.mm",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "../runtime-policy.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "apple-platform-progress-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "build-and-install.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "../wireless-device-workflow.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "clone-build-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "../../tools/verify_build_resources.py",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "features.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "auto-aim-ipad-20261027.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "../../Art/VTOL/20261027/manifest.json",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "vtol-art-and-loadout-20261027.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "lux-lunae-design-20261027.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "../document-governance.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "../repository-management.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/troubleshooting.md",
+      "target": "implementation-status.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/validation.md",
+      "target": "clone-build-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/validation.md",
+      "target": "apple-platform-progress-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/validation.md",
+      "target": "auto-aim-ipad-20261027.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/validation.md",
+      "target": "vtol-art-and-loadout-20261027.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/validation.md",
+      "target": "lux-lunae-design-20261027.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/validation.md",
+      "target": "../evidence/apple-platform-performance-20261026.json",
+      "exists": true
+    },
+    {
+      "from": "docs/public/validation.md",
+      "target": "../evidence/mac-fullscreen-capture-20261027.json",
+      "exists": true
+    },
+    {
+      "from": "docs/public/validation.md",
+      "target": "../wireless-device-workflow.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/validation.md",
+      "target": "../evidence/wireless-apple-20261027.json",
+      "exists": true
+    },
+    {
+      "from": "docs/public/validation.md",
+      "target": "media/gameplay-20261027/media-scenes.json",
+      "exists": true
+    },
+    {
+      "from": "docs/public/validation.md",
+      "target": "../weapon-validation-procedure.md",
+      "exists": true
+    },
+    {
+      "from": "docs/public/validation.md",
+      "target": "implementation-status.md",
+      "exists": true
+    },
+    {
+      "from": "docs/references/developer-background/hm-defense-origin.md",
+      "target": "../README.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "public/github-followup-20261028.md#빌드실행-스크립트-조사--2026-10-28",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "evidence/branch-cleanup-20261028.json",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "public/github-licenses-and-badges-20261028.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "rights-manifest.json",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "public/github-followup-20261028.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "public/github-repository-plan-20261028.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "public/implementation-status.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "public/media/gameplay-20261027/README.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "physical-self-test-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "auto-aim-plan-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "media-publication.md#영상-판독과-스킬-조사--2026-10-27",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "public/gameplay-media-20261027.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "public/media/gameplay-20261027/media-scenes.json",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "lux-lunae-plan-20261027.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "public/lux-lunae-design-20261027.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "wireless-device-workflow.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "public/apple-platform-progress-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "public/fullscreen-transitions-20261027.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "menu-art-extension-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "menu-joins-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "public/fullscreen-transitions-20261027.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "canvas-ai-and-rotation-research-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "canvas-ai-and-rotation-research-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "boss-motion-fix-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "weapon-validation-procedure.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "current-status.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "current-status.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "runtime-policy.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "current-status.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "canonical.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "current-status.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "runtime-policy.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "wide-canvas-plan.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "coordinate-policy.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "rendering-policy.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "related-titles-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "android-port-plan-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "auto-aim-plan-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "public/auto-aim-ipad-20261027.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "vtol-expansion.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "public/vtol-art-and-loadout-20261027.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "current-status.md",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "evidence/vtol-feasibility-20261027.json",
+      "exists": true
+    },
+    {
+      "from": "docs/usability-todo.md",
+      "target": "public/auto-aim-ipad-20261027.md",
+      "exists": true
+    }
+  ],
+  "summary": {
+    "documents": 37,
+    "local_links": 455,
+    "hash_groups": {
+      "comparison_images": 13,
+      "personal_sources": 6,
+      "selected_gameplay": 13,
+      "writing_skill_sources": 14
+    },
+    "errors": []
+  },
+  "resolved_gaps": [
+    "developer_story 읽기 목록에 2026-10-28 정정 원문 추가",
+    "선정 이미지·영상 명세와 미디어 안내를 읽기 목록에 추가",
+    "내부 TODO·최신 GitHub 후속 조사 연결",
+    "삭제한 집필 브랜치 안내를 main 기준으로 변경",
+    "v0.12 게임·후속 문서·과거 작업 이력의 시점을 구분",
+    "원작 기능과 추가 기능 및 장면 배치를 한 표로 연결",
+    "빌드 경고 조사와 실행 스크립트 미구현 상태 추가"
+  ],
+  "remaining_source_gaps": [
+    "녹화 기종·앱 종류·빌드 번호 미확인",
+    "원작자 회신 후속 자료 없음",
+    "장시간 발열·실물 키보드·추가 적 전체 난도·무선 반복 검사는 기존 TODO"
+  ],
+  "application_retested": false,
+  "sass_service_modified": false
+}
