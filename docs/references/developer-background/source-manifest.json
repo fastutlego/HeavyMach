@@ -74,6 +74,11 @@
       "copy": "user-project-origin-20261028.md",
       "source": "현재 대화의 글감과 꿈·시작점에 관한 후속 정정",
       "sha256": "c3743dfb6f18c3dae26209c70e99abb52297d4cb643e40ce8b814d711bddcd82"
+    },
+    {
+      "copy": "user-wemade-discovery-20261028.md",
+      "source": "2026-10-28 현재 대화의 위메이드 인수 인지 시점에 관한 사용자 정정과 반영 지시",
+      "sha256": "4eaca4daf73a7195023cf566b077ea079713d88c3e8db0f2769ff77ca7cf0cfe"
     }
   ]
 }

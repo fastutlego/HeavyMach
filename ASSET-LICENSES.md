@@ -14,7 +14,7 @@
 | `docs/public/media`의 게임 화면·GIF·MP4, 비교·검사 캡처 | 직접 플레이 녹화와 앱 검사에서 추출 | 게임 그림을 포함. GitHub·소개 글·영상에서의 게시 범위를 원작 자원 허락에 포함 |
 | `docs/public/media/badges/*.svg` | 이번 문서 작업에서 작성 | 원작 그림을 사용하지 않은 SVG 코드. [MIT](LICENSE) 적용 |
 
-현재 원작 제작자로 기록한 사람은 개발자 변해준과 일러스트레이터 박재철이다. 현재 저작재산권 귀속과 이용허락은 별도 확인 항목이다. [제작자](CREDITS.md), [빌드 자원과 SHA-256](docs/build-resources.json), [그림 제작 기록](docs/public/media/README.md).
+원작 개발자는 변해준, 일러스트레이터는 박재철이다. 2011년에는 위메이드 엔터테인먼트의 자회사 위메이드 크리에이티브가 HeavyMach·HeavyMach 2의 IP를 포함한 인디앱스 자산을 인수했다. [당시 인수 보도](https://zdnet.co.kr/view/?no=20110512162801). 이후 권리 이전과 현재 이용허락 창구는 확인되지 않았다. [제작자](CREDITS.md), [빌드 자원과 SHA-256](docs/build-resources.json), [그림 제작 기록](docs/public/media/README.md).
 
 ## 확보할 공개 범위
 

@@ -158,7 +158,7 @@ def main():
     # Resolve relative Markdown paths from each manuscript's original directory.
     from urllib.parse import urlsplit, unquote, quote
     for source_name, page_name in routes.items():
-        if page_name not in list(reader_sources.values()) + ['installation.html', 'implementation.html', 'publication.html', 'gameplay-media.html', 'github-documentation.html', 'github-licenses-and-badges.html', 'github-repository-plan.html', 'github-followup.html']:
+        if page_name not in list(reader_sources.values()) + ['restoration.html', 'installation.html', 'implementation.html', 'publication.html', 'gameplay-media.html', 'github-documentation.html', 'github-licenses-and-badges.html', 'github-repository-plan.html', 'github-followup.html']:
             continue
         page = BeautifulSoup((dist/page_name).read_text(), 'html.parser')
         if page.footer: page.footer.decompose()
