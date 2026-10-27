@@ -15,7 +15,7 @@
 - 이미지 674개와 WAV 31개는 바이트까지 같다. WeaponInfo·PartsInfo도 같다. 맵 7개, Boss08 부품, 터치 처리, Game Center·광고 코드에는 차이가 있다.
 - Assault의 StoreKit 구매→Life 20 추가→저장, 계속하기의 Life 1 소비를 코드로 연결했다. 실제 구매·복원은 실행하지 않았다.
 - 두 IPA와 실행 파일의 최종 SHA-256이 최초 확보 값과 같았다. 근거: `/Users/sokol/Documents/Codex/2026-10-24/rea-ready/comparison/final-preservation.json`.
-- REA 스킬·엔진 설치와 별도 MCP 통신, 패키지 추출·함수 디컴파일은 검증했다. 현재 대화에 직접 REA 도구가 노출됐다는 뜻은 아니다. CLI/별도 MCP로 다음 분석을 계속할 수 있다.
+- REA 스킬·엔진 설치와 별도 MCP 통신, 패키지 추출·함수 디컴파일은 검증했다. CLI/별도 MCP로 다음 분석을 계속할 수 있다.
 - 게임 전체 기능 동등성, 최신 iOS 빌드, 시뮬레이터·폰 실행은 미검증이다. 이번 단계는 확보한 파일의 정적 비교 결과다.
 
 ### 다음 과제: 최신 iOS 시뮬레이터·실기기 구동 검증

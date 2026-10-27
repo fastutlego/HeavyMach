@@ -12,7 +12,7 @@
 |---|---|---|
 | 기준 해상도와 표시 영역을 구분하고, 비율 유지 또는 추가 시야 중 정책을 선택 | [Godot 다중 해상도](https://docs.godotengine.org/en/stable/tutorials/rendering/multiple_resolutions.html)는 base size와 stretch/expand 방식을 구분한다. | 사용자가 선택한 전체 화면·추가 시야를 유지한다. 물리 단위와 화면에 보이는 범위를 혼동하지 않는다. |
 | 화면 진입으로 적을 활성화하는 방식은 명시적으로 선택 | [Godot VisibleOnScreenEnabler2D](https://docs.godotengine.org/en/stable/classes/class_visibleonscreenenabler2d.html)는 화면 가시성으로 노드 실행을 켜고 끈다. | 이 방식을 쓰면 넓은 화면에서 활성 시점이 바뀐다. 화면 준비, AI 실행, 피격, 발사, 제거 조건을 각각 조사한다. 생성만 앞당기는 수정도 이 연결 전체를 검사해야 한다. |
-| AI 인식 범위와 인식 해제 범위를 별도로 설정 | [Epic AI Perception](https://dev.epicgames.com/documentation/en-us/unreal-engine/ai-perception-in-unreal-engine)은 Sight Radius와 Lose Sight Radius를 따로 제공한다. | 표시 폭과 전투 접근 조건을 별도 값으로 관리하는 참고 구조다. 경계에서 활성/비활성이 반복되면 진입·이탈 조건을 구분하는 방법을 비교한다. 현재 원작에 없는 인식 시스템을 곧바로 넣는다는 뜻은 아니다. |
+| AI 인식 범위와 인식 해제 범위를 별도로 설정 | [Epic AI Perception](https://dev.epicgames.com/documentation/en-us/unreal-engine/ai-perception-in-unreal-engine)은 Sight Radius와 Lose Sight Radius를 따로 제공한다. | 표시 폭과 전투 접근 조건을 별도 값으로 관리하는 참고 구조다. 경계에서 활성/비활성이 반복되면 진입·이탈 조건을 구분하는 방법을 비교한다. 새 인식 시스템 도입은 미정이다. |
 | 카메라의 월드 경계와 화면 내 추적 여백을 구분 | [Godot Camera2D](https://docs.godotengine.org/en/stable/classes/class_camera2d.html)는 월드 limit와 비율형 drag margin을 따로 제공하고 실제 화면 중심 조회도 제공한다. | 이동 가능한 전장, 카메라 제한, 화면 안 목표 위치를 각각 구한다. 카메라 목표점과 보간·제한을 적용한 실제 화면을 혼동하지 않는다. |
 
 위 자료는 실제 엔진이 제공하는 설계 방법이다. 모든 상용 게임이 하나의 방식으로 해결한다는 증거는 아니다. 아래 보정안은 이 자료와 현재 코드에서 도출한 프로젝트 적용 후보다.
@@ -29,7 +29,7 @@
 | World.cpp / GameSession.cpp | 카메라 추종+(140,70),W/2,가시 범위+60,후방 정리240/320 | 카메라·컬링·후방 진행·월드 경계가 서로 다른 기준을 소비하는가 |
 | World.cpp Survival | 초기 위치right−480, 생성right+30 | 일반 캠페인과 다른 생성 방식에도 확장 영향이 있는가 |
 
-이 표는 전체 상수 감사의 완료 목록이 아니다. 부품 무기·탄환·충돌·모델별 데이터까지 사용처를 추적해 목록을 완성한다. 하드코딩 자체만으로 오류라고 판정하지 않는다. 값이 원작 월드 단위인지, 화면 폭을 대신하던 값인지, 난이도 값인지 먼저 구분한다.
+부품 무기·탄환·충돌·모델별 데이터의 고정값과 사용처를 추가 조사한다. 값이 원작 월드 단위인지, 화면 폭을 대신하던 값인지, 난이도 값인지 먼저 구분한다.
 
 ### 비교할 보정안과 진행 순서
 

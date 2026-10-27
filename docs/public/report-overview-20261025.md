@@ -80,7 +80,7 @@ Mac 정식·치트 앱을 개발 인증서로 빌드한 뒤 메모리 누수0건
 
 Mac의 표시 대기·표면 갱신·Retina 설정을 수정했다. 잠금을 푼 상태에서 전체 화면을 포함한33개 검사가 모두 통과했다. 여섯 장면의 처리 p95는10.86~14.29ms, 평균 호출 간격은16.67~16.69ms였다. Codex가 Mac 키 입력 조작과 Instruments Allocations+Leaks 기록도 완료했다. 2026-10-27 macOS 자체 캡처와 대조해 흰 여백을 CUA 캡처 경로의 현상으로 분류했다.
 
-iPad Simulator는44.311~48.133ms, 변경 전 main도39.972~40.580ms로16.67ms 기준을 넘었다. Instruments에서 Simulator의 최종 화면 확대·표시가 주된 비용임을 확인했다. iPad 누수는0건이었다. 이번 Mac 수정으로 실제 iPhone/iPad 성능까지 검증했다고 표시하지 않는다.
+iPad Simulator는44.311~48.133ms, 변경 전 main도39.972~40.580ms로16.67ms 기준을 넘었다. Instruments에서 Simulator의 최종 화면 확대·표시가 주된 비용임을 확인했다. iPad 누수는0건이었다.
 
 자동조준은 정식·치트 앱에 적용했고 main의 v0.12에 포함돼 있다. A로 켜고 끄며 표적 전환·사격 버튼은 하단 HUD에 배치했다. C 보정은 삭제해 원래 탄속·분산을 유지한다. [구현·검사·캡처](auto-aim-progress.html), [요구·계획](auto-aim.html). 게임 시작 전 HUD 드래그 배치 편집은 남은 과제다.
 

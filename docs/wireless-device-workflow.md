@@ -16,7 +16,7 @@ xcrun devicectl device info lockState --device <확인한-기기-ID>
 
 ## 빌드·설치
 
-일반 앱은 `HeavyMachRestored` / `com.gelb2.heavymach.restored`, 치트 앱은 `HeavyMachValidation` / `com.gelb2.heavymach.validation`이다. Xcode에서 스킴과 실제 기기를 선택한 뒤 Run으로 빌드·설치·디버거 연결을 수행한다. 이때 사용하는 구성은 개발 서명이 적용된 Debug다. ‘정식 앱’은 치트 기능이 없는 앱을 뜻하며 App Store 배포 빌드라는 뜻은 아니다.
+일반 앱은 `HeavyMachRestored` / `com.gelb2.heavymach.restored`, 치트 앱은 `HeavyMachValidation` / `com.gelb2.heavymach.validation`이다. Xcode에서 스킴과 실제 기기를 선택한 뒤 Run으로 빌드·설치·디버거 연결을 수행한다. 이때 사용하는 구성은 개발 서명이 적용된 Debug다. 정식 앱은 치트 기능을 뺀 개발 서명 앱이다.
 
 기존 서명 앱을 다시 설치할 때는 다음 명령을 사용한다. 앱을 먼저 삭제하지 않는다.
 

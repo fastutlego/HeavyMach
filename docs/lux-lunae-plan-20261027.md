@@ -17,7 +17,7 @@
 
 ## 내구력과 무장
 
-원본 `Resources/RawData`를 `GameData::loadDirectory`로 읽었다. `Heli009`, `Heli010`의 HP가 각각 450으로 일반 헬기 10종 중 최대다. 세 기체 모두 **450 × 1.7 = 765**를 사용한다. VTOL F35B가 참조하는 다른 기체의 HP를 헬기 최대값으로 사용하지 않는다.
+원본 `Resources/RawData`를 `GameData::loadDirectory`로 읽었다. `Heli009`, `Heli010`의 HP가 각각 450으로 일반 헬기 10종 중 최대다. 세 기체 모두 **450 × 1.7 = 765**를 사용한다. 내구력 기준은 일반 헬기10종의 데이터에서 골랐다.
 
 | 기체 | 원본 무기·사용자 | 확정 무장 | 피해/발사 수 | 비행 속도 | 재발사 간격 | 묶음 안의 간격 |
 |---|---|---|---|---|---|---|
@@ -78,7 +78,7 @@
 - 원본 수치·미션 추출: [조사 결과](evidence/lux-lunae-inventory-20261027.txt), [추출 코드](evidence/lux-lunae-inventory-20261027.cpp). 현재 코어와 RawData를 사용하며 새 유닛을 추가하지 않는다.
 - 도색·형상·생성 프롬프트·해시: `Art/LuxLunae/20261027/manifest.json`, `prompts.json`.
 - 기존 공중 적: `Sources/Core/VTOL.cpp`, `GameSession.cpp`, `World.cpp`, `Combat.cpp`.
-- [반다이남코 공식 편대 소개](https://www.bandainamcoent.com/news/ace-combat-8-wings-of-theve-game-overview). 공식 이미지에서 확인한 도색을 세 기체에 적용했다. F-22·Su-57의 이 도색이 ACE COMBAT 8에 실제 등장한다는 뜻은 아니다.
+- [반다이남코 공식 편대 소개](https://www.bandainamcoent.com/news/ace-combat-8-wings-of-theve-game-overview). 공식 이미지에서 확인한 도색을 세 기체에 적용했다. 게임에 공개된 MiG-31 도색을 참고해 F-22·Su-57 시안을 만들었다.
 
 ## 구현 결과 · 2026-10-27
 

@@ -30,7 +30,7 @@ open HeavyMach.xcworkspace
 - iPhone/iPad: HeavyMachRestored 또는 HeavyMachValidation scheme과 기기/Simulator를 선택한다.
 - Mac: HeavyMachMac 또는 HeavyMachMacValidation scheme을 선택한다. 창 크기 변경과 macOS 전체 화면을 구현했다. 2026-10-27 macOS 자체 전체 화면 캡처에서 게임이 화면 끝까지 표시됨을 확인했다. 흰 여백은 CUA 창 캡처에 나타났다. [현재 검사 결과](public/apple-platform-progress-20261026.md).
 - 키 배치·재지정·터치 병용은 [키보드 정책](keyboard-input-policy.md)을 따른다.
-- 초기 구성은 Apple Silicon arm64다. OpenAL 빌드도 arm64로 고정돼 있으며 Intel Mac 지원을 완료한 것으로 표시하지 않는다.
+- 초기 구성은 Apple Silicon arm64다. OpenAL 빌드도 arm64다. Intel Mac 지원은 미구현이다.
 
 ```sh
 xcodebuild -workspace HeavyMach.xcworkspace -scheme HeavyMachMacValidation \

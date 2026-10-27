@@ -40,7 +40,7 @@ python3 HeavyMach/tools/prepare_device_validation.py export
 
 ## 30초 성능 기록 명령
 
-앱을 실행한 상태에서 저장소 루트에서 실행한다. `--attach`에는 앱 ID가 아닌 실행 프로세스 이름을 사용한다. 다음 옵션은 현재 `xcrun xctrace help record`로 확인했다. 실제 Air의 Game Performance 수집은 GUI에서 완료했다. 아래 CLI 연결은 당시 프로세스 탐색 실패가 있었으므로, 검증된 GUI 수집 결과와 구분한다. Allocations 수집 완료로 보고하지 않는다.
+앱을 실행한 상태에서 저장소 루트에서 실행한다. `--attach`에는 앱 ID가 아닌 실행 프로세스 이름을 사용한다. 다음 옵션은 현재 `xcrun xctrace help record`로 확인했다. 실제 Air의 Game Performance 수집은 GUI에서 완료했다. CLI 연결은 당시 프로세스 탐색에 실패했다. Allocations 수집은 남아 있다.
 
 ```sh
 mkdir -p HeavyMach/build/device-validation-traces

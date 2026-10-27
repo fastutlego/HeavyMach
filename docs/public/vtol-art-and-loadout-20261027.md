@@ -30,13 +30,13 @@ GR3 사진의 기수, 큰 흡입구와 낮게 내려가는 주익을 참고했�
 
 ## 기존 유닛과 작은 크기 비교
 
-아래는 브라우저에서 폭을 줄여 보는 비교다. 실제 게임 캡처는 아니다. 원본 비율을 유지했다. 첫 적용의 논리 폭은 야크140·해리어132·F35B148이었다. 후속 지시로 현재 폭은112·108·116이다. 아래쪽에 실제 기기에서 렌더한 화면을 추가했다.
+첫 적용 크기의 축소 시안이다. 당시 폭은 야크140·해리어132·F35B148이었다. 후속 지시로 현재 폭은112·108·116이다.
 
 <div class="vtol-small" style="display:flex;flex-wrap:wrap;align-items:end;gap:24px;padding:20px;background:#34362e;color:#f3efe3"><figure><img src="media/vtol/E_Heli_Body_01.png" alt="기존 Heli001 몸체" style="width:100px;height:auto"><figcaption>기존 Heli001</figcaption></figure><figure><img src="media/vtol/E_Heli_Body_06.png" alt="기존 Heli006 몸체" style="width:121px;height:auto"><figcaption>기존 Heli006</figcaption></figure><figure><img src="media/vtol/E_0604_Body.png" alt="기존 E0604 헬기 몸체" style="width:140px;height:auto"><figcaption>기존 E0604</figcaption></figure><figure><img src="media/vtol/v2/yak141-concept.png" alt="작게 표시한 야크" style="width:140px;height:auto"><figcaption>야크141 / 140</figcaption></figure><figure><img src="media/vtol/v2/harrier-concept.png" alt="작게 표시한 해리어" style="width:132px;height:auto"><figcaption>해리어 / 132</figcaption></figure><figure><img src="media/vtol/v2/f35b-concept.png" alt="작게 표시한 F35B" style="width:148px;height:auto"><figcaption>F35B / 148</figcaption></figure></div>
 
 ## 무장 차이
 
-일반 Heli001~010은 모두 같은 단발 미사일을 사용한다. 추가 조사에서 회전날개가 있는 헬기 보스와E0604의 다른 무기를 확인했다. 다음 세 정의를 그대로 재사용한다. 새 무기·탄환 계산을 복제하지 않는다.
+일반 Heli001~010은 모두 같은 단발 미사일을 사용한다. 추가 조사에서 회전날개가 있는 헬기 보스와E0604의 다른 무기를 확인했다. 다음 세 무기 정의와 탄환 계산을 재사용한다.
 
 | 기체 | 무장·재사용 정의 | 기존 사용 유닛 | 발당 피해 / 한 번에 준비하는 탄수 | 차이 |
 |---|---|---|---|---|
@@ -44,11 +44,11 @@ GR3 사진의 기수, 큰 흡입구와 낮게 내려가는 주익을 참고했�
 | 해리어 | 2발 기관포 `E_Boss_Wpn_01` | 헬기 보스Boss04·Boss06 | 50 / 2발 | 미사일과 다른 기관포 탄환. 미션3부터 등장 |
 | F35B | 2발 미사일 `E_0604_Wpn` | 후반 헬기E0604 | 100 / 2발 | 기존 후반 헬기의 강한 연속 공격. 미션6부터 등장 |
 
-표의 피해·탄수는 실제 원본 데이터 값이다. 세 정의의delay는 모두5지만 AI 조준 대기·발사·재장전이 함께 작동하므로 ‘정확히5초마다 발사’라고 해석하지 않는다. 2발은 연사 묶음이며 두 발이 동시에 나간다는 뜻이 아니다. type6 탄환에 발사 후 추적 기능은 없어 유도 미사일이라고 부르지 않는다. HP는 야크210·해리어400·F35B900이다. 추가 밀도에 따른 전체 미션 난도는 후속 플레이 검사에 남겼다.
+표의 피해·탄수는 실제 원본 데이터 값이다. 세 정의의 delay는 모두5다. 실제 발사 간격에는 AI 조준 대기와 재장전 시간이 더해진다. 2발 묶음은 차례로 발사하며, type6 미사일은 발사 방향으로 비행한다. HP는 야크210·해리어400·F35B900이다. 추가 밀도에 따른 전체 미션 난도는 후속 플레이 검사에 남겼다.
 
 ## 미션별 추가 배치
 
-**기존 적을 모두 유지하고 아래14개 서브미션에 일반 헬기 평균을 기준으로 추가한다.** 내 수량 수정 지시를 반영해 최초의 각1대안을 바꿨다. 적용 수량은 야크30대·해리어41대·F35B42대, 총113대다. 보스 플래그는 붙이지 않는다. 미션1은 원래 구성으로 유지한다. 후기 미션에서도 모든 기체가 무조건 한 단계씩 교체되는 방식은 쓰지 않는다.
+**기존 적을 모두 유지하고 아래14개 서브미션에 일반 헬기 평균을 기준으로 추가한다.** 내 수량 수정 지시를 반영해 최초의 각1대안을 바꿨다. 적용 수량은 야크30대·해리어41대·F35B42대, 총113대다. 보스 플래그는 붙이지 않는다. 미션1은 원래 구성으로 유지한다. 후반 미션에도 초기형 기체가 함께 등장한다.
 
 | 기체 | 최초 등장 | 추가한 미션·서브미션 |
 |---|---|---|
@@ -60,7 +60,7 @@ GR3 사진의 기수, 큰 흡입구와 낮게 내려가는 주익을 참고했�
 
 41개 스테이지의 원래 적 정의를 읽었다. 이름이Heli로 시작하는 유닛만 세지 않고, 재귀 부품에 헬기 회전날개가 있는E0603·E0604 등도 포함했다. 보스 플래그가 있는 헬기는 별도로 세고 평균에서 제외했다. 회전날개 없는 항공기는 제외했다. 각 미션의 모든 서브미션을 분모로 쓰며0대인 스테이지도 포함한다.
 
-`추가 수량 = 미션 내 일반 헬기 총수 ÷ 서브미션 수`를 소수 첫째 자리에서 반올림한다. 기존에 선택한 서브미션마다 해당 수량을 더한다. 한 장소나 한 번에 그 수량을 전부 생성하는 뜻은 아니다.
+`추가 수량 = 미션 내 일반 헬기 총수 ÷ 서브미션 수`를 소수 첫째 자리에서 반올림한다. 기존에 선택한 서브미션마다 해당 수량을 더한다. 추가 기체는 스테이지 안의 여러 지점에 나누어 배치한다.
 
 | 미션 | 스테이지별 일반 헬기 수 | 합계 / 스테이지 수 | 평균 | 선택한 스테이지당 추가 수량 |
 |---|---|---|---|---|
@@ -73,7 +73,7 @@ GR3 사진의 기수, 큰 흡입구와 낮게 내려가는 주익을 참고했�
 | 7 | 8, 19, 8, 6, 17, 6 | 64 / 6 | 10.67 | 11 |
 | 8 | 0, 0, 0, 0, 0, 0 | 0 / 6 | 0.00 | 이번 배치 제외 |
 
-미션1은 원래 구성을 유지한다. 미션8의 현재 맵 데이터는 적 항목이0개여서 이번안에서 제외했다. 이 값으로 실제 앱의 미션8 전체 동작까지 판정하지 않는다. 원래 헬기형 보스는2-5의1대이며 수량 평균에 섞지 않았다.
+미션1은 원래 구성을 유지한다. 미션8의 현재 맵 데이터는 적 항목이0개여서 이번안에서 제외했다. 원래 헬기형 보스는2-5의1대이며 수량 평균에 섞지 않았다.
 
 ### 수정한 배치표
 
@@ -108,7 +108,7 @@ GR3 사진의 기수, 큰 흡입구와 낮게 내려가는 주익을 참고했�
 
 ## 제작·조사 근거
 
-내장 imagegen으로 두 번째 시안 3종을 만들었다. 생성 후 사진·도면과 기수, 동체 비례, 흡입구, 날개·꼬리를 대조했고 해리어의 중복 노즐을 한 번 수정했다. 그림은 원본 크기로 확인했다. 아래 축소 표시는 브라우저의 비율 유지 축소이며 실제 게임 캡처가 아니다.
+내장 imagegen으로 두 번째 시안 3종을 만들었다. 생성 후 사진·도면과 기수, 동체 비례, 흡입구, 날개·꼬리를 대조했고 해리어의 중복 노즐을 한 번 수정했다. 원본과 축소 시안에서 기체 비례를 확인했다.
 
 - 형상 참고: [야크141 삼면도](https://www.aviastar.org/air/russia/yak-141.php), [야크141 실물 사진](https://pesawattempurdaffa.blogspot.com/2012/06/yak-141-freestyle.html), [해리어 GR3 사진 — Kev Slade / Air-Britain](https://abpic.co.uk/pictures/view/1199591), [F35B 사진 — 미 해병대 / DVIDS](https://www.dvidshub.net/image/8085647/distributed-stovl-operation).
 - 색조·질감 참고: 기존 게임의 `E_Heli_Body_06.png`.
@@ -116,7 +116,7 @@ GR3 사진의 기수, 큰 흡입구와 낮게 내려가는 주익을 참고했�
 - 첫 시안은 `Art/VTOL/20261027/`에 보존했다. [첫 제작 명세](media/vtol/manifest.json).
 - [무기·배치 조사](../evidence/vtol-art-plan-20261027.json), [헬기 수량·평균](../evidence/vtol-helicopter-density-20261027.json).
 
-앞으로 현실 기체를 추가할 때도 사진·도면으로 형태를 확인하고 기존 게임 그림에서 색조·질감을 참고하도록 `integrate-game-art` 스킬에 기록했다. 후속 외곽선 수정본을 자원에 넣고, 로드할 때만 각 기체의 게임 표시 폭으로 고품질 축소해 GPU에서 사용한다. 매 프레임 이미지 변환이나 파일 저장은 추가하지 않았다.
+앞으로 현실 기체를 추가할 때도 사진·도면으로 형태를 확인하고 기존 게임 그림에서 색조·질감을 참고하도록 `integrate-game-art` 스킬에 기록했다. 후속 외곽선 수정본을 자원에 넣고, 로드할 때만 각 기체의 게임 표시 폭으로 고품질 축소해 GPU에서 사용한다. 준비한 텍스처는 다음 프레임에서도 재사용한다.
 
 <details>
 <summary>첫 시안 3종 보기 — 미채택</summary>
@@ -135,7 +135,7 @@ GR3 사진의 기수, 큰 흡입구와 낮게 내려가는 주익을 참고했�
 
 <h3>F35B — 각진 회색 기체·2발 미사일</h3>
 
-짧은 쐐기형 기수, 각진 흡입구와 두 꼬리날개, 열린 상부 리프트팬 덮개로 구분했다. 회색 도장과 작은 황토색 표시를 사용한다. 후반 헬기의2발 미사일을 하부 발사구에 연결하는 안이다. 시안의 배기는 게임용 표현이며 실물 기체의 배기 온도·화염을 재현한 그림은 아니다.
+짧은 쐐기형 기수, 각진 흡입구와 두 꼬리날개, 열린 상부 리프트팬 덮개로 구분했다. 회색 도장과 작은 황토색 표시를 사용한다. 후반 헬기의2발 미사일을 하부 발사구에 연결하는 안이다. 첫 시안에는 아래쪽 배기 불꽃을 넣었다.
 
 <figure class="vtol-art"><a href="media/vtol/f35b-concept.png"><img src="media/vtol/f35b-concept.png" alt="왼쪽을 향한 회색 F35B 공중 적 시안" style="width:100%;height:auto"></a><figcaption>F35B 시안 · 투명 PNG1962×801 · 클릭하면 원본</figcaption></figure>
 
@@ -151,21 +151,21 @@ iPhone Air와 iPad Air 13형 M2에 치트 앱과 정식 앱을 모두 업데이�
 - iPhone·iPad 각각 입력 검사8개 통과. 터치·키보드와20종 무기 발사, 새3종의 생성·렌더가 포함된다.
 - 각 기기에서 중립 이동 상태로 새 기체 화면을 다시 캡처했다. 이 추가 검사도 각각1개 통과했다.
 
-아래는 실제 기기 GPU에서 렌더한 게임 화면이다. 게임의 논리 해상도로 저장했으며 OS 화면 전체를 찍은 스크린샷은 아니다. F35B 장면에서는 기존 헬기와 새 기체가 함께 비행한다.
+F35B와 기존 헬기가 함께 비행한다.
 
-<figure><a href="media/vtol/runtime/iphone-vtol_yak141.png"><img src="media/vtol/runtime/iphone-vtol_yak141.png" alt="iPhone에서 렌더한 야크141 전투 화면" style="width:100%;height:auto"></a><figcaption>iPhone · 야크141 · 게임 렌더 캡처</figcaption></figure>
+<figure><a href="media/vtol/runtime/iphone-vtol_yak141.png"><img src="media/vtol/runtime/iphone-vtol_yak141.png" alt="iPhone에서 렌더한 야크141 전투 화면" style="width:100%;height:auto"></a><figcaption>iPhone · 야크141</figcaption></figure>
 
-<figure><a href="media/vtol/runtime/iphone-vtol_harrier.png"><img src="media/vtol/runtime/iphone-vtol_harrier.png" alt="iPhone에서 렌더한 해리어 GR3 전투 화면" style="width:100%;height:auto"></a><figcaption>iPhone · 해리어 GR3 · 게임 렌더 캡처</figcaption></figure>
+<figure><a href="media/vtol/runtime/iphone-vtol_harrier.png"><img src="media/vtol/runtime/iphone-vtol_harrier.png" alt="iPhone에서 렌더한 해리어 GR3 전투 화면" style="width:100%;height:auto"></a><figcaption>iPhone · 해리어 GR3</figcaption></figure>
 
-<figure><a href="media/vtol/runtime/iphone-vtol_f35b.png"><img src="media/vtol/runtime/iphone-vtol_f35b.png" alt="iPhone에서 렌더한 F35B 전투 화면" style="width:100%;height:auto"></a><figcaption>iPhone · F35B · 게임 렌더 캡처</figcaption></figure>
+<figure><a href="media/vtol/runtime/iphone-vtol_f35b.png"><img src="media/vtol/runtime/iphone-vtol_f35b.png" alt="iPhone에서 렌더한 F35B 전투 화면" style="width:100%;height:auto"></a><figcaption>iPhone · F35B</figcaption></figure>
 
-<figure><a href="media/vtol/runtime/ipad-vtol_yak141.png"><img src="media/vtol/runtime/ipad-vtol_yak141.png" alt="iPad에서 렌더한 야크141 전투 화면" style="width:100%;height:auto"></a><figcaption>iPad · 야크141 · 게임 렌더 캡처</figcaption></figure>
+<figure><a href="media/vtol/runtime/ipad-vtol_yak141.png"><img src="media/vtol/runtime/ipad-vtol_yak141.png" alt="iPad에서 렌더한 야크141 전투 화면" style="width:100%;height:auto"></a><figcaption>iPad · 야크141</figcaption></figure>
 
-<figure><a href="media/vtol/runtime/ipad-vtol_harrier.png"><img src="media/vtol/runtime/ipad-vtol_harrier.png" alt="iPad에서 렌더한 해리어 GR3 전투 화면" style="width:100%;height:auto"></a><figcaption>iPad · 해리어 GR3 · 게임 렌더 캡처</figcaption></figure>
+<figure><a href="media/vtol/runtime/ipad-vtol_harrier.png"><img src="media/vtol/runtime/ipad-vtol_harrier.png" alt="iPad에서 렌더한 해리어 GR3 전투 화면" style="width:100%;height:auto"></a><figcaption>iPad · 해리어 GR3</figcaption></figure>
 
-<figure><a href="media/vtol/runtime/ipad-vtol_f35b.png"><img src="media/vtol/runtime/ipad-vtol_f35b.png" alt="iPad에서 렌더한 F35B 전투 화면" style="width:100%;height:auto"></a><figcaption>iPad · F35B · 게임 렌더 캡처</figcaption></figure>
+<figure><a href="media/vtol/runtime/ipad-vtol_f35b.png"><img src="media/vtol/runtime/ipad-vtol_f35b.png" alt="iPad에서 렌더한 F35B 전투 화면" style="width:100%;height:auto"></a><figcaption>iPad · F35B</figcaption></figure>
 
-전체 미션의 난도 플레이, 장시간 발열과 Mac의 신규 유닛 성능 측정은 남았다. 짧은 동기 렌더 비용은 실시간60fps를 측정한 값으로 사용하지 않는다. [설치·검사·캡처 해시 기록](../evidence/vtol-implementation-20261027.json).
+전체 미션의 난도 플레이, 장시간 발열과 Mac의 신규 유닛 성능 측정은 남았다. [설치·검사·캡처 해시 기록](../evidence/vtol-implementation-20261027.json).
 
 ## 외곽선·크기·불꽃 수정
 
@@ -183,17 +183,17 @@ iPhone Air와 iPad Air 13형 M2에 치트 앱과 정식 앱을 모두 업데이�
 
 기체 모양과 도장을 유지한 채 이미지 편집으로 외곽선을 다듬었다. 게임에서는512픽셀 텍스처를 작은 화면에 다시 축소하던 처리를 바꿨다. 처음 로드할 때112/108/116픽셀로 고품질 축소해 가는 선과 점이 축소 과정에서 튀는 현상을 줄였다. 기존 헬기의 이미지와 GL 렌더 규칙은 유지했다.
 
-아래는 iPad의 실제 GPU로 그린 비교 화면이다. 위에서부터 Heli001·Heli006·야크·해리어·F35B다. 왼쪽은 수평, 오른쪽은 기울어진 자세다. 모두 게임과 같은 크기다.
+위에서부터 Heli001·Heli006·야크·해리어·F35B다. 왼쪽은 수평, 오른쪽은 기울어진 자세다.
 
-<figure><a href="media/vtol/refined/ipad-vtol_size_edges.png"><img src="media/vtol/refined/ipad-vtol_size_edges.png" alt="기존 헬기2종과 축소한 VTOL3종의 실제 GPU 비교 화면" style="width:100%;height:auto"></a><figcaption>iPad · 크기·외곽선 비교용 렌더. 실제 전투 장면은 아래 캡처다.</figcaption></figure>
+<figure><a href="media/vtol/refined/ipad-vtol_size_edges.png"><img src="media/vtol/refined/ipad-vtol_size_edges.png" alt="기존 헬기2종과 VTOL3종의 크기·외곽선 비교" style="width:100%;height:auto"></a><figcaption>iPad · 기체 크기와 외곽선 비교</figcaption></figure>
 
-<figure><a href="media/vtol/refined/iphone-vtol_yak141.png"><img src="media/vtol/refined/iphone-vtol_yak141.png" alt="수정 후 iPhone의 야크141 전투 화면" style="width:100%;height:auto"></a><figcaption>iPhone · 야크141 · 실제 게임 렌더</figcaption></figure>
+<figure><a href="media/vtol/refined/iphone-vtol_yak141.png"><img src="media/vtol/refined/iphone-vtol_yak141.png" alt="수정 후 iPhone의 야크141 전투 화면" style="width:100%;height:auto"></a><figcaption>iPhone · 야크141</figcaption></figure>
 
-<figure><a href="media/vtol/refined/iphone-vtol_harrier.png"><img src="media/vtol/refined/iphone-vtol_harrier.png" alt="수정 후 iPhone의 해리어 GR3 전투 화면" style="width:100%;height:auto"></a><figcaption>iPhone · 해리어 GR3 · 실제 게임 렌더</figcaption></figure>
+<figure><a href="media/vtol/refined/iphone-vtol_harrier.png"><img src="media/vtol/refined/iphone-vtol_harrier.png" alt="수정 후 iPhone의 해리어 GR3 전투 화면" style="width:100%;height:auto"></a><figcaption>iPhone · 해리어 GR3</figcaption></figure>
 
-<figure><a href="media/vtol/refined/iphone-vtol_f35b.png"><img src="media/vtol/refined/iphone-vtol_f35b.png" alt="수정 후 iPhone의 F35B 전투 화면" style="width:100%;height:auto"></a><figcaption>iPhone · F35B · 실제 게임 렌더</figcaption></figure>
+<figure><a href="media/vtol/refined/iphone-vtol_f35b.png"><img src="media/vtol/refined/iphone-vtol_f35b.png" alt="수정 후 iPhone의 F35B 전투 화면" style="width:100%;height:auto"></a><figcaption>iPhone · F35B</figcaption></figure>
 
-기체 단독 비교와 전투 캡처는 실제 기기 GPU의 논리 화면이며 OS 전체 스크린샷은 아니다. 전투에서는 기존 헬기가 F35B 앞을 지나며 일부를 가린다. 크기·외곽선은 위의 단독 비교 화면에서 확인할 수 있다.
+기존 헬기가 F35B 앞을 지나며 동체 일부를 가린다.
 
 [야크 수정 PNG](media/vtol/refined/VTOL_Yak141.png) · [해리어 수정 PNG](media/vtol/refined/VTOL_Harrier.png) · [F35B 수정 PNG](media/vtol/refined/VTOL_F35B.png) · [제작 기록](media/vtol/refined/manifest.json) · [편집 프롬프트](media/vtol/refined/prompts.json).
 

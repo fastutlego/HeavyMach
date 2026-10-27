@@ -4,7 +4,7 @@
 
 ## 현재 코드에서 확인한 범위
 
-기준은 HeavyMach main `7c73e06fe5405a880226e554ef8de0174b7238f0`과 정상 플레이 기준 태그 `v0.9`다. 현재 앱은 C++20·Objective-C++로 구현돼 있다. `Sources/Core`의 전투·수치·진행·저장 바이트 해석을 재사용한다. `Sources/iOS`의 Objective-C++ 9개 파일, 총 2,320줄은 플랫폼 API와 메뉴·프레임 조립이 섞인 범위다. 줄 수를 개발 기간으로 환산하지 않는다.
+기준은 HeavyMach main `7c73e06fe5405a880226e554ef8de0174b7238f0`과 정상 플레이 기준 태그 `v0.9`다. 현재 앱은 C++20·Objective-C++로 구현돼 있다. `Sources/Core`의 전투·수치·진행·저장 바이트 해석을 재사용한다. `Sources/iOS`의 Objective-C++ 9개 파일, 총 2,320줄은 플랫폼 API와 메뉴·프레임 조립이 섞인 범위다.
 
 | 현재 코드 | 재사용 또는 이식 방법 |
 |---|---|
@@ -35,11 +35,11 @@ Android NDK는 GLES 1.x와 `libGLESv1_CM`, EGL을 제공한다. 따라서 첫 �
 
 논리 W×320, 원본 비교 480×320, sprite blend·GL_REPLACE·RGB565 변환·LINEAR/REPEAT와 최종 LINEAR/CLAMP_TO_EDGE를 유지한다. Android Surface에는 검증된 같은 최종 quad를 표시한다. 게임 프레임을 Canvas/Bitmap/Compose로 매번 합성하지 않는다. Surface 소멸과 context 소실을 구분하고, GPU 자원은 원본에서 재생성하되 진행 상태를 초기화하지 않는다.
 
-현재의 한 논리 프레임당 `0.01666666753590107` 증가·한 번 tick/draw·별도 50Hz 센서 정책을 유지한다. 표시 동기화는 Choreographer/EGL을 조사하고, 90/120Hz에서 게임이 1.5/2배 진행하지 않게 60Hz 논리 프레임만 선택한다. 놓친 프레임이나 백그라운드 시간을 몰아서 tick하지 않는다. Swappy는 표시 간격을 다루는 후보이며 게임 시간 누적기를 추가하는 이유로 쓰지 않는다. 실제 60/90/120Hz callback·tick·present 수를 대조한 뒤 적용한다. [Frame Pacing](https://developer.android.com/games/sdk/frame-pacing).
+현재의 한 논리 프레임당 `0.01666666753590107` 증가·한 번 tick/draw·별도 50Hz 센서 정책을 유지한다. 표시 동기화는 Choreographer/EGL을 조사하고, 90/120Hz에서 게임이 1.5/2배 진행하지 않게 60Hz 논리 프레임만 선택한다. 놓친 프레임이나 백그라운드 시간을 몰아서 tick하지 않는다. Swappy는 표시 간격을 조정하는 후보로 검토한다. 실제 60/90/120Hz callback·tick·present 수를 대조한 뒤 적용한다. [Frame Pacing](https://developer.android.com/games/sdk/frame-pacing).
 
 터치 좌표는 Surface 실제 픽셀→현재 viewport→월드/HUD 변환을 한 번만 적용한다. dp·상태바·cutout·가로 회전·멀티터치 pointer ID와 CANCEL을 다룬다. 방향 버튼은 치트판에서 실제 입력 경로를 호출한다. SensorManager의 가속도는 m/s²이므로 g 단위로 변환하고 기기 기본 방향과 현재 display rotation으로 축을 바꾼다. 센서 축은 OS 회전으로 자동 변경되지 않으며 태블릿의 기본 방향을 세로로 가정할 수 없다. [센서 좌표 안내](https://developer.android.com/develop/sensors-and-location/sensors/sensors_overview).
 
-양쪽 가로 방향만 플레이하도록 `userLandscape`를 기본 후보로 둔다. OS 자동 회전 잠금도 존중한다. Android 16의 큰 화면에서는 방향 제한이 무시될 수 있으므로 manifest만으로 보장하지 않는다. portrait/multi-window/fold 상태가 강제되면 진행을 정지하고 가로 게임 영역과 안내를 유지하는 별도 처리를 검사한다. 접이식 아래 조작부는 첫 APK 이후 별도 UI 과제다. [Activity 방향·큰 화면 동작](https://developer.android.com/guide/topics/manifest/activity-element).
+양쪽 가로 방향만 플레이하도록 `userLandscape`를 기본 후보로 둔다. OS 자동 회전 잠금도 존중한다. Android 16의 큰 화면에서는 방향 제한이 무시될 수 있다. portrait/multi-window/fold 상태가 강제되면 진행을 정지하고 가로 게임 영역과 안내를 유지하는 별도 처리를 검사한다. 접이식 아래 조작부는 첫 APK 이후 별도 UI 과제다. [Activity 방향·큰 화면 동작](https://developer.android.com/guide/topics/manifest/activity-element).
 
 ## 음향·저장·중단과 복귀
 
@@ -86,7 +86,7 @@ APK용 도구는 조사용 NDK와 구분한다. 첫 구성안은 AGP 8.13.2·Gra
 
 ## APK 생성·설치 절차
 
-아래는 **Android 프로젝트를 구현한 뒤 사용할 예정 명령**이다. 현재 저장소에 gradlew나 이 task가 존재한다는 뜻은 아니다.
+Android 프로젝트 구성 후 사용할 예정 명령이다. Gradle wrapper와 task 작성은 A1 단계에 포함된다.
 
 ```sh
 cd Android
@@ -104,12 +104,12 @@ adb -s DEVICE_SERIAL install -r app/build/outputs/apk/cheat/debug/app-cheat-debu
 
 치트판에서 모든 플레이어 무기와 세 필살기를 실제 데이터로 열거한다. 기본 이동·점프·사격·전환·연사·탄약·피격·아이템·EXP·업그레이드·보스·미션 전환·결과 일러스트·저장 재실행을 검사한다. 화면 양 끝·탱크 후방·미션 3-5 항공기·원본480/확장폭을 회귀 조건에 포함한다. 동일 seed와 입력·프레임 수로 iOS/Android 상태·이벤트·저장 바이트를 비교하고 부동소수 차이는 발생 지점과 영향부터 조사한다.
 
-에뮬레이터는 자동 조건 재현·경계 터치·회전·Activity 재생성·저장·메모리 오류를 검사한다. 실기기는 센서 방향·스피커·GPU driver·60/90/120Hz·발열·입력 지연을 확인한다. 에뮬레이터 GPU 옵션이나 CPU 제한을 특정 휴대폰 성능으로 환산하지 않는다.
+에뮬레이터는 자동 조건 재현·경계 터치·회전·Activity 재생성·저장·메모리 오류를 검사한다. 실기기는 센서 방향·스피커·GPU driver·60/90/120Hz·발열·입력 지연을 확인한다.
 
-프레임 계측에는 callback, simulation tick, CPU draw, EGL swap, 실제 표시 간격을 따로 남긴다. 초기 열 상태를 맞춰 고정 장면·연사·보스·메뉴 왕복을 20~30분 반복하는 검사를 제안한다. 평균·p95·p99·최대·16.67ms/33.3ms 초과 프레임 수와 메모리·파일 쓰기·이미지 디코딩 횟수를 기록한다. 짧은 Perfetto trace 구간을 함께 확보한다. Native Surface의 GPU 비용을 일반 View의 `gfxinfo`만으로 판정하지 않는다. [Android system tracing](https://developer.android.com/topic/performance/tracing), [Perfetto 기록](https://perfetto.dev/docs/getting-started/system-tracing).
+프레임 계측에는 callback, simulation tick, CPU draw, EGL swap, 실제 표시 간격을 따로 남긴다. 초기 열 상태를 맞춰 고정 장면·연사·보스·메뉴 왕복을 20~30분 반복하는 검사를 제안한다. 평균·p95·p99·최대·16.67ms/33.3ms 초과 프레임 수와 메모리·파일 쓰기·이미지 디코딩 횟수를 기록한다. 짧은 Perfetto trace 구간을 함께 확보한다. Native Surface의 GPU 비용은 Perfetto로 추적한다. [Android system tracing](https://developer.android.com/topic/performance/tracing), [Perfetto 기록](https://perfetto.dev/docs/getting-started/system-tracing).
 
 ## 사용할 스킬과 첫 작업
 
 이 프로젝트의 `port-heavymach-android` 스킬을 추가했다. 계획·기준·완료 조건을 먼저 읽고 해당 단계만 실행하도록 한다. 오류 재현은 engineering-debug, 의미 있는 회귀 검사는 engineering-test, 원본 동작이 불명확할 때만 reverse-engineer-anything을 사용한다. 중요한 공통 코드 변경 검토에는 engineering-review, 보고에는 write-project-text와 present-game-artifacts/Sites를 적용한다.
 
-다음 개발 작업은 A1이다. 도구 버전을 고정하고 원본 에셋을 검증한 뒤 EGL·OpenAL을 연결한 치트 debug APK부터 실행한다. 게임 동작을 이식하기 전에 논리 버퍼·최종 표시·입력·음향의 기준을 확보한다. 이 문서 작성만으로 Android 개발 완료나 APK 생성 완료를 표시하지 않는다.
+다음 개발 작업은 A1이다. 도구 버전을 고정하고 원본 에셋을 검증한 뒤 EGL·OpenAL을 연결한 치트 debug APK부터 실행한다. 게임 동작을 이식하기 전에 논리 버퍼·최종 표시·입력·음향의 기준을 확보한다.
