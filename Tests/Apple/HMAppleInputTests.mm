@@ -97,6 +97,24 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  [self.game setValue:@1 forKey:@"randomState"];[self.game updateCanvasGeometry];
 }
 - (void)tearDown {[self.game setApplicationActive:NO];self.game=nil;[NSFileManager.defaultManager removeItemAtURL:self.temp error:nil];[super tearDown];}
+- (void)testGroundAAMediumSizeAndTurretJoin {
+ [self.game setFrame:CGRectMake(0,0,1800,600)];[self.game updateCanvasGeometry];
+ ((HMValidationControls*)[self.game valueForKey:@"validationControls"]).selectedSegmentIndex=1;
+ auto& data=storage<heavymach::GameData>(self.game,"_data");auto& map=data.maps.at("Stage01");
+ map.enemies.clear();map.objects.clear();map.left=0;map.right=3000;map.bottom=-200;map.collisionPaths={{{0,0},{3000,0}}};
+ [self startFixture];auto& session=storage<std::unique_ptr<heavymach::GameSession>>(self.game,"_session");session->validationSetCheats(true);
+ float x=session->player()->position.x+150;
+ for(const char* name:{"Tank001","GAA_Shilka_M1","GAA_Tunguska_M1","Tank030"}){session->validationSpawnEnemy({name,{x,4},false});x+=140;}
+ frames(self.game,40);XCTAssertEqual(session->validationEnemies().size(),size_t(4));
+ HMGLRenderer* gl=[self.game valueForKey:@"glRenderer"];
+#if TARGET_OS_OSX
+ NSImage* picture=[gl snapshot];NSData* png=[[NSBitmapImageRep imageRepWithData:picture.TIFFRepresentation]representationUsingType:NSBitmapImageFileTypePNG properties:@{}];
+#else
+ NSData* png=UIImagePNGRepresentation([gl snapshot]);
+#endif
+ XCTAssertNotNil(png);if(png){XCTAttachment* a=[XCTAttachment attachmentWithData:png uniformTypeIdentifier:@"public.png"];a.name=@"GroundAA_Medium_Comparison";a.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:a];}
+ XCTAssertEqualObjects([gl diagnostics][@"lastError"],@"");
+}
 - (void)testGroundAAAssemblyRadarWeaponsAndNoShotSave {
  XCTAssertNil([self.game valueForKey:@"loadError"]);
  [self.game setFrame:CGRectMake(0,0,1200,600)];[self.game updateCanvasGeometry];

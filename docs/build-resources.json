@@ -7442,13 +7442,13 @@
     },
     {
       "path": "Art/Extensions/GAA_Shilka_Gun.png",
-      "bytes": 962964,
-      "sha256": "c9950c1db04ec1f9037143caa1056180b3ba542740bb6189fc1a1336fc4f3687"
+      "bytes": 1001223,
+      "sha256": "f727e5b2356b63339eb064966393d2c236b986a76d81dc7d22717193ca801c24"
     },
     {
       "path": "Art/Extensions/GAA_Shilka_Radar.png",
-      "bytes": 2147898,
-      "sha256": "fe068663bbeeef36a264c6de12551cbb72b6fbfbbd7bdd72792f998ea8fb2e24"
+      "bytes": 1586250,
+      "sha256": "fd335b45f3f2b4aa497b5f2553c903eb237e1c13bc7a6392f9ade807b947411f"
     },
     {
       "path": "Art/Extensions/GAA_Shilka_Turret.png",
@@ -7467,8 +7467,8 @@
     },
     {
       "path": "Art/Extensions/GAA_Tunguska_Gun.png",
-      "bytes": 974697,
-      "sha256": "cb5554428e2c072774dfdf1e549fbe0132e8d30aabbd0b5800410fbbbc6fc1b1"
+      "bytes": 826067,
+      "sha256": "e74def2b25fa8fdb811f17b36dd37a50ded771cb36cbdb9155909e20439e7439"
     },
     {
       "path": "Art/Extensions/GAA_Tunguska_Missile.png",
@@ -7477,8 +7477,8 @@
     },
     {
       "path": "Art/Extensions/GAA_Tunguska_Radar.png",
-      "bytes": 2051707,
-      "sha256": "41b9578ee1ef17c1f09f30ca77ae90f4227adc874895134366a3195ac926bfe1"
+      "bytes": 1714445,
+      "sha256": "602eb34b1abf661f987ae7f9f2a225c7b39ea44e6217095f8fd7c3124d406e5b"
     },
     {
       "path": "Art/Extensions/GAA_Tunguska_Turret.png",

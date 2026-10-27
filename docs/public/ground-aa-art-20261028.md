@@ -2,6 +2,34 @@
 
 차체·포탑·포신·발사관·레이더를 모두 새로 그렸다. 위쪽은 조립된 모습, 아래쪽은 분리할 파츠다. 원작 지상 유닛 5종의 파츠 연결점·겹침 순서·회전 설정을 확인해 조립안을 작성했다.
 
+## 크기·연결부·레이더·포신 수정
+
+![원작 전차와 쉴카·퉁구스카 크기 비교](media/ground-aa/medium-comparison.png)
+
+왼쪽부터 플레이어, 원작 Tank001, 쉴카, 퉁구스카, 원작 Tank030이다. 평지 검사 장면에서 같은 배율로 그렸다. 차체 폭을 쉴카 104→80, 퉁구스카 112→85로 줄였다. 기준인 Tank001의 차체 한 프레임은 85×30이다. 두 차량의 포탑·포신·레이더도 함께 줄였다.
+
+포탑과 차체 사이의 틈은 그림 사각형의 끝을 연결점으로 사용하면서 생겼다. 차체 지붕의 투명 영역을 고려하지 않아 포탑이 떠 보였다. 실제 접합면이 2픽셀 겹치도록 연결점을 내렸다.
+
+![크기를 줄인 퉁구스카의 경사면 사격](media/ground-aa/tunguska-medium-slope.png)
+
+![크기를 줄인 쉴카의 경사 이동](media/ground-aa/shilka-medium-slope.png)
+
+포신과 레이더도 실차 사진을 다시 대조해 교체했다. 쉴카의 네 포신은 좌우 두 쌍으로 배치하고 굵은 포구를 줄였다. 레이더는 짧은 받침 위의 두꺼운 원형 본체로 바꿨다. 퉁구스카는 가는 기관포 두 관과 냉각부를 구분하고, 후방 탐색 레이더의 높은 받침과 위쪽 돌출물을 없앴다. 회전축은 프레임마다 같은 장착점에 놓았다.
+
+![수정한 쉴카 포신](media/ground-aa/shilka-gun-v2.png)
+
+![수정한 쉴카 레이더 8방향](media/ground-aa/shilka-radar-v2.png)
+
+![수정한 퉁구스카 포신](media/ground-aa/tunguska-gun-v2.png)
+
+![수정한 퉁구스카 탐색 레이더 8방향](media/ground-aa/tunguska-radar-v2.png)
+
+![iPad 실기기의 원작 전차·쉴카·퉁구스카 비교](media/ground-aa/medium-ipad.png)
+
+수정본은 코어 23개 검사와 iPad 시뮬레이터·Mac·iPhone·iPad 실기기의 조립·전투 검사 2개씩을 통과했다. iPhone·iPad의 일반·치트 앱을 수정본으로 업데이트했다.
+
+[수정 프롬프트](../../Art/GroundAA/20261028-refinement/prompts.json) · [교체 전후 파일 기록](../../Art/GroundAA/20261028-refinement/changes.json). 아래 도안과 초기 게임 캡처는 수정 전 기록이다.
+
 ## 쉴카
 
 ![쉴카 조립도와 차체·포탑·4연장 기관포·레이더 분해도](media/ground-aa/shilka-concept-v1.png)
@@ -60,7 +88,7 @@
 - 제작: 내장 `image_gen`. [프롬프트](../../Art/GroundAA/20261028-v1/prompts.json) · [파일·해시·수정 기록](../../Art/GroundAA/20261028-v1/manifest.json).
 - [개발 조사와 남은 TODO](ground-units-research-20261028.md).
 
-## 게임 화면과 무장
+## 초기 게임 화면과 무장
 
 ![경사를 따라 이동하는 쉴카와 기존 지상 적](media/ground-aa/shilka-game-240.png)
 
@@ -96,7 +124,7 @@
 
 검사 중 지면 높이 조회와 실제 낙하가 다른 지점을 찾았다. 실제 낙하 코드를 120회 실행해 안정적으로 착지하는 좌표만 배치 후보로 채택하도록 수정했다. 기존 맵과 이동 코드는 유지했다.
 
-## 실기기 검사
+## 초기 실기기 검사
 
 ![iPhone Air에서 경사를 오르는 쉴카](media/ground-aa/shilka-iphone.png)
 

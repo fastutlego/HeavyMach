@@ -71,13 +71,13 @@ void addGroundAAExpansion(GameData& data){
   for(bool tung:{false,true}){
    std::string id=std::string(tung?"GAA_Tunguska_M":"GAA_Shilka_M")+std::to_string(mission+1);
    auto part=[&](const char* suffix,int type,int count,std::vector<Vector2> sockets){PartsInfo p;p.name=id+suffix;p.partsType=type;p.tileCnt=count;p.sockets=std::move(sockets);data.parts.emplace(p.name,p);return p.name;};
-   auto body=part("_Body",0,2,{{0,tung?-14.5f:-12.f},{0,tung?14.5f:12.f}});
-   auto top=part("_Turret",1,1,{{0,tung?-15.5f:-9.f},{tung?-23.f:-25.f,tung?-1.f:-2.f},{18,tung?8.f:9.f},{16,0}});
-   auto gun=part("_Gun",2,1,{{tung?21.f:19.f,tung?-3.f:-4.f},{tung?-29.f:-27.5f,tung?3.f:3.f}});
-   auto radar=part("_Radar",1,1,{{0,tung?-18.f:-16.f}});
+   auto body=part("_Body",0,2,{{0,tung?-11.f:-9.f},{0,tung?9.f:7.f}});
+   auto top=part("_Turret",1,1,{{0,tung?-11.5f:-7.f},{tung?-18.f:-19.f,-1.f},{14,tung?10.f:7.f},{12,0}});
+   auto gun=part("_Gun",2,1,{{tung?15.f:13.f,-2.f},{tung?-20.f:-19.f,1.f}});
+   auto radar=part("_Radar",1,1,{{0,tung?-6.5f:-8.f}});
    char original[40];snprintf(original,sizeof(original),"E_Tank_Wpn_%02d",mission+1);auto w=data.weapons.at("E_Tank_Wpn_01");w.dmg=data.weapons.at(original).dmg;w.spd=data.weapons.at(original).spd;w.name=gun;w.shotCnt=tung?4:6;w.shotDly=data.weapons.at("E_0505_Wpn").shotDly;data.weapons.emplace(gun,w);
    MachPartDefinition turret{top,1,1,{{radar,2,0,{}},{gun,1,2,{}}}};
-   if(tung){auto missile=part("_Missile",2,1,{{12,-4},{-20,4}});snprintf(original,sizeof(original),"E_ArmoCar_Msl_%02d",std::min(mission+1,5));w=data.weapons.at(original);w.name=missile;w.shotCnt=2;w.shotDly=.5f;data.weapons.emplace(missile,w);turret.children.push_back({missile,3,3,{}});}
+   if(tung){auto missile=part("_Missile",2,1,{{9,-3},{-15,3}});snprintf(original,sizeof(original),"E_ArmoCar_Msl_%02d",std::min(mission+1,5));w=data.weapons.at(original);w.name=missile;w.shotCnt=2;w.shotDly=.5f;data.weapons.emplace(missile,w);turret.children.push_back({missile,3,3,{}});}
    MachDefinition unit;unit.name=id;unit.hpMax=source.hpMax;unit.giveExp=source.giveExp;unit.machType=0;unit.parts={{body,0,0,{turret}}};data.machines.emplace(id,std::move(unit));
   }
  }

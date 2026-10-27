@@ -42,6 +42,12 @@ def article(source,dest,download,template):
         '개발 중 고친 문제': 'section-5', '코드 구조와 버전': 'section-6',
         '라이선스와 자원': 'section-7',
     } if source == ROOT/'README.md' else {}
+    if source == ROOT/'docs/public/ground-aa-art-20261028.md':
+        readme_ids.update({name:f'section-{i}' for i,name in enumerate(['쉴카','퉁구스카','확인한 원작 조립 구조','덜컹거림과 파츠 조립','제작 자료','초기 게임 화면과 무장','미션별 수량','구현 검사 결과','초기 실기기 검사'])})
+        readme_ids['크기·연결부·레이더·포신 수정']='refinement'
+    if source == ROOT/'docs/ground-aa-expansion.md':
+        readme_ids.update({name:f'section-{i}' for i,name in enumerate(['요구와 무장','파츠와 움직임','체력과 배치','검사'])})
+        readme_ids['크기와 연결부 수정 · 2026-10-28']='refinement'
     nav=BeautifulSoup('<nav aria-label="본문 목차"><ol></ol></nav>','html.parser')
     for i,h in enumerate(content.select('h2')):
         h['id']=readme_ids.get(h.get_text(), ids[i] if i<len(ids) and ids[i] else f'section-{i}')
@@ -177,6 +183,8 @@ def main():
             try: rel = target.resolve().relative_to(ROOT).as_posix()
             except ValueError: continue
             if rel in routes: node[attr] = routes[rel]
+            elif rel.startswith('Art/GroundAA/20261028-refinement/') and rel.endswith('.json'):
+                node[attr] = 'evidence/ground-aa-refinement-'+Path(rel).name
             elif rel == 'docs/evidence/ground-aa-20261028.json':
                 node[attr] = 'evidence/ground-aa-20261028.json'
             elif rel.startswith('docs/public/media/'):
@@ -211,6 +219,8 @@ def main():
         shutil.copyfile(ROOT/'docs/public/media'/name,dist/'media'/name)
     shutil.copyfile(ROOT/'docs/lux-lunae-plan-20261027.md',dist/'lux-lunae-plan-20261027.md')
     (dist/'evidence').mkdir(exist_ok=True)
+    for file in (ROOT/'Art/GroundAA/20261028-refinement').glob('*.json'):
+        shutil.copyfile(file,dist/'evidence'/('ground-aa-refinement-'+file.name))
     shutil.copyfile(ROOT/'docs/evidence/ground-aa-20261028.json',dist/'evidence/ground-aa-20261028.json')
     shutil.copyfile(ROOT/'docs/evidence/lux-lunae-implementation-20261027.json',dist/'evidence/lux-lunae-implementation-20261027.json')
     for suffix in ['txt','cpp']:

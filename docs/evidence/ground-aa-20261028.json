@@ -452,5 +452,99 @@
   "remaining": [
     "full campaign difficulty assessment",
     "long-session thermal and memory measurements"
-  ]
+  ],
+  "refinement_20261028": {
+    "baseline_commit": "0e2f7b4a",
+    "body_width_before": [
+      104,
+      112
+    ],
+    "body_width_after": [
+      80,
+      85
+    ],
+    "reference": "Tank001 body frame 85x30",
+    "turret_body_overlap": 2,
+    "art_changes": "Art/GroundAA/20261028-refinement/changes.json",
+    "core": {
+      "passed": 23,
+      "failed": 0,
+      "log": "build/ground-aa-refinement/core-tests.log"
+    },
+    "apple": [
+      {
+        "environment": "ipad-sim",
+        "passed": 2,
+        "failed": 0,
+        "result": "build/ground-aa-refinement/ipad-sim.xcresult"
+      },
+      {
+        "environment": "mac",
+        "passed": 2,
+        "failed": 0,
+        "result": "build/ground-aa-refinement/mac.xcresult"
+      },
+      {
+        "environment": "ipad-device",
+        "passed": 2,
+        "failed": 0,
+        "result": "build/ground-aa-refinement/ipad-device.xcresult"
+      },
+      {
+        "environment": "iphone-device",
+        "passed": 2,
+        "failed": 0,
+        "result": "build/ground-aa-refinement/iphone-device.xcresult"
+      }
+    ],
+    "tests": [
+      "testGroundAAAssemblyRadarWeaponsAndNoShotSave",
+      "testGroundAAMediumSizeAndTurretJoin"
+    ],
+    "captures": [
+      {
+        "path": "docs/public/media/ground-aa/shilka-medium-slope.png",
+        "sha256": "e73de265aadabc6a46aa4368cceb3b939cc39153975c4dd87522b95c1cffb08c"
+      },
+      {
+        "path": "docs/public/media/ground-aa/medium-comparison.png",
+        "sha256": "b3d52c51695530d9660eb6bd11f94c9e4ab9382c7978209d11dfd432c461c48d"
+      },
+      {
+        "path": "docs/public/media/ground-aa/tunguska-medium-slope.png",
+        "sha256": "8293745c019d71b27aeb596109e8b5da225c1fd52a0dfeef31b81a6d69306ba3"
+      }
+    ],
+    "normal_apps": [
+      {
+        "device": "iphone",
+        "app": "normal",
+        "operation": "install",
+        "outcome": "success",
+        "receipt": "build/ground-aa-refinement/iphone-normal-install.json"
+      },
+      {
+        "device": "iphone",
+        "app": "normal",
+        "operation": "launch",
+        "outcome": "success",
+        "receipt": "build/ground-aa-refinement/iphone-normal-launch.json"
+      },
+      {
+        "device": "ipad",
+        "app": "normal",
+        "operation": "install",
+        "outcome": "success",
+        "receipt": "build/ground-aa-refinement/ipad-normal-install.json"
+      },
+      {
+        "device": "ipad",
+        "app": "normal",
+        "operation": "launch",
+        "outcome": "success",
+        "receipt": "build/ground-aa-refinement/ipad-normal-launch.json"
+      }
+    ],
+    "cheat_apps": "Updated and launched by test-without-building on both physical devices; two tests each passed."
+  }
 }

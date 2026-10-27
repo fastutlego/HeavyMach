@@ -130,7 +130,7 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
 #endif
   m.enemy->position=definition.position;m.enemy->machState=2;m.enemy->isBoss=definition.isBoss;
   m.enemy->hasWeapon=std::any_of(m.parts.begin(),m.parts.end(),[](const auto& p){return p&&p->armed;});
-  if(isGroundAA(definition.name)){m.enemy->useEngineBounce=true;m.enemy->gaugeY=82;m.bounds={-60,0,56,78};}
+  if(isGroundAA(definition.name)){m.enemy->useEngineBounce=true;m.enemy->gaugeY=58;m.bounds={-54,0,43,55};}
   m.vtol=aircraftSpec(definition.name);if(m.vtol){m.bounds=m.vtol->bounds;m.enemy->gaugeY=-24;}
  }
  void spawnMapEnemy(const EnemyDefinition& definition,size_t index)override{

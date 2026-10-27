@@ -1,0 +1,42 @@
+[
+  {
+    "asset_name": "Shilka_Gun",
+    "prompt": "Edit the first attached game sprite to faithfully match the ZSU-23-4 Shilka gun group in the two real museum reference photographs. This is a NONFUNCTIONAL decorative sprite for a 2D side-scrolling game, not an engineering drawing. Isolated gun cluster only, front points LEFT, perfectly horizontal parallel barrels and compact rear cradle on RIGHT. Correct the inaccurate four barrels stacked in one tall column: real Shilka has FOUR thin water-cooled tubes in TWO upper/lower pairs, a 2-by-2 arrangement in depth; near pair upper and lower clearly visible, far pair partly occluded behind and offset just enough to distinguish four tips. Long slim tubes, narrow barrel jackets/rings, small simple muzzle tips per real photos, NO oversized slotted cylindrical muzzle brakes, NO four-storey vertical rack, NO rotating gatling block. Small open supporting rods and compact rear mounting cradle matching museum shape, not a large fictional armor box. Keep original muted olive-brown game palette, dark gray metal, restrained hand-painted small sprite shading, crisp silhouette. Orthographic side view with only minimal depth to reveal far pair, not perspective foreshortening. Transparent alpha everywhere outside component, no glow, no shadow, no text, no labels, no chassis, no turret, no radar, no VFX. Wide horizontal canvas, compact height, centered with padding.",
+    "references": [
+      "Art/Extensions/GAA_Shilka_Gun.png",
+      "build/ground-art-20261028/references/Shilka_528.jpg",
+      "build/ground-art-20261028/references/zsu23_4_528.jpg"
+    ],
+    "generated_file": "exec-5003d337-5602-4f6a-9b41-94f78b439ceb.png"
+  },
+  {
+    "asset_name": "Tunguska_Gun",
+    "prompt": "Edit first game component to faithfully reproduce ONE side-mounted 2A38 twin gun group of the original Soviet 2S6 Tunguska in the museum photos, as a NONFUNCTIONAL decorative side-view sprite. Isolate only the twin gun assembly. TWO slim parallel barrels pointing LEFT, level/horizontal, close together in depth, not a tall two-storey rack. Follow real 2A38 silhouette: thin dark muzzle-end tubes with modest narrow ends, longer olive cooling jackets closer to root, compact open rear support and side mounting pivot at RIGHT. Remove exaggerated slotted muzzle brakes, thick black fantasy cannon tubes, oversized armored rectangular box and circular tank-sized housing. Long thin silhouette like photographed guns. No missiles or turret included. Same muted olive/dark steel palette and hand-painted game asset style, crisp edges suitable at 35-40 logical pixels wide. Orthographic side elevation, subtle depth only to distinguish twin tubes. True transparent background, no glow, no cast shadow, no text/labels, no explosion, no border. Wide horizontal crop with generous clean margins.",
+    "references": [
+      "Art/Extensions/GAA_Tunguska_Gun.png",
+      "build/ground-art-20261028/references/528_2_tung.jpg",
+      "build/ground-art-20261028/references/tung528.jpg"
+    ],
+    "generated_file": "exec-001b41b5-8a44-45de-9848-b7828828d769.png"
+  },
+  {
+    "asset_name": "Shilka_Radar",
+    "prompt": "Correct first radar sprite sheet using museum Shilka radar photos. NONFUNCTIONAL decorative game animation sheet. Exact 4 columns by 2 rows, eight equal cells, one identical compact ZSU-23-4 radar assembly per cell, complete 360-degree yaw at 45 degree increments: front, front-quarter, right edge, rear-quarter, rear, rear-other-quarter, left edge, front-other-quarter. Camera fixed at side-game slight downward view; only antenna/support above the same short base rotates. Real Shilka has a smooth round THICK cylindrical radome face, modest short rear drum, an angled two-arm support bracket on a very SHORT low mounting plate; include small side auxiliary round element only where naturally visible. Fix old thin pizza-pan dish and oversized separate platform/pedestal. No invented radial spokes on front, no exaggerated rivets, no tiny skyscraper mast. All eight units exactly same scale, vertical mounting base center fixed at horizontal cell center, base bottom same y within each cell; generous transparent gutters so no part crosses cell bounds. Match muted olive gray paint, restrained hand-painted HeavyMach metal shading and dark readable silhouette. The photographs control geometry, the original sprite controls palette only. True transparent alpha background including gutters, NO colored haze/glow, no text or labels, no scene, no turret or vehicle. Landscape 4:2 grid.",
+    "references": [
+      "Art/Extensions/GAA_Shilka_Radar.png",
+      "build/ground-art-20261028/references/Shilka_528.jpg",
+      "build/ground-art-20261028/references/zsu23_4_528.jpg"
+    ],
+    "generated_file": "exec-3f45cb10-8af5-4471-b35e-b65f38d47f01.png"
+  },
+  {
+    "asset_name": "Tunguska_Radar",
+    "prompt": "Correct first game sprite sheet to match the original 2S6 Tunguska REAR SEARCH RADAR shown in the real museum photos. NONFUNCTIONAL decorative animation sheet, not technical construction. EXACT grid 4 columns by 2 rows, eight equal cells. Same antenna at eight successive yaw angles 0,45,90,135,180,225,270,315 degrees, fixed camera, same scale. Preserve real compact central dark olive rectangular antenna with low broad side wings, rounded outer corners and short neck fixed to roof. Front view overall width about twice antenna height; entire assembly including short support is wider than tall. Remove invented huge tall stacked conical pedestal, prominent dome on top, and over-armored riveted panels. Use a short plain mounting neck and low base matching photograph, with a broad central panel and thinner side wings, no exaggerated dishes. Do not add the separate front tracking radar to this sprite. Each mounting base at exact horizontal cell center, base bottom at same y within each cell. Thick clean alpha-transparent gutters, no overlapping cells. Muted olive/dark gray HeavyMach hand-painted steel style but real reference geometry takes priority. Transparent background with zero color haze/glow, no text/numbers, no chassis, no turret, no VFX.",
+    "references": [
+      "Art/Extensions/GAA_Tunguska_Radar.png",
+      "build/ground-art-20261028/references/tung528.jpg",
+      "build/ground-art-20261028/references/528_2_tung.jpg"
+    ],
+    "generated_file": "exec-d6d175e7-42b7-4e87-9a69-3dd0884065a4.png"
+  }
+]

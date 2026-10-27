@@ -22,6 +22,17 @@ int main(){auto root=std::filesystem::path(__FILE__).parent_path().parent_path()
   state={};state.weaponInfo=&w;frame.time=4;fireWeapon(state,frame,host);int remaining=state.fireCount;frame.paused=true;frame.time=30;tickWeapon(state,frame,host);assert(state.fireCount==remaining);
  }
  for(const auto& [name,w]:before.weapons){auto& n=data.weapons.at(name);assert(w.shotCnt==n.shotCnt&&w.shotDly==n.shotDly&&w.spd==n.spd&&w.dmg==n.dmg);}
+ // Body/turret must overlap at their solid join on flat and sloped terrain.
+ for(const char* unit:{"GAA_Shilka_M1","GAA_Tunguska_M1"}){
+  std::string id=unit;PartsState body,top;body.info=&data.parts.at(id+"_Body");top.info=&data.parts.at(id+"_Turret");
+  attachParts(top,&body,1);body.offset=partsSocketPosition(body,0);
+  auto b=*groundAAPartSize(id+"_Body"),t=*groundAAPartSize(id+"_Turret");assert(b.x<=85);
+  for(float angle:{-.4f,0.f,.4f})for(float bounce:{-1.f,0.f,1.f}){
+   auto bd=drawParts(body,{100,50},angle,bounce,1,1,1),td=drawParts(top,{100,50},angle,bounce,1,1,1);
+   float dx=td.position.x-bd.position.x,dy=td.position.y-bd.position.y;Vector2 relative{dx*std::cos(angle)+dy*std::sin(angle),-dx*std::sin(angle)+dy*std::cos(angle)};
+   assert(std::abs(relative.x)<.001f);assert(relative.y-t.y/2<=b.y/2-1.9f);
+  }
+ }
  for(const auto& art:groundAAImages())assert(std::filesystem::exists(root/"Art"/art.source));
  for(auto name:{"GAA_Shilka_M1_Radar","GAA_Tunguska_M7_Radar"}){PartsState p;p.info=&data.parts.at(name);p.rotation=.15;for(int n=0;n<8;++n){DrawSprite d;d.rotation=.15;configureGroundAADraw(d,p,n*.25);assert(d.tile==groundAAPartTile(name,n));assert(d.rotation==.15f);}}
  std::cout<<"Ground AA definitions, original spawns, all 35 stages, bursts, pause and radar passed; added="<<total<<'\n';
