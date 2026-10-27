@@ -6,7 +6,7 @@
 - [x] **HM-BADGE 조사** — GitHub·Shields와 SDL·OpenRCT2를 확인했다. README 제목·한 문장 소개 뒤에 Git 태그·플랫폼·arm64·언어 배지 4개를 두고 실제 검사 OS는 표에 적는 안을 작성했다.
 - [ ] **HM-PUBLISH 공개** — 자원별 [출처·허락 목록](rights-manifest.json)을 작성했다. 원작·참조 그림의 공개 범위 확정이 남았다. 현재 비공개 저장소의 코드·에셋·이력은 유지한다.
 - [x] **HM-GITHUB 구성** — About·Topics, CONTRIBUTING·이슈·PR 양식, 문서·자원·코어·Apple 빌드 workflow를 추가했다.
-- [x] **HM-SOURCE 검증** — v0.12 자원 포함 압축본에서 자원1,482개·코어21개·앱 빌드4개·OpenAL 재링크2개를 통과했다.
+- [x] **HM-SOURCE 릴리스** — v0.12 Release의 소스·자원 압축본과 고지·해시 파일을 등록하고 재다운로드 해시를 확인했다. 압축본에서 자원1,482개·코어21개·앱 빌드4개·OpenAL 재링크2개를 통과했다.
 - [ ] **HM-CI 원격 실행** — GitHub 계정 결제·사용 한도 해소 후 Actions를 실행한다. 현재 실패는 실행 전 계정 제한이며 로컬 검사는 통과했다.
 - [ ] **HM-SOCIAL 등록** — 공유 카드 1280×640 파일은 완성했다. GitHub는 최초 공유 이미지가 없는 비공개 저장소의 업로드를 지원하지 않아 공개 전환 시 등록한다. [후속 결과](public/github-followup-20261028.md)
 - [x] **HM-BADGE 적용** — 기술4개·코드 라이선스1개의 로컬 SVG 배지와 최소 OS·실제 검사 환경 표를 README에 추가했다.

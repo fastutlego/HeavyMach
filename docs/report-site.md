@@ -561,3 +561,7 @@ VTOL 첫 생성 프롬프트와 스킬 수정 커밋을 대조했다. 요청에 
 - version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_ca4393fbaa188191a99da0717ab811bf`.
 - deployment: `appgdep_6ae0ced02618819185d59dd7239986b5`, `succeeded`, 2026-10-27T16:18:37.883815+00:00.
 - [README](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/github.html), [GitHub 구성 계획](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/github-repository-plan.html), [검사 기록](evidence/github-presentation-20261028.json). 소유자 비공개 범위 유지. GitHub 저장소도 비공개다.
+
+## 2026-10-28 GitHub 후속 작업
+
+기존 사이트에 도입문·기여 안내·CI·v0.12 소스 릴리스와 재링크 결과를 반영했다. 소스 `cc278f6b1e9c84382e221094e4e240a4b98fbf61`, 버전 `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_d6fc6009c8f881919aeb2c09a54b6627`, 배포 `appgdep_6ae0d714da7481918274d5b928a82b4d`, 결과 `succeeded`다. 원래 소유자 전용 접근 범위를 유지했다. 문서40개·내부 링크873개·기존 게임 이미지10개 보존을 확인했다. Safari 로컬 README 화면을 확인했고 배포 후 Safari 호출은 `cgWindowNotFound`로 실패했다. [배포·검사 기록](evidence/github-followup-20261028.json)
