@@ -1,0 +1,30 @@
+{
+  "size": [
+    1280,
+    640
+  ],
+  "method": "Original title illustration fills 1280x640 with proportional centered cropping; original logo only. No added panel or platform labels.",
+  "files": [
+    {
+      "path": "Resources/Images/Main_BG.png",
+      "bytes": 371820,
+      "sha256": "6d1deaa2d75583483c54469d2fdf43f439b3ead6ef62be5bccf9e488cd025aca"
+    },
+    {
+      "path": "Resources/Images/Main_Title.png",
+      "bytes": 66977,
+      "sha256": "376e18b44cbbb6eb9cc8814c6815b73dd73e0cda9e51a03f267ced71c857562a"
+    },
+    {
+      "path": "docs/public/media/github-social-preview.svg",
+      "bytes": 585376,
+      "sha256": "09541574c4b1b982cb3430c3a8108962289d724019ff7110d580ded4c6b5b767"
+    },
+    {
+      "path": "docs/public/media/github-social-preview.png",
+      "bytes": 914281,
+      "sha256": "465c605835e4d1907cb07ee95a61f2a474665274e1da6c798c58b8f5a717d7d3"
+    }
+  ],
+  "original_assets_modified": false
+}

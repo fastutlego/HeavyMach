@@ -191,7 +191,7 @@ def main():
     shutil.copyfile(ROOT/'docs/public/media/README.md', dist/'media/README.md')
     shutil.copytree(ROOT/'docs/public/media/gameplay-20261027',dist/'media/gameplay-20261027',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/media/badges',dist/'media/badges',dirs_exist_ok=True)
-    for name in ('github-social-preview.svg', 'github-social-preview.png'):
+    for name in ('github-social-preview.svg', 'github-social-preview.png', 'github-social-preview-gameplay.svg', 'github-social-preview-gameplay.png'):
         shutil.copyfile(ROOT/'docs/public/media'/name,dist/'media'/name)
     shutil.copyfile(ROOT/'docs/lux-lunae-plan-20261027.md',dist/'lux-lunae-plan-20261027.md')
     (dist/'evidence').mkdir(exist_ok=True)

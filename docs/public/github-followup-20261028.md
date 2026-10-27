@@ -6,9 +6,26 @@ README와 개발자의 변 첫머리에 같은 도입문을 넣었다. 꿈에서
 
 About를 현재 iPhone·iPad·Mac 앱과 공용 C++ 코어·입력·자동조준 소개로 바꿨다. 장르와 실제 구현을 나타내는 Topics 10개를 등록했다. [기여 안내](../../CONTRIBUTING.md), 버그·기능 제안 양식과 PR 양식을 추가했다. 개발 PR은 `develop`을 대상으로 한다.
 
-공유 카드에는 확인받은 플레이 캡처를 비율 그대로 배치하고 게임 이름과 플랫폼을 붙였다. 1280×640 PNG, 772,558바이트다. 원본 캡처는 바꾸지 않았다. GitHub는 이미지를 등록한 적 없는 비공개 저장소에 최초 업로드를 제공하지 않는다. 설정 화면에서도 Social preview 항목이 없었다. 저장소를 공개할 때 이 파일을 등록한다. [GitHub 공식 안내](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/customizing-your-repositorys-social-media-preview)
+공유 카드는 메인 화면의 전차 일러스트와 기존 HEAVY MACH 로고로 바꿨다. 일러스트를 같은 비율로 확대해 카드 전체를 채우고, 위아래를 잘라 2:1 비율로 맞췄다. 검은 여백과 플랫폼 문구는 삭제했다. 1280×640 PNG다. SVG 배치 파일을 CairoSVG로 렌더링했으며 게임 에셋은 수정하지 않았다.
 
-![GitHub 공유 이미지 후보](media/github-social-preview.png)
+![메인 화면 전차 일러스트와 기존 HEAVY MACH 로고로 만든 OG 카드](media/github-social-preview.png)
+
+[PNG 원본](media/github-social-preview.png) · [SVG 배치 파일](media/github-social-preview.svg) · [이전 플레이 캡처 카드](media/github-social-preview-gameplay.png)
+
+GitHub는 이미지를 등록한 적 없는 비공개 저장소에 최초 업로드를 제공하지 않는다. 설정 화면에서도 Social preview 항목이 없었다. 저장소를 공개할 때 이 파일을 등록한다. [GitHub 공식 안내](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/customizing-your-repositorys-social-media-preview)
+
+### Xcode 파일 제외 점검
+
+개인별 `xcuserdata`·`xcuserstate`, DerivedData와 빌드 폴더는 이미 제외돼 있었다. 아카이브·검사 결과·디버그 심볼·헤더 인덱스·SPM 빌드 캐시, 구형 Xcode 개인 설정과 추가 서명 파일 형식을 제외 규칙에 넣었다.
+
+| 구분 | 처리 |
+|---|---|
+| `*.xcarchive`, `*.xcresult`, `*.dSYM`, `*.dSYM.zip`, `*.hmap`, `.build` | 추가 제외 |
+| `*.pbxuser`, `*.mode1v3`, `*.mode2v3`, `*.perspectivev3`, `*.xccheckout`, `*.xcscmblueprint` | 추가 제외. `default.*` 공유 설정은 유지 |
+| `*.p8`, `*.pfx`, `*.provisionprofile` | 기존 `.p12`·`.mobileprovision` 제외에 추가 |
+| `project.pbxproj`, workspace 구성, 공유 scheme, `project.yml`, `Info.plist`, 공용 `.xcconfig`, `Package.resolved` | Git 포함 유지 |
+
+실제 `git check-ignore`로 제외 대상19개와 공유 설정12개를 확인했다. 이미 추적 중인 파일 중 제외 규칙에 걸리는 파일은 0개다. [검사 기록](../evidence/xcode-ignore-audit-20261028.json) · [.gitignore](../../.gitignore)
 
 ## 자동 검사
 
@@ -58,7 +75,9 @@ OpenAL 소스는 압축본의 `vendor/openal-soft`에 있고, 빌드 설정은 `
 
 외부 구현의 참조 커밋과 실제 파일을 대조하고 touchHLE MPL-2.0, rust-sdl2 MIT 원문을 보관했다. `HMCompatibilityPixels.hpp`에는 MPL-2.0을 표시했다. [외부 코드 고지](../../THIRD_PARTY_NOTICES.md)
 
-Git 전체 참조의 94개 커밋을 Gitleaks로 검사해 탐지된 비밀값은 0건이었다. 추적 파일 중 개인 키·인증서·프로비저닝 파일 확장자는 없었다. 로컬 경로·개발 팀 ID가 있는 문서·설정은 49개이며 [파일 목록](../evidence/publication-source-audit-20261028.json)에 남겼다. 과거 기록과 Git 이력은 보존했다. 저장소의 공개 범위는 비공개다.
+전체 브랜치·태그의 145개 커밋과 연결된 파일 내용 3,054개, 현재 추적 파일 2,439개, LFS 실파일 1,524개, v0.12 릴리스 첨부 파일 3개를 검사했다. Gitleaks 8.30.1에서 탐지한 비밀값은 0건이다. 개인 키·프로비저닝·환경변수 파일명도 Git 이력에서 발견되지 않았다. 검사 오류와 LFS 누락은 없었다. [전면 검사 기록](../evidence/secret-audit-20261028.json)
+
+Git 차이 검사는 병합 등을 제외한 99개 커밋을 처리했다. 누락 여부를 확인하려고 전체 참조에 연결된 파일 내용도 따로 꺼내 검사했다. 저장소의 공개 범위는 비공개다. 로컬 경로·개발 팀 ID가 있는 기존 문서·설정 49개는 [기존 목록](../evidence/publication-source-audit-20261028.json)에 남아 있다.
 
 남은 일은 GitHub Actions 계정 제한 해소 후 실행, 공유 이미지 등록, 원작·참조 그림의 공개 범위 확정이다. 앱 설치 파일의 일반 배포에는 플랫폼별 서명·설치 검사가 추가로 필요하다.
 
