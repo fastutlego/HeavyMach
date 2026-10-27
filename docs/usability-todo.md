@@ -4,7 +4,7 @@
 
 - [x] Mesabloo의 크레딧·비영리·게시 중단 문구와 현재 HeavyMach 문서를 대조한다.
 - [x] 2009년 제작·출시, 2011년 위메이드 크리에이티브의 IP 인수와 위메이드 엔터테인먼트의 리뉴얼 발표를 조사한다.
-- [x] [README·CREDITS 문장안](public/github-followup-20261028.md#원작-제작자위메이드-표기-검토--2026-10-28)을 작성하고 SaaS 집필 자료에 연결한다.
+- [x] [README·CREDITS 문장안](public/github-followup-20261028.md)을 작성하고 SaaS 집필 자료에 연결한다.
 - [ ] 검토한 표기를 README·CREDITS·자원 문서·권리 목록에 반영한다. 비영리·게시 중단 의사는 기존 문장을 유지한다.
 
 ## HM-SASS-HANDOFF — Apps·Mags 집필 자료 검사 (2026-10-28 완료)
