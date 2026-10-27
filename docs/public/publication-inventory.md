@@ -94,7 +94,7 @@ python3 tools/document_contract.py check
 
 ## 원문과 집필 범위
 
-개인 경험 원문 6개와 SaaS·Candidate에서 가져온 글쓰기 자료는 저장소 안에 있다. [원문 목록](../references/developer-background/source-manifest.json)과 [스킬 출처](../../.agents/skills/write-project-text/references/source-manifest.json)에서 복사 범위와 해시를 확인할 수 있다. Unity 초기 기획은 개인적인 시작 배경을 설명하는 별도 프로젝트 자료다.
+개인 경험 원문 7개와 SaaS·Candidate에서 가져온 글쓰기 자료는 저장소 안에 있다. [원문 목록](../references/developer-background/source-manifest.json)과 [스킬 출처](../../.agents/skills/write-project-text/references/source-manifest.json)에서 복사 범위와 해시를 확인할 수 있다. Unity 초기 기획은 개인적인 시작 배경을 설명하는 별도 프로젝트 자료다.
 
 Mags의 답변은 개발자의 변과 제공 원문을 바탕으로 쓴다. 추가로 물을 내용은 질문안으로 정리한다. Apps는 현재 기능·기술 구성·시정 과정·검사 결과를 설명한다. 개발자의 판단과 직접 플레이, Codex의 구현과 검사를 구분한다. 문장 규칙은 [글쓰기 스킬](../../.agents/skills/write-project-text/SKILL.md)에 있다.
 
@@ -107,4 +107,4 @@ Mags의 답변은 개발자의 변과 제공 원문을 바탕으로 쓴다. 추�
 
 ## 원작 제작자와 위메이드
 
-[원작 크레딧 검토](github-followup-20261028.md)에 2009년 제작·출시와 2011년 IP 인수·리뉴얼 발표 자료, README·CREDITS 보강안을 모았다. 변해준·박재철의 제작 역할과 위메이드 크리에이티브의 인수 역할을 구분한다. 현행 크레딧에 문장안을 적용하는 작업은 남아 있다.
+[원작 크레딧 검토](github-followup-20261028.md)에 2009년 제작·출시와 2011년 IP 인수·리뉴얼 발표 자료, README·CREDITS 보강안을 모았다. 변해준·박재철의 제작 역할과 위메이드 크리에이티브의 인수 역할을 구분한다. [CREDITS](../../CREDITS.md)·README·자원 문서에 반영했다. Apps에는 제작자·출시·인수 역할을 구분해 설명한다. Mags에는 [이번에 인수 사실을 알았다는 원문](../references/developer-background/user-wemade-discovery-20261028.md)과 개발자의 변에 추가한 경위를 사용한다.

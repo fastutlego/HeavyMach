@@ -26,7 +26,19 @@
         "screenshots and video publication",
         "modified source and app redistribution"
       ],
-      "status": "permission document not received"
+      "status": "permission document not received",
+      "historical_ip_acquisition": {
+        "year": 2011,
+        "acquirer": "위메이드 크리에이티브",
+        "parent_company_at_time": "위메이드 엔터테인먼트",
+        "reported_scope": "IndieApps assets including HeavyMach and HeavyMach 2 IP",
+        "evidence": [
+          "https://zdnet.co.kr/view/?no=20110512162801",
+          "https://www.inews24.com/view/572510"
+        ],
+        "source_type": "contemporaneous acquisition reporting",
+        "later_transfers": "not confirmed"
+      }
     },
     {
       "paths": [
