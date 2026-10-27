@@ -18,6 +18,8 @@
 
 8. [채택한 README 도입 원고](references/developer-background/approved-readme-opening-20261028.md). 「HeavyMach를 다시 만든 이유」 아래에 2017년 7월 개발자 전업 → HeavyMach의 영향 → 지인들의 말과 9년 3개월 → 현재 복원 이유 → Mesabloo·꿈·구현 경위를 배치한다. 앞서 지정한 ‘요즘 나는…’ 첫 문단 배치는 이 후속 지시로 변경했다.
 
+9. [Cydia 이후 미국 App Store 구매 경위](references/developer-background/user-cydia-purchase-20261028.md). Cydia로 처음 접한 뒤 미국 계정을 만드는 방법을 검색해 구매했다. 당시 한국 스토어에 게임 카테고리가 없었다는 경험을 README와 개발자의 변에 반영했다.
+
 ## 경위
 
 | 시점 | 기록된 내용 | 근거 |

@@ -230,7 +230,7 @@
         "tools/prepare_device_validation.py",
         ".gitignore",
         ".gitattributes",
-        "Resources/*"
+        "Resources/**/*"
       ],
       "tests": [
         "Tests/iOS/HMFramePerformanceTests.mm",
