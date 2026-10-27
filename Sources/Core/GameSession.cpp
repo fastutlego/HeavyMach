@@ -1,5 +1,6 @@
 #include "GameSession.hpp"
 #include "Fighters.hpp"
+#include "GroundAA.hpp"
 #include "BulletVisual.hpp"
 #include "CameraShake.hpp"
 #include <algorithm>
@@ -74,7 +75,8 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
  Part* addPart(Machine& graph,const PartsInfo& info,Part* base,uint8_t baseSocket,int order,uint8_t machType){
   auto owned=std::make_unique<Part>();Part* part=owned.get();part->visual.info=&info;part->order=order;
   // 1.13 tileCnt0 resolves absent PartsDummy.png to nil; keep sockets and zero tile dimensions.
-  auto size=info.tileCnt?tileSize(info.tileName()):Vector2{};float columns=info.tileCnt?info.tileCnt:1;part->bounds=partsBounds(size.x/columns,size.y,socket(&info,0));
+  auto logicalSize=groundAAPartSize(info.name);auto size=logicalSize?*logicalSize:info.tileCnt?tileSize(info.tileName()):Vector2{};float columns=info.tileCnt?info.tileCnt:1;part->bounds=partsBounds(size.x/columns,size.y,socket(&info,0));
+  if(auto logical=groundAAPartSize(info.name))part->bounds=partsBounds(logical->x,logical->y,socket(&info,0));
   part->armed=info.partsType==2;
   if(part->armed){initializeWeapon(part->weapon,world.gameTime,*this);auto w=data.weapons.find(info.name);if(w==data.weapons.end())w=data.weapons.find("E_Default_Wpn");
    if(w==data.weapons.end())throw std::runtime_error("Missing weapon definition: "+info.name);part->weapon.weaponInfo=&w->second;if(w->second.aiTimeScale!=1)part->weapon.delayTime*=w->second.aiTimeScale;
@@ -128,6 +130,7 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
 #endif
   m.enemy->position=definition.position;m.enemy->machState=2;m.enemy->isBoss=definition.isBoss;
   m.enemy->hasWeapon=std::any_of(m.parts.begin(),m.parts.end(),[](const auto& p){return p&&p->armed;});
+  if(isGroundAA(definition.name)){m.enemy->useEngineBounce=true;m.enemy->gaugeY=82;m.bounds={-60,0,56,78};}
   m.vtol=aircraftSpec(definition.name);if(m.vtol){m.bounds=m.vtol->bounds;m.enemy->gaugeY=-24;}
  }
  void spawnMapEnemy(const EnemyDefinition& definition,size_t index)override{
@@ -466,7 +469,7 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
   // and refreshMyMachLayer rebuild order only when parts change.
   if(graph.drawOrderDirty){graph.drawOrder.clear();for(auto& p:graph.parts)if(p)graph.drawOrder.push_back(p.get());
    std::stable_sort(graph.drawOrder.begin(),graph.drawOrder.end(),[](auto a,auto b){return a->order<b->order;});graph.drawOrderDirty=false;}
-  for(auto p:graph.drawOrder){auto d=p->armed?drawWeapon(p->visual,p->weapon,owner.position,owner.player,owner.machType,owner.rotation,owner.engineBounce,1):drawParts(p->visual,owner.position,owner.rotation,owner.engineBounce,owner.machState,owner.speed,globalTime,1);if(p->visual.info&&p->visual.info->tileCnt==0)continue;append(std::move(d));}
+  for(auto p:graph.drawOrder){auto d=p->armed?drawWeapon(p->visual,p->weapon,owner.position,owner.player,owner.machType,owner.rotation,owner.engineBounce,1):drawParts(p->visual,owner.position,owner.rotation,owner.engineBounce,owner.machState,owner.speed,globalTime,1);if(p->visual.info&&p->visual.info->tileCnt==0)continue;configureGroundAADraw(d,p->visual,world.gameTime);append(std::move(d));}
 
  }
  void collect(){

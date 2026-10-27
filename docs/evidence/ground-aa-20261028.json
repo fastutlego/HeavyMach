@@ -1,0 +1,456 @@
+{
+  "branch": "feat/ground-aa",
+  "requirements": {
+    "shilka_white_burst": 6,
+    "tunguska_white_burst": 4,
+    "tunguska_missile_burst": 2,
+    "independent_radar": true,
+    "baseline": "Tank family, each of seven released mission packages",
+    "quantity": "round(original Tank count * 1.3), combined two new types"
+  },
+  "mission_totals": [
+    {
+      "mission": 1,
+      "baseline": 4,
+      "shilka": 3,
+      "tunguska": 2
+    },
+    {
+      "mission": 2,
+      "baseline": 31,
+      "shilka": 20,
+      "tunguska": 20
+    },
+    {
+      "mission": 3,
+      "baseline": 4,
+      "shilka": 3,
+      "tunguska": 2
+    },
+    {
+      "mission": 4,
+      "baseline": 21,
+      "shilka": 13,
+      "tunguska": 14
+    },
+    {
+      "mission": 5,
+      "baseline": 26,
+      "shilka": 17,
+      "tunguska": 17
+    },
+    {
+      "mission": 6,
+      "baseline": 11,
+      "shilka": 7,
+      "tunguska": 7
+    },
+    {
+      "mission": 7,
+      "baseline": 21,
+      "shilka": 14,
+      "tunguska": 13
+    }
+  ],
+  "stages": [
+    {
+      "mission": 1,
+      "stage": 1,
+      "map": "Stage01",
+      "baseline": 0,
+      "shilka": 1,
+      "tunguska": 0
+    },
+    {
+      "mission": 1,
+      "stage": 2,
+      "map": "Stage02",
+      "baseline": 1,
+      "shilka": 0,
+      "tunguska": 1
+    },
+    {
+      "mission": 1,
+      "stage": 3,
+      "map": "Stage03",
+      "baseline": 3,
+      "shilka": 1,
+      "tunguska": 1
+    },
+    {
+      "mission": 1,
+      "stage": 4,
+      "map": "Stage04",
+      "baseline": 0,
+      "shilka": 1,
+      "tunguska": 0
+    },
+    {
+      "mission": 2,
+      "stage": 1,
+      "map": "Stage05",
+      "baseline": 11,
+      "shilka": 7,
+      "tunguska": 7
+    },
+    {
+      "mission": 2,
+      "stage": 2,
+      "map": "Stage06",
+      "baseline": 8,
+      "shilka": 5,
+      "tunguska": 5
+    },
+    {
+      "mission": 2,
+      "stage": 3,
+      "map": "Stage07",
+      "baseline": 11,
+      "shilka": 7,
+      "tunguska": 7
+    },
+    {
+      "mission": 2,
+      "stage": 4,
+      "map": "Stage08",
+      "baseline": 1,
+      "shilka": 0,
+      "tunguska": 1
+    },
+    {
+      "mission": 2,
+      "stage": 5,
+      "map": "Stage09",
+      "baseline": 0,
+      "shilka": 1,
+      "tunguska": 0
+    },
+    {
+      "mission": 3,
+      "stage": 1,
+      "map": "Stage10",
+      "baseline": 2,
+      "shilka": 1,
+      "tunguska": 0
+    },
+    {
+      "mission": 3,
+      "stage": 2,
+      "map": "Stage11",
+      "baseline": 2,
+      "shilka": 0,
+      "tunguska": 1
+    },
+    {
+      "mission": 3,
+      "stage": 3,
+      "map": "Stage12",
+      "baseline": 0,
+      "shilka": 1,
+      "tunguska": 0
+    },
+    {
+      "mission": 3,
+      "stage": 4,
+      "map": "Stage13",
+      "baseline": 0,
+      "shilka": 0,
+      "tunguska": 1
+    },
+    {
+      "mission": 3,
+      "stage": 5,
+      "map": "Stage14",
+      "baseline": 0,
+      "shilka": 1,
+      "tunguska": 0
+    },
+    {
+      "mission": 4,
+      "stage": 1,
+      "map": "Stage25",
+      "baseline": 14,
+      "shilka": 2,
+      "tunguska": 3
+    },
+    {
+      "mission": 4,
+      "stage": 2,
+      "map": "Stage26",
+      "baseline": 7,
+      "shilka": 6,
+      "tunguska": 5
+    },
+    {
+      "mission": 4,
+      "stage": 3,
+      "map": "Stage27",
+      "baseline": 0,
+      "shilka": 2,
+      "tunguska": 3
+    },
+    {
+      "mission": 4,
+      "stage": 4,
+      "map": "Stage28",
+      "baseline": 0,
+      "shilka": 3,
+      "tunguska": 2
+    },
+    {
+      "mission": 4,
+      "stage": 5,
+      "map": "Stage29",
+      "baseline": 0,
+      "shilka": 0,
+      "tunguska": 1
+    },
+    {
+      "mission": 5,
+      "stage": 1,
+      "map": "Stage15",
+      "baseline": 3,
+      "shilka": 2,
+      "tunguska": 2
+    },
+    {
+      "mission": 5,
+      "stage": 2,
+      "map": "Stage16",
+      "baseline": 8,
+      "shilka": 5,
+      "tunguska": 5
+    },
+    {
+      "mission": 5,
+      "stage": 3,
+      "map": "Stage17",
+      "baseline": 5,
+      "shilka": 4,
+      "tunguska": 3
+    },
+    {
+      "mission": 5,
+      "stage": 4,
+      "map": "Stage18",
+      "baseline": 8,
+      "shilka": 5,
+      "tunguska": 5
+    },
+    {
+      "mission": 5,
+      "stage": 5,
+      "map": "Stage19",
+      "baseline": 2,
+      "shilka": 1,
+      "tunguska": 2
+    },
+    {
+      "mission": 6,
+      "stage": 1,
+      "map": "Stage20",
+      "baseline": 5,
+      "shilka": 2,
+      "tunguska": 3
+    },
+    {
+      "mission": 6,
+      "stage": 2,
+      "map": "Stage21",
+      "baseline": 6,
+      "shilka": 3,
+      "tunguska": 3
+    },
+    {
+      "mission": 6,
+      "stage": 3,
+      "map": "Stage22",
+      "baseline": 0,
+      "shilka": 1,
+      "tunguska": 0
+    },
+    {
+      "mission": 6,
+      "stage": 4,
+      "map": "Stage23",
+      "baseline": 0,
+      "shilka": 0,
+      "tunguska": 1
+    },
+    {
+      "mission": 6,
+      "stage": 5,
+      "map": "Stage24",
+      "baseline": 0,
+      "shilka": 1,
+      "tunguska": 0
+    },
+    {
+      "mission": 7,
+      "stage": 1,
+      "map": "Stage30",
+      "baseline": 16,
+      "shilka": 4,
+      "tunguska": 4
+    },
+    {
+      "mission": 7,
+      "stage": 2,
+      "map": "Stage31",
+      "baseline": 0,
+      "shilka": 2,
+      "tunguska": 1
+    },
+    {
+      "mission": 7,
+      "stage": 3,
+      "map": "Stage32",
+      "baseline": 0,
+      "shilka": 1,
+      "tunguska": 2
+    },
+    {
+      "mission": 7,
+      "stage": 4,
+      "map": "Stage33",
+      "baseline": 0,
+      "shilka": 1,
+      "tunguska": 1
+    },
+    {
+      "mission": 7,
+      "stage": 5,
+      "map": "Stage34",
+      "baseline": 5,
+      "shilka": 5,
+      "tunguska": 4
+    },
+    {
+      "mission": 7,
+      "stage": 6,
+      "map": "Stage35",
+      "baseline": 0,
+      "shilka": 1,
+      "tunguska": 1
+    }
+  ],
+  "tests": {
+    "core": {
+      "passed": 23,
+      "total": 23
+    },
+    "landing_and_movement": 152,
+    "weapon_collision_and_destruction": 40,
+    "ipad_simulator_selected": 5,
+    "iphone_simulator_selected": 5,
+    "mac": {
+      "selected_passed": 5,
+      "preload_regression_passed": 1
+    },
+    "physical_devices": [
+      {
+        "model": "iPhone Air",
+        "os": "iOS 27.0.1",
+        "transport": "localNetwork",
+        "selected_passed": 5,
+        "general_app": "installed and launched",
+        "cheat_app": "installed and tested"
+      },
+      {
+        "model": "iPad Air 13-inch (M2)",
+        "os": "iPadOS 27.0.1",
+        "transport": "localNetwork",
+        "selected_passed": 5,
+        "general_app": "installed and launched",
+        "cheat_app": "installed and tested"
+      }
+    ],
+    "preload_regression": {
+      "iphone_simulator": 1,
+      "ipad_simulator": 1,
+      "mac": 1,
+      "iphone_physical": 1,
+      "ipad_physical": 1
+    },
+    "build_resources": {
+      "passed": 1493
+    }
+  },
+  "source_files": [
+    "Sources/Core/GroundAA.cpp",
+    "Sources/Core/GroundAA.hpp",
+    "Sources/Core/GroundAAArt.inc"
+  ],
+  "raw_logs": [
+    "build/ground-aa/final-ctest.log",
+    "build/ground-aa/runtime-results.txt",
+    "build/ground-aa/ipad-final.log",
+    "build/ground-aa/iphone-regression.log",
+    "build/ground-aa/mac-gui-regression.log",
+    "build/ground-aa/mac-preload.log",
+    "build/ground-aa/iphone-preload-final.log",
+    "build/ground-aa/ipad-preload.log",
+    "build/ground-aa/iphone-physical.log",
+    "build/ground-aa/ipad-physical.log",
+    "build/ground-aa/iphone-physical-final.log",
+    "build/ground-aa/ipad-physical-final.log"
+  ],
+  "log_sha256": {
+    "build/ground-aa/final-ctest.log": "32f4f310ff1733f7464609c56398152c655ff01f76a1a5bc4583e4655b8bf141",
+    "build/ground-aa/runtime-results.txt": "4c566e62fda4e84816d469c83f591d183b3aa9664e3933b2e0808a5018b16b0b",
+    "build/ground-aa/ipad-final.log": "d69a9fb8e58dd7d8a1e3432065bc5c7a549bab0a4f8fc9f3097a79dc7d65ae19",
+    "build/ground-aa/iphone-regression.log": "bb21ad48526c2c419f1d8f6d32f1bef3225bf92c4f7185ff3f18841d31da131c",
+    "build/ground-aa/mac-gui-regression.log": "332612c61be1989577e8289e774f79dc4bd65832f2c3f4c173f2c36e972aaaf8",
+    "build/ground-aa/mac-preload.log": "53fc46495a366e561627f055d114148071ea61554d6342575921e3e2c078a6ab",
+    "build/ground-aa/iphone-preload-final.log": "3d1918dfdd543e95b068b61e1a13214dacbf7e720e1b1c0eb2a0e6ad1aa1a594",
+    "build/ground-aa/ipad-preload.log": "bae55a55d9c550ddad2cc5b8af4831ab84a7d18266a605a88f9b622cfa87308b",
+    "build/ground-aa/iphone-physical.log": "fc6d288cd43fbbd1d40b9e0a7cde4b7ad7dfb5756592b88066402c528ca999fe",
+    "build/ground-aa/ipad-physical.log": "22ee58ea44c07b3d96cb74583067b00c86dc85931bfab7daf92ea697dffb08d4",
+    "build/ground-aa/iphone-physical-final.log": "e7418e2ca65717bac3b570464f3e92fc1a6eb359d90d0c982d16289c54e4dff7",
+    "build/ground-aa/ipad-physical-final.log": "4599ed08ee98a553d3b94efed2a91ff82b8c77df4141c6c57718973d92623b7e"
+  },
+  "source_sha256": {
+    "Sources/Core/GroundAA.cpp": "a556168d64f72da11787a173500f819320208172259da30a1fe77b78e3add239",
+    "Sources/Core/GroundAA.hpp": "be66fe04a8a4a3b555315ee447578bb38613645bb4c24d2740c1b2f3a6dfb43d",
+    "Sources/Core/GroundAAArt.inc": "3e533250672fb5fd2b588b6df6bfbd47d0bcf8821c3ef5a93ed86b9a4e23ff2b",
+    "Sources/iOS/HMGameView.mm": "d8d69263e3fc57e2861f5742cc04a93476eb7ddee4cb7c4e66d7ff3c20b8e957",
+    "Sources/iOS/HMMedia.mm": "ffc4de0717e999dacbae3208174b25e7cfd3a50328b53f8fb919d80150d2229e",
+    "Tests/Apple/HMAppleInputTests.mm": "26ab32ee4fa49151b399264052d726c73bd070b99df98967753d47ca7e0e87be"
+  },
+  "captures": [
+    {
+      "path": "docs/public/media/ground-aa/shilka-game-120.png",
+      "sha256": "c04c728e0bde3f2fc238e34ad15ed200ad9ec8b770f3c568ce814f135100f0ef",
+      "source": "iPad Simulator OpenGL snapshot"
+    },
+    {
+      "path": "docs/public/media/ground-aa/shilka-game-240.png",
+      "sha256": "55394428775f121303bc15d7ba6435bd50256202622c34de29c9e142a6e055ad",
+      "source": "iPad Simulator OpenGL snapshot"
+    },
+    {
+      "path": "docs/public/media/ground-aa/tunguska-game-120.png",
+      "sha256": "d92dae4f434e54fd818863d760469a75aa10b68b344a2fba044a5b13474fe359",
+      "source": "iPad Simulator OpenGL snapshot"
+    },
+    {
+      "path": "docs/public/media/ground-aa/tunguska-game-240.png",
+      "sha256": "0711ca0a96e3cf3f3ef056a8fc77962dd8e70f7fb67fd182d3477e120f21e54a",
+      "source": "iPad Simulator OpenGL snapshot"
+    },
+    {
+      "path": "docs/public/media/ground-aa/shilka-iphone.png",
+      "sha256": "c4b24dadf9a8d4632208eff05184343a9fa2bad52dad8f695722e9fb4f8f7353",
+      "source": "physical OpenGL snapshot"
+    },
+    {
+      "path": "docs/public/media/ground-aa/tunguska-ipad.png",
+      "sha256": "c5cd89c83d27ac8b56c6cdd159429fbe99b8ec801bdedbaa4b9fcf46ef84a8df",
+      "source": "physical OpenGL snapshot"
+    }
+  ],
+  "remaining": [
+    "full campaign difficulty assessment",
+    "long-session thermal and memory measurements"
+  ]
+}

@@ -10,7 +10,7 @@
 | `Resources/RawData`, `Resources/Data`의 원작 유래 맵·게임 데이터 | 원작 데이터와 변환 결과 | 원작 자료와 새 구현을 구분하며, 공개할 파일·버전의 범위 확인 필요 |
 | `Resources/Assets.xcassets`, 플랫폼별 아이콘 | 원작 그림을 포함한 앱 아이콘 | 코드용 MIT에서 제외. 원작 그림 이용 범위에 함께 포함 |
 | `Art/Extensions`, 메뉴 확장 그림 | 기존 그림을 참조·연장해 제작 | 원작에 이어지는 표현을 포함. 제작 기록과 원작 자원 허락 범위를 함께 확인 |
-| `Art/VTOL`, `Art/LuxLunae`, `Art/AutoAim`, `Art/Candidates` 및 런타임 파생 그림 | imagegen 생성·수정, 실물·게임 그림·도색 참조 | 프롬프트·참조 출처 보존. 원작·타 작품의 표현과 표식이 포함된 부분의 이용 범위 확인 필요 |
+| `Art/VTOL`, `Art/LuxLunae`, `Art/GroundAA`, `Art/AutoAim`, `Art/Candidates` 및 런타임 파생 그림 | imagegen 생성·수정, 실물·게임 그림·도색 참조 | 프롬프트·참조 출처 보존. 원작·타 작품의 표현과 표식이 포함된 부분의 이용 범위 확인 필요 |
 | `docs/public/media`의 게임 화면·GIF·MP4, 비교·검사 캡처 | 직접 플레이 녹화와 앱 검사에서 추출 | 게임 그림을 포함. GitHub·소개 글·영상에서의 게시 범위를 원작 자원 허락에 포함 |
 | `docs/public/media/badges/*.svg` | 이번 문서 작업에서 작성 | 원작 그림을 사용하지 않은 SVG 코드. [MIT](LICENSE) 적용 |
 

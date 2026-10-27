@@ -153,6 +153,7 @@ def main():
         'docs/public/troubleshooting.md': 'troubleshooting.html',
         'docs/public/development-history.md': 'development-history.html',
         'docs/public/validation.md': 'validation.html',
+        'docs/ground-aa-expansion.md': 'ground-aa-implementation.html',
     }
     routes = {**reader_sources, **{'docs/public/'+src: page for src, page in public_articles},
               'docs/RESTORATION.md': 'restoration.html', 'docs/auto-aim-plan-20261026.md': 'auto-aim.html',
@@ -176,6 +177,8 @@ def main():
             try: rel = target.resolve().relative_to(ROOT).as_posix()
             except ValueError: continue
             if rel in routes: node[attr] = routes[rel]
+            elif rel == 'docs/evidence/ground-aa-20261028.json':
+                node[attr] = 'evidence/ground-aa-20261028.json'
             elif rel.startswith('docs/public/media/'):
                 node[attr] = rel.removeprefix('docs/public/')
             else:
@@ -208,6 +211,7 @@ def main():
         shutil.copyfile(ROOT/'docs/public/media'/name,dist/'media'/name)
     shutil.copyfile(ROOT/'docs/lux-lunae-plan-20261027.md',dist/'lux-lunae-plan-20261027.md')
     (dist/'evidence').mkdir(exist_ok=True)
+    shutil.copyfile(ROOT/'docs/evidence/ground-aa-20261028.json',dist/'evidence/ground-aa-20261028.json')
     shutil.copyfile(ROOT/'docs/evidence/lux-lunae-implementation-20261027.json',dist/'evidence/lux-lunae-implementation-20261027.json')
     for suffix in ['txt','cpp']:
         name='lux-lunae-inventory-20261027.'+suffix
