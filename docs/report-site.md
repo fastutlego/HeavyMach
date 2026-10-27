@@ -535,4 +535,4 @@ VTOL 첫 생성 프롬프트와 스킬 수정 커밋을 대조했다. 요청에 
 - version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_cbb929d71440819198f1f85a50547cc6`.
 - deployment: `appgdep_6ae0c7e0bd6c819193e579859ce25915`, `succeeded`, 2026-10-27T15:49:01.709916+00:00.
 - [트러블슈팅16절](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/troubleshooting.html#section-15), [라이선스·배지 조사](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/github-licenses-and-badges.html). 기존 소유자 비공개 범위 유지.
-
+- 게시 후 Chrome 접속은 `ERR_INTERNET_DISCONNECTED`로 실패했다. 배포 성공은 Sites 응답으로 확인했으며, 실제 화면 검사는 로컬 미리보기 결과다.
