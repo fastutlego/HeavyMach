@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-27",
+  "status": "design-proposal",
+  "assets": [
+    {
+      "id": "f22",
+      "path": "Art/LuxLunae/20261027/f22-concept.png",
+      "sha256": "83814a571c2b59a469a6b27cc8191abc827e60425ad05c447b6c52ac3ad1185e",
+      "width": 1902,
+      "height": 827,
+      "png_color_type": 6,
+      "status": "proposed-concept-not-runtime"
+    },
+    {
+      "id": "su57",
+      "path": "Art/LuxLunae/20261027/su57-concept.png",
+      "sha256": "50480ed2c390f012336dcf4884f68d7f5d1483f81f5c11d7c4a6a235ffef7b6e",
+      "width": 2079,
+      "height": 756,
+      "png_color_type": 6,
+      "status": "proposed-concept-not-runtime"
+    },
+    {
+      "id": "mig31",
+      "path": "Art/LuxLunae/20261027/mig31-concept.png",
+      "sha256": "6eff32d12ce1eeeb40e550e7cf218e7e6affe7c556f5fca5b97ff4f9a671eb55",
+      "width": 2172,
+      "height": 724,
+      "png_color_type": 6,
+      "status": "proposed-concept-not-runtime"
+    }
+  ],
+  "references": [
+    {
+      "file": "Art/LuxLunae/20261027/references/lux-lunae-official.jpg",
+      "source": "https://www.bandainamcoent.com/news/ace-combat-8-wings-of-theve-game-overview",
+      "sha256": "719a272f77439bce29e45cd775457d2d237c438630154773b27dc2cfc92c9eb5"
+    },
+    {
+      "file": "Art/LuxLunae/20261027/references/f22.jpg",
+      "source": "https://www.dvidshub.net/image/9081653/f-22-raptor-right-orthographic-view",
+      "sha256": "17de1be024b3a1771452f51632a1bbfb83cdfafa84371952a2fa8c793fd0da1e"
+    },
+    {
+      "file": "Art/LuxLunae/20261027/references/su57.jpg",
+      "source": "https://defence24.pl/przemysl/rosja-rosnie-flota-su-57",
+      "sha256": "db28299af094a883b4e0e46255592fd991834c78b422c83af62de2e0af722d49"
+    },
+    {
+      "file": "Art/LuxLunae/20261027/references/mig31.jpg",
+      "source": "https://www.mk.ru/politics/2022/12/12/minoborony-mig31-soprovodil-nad-barencevym-morem-r3s-orion-vvs-norvegii.html",
+      "sha256": "c7935e27f13ea7953e79a47f3b891cc78e8bce4fa6e023b7e221a4ddd388c8f8"
+    }
+  ],
+  "texture_reference": "docs/public/media/vtol/E_Heli_Body_06.png",
+  "review": {
+    "f22": "Single canopy, angular intake, canted twin fins, flat exhaust retained.",
+    "su57": "Long blended fuselage, two fins and separate round exhausts retained.",
+    "mig31": "Tandem canopy, rectangular intake, long interceptor body; initial third fin removed by fresh generation.",
+    "runtime_review": "Game-size GPU composite, flight animation and hitbox alignment pending implementation."
+  }
+}

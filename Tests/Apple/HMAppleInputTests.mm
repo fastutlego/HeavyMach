@@ -8,7 +8,7 @@
 #import "HMValidationControls.h"
 #import "HMValidationPanel.h"
 #include "GameSession.hpp"
-#include "VTOL.hpp"
+#include "Fighters.hpp"
 #include "HMAimOverlay.hpp"
 #include "KeyboardInput.hpp"
 #include "Viewport.hpp"
@@ -18,6 +18,7 @@
 #include <algorithm>
 #include <chrono>
 #include <vector>
+#include <set>
 @interface HMGameView (AppleInputTests)
 - (void)frame:(id)sender;
 - (BOOL)handleKeyCode:(unsigned)key pressed:(BOOL)down;
@@ -95,6 +96,44 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  [self.game setValue:@1 forKey:@"randomState"];[self.game updateCanvasGeometry];
 }
 - (void)tearDown {[self.game setApplicationActive:NO];self.game=nil;[NSFileManager.defaultManager removeItemAtURL:self.temp error:nil];[super tearDown];}
+- (void)testLuxGoldCanopiesAndAircraftSize {
+ HMMedia* media=[HMMedia new];HMGLRenderer* gl=[HMGLRenderer new];XCTAssertNotNil(gl);media.glRenderer=gl;XCTAssertTrue([gl beginFrame]);
+ [media draw:@"BG_City01.png" x:240 y:160];
+ NSArray<NSString*>* names=@[@"E_Heli_Body_01.png",@"E_Heli_Body_06.png",@"Extensions/Lux_F22.png",@"Extensions/Lux_Su57.png",@"Extensions/Lux_MiG31.png"];
+ for(NSUInteger row=0;row<names.count;++row){CGSize size=[media imageSize:names[row]];CGFloat height=size.height;
+  if(row>=2){const auto& spec=heavymach::fighterSpecs()[row-2];height=spec.width*spec.aspect;XCTAssertEqual(size.width,spec.width);XCTAssertGreaterThan(size.width,[media imageSize:names[0]].width);XCTAssertLessThan(size.width,[media imageSize:names[1]].width);}
+  for(int col=0;col<2;++col)[media draw:names[row] x:150+col*180 y:280-row*55 columns:1 rows:1 tile:0 scaleX:1 scaleY:height/size.height rotation:col*.14 alpha:1];
+ }
+ [gl finish];[gl endFrame];media.glRenderer=nil;XCTAssertEqualObjects([gl diagnostics][@"lastError"],@"");
+#if !TARGET_OS_OSX
+ UIImage* picture=[gl snapshot];XCTAssertNotNil(picture);XCTAttachment* attachment=[XCTAttachment attachmentWithImage:picture];attachment.name=@"Lux_Gold_Size_Edges";attachment.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:attachment];
+#endif
+}
+- (void)testLuxEightAircraftBossWaveAndPause {
+ ((HMValidationControls*)[self.game valueForKey:@"validationControls"]).selectedSegmentIndex=1;
+ auto& data=storage<heavymach::GameData>(self.game,"_data");XCTAssertNil([self.game valueForKey:@"loadError"]);
+ const auto& map=data.maps.at("Stage29");auto boss=std::find_if(map.enemies.begin(),map.enemies.end(),[](const auto& e){return e.name=="Boss03";});XCTAssertTrue(boss!=map.enemies.end());if(boss==map.enemies.end())return;
+ heavymach::ValidationScenario fixture;fixture.mission=3;fixture.stage=4;fixture.allWeapons=true;fixture.internalLevel=50;fixture.grades={6,6,6};fixture.playerPosition=heavymach::Vector2{boss->position.x-450,boss->position.y};
+ storage<std::optional<heavymach::ValidationScenario>>(self.game,"_validationFixture")=fixture;[self.game startSlot:0 mode:0 mission:3 stage:4];
+ auto& game=storage<std::unique_ptr<heavymach::GameSession>>(self.game,"_session");XCTAssertTrue(bool(game));if(!game)return;game->validationSetCheats(true);frames(self.game,5);
+ auto count=[&](){int n=0;for(const auto& e:game->validationEnemies())if(e.name.starts_with("Lux_")){++n;XCTAssertEqual(e.hpMax,765);}return n;};XCTAssertEqual(count(),8);
+ for(const auto& sprite:game->sprites())if(sprite.tile.starts_with("Extensions/Lux_"))XCTAssertGreaterThan(sprite.position.x-60,game->canvasWidth());
+ auto previousEntry=game->validationEnemies();
+ std::set<std::string> seen;NSUInteger saved=((HMInputTestView*)self.game).gameSaveCalls;size_t maxBullets=0;std::vector<double> work;
+ for(int n=0;n<450;++n){auto start=std::chrono::steady_clock::now();frames(self.game,1);if(n>=30)work.push_back(std::chrono::duration<double,std::milli>(std::chrono::steady_clock::now()-start).count());maxBullets=std::max(maxBullets,game->bulletCount());
+  if(n<150){auto currentEntry=game->validationEnemies();for(const auto& enemy:currentEntry)if(enemy.name.starts_with("Lux_")){auto old=std::find_if(previousEntry.begin(),previousEntry.end(),[&](const auto& e){return e.id==enemy.id;});if(old!=previousEntry.end())XCTAssertLessThanOrEqual(std::fabs(enemy.position.x-old->position.x),2.51f);}previousEntry=std::move(currentEntry);}
+#if !TARGET_OS_OSX
+  if(n==30||n==60||n==120){HMGLRenderer* entryGL=[self.game valueForKey:@"glRenderer"];XCTAttachment* entry=[XCTAttachment attachmentWithImage:[entryGL snapshot]];entry.name=[NSString stringWithFormat:@"Lux_Entry_%03d",n];entry.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:entry];}
+#endif
+  for(const auto& sprite:game->sprites())if(sprite.tile.starts_with("Extensions/Lux_"))seen.insert(sprite.tile);}
+ XCTAssertEqual(seen.size(),size_t(3));XCTAssertGreaterThan(maxBullets,size_t(10));XCTAssertEqual(count(),8);XCTAssertEqual(((HMInputTestView*)self.game).gameSaveCalls,saved);
+ auto before=game->validationEnemies();game->setPaused(true);frames(self.game,10);auto after=game->validationEnemies();XCTAssertEqual(before.size(),after.size());for(size_t n=0;n<std::min(before.size(),after.size());++n){XCTAssertEqual(before[n].position.x,after[n].position.x);XCTAssertEqual(before[n].position.y,after[n].position.y);}game->setPaused(false);frames(self.game,2);XCTAssertEqual(count(),8);
+ HMGLRenderer* gl=[self.game valueForKey:@"glRenderer"];XCTAssertEqualObjects([gl diagnostics][@"lastError"],@"");
+#if !TARGET_OS_OSX
+ UIImage* picture=[gl snapshot];XCTAssertNotNil(picture);XCTAttachment* attachment=[XCTAttachment attachmentWithImage:picture];attachment.name=@"Lux_Eight_Boss_Combat";attachment.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:attachment];
+#endif
+ std::sort(work.begin(),work.end());double sum=0;for(double n:work)sum+=n;NSLog(@"HM_LUX count=%d maxBullets=%zu samples=%zu mean_ms=%.3f p95_ms=%.3f saves=%lu",count(),maxBullets,work.size(),sum/work.size(),work[work.size()*95/100],(unsigned long)(((HMInputTestView*)self.game).gameSaveCalls-saved));
+}
 - (void)testVTOLExpansionRendersAndUsesSeparateTextures {
  // Reproducible neutral movement; a connected physical device may be tilted.
  ((HMValidationControls*)[self.game valueForKey:@"validationControls"]).selectedSegmentIndex=1;
@@ -346,8 +385,8 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
 - (void)testAutoAimControlsAttachToHUDAndNextTargetTouch {
  [self autoAimArenaWithWeapon:"P_Wpn_Gun01"];
  auto& session=storage<std::unique_ptr<heavymach::GameSession>>(self.game,"_session");
- for(NSValue* value in @[[NSValue valueWithCGSize:CGSizeMake(1200,900)],[NSValue valueWithCGSize:CGSizeMake(1400,650)]]){
-  self.game.frame=CGRectMake(0,0,value.CGSizeValue.width,value.CGSizeValue.height);[self.game updateCanvasGeometry];
+ for(CGSize size : {CGSizeMake(1200,900),CGSizeMake(1400,650)}){
+  self.game.frame=CGRectMake(0,0,size.width,size.height);[self.game updateCanvasGeometry];
   auto offset=storage<CGPoint>(self.game,"_hudOffset");auto scale=storage<CGFloat>(self.game,"_hudScale");
   for(int button=1;button<=3;++button){CGRect r=[self.game aimControlRect:button];
    XCTAssertEqualWithAccuracy((r.origin.y-offset.y)/scale,10,.01);

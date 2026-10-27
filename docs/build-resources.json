@@ -7414,6 +7414,21 @@
       "path": "Art/Extensions/AutoAimControls.png",
       "bytes": 2275288,
       "sha256": "8376ff2bc4635472d52ad435688b015e94b1d907995e13e97be8079364d9800b"
+    },
+    {
+      "path": "Art/Extensions/Lux_F22.png",
+      "bytes": 829071,
+      "sha256": "8cf228dafd366849f50ce623901a1106dad35df4ccb451e1de6e346c79f6f082"
+    },
+    {
+      "path": "Art/Extensions/Lux_MiG31.png",
+      "bytes": 870924,
+      "sha256": "ef9351c5bb4112c0bc10befa489ae989d3b341e69da29a047c6570d3c468260d"
+    },
+    {
+      "path": "Art/Extensions/Lux_Su57.png",
+      "bytes": 850600,
+      "sha256": "d8797d4559d71df8923e3d755f4f51237053a3ec1d374f0022834111b775a197"
     }
   ]
 }

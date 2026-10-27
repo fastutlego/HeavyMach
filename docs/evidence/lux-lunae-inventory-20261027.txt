@@ -1,0 +1,58 @@
+HELI Heli007 hp=350 exp=20 parts=E_Heli_Body_07,E_Heli_Prop_01,E_Heli_Prop_02,E_Wpn_ASM,
+HELI Heli004 hp=210 exp=10 parts=E_Heli_Body_04,E_Heli_Prop_02,E_Heli_Prop_01,E_Wpn_ASM,
+HELI Heli002 hp=150 exp=7 parts=E_Heli_Body_02,E_Heli_Prop_02,E_Heli_Prop_01,E_Wpn_ASM,
+HELI Heli010 hp=450 exp=30 parts=E_Heli_Body_10,E_Heli_Prop_02,E_Heli_Prop_01,E_Wpn_ASM,
+HELI Heli006 hp=300 exp=15 parts=E_Heli_Body_06,E_Heli_Prop_02,E_Heli_Prop_01,E_Wpn_ASM,
+HELI Heli003 hp=180 exp=9 parts=E_Heli_Body_03,E_Heli_Prop_01,E_Heli_Prop_02,E_Wpn_ASM,
+HELI Heli001 hp=150 exp=5 parts=E_Heli_Body_01,E_Heli_Prop_01,E_Heli_Prop_02,E_Wpn_ASM,
+HELI Heli005 hp=250 exp=12 parts=E_Heli_Body_05,E_Heli_Prop_01,E_Heli_Prop_02,E_Wpn_ASM,
+HELI Heli009 hp=450 exp=30 parts=E_Heli_Body_09,E_Heli_Prop_01,E_Heli_Prop_02,E_Wpn_ASM,
+HELI Heli008 hp=400 exp=25 parts=E_Heli_Body_08,E_Heli_Prop_02,E_Heli_Prop_01,E_Wpn_ASM,
+WEAPON E_MBoss0601_Msl type=3 damage=80 speed=200 delay=4 shotDelay=0 count=1 lifetime=10
+WEAPON E_MBoss0701_Msl type=3 damage=80 speed=200 delay=3 shotDelay=0 count=1 lifetime=10
+WEAPON E_0604_Wpn type=6 damage=100 speed=160 delay=5 shotDelay=0.5 count=2 lifetime=7
+WEAPON P_Wpn_Missile01 type=3 damage=60 speed=700 delay=1 shotDelay=0.2 count=2 lifetime=7
+WEAPON E_Wpn_ASM type=6 damage=25 speed=160 delay=5 shotDelay=0 count=1 lifetime=7
+WEAPON E_MslTurret type=3 damage=60 speed=200 delay=5 shotDelay=0 count=1 lifetime=7
+WEAPON E_ArmoCar_Msl_04 type=3 damage=40 speed=170 delay=5 shotDelay=0 count=1 lifetime=7
+WEAPON E_MBoss0501_Msl type=3 damage=60 speed=200 delay=3 shotDelay=0 count=1 lifetime=10
+WEAPON E_ArmoCar_Msl_01 type=3 damage=25 speed=160 delay=5 shotDelay=0 count=1 lifetime=7
+WEAPON E_MBoss0901_Msl type=3 damage=80 speed=200 delay=3 shotDelay=0 count=2 lifetime=10
+WEAPON P_Wpn_Missile02 type=3 damage=100 speed=700 delay=1 shotDelay=0.2 count=2 lifetime=7
+WEAPON E_ArmoCar_Msl_02 type=3 damage=30 speed=160 delay=5 shotDelay=0 count=1 lifetime=7
+WEAPON P_Wpn_Missile03 type=3 damage=100 speed=700 delay=1 shotDelay=0.2 count=3 lifetime=7
+WEAPON E_ArmoCar_Msl_03 type=3 damage=35 speed=170 delay=5 shotDelay=0 count=1 lifetime=7
+WEAPON P_Wpn_RaderMsl type=5 damage=150 speed=700 delay=1 shotDelay=0.15 count=7 lifetime=4
+WEAPON E_ArmoCar_Msl_05 type=3 damage=45 speed=180 delay=5 shotDelay=0 count=1 lifetime=7
+BOSS mission=1 stage=3 map=Stage03 bounds=-1029,6284 enemies=MBoss01@6077,
+BOSS mission=1 stage=4 map=Stage04 bounds=-1024,634 enemies=Boss02@288,
+BOSS mission=2 stage=1 map=Stage05 bounds=-4141,2554 enemies=MBoss02@2416,
+BOSS mission=2 stage=2 map=Stage06 bounds=-4122,3178 enemies=MBoss02@-751,MBoss03@2887,
+BOSS mission=2 stage=3 map=Stage07 bounds=-4111,3250 enemies=MBoss02@-2060,
+BOSS mission=2 stage=4 map=Stage08 bounds=-4092,3614 enemies=MBoss04@3310,
+BOSS mission=2 stage=5 map=Stage09 bounds=-3144,-1839 enemies=Boss04@-2085,
+BOSS mission=3 stage=1 map=Stage10 bounds=-1153,5814 enemies=MBoss04@3646,MBoss05@5709,
+BOSS mission=3 stage=2 map=Stage11 bounds=-1020,6787 enemies=MBoss04@2607,MBoss03@6454,MBoss05@6636,
+BOSS mission=3 stage=3 map=Stage12 bounds=-1027,3766 enemies=MBoss06@3603,MBoss04@3184,
+BOSS mission=3 stage=4 map=Stage13 bounds=-1022,5362 enemies=MBoss05@1996,MBoss07@5159,
+BOSS mission=3 stage=5 map=Stage14 bounds=16,1459 enemies=Boss05@1180,
+BOSS mission=4 stage=1 map=Stage25 bounds=-320,7478 enemies=MBoss08@1136,MBoss07@7221,
+BOSS mission=4 stage=2 map=Stage26 bounds=-320,7285 enemies=MBoss08@6855,MBoss09@7111,
+BOSS mission=4 stage=3 map=Stage27 bounds=-160,7194 enemies=MBoss09@4500,MBoss09@6958,
+BOSS mission=4 stage=4 map=Stage28 bounds=-160,8073 enemies=MBoss09@4321,MBoss08@5275,MBoss08@5518,MBoss09@7668,MBoss10@7902,
+BOSS mission=4 stage=5 map=Stage29 bounds=849,2056 enemies=Boss03@1733,
+BOSS mission=5 stage=1 map=Stage15 bounds=-329,7147 enemies=MBoss0501@6952,
+BOSS mission=5 stage=2 map=Stage16 bounds=-320,6810 enemies=E05MB02@6622,
+BOSS mission=5 stage=3 map=Stage17 bounds=-320,6643 enemies=E05MB03@4424,E05MB04@6417,
+BOSS mission=5 stage=4 map=Stage18 bounds=-320,5868 enemies=E05MB05@5674,E05MB02@4020,
+BOSS mission=5 stage=5 map=Stage19 bounds=-320,1330 enemies=Boss01@1021,
+BOSS mission=6 stage=1 map=Stage20 bounds=-320,6999 enemies=E06MB01@2638,MBoss0601@6797,
+BOSS mission=6 stage=2 map=Stage21 bounds=-320,5213 enemies=MBoss0701@4922,
+BOSS mission=6 stage=3 map=Stage22 bounds=-320,4919 enemies=MBoss0801@4696,
+BOSS mission=6 stage=4 map=Stage23 bounds=-320,4912 enemies=E06MB04@4716,
+BOSS mission=6 stage=5 map=Stage24 bounds=93,1813 enemies=Boss06@1543,
+BOSS mission=7 stage=1 map=Stage30 bounds=-320,5592 enemies=E07MB01@5390,
+BOSS mission=7 stage=2 map=Stage31 bounds=-602,5370 enemies=MBoss08@5263,
+BOSS mission=7 stage=3 map=Stage32 bounds=-303,5305 enemies=E07MB02@5106,
+BOSS mission=7 stage=5 map=Stage34 bounds=-320,6964 enemies=E07MB03@6853,
+BOSS mission=7 stage=6 map=Stage35 bounds=-335,911 enemies=Boss07@655,

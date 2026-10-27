@@ -112,10 +112,10 @@ void processWeaponAI(WeaponState& w,const CombatFrame& f,CombatHost& h){
    float noise=(r*.4f)-.2f;angle=static_cast<float>(a+static_cast<double>(noise));
    if(static_cast<double>(angle)<0x1.e28c7460698c7p+0)angle=0x1.e28c74p+0f;
   }
-  setWeaponAim(w,angle);w.resetTime=static_cast<float>(f.time);w.delayTime=(rnd(h)*.5f)+.3f;
- }else if(w.aiStep==1&&due){w.aiStep=2;w.resetTime=static_cast<float>(f.time);w.delayTime=(rnd(h)*.4f)+.05f;
+  setWeaponAim(w,angle);w.resetTime=static_cast<float>(f.time);w.delayTime=(rnd(h)*.5f)+.3f;if(i.aiTimeScale!=1)w.delayTime*=i.aiTimeScale;
+ }else if(w.aiStep==1&&due){w.aiStep=2;w.resetTime=static_cast<float>(f.time);w.delayTime=(rnd(h)*.4f)+.05f;if(i.aiTimeScale!=1)w.delayTime*=i.aiTimeScale;
  }else if(w.aiStep==2){
-  if(due){w.aiStep=0;w.resetTime=static_cast<float>(f.time);w.delayTime=(rnd(h)*i.delay)+.5f;}
+  if(due){w.aiStep=0;w.resetTime=static_cast<float>(f.time);w.delayTime=(rnd(h)*i.delay)+.5f;if(i.aiTimeScale!=1)w.delayTime-=(.5f-.5f*i.aiTimeScale);}
   float jitter=(rnd(h)*.01f)-.005f;setWeaponAim(w,w.aimDir-jitter);fireWeapon(w,f,h);
  }
 }
@@ -152,6 +152,7 @@ void tickWeapon(WeaponState& w,const CombatFrame& f,CombatHost& h){
   auto e=at(CombatEventKind::FireSound,pos);e.soundName=i.fireSFX;e.pan=(f.ownerPos.x-f.playerPos.x)/100.f;h.event(e);
  }
  w.fireTime=static_cast<float>(f.time);w.fireDelay=i.shotDly;--w.fireCount;
+ if(i.burstGroupSize&&w.fireCount>0&&(i.shotCnt-w.fireCount)%i.burstGroupSize==0)w.fireDelay=i.burstGroupDelay;
  if(w.fireCount<=0&&f.isPlayer&&f.selectedWeapon!=0){
   if(!f.selectedCharge)throw std::logic_error("Selected weapon requires charge state");
   --*f.selectedCharge;CombatEvent e{CombatEventKind::ChargeChanged};e.value=static_cast<float>(*f.selectedCharge);h.event(e);
