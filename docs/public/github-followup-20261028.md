@@ -6,9 +6,26 @@ README와 개발자의 변 첫머리에 같은 도입문을 넣었다. 꿈에서
 
 About를 현재 iPhone·iPad·Mac 앱과 공용 C++ 코어·입력·자동조준 소개로 바꿨다. 장르와 실제 구현을 나타내는 Topics 10개를 등록했다. [기여 안내](../../CONTRIBUTING.md), 버그·기능 제안 양식과 PR 양식을 추가했다. 개발 PR은 `develop`을 대상으로 한다.
 
-공유 카드에는 확인받은 플레이 캡처를 비율 그대로 배치하고 게임 이름과 플랫폼을 붙였다. 1280×640 PNG, 772,558바이트다. 원본 캡처는 바꾸지 않았다. GitHub는 이미지를 등록한 적 없는 비공개 저장소에 최초 업로드를 제공하지 않는다. 설정 화면에서도 Social preview 항목이 없었다. 저장소를 공개할 때 이 파일을 등록한다. [GitHub 공식 안내](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/customizing-your-repositorys-social-media-preview)
+공유 카드는 메인 화면의 전차 일러스트와 기존 HEAVY MACH 로고로 바꿨다. 원본 그림 전체를 같은 비율로 배치하고 왼쪽에는 플랫폼 이름을 넣었다. 1280×640 PNG다. SVG 배치 파일을 CairoSVG로 렌더링했으며 게임 에셋은 수정하지 않았다.
 
-![GitHub 공유 이미지 후보](media/github-social-preview.png)
+![메인 화면 전차 일러스트와 기존 HEAVY MACH 로고로 만든 OG 카드](media/github-social-preview.png)
+
+[PNG 원본](media/github-social-preview.png) · [SVG 배치 파일](media/github-social-preview.svg) · [이전 플레이 캡처 카드](media/github-social-preview-gameplay.png)
+
+GitHub는 이미지를 등록한 적 없는 비공개 저장소에 최초 업로드를 제공하지 않는다. 설정 화면에서도 Social preview 항목이 없었다. 저장소를 공개할 때 이 파일을 등록한다. [GitHub 공식 안내](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/customizing-your-repositorys-social-media-preview)
+
+### Xcode 파일 제외 점검
+
+개인별 `xcuserdata`·`xcuserstate`, DerivedData와 빌드 폴더는 이미 제외돼 있었다. 아카이브·검사 결과·디버그 심볼·헤더 인덱스·SPM 빌드 캐시, 구형 Xcode 개인 설정과 추가 서명 파일 형식을 제외 규칙에 넣었다.
+
+| 구분 | 처리 |
+|---|---|
+| `*.xcarchive`, `*.xcresult`, `*.dSYM`, `*.dSYM.zip`, `*.hmap`, `.build` | 추가 제외 |
+| `*.pbxuser`, `*.mode1v3`, `*.mode2v3`, `*.perspectivev3`, `*.xccheckout`, `*.xcscmblueprint` | 추가 제외. `default.*` 공유 설정은 유지 |
+| `*.p8`, `*.pfx`, `*.provisionprofile` | 기존 `.p12`·`.mobileprovision` 제외에 추가 |
+| `project.pbxproj`, workspace 구성, 공유 scheme, `project.yml`, `Info.plist`, 공용 `.xcconfig`, `Package.resolved` | Git 포함 유지 |
+
+실제 `git check-ignore`로 제외 대상19개와 공유 설정12개를 확인했다. 이미 추적 중인 파일 중 제외 규칙에 걸리는 파일은 0개다. [검사 기록](../evidence/xcode-ignore-audit-20261028.json) · [.gitignore](../../.gitignore)
 
 ## 자동 검사
 

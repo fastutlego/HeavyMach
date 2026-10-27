@@ -1,0 +1,39 @@
+{
+  "ignored_cases": [
+    "iOS/Example.xcarchive/Info.plist",
+    "iOS/Example.xcresult/Info.plist",
+    "iOS/App.app.dSYM/Contents/Info.plist",
+    "iOS/App.dSYM.zip",
+    "Modules/build/header.hmap",
+    ".build/artifact",
+    "iOS/HeavyMachRestored.xcodeproj/xcuserdata/test.xcuserdatad/UserInterfaceState.xcuserstate",
+    "HeavyMach.xcworkspace/xcuserdata/test.xcuserdatad/WorkspaceSettings.xcsettings",
+    "iOS/legacy.pbxuser",
+    "iOS/legacy.mode1v3",
+    "iOS/legacy.mode2v3",
+    "iOS/legacy.perspectivev3",
+    "iOS/Repo.xccheckout",
+    "iOS/Repo.xcscmblueprint",
+    "iOS/AuthKey_EXAMPLE.p8",
+    "iOS/dev.p12",
+    "iOS/dev.pfx",
+    "iOS/dev.mobileprovision",
+    "macOS/dev.provisionprofile"
+  ],
+  "shared_files_kept": [
+    "iOS/HeavyMachRestored.xcodeproj/project.pbxproj",
+    "HeavyMach.xcworkspace/contents.xcworkspacedata",
+    "iOS/HeavyMachRestored.xcodeproj/xcshareddata/xcschemes/HeavyMachRestored.xcscheme",
+    "macOS/HeavyMachMac.xcodeproj/xcshareddata/xcschemes/HeavyMachMac.xcscheme",
+    "Modules/project.yml",
+    "iOS/project.yml",
+    "macOS/project.yml",
+    "iOS/Info.plist",
+    "macOS/HeavyMachMac-Info.plist",
+    "iOS/Shared.xcconfig",
+    "HeavyMach.xcworkspace/xcshareddata/swiftpm/Package.resolved",
+    "iOS/default.pbxuser"
+  ],
+  "tracked_files_matching_ignore_rules": [],
+  "result": "passed"
+}
