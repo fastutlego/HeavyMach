@@ -51,6 +51,8 @@ Codex가 일반 앱과 치트 앱을 아이폰·아이패드에 설치했다. �
 
 ### 문서·Sass·후속 계획
 
+- [GitHub 공개 라이선스·README 배지](github-licenses-and-badges.html) — 코드·자원·라이브러리의 배포 조건, 필요한 문건, 기술 배지와 배치안.
+
 - [GitHub 문서 작성 계획](github-documentation.html) — 문서별 내용, 트러블슈팅·추가 기능 목록, 완료·진행·남은 과제, 작성 순서.
 
 - [Sass 집필 자료](publication.html) — Apps·Mags 담당 세션의 읽는 순서와 자료 위치.

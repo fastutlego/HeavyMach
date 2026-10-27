@@ -38,6 +38,8 @@ python3 tools/document_contract.py check
 
 ## 글·이미지·기록
 
+- [공개 라이선스·README 배지 조사](public/github-licenses-and-badges-20261028.md): 코드·자원 배포 조건, 필요한 문건, 기술 배지와 OS 표.
+
 - [SaaS 집필 자료](public/publication-inventory.md): Apps 기술 설명과 Mags 인터뷰에 쓸 개인 경험 원문·기능·수정 과정·검사 기록.
 - [플레이 이미지·GIF·영상](public/media/gameplay-20261027/README.md): 채택한 8장·2개·3개와 원본 시간.
 - [기존 그림 색인](public/media/README.md): 메뉴 수정 전후와 추가 아트.
