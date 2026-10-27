@@ -82,8 +82,13 @@
     },
     {
       "copy": "approved-readme-opening-20261028.md",
-      "source": "2026-10-28 사용자가 “써봐” 요청으로 작성된 원고를 “그렇게 써라”로 채택. 제목은 후속 요청에 따라 HeavyMach를 다시 만든 이유로 설정.",
-      "sha256": "122fab61f86912566370f9a27d881166ace66946d6b812cf7766e0a54a17d8e3"
+      "source": "2026-10-28 사용자가 “써봐” 요청으로 작성된 원고를 “그렇게 써라”로 채택. 제목은 후속 요청에 따라 HeavyMach를 다시 만든 이유로 설정. 2026-10-28 후속 지시로 Cydia 이후 미국 App Store 구매 경위를 추가.",
+      "sha256": "d486b7166cffb3cd441f577b7cdb3a8a2b1d011694908d9a10c6c9a1bfe794f4"
+    },
+    {
+      "copy": "user-cydia-purchase-20261028.md",
+      "source": "2026-10-28 현재 대화의 Cydia 이후 구매 경위 추가 지시",
+      "sha256": "f2c3b34345ca2363f6455e4f2ff7b79ec1f1a5d3cb50524fc229e42cb9e7f32a"
     }
   ]
 }
