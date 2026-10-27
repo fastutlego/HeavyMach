@@ -498,3 +498,14 @@ C 보정 삭제와 원래 탄속·분산 유지, 자동조준 추가 전 코드�
 - deployment: `appgdep_6ae0b4ce2d38819184fec216f4e70eb9`, `succeeded`, 2026-10-27T14:28:02.874465+00:00.
 - [게시 원고](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/github.html). 기존 소유자 비공개 범위 유지.
 - 이번 직접 브라우저 검사는 Chrome `cgWindowNotFound`와 빈 브라우저 목록으로 실행하지 못했다. GitHub 서버 HTML·문서·링크 검사는 통과했다. [결과](evidence/github-manuscripts-20261027.json).
+
+## 매거진 링크·서술 시점 수정안 — 2026-10-28
+
+개발자의 변의 잡지사 문단 뒤에 `https://sass.studio/magazine/cerulean`을 추가했다. HTTP 200 응답과 페이지의 「항명의 대가」·Cerulean 제목을 확인했다. SaaS 소스는 V09→cerulean과 해당 본문을 읽기만 했다. 문서 계획13절에는 개발자 1인칭 회고, 기능·검사 중심 기술 설명, Codex의 실제 구현·검사 역할을 구분하는 수정안과 예문을 추가했다. 전체 원고의 인칭 변경은 적용 전이다.
+
+- 원고 커밋: `2505e0aa`, `docs/github-publication`에 푸시.
+- 로컬 Chrome에서 링크 문단 표시 확인. 문서 검사·다운로드2개 일치 확인.
+- Site source: `595361c32e17ad1e9f108969c1cb1f01f4aad1d4`.
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_c2bc302a73308191884f2da936f0d939`.
+- deployment: `appgdep_6ae0bfda4bd48191a2174bffb0689851`, `succeeded`, 2026-10-27T15:14:50.179882+00:00.
+- [개발자의 변](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/restoration.html), [수정안](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/github-documentation.html). 기존 소유자 비공개 범위 유지.
