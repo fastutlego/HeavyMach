@@ -1,0 +1,21 @@
+name: 기능 제안
+description: 필요한 기능과 플레이 상황
+title: "[Feature] "
+body:
+  - type: textarea
+    id: situation
+    attributes:
+      label: 어떤 상황에서 필요한가요?
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: 원하는 동작
+      description: 입력 방법과 화면에 보일 결과를 적어 주세요.
+    validations:
+      required: true
+  - type: textarea
+    id: reference
+    attributes:
+      label: 참고 자료와 기존 기능에 미치는 영향

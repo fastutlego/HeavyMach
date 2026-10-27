@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MPL-2.0
+// Derived behavior: touchHLE image.rs and cg_bitmap_context.rs.
+// Source revisions and license: THIRD_PARTY_NOTICES.md and LICENSES/touchHLE-MPL-2.0.txt.
 #pragma once
 #include <array>
 #include <cmath>

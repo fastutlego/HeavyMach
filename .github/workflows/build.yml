@@ -1,0 +1,76 @@
+name: Core and Apple builds
+on:
+  push:
+    branches: [main, develop, 'docs/github-workflows-and-introduction']
+    paths:
+      - 'Sources/**'
+      - 'Resources/**'
+      - 'Tests/**'
+      - 'Modules/**'
+      - 'iOS/**'
+      - 'macOS/**'
+      - 'vendor/**'
+      - 'CMakeLists.txt'
+      - 'HeavyMach.xcworkspace/**'
+      - 'tools/build_openal.sh'
+      - '.github/workflows/build.yml'
+  pull_request:
+    branches: [develop, main]
+    paths:
+      - 'Sources/**'
+      - 'Resources/**'
+      - 'Tests/**'
+      - 'Modules/**'
+      - 'iOS/**'
+      - 'macOS/**'
+      - 'vendor/**'
+      - 'CMakeLists.txt'
+      - 'HeavyMach.xcworkspace/**'
+      - 'tools/build_openal.sh'
+      - '.github/workflows/build.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  core:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+          persist-credentials: false
+      - run: python3 tools/verify_build_resources.py
+      - run: cmake -S . -B build/core -DCMAKE_BUILD_TYPE=Debug
+      - run: cmake --build build/core --parallel 4
+      - run: ctest --test-dir build/core --output-on-failure
+  apple:
+    runs-on: macos-15
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+          persist-credentials: false
+      - name: Toolchain
+        run: |
+          uname -m
+          xcodebuild -version
+          cmake --version
+          test "$(uname -m)" = arm64
+      - run: python3 tools/verify_build_resources.py
+      - name: iOS and iPadOS — normal and cheat
+        run: |
+          bash tools/build_openal.sh iphonesimulator
+          for scheme in HeavyMachRestored HeavyMachValidation; do
+            xcodebuild -quiet -workspace HeavyMach.xcworkspace -scheme "$scheme" -configuration Debug -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' -derivedDataPath build/ci-ios ARCHS=arm64 ONLY_ACTIVE_ARCH=YES CODE_SIGNING_ALLOWED=NO build
+          done
+      - name: Native Mac — normal and cheat
+        run: |
+          bash tools/build_openal.sh macosx
+          for scheme in HeavyMachMac HeavyMachMacValidation; do
+            xcodebuild -quiet -workspace HeavyMach.xcworkspace -scheme "$scheme" -configuration Debug -destination 'platform=macOS,arch=arm64' -derivedDataPath build/ci-mac CODE_SIGNING_ALLOWED=NO build
+          done

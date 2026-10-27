@@ -4,7 +4,11 @@
 
 - [x] **HM-PUBLISH 조사** — 코드·원작 자원·추가 그림·OpenAL Soft·stb의 현재 조건과 공개·자유배포에 필요한 문건을 조사했다. MIT 후보, 자원 이용허락, LGPL 정적 링크 재빌드·재링크 자료와 배포 경로를 구분했다. [조사 결과](public/github-licenses-and-badges-20261028.md).
 - [x] **HM-BADGE 조사** — GitHub·Shields와 SDL·OpenRCT2를 확인했다. README 제목·한 문장 소개 뒤에 Git 태그·플랫폼·arm64·언어 배지 4개를 두고 실제 검사 OS는 표에 적는 안을 작성했다.
-- [ ] **HM-PUBLISH 적용** — 파일별 권리·허락 범위 확인과 권리 목록 보강, OpenAL 재링크 검사, 코드·에셋을 함께 공개해 누구나 clone·fork·빌드·플레이할 수 있는 Git/LFS 구성과 허락 범위 준비. 무료 앱스토어 배포·수정본 공유 범위 별도 확인. 개발 기록과 저장소의 지속 공개를 목표로 하며, 에셋 별도 입수 방식으로 바꾸지 않는다. 현재 비공개 저장소와 자원·이력은 유지한다.
+- [ ] **HM-PUBLISH 공개** — 자원별 [출처·허락 목록](rights-manifest.json)을 작성했다. 원작·참조 그림의 공개 범위 확정이 남았다. 현재 비공개 저장소의 코드·에셋·이력은 유지한다.
+- [x] **HM-GITHUB 구성** — About·Topics, CONTRIBUTING·이슈·PR 양식, 문서·자원·코어·Apple 빌드 workflow를 추가했다.
+- [x] **HM-SOURCE 검증** — v0.12 자원 포함 압축본에서 자원1,482개·코어21개·앱 빌드4개·OpenAL 재링크2개를 통과했다.
+- [ ] **HM-CI 원격 실행** — GitHub 계정 결제·사용 한도 해소 후 Actions를 실행한다. 현재 실패는 실행 전 계정 제한이며 로컬 검사는 통과했다.
+- [ ] **HM-SOCIAL 등록** — 공유 카드 1280×640 파일은 완성했다. GitHub는 최초 공유 이미지가 없는 비공개 저장소의 업로드를 지원하지 않아 공개 전환 시 등록한다. [후속 결과](public/github-followup-20261028.md)
 - [x] **HM-BADGE 적용** — 기술4개·코드 라이선스1개의 로컬 SVG 배지와 최소 OS·실제 검사 환경 표를 README에 추가했다.
 - [x] **HM-LICENSE 문건** — 새 코드용 MIT·LICENSE-SCOPE·ASSET-LICENSES·THIRD_PARTY_NOTICES와 외부 라이선스 사본을 추가했다. 원작 에셋 공개 허락과 OpenAL 재링크 검사는 남았다.
 - [ ] **HM-GITHUB 정리** — About·Topics·공유 이미지, 기여·이슈·PR 양식, 문서·자원·빌드 CI, 소스 릴리스를 순서대로 준비한다. [점검·계획](public/github-repository-plan-20261028.md).

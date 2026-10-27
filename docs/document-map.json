@@ -41,7 +41,8 @@
     "docs/public/architecture.md",
     "docs/public/troubleshooting.md",
     "docs/public/development-history.md",
-    "docs/public/validation.md"
+    "docs/public/validation.md",
+    "docs/public/github-followup-20261028.md"
   ],
   "base_read": [
     "AGENTS.md",
@@ -265,7 +266,8 @@
         "docs/public/architecture.md",
         "docs/public/troubleshooting.md",
         "docs/public/development-history.md",
-        "docs/public/validation.md"
+        "docs/public/validation.md",
+        "docs/public/github-followup-20261028.md"
       ],
       "sources": [
         "docs/*",
@@ -276,9 +278,20 @@
         "docs/public/*",
         "tools/build_report_site.py",
         "tools/audit_repository_migration.py",
-        "tools/audit_ios_sources.py"
+        "tools/audit_ios_sources.py",
+        "CONTRIBUTING.md",
+        ".github/ISSUE_TEMPLATE/*",
+        ".github/pull_request_template.md",
+        ".github/workflows/*.yml",
+        "tools/check_publication.py",
+        "tools/verify_openal_relink.py",
+        "LICENSE-SCOPE.md",
+        "THIRD_PARTY_NOTICES.md",
+        "ASSET-LICENSES.md"
       ],
-      "tests": [],
+      "tests": [
+        "tools/check_publication.py"
+      ],
       "evidence": [
         "docs/current-status.md",
         "docs/ios-completeness-audit-20261026.md"
