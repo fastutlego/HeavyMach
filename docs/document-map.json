@@ -30,7 +30,8 @@
     "docs/keyboard-input-policy.md",
     "docs/wireless-device-workflow.md",
     "docs/vtol-expansion.md",
-    "docs/lux-lunae-plan-20261027.md"
+    "docs/lux-lunae-plan-20261027.md",
+    "docs/public/gameplay-media-20261027.md"
   ],
   "base_read": [
     "AGENTS.md",
@@ -330,7 +331,8 @@
         "docs/media-scenes.example.json",
         "docs/public/media/README.md",
         ".agents/skills/write-project-text/SKILL.md",
-        "docs/public/publication-inventory.md"
+        "docs/public/publication-inventory.md",
+        "docs/public/gameplay-media-20261027.md"
       ],
       "sources": [
         "docs/public/media/*",
@@ -340,7 +342,9 @@
       "tests": [],
       "evidence": [
         "docs/public/media/manifest.json",
-        "docs/current-status.md"
+        "docs/current-status.md",
+        "docs/public/media/gameplay-20261027/media-scenes.json",
+        "docs/evidence/gameplay-media-20261027.json"
       ]
     },
     "apple_platforms": {

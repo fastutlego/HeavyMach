@@ -1,5 +1,22 @@
 # HeavyMach 보고 사이트
 
+## 사이트 통합 규칙 — 2026-10-27
+
+사용자에게 전달하는 HeavyMach 보고서는 기존 Site `appgprj_6addbf55aea081918d3d182d7e496e88` 하나에 둔다. 첫 화면 `index.html#reports`에서 모든 보고서를 찾을 수 있게 한다. 새 보고서·이미지·다운로드를 추가할 때 목차도 갱신하며, 각 보고서에는 전체 목차로 돌아가는 링크를 둔다. 기존 URL·절 앵커와 비공개 범위는 유지한다.
+
+## 최신 게시 — 2026-10-27 플레이 후보·통합 목차
+
+기존 Site에 이미지8장·클립3개와 출처·시각·캡션을 추가했다. 첫 화면에 보고서22개를 주제별로 모았고 모든 보고서에서 전체 목차로 돌아갈 수 있다. 생성 도구가 목차 누락과 복귀 링크를 검사한다.
+
+- 통합 URL: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/#reports
+- 후보: https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/gameplay-media.html
+- Site source: `5d796ed8992c68b39db9c6697ea0f6b601470af4`
+- Version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_dd4ce9703d9c8191be0fe4fa34a5346c`
+- Deployment: `appgdep_6ae08e445a2c81918eabe8df86159541`, `succeeded`, 소유자 전용 유지.
+- 사이트 상대 링크525개·문서 연결 검사 통과. 원고·미디어 바이트 일치. 로컬 Chrome에서 좁은 창의 대표 이미지·통합 목차와 목차→후보 이동, 클립3개 재생 시작을 확인했다. 게시 URL을 열 때 Chrome이 ERR_INTERNET_DISCONNECTED를 반환해 로그인 후 화면은 확인하지 못했다.
+- 첫 배포 `appgdep_6ae08cc203e48191a2a0bbd377550ca6`은 Cloudflare unknown error로 실패했다. 이후 통합 목차를 포함한 위 버전의 게시가 성공했다.
+- 게임 코드·앱·릴리스 태그는 바꾸지 않았다. 원본영상은 `build/media/user-gameplay-20261027/original/`에서 Git 제외로 보존한다.
+
 ## 최신 게시 — 2026-10-27 럭스루나에 구현·진입 수정
 
 3종 금색 조종석 PNG, 최종 무장(연사10% 증가), 14개 구간 편성, 두 기기 크기 비교·화면 밖 진입·전투 캡처와 실행 증거를 게시했다. 치트·정식 앱4건 재설치와 사용자 최초 정식 앱 확인을 구분했다.

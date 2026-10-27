@@ -38,7 +38,7 @@ def article(source,dest,download,template):
         li=nav.new_tag('li');a=nav.new_tag('a',href='#'+h['id']);a.string=h.get_text();li.append(a);nav.ol.append(li)
     tables(content)
     page=BeautifulSoup(template,'html.parser');main=page.main;main.clear()
-    links=BeautifulSoup('<div class="top"><a href="index.html">← 개발 보고</a> · <a href="'+download+'">Markdown 원고</a></div>','html.parser')
+    links=BeautifulSoup('<div class="top"><a href="index.html#reports">← 전체 보고서</a> · <a href="'+download+'">Markdown 원고</a></div>','html.parser')
     main.append(links)
     for child in list(content.contents):
         if getattr(child,'name',None)=='h2' and nav.parent is None: main.append(nav)
@@ -70,9 +70,9 @@ def main():
         current.append(child)
     nav=old.select_one('aside nav');nav.clear()
     for section in main.select('section'):
-        a=old.new_tag('a',href='#'+section['id']);a.string={'apple-platforms':'Apple·키보드·투두', 'clone-build':'새 clone 빌드', 'independence':'IPA 없는 빌드 검증', 'publication':'집필 자료·설치 안내', 'developer-story':'개발자의 변', 'ios-audit':'iOS 코드·문서 검사', 'android-plan':'타이틀·Android', 'migration-audit':'전수검사·REA', 'repositories':'저장소·버전','port-and-native':'포팅·복원 과정','retrospective':'기술 회고','rea':'REA 활용','documentation':'문서 체계','menu-joins':'배경 연결 수정','menu-result':'메뉴 확장','phone':'아이폰 검사','ai':'적 이동','rotation':'가로 회전','screens':'남은 화면','evidence':'남은 작업'}[section['id']];nav.append(a)
-    old.select_one('.sidefoot').string='2026.10.26 · 개발·검증 기록'
-    old.title.string='HeavyMach 복원과 아이폰 검증'
+        a=old.new_tag('a',href='#'+section['id']);a.string={'reports':'전체 보고서', 'apple-platforms':'Apple·키보드·투두', 'clone-build':'새 clone 빌드', 'independence':'IPA 없는 빌드 검증', 'publication':'집필 자료·설치 안내', 'developer-story':'개발자의 변', 'ios-audit':'iOS 코드·문서 검사', 'android-plan':'타이틀·Android', 'migration-audit':'전수검사·REA', 'repositories':'저장소·버전','port-and-native':'포팅·복원 과정','retrospective':'기술 회고','rea':'REA 활용','documentation':'문서 체계','menu-joins':'배경 연결 수정','menu-result':'메뉴 확장','phone':'아이폰 검사','ai':'적 이동','rotation':'가로 회전','screens':'남은 화면','evidence':'남은 작업'}[section['id']];nav.append(a)
+    old.select_one('.sidefoot').string='2026.10.27 · 전체 보고서'
+    old.title.string='HeavyMach 개발 보고'
     old.select_one('meta[name="description"]')['content']='HeavyMach 원본 분석, 사용자 지시별 수정, 아이폰 검증과 남은 작업'
     style=old.new_tag('style');style.string='figure{margin:0;min-width:0}figure img{width:100%;height:auto;display:block}figcaption{font-size:12px;color:var(--muted);margin-top:6px}aside{overflow:auto}nav{margin:24px 0}nav a{line-height:1.4}code,a{overflow-wrap:anywhere}@media(max-width:540px){table thead{display:none}table tr{display:block;border-top:1px solid var(--line);padding:10px 0}table td{display:block;border:0;padding:5px 0}table td:before{content:attr(data-label);display:block;font-size:11px;color:var(--muted)}}';old.head.append(style)
     deduplicate_styles(old)
@@ -101,15 +101,21 @@ def main():
         ('build-and-install.md', 'installation.html'),
         ('implementation-status.md', 'implementation.html'),
         ('publication-inventory.md', 'publication.html'),
+        ('gameplay-media-20261027.md', 'gameplay-media.html'),
     ]
     for source_name, page_name in public_articles:
         article(ROOT/'docs/public'/source_name, dist/page_name, source_name, retro)
         page = BeautifulSoup((dist/page_name).read_text(), 'html.parser')
         if page.footer: page.footer.decompose()
-        if page_name in ('fullscreen.html','auto-aim-progress.html','lux-lunae.html'):
-            style=page.new_tag('style');style.string='main img{display:block;max-width:100%;height:auto;margin:16px 0}';page.head.append(style)
+        if page_name in ('fullscreen.html','auto-aim-progress.html','lux-lunae.html','gameplay-media.html'):
+            style=page.new_tag('style');style.string='main img,main video{display:block;max-width:100%;height:auto;margin:16px 0}main video{width:100%}';page.head.append(style)
             for img in page.select('main img'):
                 link=page.new_tag('a',href=img['src']);img.wrap(link)
+        if page_name == 'gameplay-media.html':
+            for img in page.select('main img'):
+                img['width']='2736';img['height']='1260'
+            for video in page.select('video'):
+                video['width']='2736';video['height']='1260'
         if page_name == 'lux-lunae.html':
             style=page.new_tag('style');style.string='.lux-small{display:flex;gap:24px;flex-wrap:wrap;align-items:center;padding:20px;background:#4c524f}.lux-small figure{margin:0}.lux-small img{max-width:none}.lux-small figcaption{font-size:12px;color:#fff}.lux-small a{display:block}'
             page.head.append(style)
@@ -119,6 +125,8 @@ def main():
                 link['href']=link['href'].removeprefix('../')
         (dist/page_name).write_text(str(page))
     article(ROOT/'docs/media-publication.md', dist/'media-preparation.html', 'media-publication.md', retro)
+    preparation=dist/'media-preparation.html'
+    preparation.write_text(preparation.read_text().replace('href="public/gameplay-media-20261027.md"', 'href="gameplay-media.html"'))
     shutil.copyfile(ROOT/'docs/media-scenes.example.json', dist/'media-scenes.example.json')
     story=BeautifulSoup((dist/'restoration.html').read_text(),'html.parser')
     if story.footer: story.footer.decompose()
@@ -130,6 +138,7 @@ def main():
     shutil.copytree(ROOT/'docs/public/media/fullscreen',dist/'media/fullscreen',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/media/auto-aim',dist/'media/auto-aim',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/media/lux-lunae',dist/'media/lux-lunae',dirs_exist_ok=True)
+    shutil.copytree(ROOT/'docs/public/media/gameplay-20261027',dist/'media/gameplay-20261027',dirs_exist_ok=True)
     shutil.copyfile(ROOT/'docs/lux-lunae-plan-20261027.md',dist/'lux-lunae-plan-20261027.md')
     (dist/'evidence').mkdir(exist_ok=True)
     shutil.copyfile(ROOT/'docs/evidence/lux-lunae-implementation-20261027.json',dist/'evidence/lux-lunae-implementation-20261027.json')
@@ -138,11 +147,19 @@ def main():
         shutil.copyfile(ROOT/'docs/evidence'/name,dist/'evidence'/name)
     for name in ['apple-platform-performance-20261026.json', 'mac-fullscreen-capture-20261027.json', 'physical-apple-20261027.json', 'wireless-apple-20261027.json', 'vtol-feasibility-20261027.json', 'vtol-art-plan-20261027.json', 'vtol-helicopter-density-20261027.json', 'vtol-implementation-20261027.json', 'vtol-refinement-20261027.json', 'fullscreen-transitions-20261027.json', 'auto-aim-ipad-20261027.json']:
         shutil.copyfile(ROOT/'docs/evidence'/name,dist/'evidence'/name)
-    for name in ['game-design.md','document-governance.md','document-map.json','apple-platforms.md','keyboard-input-policy.md','current-status.md','wireless-device-workflow.md']:
+    for name in ['game-design.md','document-governance.md','document-map.json','apple-platforms.md','keyboard-input-policy.md','current-status.md','wireless-device-workflow.md','usability-todo.md']:
         shutil.copyfile(ROOT/'docs'/name,dist/name)
     report={'pages':['index.html','retrospective.html','documentation.html','rea.html','port-and-native.html','related-titles.html','android-plan.html','ios-audit.html','restoration.html'],'manuscripts':['report-overview-20261025.md','engineering-retrospective-20261025.md','rea-restoration-method-20261025.md','ipa-port-and-native-app-20261026.md','related-titles-20261026.md','android-port-plan-20261026.md','ios-completeness-audit-20261026.md','RESTORATION.md'],'image_count_before':len(BeautifulSoup(original,'html.parser').select('img')),'image_count_after':len(old.select('img'))}
     report['pages'] += [page for _, page in public_articles] + ['media-preparation.html']
     report['manuscripts'] += [source for source, _ in public_articles] + ['media-publication.md']
     assert report['image_count_before']==report['image_count_after']
+    catalog=BeautifulSoup((dist/'index.html').read_text(),'html.parser')
+    listed={a['href'].split('#')[0] for a in catalog.select('#reports a[href]')}
+    report_pages={p.name for p in dist.glob('*.html')} - {'index.html'}
+    assert report_pages <= listed, f'Reports missing from main catalog: {report_pages-listed}'
+    for name in report_pages:
+        page=BeautifulSoup((dist/name).read_text(),'html.parser')
+        assert page.select_one('a[href="index.html#reports"]'), f'Missing catalog backlink: {name}'
+    report['catalog_report_count']=len(report_pages)
     print(json.dumps(report,ensure_ascii=False))
 if __name__=='__main__':main()

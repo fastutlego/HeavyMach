@@ -1,0 +1,358 @@
+{
+  "schema_version": 1,
+  "status": "candidate_selection",
+  "sources": [
+    {
+      "id": "v1",
+      "filename": "ScreenRecording_10-25-2026 19-38-32_1.mov",
+      "sha256": "5737ded361020fa77568648512a631b4d2e1f699e77227999293b40ea365ab76",
+      "bytes": 334943817,
+      "duration_seconds": 178.853356,
+      "encoded_width": 1260,
+      "encoded_height": 2736,
+      "rotation_degrees": 90,
+      "display_width": 2736,
+      "display_height": 1260,
+      "average_frame_rate": "3203100/53659",
+      "audio_codec": "aac",
+      "device": null,
+      "app_variant": null,
+      "build_or_commit": null,
+      "observed_mission": "5-3, 클리어 후 5-4 시작"
+    },
+    {
+      "id": "v2",
+      "filename": "ScreenRecording_10-27-2026 19-39-44_1.mov",
+      "sha256": "6482d93ada971c62eda926eb00a63b516d93e8c76c302e75878b85aab7f6e232",
+      "bytes": 231886267,
+      "duration_seconds": 124.05,
+      "encoded_width": 1260,
+      "encoded_height": 2736,
+      "rotation_degrees": 90,
+      "display_width": 2736,
+      "display_height": 1260,
+      "average_frame_rate": "111135/1861",
+      "audio_codec": "aac",
+      "device": null,
+      "app_variant": null,
+      "build_or_commit": null,
+      "observed_mission": "3-4"
+    }
+  ],
+  "review_method": {
+    "overview_interval_seconds": 4,
+    "overview_frames": 76,
+    "dense_interval_seconds": 0.5,
+    "dense_ranges": [
+      [
+        "v1",
+        54,
+        61
+      ],
+      [
+        "v1",
+        110,
+        117
+      ],
+      [
+        "v1",
+        169,
+        176
+      ],
+      [
+        "v2",
+        9,
+        16
+      ],
+      [
+        "v2",
+        37,
+        44
+      ],
+      [
+        "v2",
+        91,
+        103
+      ]
+    ],
+    "note": "전체 구간의 간격 추출 프레임과 후보 앞뒤를 판독했다. 모든 프레임을 눈으로 본 검사나 FPS 계측이 아니다."
+  },
+  "scenes": [
+    {
+      "id": "01-auto-aim",
+      "source_id": "v2",
+      "poster_seconds": 11.5,
+      "start_seconds": 9,
+      "end_seconds": 16,
+      "title": "자동조준 표적",
+      "observed_action": "탱크가 공중의 적을 향해 사격한다. 녹색 표적 표시와 LOCKED 문구가 보인다.",
+      "caption": "탱크가 공중의 적을 향해 사격한다. 녹색 표적 표시와 LOCKED 문구가 보인다.",
+      "alt_text": "탱크가 공중의 적을 향해 사격한다. 녹색 표적 표시와 LOCKED 문구가 보인다.",
+      "selection_reason": "탱크, 공중 적, 조준 표지와 하단 버튼이 함께 보여 자동조준 설명에 적합하다.",
+      "selected_for": [
+        "GitHub 대표 이미지 후보",
+        "Sass Apps 기능 소개"
+      ],
+      "outputs": [
+        "01-auto-aim.png",
+        "01-auto-aim.mp4"
+      ],
+      "poster_actual_pts_seconds": 11.511667,
+      "output_metadata": [
+        {
+          "path": "01-auto-aim.png",
+          "sha256": "5071ef182d6cc71aebdb7ab393234e9794215db58f7d40646fa14b4f8b21c37d",
+          "bytes": 2380981,
+          "width": 2736,
+          "height": 1260,
+          "codec": "png"
+        },
+        {
+          "path": "01-auto-aim.mp4",
+          "sha256": "ab1ac656a915f2b8dcfc628afe92a15b1c79c269b0f12ae06f69b24a5bd49865",
+          "bytes": 3645319,
+          "width": 2736,
+          "height": 1260,
+          "codec": "h264",
+          "duration_seconds": 7.0,
+          "audio_codec": "aac",
+          "full_decode": "passed"
+        }
+      ]
+    },
+    {
+      "id": "02-jump",
+      "source_id": "v1",
+      "poster_seconds": 56,
+      "start_seconds": null,
+      "end_seconds": null,
+      "title": "점프와 사격",
+      "observed_action": "탱크가 경사로 위로 뛰어오른 상태에서 오른쪽 적을 향해 사격한다.",
+      "caption": "탱크가 경사로 위로 뛰어오른 상태에서 오른쪽 적을 향해 사격한다.",
+      "alt_text": "탱크가 경사로 위로 뛰어오른 상태에서 오른쪽 적을 향해 사격한다.",
+      "selection_reason": "탱크와 바닥 사이 간격이 뚜렷하고 적과 탄환도 구분된다.",
+      "selected_for": [
+        "GitHub 조작 설명",
+        "Sass Apps 플레이 소개"
+      ],
+      "outputs": [
+        "02-jump.png"
+      ],
+      "poster_actual_pts_seconds": 56.003333,
+      "output_metadata": [
+        {
+          "path": "02-jump.png",
+          "sha256": "9808808e9d7196cc00bfc9700b9bb97f93231dcde2fffeb2cfcaa18b8e2cb28f",
+          "bytes": 2509911,
+          "width": 2736,
+          "height": 1260,
+          "codec": "png"
+        }
+      ]
+    },
+    {
+      "id": "03-weapon",
+      "source_id": "v1",
+      "poster_seconds": 44.015,
+      "start_seconds": null,
+      "end_seconds": null,
+      "title": "무기 선택과 발사",
+      "observed_action": "상단 무기 목록에서 청록색 테두리가 선택한 무기를 가리킨다. 흰 궤적이 전장을 가로지른다.",
+      "caption": "상단 무기 목록에서 청록색 테두리가 선택한 무기를 가리킨다. 흰 궤적이 전장을 가로지른다.",
+      "alt_text": "상단 무기 목록에서 청록색 테두리가 선택한 무기를 가리킨다. 흰 궤적이 전장을 가로지른다.",
+      "selection_reason": "선택 목록, 하단 무기 아이콘, 발사 효과를 한 화면에서 볼 수 있다.",
+      "selected_for": [
+        "GitHub 무기 소개",
+        "Sass Apps 기능 소개"
+      ],
+      "outputs": [
+        "03-weapon.png"
+      ],
+      "poster_actual_pts_seconds": 44.015,
+      "output_metadata": [
+        {
+          "path": "03-weapon.png",
+          "sha256": "7d931ba573b149e49808fb382c48ce6fe213a309e1a64577e14e3b0caba329f4",
+          "bytes": 2436180,
+          "width": 2736,
+          "height": 1260,
+          "codec": "png"
+        }
+      ]
+    },
+    {
+      "id": "04-special",
+      "source_id": "v1",
+      "poster_seconds": 164.06,
+      "start_seconds": null,
+      "end_seconds": null,
+      "title": "상공에서 내려오는 공격",
+      "observed_action": "여러 줄의 푸른 광선이 상공에서 지상의 적 쪽으로 내려온다.",
+      "caption": "여러 줄의 푸른 광선이 상공에서 지상의 적 쪽으로 내려온다.",
+      "alt_text": "여러 줄의 푸른 광선이 상공에서 지상의 적 쪽으로 내려온다.",
+      "selection_reason": "일반 사격과 다른 공격 효과를 보여준다.",
+      "selected_for": [
+        "GitHub 무기 소개 보조",
+        "Sass Apps 기능 소개"
+      ],
+      "outputs": [
+        "04-special.png"
+      ],
+      "poster_actual_pts_seconds": 164.075,
+      "output_metadata": [
+        {
+          "path": "04-special.png",
+          "sha256": "9d27b429e5343414aa24809cb1300e3bbd3479f48f06186cd53fbce44c984243",
+          "bytes": 2561573,
+          "width": 2736,
+          "height": 1260,
+          "codec": "png"
+        }
+      ]
+    },
+    {
+      "id": "05-upgrade",
+      "source_id": "v1",
+      "poster_seconds": 112.04,
+      "start_seconds": null,
+      "end_seconds": null,
+      "title": "업그레이드",
+      "observed_action": "UPGRADE 창에 MOVEMENT, DEFENSE, ATTACK 세 항목이 표시된다.",
+      "caption": "UPGRADE 창에 MOVEMENT, DEFENSE, ATTACK 세 항목이 표시된다.",
+      "alt_text": "UPGRADE 창에 MOVEMENT, DEFENSE, ATTACK 세 항목이 표시된다.",
+      "selection_reason": "전투 외 성장 요소를 보여주며 항목과 선택 상태를 읽을 수 있다.",
+      "selected_for": [
+        "Sass Apps 성장 요소",
+        "GitHub 상세 소개"
+      ],
+      "outputs": [
+        "05-upgrade.png"
+      ],
+      "poster_actual_pts_seconds": 112.04,
+      "output_metadata": [
+        {
+          "path": "05-upgrade.png",
+          "sha256": "c2c860f83ee29fa0d6cf3b2a71c2b18d890e52be9306ec91bffe52884cbffaf9",
+          "bytes": 2467527,
+          "width": 2736,
+          "height": 1260,
+          "codec": "png"
+        }
+      ]
+    },
+    {
+      "id": "06-stage-clear",
+      "source_id": "v1",
+      "poster_seconds": 172.06,
+      "start_seconds": null,
+      "end_seconds": null,
+      "title": "스테이지 클리어",
+      "observed_action": "STAGE CLEAR 문구와 전차 일러스트, 미션 선택 및 다음 스테이지 버튼이 표시된다.",
+      "caption": "STAGE CLEAR 문구와 전차 일러스트, 미션 선택 및 다음 스테이지 버튼이 표시된다.",
+      "alt_text": "STAGE CLEAR 문구와 전차 일러스트, 미션 선택 및 다음 스테이지 버튼이 표시된다.",
+      "selection_reason": "전투에서 결과 화면으로 이어지는 구성을 보여준다.",
+      "selected_for": [
+        "Sass Mags 복원 화면",
+        "GitHub 상세 소개"
+      ],
+      "outputs": [
+        "06-stage-clear.png"
+      ],
+      "poster_actual_pts_seconds": 172.061667,
+      "output_metadata": [
+        {
+          "path": "06-stage-clear.png",
+          "sha256": "81b3e616b7a17d1b2081d7a90ca2c78e35bb8919a582ba57c740a2e1fdf147ee",
+          "bytes": 2719195,
+          "width": 2736,
+          "height": 1260,
+          "codec": "png"
+        }
+      ]
+    },
+    {
+      "id": "07-fighters",
+      "source_id": "v2",
+      "poster_seconds": 100.75,
+      "start_seconds": 90,
+      "end_seconds": 103,
+      "title": "추가 항공기와 전투",
+      "observed_action": "검은 항공기 여러 대가 화면 오른쪽에 보이고 탱크의 광선이 그쪽으로 뻗는다.",
+      "caption": "검은 항공기 여러 대가 화면 오른쪽에 보이고 탱크의 광선이 그쪽으로 뻗는다.",
+      "alt_text": "검은 항공기 여러 대가 화면 오른쪽에 보이고 탱크의 광선이 그쪽으로 뻗는다.",
+      "selection_reason": "기체 외형과 전투를 함께 볼 수 있다. 클립으로 이동과 무기 전환도 확인할 수 있다.",
+      "selected_for": [
+        "GitHub 추가 유닛 소개",
+        "Sass Apps 추가 기능"
+      ],
+      "outputs": [
+        "07-fighters.png",
+        "07-fighters.mp4"
+      ],
+      "poster_actual_pts_seconds": 100.761667,
+      "output_metadata": [
+        {
+          "path": "07-fighters.png",
+          "sha256": "4980378f751ab160fdccd997552f9654ac15f9669569c5cc21c8dff1dcfcc552",
+          "bytes": 2290059,
+          "width": 2736,
+          "height": 1260,
+          "codec": "png"
+        },
+        {
+          "path": "07-fighters.mp4",
+          "sha256": "e8f4a50f26f549248bf77c22258576c4645de6d7c552a7def69e340a07d70aec",
+          "bytes": 7089112,
+          "width": 2736,
+          "height": 1260,
+          "codec": "h264",
+          "duration_seconds": 13.008008,
+          "audio_codec": "aac",
+          "full_decode": "passed"
+        }
+      ]
+    },
+    {
+      "id": "08-jump-clip",
+      "source_id": "v2",
+      "poster_seconds": 39.5,
+      "start_seconds": 37,
+      "end_seconds": 44,
+      "title": "점프·사격·무기 목록",
+      "observed_action": "공중 적을 향해 사격하던 탱크가 점프해 착지한다. 이어 상단 무기 목록이 나타난다.",
+      "caption": "사격 중 점프와 착지, 무기 목록 표시.",
+      "alt_text": "공중 적과 싸우며 점프하는 탱크.",
+      "selection_reason": "사격, 점프, 착지와 무기 목록 표시가 이어진다.",
+      "selected_for": [
+        "GitHub 조작 클립",
+        "Sass Apps 플레이 소개"
+      ],
+      "outputs": [
+        "08-jump-clip.png",
+        "08-jump-clip.mp4"
+      ],
+      "poster_actual_pts_seconds": 39.505,
+      "output_metadata": [
+        {
+          "path": "08-jump-clip.png",
+          "sha256": "81f595db5b236d888a0178fce6f4bb7419b4e12df70e14d9cdd71a091c2f2bc5",
+          "bytes": 1950045,
+          "width": 2736,
+          "height": 1260,
+          "codec": "png"
+        },
+        {
+          "path": "08-jump-clip.mp4",
+          "sha256": "60cc2ac7996ad781557c63cfe9992f1b91f990577414a4df08db3e1bd47e404c",
+          "bytes": 3480421,
+          "width": 2736,
+          "height": 1260,
+          "codec": "h264",
+          "duration_seconds": 7.008008,
+          "audio_codec": "aac",
+          "full_decode": "passed"
+        }
+      ]
+    }
+  ]
+}

@@ -1,16 +1,51 @@
-# HeavyMach 복원과 아이폰 검증
+# HeavyMach 개발 보고
 
-[v0.11 릴리스와 럭스루나에 전투기 3종 시안·배치 계획](lux-lunae.html)을 추가했다. 새 기체는 구현 전이다.
+현재 릴리스는 **v0.12**다. 완성분을 develop→main 순서로 병합하고 main에 태그를 붙였다. 자동조준과 추가 항공기까지 포함한다. [플레이 이미지8장·클립3개](gameplay-media.html)를 새로 정리했다.
 
-일반 앱과 치트 앱을 아이폰에 설치했다. 사용자는 현재 설치본으로 모든 미션을 플레이한 뒤 크래시·오동작·적 이동 이상은 없는 것 같다고 보고했다. 아래에서 수정 결과, 원본 분석 방법, 남은 과제를 확인할 수 있다.
+일반 앱과 치트 앱을 아이폰·아이패드에 설치했다. 사용자는 최신 설치본에서 프레임 드랍이나 오작동이 보이지 않았다고 보고했다. 과거 계측 수치와 당시 실패는 각 보고서에 남아 있다.
 
-아이폰 설치·사용자 플레이 확인: 2026년10월25일. Apple 모듈·Mac·iPad 검사: 2026년10월26일.
+## 전체 보고서 {#reports}
+
+### 플레이 화면·이미지
+
+- [플레이 영상에서 고른 이미지8장·클립3개](gameplay-media.html) — 선정 이유, 원본 시각, GitHub·Sass 배치안.
+- [전체 화면·도어 전환 수정](fullscreen.html) — 게임 진입 전 화면 전환.
+- [야크·해리어·F35B](vtol-art.html) — 시안, 무장·미션 배치, 크기·외곽선·불꽃 수정과 설치.
+- [럭스루나에 전투기3종](lux-lunae.html) — F-22·Su-57·MiG-31, 묶음 연사, 화면 밖 진입과 설치.
+
+### 조작·플랫폼·검사
+
+- [자동조준 구현·검사](auto-aim-progress.html) — 버튼, 표적 표시, 정식 앱 적용과 C 보정 삭제.
+- [자동조준 요구·계획](auto-aim.html) — 사용자 요구와 설계 이력.
+- [Apple 플랫폼·키보드 검사](apple-platforms.html) — iPhone·iPad·Mac, 실기기·Simulator, 무선 설치.
+- [iOS 코드·문서 전수검사](ios-audit.html) — 누락·보존·문서 연결 검사.
+
+### 설치·구현 범위
+
+- [빌드와 설치](installation.html) — 소스·자원 받기와 실행 순서.
+- [구현과 검증 범위](implementation.html) — 제공 기능과 실제 확인한 범위.
+- [새 clone 빌드](clone-build.html) — 원격에서 받은 소스와 자원만으로 검사.
+- [IPA 없는 빌드](independence.html) — 원본 IPA 접근을 차단한 빌드·실행 검사.
+
+### 개발 배경·복원 과정
+
+- [개발자의 변](restoration.html) — HeavyMach를 선택하고 복원한 이유.
+- [IPA 포팅과 네이티브 복원](port-and-native.html) — 두 판본의 구현·비교 순서.
+- [기술 회고](retrospective.html) — 문제, 수정과 검사 결과.
+- [REA 활용 내역](rea.html) — 분석 도구·함수·근거.
+- [REA 분석과 구현 대조](rea-implementation.html) — 분석 기록과 실제 코드의 연결.
+
+### 문서·Sass·후속 계획
+
+- [Sass 집필 자료](publication.html) — Apps·Mags 담당 세션의 읽는 순서와 자료 위치.
+- [영상·README 작업 절차](media-preparation.html) — 원본 보관·추출·캡션 규칙.
+- [문서 체계 검사](documentation.html) — 정본·기획·정책·코드 연결.
+- [같은 제작사의 다른 타이틀](related-titles.html) — Heavy Mach 2·Mach Defense 조사.
+- [Android 개발 계획](android-plan.html) — 공용 코드와 APK 제작 절차.
 
 ## Apple 플랫폼·키보드·새 투두 {#apple-platforms}
 
-[야크·해리어·F35B 시안3종과 무장·미션 배치안](vtol-art.html)을 추가했다. 기존 적을 유지하고 일반 헬기 평균에 따라14개 서브미션에 총113대를 분산 추가하는 제안이다.
-
-야크·해리어·F35 공중 적3종을 투두에 추가했다. 기존 적 배치를 보존하고 등장 항목을 사이사이에 추가한다. 무기 재사용·비행 자세·엔진 불꽃·그림 제작의 단독 작업 가능성을 확인했다. 제품 구현 전이다. [요구와 조사 결과](apple-platforms.html#section-15).
+야크·해리어·F35B는 기존 적을 유지하면서14개 서브미션에 총113대를 추가했다. 크기·외곽선·후방 불꽃 수정 후 두 기기에 설치했다. [시안부터 설치까지](vtol-art.html).
 
 2026-10-27 iPhone 일반 앱을 설치하고 두 기기의 무선 설치·실행·LLDB 중단점 검사를 마쳤다. iPad 무선 자동 검사8개가 통과했고 Instruments CPU 기록도 저장했다. 반복 작업용 스킬과 연결·서명·테스트 묶음 복구 절차를 추가했다. [무선 검증 결과](apple-platforms.html#section-14).
 
@@ -22,7 +57,7 @@ Mac의 표시 대기·표면 갱신·Retina 설정을 수정했다. 잠금을 �
 
 iPad Simulator는44.311~48.133ms, 변경 전 main도39.972~40.580ms로16.67ms 기준을 넘었다. Instruments에서 Simulator의 최종 화면 확대·표시가 주된 비용임을 확인했다. iPad 누수는0건이었다. 이번 Mac 수정으로 실제 iPhone/iPad 성능까지 검증했다고 표시하지 않는다.
 
-자동조준은 develop에서 분기한 전용 브랜치에서 개발한다. 최신 치트 빌드는 M·C를 삭제하고 명중 보정을 자동조준에 포함했다. A·사격·다음 표적을 기존 HUD와 같은 금속 디자인으로 바꾸고 하단 레일에 붙였다. 시뮬레이터와 실제 iPad에서 관련4개씩 통과했고 iPad에 설치했다. 실제 프레임 검사는 수동·자동 모두16.67ms 기준을 넘었고, 기존 명시적 대기를 분리하는 계측이 남았다. develop/main에는 병합하지 않았다. [자동조준 구현·검사·캡처](auto-aim-progress.html), [개발 계획](auto-aim.html). 다음 투두는 게임 시작 전 HUD 드래그 배치 편집이다. HUD는 실제 게임 캡처로 미리 보고 옮긴 위치에서 터치가 작동하며 현재 기본 배치로 복원할 수 있어야 한다.
+자동조준은 정식·치트 앱에 적용했고 main의 v0.12에 포함돼 있다. A로 켜고 끄며 표적 전환·사격 버튼은 하단 HUD에 배치했다. C 보정은 삭제해 원래 탄속·분산을 유지한다. [구현·검사·캡처](auto-aim-progress.html), [요구·계획](auto-aim.html). 게임 시작 전 HUD 드래그 배치 편집은 남은 과제다.
 
 [구현 범위·검사 결과·추가 요구](apple-platforms.html)
 
@@ -43,7 +78,7 @@ Git에서 빠졌던 앱 자원1,471개를 추가했다. GitHub에서 새로 받�
 
 SaaS 담당 세션이 개발 동기·사용자 원문·복원 과정·검증 결과를 읽고 Apps·Mags를 작성하도록 문서 안내를 정리했다. GitHub용 설치 가이드와 구현·검증 범위도 추가했다. 기존 보고 이미지 13개를 출처와 함께 저장소에 보존했다.
 
-[SaaS 집필용 문서 안내](publication.html) · [빌드·설치](installation.html) · [구현 범위](implementation.html) · [플레이 영상·README 준비](media-preparation.html)
+[SaaS 집필용 문서 안내](publication.html) · [빌드·설치](installation.html) · [구현 범위](implementation.html) · [플레이 영상·README 준비](media-preparation.html) · [플레이 이미지·클립 후보](gameplay-media.html)
 
 ## 개발자의 변 {#developer-story}
 

@@ -25,7 +25,7 @@ SaaS 담당 세션이 HeavyMach의 자료를 읽고 Apps·Mags를 작성할 때 
 | 실제 동작·성능 | physical-self-test-20261025, release-review-20261025, instruments-validation-20261024, current-status | 전체 미션 사용자 보고, 자동 검사, 127.77초 계측을 서로 바꾸어 설명하지 않음 |
 | 설치와 현재 완료 범위 | public/build-and-install, public/implementation-status | 자원·서명 준비, 일반·치트 앱, v0.9, 미완료 항목 |
 | 코드·문서 보존 | ios-source-map, ios-completeness-audit-20261026, migration/completeness-audit-20261026, repository-management | 독립 저장소 분리, 누락 검사, develop→main과 태그 |
-| 다음 개발 | usability-todo, android-port-plan-20261026, related-titles-20261026 | 발열·회전·나머지 화면·단일 문 전환, Android APK 미구현 |
+| 다음 개발 | usability-todo, android-port-plan-20261026, related-titles-20261026 | 발열, HUD 편집, 자동조준 시각 안내, 튜토리얼 연구, Android APK 미구현 |
 
 표의 경로는 특별한 표시가 없으면 저장소 `docs/` 아래 Markdown 파일이다. 각 보고의 코드·정책·실행 증거 링크를 따라갈 수 있다. 당시 로컬 `build/` 계측 원본과 IPA는 Git에 포함하지 않으며, 그 근거와 보존 위치는 해당 보고에 기록돼 있다.
 
@@ -35,11 +35,11 @@ SaaS 담당 세션이 HeavyMach의 자료를 읽고 Apps·Mags를 작성할 때 
 
 [구현과 검증 범위](https://github.com/gelb2/HeavyMach/blob/main/docs/public/implementation-status.md)는 만든 기능, 사용한 기술, 실행 결과, 남은 작업과 배포 상태를 설명한다. README에서 두 문서로 바로 이동한다.
 
-## 모은 이미지와 앞으로 받을 영상
+## 모은 이미지와 플레이 영상
 
 기존 보고 이미지 13개를 저장소 `docs/public/media/`에 보존했다. 타이틀·모드·미션의 수정 전후, 슬롯 배치, 생성 후보가 포함돼 있다. [이미지 색인과 해시](https://github.com/gelb2/HeavyMach/blob/main/docs/public/media/README.md)에서 실제 게임 캡처와 생성 후보, Simulator와 아이폰 자료를 구분한다.
 
-사용자가 제공할 플레이 영상은 아직 도착하지 않았다. 도착하면 [영상·README 작업 절차](https://github.com/gelb2/HeavyMach/blob/main/docs/media-publication.md)에 따라 원본을 보존하고 장면별 이미지·클립·캡션을 만든다. SaaS 세션은 같은 파생 파일과 타임코드를 사용할 수 있다.
+사용자 영상 2개에서 [이미지 8장·클립 3개](gameplay-media-20261027.md)를 골랐다. [장면 명세](media/gameplay-20261027/media-scenes.json)에 원본 해시, 타임코드, 캡션, 대체 텍스트와 사용 위치를 기록했다. Sass 세션은 같은 파일과 장면 ID를 사용한다. 대표 컷은 자동조준 표적이 보이는 01번을 추천한다.
 
 ## 아직 없는 근거
 
@@ -49,7 +49,7 @@ SaaS 담당 세션이 HeavyMach의 자료를 읽고 Apps·Mags를 작성할 때 
 | 이미지 비교 테스트 입력 | ImageDecodeParity.json을 Git에 포함. 새 clone에서 이미지695개 디코딩 비교 통과 | 추가 입력 준비 없음 |
 | 장시간 발열·전력 비교 | 127.77초 실기기 계측, 전체 미션 사용자 플레이 보고 | 동일 조건의 호환판·복원판 장시간 비교 결과 |
 | 원작자 답변과 배포 조건 | 사용자 문의 기록과 무료 배포 의향 | 실제 답변·조건을 받으면 원문과 날짜 추가 |
-| 게시용 플레이 영상 | 사용자 후속 제공 예정 | 촬영 앱·기기·버전, 장면 타임코드, 이미지·클립과 설명 |
+| 촬영 환경 | 영상2개와 후보·타임코드·캡션 확보 | 촬영 기종·앱 종류·빌드 번호는 미확인 |
 
 GitHub Release 등록·SaaS 편집·번역·대표 컷 선정은 집필·게시 작업이다. 위의 미확보 실행 근거와 구분한다. 현재 GitHub Release는 없으며, 저장소와 검수 사이트는 비공개다.
 
@@ -63,9 +63,9 @@ GitHub Release 등록·SaaS 편집·번역·대표 컷 선정은 집필·게시 
 
 ## Apple 플랫폼 후속 자료
 
-`docs/apple-platforms.md`, `docs/keyboard-input-policy.md`, `docs/current-status.md`를 먼저 읽는다. v0.9의 사용자 전 미션 플레이와 후속 Mac/Simulator 결과를 혼동하지 않는다. 자동조준·HUD 배치 편집의 사용자 요구는 `docs/usability-todo.md`에 있으며 아직 구현한 기능으로 쓰지 않는다.
+`docs/apple-platforms.md`, `docs/keyboard-input-policy.md`, `docs/current-status.md`를 먼저 읽는다. v0.9의 사용자 전 미션 플레이와 후속 Mac/Simulator 결과를 혼동하지 않는다. 자동조준은 정식·치트 앱에 구현됐으며 C 탄도 보정은 삭제했다. HUD 배치 편집은 `docs/usability-todo.md`의 미구현 과제다.
 
 ## Apple 확장 후속 자료
 
 - [Apple 모듈·키보드 검사](apple-platform-progress-20261026.md): 실제 구현·검사와 남은 범위.
-- [자동조준 개발 계획](../auto-aim-plan-20261026.md): 요구와 후보 설계. 현재 앱에 구현됐다고 쓰지 않는다.
+- [자동조준 개발 계획](../auto-aim-plan-20261026.md)과 [구현·검사 기록](auto-aim-ipad-20261027.md): 요구, 실제 구현과 후속 C 삭제 기록.
