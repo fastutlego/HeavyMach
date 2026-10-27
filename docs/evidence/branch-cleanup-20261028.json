@@ -1,0 +1,140 @@
+{
+  "date": "2026-10-28",
+  "baseline_main": "333eea417dd782fab14d23668d7f4b42b9bc2f09",
+  "baseline_develop": "4f278269aa522bfb1b0e5b3c84f4de8a0b970ca1",
+  "before_local_remote_ahead_behind": {
+    "main": [
+      "0",
+      "0"
+    ],
+    "develop": [
+      "0",
+      "0"
+    ]
+  },
+  "before_develop_main_tree_equal": true,
+  "removed_merged_refs": [
+    {
+      "ref": "docs/gameplay-media-selection",
+      "tip": "18ae70c0666de53f047ccd059d3c35b076c60b6f",
+      "merged_into": [
+        "develop",
+        "main"
+      ]
+    },
+    {
+      "ref": "docs/github-licenses-and-presentation",
+      "tip": "dab313c33774c8b2a59c5cce7fadce578ae206de",
+      "merged_into": [
+        "develop",
+        "main"
+      ]
+    },
+    {
+      "ref": "docs/github-publication",
+      "tip": "3877f088c893269a4fdb12b016a4c1810b8f6245",
+      "merged_into": [
+        "develop",
+        "main"
+      ]
+    },
+    {
+      "ref": "docs/github-workflows-and-introduction",
+      "tip": "7e239df8242902dfc5c9d0a590d2f3a3a54c71b5",
+      "merged_into": [
+        "develop",
+        "main"
+      ]
+    },
+    {
+      "ref": "docs/original-and-added-gameplay",
+      "tip": "13e4827432f104d90addc357b77baa6b6a593719",
+      "merged_into": [
+        "develop",
+        "main"
+      ]
+    },
+    {
+      "ref": "docs/public-repository-status",
+      "tip": "67b3e40511336daa3ffb14d40e12ea7926d1746c",
+      "merged_into": [
+        "develop",
+        "main"
+      ]
+    },
+    {
+      "ref": "docs/readme-badges-and-prose",
+      "tip": "6078cb72f5f8d1284687fd4a6f95c573b435ea8d",
+      "merged_into": [
+        "develop",
+        "main"
+      ]
+    },
+    {
+      "ref": "docs/readme-restoration-motive",
+      "tip": "5abfa1e75e5a6329c0bc4578ecf5f68d94538b13",
+      "merged_into": [
+        "develop",
+        "main"
+      ]
+    },
+    {
+      "ref": "docs/remove-editorial-meta-copy",
+      "tip": "31c6a53dc88684d335aba8204256bf20c2aed7b1",
+      "merged_into": [
+        "develop",
+        "main"
+      ]
+    },
+    {
+      "ref": "docs/title-og-and-xcode-ignore",
+      "tip": "a6be91f9835c4ce5e0815005f1564b1d9b57536a",
+      "merged_into": [
+        "develop",
+        "main"
+      ]
+    },
+    {
+      "ref": "origin/docs/gameplay-media-selection",
+      "tip": "18ae70c0666de53f047ccd059d3c35b076c60b6f",
+      "merged_into": [
+        "develop",
+        "main"
+      ]
+    },
+    {
+      "ref": "origin/docs/github-licenses-and-presentation",
+      "tip": "dab313c33774c8b2a59c5cce7fadce578ae206de",
+      "merged_into": [
+        "develop",
+        "main"
+      ]
+    },
+    {
+      "ref": "origin/docs/github-publication",
+      "tip": "3877f088c893269a4fdb12b016a4c1810b8f6245",
+      "merged_into": [
+        "develop",
+        "main"
+      ]
+    },
+    {
+      "ref": "origin/docs/github-workflows-and-introduction",
+      "tip": "7e239df8242902dfc5c9d0a590d2f3a3a54c71b5",
+      "merged_into": [
+        "develop",
+        "main"
+      ]
+    }
+  ],
+  "preserved_tags": [
+    "795bdeb2f319599205dea9a29702705da60cb9d8 refs/tags/v0.10",
+    "733e23a3dcf7ae64ad8d2e0c3e8078f734759726 refs/tags/v0.11",
+    "35cf4560e76dd119d2825d2d94d3b8e65295ddf6 refs/tags/v0.12",
+    "6c4bfc64ace6d07692bac2a39a0267530223514c refs/tags/v0.9"
+  ],
+  "preserved_remotes": [
+    "migration-source"
+  ],
+  "release_worktree_preserved": true
+}
