@@ -1,6 +1,6 @@
 # Trail CPU rasterizer와 native 합성 계약
 
-2026-10-24. `TrailRaster.hpp/.cpp`는 원본 TrailMesh를 CoreGraphics bitmap으로 전달하기 위한 새 플랫폼 어댑터다. 원본 게임 로직 함수의 decompile 복원이라고 표현하지 않는다. 기하·색·UV·GL blend 근거는 `core-trail.md`와 원본 `0x1b8dc`다. 지원하는 Combat trail은 blend2이며 normal blend0 및 같은 additive blend3도 구현했다.
+2026-10-24. `TrailRaster.hpp/.cpp`는 원본 TrailMesh를 CoreGraphics bitmap으로 전달하기 위한 새 플랫폼 어댑터다. 기하·색·UV·GL blend 근거는 `core-trail.md`와 원본 `0x1b8dc`다. 지원하는 Combat trail은 blend2이며 normal blend0 및 같은 additive blend3도 구현했다.
 
 ## API와 좌표
 

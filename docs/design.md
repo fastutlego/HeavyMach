@@ -8,7 +8,7 @@ Apple 구성은 [공용 모듈](apple-platforms.md)을 따른다. 세 프로젝�
 
 ## 문서 역할
 
-이 문서는 기술 설계다. 플레이어 경험·화면/아트 의도·기능 요구 ID는 [게임 기획](game-design.md), 문서 우선순위와 변경 전파는 [문서 위계](document-governance.md)를 따른다. 업무별 실제 코드·검사·증거 연결은 [연결표](document-map.json)가 소유한다. UI 시안 승인이나 기능 구현 여부를 이 구조 설명만으로 판정하지 않는다.
+이 문서는 기술 설계다. 플레이어 경험·화면/아트 의도·기능 요구 ID는 [게임 기획](game-design.md), 문서 우선순위와 변경 전파는 [문서 위계](document-governance.md)를 따른다. 업무별 실제 코드·검사·증거 연결은 [연결표](document-map.json)가 소유한다.
 
 ## 역할과 경계
 
@@ -53,7 +53,7 @@ Ghidra가 CGPoint 인수 일부를 state의 float 비트로 표기한 사례가 
 
 MAP/MCH 관찰 구조는 LE u32 `declared_size,type,data_size`, payload, LE u32 child_count, children이다. 두 판본의 92파일은 재귀 파싱 후 잔여0바이트였다. 일부 declared_size는 실제 하위 길이와 다르므로 임의의 건너뛰기 길이로 쓰지 않는다. 원시 offset·payload는 `comparison/assets/parsed-game-data.json`에 있다.
 
-원작 WeaponInfo160, PartsInfo294, MachInfo720 레코드를 확인했다. type10/11의 적 목록·레코드 의미는 Assault reader 증거와 동일 구조로 대응했고 원작 switch는 불완전하다. 그 추정을 원작 전체 reader 복원 완료로 취급하지 않는다. CgBI 이미지는 디코딩 파생본을 만들 수 있지만 색 순서·premultiplied alpha·합성 결과를 확인한다.
+원작 WeaponInfo160, PartsInfo294, MachInfo720 레코드를 확인했다. type10/11의 적 목록·레코드 의미는 Assault reader 증거와 동일 구조로 대응했고 원작 switch는 불완전하다. 원작 reader의 type10/11 분기는 추가 확인이 필요하다. CgBI 이미지는 디코딩 파생본을 만들 수 있지만 색 순서·premultiplied alpha·합성 결과를 확인한다.
 
 저장 3624바이트 길이만으로 필드·정렬·판본 호환성을 확정하지 않는다. ABI 구조체를 현대 컴파일러의 메모리 배치 그대로 파일에 쓰지 않고, 필드 offset·바이트 순서와 미확인 바이트 보존을 검증한다.
 

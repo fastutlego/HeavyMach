@@ -49,7 +49,7 @@ Mac 실제 창에서 치트 게임을 시작하고 이동·점프·조준·사�
 
 비교 앱의 네 테두리는 모두 남아 있었다. 3840×2160 캡처 안에서 내용이 높이2050에 맞춰 너비 약3645로 축소되고 상단110·오른쪽 약195픽셀에 흰색이 남았다. 게임 장면의 캔버스 계산과 별도로 발생하는 창 캡처 현상으로 분리했다. 게임 크기에 역보정을 넣지 않았다. 실제 디스플레이와 캡처의 최종 대조는 남아 있다. 비교 소스는 `build/window-probe.m`, 창 크기 기록은 `build/mac-fullscreen-geometry.log`다. 진단용 로그와 임시 바탕색 변경은 제품 코드에서 제거했다.
 
-현재 물리 iPhone·iPad는 개발 도구에서 unavailable로 표시됐다. 위 iPhone·iPad 결과는 Simulator 검사이며 실제 기기의 블루투스·유선 키보드 검사와 구분한다.
+현재 물리 iPhone·iPad는 개발 도구에서 unavailable로 표시됐다. 이 시점에는 Simulator로 iPhone·iPad 입력을 검사했다.
 
 ## 키 입력 중 저장 검사
 
@@ -77,7 +77,7 @@ Mac 실제 창에서 치트 게임을 시작하고 이동·점프·조준·사�
 | 슬롯 미리보기 | 29.672ms | 29.540ms |
 | 스테이지1 사격 | 28.647ms | 28.646ms |
 
-한 대에서도 세 장면 모두16.67ms 기준을 넘었다. 두 대 동시 실행이 지연의 주원인이라는 결과는 나오지 않았다. 검사 중 렌더러는 Apple Software Renderer였고 마지막 프레임의 화면 확대 그리기는22.24~22.50ms였다. 최초 보고 전에 동시 실행 조건을 통제하지 않은 것은 검증 누락이다. Mac의 다른 앱 부하까지 제거한 실험은 아니며, 이 결과를 실제 iPhone 성능으로 해석하지 않는다.
+한 대에서도 세 장면 모두16.67ms 기준을 넘었다. 두 대 동시 실행이 지연의 주원인이라는 결과는 나오지 않았다. 검사 중 렌더러는 Apple Software Renderer였고 마지막 프레임의 화면 확대 그리기는22.24~22.50ms였다. 최초 보고 전에 동시 실행 조건을 통제하지 않은 것은 검증 누락이다. 검사 중 Mac의 다른 앱은 실행 중이었다.
 
 원시 기록: `build/iphone-single-simulator-environment.log`, `build/iphone-single-simulator-perf.log`. 테스트 코드는 변경하지 않았다. 같은 시점에 물리 iPhone·iPad는 `devicectl`에서 unavailable로 확인됐다.
 
@@ -86,7 +86,7 @@ Mac 실제 창에서 치트 게임을 시작하고 이동·점프·조준·사�
 
 아래는 Mac 서명·표시 경로 수정 전의 측정 기록이다. 최종 Mac 결과는 문서 끝의 후속 검사에 있다.
 
-시뮬레이터는 한 대씩 실행했다. Mac 검사에서는 시뮬레이터를 종료했다. 장면별 준비30프레임 뒤180프레임을 측정했다. 아래는 추적기를 붙이지 않은 프레임 처리시간 p95다. Mac은 실제 앱의 NSTimer를 사용했고 iPad는 기존 CADisplayLink 검사 경로를 사용했다. 서로의 타이머 간격을 같은 측정으로 취급하지 않는다.
+시뮬레이터는 한 대씩 실행했다. Mac 검사에서는 시뮬레이터를 종료했다. 장면별 준비30프레임 뒤180프레임을 측정했다. 아래는 추적기를 붙이지 않은 프레임 처리시간 p95다. Mac은 실제 앱의 NSTimer를 사용했고 iPad는 기존 CADisplayLink 검사 경로를 사용했다.
 
 | 장면 | Mac 창1200×800pt | Mac 화면 크기1920×1080pt | iPad 작업본 | iPad 변경 전 main |
 |---|---:|---:|---:|---:|
@@ -94,21 +94,21 @@ Mac 실제 창에서 치트 게임을 시작하고 이동·점프·조준·사�
 | 슬롯 메뉴 | 10.308ms | 3.470ms | 48.133ms | 40.580ms |
 | 사격 | 5.212ms | 7.393ms | 44.311ms | 39.972ms |
 
-Mac은 2배 backing scale, M4 Pro의 `OpenGL 2.1 Metal` 드라이버를 사용했다. 두 크기의 세 장면 모두16.67ms 처리 예산을 통과했다. 사격 장면은 실제 탄환 최대8개와 발사음23회를 확인했다. 저장 호출은0회였다. 표의 ‘화면 크기’는 화면을 덮는 borderless 검사 창이며 macOS 전체 화면 전환 애니메이션의 시각 검사를 대신하지 않는다.
+Mac은 2배 backing scale, M4 Pro의 `OpenGL 2.1 Metal` 드라이버를 사용했다. 두 크기의 세 장면 모두16.67ms 처리 예산을 통과했다. 사격 장면은 실제 탄환 최대8개와 발사음23회를 확인했다. 저장 호출은0회였다. 표의 ‘화면 크기’ 조건에는 디스플레이를 덮는 borderless 검사 창을 사용했다.
 
-Mac Time Profiler는 CPU 표본7,459개를 수집했다. 실제 `HMGameView frame:`을 포함한4,033개 중 표시 경로를 포함한 표본은2,102개다. 호출은 `NSOpenGLContext flushBuffer`, Metal 드라이버 제출, 스프라이트 그리기로 연결됐다. 이 CPU 표본을 GPU 실행시간이라고 쓰지 않는다.
+Mac Time Profiler는 CPU 표본7,459개를 수집했다. 실제 `HMGameView frame:`을 포함한4,033개 중 표시 경로를 포함한 표본은2,102개다. 호출은 `NSOpenGLContext flushBuffer`, Metal 드라이버 제출, 스프라이트 그리기로 연결됐다.
 
-iPad Simulator는 Apple Software Renderer다. 변경 전 main(`0a80922d`)도16.67ms 기준을 넘었다. 작업본의 논리 높이는320→360으로 늘었고, 이전의 세로 여백까지 표시한다. 마지막 측정 프레임의 확대 그리기는 변경 전33.29~33.48ms, 작업본37.43~37.74ms였다. 추가 면적 비율12.5%와 비슷한 증가다. iPad CPU 추적에서는 게임 프레임 표본26,147개 중23,880개(91.33%)가 최종 표시 경로를 포함했다. 소프트웨어 삼각형 채우기 함수 `gldRenderFillTriangles`가22,964개였다. 이는 Simulator의 픽셀 처리 병목이며 실제 iPad GPU 시간으로 환산하지 않는다. 화면을 다시 줄이거나 필터를 바꿔 통과시키지 않았다.
+iPad Simulator는 Apple Software Renderer다. 변경 전 main(`0a80922d`)도16.67ms 기준을 넘었다. 작업본의 논리 높이는320→360으로 늘었고, 이전의 세로 여백까지 표시한다. 마지막 측정 프레임의 확대 그리기는 변경 전33.29~33.48ms, 작업본37.43~37.74ms였다. 추가 면적 비율12.5%와 비슷한 증가다. iPad CPU 추적에서는 게임 프레임 표본26,147개 중23,880개(91.33%)가 최종 표시 경로를 포함했다. 소프트웨어 삼각형 채우기 함수 `gldRenderFillTriangles`가22,964개였다. 병목은 Simulator의 픽셀 처리에 있었다.
 
-Allocations와 Leaks 기록을 Mac·iPad에서 각각 수집했다. 별도의 `leaks` 명령으로 iPad는 누수0건, 그 시점의 physical footprint493.2MB를 확인했다. Mac은417개·20,016바이트가 검출됐다. 모두 `com.apple.linkd.autoShortcut`의 `LNDaemonApplicationInterface` 연결 세 개에 연결된 참조 순환이었다. Mac footprint는555.1MB였다. 이 수치는 XCTest·도구·화면별 뷰 재생성을 포함한 짧은 검사 과정의 값이며 일반 앱의 장시간 메모리 상한이 아니다.
+Allocations와 Leaks 기록을 Mac·iPad에서 각각 수집했다. 별도의 `leaks` 명령으로 iPad는 누수0건, 그 시점의 physical footprint493.2MB를 확인했다. Mac은417개·20,016바이트가 검출됐다. 모두 `com.apple.linkd.autoShortcut`의 `LNDaemonApplicationInterface` 연결 세 개에 연결된 참조 순환이었다. Mac footprint는555.1MB였다. XCTest와 계측 도구를 실행하고 화면별 뷰를 재생성하는 동안 측정한 값이다.
 
 Mac의 첫 Allocations+Leaks 기록은 저장됐다. 추가 heap 수집 실행에서는 종료 시 Instruments Leaks가 메모리 그래프 생성 오류를 냈고, 별도 `leaks` 출력은 보존했다. 게임 없는 AppKit 비교 앱의 Instruments 연결은 OS 권한 오류(-60007)로 실패했다. 당시에는 Mac 누수 원인과 수정 효과를 확인하지 못했다.
 
 첫 iPad 전체 프로세스 Time Profiler는 Simulator 라이브러리 중첩 오류로 결과 저장이 끝나지 않았다. 해당 실패를 보존하고, Simulator UDID와 게임 PID를 지정한 연결로 재실행해 분석 가능한 기록을 저장했다. 이후에는 `tools/profile_apple.py`를 사용한다.
 
-Mac은 후속 확인 당시 잠금 상태였다. CUA는 `cgWindowNotFound`를 반환했고 버전·서명·인증 오류는 없었다. 화면 확인을 위해 보안 설정을 바꾸지 않았다. 자동 검사와 Instruments 결과는 유효하지만 최종 화면 캡처·기존 흰 여백 대조는 완료하지 않았다.
+Mac은 후속 확인 당시 잠금 상태였다. CUA는 `cgWindowNotFound`를 반환했고 버전·서명·인증 오류는 없었다. 잠금으로 최종 화면 캡처와 흰 여백 대조가 남았다.
 
-[프레임·CPU 집계 JSON](../evidence/apple-platform-performance-20261026.json)에 측정값과 원시 로그 해시를 보존했다. 로컬 원시 기록은 `build/apple-performance-20261026/`의 `mac-cpu`, `mac-memory`, `mac-memory-with-heap`, `ipad-cpu-device`, `ipad-memory`다. 시작 실패나 기록 오류가 난 trace를 성공 표본에 합치지 않았다.
+[프레임·CPU 집계 JSON](../evidence/apple-platform-performance-20261026.json)에 측정값과 원시 로그 해시를 보존했다. 로컬 원시 기록은 `build/apple-performance-20261026/`의 `mac-cpu`, `mac-memory`, `mac-memory-with-heap`, `ipad-cpu-device`, `ipad-memory`다.
 
 재실행은 대상 앱을 먼저 빌드하고 다른 Simulator를 종료한 뒤 수행한다.
 
@@ -119,15 +119,15 @@ python3 tools/profile_apple.py --platform ipad --template Allocations --output b
 
 ## Mac 객체 해제·일반 앱 메모리 후속 검사
 
-실제 게임 뷰로 타이틀·슬롯·사격을 두 창 크기에서 실행한 뒤, 뷰와 미디어·GL 렌더러·OpenAL 음향 객체의 해제를 검사했다. 여섯 조건의 24개 해제 확인을 모두 통과했다. 사격 조건에서는 실제 탄환과 발사음을 확인했고 게임 저장 호출은0회였다. 이 검사는 게임 객체의 참조가 남는 문제를 검사하며 모든 C/C++ 메모리 누수를 배제하지는 않는다.
+실제 게임 뷰로 타이틀·슬롯·사격을 두 창 크기에서 실행한 뒤, 뷰와 미디어·GL 렌더러·OpenAL 음향 객체의 해제를 검사했다. 여섯 조건의 24개 해제 확인을 모두 통과했다. 사격 조건에서는 실제 탄환과 발사음을 확인했고 게임 저장 호출은0회였다. 검사 대상은 게임 뷰와 미디어·렌더러·음향 객체의 참조 수명이었다.
 
 같은 실행의 프레임 처리 p95는 창 크기1200×800에서5.271/8.064/10.078ms, 화면 크기1920×1080에서8.342/10.909/5.274ms였다. 순서는 타이틀·슬롯·사격이다. 여섯 조건 모두16.67ms 처리 기준을 통과했다. 프레임 호출 간격과 처리시간은 JSON에 따로 기록했다.
 
 XCTest 없이 일반 Mac 게임 앱도 실행했다. 이 측정용 Debug 빌드에만 `com.apple.security.get-task-allow`를 지정했다. 두 차례 `leaks` 결과는416개·19,968바이트와417개·20,016바이트였고 physical footprint는 모두313.3MB였다. 앞선 XCTest 실행과 같은 자동 단축어 연결 세 개의 참조 순환이 검출됐다. 이 시점에는 게임 객체 해제 검사만 통과했고 연결의 발생 원인은 확정하지 못했다.
 
-일반 앱의 Allocations 기록은35.748초를 담았고 목차 내보내기도 성공했다. 기록 종료 사유는 시간 제한이며 대상 프로세스 종료는 SIGKILL로 남았다. `xctrace` 종료 코드는54이므로 정상 종료 코드0으로 기록하지 않는다. 게임 없는 비교 앱의 추적 실패와 별개로 실제 게임 앱의 메모리 자료를 확보했다.
+일반 앱의 Allocations 기록은35.748초를 담았고 목차 내보내기도 성공했다. 기록 종료 사유는 시간 제한이며 대상 프로세스 종료는 SIGKILL로 남았다. `xctrace` 종료 코드는54였다. 게임 없는 비교 앱의 추적 실패와 별개로 실제 게임 앱의 메모리 자료를 확보했다.
 
-macOS 전체 화면 진입·복귀와 그리기 영역을 확인하는 검사도 추가했다. 처음 실행은 잠긴 데스크톱에서 전체 화면 진입 알림을 받지 못해 실패했다. 잠금 상태를 명시적으로 확인하도록 보완한 재실행에서는 해당 검사1개를 건너뛰고, 객체 해제·프레임 검사1개를 통과했다. 전체 화면 검사를 통과로 세지 않는다. 원시 기록은 `mac-lifetime-fullscreen.log`, `mac-lifetime-final.log`, `mac-app-direct/`이며 모두 `build/apple-performance-20261026/` 아래에 있다.
+macOS 전체 화면 진입·복귀와 그리기 영역을 확인하는 검사도 추가했다. 처음 실행은 잠긴 데스크톱에서 전체 화면 진입 알림을 받지 못해 실패했다. 잠금 상태를 명시적으로 확인하도록 보완한 재실행에서는 해당 검사1개를 건너뛰고, 객체 해제·프레임 검사1개를 통과했다. 원시 기록은 `mac-lifetime-fullscreen.log`, `mac-lifetime-final.log`, `mac-app-direct/`이며 모두 `build/apple-performance-20261026/` 아래에 있다.
 
 ## 추가 요청: 자동조준
 
@@ -173,14 +173,14 @@ App Intents는 앱의 기능·콘텐츠를 Siri·Spotlight·단축어 등 시스
 
 Mac 프로젝트를 기존 iOS와 같은 개발 팀의 `Apple Development` 자동 서명으로 수정했다. 일반·치트·테스트 target에 적용한다. 이 설정으로 빌드를 시도했으나 잠긴 키체인에서 `errSecInternalComponent`로 서명에 실패했다. 키체인 조회도 `User interaction is not allowed`를 반환했다. 이 시점에는 서명 설정만 수정했고 정상 서명본의 누수 검사를 실행하지 못했다. 이후 잠금을 해제해 실행한 결과는 다음 절에 기록했다.
 
-그동안 실제 Mac 치트 앱의 기능32개를 다시 통과했다. 잠긴 데스크톱의 전체 화면 전환1개는 건너뛰었다. 타이틀·슬롯·사격을 두 창 크기에서 측정한 프레임 처리 p95는4.682~6.393ms였다. 각 사격 조건에서 최대 탄환8개와 게임 저장 호출0회를 확인했다. 객체 해제24개 확인도 통과했다. 이 실행은 기능·성능 검사용 ad-hoc 서명을 명시했으므로 서명 수정 후 누수 검사로 세지 않는다.
+그동안 실제 Mac 치트 앱의 기능32개를 다시 통과했다. 잠긴 데스크톱의 전체 화면 전환1개는 건너뛰었다. 타이틀·슬롯·사격을 두 창 크기에서 측정한 프레임 처리 p95는4.682~6.393ms였다. 각 사격 조건에서 최대 탄환8개와 게임 저장 호출0회를 확인했다. 객체 해제24개 확인도 통과했다. 이 실행의 앱은 ad-hoc 서명을 사용했다.
 
 원시 기록은 `build/apple-performance-20261026/mac-xpc-origin/`, `mac-launchservices-memory/`, `mac-functional-recheck.log`에 있다. 다른 프로세스가 포함된 시스템 로그 원문은 사이트에 올리지 않고 해당 오류 문구·호출 경로·파일 해시만 [집계 JSON](../evidence/apple-platform-performance-20261026.json)에 기록했다.
 
 
 ## 잠금 해제 후 Mac 누수·표시 대기 수정 결과
 
-정식 앱과 치트 앱을 Xcode에서 Apple Development 인증서로 빌드했다. 서명의 팀 ID와 `codesign --verify --deep --strict` 성공을 확인했다. 정식 앱은 최종 수정본에서 누수0건·0바이트였고 physical footprint는289.2MB였다. 치트 앱은 키보드로 이동·조준·무기 전환·사격한 뒤 누수0건·0바이트, footprint321.9MB였다. Instruments Allocations+Leaks의35초 기록도 종료 코드0으로 저장했다. 장시간 메모리 증가 검사는 이 결과에 포함하지 않는다.
+정식 앱과 치트 앱을 Xcode에서 Apple Development 인증서로 빌드했다. 서명의 팀 ID와 `codesign --verify --deep --strict` 성공을 확인했다. 정식 앱은 최종 수정본에서 누수0건·0바이트였고 physical footprint는289.2MB였다. 치트 앱은 키보드로 이동·조준·무기 전환·사격한 뒤 누수0건·0바이트, footprint321.9MB였다. Instruments Allocations+Leaks의35초 기록도 종료 코드0으로 저장했다. 장시간 메모리 증가 검사는 남아 있다.
 
 이 결과로 기존417개·20,016바이트 누수의 수정 효과를 확인했다. 원인은 명시적 ad-hoc 서명으로 팀 ID가 빠진 앱의 시스템 등록 거절과 재시도였다. Apple Intelligence 설정은 변경하지 않았다. 게임 코드에 단축어·XPC 기능을 추가하지 않았다.
 
@@ -193,7 +193,7 @@ Mac에 다음 변경을 적용했다. iPhone/iPad의 전처리 분기는 그대�
 - 창·뷰·화면 위치·픽셀 크기가 바뀔 때 GL 표면을 갱신한다.
 - `wantsBestResolutionOpenGLSurface`를 켜서 GL 표면과 Retina 픽셀 좌표를 맞췄다.
 
-Apple은 swap interval0을 가능한 즉시 교체하는 설정으로 설명한다. 드라이버의 모든 대기가 없어지는 옵션은 아니다. [버퍼 교체](https://developer.apple.com/documentation/appkit/nsopenglcontext/flushbuffer%28%29), [컨텍스트 갱신과 표시 설정](https://developer.apple.com/library/archive/documentation/GraphicsImaging/Conceptual/OpenGL-MacProgGuide/opengl_contexts/opengl_contexts.html).
+Apple은 swap interval0을 가능한 즉시 교체하는 설정으로 설명한다. 드라이버 내부의 다른 대기는 남을 수 있다. [버퍼 교체](https://developer.apple.com/documentation/appkit/nsopenglcontext/flushbuffer%28%29), [컨텍스트 갱신과 표시 설정](https://developer.apple.com/library/archive/documentation/GraphicsImaging/Conceptual/OpenGL-MacProgGuide/opengl_contexts/opengl_contexts.html).
 
 잠금 해제·개발 서명·계측기 미연결 조건의 최종 XCTest 결과는33개 통과, 실패0, 건너뜀0이다. 각 장면은30프레임 준비 후180프레임을 측정했다. 기존16.67ms 처리 기준은 바꾸지 않았다.
 
@@ -206,7 +206,7 @@ Apple은 swap interval0을 가능한 즉시 교체하는 설정으로 설명한�
 | 1920×1080 | 슬롯 | 14.287ms | 16.685ms |
 | 1920×1080 | 사격 | 11.656ms | 16.668ms |
 
-프레임 호출 간격 p95는17.00~17.60ms였다. 순간 최댓값은29.62ms였으므로 모든 프레임이16.67ms 이내라고 표현하지 않는다. 실제 사격·음향과 전투 중 저장 호출0회를 확인했고, 게임 뷰·미디어·렌더러·음향 객체 해제24개 확인도 통과했다. 20종 무기의 키 선택·발사와 등급별 시작 조건 검사를 같은 suite에서 통과했다.
+프레임 호출 간격 p95는17.00~17.60ms였다. 순간 최댓값은29.62ms였다. 실제 사격·음향과 전투 중 저장 호출0회를 확인했고, 게임 뷰·미디어·렌더러·음향 객체 해제24개 확인도 통과했다. 20종 무기의 키 선택·발사와 등급별 시작 조건 검사를 같은 suite에서 통과했다.
 
 Codex는 CUA로 치트 앱의 전진·후진·포신 조절·무기 전환·발사·일시정지 메뉴·전체 화면 왕복을 직접 확인했다. 점프 키도 입력했고 점프 동작은 자동 검사에서 확인했다. 정식 앱은 최종 빌드와 실행·메뉴 진입을 확인했다. 전체 화면 자동 검사의 창·뷰는1920×1080, backing은3840×2160이었다. 이 시점에 남겼던 CUA 캡처 여백 대조는 다음 절의2026-10-27 검사로 완료했다.
 
@@ -226,7 +226,7 @@ Codex는 CUA로 치트 앱의 전진·후진·포신 조절·무기 전환·발�
 
 ## iPhone·iPad 실제 기기 검사 — 2026-10-27
 
-공용 모듈을 적용한 치트 앱을 iPhone Air와 iPad Air 13형 M2에 설치했다. 두 기기 모두 iOS/iPadOS27.0.1이며, 각각85개 중84개 통과·1개 실패·건너뜀0개다. 실패한 항목은 `testOnscreenOpenGLCadenceAudioAndResume`의16.67ms 처리시간 기준이다. 전체 통과로 판정하지 않았다. 제품 소스와 성능 기준은 변경하지 않았다.
+공용 모듈을 적용한 치트 앱을 iPhone Air와 iPad Air 13형 M2에 설치했다. 두 기기 모두 iOS/iPadOS27.0.1이며, 각각85개 중84개 통과·1개 실패·건너뜀0개다. 실패한 항목은 `testOnscreenOpenGLCadenceAudioAndResume`의16.67ms 처리시간 기준이다. 제품 소스와 성능 기준은 변경하지 않았다.
 
 기기별로 순서대로 실행했고 Simulator는 모두 껐다. 프레임 측정 중 Instruments를 연결하지 않았다. 앱이 사용하는 NSTimer와 비교 검사에 쓰는 CADisplayLink를 따로 측정했다. 아래는30프레임 준비 뒤180프레임의 처리시간 p95다.
 
@@ -238,9 +238,9 @@ Codex는 CUA로 치트 앱의 전진·후진·포신 조절·무기 전환·발�
 | 확장 폭 사격 | 14.672ms | 11.395ms | 9.505ms |
 | 배경 없는 메뉴 | 11.547ms | 14.598ms | 17.629ms |
 
-실제 게임 타이머의 평균 호출 간격은 세 검사에서16.663~16.671ms였다. 약60회/초에 해당한다. 후속 iPhone 메뉴 두 조건은 처리 p95가16.67ms를 넘었으며, 호출 간격 최댓값은19.046ms였다. 처리시간에는 렌더러의 의도적인 프레임 대기도 포함된다. 평균 호출 속도만으로 모든 프레임이 일정하다고 판정하지 않는다.
+실제 게임 타이머의 평균 호출 간격은 세 검사에서16.663~16.671ms였다. 약60회/초에 해당한다. 후속 iPhone 메뉴 두 조건은 처리 p95가16.67ms를 넘었으며, 호출 간격 최댓값은19.046ms였다. 처리시간에는 렌더러의 의도적인 프레임 대기도 포함된다.
 
-CADisplayLink 비교 검사는 게임의 NSTimer를 중단하고 별도 화면 동기화 호출을 넣는다. 첫 사격 p95는 iPhone19.093ms·iPad18.897ms, 후속 iPhone16.922ms였다. iPad 타이틀도17.888ms였다. `HMGLRenderer`의 iOS60Hz 대기는 그대로 남아 있다. 두 대기의 영향을 분리하는 검사는 남았으므로, 실패 원인을 확정하거나 기준을 완화하지 않았다. 원시 로그에 남은 `simulator` 문구는 검사에 고정된 문자열이다. 실제 대상은 xcresult와 GPU 이름으로 확인했다.
+CADisplayLink 비교 검사는 게임의 NSTimer를 중단하고 별도 화면 동기화 호출을 넣는다. 첫 사격 p95는 iPhone19.093ms·iPad18.897ms, 후속 iPhone16.922ms였다. iPad 타이틀도17.888ms였다. `HMGLRenderer`의 iOS60Hz 대기는 그대로 남아 있다. 두 대기가 각각 더하는 시간을 분리하는 검사는 남아 있다. 원시 로그에 남은 `simulator` 문구는 검사에 고정된 문자열이다. 실제 대상은 xcresult와 GPU 이름으로 확인했다.
 
 통과한84개에는 자원·렌더 비교·생명주기·음향 호출·입력 검사가 포함된다. 전체20종 무기의 키 선택·발사, 키보드 이동과 터치 사격 병용, 전투 중 저장 호출0회도 확인했다. 이 항목들은 실제 기기에서 실행한 API 주입 검사다.
 
@@ -273,9 +273,9 @@ iPhone에 치트 기능이 없는 일반 앱을 설치했다. 케이블을 뺀 �
 | 이번 무선 XCTest | 미실행 | 8개 통과·실패0·건너뜀0 |
 | 이번 무선 Instruments | 미실행 | Time Profiler21.716초·CPU 표본10,202개 내보내기 성공 |
 
-iPad의8개 검사는 전체20종 무기 선택·발사, 이동·점프·조준·해제, 키보드와 터치 병용, 메뉴·설정, 화면 크기별 좌표 변환, 항공기 보스 이동 보존, 실제 타이머와 전체 화면 터치를 포함한다. 실제 기기의 입력 API를 호출하는 검사다. 별도 Bluetooth·USB 키보드를 연결한 결과는 아니다. Device Hub로 기존 치트 저장을 이어서 터치 사격, 이동·정지와 일시정지 메뉴도 확인했다. 수동 점프는 화면으로 확정하지 않았으며 자동 검사에서 통과했다.
+iPad의8개 검사는 전체20종 무기 선택·발사, 이동·점프·조준·해제, 키보드와 터치 병용, 메뉴·설정, 화면 크기별 좌표 변환, 항공기 보스 이동 보존, 실제 타이머와 전체 화면 터치를 포함한다. 실제 기기의 입력 API를 호출하는 검사다. Bluetooth·USB 키보드 연결 검사는 남아 있다. Device Hub로 기존 치트 저장을 이어서 터치 사격, 이동·정지와 일시정지 메뉴도 확인했다. 수동 점프는 화면으로 확정하지 않았으며 자동 검사에서 통과했다.
 
-CPU 기록은 시작·타이틀 구간이다. 게임 프레임 함수가 표본에 포함됨을 확인했다. 이번 기록으로 전투 성능·장시간 발열·누수까지 판정하지 않는다. 앞 절의85개 검사 중 남은 표시시간 실패와 iPhone 메뉴 p95 초과는 그대로 남아 있다. 제품 코드는 변경하지 않았다.
+CPU 기록은 시작·타이틀 구간이다. 게임 프레임 함수가 표본에 포함됨을 확인했다. 전투 성능·장시간 발열·누수 계측은 남아 있다. 앞 절의85개 검사 중 남은 표시시간 실패와 iPhone 메뉴 p95 초과는 그대로 남아 있다. 제품 코드는 변경하지 않았다.
 
 CLI 빌드는 키체인 서명 오류로 실패했고 같은 구성을 Xcode GUI에서 빌드해 성공했다. 첫 무선 XCTest는 Run 빌드에 테스트 묶음이 없어 시작하지 못했다. Build For Testing으로 묶음을 만든 뒤8개가 통과했다. 실패한 로그도 보존했다. iPad는 재부팅 이후 무선으로 연결됐으며, 이번 작업에서 추가 재부팅을 반복하지 않았다.
 
@@ -301,7 +301,7 @@ Sentry MobileBuildMCP의 공식 스킬과 기기 설치·실행 소스를 조사
 
 `GameData::loadDirectory`로 실제 RawData를 읽었다. Heli001~010은 모두 machType1이며 무기는 `E_Wpn_ASM`(type6, damage25)이다. HP는150~450, 경험치는5~30이다. Heli001에는 고정 아이템2개 드롭 예외가 있어 새 기체에 이름만 바꿔 복사하지 않는다.
 
-캠페인은 `MapDefinition.enemies`의 기체 이름·좌표를 `WorldState::processRegen`이 읽는다. 예를 들어 Stage01은Heli001 두 대, Stage13은Heli001·004·005·006·008·009·010, Stage35는Heli001 다섯 대와Heli010 한 대다. 후반에도 초기형이 등장하므로 단순한 미션 번호→헬기 티어 계산으로 해석하지 않는다.
+캠페인은 `MapDefinition.enemies`의 기체 이름·좌표를 `WorldState::processRegen`이 읽는다. 예를 들어 Stage01은Heli001 두 대, Stage13은Heli001·004·005·006·008·009·010, Stage35는Heli001 다섯 대와Heli010 한 대다. 후반 미션에도 초기형 헬기가 함께 등장한다.
 
 Survival은 `World.cpp`의4분류 이름 형식과 개수315/200/10/10, Heli001 추가 생성 분기를 사용한다. 이 부분은 코드에 고정돼 있다. 비행 AI는 `Enemy.cpp`의machType1, 이동과 좌우 속도 기반 기울기는 `Motion.cpp::processFly`에 있다. 헬기 부품에는 몸체·회전날개·무기가 있으며 제트 엔진 불꽃은 새로 연결해야 한다. 상하 속도에 따른 자세 변화도 새3종 전용으로 추가한다.
 

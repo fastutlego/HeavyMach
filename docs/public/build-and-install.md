@@ -19,7 +19,7 @@ git lfs pull
 
 이미지·음원·맵·앱 아이콘·이미지 비교 자료는 저장소에 포함돼 있다. 앱이 사용하는 자원은 `HeavyMachAssets.bundle`에 포함된다.
 
-현재 저장소는 비공개이므로 접근 가능한 GitHub 계정으로 인증한다. `v0.9`는 자원을 Git에 넣기 전의 제품 코드 태그다. 새로 빌드할 때는 자원이 포함된 현재 `main`을 사용한다. [v0.12 Releases](https://github.com/gelb2/HeavyMach/releases/tag/v0.12)에 소스·자원 압축본, 고지 묶음과 SHA-256 목록을 등록했다. 압축본을 풀면 Git LFS 없이 자원 검사를 시작할 수 있다. 설치용 서명 앱은 포함하지 않았다.
+공개 저장소이므로 로그인 없이 소스를 내려받을 수 있다. `v0.9`는 자원을 Git에 넣기 전의 제품 코드 태그다. 새로 빌드할 때는 자원이 포함된 현재 `main`을 사용한다. [v0.12 Releases](https://github.com/gelb2/HeavyMach/releases/tag/v0.12)에 소스·자원 압축본, 고지 묶음과 SHA-256 목록을 등록했다. 압축본을 풀면 Git LFS 없이 자원 검사를 시작할 수 있다. 앱은 Xcode에서 본인의 개발 팀을 지정해 빌드하고 설치한다.
 
 ## 자원 검사
 

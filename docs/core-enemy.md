@@ -68,7 +68,7 @@ clang++ -std=c++20 -Wall -Wextra -Werror -ffp-contract=off -fno-fast-math \
 
 ### 실제 원본 정의가 사용하는 유형과 무기
 
-원본 RawData를 기존 GameData reader로 읽고 각 MachDefinition의 재귀 parts에서 무기 정의를 조회했다. 아래 개수는 장착 무기 객체 수이며, 모든 무기가 같은 순간에 발사된다는 뜻은 아니다. delay는 원본 WeaponInfo 값이고 실제 발사 주기는 아래 AI 단계와 재장전의 영향을 함께 받는다.
+원본 RawData를 기존 GameData reader로 읽고 각 MachDefinition의 재귀 parts에서 무기 정의를 조회했다. 아래 개수는 장착 무기 객체 수다. 각 무기의 발사 시점은 AI 단계와 재장전 상태에 따라 달라진다. delay는 원본 WeaponInfo 값이고 실제 발사 주기는 아래 AI 단계와 재장전의 영향을 함께 받는다.
 
 | 이름 | machType | HP | 장착 무기 수 | 원본 무기 피해 | 정의 delay 범위 |
 |---|---:|---:|---:|---|---|

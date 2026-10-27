@@ -16,9 +16,50 @@ FILES = ['README.md', 'CONTRIBUTING.md', 'LICENSE-SCOPE.md', 'ASSET-LICENSES.md'
          'docs/public/validation.md', 'docs/public/implementation-status.md',
          'docs/public/github-repository-plan-20261028.md', 'docs/public/github-followup-20261028.md']
 
+# Known rejected copy, checked in every report manuscript as well as reader docs.
+# This catches recurrence; contextual editing still determines what to rewrite.
+REJECTED_COPY = [
+    r'OS(?: 화면)? 전체(?:를 찍은)? 스크린샷은 아니다',
+    r'실시간\s*60\s*fps를 측정한 값으로 사용하지 않는다',
+    r'(?:실기기 성능|실제 iPad GPU 시간|실제 FPS)(?:으로|로) (?:사용|환산|해석)하지 (?:않는다|않았다)',
+    r'(?:검증했다고 표시|전체 통과로 판정|모든 프레임이16\.67ms 이내라고 표현)하지 않는다',
+    r'(?:이번에 줄 단위 의미 동등성을 재검사|모든 미션의 모든 지형에서 명중을 확인)했다는 뜻은 아니다',
+]
+
+
+def editorial_files(root):
+    extra = ['docs/documentation-audit-20261025.md', 'docs/related-titles-20261026.md',
+             'docs/android-port-plan-20261026.md', 'docs/ios-completeness-audit-20261026.md',
+             'docs/auto-aim-plan-20261026.md', 'docs/lux-lunae-plan-20261027.md',
+             'docs/media-publication.md', 'docs/public/media/README.md']
+    return sorted(set(FILES + extra + [str(p.relative_to(root))
+                  for p in (root / 'docs/public').glob('*.md')] +
+                  [str(p.relative_to(root)) for p in (root / 'docs').glob('*.md')
+                   if p.name not in ('current-status.md', 'report-site.md')]))
+
+
+def check_editorial(root):
+    errors = []
+    for name in editorial_files(root):
+        for number, line in enumerate((root / name).read_text().splitlines(), 1):
+            if line.lstrip().startswith(('>', '```')):
+                continue
+            if any(re.search(pattern, line) for pattern in REJECTED_COPY):
+                errors.append(f'{name}:{number}: rejected editorial copy')
+    for name in ('README.md', 'docs/public/build-and-install.md',
+                 'docs/public/implementation-status.md'):
+        text = (root / name).read_text()
+        for stale in ('현재 저장소 접근에는 GitHub 권한이 필요하다',
+                      '현재 저장소는 비공개', '저장소와 보고 사이트는 비공개',
+                      '원작 에셋의 공개 이용허락은 아직 확인 중이다',
+                      '코드와 에셋을 함께 공개해 누구나 빌드하고 플레이할 수 있도록 준비하고 있다'):
+            if stale in text:
+                errors.append(f'{name}: outdated publication status')
+    return errors
+
 
 def check(root):
-    errors = []
+    errors = check_editorial(root)
     links = 0
     for name in FILES:
         path = root / name
@@ -54,5 +95,6 @@ if __name__ == '__main__':
     for error in errors:
         print('FAIL:', error)
     if not errors:
-        print(f'PASS: {len(FILES)} reader documents, {count} local links, shared introduction and source hashes')
+        print(f'PASS: {len(FILES)} linked documents, {len(editorial_files(ROOT))} editorial documents, '
+              f'{count} local links, shared introduction and source hashes')
     raise SystemExit(bool(errors))

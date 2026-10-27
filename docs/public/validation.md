@@ -32,7 +32,7 @@
 | 초기 iPhone 전투 127.77초 | 평균 59.71회/초, p95 간격 16.67ms, 최대 50.02ms, thermal Serious | 대부분 정지 위치에서 사격. 장시간 이동 전투·전력 비교 미실행 |
 | iPad 짧은 계측 | leaks 0건, physical footprint 493.2MB | XCTest·화면 재생성 포함. 장시간 일반 플레이 메모리 검사 필요 |
 
-Simulator의 GPU 경로는 실제 기기와 다르다. 위 소프트웨어 렌더러 시간을 iPhone·iPad GPU 시간으로 환산하지 않는다. 플레이 중 체감과 프레임 처리시간 검사는 서로 다른 결과이므로 함께 남겼다.
+Simulator는 Apple Software Renderer로 측정했다. iPhone·iPad의 기기별 측정값과 직접 플레이 결과는 위 표에 있다.
 
 Mac 전체 화면은 OS의 3840×2160 캡처에서 네 가장자리까지 게임이 표시됨을 확인했다. CUA 창 캡처에 보인 흰 여백은 실제 디스플레이 캡처에 없었다. [계측 JSON](../evidence/apple-platform-performance-20261026.json), [전체 화면 JSON](../evidence/mac-fullscreen-capture-20261027.json)
 

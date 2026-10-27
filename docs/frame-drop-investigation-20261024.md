@@ -20,7 +20,7 @@
 
 ## 기존 성능 증거 재사용
 
-`build/frame-performance/baseline.json`은 오디오를 제외하고 실제 UIKit drawRect를 오프스크린 실행했다. 120개 warm 프레임이며 타깃 bitmap2736×1260 생성 비용도 포함한다. 실제 아이폰 FPS로 환산하지 않는다.
+`build/frame-performance/baseline.json`은 오디오를 제외하고 실제 UIKit drawRect를 오프스크린 실행했다. 120개 warm 프레임이며 타깃 bitmap2736×1260 생성 비용도 포함한다.
 
 | 장면 | tick 평균 ms | draw 평균 ms | 16.67ms 초과 프레임 |
 |---|---:|---:|---:|
