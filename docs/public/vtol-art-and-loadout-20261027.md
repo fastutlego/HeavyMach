@@ -6,7 +6,7 @@ Codex는 실제 기체 사진과 야크141 도면을 참조해 **야크141·해�
 
 나는 실제 야크·해리어·F35를 지정하고 기존 유닛의 색조·질감을 따르도록 했다. Codex는 첫 프롬프트에 실물에서 영감을 받은 기체와 과장된 장갑 패널 등의 조건을 넣었다. 참조에는 기존 게임 그림만 있었고 실물 사진·도면은 없었다. 내가 요청하지 않은 외형 재해석이었다.
 
-나는 실제 모델과 다른 이유를 물었고, 사실적인 그림을 위한 별도 스킬이 필요한지도 물었다. Codex는 기존 `integrate-game-art` 스킬을 보완해 실물 형상을 보존하고 사진·도면과 대조하도록 했다. 두 번째 시안을 채택하면서 나는 앞으로 현실의 유닛을 추가할 때 이 절차를 쓰라고 지시했다. 기존 게임 그림은 화풍 참조로, 실물 사진·도면은 형태 참조로 구분하는 규칙이 여기에 포함됐다. [첫 프롬프트](../../Art/VTOL/20261027/manifest.json), [수정 프롬프트](../../Art/VTOL/20261027-v2/prompts.json), [트러블슈팅](troubleshooting.md)
+나는 실제 모델과 다른 이유를 물었고, 사실적인 그림을 위한 별도 스킬이 필요한지도 물었다. Codex는 기존 `integrate-game-art` 스킬을 보완해 실물 형상을 보존하고 사진·도면과 대조하도록 했다. 두 번째 시안을 채택하면서 나는 앞으로 현실의 유닛을 추가할 때 이 절차를 쓰라고 지시했다. 기존 게임 그림은 화풍 참조로, 실물 사진·도면은 형태 참조로 구분하는 규칙이 여기에 포함됐다. [첫 프롬프트](https://github.com/gelb2/HeavyMach/blob/docs/github-publication/Art/VTOL/20261027/manifest.json), [수정 프롬프트](https://github.com/gelb2/HeavyMach/blob/docs/github-publication/Art/VTOL/20261027-v2/prompts.json), [트러블슈팅](troubleshooting.md)
 
 ## 기체 시안
 
