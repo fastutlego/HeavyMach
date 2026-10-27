@@ -1,6 +1,6 @@
 # 플레이 영상에서 고른 이미지와 클립
 
-두 영상에서 이미지 8장과 클립 3개를 골랐다. 대표 이미지로 **01 자동조준 표적**을 채택했다. 탱크·적·사격·조준 표시·조작 버튼을 한 번에 볼 수 있다. 밝은 배경을 쓰고 싶다면 **02 점프와 사격**이 적합하다.
+Codex가 내 플레이 영상 두 개에서 이미지 8장과 클립 3개를 추출했다. 대표 이미지로 **01 자동조준 표적**을 채택했다. 탱크·적·사격·조준 표시·조작 버튼을 한 번에 볼 수 있다. 밝은 배경을 쓰고 싶다면 **02 점프와 사격**이 적합하다.
 
 ![탱크가 공중의 적을 향해 사격한다. 녹색 표적 표시와 LOCKED 문구가 보인다.](media/gameplay-20261027/01-auto-aim.png)
 
@@ -8,7 +8,7 @@
 
 후속 지시를 반영한 [GitHub 문서 전체 작성 계획](github-documentation-plan-20261027.md)에서 트러블슈팅·추가 기능·상태표·문서별 범위를 정했다.
 
-사용자가 확인한 이미지 **8장을 모두 README에 넣었다**. 첫 화면에는 01번을 크게 표시하고, 나머지는 기능 설명 바로 아래에 배치한다. 각 이미지는 HUD와 적이 읽히는 크기로 배치한다.
+나는 이미지를 확인하고 **8장을 모두 README에 넣도록 했다**. 첫 화면에는 01번을 크게 표시하고, 나머지는 기능 설명 바로 아래에 배치한다. 각 이미지는 HUD와 적이 읽히는 크기로 배치한다.
 
 | 순서 | 내용 | 사용할 이미지 |
 |---|---|---|
@@ -62,10 +62,10 @@ GitHub Skills는 연습 저장소에서 브랜치·PR·릴리스를 따라 만�
 |---|---|---|
 | [GitHub Skills: Introduction to GitHub](https://github.com/skills/introduction-to-github) | 브랜치, 커밋, PR, 병합 | 저장소 작업 절차의 기초 참고 |
 | [GitHub Skills: Release-based workflow](https://github.com/skills/release-based-workflow) | 태그, 릴리스 노트, 릴리스·핫픽스 흐름 | develop→main 규칙을 유지하며 릴리스 안내에 적용 |
-| [crafting-effective-readmes](https://github.com/softaworks/agent-toolkit/blob/main/skills/crafting-effective-readmes/SKILL.md) | 독자·프로젝트 종류별 README 구성, 오래된 설명 점검 | 개인 프로젝트 구성과 누락 점검에 참고. 기존 사용자 원문과 글쓰기 규칙을 우선 |
+| [crafting-effective-readmes](https://github.com/softaworks/agent-toolkit/blob/main/skills/crafting-effective-readmes/SKILL.md) | 독자·프로젝트 종류별 README 구성, 오래된 설명 점검 | 개인 프로젝트 구성과 누락 점검에 참고. 내가 제공한 원문과 글쓰기 규칙을 우선 |
 | [gh-address-comments](https://github.com/openai/skills/blob/main/skills/.curated/gh-address-comments/SKILL.md) | PR 의견 수집·수정 | 실제 검토 의견이 생겼을 때 사용 후보 |
 | [gh-fix-ci](https://github.com/openai/skills/blob/main/skills/.curated/gh-fix-ci/SKILL.md) | GitHub Actions 실패 로그 조사·수정 | 검사 실패의 원인을 찾을 때 사용 후보 |
-| [yeet](https://github.com/openai/skills/blob/main/skills/.curated/yeet/SKILL.md) | 변경 추가·커밋·push·PR 생성 | 현재 프로젝트에 그대로 채택하지 않음. 전체 변경 추가와 기본 브랜치 처리 규칙을 우리 규칙에 맞춰야 함 |
+| [yeet](https://github.com/openai/skills/blob/main/skills/.curated/yeet/SKILL.md) | 변경 추가·커밋·push·PR 생성 | 현재 프로젝트에 그대로 채택하지 않음. 전체 변경 추가와 기본 브랜치 처리 규칙을 이 저장소 규칙에 맞춰야 함 |
 
 현재 적용하는 스킬은 저장소의 `write-project-text`와 `present-game-artifacts`다. 외부 후보는 본문을 읽어 조사했으며 설치하지 않았다. 조사한 범위에는 README·미디어·설치·PR·릴리스를 모두 맡는 단일 스킬이 없었다. HeavyMach에서는 이 문서의 순서를 작업 절차로 삼고, 각 단계에 필요한 도구와 스킬을 적용한다.
 

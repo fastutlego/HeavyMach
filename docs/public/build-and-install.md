@@ -55,13 +55,13 @@ xcrun simctl launch booted com.gelb2.heavymach.restored
 
 ## iPhone·iPad 설치
 
-Xcode에서 `HeavyMach.xcworkspace`를 연다. 사용할 target의 **Signing & Capabilities**에서 본인의 개발 팀을 선택한다. 저장소에 기록된 팀 ID는 작성자의 설정이다. 앱 ID 등록 충돌이 발생하면 본인 팀에서 사용할 고유한 Bundle Identifier를 지정한다.
+Xcode에서 `HeavyMach.xcworkspace`를 연다. 사용할 target의 **Signing & Capabilities**에서 본인의 개발 팀을 선택한다. 저장소에는 기존 개발 팀의 ID가 기록돼 있다. 앱 ID 등록 충돌이 발생하면 본인 팀에서 사용할 고유한 Bundle Identifier를 지정한다.
 
 아이폰을 연결하고 Mac을 신뢰한 뒤 개발자 모드를 켠다. 실행 대상을 연결한 iPhone 또는 iPad로 바꾸고 일반 앱은 `HeavyMachRestored`, 치트 앱은 `HeavyMachValidation` scheme으로 Run한다. Xcode의 빌드 단계가 `iphoneos`용 OpenAL을 준비한다.
 
 기존 설치를 갱신할 때는 먼저 Xcode의 **Devices and Simulators**에서 해당 앱의 컨테이너를 내려받아 저장 데이터를 보관한다. 같은 앱 ID를 유지하면 기존 앱을 업데이트한다. 앱 ID를 바꾸면 별도 앱으로 설치되며 이전 저장이 자동으로 옮겨지지 않는다.
 
-`tools/prepare_device_validation.py`는 작성자의 검증용 아이폰과 앱 ID에 고정돼 있다. 다른 아이폰의 설치에는 위 Xcode 경로를 사용한다.
+`tools/prepare_device_validation.py`는 기존 검증용 아이폰과 앱 ID에 고정돼 있다. 다른 아이폰의 설치에는 위 Xcode 경로를 사용한다.
 
 ## 실행 확인과 오류 해결
 

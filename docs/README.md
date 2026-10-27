@@ -11,7 +11,7 @@
 | [조작](public/gameplay-guide.md) | 터치·틸트·키보드·자동조준·무기·강화 |
 | [빌드·설치](public/build-and-install.md) | clone·LFS·workspace·scheme·서명·실행 |
 | [구조](public/architecture.md) | 코어·Apple 런타임·자원·플랫폼 경계와 모듈화 이유 |
-| [트러블슈팅](public/troubleshooting.md) | 17개 문제의 증상·사용자 지적·원인·수정·결과 |
+| [트러블슈팅](public/troubleshooting.md) | 17개 문제의 증상·내 지적·원인·수정·결과 |
 | [개발 과정](public/development-history.md) | 분석·구현·비교·검증 순서와 도구·스킬 |
 | [검증](public/validation.md) | 기기·조건·빌드별 결과와 남은 검사 |
 | [구현 상태](public/implementation-status.md) | 구현·문서 작업·후속 과제 |
@@ -38,7 +38,7 @@ python3 tools/document_contract.py check
 
 ## 글·이미지·기록
 
-- [SaaS 집필 자료](public/publication-inventory.md): Apps 기술 설명과 Mags 인터뷰에 사용할 사용자 원문·기능·사건·검사.
+- [SaaS 집필 자료](public/publication-inventory.md): Apps 기술 설명과 Mags 인터뷰에 쓸 개인 경험 원문·기능·수정 과정·검사 기록.
 - [플레이 이미지·GIF·영상](public/media/gameplay-20261027/README.md): 채택한 8장·2개·3개와 원본 시간.
 - [기존 그림 색인](public/media/README.md): 메뉴 수정 전후와 추가 아트.
 - [현재 작업 기록](current-status.md): 변경·설치·계측의 누적 기록.

@@ -73,7 +73,7 @@ def main():
         a=old.new_tag('a',href='#'+section['id']);a.string={'reports':'전체 보고서', 'apple-platforms':'Apple·키보드·투두', 'clone-build':'새 clone 빌드', 'independence':'IPA 없는 빌드 검증', 'publication':'집필 자료·설치 안내', 'developer-story':'개발자의 변', 'ios-audit':'iOS 코드·문서 검사', 'android-plan':'타이틀·Android', 'migration-audit':'전수검사·REA', 'repositories':'저장소·버전','port-and-native':'포팅·복원 과정','retrospective':'기술 회고','rea':'REA 활용','documentation':'문서 체계','menu-joins':'배경 연결 수정','menu-result':'메뉴 확장','phone':'아이폰 검사','ai':'적 이동','rotation':'가로 회전','screens':'남은 화면','evidence':'남은 작업'}[section['id']];nav.append(a)
     old.select_one('.sidefoot').string='2026.10.27 · 전체 보고서'
     old.title.string='HeavyMach 개발 보고'
-    old.select_one('meta[name="description"]')['content']='HeavyMach 원본 분석, 사용자 지시별 수정, 아이폰 검증과 남은 작업'
+    old.select_one('meta[name="description"]')['content']='HeavyMach 개발 과정, 기능·버그 수정, 아이폰 검증과 남은 작업'
     style=old.new_tag('style');style.string='figure{margin:0;min-width:0}figure img{width:100%;height:auto;display:block}figcaption{font-size:12px;color:var(--muted);margin-top:6px}aside{overflow:auto}nav{margin:24px 0}nav a{line-height:1.4}code,a{overflow-wrap:anywhere}@media(max-width:540px){table thead{display:none}table tr{display:block;border-top:1px solid var(--line);padding:10px 0}table td{display:block;border:0;padding:5px 0}table td:before{content:attr(data-label);display:block;font-size:11px;color:var(--muted)}}';old.head.append(style)
     deduplicate_styles(old)
     (dist/'index.html').write_text(str(old))
@@ -121,7 +121,8 @@ def main():
             style=page.new_tag('style');style.string='.lux-small{display:flex;gap:24px;flex-wrap:wrap;align-items:center;padding:20px;background:#4c524f}.lux-small figure{margin:0}.lux-small img{max-width:none}.lux-small figcaption{font-size:12px;color:#fff}.lux-small a{display:block}'
             page.head.append(style)
         for link in page.select('a[href]'):
-            if link['href'].startswith('../evidence/'): link['href']=link['href'][3:]
+            if link['href'].startswith('../evidence/') and page_name not in ('installation.html', 'implementation.html', 'publication.html', 'gameplay-media.html', 'github-documentation.html'):
+                link['href']=link['href'][3:]
             if link['href'] in ('../apple-platforms.md','../keyboard-input-policy.md','../current-status.md','../auto-aim-plan-20261026.md','../wireless-device-workflow.md'):
                 link['href']=link['href'].removeprefix('../')
         (dist/page_name).write_text(str(page))
