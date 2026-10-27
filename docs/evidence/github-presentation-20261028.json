@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-28",
+  "documentation_merge": {
+    "develop": "0a2c0e3390eb03d8ad9a6e60a6645d4dcdb9ba51",
+    "main": "db634ce637b2543c691185892ab39653d13d30f6"
+  },
+  "license_badges_merge": {
+    "source": "8e57a654",
+    "develop": "aa48d6727bc1bc88e6fa547982ec808c032b1691",
+    "main": "a784c4ba16eb96dfae1129c03ede24cb0f72f288"
+  },
+  "validation": {
+    "document_contract": "pass",
+    "site_pages": 39,
+    "internal_links": 847,
+    "missing_local_targets": 0,
+    "download_links": 39,
+    "readme_badges": 5,
+    "readme_game_images": 10,
+    "github_detected_license": "MIT",
+    "github_source_files_byte_equal": 6,
+    "license_copies_byte_equal": 3,
+    "existing_images_and_anchors_preserved": true,
+    "browser": "Chrome local README badge layout and MIT link to scope verified",
+    "app_builds": "not run; product unchanged from v0.12"
+  },
+  "site": {
+    "project_id": "appgprj_6addbf55aea081918d3d182d7e496e88",
+    "commit_sha": "8451169bc090d315b36181f25befdad8fd5393b4",
+    "archive": "/Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/sites/heavymach-license-applied-20261028.tar.gz",
+    "deployment": {
+      "id": "appgdep_6ae0ced02618819185d59dd7239986b5",
+      "project_id": "appgprj_6addbf55aea081918d3d182d7e496e88",
+      "title": "HeavyMach 개발 보고",
+      "version_id": "appgprj_6addbf55aea081918d3d182d7e496e88~appgver_ca4393fbaa188191a99da0717ab811bf",
+      "type": "publish",
+      "status": "succeeded",
+      "url": "https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site",
+      "has_mcp": false,
+      "screenshot_asset_pointer": null,
+      "provider_deployment_id": "site---6addbf55aea081918d3d182d7e496e88",
+      "failure_message": null,
+      "env_set_revision": 0,
+      "updated_at": "2026-10-27T16:18:37.883815+00:00"
+    }
+  },
+  "remaining": [
+    "original asset publication permission",
+    "file-level external provenance review",
+    "OpenAL distribution relink verification",
+    "About/topics/social preview",
+    "contribution templates",
+    "document and build CI",
+    "source Release"
+  ],
+  "repository_visibility": "private"
+}
