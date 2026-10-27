@@ -1,5 +1,10 @@
 # 2026-10-25 문서·코드·앱 일치 체계 점검 및 보완
 
+## 2026-10-28 GitHub 공개 전환
+
+내 지시로 [gelb2/HeavyMach](https://github.com/gelb2/HeavyMach)을 공개했다. README·LFS 이미지·v0.12 릴리스에 인증 없이 접근하고 릴리스 첨부3개의 다운로드 해시를 대조했다. 메인 일러스트와 기존 로고로 만든 OG 카드도 GitHub Social preview에 등록했다. README와 개발자의 변에는 게시 중단 요청 시 저장소를 삭제하겠다는 지정 문장을 그대로 추가했다. [확인 기록](evidence/public-repository-20261028.json)
+
+
 ## 2026-10-28 비밀정보 전면 검사
 
 전체 참조145개 커밋·파일 내용3,054개, 추적 파일2,439개, LFS1,524개, 릴리스 첨부3개를 Gitleaks로 검사했다. 탐지0건, 검사 오류0건, LFS 누락0개다. 개인 키·프로비저닝·환경변수 파일명은 Git 이력에서 발견되지 않았다. [검사 범위와 결과](evidence/secret-audit-20261028.json)
