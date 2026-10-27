@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-28",
+  "base_commit": "c4356fa90f03eaadb8b7da7ef8fe8ed28a5d70a8",
+  "scope": "source/resource research; no new unit implementation or runtime comparison",
+  "ground_definitions": 595,
+  "multiple_armed_part_definitions": 25,
+  "build_command": "clang++ -std=c++20 -I Sources/Core docs/evidence/ground-unit-inventory-20261028.cpp Sources/Core/GameData.cpp Sources/Core/Geometry.cpp -o build/ground-research-20261028/inventory",
+  "run_command": "build/ground-research-20261028/inventory",
+  "sha256": {
+    "Sources/Core/GameData.cpp": "51aa866c3794670773db3b324b8b30197af76b0857724b317597c2f30d3c112f",
+    "Sources/Core/Enemy.cpp": "fe8e22021e65fcd9f677c175e98375bfe37fcf18519a4c157e94c5407b309160",
+    "Sources/Core/Motion.cpp": "e7f7c655dc1a07119933053fb90219b2ce64a6f8060d3a929c52395cce2075ea",
+    "Sources/Core/Visuals.cpp": "951d7604a9b1ad67bbf023a162be2fed74bdd8ae39192195c503fb4b316865d8",
+    "Sources/Core/GameSession.cpp": "39a3be2d680c37a227edc5e9dcf5a4fb914b75915c8c0d772d4796ab545404b6",
+    "Sources/Core/Combat.cpp": "0566f3fa7e40b671cb38631be4a9dce65aa9823ef60da66ad4e1cc5617f1b1f9",
+    "Resources/RawData/MachInfo.mch": "c29eef4990655868b82361ba8f0119841f8c74bed5dcf31410094c5521459b05",
+    "Resources/RawData/PartsInfo.mch": "f7b8ba0da76447c2f022d0114a582e57eb3085bba584c187cc635ad6ad4b6792",
+    "Resources/RawData/WeaponInfo.mch": "460000cd8480addc496ce4afaa5f3a2385fcc81ad7fa440b1bfa6c338c4365fe",
+    "Resources/Images/E_Tank_Body_03.png": "e259aec0679ef75ec195adb9fa361d6b705d8ac3e4f22ae522a014263a9f3bff",
+    "Resources/Images/E_0505_Body.png": "6161145c7b5ecc4df1554ae247c5afe1efc721d07abaeae5c10f4340c1c168f9"
+  }
+}

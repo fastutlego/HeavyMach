@@ -1,0 +1,2418 @@
+ArmoredCar001 type=0 hp=80 exp=3
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar002 type=0 hp=90 exp=4
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar003 type=0 hp=100 exp=5
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar004 type=0 hp=120 exp=6
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar005 type=0 hp=150 exp=7
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar006 type=0 hp=200 exp=8
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar007 type=0 hp=250 exp=10
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar008 type=0 hp=80 exp=3
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar009 type=0 hp=90 exp=4
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar010 type=0 hp=100 exp=5
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar011 type=0 hp=120 exp=6
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar012 type=0 hp=150 exp=7
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar013 type=0 hp=200 exp=8
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar014 type=0 hp=250 exp=10
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar015 type=0 hp=80 exp=3
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar016 type=0 hp=90 exp=4
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar017 type=0 hp=100 exp=5
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar018 type=0 hp=120 exp=6
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar019 type=0 hp=150 exp=7
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar020 type=0 hp=200 exp=8
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar021 type=0 hp=250 exp=10
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar022 type=0 hp=80 exp=3
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar023 type=0 hp=90 exp=4
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar024 type=0 hp=100 exp=5
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar025 type=0 hp=120 exp=6
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar026 type=0 hp=150 exp=7
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar027 type=0 hp=200 exp=8
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar028 type=0 hp=250 exp=10
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar029 type=0 hp=80 exp=3
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar030 type=0 hp=90 exp=4
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar031 type=0 hp=100 exp=5
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar032 type=0 hp=120 exp=6
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar033 type=0 hp=150 exp=7
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar034 type=0 hp=200 exp=8
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar035 type=0 hp=250 exp=10
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar036 type=0 hp=80 exp=3
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar037 type=0 hp=90 exp=4
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar038 type=0 hp=100 exp=5
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar039 type=0 hp=120 exp=6
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar040 type=0 hp=150 exp=7
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar041 type=0 hp=200 exp=8
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar042 type=0 hp=250 exp=10
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar043 type=0 hp=80 exp=3
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar044 type=0 hp=90 exp=4
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar045 type=0 hp=100 exp=5
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar046 type=0 hp=120 exp=6
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar047 type=0 hp=150 exp=7
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar048 type=0 hp=200 exp=8
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar049 type=0 hp=250 exp=10
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar050 type=0 hp=80 exp=3
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_08 type=1 tile=E_ArmoCar_Top_08.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar051 type=0 hp=90 exp=4
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_08 type=1 tile=E_ArmoCar_Top_08.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar052 type=0 hp=100 exp=5
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_08 type=1 tile=E_ArmoCar_Top_08.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar053 type=0 hp=120 exp=6
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_08 type=1 tile=E_ArmoCar_Top_08.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar054 type=0 hp=150 exp=7
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_08 type=1 tile=E_ArmoCar_Top_08.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar055 type=0 hp=200 exp=8
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_08 type=1 tile=E_ArmoCar_Top_08.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar056 type=0 hp=250 exp=10
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_08 type=1 tile=E_ArmoCar_Top_08.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_01 type=2 tile=E_ArmoCar_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar057 type=0 hp=80 exp=3
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar058 type=0 hp=90 exp=4
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar059 type=0 hp=100 exp=5
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar060 type=0 hp=120 exp=6
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar061 type=0 hp=150 exp=7
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar062 type=0 hp=200 exp=8
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar063 type=0 hp=250 exp=10
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar064 type=0 hp=80 exp=3
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar065 type=0 hp=90 exp=4
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar066 type=0 hp=100 exp=5
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar067 type=0 hp=120 exp=6
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar068 type=0 hp=150 exp=7
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar069 type=0 hp=200 exp=8
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar070 type=0 hp=250 exp=10
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar071 type=0 hp=80 exp=3
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar072 type=0 hp=90 exp=4
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar073 type=0 hp=100 exp=5
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar074 type=0 hp=120 exp=6
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar075 type=0 hp=150 exp=7
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar076 type=0 hp=200 exp=8
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar077 type=0 hp=250 exp=10
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar078 type=0 hp=80 exp=3
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar079 type=0 hp=90 exp=4
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar080 type=0 hp=100 exp=5
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar081 type=0 hp=120 exp=6
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar082 type=0 hp=150 exp=7
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar083 type=0 hp=200 exp=8
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar084 type=0 hp=250 exp=10
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar085 type=0 hp=80 exp=3
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar086 type=0 hp=90 exp=4
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar087 type=0 hp=100 exp=5
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar088 type=0 hp=120 exp=6
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar089 type=0 hp=150 exp=7
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar090 type=0 hp=200 exp=8
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar091 type=0 hp=250 exp=10
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar092 type=0 hp=80 exp=3
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar093 type=0 hp=90 exp=4
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar094 type=0 hp=100 exp=5
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar095 type=0 hp=120 exp=6
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar096 type=0 hp=150 exp=7
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar097 type=0 hp=200 exp=8
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar098 type=0 hp=250 exp=10
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar099 type=0 hp=80 exp=4
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar100 type=0 hp=90 exp=5
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar101 type=0 hp=100 exp=6
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar102 type=0 hp=120 exp=7
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar103 type=0 hp=150 exp=8
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar104 type=0 hp=200 exp=10
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar105 type=0 hp=250 exp=12
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar106 type=0 hp=80 exp=4
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_08 type=1 tile=E_ArmoCar_Top_08.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar107 type=0 hp=90 exp=5
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_08 type=1 tile=E_ArmoCar_Top_08.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar108 type=0 hp=100 exp=6
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_08 type=1 tile=E_ArmoCar_Top_08.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar109 type=0 hp=120 exp=7
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_08 type=1 tile=E_ArmoCar_Top_08.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar110 type=0 hp=150 exp=8
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_08 type=1 tile=E_ArmoCar_Top_08.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar111 type=0 hp=200 exp=10
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_08 type=1 tile=E_ArmoCar_Top_08.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar112 type=0 hp=250 exp=12
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_08 type=1 tile=E_ArmoCar_Top_08.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar113 type=0 hp=80 exp=4
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar114 type=0 hp=90 exp=5
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar115 type=0 hp=100 exp=6
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar116 type=0 hp=120 exp=7
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar117 type=0 hp=150 exp=8
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar118 type=0 hp=200 exp=10
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar119 type=0 hp=250 exp=12
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar120 type=0 hp=80 exp=4
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar121 type=0 hp=90 exp=5
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar122 type=0 hp=100 exp=6
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar123 type=0 hp=120 exp=7
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar124 type=0 hp=150 exp=8
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar125 type=0 hp=200 exp=10
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar126 type=0 hp=250 exp=12
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar127 type=0 hp=80 exp=4
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar128 type=0 hp=90 exp=5
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar129 type=0 hp=100 exp=6
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar130 type=0 hp=120 exp=7
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar131 type=0 hp=150 exp=8
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar132 type=0 hp=200 exp=10
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar133 type=0 hp=250 exp=12
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar134 type=0 hp=80 exp=4
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar135 type=0 hp=90 exp=5
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar136 type=0 hp=100 exp=6
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar137 type=0 hp=120 exp=7
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar138 type=0 hp=150 exp=8
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar139 type=0 hp=200 exp=10
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar140 type=0 hp=250 exp=12
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar141 type=0 hp=80 exp=4
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar142 type=0 hp=90 exp=5
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar143 type=0 hp=100 exp=6
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar144 type=0 hp=120 exp=7
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar145 type=0 hp=150 exp=8
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar146 type=0 hp=200 exp=10
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar147 type=0 hp=250 exp=12
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar148 type=0 hp=80 exp=4
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_04 type=2 tile=E_ArmoCar_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=18 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar149 type=0 hp=90 exp=5
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_04 type=2 tile=E_ArmoCar_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=18 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar150 type=0 hp=100 exp=6
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_04 type=2 tile=E_ArmoCar_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=18 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar151 type=0 hp=120 exp=7
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_04 type=2 tile=E_ArmoCar_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=18 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar152 type=0 hp=150 exp=8
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_04 type=2 tile=E_ArmoCar_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=18 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar153 type=0 hp=200 exp=10
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_04 type=2 tile=E_ArmoCar_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=18 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar154 type=0 hp=250 exp=12
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_04 type=2 tile=E_ArmoCar_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=18 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar155 type=0 hp=80 exp=4
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_04 type=2 tile=E_ArmoCar_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=18 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar156 type=0 hp=90 exp=5
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_04 type=2 tile=E_ArmoCar_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=18 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar157 type=0 hp=100 exp=6
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_04 type=2 tile=E_ArmoCar_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=18 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar158 type=0 hp=120 exp=7
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_04 type=2 tile=E_ArmoCar_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=18 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar159 type=0 hp=150 exp=8
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_04 type=2 tile=E_ArmoCar_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=18 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar160 type=0 hp=200 exp=10
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_04 type=2 tile=E_ArmoCar_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=18 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar161 type=0 hp=250 exp=12
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_04 type=2 tile=E_ArmoCar_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=18 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar162 type=0 hp=80 exp=4
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_08 type=1 tile=E_ArmoCar_Top_08.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_04 type=2 tile=E_ArmoCar_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=18 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar163 type=0 hp=90 exp=5
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_08 type=1 tile=E_ArmoCar_Top_08.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_04 type=2 tile=E_ArmoCar_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=18 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar164 type=0 hp=100 exp=6
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_08 type=1 tile=E_ArmoCar_Top_08.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_04 type=2 tile=E_ArmoCar_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=18 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar165 type=0 hp=120 exp=7
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_08 type=1 tile=E_ArmoCar_Top_08.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_04 type=2 tile=E_ArmoCar_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=18 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar166 type=0 hp=150 exp=8
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_08 type=1 tile=E_ArmoCar_Top_08.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_04 type=2 tile=E_ArmoCar_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=18 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar167 type=0 hp=200 exp=10
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_08 type=1 tile=E_ArmoCar_Top_08.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_04 type=2 tile=E_ArmoCar_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=18 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar168 type=0 hp=250 exp=12
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_08 type=1 tile=E_ArmoCar_Top_08.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_04 type=2 tile=E_ArmoCar_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=18 shotCnt=1 shotDly=0 delay=5 bullet=none
+ArmoredCar169 type=0 hp=80 exp=4
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar170 type=0 hp=90 exp=5
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar171 type=0 hp=100 exp=6
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar172 type=0 hp=120 exp=7
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar173 type=0 hp=150 exp=8
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar174 type=0 hp=200 exp=10
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar175 type=0 hp=250 exp=12
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar176 type=0 hp=80 exp=4
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar177 type=0 hp=90 exp=5
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar178 type=0 hp=100 exp=6
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar179 type=0 hp=120 exp=7
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar180 type=0 hp=150 exp=8
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar181 type=0 hp=200 exp=10
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar182 type=0 hp=250 exp=12
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar183 type=0 hp=80 exp=4
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar184 type=0 hp=90 exp=5
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar185 type=0 hp=100 exp=6
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar186 type=0 hp=120 exp=7
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar187 type=0 hp=150 exp=8
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar188 type=0 hp=200 exp=10
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar189 type=0 hp=250 exp=12
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar190 type=0 hp=80 exp=4
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar191 type=0 hp=90 exp=5
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar192 type=0 hp=100 exp=6
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar193 type=0 hp=120 exp=7
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar194 type=0 hp=150 exp=8
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar195 type=0 hp=200 exp=10
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar196 type=0 hp=250 exp=12
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar197 type=0 hp=80 exp=4
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar198 type=0 hp=90 exp=5
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar199 type=0 hp=100 exp=6
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar200 type=0 hp=120 exp=7
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar201 type=0 hp=150 exp=8
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar202 type=0 hp=200 exp=10
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar203 type=0 hp=250 exp=12
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_01 type=2 tile=E_ArmoCar_Msl_01.png frames=1 sockets=2 weaponType=3 damage=25 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar204 type=0 hp=80 exp=4
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar205 type=0 hp=90 exp=5
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar206 type=0 hp=100 exp=6
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar207 type=0 hp=120 exp=7
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar208 type=0 hp=150 exp=8
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar209 type=0 hp=200 exp=10
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar210 type=0 hp=250 exp=12
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar211 type=0 hp=80 exp=4
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar212 type=0 hp=90 exp=5
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar213 type=0 hp=100 exp=6
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar214 type=0 hp=120 exp=7
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar215 type=0 hp=150 exp=8
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar216 type=0 hp=200 exp=10
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar217 type=0 hp=250 exp=12
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar218 type=0 hp=80 exp=4
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar219 type=0 hp=90 exp=5
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar220 type=0 hp=100 exp=6
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar221 type=0 hp=120 exp=7
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar222 type=0 hp=150 exp=8
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar223 type=0 hp=200 exp=10
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar224 type=0 hp=250 exp=12
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar225 type=0 hp=80 exp=4
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar226 type=0 hp=90 exp=5
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar227 type=0 hp=100 exp=6
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar228 type=0 hp=120 exp=7
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar229 type=0 hp=150 exp=8
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar230 type=0 hp=200 exp=10
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar231 type=0 hp=250 exp=12
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar232 type=0 hp=80 exp=4
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar233 type=0 hp=90 exp=5
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar234 type=0 hp=100 exp=6
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar235 type=0 hp=120 exp=7
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar236 type=0 hp=150 exp=8
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar237 type=0 hp=200 exp=10
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar238 type=0 hp=250 exp=12
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar239 type=0 hp=80 exp=4
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar240 type=0 hp=90 exp=5
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar241 type=0 hp=100 exp=6
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar242 type=0 hp=120 exp=7
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar243 type=0 hp=150 exp=8
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar244 type=0 hp=200 exp=10
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar245 type=0 hp=250 exp=12
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar246 type=0 hp=80 exp=4
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar247 type=0 hp=90 exp=5
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar248 type=0 hp=100 exp=6
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar249 type=0 hp=120 exp=7
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar250 type=0 hp=150 exp=8
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar251 type=0 hp=200 exp=10
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar252 type=0 hp=250 exp=12
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar253 type=0 hp=80 exp=4
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_08 type=1 tile=E_ArmoCar_Top_08.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar254 type=0 hp=90 exp=5
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_08 type=1 tile=E_ArmoCar_Top_08.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar255 type=0 hp=100 exp=6
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_08 type=1 tile=E_ArmoCar_Top_08.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar256 type=0 hp=120 exp=7
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_08 type=1 tile=E_ArmoCar_Top_08.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar257 type=0 hp=150 exp=8
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_08 type=1 tile=E_ArmoCar_Top_08.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar258 type=0 hp=200 exp=10
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_08 type=1 tile=E_ArmoCar_Top_08.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar259 type=0 hp=250 exp=12
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_08 type=1 tile=E_ArmoCar_Top_08.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_02 type=2 tile=E_ArmoCar_Msl_02.png frames=1 sockets=2 weaponType=3 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar260 type=0 hp=80 exp=4
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar261 type=0 hp=90 exp=5
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar262 type=0 hp=100 exp=6
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar263 type=0 hp=120 exp=7
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar264 type=0 hp=150 exp=8
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar265 type=0 hp=200 exp=10
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar266 type=0 hp=250 exp=12
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar267 type=0 hp=80 exp=4
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar268 type=0 hp=90 exp=5
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar269 type=0 hp=100 exp=6
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar270 type=0 hp=120 exp=7
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar271 type=0 hp=150 exp=8
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar272 type=0 hp=200 exp=10
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar273 type=0 hp=250 exp=12
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_02 type=1 tile=E_ArmoCar_Top_02.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar274 type=0 hp=80 exp=4
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar275 type=0 hp=90 exp=5
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar276 type=0 hp=100 exp=6
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar277 type=0 hp=120 exp=7
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar278 type=0 hp=150 exp=8
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar279 type=0 hp=200 exp=10
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar280 type=0 hp=250 exp=12
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_03 type=1 tile=E_ArmoCar_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar281 type=0 hp=80 exp=4
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar282 type=0 hp=90 exp=5
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar283 type=0 hp=100 exp=6
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar284 type=0 hp=120 exp=7
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar285 type=0 hp=150 exp=8
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar286 type=0 hp=200 exp=10
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar287 type=0 hp=250 exp=12
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_04 type=1 tile=E_ArmoCar_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar288 type=0 hp=80 exp=4
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar289 type=0 hp=90 exp=5
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar290 type=0 hp=100 exp=6
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar291 type=0 hp=120 exp=7
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar292 type=0 hp=150 exp=8
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar293 type=0 hp=200 exp=10
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar294 type=0 hp=250 exp=12
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_05 type=1 tile=E_ArmoCar_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar295 type=0 hp=80 exp=4
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar296 type=0 hp=90 exp=5
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar297 type=0 hp=100 exp=6
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar298 type=0 hp=120 exp=7
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar299 type=0 hp=150 exp=8
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar300 type=0 hp=200 exp=10
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar301 type=0 hp=250 exp=12
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_06 type=1 tile=E_ArmoCar_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_04 type=2 tile=E_ArmoCar_Msl_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar302 type=0 hp=80 exp=4
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_05 type=2 tile=E_ArmoCar_Msl_05.png frames=1 sockets=2 weaponType=3 damage=45 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar303 type=0 hp=90 exp=5
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_05 type=2 tile=E_ArmoCar_Msl_05.png frames=1 sockets=2 weaponType=3 damage=45 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar304 type=0 hp=100 exp=6
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_05 type=2 tile=E_ArmoCar_Msl_05.png frames=1 sockets=2 weaponType=3 damage=45 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar305 type=0 hp=120 exp=7
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_05 type=2 tile=E_ArmoCar_Msl_05.png frames=1 sockets=2 weaponType=3 damage=45 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar306 type=0 hp=150 exp=8
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_05 type=2 tile=E_ArmoCar_Msl_05.png frames=1 sockets=2 weaponType=3 damage=45 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar307 type=0 hp=200 exp=10
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_05 type=2 tile=E_ArmoCar_Msl_05.png frames=1 sockets=2 weaponType=3 damage=45 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar308 type=0 hp=250 exp=12
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_07 type=1 tile=E_ArmoCar_Top_07.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_05 type=2 tile=E_ArmoCar_Msl_05.png frames=1 sockets=2 weaponType=3 damage=45 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar309 type=0 hp=80 exp=4
+  part=E_ArmoCar_01 type=0 tile=E_ArmoCar_01.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_03 type=2 tile=E_ArmoCar_Msl_03.png frames=1 sockets=2 weaponType=3 damage=35 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar310 type=0 hp=90 exp=5
+  part=E_ArmoCar_02 type=0 tile=E_ArmoCar_02.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_03 type=2 tile=E_ArmoCar_Msl_03.png frames=1 sockets=2 weaponType=3 damage=35 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar311 type=0 hp=100 exp=6
+  part=E_ArmoCar_03 type=0 tile=E_ArmoCar_03.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_03 type=2 tile=E_ArmoCar_Msl_03.png frames=1 sockets=2 weaponType=3 damage=35 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar312 type=0 hp=120 exp=7
+  part=E_ArmoCar_04 type=0 tile=E_ArmoCar_04.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_03 type=2 tile=E_ArmoCar_Msl_03.png frames=1 sockets=2 weaponType=3 damage=35 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar313 type=0 hp=150 exp=8
+  part=E_ArmoCar_05 type=0 tile=E_ArmoCar_05.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_03 type=2 tile=E_ArmoCar_Msl_03.png frames=1 sockets=2 weaponType=3 damage=35 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar314 type=0 hp=200 exp=10
+  part=E_ArmoCar_06 type=0 tile=E_ArmoCar_06.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_03 type=2 tile=E_ArmoCar_Msl_03.png frames=1 sockets=2 weaponType=3 damage=35 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+ArmoredCar315 type=0 hp=250 exp=12
+  part=E_ArmoCar_07 type=0 tile=E_ArmoCar_07.png frames=2 sockets=2
+  part=E_ArmoCar_Top_01 type=1 tile=E_ArmoCar_Top_01.png frames=1 sockets=2
+  part=E_ArmoCar_Msl_03 type=2 tile=E_ArmoCar_Msl_03.png frames=1 sockets=2 weaponType=3 damage=35 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Boss01 type=0 hp=30000 exp=1500
+  part=E_Boss01 type=0 tile=E_Boss01.png frames=2 sockets=5
+  part=E_Boss01_Wpn_01 type=2 tile=E_Boss01_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=50 shotCnt=2 shotDly=0.2 delay=5 bullet=EnemyBullet.png
+  part=E_Boss01_Wpn_02 type=2 tile=E_Boss01_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=70 shotCnt=2 shotDly=0.2 delay=5 bullet=EnemyBullet.png
+  part=E_Boss01_Wpn_03 type=2 tile=E_Boss01_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=80 shotCnt=2 shotDly=0.2 delay=5 bullet=EnemyBullet.png
+  part=E_Boss01_Wpn_04 type=2 tile=E_Boss01_Wpn_04.png frames=1 sockets=2 weaponType=3 damage=100 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Boss02 type=0 hp=10000 exp=1200
+  part=E_Boss08 type=0 tile=E_Boss08.png frames=1 sockets=4
+  part=E_Boss08_Wpn_03 type=2 tile=E_Boss08_Wpn_03.png frames=1 sockets=2 weaponType=3 damage=60 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+  part=E_Boss08_Wpn_02 type=2 tile=E_Boss08_Wpn_02.png frames=1 sockets=2 weaponType=3 damage=60 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+  part=E_Boss08_Wpn_01 type=2 tile=E_Boss08_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=50 shotCnt=2 shotDly=0.2 delay=5 bullet=EnemyBullet.png
+Boss03 type=0 hp=20000 exp=1500
+  part=E_Boss09 type=0 tile=E_Boss09.png frames=2 sockets=4
+  part=E_Boss09_Wpn_02 type=2 tile=E_Boss09_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=50 shotCnt=2 shotDly=0.2 delay=5 bullet=EnemyBullet.png
+  part=E_Boss09_Wpn_01 type=2 tile=E_Boss09_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=50 shotCnt=2 shotDly=0.2 delay=5 bullet=EnemyBullet.png
+  part=E_Boss09_Wpn_03 type=2 tile=E_Boss09_Wpn_03.png frames=1 sockets=2 weaponType=7 damage=80 shotCnt=2 shotDly=0.7 delay=2 bullet=EnemyBullet.png
+Boss07 type=0 hp=60000 exp=4000
+  part=E_07Boss_Body type=0 tile=E_07Boss_Body.png frames=1 sockets=7
+  part=E_07Boss_Wpn type=2 tile=E_07Boss_Wpn.png frames=1 sockets=2 weaponType=0 damage=120 shotCnt=3 shotDly=0.2 delay=2 bullet=EnemyBullet05.png
+  part=E_07Boss_Wpn type=2 tile=E_07Boss_Wpn.png frames=1 sockets=2 weaponType=0 damage=120 shotCnt=3 shotDly=0.2 delay=2 bullet=EnemyBullet05.png
+  part=E_07Boss_Wpn3 type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=3 damage=150 shotCnt=2 shotDly=0.5 delay=2.5 bullet=EnemyMissile.png
+  part=E_07Boss_Wpn3 type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=3 damage=150 shotCnt=2 shotDly=0.5 delay=2.5 bullet=EnemyMissile.png
+  part=E_07Boss_Wpn2 type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=200 shotCnt=2 shotDly=0.7 delay=1 bullet=EnemyBullet05.png
+  part=E_07Boss_Wpn2 type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=200 shotCnt=2 shotDly=0.7 delay=1 bullet=EnemyBullet05.png
+E0505 type=0 hp=700 exp=50
+  part=E_0505_Body type=0 tile=E_0505_Body.png frames=2 sockets=2
+  part=E_0505_Wpn type=2 tile=E_0505_Wpn.png frames=1 sockets=2 weaponType=0 damage=50 shotCnt=3 shotDly=0.2 delay=3 bullet=EnemyBullet05.png
+E0506 type=0 hp=700 exp=50
+  part=E_0506_Body type=0 tile=E_0506_Body.png frames=2 sockets=2
+  part=E_0506_Wpn type=2 tile=E_0506_Wpn.png frames=1 sockets=2 weaponType=0 damage=50 shotCnt=4 shotDly=0.2 delay=3 bullet=EnemyBullet05.png
+E0507 type=0 hp=800 exp=60
+  part=E_0507_Body type=0 tile=E_0507_Body.png frames=2 sockets=3
+  part=E_0507_Wpn type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=40 shotCnt=4 shotDly=0.5 delay=3 bullet=EnemyBullet05.png
+  part=E_0507_Wpn type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=40 shotCnt=4 shotDly=0.5 delay=3 bullet=EnemyBullet05.png
+E0508 type=0 hp=800 exp=60
+  part=E_0508_Body type=0 tile=E_0508_Body.png frames=2 sockets=2
+  part=E_0508_Wpn type=2 tile=E_0508_Wpn.png frames=1 sockets=2 weaponType=0 damage=60 shotCnt=3 shotDly=0.2 delay=3 bullet=EnemyBullet05.png
+E0509 type=0 hp=900 exp=70
+  part=E_0509_Body type=0 tile=E_0509_Body.png frames=1 sockets=2
+  part=E_0509_Wpn type=2 tile=E_0509_Wpn.png frames=1 sockets=2 weaponType=0 damage=80 shotCnt=3 shotDly=0.2 delay=3 bullet=EnemyBullet05.png
+E0510 type=0 hp=900 exp=70
+  part=E_0510_Body type=0 tile=E_0510_Body.png frames=2 sockets=2
+  part=E_0510_Wpn type=2 tile=E_0510_Wpn.png frames=1 sockets=2 weaponType=2 damage=80 shotCnt=3 shotDly=0.5 delay=3 bullet=EnemyBullet05.png
+E0511 type=0 hp=1000 exp=80
+  part=E_0511_Body type=0 tile=E_0511_Body.png frames=1 sockets=2
+  part=E_0511_Wpn type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=2 damage=100 shotCnt=3 shotDly=0.5 delay=3 bullet=EnemyBullet05.png
+E0512 type=0 hp=1000 exp=80
+  part=E_0512_Body type=0 tile=E_0512_Body.png frames=2 sockets=2
+  part=E_0512_Wpn type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=3 damage=100 shotCnt=1 shotDly=0 delay=3 bullet=EnemyBullet05.png
+E05MB03 type=0 hp=10000 exp=600
+  part=E_05MB03_Body type=0 tile=E_05MB03_Body.png frames=2 sockets=3
+  part=E_05MB03_Wpn type=2 tile=E_05MB03_Wpn.png frames=1 sockets=2 weaponType=0 damage=80 shotCnt=5 shotDly=0.2 delay=3 bullet=EnemyBullet05.png
+  part=E_05MB03_Canon type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=2 damage=100 shotCnt=3 shotDly=0.5 delay=3 bullet=EnemyBullet05.png
+E05MB04 type=0 hp=11000 exp=700
+  part=E_05MB04_Body type=0 tile=E_05MB04_Body.png frames=2 sockets=4
+  part=E_05MB04_Wpn type=2 tile=E_05MB04_Wpn.png frames=1 sockets=2 weaponType=0 damage=80 shotCnt=5 shotDly=0.2 delay=3 bullet=EnemyBullet05.png
+  part=E_05MB04_Mot type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=120 shotCnt=2 shotDly=0.7 delay=2 bullet=EnemyBullet05.png
+  part=E_05MB04_Mot type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=120 shotCnt=2 shotDly=0.7 delay=2 bullet=EnemyBullet05.png
+E05MB05 type=0 hp=12000 exp=800
+  part=E_05MB05_Body type=0 tile=E_05MB05_Body.png frames=2 sockets=3
+  part=E_05MB05_Wpn type=2 tile=E_05MB05_Wpn.png frames=1 sockets=2 weaponType=0 damage=80 shotCnt=5 shotDly=0.2 delay=3 bullet=EnemyBullet05.png
+  part=E_05MB05_Mot type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=150 shotCnt=4 shotDly=0.7 delay=2 bullet=EnemyBullet05.png
+E0605 type=0 hp=1000 exp=70
+  part=E_0605_Body type=0 tile=E_0605_Body.png frames=1 sockets=2
+  part=E_0605_Wpn type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=2 damage=100 shotCnt=2 shotDly=0.5 delay=3 bullet=EnemyBullet06.png
+E0606 type=0 hp=1200 exp=80
+  part=E_0606_Body type=0 tile=E_0606_Body.png frames=1 sockets=2
+  part=E_0606_Wpn type=2 tile=E_0606_Wpn.png frames=1 sockets=2 weaponType=3 damage=100 shotCnt=2 shotDly=0.5 delay=4 bullet=EnemyBullet06.png
+E06MB01 type=0 hp=10000 exp=500
+  part=E_06MB01_Body type=0 tile=E_06MB01_Body.png frames=1 sockets=2
+  part=E_06MB01_Wpn type=2 tile=E_06MB01_Wpn.png frames=1 sockets=2 weaponType=3 damage=150 shotCnt=2 shotDly=0.5 delay=4 bullet=EnemyMissile.png
+E06MB04 type=0 hp=15000 exp=700
+  part=E_06MB04_Body type=0 tile=E_06MB04_Body.png frames=2 sockets=6
+  part=E_06MB04Wpn type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=200 shotCnt=2 shotDly=0.7 delay=2 bullet=EnemyBullet05.png
+  part=E_06MB04Wpn type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=200 shotCnt=2 shotDly=0.7 delay=2 bullet=EnemyBullet05.png
+  part=E_06MB04Wpn type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=200 shotCnt=2 shotDly=0.7 delay=2 bullet=EnemyBullet05.png
+  part=E_06MB04Wpn type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=200 shotCnt=2 shotDly=0.7 delay=2 bullet=EnemyBullet05.png
+  part=E_06MB04Wpn type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=200 shotCnt=2 shotDly=0.7 delay=2 bullet=EnemyBullet05.png
+E0702 type=0 hp=1000 exp=80
+  part=E_0702_Body type=0 tile=E_0702_Body.png frames=1 sockets=2
+  part=E_0702_Wpn type=2 tile=E_0702_Wpn.png frames=1 sockets=2 weaponType=2 damage=100 shotCnt=2 shotDly=0.5 delay=2 bullet=EnemyBullet06.png
+E0703 type=0 hp=1000 exp=80
+  part=E_0703_Body type=0 tile=E_0703_Body.png frames=1 sockets=2
+  part=E_0703_Wpn type=2 tile=E_0703_Wpn.png frames=1 sockets=2 weaponType=0 damage=120 shotCnt=2 shotDly=0.2 delay=2 bullet=EnemyBullet05.png
+E0704 type=0 hp=1000 exp=80
+  part=E_0704_Body type=0 tile=E_0704_Body.png frames=1 sockets=2
+  part=E_0704_Wpn type=2 tile=E_0704_Wpn.png frames=1 sockets=2 weaponType=0 damage=80 shotCnt=3 shotDly=0.2 delay=2 bullet=EnemyBullet05.png
+E0705 type=0 hp=1000 exp=80
+  part=E_0705_Body type=0 tile=E_0705_Body.png frames=1 sockets=2
+  part=E_0705_Wpn type=2 tile=E_0705_Wpn.png frames=1 sockets=2 weaponType=3 damage=100 shotCnt=2 shotDly=0.5 delay=2.5 bullet=EnemyBullet06.png
+E0706 type=0 hp=1000 exp=80
+  part=E_0706_Body type=0 tile=E_0706_Body.png frames=1 sockets=3
+  part=E_0706_Wpn type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=150 shotCnt=4 shotDly=0.7 delay=1.5 bullet=EnemyBullet05.png
+  part=E_0706_Wpn type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=150 shotCnt=4 shotDly=0.7 delay=1.5 bullet=EnemyBullet05.png
+E07MB01 type=0 hp=15000 exp=700
+  part=E_07MB01_Body type=0 tile=E_07MB01_Body.png frames=1 sockets=3
+  part=E_07MB01_Wpn type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=200 shotCnt=2 shotDly=0.7 delay=1 bullet=EnemyBullet05.png
+  part=E_07MB01_Wpn type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=200 shotCnt=2 shotDly=0.7 delay=1 bullet=EnemyBullet05.png
+E07MB02 type=0 hp=15000 exp=700
+  part=E_07MB02_Body type=0 tile=E_07MB02_Body.png frames=1 sockets=3
+  part=E_07MB02_Wpn1 type=2 tile=E_07MB02_Wpn1.png frames=1 sockets=2 weaponType=0 damage=80 shotCnt=3 shotDly=0.2 delay=2 bullet=EnemyBullet05.png
+  part=E_07MB02_Wpn2 type=2 tile=E_07MB02_Wpn2.png frames=1 sockets=2 weaponType=7 damage=200 shotCnt=2 shotDly=0.7 delay=1 bullet=EnemyBullet05.png
+E07MB03 type=0 hp=15000 exp=700
+  part=E_07MB03_Body type=0 tile=E_07MB03_Body.png frames=1 sockets=4
+  part=E_07MB03_Wpn type=2 tile=E_07MB03_Wpn.png frames=1 sockets=2 weaponType=0 damage=80 shotCnt=3 shotDly=0.2 delay=2 bullet=EnemyBullet05.png
+  part=E_07MB03_Wpn2 type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=200 shotCnt=2 shotDly=0.7 delay=1 bullet=EnemyBullet05.png
+  part=E_07MB03_Wpn2 type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=200 shotCnt=2 shotDly=0.7 delay=1 bullet=EnemyBullet05.png
+E08MB02 type=0 hp=16000 exp=800
+  part=E_08MB02_Body type=0 tile=E_08MB02_Body.png frames=1 sockets=5
+  part=E_08MB02_Wpn type=2 tile=E_08MB02_Wpn.png frames=1 sockets=2 weaponType=0 damage=100 shotCnt=3 shotDly=0.2 delay=1.5 bullet=EnemyBullet05.png
+  part=E_08MB02_Wpn2 type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=200 shotCnt=2 shotDly=0.7 delay=1.5 bullet=EnemyBullet05.png
+  part=E_08MB02_Wpn2 type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=200 shotCnt=2 shotDly=0.7 delay=1.5 bullet=EnemyBullet05.png
+  part=E_08MB02_Wpn2 type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=200 shotCnt=2 shotDly=0.7 delay=1.5 bullet=EnemyBullet05.png
+E08MB04 type=0 hp=16000 exp=800
+  part=E_08MB04_Body type=0 tile=E_08MB04_Body.png frames=1 sockets=4
+  part=E_08MB04_Wpn type=2 tile=E_08MB04_Wpn.png frames=1 sockets=2 weaponType=0 damage=120 shotCnt=4 shotDly=0.2 delay=1.5 bullet=EnemyBullet05.png
+  part=E_08MB04_Wpn type=2 tile=E_08MB04_Wpn.png frames=1 sockets=2 weaponType=0 damage=120 shotCnt=4 shotDly=0.2 delay=1.5 bullet=EnemyBullet05.png
+  part=E_08MB04_Wpn2 type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=3 damage=150 shotCnt=2 shotDly=0.5 delay=2 bullet=EnemyMissile.png
+E08MB05 type=0 hp=16000 exp=800
+  part=E_08MB05_Body type=0 tile=E_08MB05_Body.png frames=1 sockets=4
+  part=E_08MB05_Wpn1 type=2 tile=E_08MB05_Wpn1.png frames=1 sockets=2 weaponType=0 damage=120 shotCnt=4 shotDly=0.2 delay=1.5 bullet=EnemyBullet05.png
+  part=E_08MB05_Wpn1 type=2 tile=E_08MB05_Wpn1.png frames=1 sockets=2 weaponType=0 damage=120 shotCnt=4 shotDly=0.2 delay=1.5 bullet=EnemyBullet05.png
+MBoss01 type=0 hp=2000 exp=200
+  part=E_MBoss_01 type=0 tile=E_MBoss_01.png frames=2 sockets=2
+  part=E_MBoss_01_Wpn type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=2 damage=55 shotCnt=2 shotDly=0.5 delay=3 bullet=EnemyBullet.png
+MBoss02 type=0 hp=2000 exp=200
+  part=E_MBoss_02 type=0 tile=E_MBoss_02.png frames=2 sockets=2
+  part=E_MBoss_02_Wpn type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=2 damage=60 shotCnt=2 shotDly=0.5 delay=3 bullet=EnemyBullet.png
+MBoss03 type=0 hp=2500 exp=250
+  part=E_MBoss_03 type=0 tile=E_MBoss_03.png frames=2 sockets=2
+  part=E_MBoss_03_Wpn type=2 tile=E_MBoss_03_Wpn.png frames=1 sockets=3 weaponType=3 damage=60 shotCnt=2 shotDly=0.2 delay=3 bullet=EnemyBullet.png
+MBoss04 type=0 hp=2500 exp=250
+  part=E_MBoss_04 type=0 tile=E_MBoss_04.png frames=2 sockets=2
+  part=E_MBoss_04_Wpn type=2 tile=E_MBoss_04_Wpn.png frames=1 sockets=2 weaponType=0 damage=50 shotCnt=3 shotDly=0.2 delay=2 bullet=EnemyBullet.png
+MBoss05 type=0 hp=3000 exp=300
+  part=E_MBoss_05 type=0 tile=E_MBoss_05.png frames=2 sockets=4
+  part=E_MBoss_05_Wpn type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=60 shotCnt=1 shotDly=0.5 delay=2 bullet=EnemyBullet.png
+  part=E_MBoss_05_Wpn type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=60 shotCnt=1 shotDly=0.5 delay=2 bullet=EnemyBullet.png
+  part=E_MBoss_05_Wpn type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=60 shotCnt=1 shotDly=0.5 delay=2 bullet=EnemyBullet.png
+MBoss0501 type=0 hp=8000 exp=400
+  part=E_MBoss0501 type=0 tile=E_MBoss0501.png frames=2 sockets=2
+  part=E_MBoss0501_Top type=1 tile=E_MBoss0501_Top.png frames=1 sockets=3
+  part=E_MBoss0501_Wpn type=2 tile=E_MBoss0501_Wpn.png frames=1 sockets=2 weaponType=2 damage=55 shotCnt=1 shotDly=0 delay=3 bullet=Bullet.png
+  part=E_MBoss0501_Msl type=2 tile=E_MBoss0501_Msl.png frames=1 sockets=3 weaponType=3 damage=60 shotCnt=1 shotDly=0 delay=3 bullet=Bullet.png
+MBoss06 type=0 hp=3000 exp=300
+  part=E_MBoss_06 type=0 tile=E_MBoss_06.png frames=2 sockets=2
+  part=E_MBoss_06_Wpn type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=2 damage=60 shotCnt=3 shotDly=0.5 delay=3 bullet=EnemyBullet.png
+MBoss0601 type=0 hp=11000 exp=500
+  part=E_MBoss0601 type=0 tile=E_MBoss0601.png frames=2 sockets=2
+  part=E_MBoss0601_Top type=1 tile=E_MBoss0601_Top.png frames=1 sockets=3
+  part=E_MBoss0601_Wpn type=2 tile=E_MBoss0601_Wpn.png frames=1 sockets=2 weaponType=0 damage=60 shotCnt=2 shotDly=0.2 delay=3 bullet=EnemyBullet.png
+  part=E_MBoss0701_Msl type=2 tile=E_MBoss0701_Msl.png frames=1 sockets=3 weaponType=3 damage=80 shotCnt=1 shotDly=0 delay=3 bullet=Bullet.png
+  part=E_MBoss0701_Mot type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=70 shotCnt=1 shotDly=0.5 delay=2 bullet=EnemyBullet.png
+MBoss07 type=0 hp=3500 exp=250
+  part=E_MBoss_07 type=0 tile=E_MBoss_07.png frames=2 sockets=3
+  part=E_MBoss_07_Wpn type=2 tile=E_MBoss_07_Wpn.png frames=1 sockets=2 weaponType=0 damage=60 shotCnt=3 shotDly=0.2 delay=3 bullet=EnemyBullet.png
+  part=E_MBoss_07_Wpn2 type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=60 shotCnt=2 shotDly=0.5 delay=2 bullet=EnemyBullet.png
+MBoss0701 type=0 hp=12000 exp=600
+  part=E_MBoss0701 type=0 tile=E_MBoss0701.png frames=2 sockets=2
+  part=E_MBoss0701_Top type=1 tile=E_MBoss0701_Top.png frames=1 sockets=5
+  part=E_MBoss0701_Msl type=2 tile=E_MBoss0701_Msl.png frames=1 sockets=3 weaponType=3 damage=80 shotCnt=1 shotDly=0 delay=3 bullet=Bullet.png
+  part=E_MBoss0701_Mot type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=70 shotCnt=1 shotDly=0.5 delay=2 bullet=EnemyBullet.png
+  part=E_MBoss0701_Mot type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=70 shotCnt=1 shotDly=0.5 delay=2 bullet=EnemyBullet.png
+  part=E_MBoss0701_Mot type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=70 shotCnt=1 shotDly=0.5 delay=2 bullet=EnemyBullet.png
+MBoss08 type=0 hp=3500 exp=250
+  part=E_MBoss_08 type=0 tile=E_MBoss_08.png frames=2 sockets=2
+  part=E_MBoss_08_Wpn type=2 tile=E_MBoss_08_Wpn.png frames=1 sockets=2 weaponType=0 damage=60 shotCnt=4 shotDly=0.2 delay=2 bullet=EnemyBullet.png
+MBoss0801 type=0 hp=13000 exp=600
+  part=E_MBoss0801 type=0 tile=E_MBoss0801.png frames=2 sockets=2
+  part=E_MBoss0801_Top type=1 tile=E_MBoss0801_Top.png frames=1 sockets=7
+  part=E_MBoss0801_Mot1 type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=80 shotCnt=1 shotDly=0.5 delay=2 bullet=EnemyBullet.png
+  part=E_MBoss0801_Mot1 type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=80 shotCnt=1 shotDly=0.5 delay=2 bullet=EnemyBullet.png
+  part=E_MBoss0801_Mot1 type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=80 shotCnt=1 shotDly=0.5 delay=2 bullet=EnemyBullet.png
+  part=E_MBoss0801_Mot2 type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=80 shotCnt=1 shotDly=0.5 delay=2 bullet=EnemyBullet.png
+  part=E_MBoss0801_Mot2 type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=80 shotCnt=1 shotDly=0.5 delay=2 bullet=EnemyBullet.png
+MBoss09 type=0 hp=4000 exp=400
+  part=E_MBoss_09 type=0 tile=E_MBoss_09.png frames=2 sockets=5
+  part=E_MBoss_09_Wpn type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=80 shotCnt=1 shotDly=0.5 delay=2 bullet=EnemyBullet.png
+  part=E_MBoss_09_Wpn type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=80 shotCnt=1 shotDly=0.5 delay=2 bullet=EnemyBullet.png
+  part=E_MBoss_09_Wpn type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=80 shotCnt=1 shotDly=0.5 delay=2 bullet=EnemyBullet.png
+  part=E_MBoss_09_Wpn type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=80 shotCnt=1 shotDly=0.5 delay=2 bullet=EnemyBullet.png
+MBoss0901 type=0 hp=14000 exp=700
+  part=E_MBoss0901 type=0 tile=E_MBoss0901.png frames=2 sockets=2
+  part=E_MBoss0901_Top type=1 tile=E_MBoss0901_Top.png frames=1 sockets=2
+  part=E_MBoss0901_Msl type=2 tile=E_MBoss0901_Msl.png frames=1 sockets=2 weaponType=3 damage=80 shotCnt=2 shotDly=0 delay=3 bullet=Bullet.png
+  part=E_MBoss_10_Wpn type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=80 shotCnt=2 shotDly=0.7 delay=2 bullet=EnemyBullet.png
+MBoss10 type=0 hp=4000 exp=400
+  part=E_MBoss_10 type=0 tile=E_MBoss_10.png frames=2 sockets=3
+  part=E_MBoss_10_Wpn type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=80 shotCnt=2 shotDly=0.7 delay=2 bullet=EnemyBullet.png
+  part=E_MBoss_10_Wpn type=2 tile=PartsDummy.png frames=0 sockets=2 weaponType=7 damage=80 shotCnt=2 shotDly=0.7 delay=2 bullet=EnemyBullet.png
+Player type=0 hp=512 exp=0
+  part=P_Body_01 type=0 tile=P_Body_01.png frames=2 sockets=2
+  part=P_Top_07 type=1 tile=P_Top_07.png frames=1 sockets=2
+  part=P_Wpn_RaderBomb type=2 tile=P_Wpn_RaderBomb.png frames=1 sockets=2 weaponType=5 damage=150 shotCnt=7 shotDly=0.15 delay=1 bullet=Bullet.png
+Tank001 type=0 hp=100 exp=5
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_01 type=1 tile=E_Tank_Top_01.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank002 type=0 hp=120 exp=6
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_01 type=1 tile=E_Tank_Top_01.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank003 type=0 hp=150 exp=8
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_01 type=1 tile=E_Tank_Top_01.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank004 type=0 hp=100 exp=5
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_02 type=1 tile=E_Tank_Top_02.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank005 type=0 hp=120 exp=6
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_02 type=1 tile=E_Tank_Top_02.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank006 type=0 hp=150 exp=8
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_02 type=1 tile=E_Tank_Top_02.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank007 type=0 hp=100 exp=5
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_07 type=1 tile=E_Tank_Top_07.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank008 type=0 hp=120 exp=6
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_07 type=1 tile=E_Tank_Top_07.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank009 type=0 hp=150 exp=8
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_07 type=1 tile=E_Tank_Top_07.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank010 type=0 hp=100 exp=5
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_08 type=1 tile=E_Tank_Top_08.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank011 type=0 hp=120 exp=6
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_08 type=1 tile=E_Tank_Top_08.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank012 type=0 hp=150 exp=8
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_08 type=1 tile=E_Tank_Top_08.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank013 type=0 hp=100 exp=5
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_09 type=1 tile=E_Tank_Top_09.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank014 type=0 hp=120 exp=6
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_09 type=1 tile=E_Tank_Top_09.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank015 type=0 hp=150 exp=8
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_09 type=1 tile=E_Tank_Top_09.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank016 type=0 hp=100 exp=5
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_10 type=1 tile=E_Tank_Top_10.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank017 type=0 hp=120 exp=6
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_10 type=1 tile=E_Tank_Top_10.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank018 type=0 hp=150 exp=8
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_10 type=1 tile=E_Tank_Top_10.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank019 type=0 hp=100 exp=5
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_11 type=1 tile=E_Tank_Top_11.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank020 type=0 hp=120 exp=6
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_11 type=1 tile=E_Tank_Top_11.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank021 type=0 hp=150 exp=8
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_11 type=1 tile=E_Tank_Top_11.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank022 type=0 hp=100 exp=5
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_12 type=1 tile=E_Tank_Top_12.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank023 type=0 hp=120 exp=6
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_12 type=1 tile=E_Tank_Top_12.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank024 type=0 hp=150 exp=8
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_12 type=1 tile=E_Tank_Top_12.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank025 type=0 hp=100 exp=5
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_01 type=1 tile=E_Tank_Top_01.png frames=1 sockets=2
+  part=E_Tank_Wpn_02 type=2 tile=E_Tank_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=7 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank026 type=0 hp=120 exp=6
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_01 type=1 tile=E_Tank_Top_01.png frames=1 sockets=2
+  part=E_Tank_Wpn_02 type=2 tile=E_Tank_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=7 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank027 type=0 hp=150 exp=8
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_01 type=1 tile=E_Tank_Top_01.png frames=1 sockets=2
+  part=E_Tank_Wpn_02 type=2 tile=E_Tank_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=7 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank028 type=0 hp=100 exp=5
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_02 type=1 tile=E_Tank_Top_02.png frames=1 sockets=2
+  part=E_Tank_Wpn_02 type=2 tile=E_Tank_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=7 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank029 type=0 hp=120 exp=6
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_02 type=1 tile=E_Tank_Top_02.png frames=1 sockets=2
+  part=E_Tank_Wpn_02 type=2 tile=E_Tank_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=7 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank030 type=0 hp=150 exp=8
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_02 type=1 tile=E_Tank_Top_02.png frames=1 sockets=2
+  part=E_Tank_Wpn_02 type=2 tile=E_Tank_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=7 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank031 type=0 hp=100 exp=5
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_07 type=1 tile=E_Tank_Top_07.png frames=1 sockets=2
+  part=E_Tank_Wpn_02 type=2 tile=E_Tank_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=7 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank032 type=0 hp=120 exp=6
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_07 type=1 tile=E_Tank_Top_07.png frames=1 sockets=2
+  part=E_Tank_Wpn_02 type=2 tile=E_Tank_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=7 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank033 type=0 hp=150 exp=8
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_07 type=1 tile=E_Tank_Top_07.png frames=1 sockets=2
+  part=E_Tank_Wpn_02 type=2 tile=E_Tank_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=7 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank034 type=0 hp=100 exp=5
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_08 type=1 tile=E_Tank_Top_08.png frames=1 sockets=2
+  part=E_Tank_Wpn_02 type=2 tile=E_Tank_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=7 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank035 type=0 hp=120 exp=6
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_08 type=1 tile=E_Tank_Top_08.png frames=1 sockets=2
+  part=E_Tank_Wpn_02 type=2 tile=E_Tank_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=7 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank036 type=0 hp=150 exp=8
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_08 type=1 tile=E_Tank_Top_08.png frames=1 sockets=2
+  part=E_Tank_Wpn_02 type=2 tile=E_Tank_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=7 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank037 type=0 hp=100 exp=5
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_09 type=1 tile=E_Tank_Top_09.png frames=1 sockets=2
+  part=E_Tank_Wpn_02 type=2 tile=E_Tank_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=7 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank038 type=0 hp=120 exp=6
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_09 type=1 tile=E_Tank_Top_09.png frames=1 sockets=2
+  part=E_Tank_Wpn_02 type=2 tile=E_Tank_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=7 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank039 type=0 hp=150 exp=8
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_09 type=1 tile=E_Tank_Top_09.png frames=1 sockets=2
+  part=E_Tank_Wpn_02 type=2 tile=E_Tank_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=7 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank040 type=0 hp=100 exp=5
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_10 type=1 tile=E_Tank_Top_10.png frames=1 sockets=2
+  part=E_Tank_Wpn_02 type=2 tile=E_Tank_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=7 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank041 type=0 hp=120 exp=6
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_10 type=1 tile=E_Tank_Top_10.png frames=1 sockets=2
+  part=E_Tank_Wpn_02 type=2 tile=E_Tank_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=7 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank042 type=0 hp=150 exp=8
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_10 type=1 tile=E_Tank_Top_10.png frames=1 sockets=2
+  part=E_Tank_Wpn_02 type=2 tile=E_Tank_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=7 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank043 type=0 hp=100 exp=5
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_11 type=1 tile=E_Tank_Top_11.png frames=1 sockets=2
+  part=E_Tank_Wpn_02 type=2 tile=E_Tank_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=7 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank044 type=0 hp=120 exp=6
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_11 type=1 tile=E_Tank_Top_11.png frames=1 sockets=2
+  part=E_Tank_Wpn_02 type=2 tile=E_Tank_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=7 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank045 type=0 hp=150 exp=8
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_11 type=1 tile=E_Tank_Top_11.png frames=1 sockets=2
+  part=E_Tank_Wpn_02 type=2 tile=E_Tank_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=7 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank046 type=0 hp=100 exp=5
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_12 type=1 tile=E_Tank_Top_12.png frames=1 sockets=2
+  part=E_Tank_Wpn_02 type=2 tile=E_Tank_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=7 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank047 type=0 hp=120 exp=6
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_12 type=1 tile=E_Tank_Top_12.png frames=1 sockets=2
+  part=E_Tank_Wpn_02 type=2 tile=E_Tank_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=7 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank048 type=0 hp=150 exp=8
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_12 type=1 tile=E_Tank_Top_12.png frames=1 sockets=2
+  part=E_Tank_Wpn_02 type=2 tile=E_Tank_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=7 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank049 type=0 hp=150 exp=8
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_01 type=1 tile=E_Tank_Top_01.png frames=1 sockets=2
+  part=E_Tank_Wpn_02 type=2 tile=E_Tank_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=7 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank050 type=0 hp=200 exp=10
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_01 type=1 tile=E_Tank_Top_01.png frames=1 sockets=2
+  part=E_Tank_Wpn_04 type=2 tile=E_Tank_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=13 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank051 type=0 hp=250 exp=13
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_01 type=1 tile=E_Tank_Top_01.png frames=1 sockets=2
+  part=E_Tank_Wpn_04 type=2 tile=E_Tank_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=13 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank052 type=0 hp=150 exp=8
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_02 type=1 tile=E_Tank_Top_02.png frames=1 sockets=2
+  part=E_Tank_Wpn_04 type=2 tile=E_Tank_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=13 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank053 type=0 hp=200 exp=10
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_02 type=1 tile=E_Tank_Top_02.png frames=1 sockets=2
+  part=E_Tank_Wpn_04 type=2 tile=E_Tank_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=13 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank054 type=0 hp=250 exp=13
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_02 type=1 tile=E_Tank_Top_02.png frames=1 sockets=2
+  part=E_Tank_Wpn_04 type=2 tile=E_Tank_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=13 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank055 type=0 hp=150 exp=8
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_07 type=1 tile=E_Tank_Top_07.png frames=1 sockets=2
+  part=E_Tank_Wpn_04 type=2 tile=E_Tank_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=13 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank056 type=0 hp=200 exp=10
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_07 type=1 tile=E_Tank_Top_07.png frames=1 sockets=2
+  part=E_Tank_Wpn_04 type=2 tile=E_Tank_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=13 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank057 type=0 hp=250 exp=13
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_07 type=1 tile=E_Tank_Top_07.png frames=1 sockets=2
+  part=E_Tank_Wpn_04 type=2 tile=E_Tank_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=13 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank058 type=0 hp=150 exp=8
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_08 type=1 tile=E_Tank_Top_08.png frames=1 sockets=2
+  part=E_Tank_Wpn_04 type=2 tile=E_Tank_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=13 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank059 type=0 hp=200 exp=10
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_08 type=1 tile=E_Tank_Top_08.png frames=1 sockets=2
+  part=E_Tank_Wpn_04 type=2 tile=E_Tank_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=13 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank060 type=0 hp=250 exp=13
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_08 type=1 tile=E_Tank_Top_08.png frames=1 sockets=2
+  part=E_Tank_Wpn_04 type=2 tile=E_Tank_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=13 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank061 type=0 hp=150 exp=8
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_09 type=1 tile=E_Tank_Top_09.png frames=1 sockets=2
+  part=E_Tank_Wpn_04 type=2 tile=E_Tank_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=13 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank062 type=0 hp=200 exp=10
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_09 type=1 tile=E_Tank_Top_09.png frames=1 sockets=2
+  part=E_Tank_Wpn_04 type=2 tile=E_Tank_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=13 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank063 type=0 hp=250 exp=13
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_09 type=1 tile=E_Tank_Top_09.png frames=1 sockets=2
+  part=E_Tank_Wpn_04 type=2 tile=E_Tank_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=13 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank064 type=0 hp=150 exp=8
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_10 type=1 tile=E_Tank_Top_10.png frames=1 sockets=2
+  part=E_Tank_Wpn_04 type=2 tile=E_Tank_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=13 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank065 type=0 hp=200 exp=10
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_10 type=1 tile=E_Tank_Top_10.png frames=1 sockets=2
+  part=E_Tank_Wpn_04 type=2 tile=E_Tank_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=13 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank066 type=0 hp=250 exp=13
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_10 type=1 tile=E_Tank_Top_10.png frames=1 sockets=2
+  part=E_Tank_Wpn_04 type=2 tile=E_Tank_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=13 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank067 type=0 hp=150 exp=8
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_11 type=1 tile=E_Tank_Top_11.png frames=1 sockets=2
+  part=E_Tank_Wpn_04 type=2 tile=E_Tank_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=13 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank068 type=0 hp=200 exp=10
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_11 type=1 tile=E_Tank_Top_11.png frames=1 sockets=2
+  part=E_Tank_Wpn_04 type=2 tile=E_Tank_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=13 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank069 type=0 hp=250 exp=13
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_11 type=1 tile=E_Tank_Top_11.png frames=1 sockets=2
+  part=E_Tank_Wpn_04 type=2 tile=E_Tank_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=13 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank070 type=0 hp=150 exp=8
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_12 type=1 tile=E_Tank_Top_12.png frames=1 sockets=2
+  part=E_Tank_Wpn_04 type=2 tile=E_Tank_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=13 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank071 type=0 hp=200 exp=10
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_12 type=1 tile=E_Tank_Top_12.png frames=1 sockets=2
+  part=E_Tank_Wpn_04 type=2 tile=E_Tank_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=13 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank072 type=0 hp=250 exp=13
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_12 type=1 tile=E_Tank_Top_12.png frames=1 sockets=2
+  part=E_Tank_Wpn_04 type=2 tile=E_Tank_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=13 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank073 type=0 hp=150 exp=8
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_01 type=1 tile=E_Tank_Top_01.png frames=1 sockets=2
+  part=E_Tank_Wpn_06 type=2 tile=E_Tank_Wpn_06.png frames=1 sockets=2 weaponType=2 damage=20 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank074 type=0 hp=200 exp=10
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_01 type=1 tile=E_Tank_Top_01.png frames=1 sockets=2
+  part=E_Tank_Wpn_06 type=2 tile=E_Tank_Wpn_06.png frames=1 sockets=2 weaponType=2 damage=20 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank075 type=0 hp=250 exp=13
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_01 type=1 tile=E_Tank_Top_01.png frames=1 sockets=2
+  part=E_Tank_Wpn_06 type=2 tile=E_Tank_Wpn_06.png frames=1 sockets=2 weaponType=2 damage=20 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank076 type=0 hp=150 exp=8
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_02 type=1 tile=E_Tank_Top_02.png frames=1 sockets=2
+  part=E_Tank_Wpn_06 type=2 tile=E_Tank_Wpn_06.png frames=1 sockets=2 weaponType=2 damage=20 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank077 type=0 hp=200 exp=10
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_02 type=1 tile=E_Tank_Top_02.png frames=1 sockets=2
+  part=E_Tank_Wpn_06 type=2 tile=E_Tank_Wpn_06.png frames=1 sockets=2 weaponType=2 damage=20 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank078 type=0 hp=250 exp=13
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_02 type=1 tile=E_Tank_Top_02.png frames=1 sockets=2
+  part=E_Tank_Wpn_06 type=2 tile=E_Tank_Wpn_06.png frames=1 sockets=2 weaponType=2 damage=20 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank079 type=0 hp=150 exp=8
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_07 type=1 tile=E_Tank_Top_07.png frames=1 sockets=2
+  part=E_Tank_Wpn_06 type=2 tile=E_Tank_Wpn_06.png frames=1 sockets=2 weaponType=2 damage=20 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank080 type=0 hp=200 exp=10
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_07 type=1 tile=E_Tank_Top_07.png frames=1 sockets=2
+  part=E_Tank_Wpn_06 type=2 tile=E_Tank_Wpn_06.png frames=1 sockets=2 weaponType=2 damage=20 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank081 type=0 hp=250 exp=13
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_07 type=1 tile=E_Tank_Top_07.png frames=1 sockets=2
+  part=E_Tank_Wpn_06 type=2 tile=E_Tank_Wpn_06.png frames=1 sockets=2 weaponType=2 damage=20 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank082 type=0 hp=150 exp=8
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_08 type=1 tile=E_Tank_Top_08.png frames=1 sockets=2
+  part=E_Tank_Wpn_06 type=2 tile=E_Tank_Wpn_06.png frames=1 sockets=2 weaponType=2 damage=20 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank083 type=0 hp=200 exp=10
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_08 type=1 tile=E_Tank_Top_08.png frames=1 sockets=2
+  part=E_Tank_Wpn_06 type=2 tile=E_Tank_Wpn_06.png frames=1 sockets=2 weaponType=2 damage=20 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank084 type=0 hp=250 exp=13
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_08 type=1 tile=E_Tank_Top_08.png frames=1 sockets=2
+  part=E_Tank_Wpn_06 type=2 tile=E_Tank_Wpn_06.png frames=1 sockets=2 weaponType=2 damage=20 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank085 type=0 hp=150 exp=8
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_09 type=1 tile=E_Tank_Top_09.png frames=1 sockets=2
+  part=E_Tank_Wpn_06 type=2 tile=E_Tank_Wpn_06.png frames=1 sockets=2 weaponType=2 damage=20 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank086 type=0 hp=200 exp=10
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_09 type=1 tile=E_Tank_Top_09.png frames=1 sockets=2
+  part=E_Tank_Wpn_06 type=2 tile=E_Tank_Wpn_06.png frames=1 sockets=2 weaponType=2 damage=20 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank087 type=0 hp=250 exp=13
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_09 type=1 tile=E_Tank_Top_09.png frames=1 sockets=2
+  part=E_Tank_Wpn_06 type=2 tile=E_Tank_Wpn_06.png frames=1 sockets=2 weaponType=2 damage=20 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank088 type=0 hp=150 exp=8
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_10 type=1 tile=E_Tank_Top_10.png frames=1 sockets=2
+  part=E_Tank_Wpn_06 type=2 tile=E_Tank_Wpn_06.png frames=1 sockets=2 weaponType=2 damage=20 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank089 type=0 hp=200 exp=10
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_10 type=1 tile=E_Tank_Top_10.png frames=1 sockets=2
+  part=E_Tank_Wpn_06 type=2 tile=E_Tank_Wpn_06.png frames=1 sockets=2 weaponType=2 damage=20 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank090 type=0 hp=250 exp=13
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_10 type=1 tile=E_Tank_Top_10.png frames=1 sockets=2
+  part=E_Tank_Wpn_06 type=2 tile=E_Tank_Wpn_06.png frames=1 sockets=2 weaponType=2 damage=20 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank091 type=0 hp=150 exp=8
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_11 type=1 tile=E_Tank_Top_11.png frames=1 sockets=2
+  part=E_Tank_Wpn_06 type=2 tile=E_Tank_Wpn_06.png frames=1 sockets=2 weaponType=2 damage=20 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank092 type=0 hp=200 exp=10
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_11 type=1 tile=E_Tank_Top_11.png frames=1 sockets=2
+  part=E_Tank_Wpn_06 type=2 tile=E_Tank_Wpn_06.png frames=1 sockets=2 weaponType=2 damage=20 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank093 type=0 hp=250 exp=13
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_11 type=1 tile=E_Tank_Top_11.png frames=1 sockets=2
+  part=E_Tank_Wpn_06 type=2 tile=E_Tank_Wpn_06.png frames=1 sockets=2 weaponType=2 damage=20 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank094 type=0 hp=150 exp=8
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_12 type=1 tile=E_Tank_Top_12.png frames=1 sockets=2
+  part=E_Tank_Wpn_06 type=2 tile=E_Tank_Wpn_06.png frames=1 sockets=2 weaponType=2 damage=20 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank095 type=0 hp=200 exp=10
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_12 type=1 tile=E_Tank_Top_12.png frames=1 sockets=2
+  part=E_Tank_Wpn_06 type=2 tile=E_Tank_Wpn_06.png frames=1 sockets=2 weaponType=2 damage=20 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank096 type=0 hp=250 exp=13
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_12 type=1 tile=E_Tank_Top_12.png frames=1 sockets=2
+  part=E_Tank_Wpn_06 type=2 tile=E_Tank_Wpn_06.png frames=1 sockets=2 weaponType=2 damage=20 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank097 type=0 hp=150 exp=8
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_01 type=1 tile=E_Tank_Top_01.png frames=1 sockets=2
+  part=E_Tank_Wpn_08 type=2 tile=E_Tank_Wpn_08.png frames=1 sockets=2 weaponType=2 damage=28 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank098 type=0 hp=200 exp=10
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_01 type=1 tile=E_Tank_Top_01.png frames=1 sockets=2
+  part=E_Tank_Wpn_08 type=2 tile=E_Tank_Wpn_08.png frames=1 sockets=2 weaponType=2 damage=28 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank099 type=0 hp=250 exp=13
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_01 type=1 tile=E_Tank_Top_01.png frames=1 sockets=2
+  part=E_Tank_Wpn_08 type=2 tile=E_Tank_Wpn_08.png frames=1 sockets=2 weaponType=2 damage=28 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank100 type=0 hp=150 exp=8
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_02 type=1 tile=E_Tank_Top_02.png frames=1 sockets=2
+  part=E_Tank_Wpn_08 type=2 tile=E_Tank_Wpn_08.png frames=1 sockets=2 weaponType=2 damage=28 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank101 type=0 hp=200 exp=10
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_02 type=1 tile=E_Tank_Top_02.png frames=1 sockets=2
+  part=E_Tank_Wpn_08 type=2 tile=E_Tank_Wpn_08.png frames=1 sockets=2 weaponType=2 damage=28 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank102 type=0 hp=250 exp=13
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_02 type=1 tile=E_Tank_Top_02.png frames=1 sockets=2
+  part=E_Tank_Wpn_08 type=2 tile=E_Tank_Wpn_08.png frames=1 sockets=2 weaponType=2 damage=28 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank103 type=0 hp=150 exp=8
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_07 type=1 tile=E_Tank_Top_07.png frames=1 sockets=2
+  part=E_Tank_Wpn_08 type=2 tile=E_Tank_Wpn_08.png frames=1 sockets=2 weaponType=2 damage=28 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank104 type=0 hp=200 exp=10
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_07 type=1 tile=E_Tank_Top_07.png frames=1 sockets=2
+  part=E_Tank_Wpn_08 type=2 tile=E_Tank_Wpn_08.png frames=1 sockets=2 weaponType=2 damage=28 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank105 type=0 hp=250 exp=13
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_07 type=1 tile=E_Tank_Top_07.png frames=1 sockets=2
+  part=E_Tank_Wpn_08 type=2 tile=E_Tank_Wpn_08.png frames=1 sockets=2 weaponType=2 damage=28 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank106 type=0 hp=150 exp=8
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_08 type=1 tile=E_Tank_Top_08.png frames=1 sockets=2
+  part=E_Tank_Wpn_08 type=2 tile=E_Tank_Wpn_08.png frames=1 sockets=2 weaponType=2 damage=28 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank107 type=0 hp=200 exp=10
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_08 type=1 tile=E_Tank_Top_08.png frames=1 sockets=2
+  part=E_Tank_Wpn_08 type=2 tile=E_Tank_Wpn_08.png frames=1 sockets=2 weaponType=2 damage=28 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank108 type=0 hp=250 exp=13
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_08 type=1 tile=E_Tank_Top_08.png frames=1 sockets=2
+  part=E_Tank_Wpn_08 type=2 tile=E_Tank_Wpn_08.png frames=1 sockets=2 weaponType=2 damage=28 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank109 type=0 hp=150 exp=8
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_09 type=1 tile=E_Tank_Top_09.png frames=1 sockets=2
+  part=E_Tank_Wpn_08 type=2 tile=E_Tank_Wpn_08.png frames=1 sockets=2 weaponType=2 damage=28 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank110 type=0 hp=200 exp=10
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_09 type=1 tile=E_Tank_Top_09.png frames=1 sockets=2
+  part=E_Tank_Wpn_08 type=2 tile=E_Tank_Wpn_08.png frames=1 sockets=2 weaponType=2 damage=28 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank111 type=0 hp=250 exp=13
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_09 type=1 tile=E_Tank_Top_09.png frames=1 sockets=2
+  part=E_Tank_Wpn_08 type=2 tile=E_Tank_Wpn_08.png frames=1 sockets=2 weaponType=2 damage=28 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank112 type=0 hp=150 exp=8
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_10 type=1 tile=E_Tank_Top_10.png frames=1 sockets=2
+  part=E_Tank_Wpn_08 type=2 tile=E_Tank_Wpn_08.png frames=1 sockets=2 weaponType=2 damage=28 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank113 type=0 hp=200 exp=10
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_10 type=1 tile=E_Tank_Top_10.png frames=1 sockets=2
+  part=E_Tank_Wpn_08 type=2 tile=E_Tank_Wpn_08.png frames=1 sockets=2 weaponType=2 damage=28 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank114 type=0 hp=250 exp=13
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_10 type=1 tile=E_Tank_Top_10.png frames=1 sockets=2
+  part=E_Tank_Wpn_08 type=2 tile=E_Tank_Wpn_08.png frames=1 sockets=2 weaponType=2 damage=28 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank115 type=0 hp=150 exp=8
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_11 type=1 tile=E_Tank_Top_11.png frames=1 sockets=2
+  part=E_Tank_Wpn_08 type=2 tile=E_Tank_Wpn_08.png frames=1 sockets=2 weaponType=2 damage=28 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank116 type=0 hp=200 exp=10
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_11 type=1 tile=E_Tank_Top_11.png frames=1 sockets=2
+  part=E_Tank_Wpn_08 type=2 tile=E_Tank_Wpn_08.png frames=1 sockets=2 weaponType=2 damage=28 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank117 type=0 hp=250 exp=13
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_11 type=1 tile=E_Tank_Top_11.png frames=1 sockets=2
+  part=E_Tank_Wpn_08 type=2 tile=E_Tank_Wpn_08.png frames=1 sockets=2 weaponType=2 damage=28 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank118 type=0 hp=150 exp=8
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_12 type=1 tile=E_Tank_Top_12.png frames=1 sockets=2
+  part=E_Tank_Wpn_08 type=2 tile=E_Tank_Wpn_08.png frames=1 sockets=2 weaponType=2 damage=28 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank119 type=0 hp=200 exp=10
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_12 type=1 tile=E_Tank_Top_12.png frames=1 sockets=2
+  part=E_Tank_Wpn_08 type=2 tile=E_Tank_Wpn_08.png frames=1 sockets=2 weaponType=2 damage=28 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank120 type=0 hp=250 exp=13
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_12 type=1 tile=E_Tank_Top_12.png frames=1 sockets=2
+  part=E_Tank_Wpn_08 type=2 tile=E_Tank_Wpn_08.png frames=1 sockets=2 weaponType=2 damage=28 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank121 type=0 hp=150 exp=8
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_01 type=1 tile=E_Tank_Top_01.png frames=1 sockets=2
+  part=E_Tank_Wpn_10 type=2 tile=E_Tank_Wpn_10.png frames=1 sockets=2 weaponType=2 damage=36 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank122 type=0 hp=200 exp=10
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_01 type=1 tile=E_Tank_Top_01.png frames=1 sockets=2
+  part=E_Tank_Wpn_10 type=2 tile=E_Tank_Wpn_10.png frames=1 sockets=2 weaponType=2 damage=36 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank123 type=0 hp=250 exp=13
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_01 type=1 tile=E_Tank_Top_01.png frames=1 sockets=2
+  part=E_Tank_Wpn_10 type=2 tile=E_Tank_Wpn_10.png frames=1 sockets=2 weaponType=2 damage=36 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank124 type=0 hp=150 exp=10
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_02 type=1 tile=E_Tank_Top_02.png frames=1 sockets=2
+  part=E_Tank_Wpn_11 type=2 tile=E_Tank_Wpn_11.png frames=1 sockets=2 weaponType=2 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank125 type=0 hp=200 exp=15
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_02 type=1 tile=E_Tank_Top_02.png frames=1 sockets=2
+  part=E_Tank_Wpn_11 type=2 tile=E_Tank_Wpn_11.png frames=1 sockets=2 weaponType=2 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank126 type=0 hp=250 exp=20
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_02 type=1 tile=E_Tank_Top_02.png frames=1 sockets=2
+  part=E_Tank_Wpn_11 type=2 tile=E_Tank_Wpn_11.png frames=1 sockets=2 weaponType=2 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank127 type=0 hp=150 exp=10
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_07 type=1 tile=E_Tank_Top_07.png frames=1 sockets=2
+  part=E_Tank_Wpn_11 type=2 tile=E_Tank_Wpn_11.png frames=1 sockets=2 weaponType=2 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank128 type=0 hp=200 exp=15
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_07 type=1 tile=E_Tank_Top_07.png frames=1 sockets=2
+  part=E_Tank_Wpn_11 type=2 tile=E_Tank_Wpn_11.png frames=1 sockets=2 weaponType=2 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank129 type=0 hp=250 exp=20
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_07 type=1 tile=E_Tank_Top_07.png frames=1 sockets=2
+  part=E_Tank_Wpn_11 type=2 tile=E_Tank_Wpn_11.png frames=1 sockets=2 weaponType=2 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank130 type=0 hp=150 exp=10
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_08 type=1 tile=E_Tank_Top_08.png frames=1 sockets=2
+  part=E_Tank_Wpn_11 type=2 tile=E_Tank_Wpn_11.png frames=1 sockets=2 weaponType=2 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank131 type=0 hp=200 exp=15
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_08 type=1 tile=E_Tank_Top_08.png frames=1 sockets=2
+  part=E_Tank_Wpn_11 type=2 tile=E_Tank_Wpn_11.png frames=1 sockets=2 weaponType=2 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank132 type=0 hp=250 exp=20
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_08 type=1 tile=E_Tank_Top_08.png frames=1 sockets=2
+  part=E_Tank_Wpn_11 type=2 tile=E_Tank_Wpn_11.png frames=1 sockets=2 weaponType=2 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank133 type=0 hp=150 exp=10
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_09 type=1 tile=E_Tank_Top_09.png frames=1 sockets=2
+  part=E_Tank_Wpn_11 type=2 tile=E_Tank_Wpn_11.png frames=1 sockets=2 weaponType=2 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank134 type=0 hp=200 exp=15
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_09 type=1 tile=E_Tank_Top_09.png frames=1 sockets=2
+  part=E_Tank_Wpn_11 type=2 tile=E_Tank_Wpn_11.png frames=1 sockets=2 weaponType=2 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank135 type=0 hp=250 exp=20
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_09 type=1 tile=E_Tank_Top_09.png frames=1 sockets=2
+  part=E_Tank_Wpn_11 type=2 tile=E_Tank_Wpn_11.png frames=1 sockets=2 weaponType=2 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank136 type=0 hp=150 exp=10
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_10 type=1 tile=E_Tank_Top_10.png frames=1 sockets=2
+  part=E_Tank_Wpn_11 type=2 tile=E_Tank_Wpn_11.png frames=1 sockets=2 weaponType=2 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank137 type=0 hp=200 exp=15
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_10 type=1 tile=E_Tank_Top_10.png frames=1 sockets=2
+  part=E_Tank_Wpn_11 type=2 tile=E_Tank_Wpn_11.png frames=1 sockets=2 weaponType=2 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank138 type=0 hp=250 exp=20
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_10 type=1 tile=E_Tank_Top_10.png frames=1 sockets=2
+  part=E_Tank_Wpn_11 type=2 tile=E_Tank_Wpn_11.png frames=1 sockets=2 weaponType=2 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank139 type=0 hp=150 exp=10
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_11 type=1 tile=E_Tank_Top_11.png frames=1 sockets=2
+  part=E_Tank_Wpn_11 type=2 tile=E_Tank_Wpn_11.png frames=1 sockets=2 weaponType=2 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank140 type=0 hp=200 exp=15
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_11 type=1 tile=E_Tank_Top_11.png frames=1 sockets=2
+  part=E_Tank_Wpn_11 type=2 tile=E_Tank_Wpn_11.png frames=1 sockets=2 weaponType=2 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank141 type=0 hp=250 exp=20
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_11 type=1 tile=E_Tank_Top_11.png frames=1 sockets=2
+  part=E_Tank_Wpn_11 type=2 tile=E_Tank_Wpn_11.png frames=1 sockets=2 weaponType=2 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank142 type=0 hp=150 exp=10
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_12 type=1 tile=E_Tank_Top_12.png frames=1 sockets=2
+  part=E_Tank_Wpn_11 type=2 tile=E_Tank_Wpn_11.png frames=1 sockets=2 weaponType=2 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank143 type=0 hp=200 exp=15
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_12 type=1 tile=E_Tank_Top_12.png frames=1 sockets=2
+  part=E_Tank_Wpn_11 type=2 tile=E_Tank_Wpn_11.png frames=1 sockets=2 weaponType=2 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank144 type=0 hp=250 exp=20
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_12 type=1 tile=E_Tank_Top_12.png frames=1 sockets=2
+  part=E_Tank_Wpn_11 type=2 tile=E_Tank_Wpn_11.png frames=1 sockets=2 weaponType=2 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank145 type=0 hp=150 exp=10
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_01 type=1 tile=E_Tank_Top_01.png frames=1 sockets=2
+  part=E_Tank_Wpn_09 type=2 tile=E_Tank_Wpn_09.png frames=1 sockets=2 weaponType=2 damage=32 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank146 type=0 hp=200 exp=15
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_01 type=1 tile=E_Tank_Top_01.png frames=1 sockets=2
+  part=E_Tank_Wpn_09 type=2 tile=E_Tank_Wpn_09.png frames=1 sockets=2 weaponType=2 damage=32 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank147 type=0 hp=250 exp=20
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_01 type=1 tile=E_Tank_Top_01.png frames=1 sockets=2
+  part=E_Tank_Wpn_09 type=2 tile=E_Tank_Wpn_09.png frames=1 sockets=2 weaponType=2 damage=32 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank148 type=0 hp=150 exp=10
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_02 type=1 tile=E_Tank_Top_02.png frames=1 sockets=2
+  part=E_Tank_Wpn_09 type=2 tile=E_Tank_Wpn_09.png frames=1 sockets=2 weaponType=2 damage=32 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank149 type=0 hp=200 exp=15
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_02 type=1 tile=E_Tank_Top_02.png frames=1 sockets=2
+  part=E_Tank_Wpn_09 type=2 tile=E_Tank_Wpn_09.png frames=1 sockets=2 weaponType=2 damage=32 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank150 type=0 hp=250 exp=20
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_02 type=1 tile=E_Tank_Top_02.png frames=1 sockets=2
+  part=E_Tank_Wpn_09 type=2 tile=E_Tank_Wpn_09.png frames=1 sockets=2 weaponType=2 damage=32 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank151 type=0 hp=150 exp=10
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_07 type=1 tile=E_Tank_Top_07.png frames=1 sockets=2
+  part=E_Tank_Wpn_09 type=2 tile=E_Tank_Wpn_09.png frames=1 sockets=2 weaponType=2 damage=32 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank152 type=0 hp=200 exp=15
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_07 type=1 tile=E_Tank_Top_07.png frames=1 sockets=2
+  part=E_Tank_Wpn_09 type=2 tile=E_Tank_Wpn_09.png frames=1 sockets=2 weaponType=2 damage=32 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank153 type=0 hp=250 exp=20
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_07 type=1 tile=E_Tank_Top_07.png frames=1 sockets=2
+  part=E_Tank_Wpn_09 type=2 tile=E_Tank_Wpn_09.png frames=1 sockets=2 weaponType=2 damage=32 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank154 type=0 hp=150 exp=10
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_08 type=1 tile=E_Tank_Top_08.png frames=1 sockets=2
+  part=E_Tank_Wpn_09 type=2 tile=E_Tank_Wpn_09.png frames=1 sockets=2 weaponType=2 damage=32 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank155 type=0 hp=200 exp=15
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_08 type=1 tile=E_Tank_Top_08.png frames=1 sockets=2
+  part=E_Tank_Wpn_09 type=2 tile=E_Tank_Wpn_09.png frames=1 sockets=2 weaponType=2 damage=32 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank156 type=0 hp=250 exp=20
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_08 type=1 tile=E_Tank_Top_08.png frames=1 sockets=2
+  part=E_Tank_Wpn_09 type=2 tile=E_Tank_Wpn_09.png frames=1 sockets=2 weaponType=2 damage=32 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank157 type=0 hp=150 exp=10
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_09 type=1 tile=E_Tank_Top_09.png frames=1 sockets=2
+  part=E_Tank_Wpn_09 type=2 tile=E_Tank_Wpn_09.png frames=1 sockets=2 weaponType=2 damage=32 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank158 type=0 hp=200 exp=15
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_09 type=1 tile=E_Tank_Top_09.png frames=1 sockets=2
+  part=E_Tank_Wpn_09 type=2 tile=E_Tank_Wpn_09.png frames=1 sockets=2 weaponType=2 damage=32 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank159 type=0 hp=250 exp=20
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_09 type=1 tile=E_Tank_Top_09.png frames=1 sockets=2
+  part=E_Tank_Wpn_09 type=2 tile=E_Tank_Wpn_09.png frames=1 sockets=2 weaponType=2 damage=32 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank160 type=0 hp=150 exp=10
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_10 type=1 tile=E_Tank_Top_10.png frames=1 sockets=2
+  part=E_Tank_Wpn_09 type=2 tile=E_Tank_Wpn_09.png frames=1 sockets=2 weaponType=2 damage=32 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank161 type=0 hp=200 exp=15
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_10 type=1 tile=E_Tank_Top_10.png frames=1 sockets=2
+  part=E_Tank_Wpn_09 type=2 tile=E_Tank_Wpn_09.png frames=1 sockets=2 weaponType=2 damage=32 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank162 type=0 hp=250 exp=20
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_10 type=1 tile=E_Tank_Top_10.png frames=1 sockets=2
+  part=E_Tank_Wpn_09 type=2 tile=E_Tank_Wpn_09.png frames=1 sockets=2 weaponType=2 damage=32 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank163 type=0 hp=150 exp=10
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_11 type=1 tile=E_Tank_Top_11.png frames=1 sockets=2
+  part=E_Tank_Wpn_09 type=2 tile=E_Tank_Wpn_09.png frames=1 sockets=2 weaponType=2 damage=32 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank164 type=0 hp=200 exp=15
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_11 type=1 tile=E_Tank_Top_11.png frames=1 sockets=2
+  part=E_Tank_Wpn_09 type=2 tile=E_Tank_Wpn_09.png frames=1 sockets=2 weaponType=2 damage=32 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank165 type=0 hp=250 exp=20
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_11 type=1 tile=E_Tank_Top_11.png frames=1 sockets=2
+  part=E_Tank_Wpn_09 type=2 tile=E_Tank_Wpn_09.png frames=1 sockets=2 weaponType=2 damage=32 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank166 type=0 hp=150 exp=10
+  part=E_Tank_Body_01 type=0 tile=E_Tank_Body_01.png frames=2 sockets=2
+  part=E_Tank_Top_12 type=1 tile=E_Tank_Top_12.png frames=1 sockets=2
+  part=E_Tank_Wpn_09 type=2 tile=E_Tank_Wpn_09.png frames=1 sockets=2 weaponType=2 damage=32 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank167 type=0 hp=200 exp=15
+  part=E_Tank_Body_02 type=0 tile=E_Tank_Body_02.png frames=2 sockets=2
+  part=E_Tank_Top_12 type=1 tile=E_Tank_Top_12.png frames=1 sockets=2
+  part=E_Tank_Wpn_09 type=2 tile=E_Tank_Wpn_09.png frames=1 sockets=2 weaponType=2 damage=32 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank168 type=0 hp=250 exp=20
+  part=E_Tank_Body_03 type=0 tile=E_Tank_Body_03.png frames=2 sockets=2
+  part=E_Tank_Top_12 type=1 tile=E_Tank_Top_12.png frames=1 sockets=2
+  part=E_Tank_Wpn_09 type=2 tile=E_Tank_Wpn_09.png frames=1 sockets=2 weaponType=2 damage=32 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank169 type=0 hp=300 exp=20
+  part=E_Tank_Body_04 type=0 tile=E_Tank_Body_04.png frames=2 sockets=2
+  part=E_Tank_Top_03 type=1 tile=E_Tank_Top_03.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank170 type=0 hp=400 exp=25
+  part=E_Tank_Body_05 type=0 tile=E_Tank_Body_05.png frames=2 sockets=2
+  part=E_Tank_Top_03 type=1 tile=E_Tank_Top_03.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank171 type=0 hp=300 exp=20
+  part=E_Tank_Body_04 type=0 tile=E_Tank_Body_04.png frames=2 sockets=2
+  part=E_Tank_Top_04 type=1 tile=E_Tank_Top_04.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank172 type=0 hp=400 exp=25
+  part=E_Tank_Body_05 type=0 tile=E_Tank_Body_05.png frames=2 sockets=2
+  part=E_Tank_Top_04 type=1 tile=E_Tank_Top_04.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank173 type=0 hp=300 exp=20
+  part=E_Tank_Body_04 type=0 tile=E_Tank_Body_04.png frames=2 sockets=2
+  part=E_Tank_Top_05 type=1 tile=E_Tank_Top_05.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank174 type=0 hp=400 exp=25
+  part=E_Tank_Body_05 type=0 tile=E_Tank_Body_05.png frames=2 sockets=2
+  part=E_Tank_Top_05 type=1 tile=E_Tank_Top_05.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank175 type=0 hp=300 exp=20
+  part=E_Tank_Body_04 type=0 tile=E_Tank_Body_04.png frames=2 sockets=2
+  part=E_Tank_Top_06 type=1 tile=E_Tank_Top_06.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank176 type=0 hp=400 exp=25
+  part=E_Tank_Body_05 type=0 tile=E_Tank_Body_05.png frames=2 sockets=2
+  part=E_Tank_Top_06 type=1 tile=E_Tank_Top_06.png frames=1 sockets=2
+  part=E_Tank_Wpn_01 type=2 tile=E_Tank_Wpn_01.png frames=1 sockets=2 weaponType=0 damage=5 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank177 type=0 hp=300 exp=20
+  part=E_Tank_Body_04 type=0 tile=E_Tank_Body_04.png frames=2 sockets=2
+  part=E_Tank_Top_03 type=1 tile=E_Tank_Top_03.png frames=1 sockets=2
+  part=E_Tank_Wpn_03 type=2 tile=E_Tank_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank178 type=0 hp=400 exp=25
+  part=E_Tank_Body_05 type=0 tile=E_Tank_Body_05.png frames=2 sockets=2
+  part=E_Tank_Top_03 type=1 tile=E_Tank_Top_03.png frames=1 sockets=2
+  part=E_Tank_Wpn_03 type=2 tile=E_Tank_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank179 type=0 hp=300 exp=20
+  part=E_Tank_Body_04 type=0 tile=E_Tank_Body_04.png frames=2 sockets=2
+  part=E_Tank_Top_04 type=1 tile=E_Tank_Top_04.png frames=1 sockets=2
+  part=E_Tank_Wpn_03 type=2 tile=E_Tank_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank180 type=0 hp=400 exp=25
+  part=E_Tank_Body_05 type=0 tile=E_Tank_Body_05.png frames=2 sockets=2
+  part=E_Tank_Top_04 type=1 tile=E_Tank_Top_04.png frames=1 sockets=2
+  part=E_Tank_Wpn_03 type=2 tile=E_Tank_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank181 type=0 hp=300 exp=20
+  part=E_Tank_Body_04 type=0 tile=E_Tank_Body_04.png frames=2 sockets=2
+  part=E_Tank_Top_05 type=1 tile=E_Tank_Top_05.png frames=1 sockets=2
+  part=E_Tank_Wpn_03 type=2 tile=E_Tank_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank182 type=0 hp=400 exp=25
+  part=E_Tank_Body_05 type=0 tile=E_Tank_Body_05.png frames=2 sockets=2
+  part=E_Tank_Top_05 type=1 tile=E_Tank_Top_05.png frames=1 sockets=2
+  part=E_Tank_Wpn_03 type=2 tile=E_Tank_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank183 type=0 hp=300 exp=20
+  part=E_Tank_Body_04 type=0 tile=E_Tank_Body_04.png frames=2 sockets=2
+  part=E_Tank_Top_06 type=1 tile=E_Tank_Top_06.png frames=1 sockets=2
+  part=E_Tank_Wpn_03 type=2 tile=E_Tank_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank184 type=0 hp=400 exp=25
+  part=E_Tank_Body_05 type=0 tile=E_Tank_Body_05.png frames=2 sockets=2
+  part=E_Tank_Top_06 type=1 tile=E_Tank_Top_06.png frames=1 sockets=2
+  part=E_Tank_Wpn_03 type=2 tile=E_Tank_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=10 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank185 type=0 hp=300 exp=20
+  part=E_Tank_Body_04 type=0 tile=E_Tank_Body_04.png frames=2 sockets=2
+  part=E_Tank_Top_03 type=1 tile=E_Tank_Top_03.png frames=1 sockets=2
+  part=E_Tank_Wpn_04 type=2 tile=E_Tank_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=13 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank186 type=0 hp=400 exp=25
+  part=E_Tank_Body_05 type=0 tile=E_Tank_Body_05.png frames=2 sockets=2
+  part=E_Tank_Top_03 type=1 tile=E_Tank_Top_03.png frames=1 sockets=2
+  part=E_Tank_Wpn_04 type=2 tile=E_Tank_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=13 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank187 type=0 hp=300 exp=20
+  part=E_Tank_Body_04 type=0 tile=E_Tank_Body_04.png frames=2 sockets=2
+  part=E_Tank_Top_04 type=1 tile=E_Tank_Top_04.png frames=1 sockets=2
+  part=E_Tank_Wpn_04 type=2 tile=E_Tank_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=13 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank188 type=0 hp=400 exp=25
+  part=E_Tank_Body_05 type=0 tile=E_Tank_Body_05.png frames=2 sockets=2
+  part=E_Tank_Top_04 type=1 tile=E_Tank_Top_04.png frames=1 sockets=2
+  part=E_Tank_Wpn_04 type=2 tile=E_Tank_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=13 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank189 type=0 hp=300 exp=20
+  part=E_Tank_Body_04 type=0 tile=E_Tank_Body_04.png frames=2 sockets=2
+  part=E_Tank_Top_05 type=1 tile=E_Tank_Top_05.png frames=1 sockets=2
+  part=E_Tank_Wpn_04 type=2 tile=E_Tank_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=13 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank190 type=0 hp=400 exp=25
+  part=E_Tank_Body_05 type=0 tile=E_Tank_Body_05.png frames=2 sockets=2
+  part=E_Tank_Top_05 type=1 tile=E_Tank_Top_05.png frames=1 sockets=2
+  part=E_Tank_Wpn_04 type=2 tile=E_Tank_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=13 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank191 type=0 hp=300 exp=20
+  part=E_Tank_Body_04 type=0 tile=E_Tank_Body_04.png frames=2 sockets=2
+  part=E_Tank_Top_06 type=1 tile=E_Tank_Top_06.png frames=1 sockets=2
+  part=E_Tank_Wpn_04 type=2 tile=E_Tank_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=13 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank192 type=0 hp=400 exp=25
+  part=E_Tank_Body_05 type=0 tile=E_Tank_Body_05.png frames=2 sockets=2
+  part=E_Tank_Top_06 type=1 tile=E_Tank_Top_06.png frames=1 sockets=2
+  part=E_Tank_Wpn_04 type=2 tile=E_Tank_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=13 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank193 type=0 hp=300 exp=20
+  part=E_Tank_Body_04 type=0 tile=E_Tank_Body_04.png frames=2 sockets=2
+  part=E_Tank_Top_03 type=1 tile=E_Tank_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank194 type=0 hp=400 exp=25
+  part=E_Tank_Body_05 type=0 tile=E_Tank_Body_05.png frames=2 sockets=2
+  part=E_Tank_Top_03 type=1 tile=E_Tank_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank195 type=0 hp=300 exp=20
+  part=E_Tank_Body_04 type=0 tile=E_Tank_Body_04.png frames=2 sockets=2
+  part=E_Tank_Top_04 type=1 tile=E_Tank_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank196 type=0 hp=400 exp=25
+  part=E_Tank_Body_05 type=0 tile=E_Tank_Body_05.png frames=2 sockets=2
+  part=E_Tank_Top_04 type=1 tile=E_Tank_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank197 type=0 hp=300 exp=20
+  part=E_Tank_Body_04 type=0 tile=E_Tank_Body_04.png frames=2 sockets=2
+  part=E_Tank_Top_05 type=1 tile=E_Tank_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank198 type=0 hp=400 exp=25
+  part=E_Tank_Body_05 type=0 tile=E_Tank_Body_05.png frames=2 sockets=2
+  part=E_Tank_Top_05 type=1 tile=E_Tank_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank199 type=0 hp=300 exp=20
+  part=E_Tank_Body_04 type=0 tile=E_Tank_Body_04.png frames=2 sockets=2
+  part=E_Tank_Top_06 type=1 tile=E_Tank_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank200 type=0 hp=400 exp=25
+  part=E_Tank_Body_05 type=0 tile=E_Tank_Body_05.png frames=2 sockets=2
+  part=E_Tank_Top_06 type=1 tile=E_Tank_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_03 type=2 tile=E_ArmoCar_Wpn_03.png frames=1 sockets=2 weaponType=0 damage=15 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank201 type=0 hp=300 exp=20
+  part=E_Tank_Body_04 type=0 tile=E_Tank_Body_04.png frames=2 sockets=2
+  part=E_Tank_Top_03 type=1 tile=E_Tank_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank202 type=0 hp=400 exp=25
+  part=E_Tank_Body_05 type=0 tile=E_Tank_Body_05.png frames=2 sockets=2
+  part=E_Tank_Top_03 type=1 tile=E_Tank_Top_03.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank203 type=0 hp=300 exp=20
+  part=E_Tank_Body_04 type=0 tile=E_Tank_Body_04.png frames=2 sockets=2
+  part=E_Tank_Top_04 type=1 tile=E_Tank_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank204 type=0 hp=400 exp=25
+  part=E_Tank_Body_05 type=0 tile=E_Tank_Body_05.png frames=2 sockets=2
+  part=E_Tank_Top_04 type=1 tile=E_Tank_Top_04.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank205 type=0 hp=300 exp=20
+  part=E_Tank_Body_04 type=0 tile=E_Tank_Body_04.png frames=2 sockets=2
+  part=E_Tank_Top_05 type=1 tile=E_Tank_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank206 type=0 hp=400 exp=25
+  part=E_Tank_Body_05 type=0 tile=E_Tank_Body_05.png frames=2 sockets=2
+  part=E_Tank_Top_05 type=1 tile=E_Tank_Top_05.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank207 type=0 hp=300 exp=20
+  part=E_Tank_Body_04 type=0 tile=E_Tank_Body_04.png frames=2 sockets=2
+  part=E_Tank_Top_06 type=1 tile=E_Tank_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank208 type=0 hp=400 exp=25
+  part=E_Tank_Body_05 type=0 tile=E_Tank_Body_05.png frames=2 sockets=2
+  part=E_Tank_Top_06 type=1 tile=E_Tank_Top_06.png frames=1 sockets=2
+  part=E_ArmoCar_Wpn_02 type=2 tile=E_ArmoCar_Wpn_02.png frames=1 sockets=2 weaponType=0 damage=12 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank209 type=0 hp=300 exp=20
+  part=E_Tank_Body_04 type=0 tile=E_Tank_Body_04.png frames=2 sockets=2
+  part=E_Tank_Top_03 type=1 tile=E_Tank_Top_03.png frames=1 sockets=2
+  part=E_Turret_Wpn_08 type=2 tile=E_Turret_Wpn_08.png frames=1 sockets=2 weaponType=0 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank210 type=0 hp=400 exp=25
+  part=E_Tank_Body_05 type=0 tile=E_Tank_Body_05.png frames=2 sockets=2
+  part=E_Tank_Top_03 type=1 tile=E_Tank_Top_03.png frames=1 sockets=2
+  part=E_Turret_Wpn_08 type=2 tile=E_Turret_Wpn_08.png frames=1 sockets=2 weaponType=0 damage=30 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank211 type=0 hp=300 exp=20
+  part=E_Tank_Body_04 type=0 tile=E_Tank_Body_04.png frames=2 sockets=2
+  part=E_Tank_Top_04 type=1 tile=E_Tank_Top_04.png frames=1 sockets=2
+  part=E_Turret_Wpn_07 type=2 tile=E_Turret_Wpn_07.png frames=1 sockets=2 weaponType=0 damage=28 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank212 type=0 hp=400 exp=25
+  part=E_Tank_Body_05 type=0 tile=E_Tank_Body_05.png frames=2 sockets=2
+  part=E_Tank_Top_04 type=1 tile=E_Tank_Top_04.png frames=1 sockets=2
+  part=E_Turret_Wpn_07 type=2 tile=E_Turret_Wpn_07.png frames=1 sockets=2 weaponType=0 damage=28 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank213 type=0 hp=300 exp=20
+  part=E_Tank_Body_04 type=0 tile=E_Tank_Body_04.png frames=2 sockets=2
+  part=E_Tank_Top_05 type=1 tile=E_Tank_Top_05.png frames=1 sockets=2
+  part=E_Turret_Wpn_07 type=2 tile=E_Turret_Wpn_07.png frames=1 sockets=2 weaponType=0 damage=28 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank214 type=0 hp=400 exp=25
+  part=E_Tank_Body_05 type=0 tile=E_Tank_Body_05.png frames=2 sockets=2
+  part=E_Tank_Top_05 type=1 tile=E_Tank_Top_05.png frames=1 sockets=2
+  part=E_Turret_Wpn_07 type=2 tile=E_Turret_Wpn_07.png frames=1 sockets=2 weaponType=0 damage=28 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank215 type=0 hp=300 exp=20
+  part=E_Tank_Body_04 type=0 tile=E_Tank_Body_04.png frames=2 sockets=2
+  part=E_Tank_Top_06 type=1 tile=E_Tank_Top_06.png frames=1 sockets=2
+  part=E_Turret_Wpn_06 type=2 tile=E_Turret_Wpn_06.png frames=1 sockets=2 weaponType=0 damage=26 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank216 type=0 hp=400 exp=25
+  part=E_Tank_Body_05 type=0 tile=E_Tank_Body_05.png frames=2 sockets=2
+  part=E_Tank_Top_06 type=1 tile=E_Tank_Top_06.png frames=1 sockets=2
+  part=E_Turret_Wpn_06 type=2 tile=E_Turret_Wpn_06.png frames=1 sockets=2 weaponType=0 damage=26 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank217 type=0 hp=300 exp=20
+  part=E_Tank_Body_04 type=0 tile=E_Tank_Body_04.png frames=2 sockets=2
+  part=E_Tank_Top_03 type=1 tile=E_Tank_Top_03.png frames=1 sockets=2
+  part=E_Turret_Wpn_03 type=2 tile=E_Turret_Wpn_03.png frames=1 sockets=2 weaponType=2 damage=50 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank218 type=0 hp=400 exp=25
+  part=E_Tank_Body_05 type=0 tile=E_Tank_Body_05.png frames=2 sockets=2
+  part=E_Tank_Top_03 type=1 tile=E_Tank_Top_03.png frames=1 sockets=2
+  part=E_Turret_Wpn_03 type=2 tile=E_Turret_Wpn_03.png frames=1 sockets=2 weaponType=2 damage=50 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Tank219 type=0 hp=300 exp=20
+  part=E_Tank_Body_04 type=0 tile=E_Tank_Body_04.png frames=2 sockets=2
+  part=E_Tank_Top_03 type=1 tile=E_Tank_Top_03.png frames=1 sockets=2
+  part=E_Turret_Wpn_04 type=2 tile=E_Turret_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=20 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank220 type=0 hp=400 exp=25
+  part=E_Tank_Body_05 type=0 tile=E_Tank_Body_05.png frames=2 sockets=2
+  part=E_Tank_Top_03 type=1 tile=E_Tank_Top_03.png frames=1 sockets=2
+  part=E_Turret_Wpn_04 type=2 tile=E_Turret_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=20 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank221 type=0 hp=300 exp=20
+  part=E_Tank_Body_04 type=0 tile=E_Tank_Body_04.png frames=2 sockets=2
+  part=E_Tank_Top_03 type=1 tile=E_Tank_Top_03.png frames=1 sockets=2
+  part=E_Turret_Wpn_04 type=2 tile=E_Turret_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=20 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank222 type=0 hp=400 exp=25
+  part=E_Tank_Body_05 type=0 tile=E_Tank_Body_05.png frames=2 sockets=2
+  part=E_Tank_Top_03 type=1 tile=E_Tank_Top_03.png frames=1 sockets=2
+  part=E_Turret_Wpn_04 type=2 tile=E_Turret_Wpn_04.png frames=1 sockets=2 weaponType=0 damage=20 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank223 type=0 hp=300 exp=20
+  part=E_Tank_Body_04 type=0 tile=E_Tank_Body_04.png frames=2 sockets=2
+  part=E_Tank_Top_03 type=1 tile=E_Tank_Top_03.png frames=1 sockets=2
+  part=E_Turret_Wpn_05 type=2 tile=E_Turret_Wpn_05.png frames=1 sockets=2 weaponType=0 damage=24 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank224 type=0 hp=400 exp=25
+  part=E_Tank_Body_05 type=0 tile=E_Tank_Body_05.png frames=2 sockets=2
+  part=E_Tank_Top_03 type=1 tile=E_Tank_Top_03.png frames=1 sockets=2
+  part=E_Turret_Wpn_05 type=2 tile=E_Turret_Wpn_05.png frames=1 sockets=2 weaponType=0 damage=24 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank225 type=0 hp=300 exp=20
+  part=E_Tank_Body_04 type=0 tile=E_Tank_Body_04.png frames=2 sockets=2
+  part=E_Tank_Top_03 type=1 tile=E_Tank_Top_03.png frames=1 sockets=2
+  part=E_Turret_Wpn_05 type=2 tile=E_Turret_Wpn_05.png frames=1 sockets=2 weaponType=0 damage=24 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank226 type=0 hp=400 exp=25
+  part=E_Tank_Body_05 type=0 tile=E_Tank_Body_05.png frames=2 sockets=2
+  part=E_Tank_Top_03 type=1 tile=E_Tank_Top_03.png frames=1 sockets=2
+  part=E_Turret_Wpn_05 type=2 tile=E_Turret_Wpn_05.png frames=1 sockets=2 weaponType=0 damage=24 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank227 type=0 hp=300 exp=20
+  part=E_Tank_Body_04 type=0 tile=E_Tank_Body_04.png frames=2 sockets=2
+  part=E_Tank_Top_03 type=1 tile=E_Tank_Top_03.png frames=1 sockets=2
+  part=E_Turret_Wpn_06 type=2 tile=E_Turret_Wpn_06.png frames=1 sockets=2 weaponType=0 damage=26 shotCnt=1 shotDly=0 delay=5 bullet=none
+Tank228 type=0 hp=400 exp=25
+  part=E_Tank_Body_05 type=0 tile=E_Tank_Body_05.png frames=2 sockets=2
+  part=E_Tank_Top_03 type=1 tile=E_Tank_Top_03.png frames=1 sockets=2
+  part=E_Turret_Wpn_06 type=2 tile=E_Turret_Wpn_06.png frames=1 sockets=2 weaponType=0 damage=26 shotCnt=1 shotDly=0 delay=5 bullet=none
+Truck005 type=0 hp=200 exp=10
+  part=E_Truck_05 type=0 tile=E_Truck_05.png frames=2 sockets=2
+  part=E_Truck_Wpn_01 type=2 tile=E_Truck_Wpn_01.png frames=1 sockets=2 weaponType=3 damage=35 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Truck006 type=0 hp=200 exp=10
+  part=E_Truck_05 type=0 tile=E_Truck_05.png frames=2 sockets=2
+  part=E_Truck_Wpn_02 type=2 tile=E_Truck_Wpn_02.png frames=1 sockets=2 weaponType=3 damage=35 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Truck007 type=0 hp=200 exp=10
+  part=E_Truck_05 type=0 tile=E_Truck_05.png frames=2 sockets=2
+  part=E_Truck_Wpn_03 type=2 tile=E_Truck_Wpn_03.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Truck008 type=0 hp=200 exp=10
+  part=E_Truck_05 type=0 tile=E_Truck_05.png frames=2 sockets=2
+  part=E_Truck_Wpn_04 type=2 tile=E_Truck_Wpn_04.png frames=1 sockets=2 weaponType=3 damage=40 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Truck009 type=0 hp=200 exp=10
+  part=E_Truck_05 type=0 tile=E_Truck_05.png frames=2 sockets=2
+  part=E_Truck_Wpn_05 type=2 tile=E_Truck_Wpn_05.png frames=1 sockets=3 weaponType=3 damage=45 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Truck010 type=0 hp=200 exp=10
+  part=E_Truck_05 type=0 tile=E_Truck_05.png frames=2 sockets=2
+  part=E_Truck_Wpn_06 type=2 tile=E_Truck_Wpn_06.png frames=1 sockets=4 weaponType=3 damage=45 shotCnt=1 shotDly=0 delay=5 bullet=Bullet.png
+Stage01 ArmoredCar001:2 ArmoredCar015:1 ArmoredCar016:6 ArmoredCar114:1
+Stage02 ArmoredCar004:3 ArmoredCar016:2 ArmoredCar017:6 ArmoredCar043:1 Tank120:1
+Stage03 ArmoredCar005:1 ArmoredCar016:3 ArmoredCar018:1 ArmoredCar020:1 ArmoredCar022:1 ArmoredCar087:1 ArmoredCar106:1 ArmoredCar127:4 MBoss01:1 Tank010:2 Tank120:1
+Stage04 ArmoredCar140:1 Boss02:1
+Stage05 ArmoredCar017:8 ArmoredCar140:1 MBoss02:1 Tank010:7 Tank012:3 Tank013:1 Truck005:1 Truck009:1 Truck010:1
+Stage06 ArmoredCar202:1 ArmoredCar211:3 MBoss02:1 MBoss03:1 Tank010:2 Tank016:3 Tank079:3 Truck006:1 Truck007:4 Truck009:6 Truck010:1
+Stage07 ArmoredCar007:8 MBoss02:1 Tank103:5 Tank105:1 Tank115:2 Tank125:3 Truck010:2
+Stage08 ArmoredCar012:13 ArmoredCar298:1 ArmoredCar299:1 MBoss04:1 Tank125:1 Truck009:2 Truck010:5
+Stage09 Truck010:1
+Stage10 MBoss04:1 MBoss05:1 Tank166:1 Tank227:1
+Stage11 ArmoredCar013:6 MBoss03:1 MBoss04:1 MBoss05:1 Tank165:2
+Stage12 ArmoredCar013:6 ArmoredCar017:3 MBoss04:1 MBoss06:1 Truck007:2
+Stage13 ArmoredCar017:10 MBoss05:1 MBoss07:1 Truck006:1 Truck009:1 Truck010:2
+Stage15 E0505:3 E0507:1 MBoss0501:1 Tank001:1 Tank006:1 Tank165:1
+Stage16 E0505:2 E0506:5 E0507:5 Tank001:8
+Stage17 E0505:3 E0507:3 E0508:1 E0509:1 E0510:2 E0511:2 E05MB03:1 E05MB04:1 Tank002:3 Tank004:2
+Stage18 E0507:2 E0508:2 E0510:2 E0511:3 E0512:4 E05MB05:1 Tank002:8
+Stage19 Boss01:1 E0510:1 Tank002:2
+Stage20 E0510:2 E06MB01:1 MBoss0601:1 Tank001:5
+Stage21 E0510:1 E0605:2 MBoss0701:1 Tank001:6
+Stage22 E0507:1 E0605:3 MBoss0801:1
+Stage23 E0605:2 E0606:3 E06MB04:1
+Stage24 E0510:1
+Stage25 MBoss07:1 MBoss08:1 Tank166:3 Tank167:11
+Stage26 MBoss08:1 MBoss09:1 Tank166:4 Tank167:2 Tank171:1
+Stage27 MBoss09:2
+Stage28 MBoss08:2 MBoss09:2 MBoss10:1
+Stage29 Boss03:1
+Stage30 ArmoredCar005:6 ArmoredCar006:2 ArmoredCar008:6 ArmoredCar009:1 ArmoredCar023:3 ArmoredCar024:5 ArmoredCar133:2 E0702:2 E07MB01:1 Tank003:4 Tank007:4 Tank012:4 Tank045:3 Tank213:1 Truck009:1
+Stage31 ArmoredCar137:6 E0702:3 E0703:1 MBoss08:1 Truck009:4 Truck010:5
+Stage32 ArmoredCar143:5 ArmoredCar144:17 E0703:2 E0704:3 E07MB02:1
+Stage33 ArmoredCar168:2 ArmoredCar172:5 ArmoredCar224:2 E0704:1 E0705:2
+Stage34 ArmoredCar262:3 ArmoredCar297:2 E0703:2 E0705:3 E0706:2 E07MB03:1 Tank001:4 Tank207:1 Truck006:2 Truck008:8 Truck010:4
+Stage35 Boss07:1 E0705:1 E0706:1 Truck010:2
