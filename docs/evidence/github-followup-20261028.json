@@ -1,0 +1,43 @@
+{
+  "repository": "gelb2/HeavyMach",
+  "visibility": "private",
+  "about_updated": true,
+  "topics_count": 10,
+  "source_release_url": "https://github.com/gelb2/HeavyMach/releases/tag/v0.12",
+  "readme_and_restoration_intro_equal": true,
+  "github_main_intro_verified": true,
+  "site_check": {
+    "pages": 40,
+    "internal_links": 873,
+    "downloads": 40,
+    "missing": [],
+    "badges": 5,
+    "preserved_game_images": 10,
+    "license_copies_equal": true
+  },
+  "browser": {
+    "app": "Safari",
+    "local_readme_visual_check": true,
+    "github_lfs_archive_setting_saved_and_reloaded": true,
+    "social_preview_upload_available": false,
+    "social_preview_constraint": "GitHub supports first upload only for public repositories; no Social preview field for this private repository"
+  },
+  "social_preview": {
+    "path": "docs/public/media/github-social-preview.png",
+    "width": 1280,
+    "height": 640,
+    "bytes": 772558,
+    "sha256": "588965fad438901ad4ce4f58b91fc27b19e2e096530242c39e259e5107aa5c90"
+  },
+  "github_actions_blocker": "Jobs not started: recent account payments failed or spending limit needs to increase",
+  "site_source_commit": "cc278f6b1e9c84382e221094e4e240a4b98fbf61",
+  "deployment": {
+    "id": "appgdep_6ae0d714da7481918274d5b928a82b4d",
+    "project_id": "appgprj_6addbf55aea081918d3d182d7e496e88",
+    "version_id": "appgprj_6addbf55aea081918d3d182d7e496e88~appgver_d6fc6009c8f881919aeb2c09a54b6627",
+    "status": "succeeded",
+    "url": "https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site",
+    "updated_at": "2026-10-27T16:53:54.225176+00:00"
+  },
+  "live_browser_check": "After deployment Safari window lookup returned cgWindowNotFound; local README visual check passed before deployment."
+}

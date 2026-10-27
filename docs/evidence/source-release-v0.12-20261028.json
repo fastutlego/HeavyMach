@@ -47,5 +47,31 @@
     "documentation_run": 40542759494,
     "build_run": 40542759541,
     "result": "not started: account payment/spending limit restriction"
-  }
+  },
+  "release_url": "https://github.com/gelb2/HeavyMach/releases/tag/v0.12",
+  "release_published_at": "2026-10-27T16:49:38Z",
+  "release_download_checksums_passed": true,
+  "github_archive_include_lfs": true,
+  "merged_develop": "39d5c3753f1d921a68bb95b8ae5825d66632a02e",
+  "merged_main": "f011702ade97019a473691ab09159a4b0590fe91",
+  "release_assets": [
+    {
+      "name": "HeavyMach-v0.12-notices.zip",
+      "digest": "sha256:6dc12cd4c37cf9e26fb13cc959e3a5e83daed21d3a2b4bebef30901822070607",
+      "size": 27763,
+      "state": "uploaded"
+    },
+    {
+      "name": "HeavyMach-v0.12-source-with-assets.tar.gz",
+      "digest": "sha256:06ef5e0f0fb31e7fe4f716293030a9d76dee4d3d0c45ac0d56f7ed4f672d5296",
+      "size": 146187445,
+      "state": "uploaded"
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "digest": "sha256:e537b8f177fbe99f3fed43a28794f063a944058c2ed25f07ded0228c8a6e025f",
+      "size": 202,
+      "state": "uploaded"
+    }
+  ]
 }
