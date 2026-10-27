@@ -26,4 +26,4 @@ README의 플레이 이미지 8장·GIF 2개·영상 3개는 Codex가 내 화면
 | OpenAL Soft | 효과음 버퍼·소스와 재생 | [COPYING](vendor/openal-soft/COPYING), LGPL 계열 배포 조건 |
 | stb | 이미지 처리 | [LICENSE](vendor/stb/LICENSE), MIT 또는 Public Domain 선택 |
 
-원작 자원, 새 코드와 외부 라이브러리의 출처는 위와 같다. 저장소 전체에 적용하는 별도 LICENSE 파일은 아직 없다.
+새로 작성한 코드에는 [MIT](LICENSE)를 적용한다. [코드 적용 범위](LICENSE-SCOPE.md), [자원별 조건](ASSET-LICENSES.md), [외부 라이브러리 고지](THIRD_PARTY_NOTICES.md)에서 각각의 출처와 조건을 확인할 수 있다.

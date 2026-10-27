@@ -36,6 +36,11 @@ python3 tools/document_contract.py plan --task documentation
 python3 tools/document_contract.py check
 ```
 
+**공개와 라이선스**
+
+- [코드 라이선스 범위](../LICENSE-SCOPE.md), [MIT 원문](../LICENSE), [자원 조건](../ASSET-LICENSES.md), [외부 고지](../THIRD_PARTY_NOTICES.md).
+- [GitHub 구성 점검·보완 계획](public/github-repository-plan-20261028.md): 현재 기본 화면, 다른 게임 사례, 배지·릴리스·기여·CI 순서.
+
 ## 글·이미지·기록
 
 - [공개 라이선스·README 배지 조사](public/github-licenses-and-badges-20261028.md): 코드·자원 배포 조건, 필요한 문건, 기술 배지와 OS 표.

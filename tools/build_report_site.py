@@ -104,6 +104,7 @@ def main():
         ('gameplay-media-20261027.md', 'gameplay-media.html'),
         ('github-documentation-plan-20261027.md', 'github-documentation.html'),
         ('github-licenses-and-badges-20261028.md', 'github-licenses-and-badges.html'),
+        ('github-repository-plan-20261028.md', 'github-repository-plan.html'),
     ]
     for source_name, page_name in public_articles:
         article(ROOT/'docs/public'/source_name, dist/page_name, source_name, retro)
@@ -130,6 +131,9 @@ def main():
     reader_sources = {
         'README.md': 'github.html', 'docs/README.md': 'docs-index.html',
         'CHANGELOG.md': 'changelog.html', 'CREDITS.md': 'credits.html',
+        'LICENSE-SCOPE.md': 'license-scope.html',
+        'ASSET-LICENSES.md': 'asset-licenses.html',
+        'THIRD_PARTY_NOTICES.md': 'third-party-notices.html',
         'docs/public/features.md': 'features.html',
         'docs/public/gameplay-guide.md': 'gameplay-guide.html',
         'docs/public/architecture.md': 'architecture.html',
@@ -145,7 +149,7 @@ def main():
     # Resolve relative Markdown paths from each manuscript's original directory.
     from urllib.parse import urlsplit, unquote, quote
     for source_name, page_name in routes.items():
-        if page_name not in list(reader_sources.values()) + ['installation.html', 'implementation.html', 'publication.html', 'gameplay-media.html', 'github-documentation.html', 'github-licenses-and-badges.html']:
+        if page_name not in list(reader_sources.values()) + ['installation.html', 'implementation.html', 'publication.html', 'gameplay-media.html', 'github-documentation.html', 'github-licenses-and-badges.html', 'github-repository-plan.html']:
             continue
         page = BeautifulSoup((dist/page_name).read_text(), 'html.parser')
         if page.footer: page.footer.decompose()
@@ -162,10 +166,10 @@ def main():
             elif rel.startswith('docs/public/media/'):
                 node[attr] = rel.removeprefix('docs/public/')
             else:
-                node[attr] = 'https://github.com/gelb2/HeavyMach/blob/docs/github-publication/'+quote(rel, safe='/')
+                node[attr] = 'https://github.com/gelb2/HeavyMach/blob/main/'+quote(rel, safe='/')
             if url.fragment: node[attr] += '#'+url.fragment
         style = page.new_tag('style')
-        style.string = 'main img,main video{display:block;max-width:100%;height:auto;margin:18px 0}main h1{line-height:1.25}'
+        style.string = 'main img,main video{display:block;max-width:100%;height:auto;margin:18px 0}main h1{line-height:1.25}main img[src^="media/badges/"]{display:inline-block;width:auto;height:20px;margin:0 4px 6px 0;vertical-align:middle}'
         page.head.append(style)
         deduplicate_styles(page)
         (dist/page_name).write_text(str(page))
@@ -185,6 +189,7 @@ def main():
     shutil.copytree(ROOT/'docs/public/media/lux-lunae',dist/'media/lux-lunae',dirs_exist_ok=True)
     shutil.copyfile(ROOT/'docs/public/media/README.md', dist/'media/README.md')
     shutil.copytree(ROOT/'docs/public/media/gameplay-20261027',dist/'media/gameplay-20261027',dirs_exist_ok=True)
+    shutil.copytree(ROOT/'docs/public/media/badges',dist/'media/badges',dirs_exist_ok=True)
     shutil.copyfile(ROOT/'docs/lux-lunae-plan-20261027.md',dist/'lux-lunae-plan-20261027.md')
     (dist/'evidence').mkdir(exist_ok=True)
     shutil.copyfile(ROOT/'docs/evidence/lux-lunae-implementation-20261027.json',dist/'evidence/lux-lunae-implementation-20261027.json')
