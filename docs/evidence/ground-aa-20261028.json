@@ -632,5 +632,11 @@
       "install": "success",
       "launch": "success"
     }
+  },
+  "texture_proposal_20261028": {
+    "user_decision": "Keep existing rattling/bounce; cancel body compressed/rebound pose rework",
+    "alarm_bug": "HM-AUDIO-ALARM-RETURN: user reported silence after alarm app background/foreground; not reproduced or fixed yet",
+    "proposal_manifest": "Art/GroundAA/20261028-texture-proposal/manifest.json",
+    "runtime_changed": false
   }
 }
