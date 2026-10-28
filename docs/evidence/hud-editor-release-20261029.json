@@ -1,0 +1,192 @@
+{
+  "date": "2026-10-29",
+  "branch": "feat/hud-layout-editor",
+  "previous_commit": "247b5cd4",
+  "planned_release": "v0.14",
+  "source_sha256": {
+    "Sources/Core/HUDConfiguration.hpp": "de473ab8fb586cd8a8a54379c1a2de255fd5ffaf690ad96c3b10a3ac691af534",
+    "Sources/Core/HUDLayout.hpp": "682c7c39b8d7ec5b519b44e81910ddc4c04fffe76fb8d1615ae3fd4eeb1fdf24",
+    "Sources/iOS/HMGameHUD.mm": "161fef5ee63ad6c6f6e7528cfd03fee885cd96145c0e88f34342341e82ffb5b6",
+    "Sources/iOS/HMGameView.mm": "7937923bb3ea96fc1254e16a25a5f14166bb0e191b2831949f554e5f646ef8c7",
+    "Sources/iOS/HMHUDEditor.inc": "a7b395c69e5e3b294968b363468185647738d392c4d7b209efe26195b12ca8d4",
+    "Tests/Apple/HMAppleInputTests.mm": "da5e3de6e2a352717577aa085433f90bbc9b2dcb19fcfdb073f3dcd0b95991e0",
+    "Tests/HUDLayoutTests.cpp": "e9fc091e07aa9be7b5ae8ad30c6230e6ec00c2892e1d7f0aca99c98bef936509",
+    "iOS/project.yml": "0cd13396fe9db6ac470cc9c2cdf418b4a8f57a2fbebc6b607401ff3b16da5d9c",
+    "macOS/project.yml": "4a9fcc567c091bf1c28d24132e71bb3a8820af55a651674a90f5e31119a38eb6"
+  },
+  "implemented": [
+    "English right-side metal tool panel with 44pt controls and collapsible body",
+    "Remove selection and hit-area rectangles",
+    "Restore original upper trim and make it independently movable",
+    "Read legacy 9-group files; append upper trim as group 10",
+    "Draw rail endcaps only for moved groups; original layout GPU pixel equality"
+  ],
+  "tests": {
+    "core-tests-final.log": {
+      "sha256": "a11d825546fc9b83749601df3139b5e9a6e098e38495a9fc4048b712a1e05077",
+      "passed": 24,
+      "failures": 0,
+      "test_cases": []
+    },
+    "iphone-tests.log": {
+      "sha256": "2f40e2baf2fed5caf3d5807ea3f7e3e9030f93555f6dfb8a638eeb23e43a37da",
+      "passed": 13,
+      "failures": 0,
+      "test_cases": [
+        "HMAppleInputTests testAutoAimEveryWeaponWithMovementAndJump",
+        "HMAppleInputTests testEveryWeaponKeyboardSelectionAndFire",
+        "HMAppleInputTests testHUDEditorCheatGeometryAndRepeatedClose",
+        "HMAppleInputTests testHUDEditorMovesHitsFreezesBattleAndPersistsOnlyApply",
+        "HMAppleInputTests testHUDEditorPregameExampleAndResizeDoesNotChangeSave",
+        "HMAppleInputTests testHUDEditorRightToolsTrimAndLegacySave",
+        "HMAppleInputTests testHUDEditorSelectionCollisionResizeAndSaveFailure",
+        "HMAppleInputTests testHUDMovedButtonsKeepTouchOwnershipAndAimFire",
+        "HMAppleInputTests testHUDMovedGaugesAnimateAndFreezeInEditor",
+        "HMAppleInputTests testHUDMovedMenuJumpAndAimButtons",
+        "HMAppleInputTests testHUDUpperTrimPreservesOriginalPixels",
+        "HMAppleInputTests testPauseMenuHUDEntryUsesGameTouchAndKeyboard",
+        "HMFramePerformanceTests testProductionTimerAndFullScreenTouchViewport"
+      ]
+    },
+    "ipad-tests.log": {
+      "sha256": "08e387b7efced87f6499c62905a3db92c8bcb524e2234c904b21688d48649911",
+      "passed": 13,
+      "failures": 0,
+      "test_cases": [
+        "HMAppleInputTests testAutoAimEveryWeaponWithMovementAndJump",
+        "HMAppleInputTests testEveryWeaponKeyboardSelectionAndFire",
+        "HMAppleInputTests testHUDEditorCheatGeometryAndRepeatedClose",
+        "HMAppleInputTests testHUDEditorMovesHitsFreezesBattleAndPersistsOnlyApply",
+        "HMAppleInputTests testHUDEditorPregameExampleAndResizeDoesNotChangeSave",
+        "HMAppleInputTests testHUDEditorRightToolsTrimAndLegacySave",
+        "HMAppleInputTests testHUDEditorSelectionCollisionResizeAndSaveFailure",
+        "HMAppleInputTests testHUDMovedButtonsKeepTouchOwnershipAndAimFire",
+        "HMAppleInputTests testHUDMovedGaugesAnimateAndFreezeInEditor",
+        "HMAppleInputTests testHUDMovedMenuJumpAndAimButtons",
+        "HMAppleInputTests testHUDUpperTrimPreservesOriginalPixels",
+        "HMAppleInputTests testPauseMenuHUDEntryUsesGameTouchAndKeyboard",
+        "HMFramePerformanceTests testProductionTimerAndFullScreenTouchViewport"
+      ]
+    },
+    "mac-tests-run.log": {
+      "sha256": "22f5688978bfa8c733c56552f2c182c6473f59f9015b2209b4be4e88cc28a041",
+      "passed": 2,
+      "failures": 0,
+      "test_cases": [
+        "HMAppleInputTests testHUDEditorRightToolsTrimAndLegacySave",
+        "HMAppleInputTests testPauseMenuHUDEntryUsesGameTouchAndKeyboard"
+      ]
+    }
+  },
+  "devices": [
+    {
+      "model": "iPhone Air",
+      "os": "iOS27.0.1",
+      "transport": "localNetwork"
+    },
+    {
+      "model": "iPad Air13 M2",
+      "os": "iPadOS27.0.1",
+      "transport": "localNetwork"
+    }
+  ],
+  "installed": {
+    "ordinary": "Xcode GUI build then devicectl update install and launch on both devices",
+    "cheat": "Xcode GUI build-for-testing then XCTest install/run on both devices"
+  },
+  "direct_observations": [
+    "iPhone cheat: move upper trim, move MENU right, APPLY, RESUME, touch moved MENU -> pause menu opens; reset layout afterward",
+    "iPhone ordinary: launch, select existing slot, scenario mode, mission selection and SET GAME UI visible",
+    "iPad ordinary: launch and title screen captured"
+  ],
+  "ordinary_save_comparison": {
+    "iphone": {
+      "HvM.dat": {
+        "before_sha256": "206cfffcf8f8ab3b662c575ba111893889035efede2ef6e2a63a5d2903edbe3e",
+        "after_sha256": "4791f9f492cda1cc4de622d93874277054cafc5179970085261b212e377a9652",
+        "before_bytes": 3624,
+        "after_bytes": 3624,
+        "changed_byte_offsets": [
+          1212,
+          1213
+        ]
+      },
+      "HUDLayoutV1-iphone.json": {
+        "before_sha256": "c662e685f1c7c619d2cf00e53e58158c2a34d5707722f59e67946e414188c78a",
+        "after_sha256": "c662e685f1c7c619d2cf00e53e58158c2a34d5707722f59e67946e414188c78a",
+        "before_bytes": 170,
+        "after_bytes": 170,
+        "changed_byte_offsets": []
+      }
+    },
+    "ipad": {
+      "HvM.dat": {
+        "before_sha256": "12bbb4ed08eec6b3ac4f29bd39173b4d543ebf8f55348696bae48fbd1a91f656",
+        "after_sha256": "12bbb4ed08eec6b3ac4f29bd39173b4d543ebf8f55348696bae48fbd1a91f656",
+        "before_bytes": 3624,
+        "after_bytes": 3624,
+        "changed_byte_offsets": []
+      },
+      "HUDLayoutV1-ipad.json": {
+        "before_sha256": "de58782db9f9bc396ae9decfc09455000e36fa3091d23c64e5c30bd478b578b2",
+        "after_sha256": "de58782db9f9bc396ae9decfc09455000e36fa3091d23c64e5c30bd478b578b2",
+        "before_bytes": 72,
+        "after_bytes": 72,
+        "changed_byte_offsets": []
+      }
+    }
+  },
+  "save_interpretation": "iPad byte-identical; iPhone only second slot offset4 timestamp changed after selecting slot (GlobalInfo::selectSlot). HUD layout files unchanged.",
+  "review": {
+    "agent": "hud_release_review",
+    "result": "No new major defect; Mac panel consumes down/drag/up; core/mobile/Mac successful logs verified"
+  },
+  "remaining": [
+    "Existing Mac frame processing threshold investigation",
+    "Long thermal and memory runs",
+    "Latest ordinary editor direct interaction on iPad/phone stopped when Mac locked; prior ordinary editor device checks in hud-editor-20261029.json"
+  ],
+  "raw_directory": "build/hud-release-20261029",
+  "failed_attempts_preserved": [
+    "core-build.log: test enum name shadowed local variable; corrected to Group::weapon",
+    "mac-tests.log and mac-tests-final.log: wrong xctestrun SDK path / target selection before execution; corrected in mac-tests-run.log"
+  ],
+  "media": {
+    "docs/public/media/hud-editor/release-iphone-trim.png": {
+      "sha256": "1a8684c04a232a03e3cce731f208b6f64abed8b9d8dbb19114d5d517f59ebf5f",
+      "bytes": 1568708
+    },
+    "docs/public/media/hud-editor/release-tool-pressed.png": {
+      "sha256": "bfdc9d5c8351d11d5fa282de14b899910fac3a50886c2e40a6ed8ca8f17e4e9d",
+      "bytes": 12807
+    },
+    "docs/public/media/hud-editor/release-iphone-menu.png": {
+      "sha256": "a7c637a6c919d4e7b848d4ac853027ae891fdce55def68afee6a396e8ab9b55a",
+      "bytes": 1611605
+    },
+    "docs/public/media/hud-editor/release-tool-normal.png": {
+      "sha256": "d90a2b6df7b6b3ea774985303af883b223cd6aa0fa165eb62dc757cac1d87cdf",
+      "bytes": 12819
+    },
+    "docs/public/media/hud-editor/release-ipad-trim.png": {
+      "sha256": "fbbd23646d640ee4bcf9316cffcd3e6b49190d5c461d9d3e1fbd54f9b03de2cf",
+      "bytes": 309963
+    }
+  },
+  "publication": {
+    "site_source": "88531cb723b6f015aa6df063bf670472048ef3d5",
+    "deployment": "appgdep_6ae24f8ccc28819197e2c81eace26935",
+    "status": "succeeded",
+    "url": "https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/hud-improvement.html#editor-release",
+    "audience": "owner-private",
+    "link_image_anchor_errors": 0
+  },
+  "resource_verification": {
+    "assets": 1498,
+    "sha256": "all match"
+  },
+  "secrets_scan": {
+    "files": 110,
+    "findings": 0
+  }
+}

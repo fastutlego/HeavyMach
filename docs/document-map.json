@@ -44,7 +44,8 @@
     "docs/public/validation.md",
     "docs/public/github-followup-20261028.md",
     "docs/ground-aa-expansion.md",
-    "docs/public/hud-improvement-plan-20261028.md"
+    "docs/public/hud-improvement-plan-20261028.md",
+    "docs/public/auto-aim-visibility-plan-20261028.md"
   ],
   "base_read": [
     "AGENTS.md",
@@ -95,11 +96,13 @@
         "Sources/Core/Player.cpp",
         "Sources/iOS/HMGameView.*",
         "Sources/iOS/HMValidationControls.*",
-        "Sources/iOS/Application.mm"
+        "Sources/iOS/Application.mm",
+        "Sources/Core/HUDLayout.hpp"
       ],
       "tests": [
         "Tests/iOS/HMFramePerformanceTests.mm",
-        "Tests/PlayerTests.cpp"
+        "Tests/PlayerTests.cpp",
+        "Tests/HUDLayoutTests.cpp"
       ],
       "evidence": [
         "docs/physical-edge-check-20261025.md",
@@ -450,7 +453,7 @@
         "docs/runtime-policy.md",
         "docs/keyboard-input-policy.md",
         "docs/repository-management.md",
-        "docs/public/hud-improvement-plan-20261028.md"
+        "docs/public/auto-aim-visibility-plan-20261028.md"
       ],
       "sources": [
         "Sources/Core/AutoAim.hpp",

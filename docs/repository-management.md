@@ -11,12 +11,12 @@
 
 ## 현재 태그에서 다시 빌드
 
-최신 릴리스는 v0.13이다. v0.10 이후 태그는 게임 자원을 Git/LFS에 포함한다. 별도 폴더에서 이전 버전을 빌드할 수 있다.
+최신 릴리스는 v0.14다. v0.10 이후 태그는 게임 자원을 Git/LFS에 포함한다. 별도 폴더에서 이전 버전을 빌드할 수 있다.
 
 ```sh
 git fetch origin --tags
-git worktree add --detach ../HeavyMach-v0.13 v0.13
-cd ../HeavyMach-v0.13
+git worktree add --detach ../HeavyMach-v0.14 v0.14
+cd ../HeavyMach-v0.14
 git lfs pull
 python3 tools/verify_build_resources.py
 open HeavyMach.xcworkspace
@@ -73,3 +73,7 @@ Codex가 내 지시에 따라 커밋·dev 병합·브랜치 정리를 진행했�
 쉴카·퉁구스카 추가와 최종 파츠·레이더·포탑 수정을 `feat/ground-aa-refinement`→develop `3677b0a7`→main `bc4e80c0` 순서로 병합했다. main 병합 커밋에 주석 태그 v0.13을 붙이고 원격에 반영했다. 제품 코드는 `d21cfa1c`, 크기·비율 승인 기록은 `4917fe75`다. 원래 적 배치를 보존하고 35개 스테이지에 152대를 추가했다.
 
 최종 제품의 코어23개·iPad 시뮬레이터2개·iPhone/iPad 각5개 검사는 통과했다. 두 기기의 일반·치트 앱은 같은 제품 코드로 무선 설치했다. 이번 릴리스에서는 소스·자원 해시와 병합 결과를 확인한다. 앱 번들 버전은 기존 값을 유지한다. [실기기 검사](evidence/shilka-height-20261028.json).
+
+## v0.14 — 2026-10-29
+
+HUD 편집과 도구·장식 수정을 feat/hud-layout-editor→develop→main 순서로 병합한다. 태그는 main의 병합 커밋에 붙인다. iPhone·iPad 각13개, 코어24개, Mac2개 검사와 두 기기의 정식·치트 설치를 완료했다. 앱 번들 버전은 기존 값을 유지하며 Git 릴리스 태그를 v0.14로 정한다. [검사 증거](evidence/hud-editor-release-20261029.json).

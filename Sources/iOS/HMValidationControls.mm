@@ -22,6 +22,7 @@
     }
     return self;
 }
+- (UIView*)hitTest:(CGPoint)point withEvent:(UIEvent*)event {return self.hudEditing?nil:[super hitTest:point withEvent:event];}
 - (NSInteger)numberOfSegments {return _buttons.count;}
 - (void)setSelectedSegmentIndex:(NSInteger)index {
     if(index<0||index>=4)return;

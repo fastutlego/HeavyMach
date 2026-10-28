@@ -249,6 +249,7 @@ struct SlotPreview {
     for (int i=0;i<7;++i) _positions[i]={220,float(i<3?250-96*i:-50)};
     [self setTop:_mission-1];
 }
+- (BOOL)isMissionSelection {return _screen==MenuScreen::mission;}
 - (void)showMode {_receiverOrder.clear();_nextReceiverOrder=0;_buttonStates.clear();_buttons.clear();_slot=_gameSlot;_screen=MenuScreen::mode;_mode=0;_pressed=-1;}
 - (void)startSelectedGame {if(self.startGame)self.startGame(_gameSlot,_mode,_mission,_stage);}
 - (void)showMissions:(int)mission stage:(int)stage {
