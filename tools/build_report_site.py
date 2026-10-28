@@ -62,6 +62,9 @@ def article(source,dest,download,template):
     if source == ROOT/'docs/ground-aa-expansion.md':
         readme_ids.update({name:f'section-{i}' for i,name in enumerate(['요구와 무장','파츠와 움직임','체력과 배치','검사'])})
         readme_ids['크기와 연결부 수정 · 2026-10-28']='refinement'
+    if source == ROOT/'docs/public/lux-lunae-intent-20261028.md':
+        readme_ids.update({name:f'section-{i}' for i,name in enumerate(['달빛과 두 게임','검은색과 금색','보스전의 난이도와 긴장감','텍스트 지시로 어디까지 만들 수 있는가','승인한 도안 3종','실제 인게임 모습','게임에 적용한 조건','대화 원문'])})
+        readme_ids.update({'게임을 하고 달라진 일':'games-and-life','움직임과 무기, 빠른 진입':'movement-and-entry','그림 작업에서 본 한계':'art-direction','지금도 고치고 있는 것':'ongoing-work'})
     nav=BeautifulSoup('<nav aria-label="본문 목차"><ol></ol></nav>','html.parser')
     for i,h in enumerate(content.select('h2')):
         h['id']=readme_ids.get(h.get_text(), ids[i] if i<len(ids) and ids[i] else f'section-{i}')
@@ -126,6 +129,7 @@ def main():
         ('auto-aim-ipad-20261027.md', 'auto-aim-progress.html'),
         ('vtol-art-and-loadout-20261027.md', 'vtol-art.html'),
         ('lux-lunae-design-20261027.md', 'lux-lunae.html'),
+        ('lux-lunae-intent-20261028.md', 'lux-lunae-intent.html'),
         ('clone-build-20261026.md', 'clone-build.html'),
         ('ipa-independent-build-20261026.md', 'independence.html'),
         ('rea-implementation-audit-20261026.md', 'rea-implementation.html'),
@@ -144,7 +148,7 @@ def main():
         article(ROOT/'docs/public'/source_name, dist/page_name, source_name, retro)
         page = BeautifulSoup((dist/page_name).read_text(), 'html.parser')
         if page.footer: page.footer.decompose()
-        if page_name in ('fullscreen.html','auto-aim-progress.html','lux-lunae.html','gameplay-media.html','ground-aa-art.html'):
+        if page_name in ('fullscreen.html','auto-aim-progress.html','lux-lunae.html','lux-lunae-intent.html','gameplay-media.html','ground-aa-art.html'):
             style=page.new_tag('style');style.string='main img,main video{display:block;max-width:100%;height:auto;margin:16px 0}main video{width:100%}';page.head.append(style)
             for img in page.select('main img'):
                 link=page.new_tag('a',href=img['src']);img.wrap(link)
@@ -153,6 +157,14 @@ def main():
                 img['width']='2736';img['height']='1260'
             for video in page.select('video'):
                 video['width']='2736';video['height']='1260'
+        if page_name == 'lux-lunae-intent.html':
+            style=page.new_tag('style');style.string='main img[src*="-gold.png"]{background:#525a58;border-radius:8px;padding:12px;box-sizing:border-box;width:100%}';page.head.append(style)
+            link=page.select_one('a[href="media/gameplay-20261027/07-fighters.mp4"]')
+            if link:
+                video=page.new_tag('video',controls='',playsinline='',preload='metadata',poster='media/gameplay-20261027/07-fighters.png')
+                video['aria-label']='추가 전투기들과 싸우는 13초 플레이 영상'
+                video.append(page.new_tag('source',src=link['href'],type='video/mp4'))
+                link.parent.insert_before(video)
         if page_name == 'lux-lunae.html':
             style=page.new_tag('style');style.string='.lux-small{display:flex;gap:24px;flex-wrap:wrap;align-items:center;padding:20px;background:#4c524f}.lux-small figure{margin:0}.lux-small img{max-width:none}.lux-small figcaption{font-size:12px;color:#fff}.lux-small a{display:block}'
             page.head.append(style)
@@ -160,6 +172,8 @@ def main():
             style=page.new_tag('style');style.string='.gaa-art-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;background:#626e70;padding:20px}.gaa-art-pair figure{margin:0;min-width:0}.gaa-art-pair img{width:100%;height:auto}.gaa-art-pair figcaption{font-size:14px;color:#fff}.gaa-reference-strip{display:flex;flex-wrap:wrap;align-items:center;gap:28px;padding:24px;background:#626e70}.gaa-reference-strip figure{margin:0}.gaa-reference-strip img{max-width:none;width:auto;margin:0}.gaa-reference-strip img[width="200"]{width:200px}.gaa-reference-strip img[width="99"]{width:99px}.gaa-reference-strip img[width="126"]{width:126px}.gaa-reference-strip img[width="92"]{width:92px}.gaa-reference-strip img[width="90"]{width:90px}.gaa-reference-strip img[width="86"]{width:86px}.gaa-reference-strip img[width="114"]{width:114px}.gaa-reference-strip figcaption{font-size:13px;color:#fff;margin-top:8px}'
             page.head.append(style)
         for link in page.select('a[href]'):
+            if link['href'].startswith('../references/'):
+                link['href']='https://github.com/gelb2/HeavyMach/blob/main/docs/'+link['href'][3:]
             if link['href'].startswith('../evidence/') and page_name not in ('installation.html', 'implementation.html', 'ground-units.html', 'ground-aa-art.html', 'publication.html', 'gameplay-media.html', 'github-documentation.html', 'github-licenses-and-badges.html', 'github-followup.html'):
                 link['href']=link['href'][3:]
             if link['href'] in ('../apple-platforms.md','../keyboard-input-policy.md','../current-status.md','../auto-aim-plan-20261026.md','../wireless-device-workflow.md'):
