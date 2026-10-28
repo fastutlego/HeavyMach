@@ -43,7 +43,7 @@ def article(source,dest,download,template):
         '라이선스와 자원': 'section-7',
     } if source == ROOT/'README.md' else {}
     if source == ROOT/'docs/public/lux-lunae-intent-20261028.md':
-        readme_ids.update({name:f'section-{i}' for i,name in enumerate(['달빛과 두 게임','검은색과 금색','보스전의 난도와 긴장감','텍스트 지시로 어디까지 만들 수 있는가','승인한 도안 3종','실제 인게임 모습','게임에 적용한 조건','대화 원문'])})
+        readme_ids.update({name:f'section-{i}' for i,name in enumerate(['달빛과 두 게임','검은색과 금색','보스전의 난이도와 긴장감','텍스트 지시로 어디까지 만들 수 있는가','승인한 도안 3종','실제 인게임 모습','게임에 적용한 조건','대화 원문'])})
         readme_ids.update({'게임을 하고 달라진 일':'games-and-life','움직임과 무기, 빠른 진입':'movement-and-entry','그림 작업에서 본 한계':'art-direction','지금도 고치고 있는 것':'ongoing-work'})
     nav=BeautifulSoup('<nav aria-label="본문 목차"><ol></ol></nav>','html.parser')
     for i,h in enumerate(content.select('h2')):
