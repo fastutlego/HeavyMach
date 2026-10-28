@@ -2,6 +2,61 @@
 
 차체·포탑·포신·발사관·레이더를 모두 새로 그렸다. 위쪽은 조립된 모습, 아래쪽은 분리할 파츠다. 원작 지상 유닛 5종의 파츠 연결점·겹침 순서·회전 설정을 확인해 조립안을 작성했다.
 
+## 현재 에셋으로 다시 그린 두 시안
+
+현재 게임의 해리어 v3와 F-22 파일을 생성 도구에 직접 넣었다. 실차 사진은 차체·포탑·레이더 형태를, 공중 유닛은 도장·금속 명암·표면 묘사를 참조했다. 이전 지상 시안에 색만 덧칠하는 대신 두 차량을 새로 그렸다.
+
+### 새 쉴카
+
+![현재 공중 유닛을 참조해 새로 그린 쉴카](media/ground-aa/runtime-style/shilka.png)
+
+낮은 차체, 바퀴 6개, 두 쌍으로 배치한 포신 4개와 뒤쪽 원형 레이더를 그렸다. 포탑 아래는 차체 지붕과 겹치고 레이더 받침은 포탑에 붙인다. 회녹색·회색 도장과 면을 따라 달라지는 금속 명암을 적용했다.
+
+### 새 퉁구스카
+
+![현재 공중 유닛을 참조해 새로 그린 퉁구스카](media/ground-aa/runtime-style/tunguska.png)
+
+첫 생성 결과가 쉴카의 긴 상자형 포탑까지 따라 그려 포탑과 무장 배치를 다시 수정했다. 앞의 원형 추적 레이더와 뒤의 탐색 레이더, 측면 발사관을 구분했다. 짧은 포신과 바퀴 6개, 붙어 있는 포탑 받침을 유지한다.
+
+두 장은 검토용 조립 그림이다. 게임 파츠는 아직 교체하지 않았다. 채택 후 차체·포탑·포신·레이더를 분리하고 현재 차체 폭 80·85에 맞춰 연결한다. 덜컹거림·무장·배치는 유지한다.
+
+### 생성에 사용한 현재 공중 유닛
+
+<div class="gaa-art-pair">
+<figure><img src="media/vtol/refined/VTOL_Harrier.png" data-runtime-asset="Art/Extensions/VTOL_Harrier.png" alt="이번 생성 입력인 현재 해리어 v3"><figcaption>해리어 v3 · 9a523efede9a</figcaption></figure>
+<figure><img src="media/lux-lunae/F22-gold.png" data-runtime-asset="Art/Extensions/Lux_F22.png" alt="이번 생성 입력인 현재 F22"><figcaption>F-22 · 8cf228dafd36</figcaption></figure>
+</div>
+
+<div class="gaa-reference-strip">
+<figure><img src="media/ground-aa/runtime-style/shilka.png" width="86" alt="작게 표시한 새 쉴카"><figcaption>쉴카</figcaption></figure>
+<figure><img src="media/ground-aa/runtime-style/tunguska.png" width="90" alt="작게 표시한 새 퉁구스카"><figcaption>퉁구스카</figcaption></figure>
+<figure><img src="media/vtol/refined/VTOL_Harrier.png" width="114" data-runtime-asset="Art/Extensions/VTOL_Harrier.png" alt="작게 표시한 현재 해리어"><figcaption>해리어</figcaption></figure>
+</div>
+
+[생성 입력·수정 프롬프트](../../Art/GroundAA/20261028-runtime-style/prompts.json) · [참조와 결과 파일의 해시](../../Art/GroundAA/20261028-runtime-style/manifest.json)
+
+## GitHub main 독립 빌드 재검사
+
+그림을 만들기 전에 GitHub의 `main` 커밋 `dc41705e`를 새 임시 폴더에 clone했다. Git LFS로 자원을 받았으며 기존 프로젝트의 파일은 복사하지 않았다. 기존 Git 작업 폴더·분석 폴더와 `.ipa` 파일 읽기를 차단한 상태에서 빌드했다. 접근 차단 검사도 실제 읽기 실패를 반환했다.
+
+| 검사 | 결과 |
+|---|---|
+| GitHub에서 받은 빌드·검사 자원 | 1,482개 해시 일치 |
+| 일반 앱·치트 앱 | 둘 다 새 빌드 성공 |
+| 앱에 들어간 게임 자원 | 앱마다 1,478개 해시 일치 |
+| 새 iPhone 시뮬레이터 | 두 앱 설치·실행 성공 |
+| 코어 검사 | 21개 통과 |
+| 이미지·음향·무기·확장 화면 입력 검사 | 10개 통과 |
+
+현재 GitHub 소스와 자원으로 빌드하고 실행할 수 있다. 필요한 이미지·소리·맵은 앱의 `HeavyMachAssets.bundle`에 들어간다. 이번에 검사한 원격 `main`에는 공중 유닛 6종이 포함돼 있다. 쉴카·퉁구스카는 아직 로컬 `feat/ground-aa` 작업이다.
+
+<details><summary>새 clone으로 만든 일반·치트 앱의 첫 실행 화면</summary>
+<img src="media/ground-aa/runtime-style/HeavyMachRestored-fresh-clone.png" alt="새 clone 일반 앱 실행">
+<img src="media/ground-aa/runtime-style/HeavyMachValidation-fresh-clone.png" alt="새 clone 치트 앱 실행">
+</details>
+
+[명령·커밋·검사 결과](../evidence/independence-main-20261028.json)
+
 ## 해리어 참조 오류 정정
 
 보고서에서 ‘채택된 해리어’라고 보여준 그림은 탈락한 첫 시안이었다. 생성 도구에는 두 번째 시안을 넣었고, 현재 앱은 외곽선을 정리한 세 번째 파일을 사용한다. 세 파일을 대조하지 않아 생성 참조와 보고서 그림이 달라졌다. 아래 지상 유닛 시안은 보류했다.
