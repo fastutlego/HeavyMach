@@ -1,0 +1,92 @@
+{
+  "issue": "Report labelled rejected v1 Harrier as accepted; image generation used v2; current app uses v3. Paths and hashes had not been cross-checked.",
+  "harrier_variants": [
+    {
+      "role": "rejected_v1",
+      "file": "Art/VTOL/20261027/harrier-concept.png",
+      "sha256": "aaa54c606b504365b4342e808ab9817d55bbc528b0cdd778f4c2b1f0cb88f368"
+    },
+    {
+      "role": "generation_reference_v2",
+      "file": "Art/VTOL/20261027-v2/harrier-concept.png",
+      "sha256": "b40e1e5b9cae681472de34c9be748d50c0e8bf5a0b8fd3b1004ed401df983ecc"
+    },
+    {
+      "role": "current_runtime_v3",
+      "file": "Art/Extensions/VTOL_Harrier.png",
+      "sha256": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb"
+    }
+  ],
+  "wrong_report_path": "docs/public/media/vtol/harrier-concept.png",
+  "wrong_report_sha256": "aaa54c606b504365b4342e808ab9817d55bbc528b0cdd778f4c2b1f0cb88f368",
+  "verified_current_aircraft": [
+    {
+      "unit": "Yak141",
+      "source": "Art/VTOL/20261027-v3/VTOL_Yak141.png",
+      "runtime": "Art/Extensions/VTOL_Yak141.png",
+      "report": "docs/public/media/vtol/refined/VTOL_Yak141.png",
+      "sha256": "fdff4c3a7193738d2da9ecb0dd233397490a5e1dc29a65544726cd9c68ace626",
+      "built_apps": {
+        "HeavyMachRestored.app": true,
+        "HeavyMachValidation.app": true
+      }
+    },
+    {
+      "unit": "Harrier",
+      "source": "Art/VTOL/20261027-v3/VTOL_Harrier.png",
+      "runtime": "Art/Extensions/VTOL_Harrier.png",
+      "report": "docs/public/media/vtol/refined/VTOL_Harrier.png",
+      "sha256": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb",
+      "built_apps": {
+        "HeavyMachRestored.app": true,
+        "HeavyMachValidation.app": true
+      }
+    },
+    {
+      "unit": "F35B",
+      "source": "Art/VTOL/20261027-v3/VTOL_F35B.png",
+      "runtime": "Art/Extensions/VTOL_F35B.png",
+      "report": "docs/public/media/vtol/refined/VTOL_F35B.png",
+      "sha256": "8c2663b77851cde0665186c3ace3e7032de687e011162cfebe28fc71018a6913",
+      "built_apps": {
+        "HeavyMachRestored.app": true,
+        "HeavyMachValidation.app": true
+      }
+    },
+    {
+      "unit": "F22",
+      "source": "Art/LuxLunae/20261027-gold/F22.png",
+      "runtime": "Art/Extensions/Lux_F22.png",
+      "report": "docs/public/media/lux-lunae/F22-gold.png",
+      "sha256": "8cf228dafd366849f50ce623901a1106dad35df4ccb451e1de6e346c79f6f082",
+      "built_apps": {
+        "HeavyMachRestored.app": true,
+        "HeavyMachValidation.app": true
+      }
+    },
+    {
+      "unit": "Su57",
+      "source": "Art/LuxLunae/20261027-gold/Su57.png",
+      "runtime": "Art/Extensions/Lux_Su57.png",
+      "report": "docs/public/media/lux-lunae/Su57-gold.png",
+      "sha256": "d8797d4559d71df8923e3d755f4f51237053a3ec1d374f0022834111b775a197",
+      "built_apps": {
+        "HeavyMachRestored.app": true,
+        "HeavyMachValidation.app": true
+      }
+    },
+    {
+      "unit": "MiG31",
+      "source": "Art/LuxLunae/20261027-gold/MiG31.png",
+      "runtime": "Art/Extensions/Lux_MiG31.png",
+      "report": "docs/public/media/lux-lunae/MiG31-gold.png",
+      "sha256": "ef9351c5bb4112c0bc10befa489ae989d3b341e69da29a047c6570d3c468260d",
+      "built_apps": {
+        "HeavyMachRestored.app": true,
+        "HeavyMachValidation.app": true
+      }
+    }
+  ],
+  "ground_proposal_status": "hold_pending_current_runtime_reference_rework",
+  "app_assets_changed": false
+}

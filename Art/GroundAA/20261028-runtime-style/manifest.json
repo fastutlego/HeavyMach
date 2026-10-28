@@ -1,0 +1,58 @@
+{
+  "status": "concept_review",
+  "date": "2026-10-28",
+  "references": [
+    {
+      "role": "painting-current-runtime",
+      "path": "Art/Extensions/VTOL_Harrier.png",
+      "sha256": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb"
+    },
+    {
+      "role": "painting-current-runtime",
+      "path": "Art/Extensions/Lux_F22.png",
+      "sha256": "8cf228dafd366849f50ce623901a1106dad35df4ccb451e1de6e346c79f6f082"
+    },
+    {
+      "role": "geometry-shilka",
+      "path": "build/ground-art-20261028/references/Shilka_528.jpg",
+      "sha256": "ba3af9253862d5c46b006a03021fc05e7c6018f13aa0b4a18e6b10fed1c619c6"
+    },
+    {
+      "role": "geometry-tunguska",
+      "path": "build/ground-art-20261028/references/528_2_tung.jpg",
+      "sha256": "e749fc60bb0705c8dffb0b01a540fc29dd53dfc9a87a1d27e70ad4cc00a0e59c"
+    }
+  ],
+  "files": [
+    {
+      "unit": "shilka",
+      "path": "docs/public/media/ground-aa/runtime-style/shilka.png",
+      "sha256": "57b0398591688e4ab8453babe7b6e080e240dd152e397f8320cae4853bfc6632",
+      "size": [
+        1774,
+        887
+      ],
+      "png_color_type": 6
+    },
+    {
+      "unit": "tunguska",
+      "path": "docs/public/media/ground-aa/runtime-style/tunguska.png",
+      "sha256": "4ca272620eb4110fe79fe8521207f3c602c11d97aae18ea173cb92315a1b0e84",
+      "size": [
+        1657,
+        949
+      ],
+      "png_color_type": 6
+    }
+  ],
+  "runtime_assets_changed": false,
+  "motion_changed": false,
+  "review": {
+    "shilka": "six wheels; four gun tips in two pairs; radar bracket and turret attached",
+    "tunguska": "corrected initial Shilka-like turret; six wheels; side missile banks, front tracking and rear search radar; short guns"
+  },
+  "remaining": [
+    "user visual review",
+    "component separation and in-game assembly if selected"
+  ]
+}

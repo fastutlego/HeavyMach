@@ -1,0 +1,193 @@
+{
+  "date": "2026-10-28",
+  "branch": "feat/ground-aa-refinement",
+  "base_commit": "f6940eb9a37f2662fa8a518512998ecc89285750",
+  "art_manifest": "Art/GroundAA/20261028-integrated/manifest.json",
+  "changes": [
+    "Shilka/Tunguska runtime-style parts",
+    "fixed pedestal retained in turret; 24 rotating head frames",
+    "frame axle X/Y correction follows vehicle slope",
+    "body widths 80/85, gun widths 32/37 preserved"
+  ],
+  "preserved": [
+    "engine bounce",
+    "white bullet bursts 6/4 and missiles 2",
+    "35 substage placements, 152 ground AA",
+    "original 1182 spawns",
+    "weapon speed, damage, spread and cadence"
+  ],
+  "tests": {
+    "core": {
+      "passed": 23,
+      "failed": 0
+    },
+    "ipad_sim_initial": {
+      "passed": 2,
+      "failed": 0
+    },
+    "ipad_sim_motion_regression": {
+      "passed": 4,
+      "failed": 0
+    },
+    "iphone_wireless": {
+      "passed": 5,
+      "failed": 0,
+      "transport": "localNetwork"
+    },
+    "ipad_wireless": {
+      "passed": 5,
+      "failed": 0,
+      "transport": "localNetwork"
+    }
+  },
+  "shots_save_calls": 0,
+  "radar_frames_seen": 24,
+  "body_frames_seen": 2,
+  "apps": {
+    "HeavyMachRestored": {
+      "bundle": "com.gelb2.heavymach.restored",
+      "assets": [
+        {
+          "name": "GAA_Shilka_Parts_v2.png",
+          "sha256": "53bb7031b265ab3439d64c217259f75d2351359fdd446e2519fef174339c8e6a",
+          "matches": true
+        },
+        {
+          "name": "GAA_Shilka_Radar_v2.png",
+          "sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+          "matches": true
+        },
+        {
+          "name": "GAA_Tunguska_Parts_v2.png",
+          "sha256": "a43afb7e3111085b6c1d9d841d3640976211e33e951537fef81324b48a3dcc8a",
+          "matches": true
+        },
+        {
+          "name": "GAA_Tunguska_Radar_v2.png",
+          "sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+          "matches": true
+        }
+      ],
+      "binary_sha256": "8581ac84da029840d7a377f10aaeb2c54b62c1f80dbf9c1c9e35d2b6e405545e"
+    },
+    "HeavyMachValidation": {
+      "bundle": "com.gelb2.heavymach.validation",
+      "assets": [
+        {
+          "name": "GAA_Shilka_Parts_v2.png",
+          "sha256": "53bb7031b265ab3439d64c217259f75d2351359fdd446e2519fef174339c8e6a",
+          "matches": true
+        },
+        {
+          "name": "GAA_Shilka_Radar_v2.png",
+          "sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+          "matches": true
+        },
+        {
+          "name": "GAA_Tunguska_Parts_v2.png",
+          "sha256": "a43afb7e3111085b6c1d9d841d3640976211e33e951537fef81324b48a3dcc8a",
+          "matches": true
+        },
+        {
+          "name": "GAA_Tunguska_Radar_v2.png",
+          "sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+          "matches": true
+        }
+      ],
+      "binary_sha256": "a2ad7d7410f096a5630603510ccac93bbd0009e9372c74a704c1fc68369c3842"
+    }
+  },
+  "install": {
+    "iphone-normal-install": {
+      "outcome": "success",
+      "receipt_sha256": "2d18cfc7489044d8b6fbaad1c3a22b12f16e62440bd51ef2eca6a0253e6f691d"
+    },
+    "iphone-normal-launch": {
+      "outcome": "success",
+      "receipt_sha256": "e2b0f5820ff34bee832b97be4d6f52f65aac0fb64ce33ec6f956416424172849"
+    },
+    "ipad-normal-install": {
+      "outcome": "success",
+      "receipt_sha256": "611d60936fb207e9191337d096f7b0538804451a63b0506cb343f39ce5a50721"
+    },
+    "ipad-normal-launch": {
+      "outcome": "success",
+      "receipt_sha256": "e36fec4a5ad5580922293fe1a1e3c7e15b3e422724bd343ca41849b92d53586e"
+    }
+  },
+  "raw_logs": {
+    "build/art-refinement/ipad-export.log": "e8403a346c9b5ea58e5e2885cffcf1c4a703e4315b4aa4cae97f6d9e811bc23c",
+    "build/art-refinement/ipad-normal-launch.log": "347cce23cc3c23a709d7eca72b32ef9207eae856e2246db47a423c127e01eee9",
+    "build/art-refinement/iphone-wireless.log": "ebc1d8d51ffe31110bbc0fc77f4a8ad2cd8e1834d008156729926ae2333a4198",
+    "build/art-refinement/iphone-normal-install.log": "8dc20710eb9828bfb6288d1729c99e91e8c3bfb3a8eb02744d7afa3f79b386f9",
+    "build/art-refinement/export.log": "a9305783d0519c5d5c33e7fb8a2daf5b556fb350ec90abb13aa8e2ac701b0c12",
+    "build/art-refinement/encode-tunguska.log": "0ba8235b3b6489c9bc2fd3498f4c419b11fdda8d5e9d9b6ce6c84b0e96ece364",
+    "build/art-refinement/encode-shilka.log": "21e020ad958c14417ac8a0c16052270b56b7420f1eacb7f39bfcf124dba99e65",
+    "build/art-refinement/device-build.log": "6164343f28ac65d51c2b9e6066f90cab237ba1596de6655ef74bb8bf197f8282",
+    "build/art-refinement/core-build.log": "1763398f15768da97906c560b66a23cf962cecdbc5f4fa60754eda52207b7d93",
+    "build/art-refinement/ipad-sim.log": "223d4160cda59dfdf3ec9bab07431710ecedf01c8c93fa6c951bf4b5ee90cb10",
+    "build/art-refinement/core-configure.log": "5ae5dd0a0e9e636d2af901ec6c8ffbe615ae8b559e49a1f412dee424973e866c",
+    "build/art-refinement/ipad-sim-motion.log": "8a0710b5cf0a7f5b9896e1ee9ec7c77e44580b0ffd32e30efa2d4087e0c5abe5",
+    "build/art-refinement/ipad-normal-install.log": "f4a63f61d9e6375aae26f3707c81888000ef1a7b4f62098f78e3b5e2af2e3dc3",
+    "build/art-refinement/iphone-normal-launch.log": "347cce23cc3c23a709d7eca72b32ef9207eae856e2246db47a423c127e01eee9",
+    "build/art-refinement/iphone-export.log": "32f9ef504b716b17b1ea4826c03773c5fdb2cda203182870d56658a7368a5e65",
+    "build/art-refinement/core-tests.log": "8746c9a6b326b9b049ec9698c9103e62fb6c49f75be3978a6726b416097225a3",
+    "build/art-refinement/motion-export.log": "08fd5497f9b17aa469eccf4bec5d146c4b287860ea60ac23e64b9d8a34c76953",
+    "build/art-refinement/ipad-wireless.log": "d6c2b2db0a72d73d9356e629c91ae4d74ab9cc9d12a08e1638902ecb82b826dd"
+  },
+  "media": [
+    {
+      "path": "docs/public/media/ground-aa/integrated/ipad-comparison.png",
+      "sha256": "192e2e94df2ae50c7bb90803e0d8ef28cc3c2eb2269e5e8067fb7a1caa2fd13c"
+    },
+    {
+      "path": "docs/public/media/ground-aa/integrated/ipad-shilka.png",
+      "sha256": "422a097a10724f94f7d816f99777669770b51cd8cf391ef86eb0dfef01f65085"
+    },
+    {
+      "path": "docs/public/media/ground-aa/integrated/ipad-tunguska.png",
+      "sha256": "384b7ac0dd0371922968a2888d07e029deebeb85af2a9912ce119de1da507b37"
+    },
+    {
+      "path": "docs/public/media/ground-aa/integrated/iphone-comparison.png",
+      "sha256": "192e2e94df2ae50c7bb90803e0d8ef28cc3c2eb2269e5e8067fb7a1caa2fd13c"
+    },
+    {
+      "path": "docs/public/media/ground-aa/integrated/iphone-shilka.png",
+      "sha256": "422a097a10724f94f7d816f99777669770b51cd8cf391ef86eb0dfef01f65085"
+    },
+    {
+      "path": "docs/public/media/ground-aa/integrated/iphone-tunguska.png",
+      "sha256": "384b7ac0dd0371922968a2888d07e029deebeb85af2a9912ce119de1da507b37"
+    },
+    {
+      "path": "docs/public/media/ground-aa/integrated/shilka-motion.mp4",
+      "sha256": "e0b7f3f8954603e320508d11355ad860227e9bd62ca571ce1e4061d9db06c614"
+    },
+    {
+      "path": "docs/public/media/ground-aa/integrated/shilka-parts.png",
+      "sha256": "53bb7031b265ab3439d64c217259f75d2351359fdd446e2519fef174339c8e6a"
+    },
+    {
+      "path": "docs/public/media/ground-aa/integrated/shilka-radar.png",
+      "sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167"
+    },
+    {
+      "path": "docs/public/media/ground-aa/integrated/tunguska-motion.mp4",
+      "sha256": "652e2722f06de1156b5e8dd1ce374863841e315dc84dd66c830d51a971d7de6b"
+    },
+    {
+      "path": "docs/public/media/ground-aa/integrated/tunguska-parts.png",
+      "sha256": "a43afb7e3111085b6c1d9d841d3640976211e33e951537fef81324b48a3dcc8a"
+    },
+    {
+      "path": "docs/public/media/ground-aa/integrated/tunguska-radar.png",
+      "sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02"
+    }
+  ],
+  "remaining": [
+    "user visual/play review",
+    "long duration thermal test",
+    "develop/main merge not performed"
+  ]
+}

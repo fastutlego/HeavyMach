@@ -1,0 +1,114 @@
+{
+  "date": "2026-10-28",
+  "branch": "feat/ground-aa-refinement",
+  "base_commit": "5d8e0c572f0cbf17c350ccca4244102eeaafb927",
+  "manifest": "Art/GroundAA/20261028-shilka-turret/manifest.json",
+  "changes": [
+    "Shilka turret armored side walls and rear volume redrawn from museum photograph",
+    "Tall decorative antennas removed; radar pedestal socket moved to (14,8)"
+  ],
+  "preserved": [
+    "Tunguska assets and sockets",
+    "Shilka hull, gun, radar sprites, weapons, bounce and placement"
+  ],
+  "tests": {
+    "core": {
+      "passed": 23,
+      "failed": 0
+    },
+    "ipad_sim": {
+      "passed": 2,
+      "failed": 0
+    },
+    "iphone_wireless": {
+      "passed": 5,
+      "failed": 0,
+      "transport": "localNetwork"
+    },
+    "ipad_wireless": {
+      "passed": 5,
+      "failed": 0,
+      "transport": "localNetwork"
+    }
+  },
+  "apps": {
+    "HeavyMachRestored": {
+      "turret_sha256": "b6d21f38c6ea995e58cb16dbf7f7f5f6f11e004d2ec2c2915b39749d6b03c331",
+      "matches": true,
+      "binary_sha256": "2254c68d452e380329f3381ec9d4d4065160d976192a5d7c74293c732ba9ccb4"
+    },
+    "HeavyMachValidation": {
+      "turret_sha256": "b6d21f38c6ea995e58cb16dbf7f7f5f6f11e004d2ec2c2915b39749d6b03c331",
+      "matches": true,
+      "binary_sha256": "6504d0bf8c7a0ceb68e10678a58e08086d683383162bba1e732a5608b87e7051"
+    }
+  },
+  "installs": {
+    "iphone-normal-install": {
+      "outcome": "success",
+      "receipt_sha256": "79a73538ba3cbd4d1f814b9c7c1b3f729b67c2cc8d85025cee6cf6506dc5d235"
+    },
+    "iphone-normal-launch": {
+      "outcome": "success",
+      "receipt_sha256": "b3da3322a57de018902fd9f298d8beefd956d4d41d2342c1c2afab281dce3b9d"
+    },
+    "ipad-normal-install": {
+      "outcome": "success",
+      "receipt_sha256": "21334339704ad70a83175966b83ca2a70b7dbbaa065ce654154c0e9b9d2121be"
+    },
+    "ipad-cheat-install": {
+      "outcome": "success",
+      "receipt_sha256": "e73492bfa4bda34262927007747fc4e723843aebb5dd52bcc5a9e4d21e40cb77"
+    },
+    "ipad-normal-launch": {
+      "outcome": "success",
+      "receipt_sha256": "51db6eaffd3af2f2b7449063ff9ba5f3dd4507f9630ba7b5f629329042716231"
+    }
+  },
+  "transport": {
+    "iphone": "localNetwork",
+    "ipad": "localNetwork"
+  },
+  "media": [
+    {
+      "path": "docs/public/media/ground-aa/shilka-turret/iphone-shilka-motion.mp4",
+      "sha256": "2b0ceabfe23b256c8710bbb293f146f103f066c8a39f22ceb0f25e66b12a8dc2"
+    },
+    {
+      "path": "docs/public/media/ground-aa/shilka-turret/iphone-shilka.png",
+      "sha256": "0f68c6322a8a37aec53469586a8064a028882e4b4589648d63768fcba77efa8b"
+    },
+    {
+      "path": "docs/public/media/ground-aa/shilka-turret/shilka-museum.jpg",
+      "sha256": "3ec1313734960ad23526deb2728dc36409431ce3386b92e7adb9d2cfaed732f5"
+    },
+    {
+      "path": "docs/public/media/ground-aa/shilka-turret/iphone-comparison.png",
+      "sha256": "ae0fe487c9c4ccf3f70421e8a28b77c5e8f23d39a8ddb8b2fabd4520e29c1419"
+    },
+    {
+      "path": "docs/public/media/ground-aa/shilka-turret/turret-v3.png",
+      "sha256": "b6d21f38c6ea995e58cb16dbf7f7f5f6f11e004d2ec2c2915b39749d6b03c331"
+    },
+    {
+      "path": "docs/public/media/ground-aa/shilka-turret/ipad-shilka.png",
+      "sha256": "0f68c6322a8a37aec53469586a8064a028882e4b4589648d63768fcba77efa8b"
+    }
+  ],
+  "logs": {
+    "build/shilka-turret/core-tests.log": "a2ac052c8d9bffdb58b0e82b6c53d8c58ca85f21a05288bff15f683144faf5b5",
+    "build/shilka-turret/ipad-sim.log": "0b1866f71dc8ac6242f52fd917d94b2ee3c29602d0bd4c889c82520cd05b0332",
+    "build/shilka-turret/iphone-wireless.log": "20bceb6fdb543ab178d5a191363a65e858fbf6cc1422888bebdf31e63e096be4",
+    "build/shilka-turret/ipad-unlocked.log": "b1d3d9def0c1063f16c254684105d8a869fb340a10d134fbc9decc50f9d092f2"
+  },
+  "initial_ipad_attempt": {
+    "status": "test_runner_exited_before_connection",
+    "preceded_by": "device_locked",
+    "subsequent_unlocked_run": "passed",
+    "raw_log_sha256": "0841558d5f17989e32f5a1b0a9790107b8ae5d5f2bbf311ea413a96d05449cf5"
+  },
+  "transport_after": {
+    "iphone": "localNetwork",
+    "ipad": "localNetwork"
+  }
+}

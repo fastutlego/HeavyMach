@@ -11,6 +11,14 @@ ROOT=Path(__file__).resolve().parents[1]
 def render(text):
     return BeautifulSoup(markdown.markdown(text,extensions=['tables','fenced_code','attr_list']), 'html.parser')
 
+def check_runtime_art_references():
+    source=ROOT/'docs/public/ground-aa-art-20261028.md'
+    for img in render(source.read_text()).select('img[data-runtime-asset]'):
+        shown=(source.parent/img['src']).resolve()
+        runtime=ROOT/img['data-runtime-asset']
+        if hashlib.sha256(shown.read_bytes()).digest()!=hashlib.sha256(runtime.read_bytes()).digest():
+            raise ValueError(f'Current art reference differs from runtime: {shown} != {runtime}')
+
 def deduplicate_styles(soup):
     # Keep the last occurrence so CSS precedence stays unchanged on regeneration.
     seen=set()
@@ -42,6 +50,21 @@ def article(source,dest,download,template):
         '개발 중 고친 문제': 'section-5', '코드 구조와 버전': 'section-6',
         '라이선스와 자원': 'section-7',
     } if source == ROOT/'README.md' else {}
+    if source == ROOT/'docs/public/ground-aa-art-20261028.md':
+        readme_ids.update({name:f'section-{i}' for i,name in enumerate(['쉴카','퉁구스카','확인한 원작 조립 구조','덜컹거림과 파츠 조립','제작 자료','초기 게임 화면과 무장','미션별 수량','구현 검사 결과','초기 실기기 검사'])})
+        readme_ids['크기·연결부·레이더·포신 수정']='refinement'
+        readme_ids['포신 단축·접합부 재수정과 외형 개선 계획']='barrels-and-art-plan'
+        readme_ids['색·질감 수정 시안']='texture-proposal'
+        readme_ids['공중 유닛 화풍을 참조한 수정 시안']='aircraft-style'
+        readme_ids['현재 에셋으로 다시 그린 두 시안']='runtime-style'
+        readme_ids['새 파츠와 레이더 적용']='integrated'
+        readme_ids['쉴카 포탑 높이 수정']='shilka-turret'
+        readme_ids['두 포탑 높이 맞춤']='matched-height'
+        readme_ids['GitHub main 독립 빌드 재검사']='independent-build'
+        readme_ids['해리어 참조 오류 정정']='reference-audit'
+    if source == ROOT/'docs/ground-aa-expansion.md':
+        readme_ids.update({name:f'section-{i}' for i,name in enumerate(['요구와 무장','파츠와 움직임','체력과 배치','검사'])})
+        readme_ids['크기와 연결부 수정 · 2026-10-28']='refinement'
     if source == ROOT/'docs/public/lux-lunae-intent-20261028.md':
         readme_ids.update({name:f'section-{i}' for i,name in enumerate(['달빛과 두 게임','검은색과 금색','보스전의 난이도와 긴장감','텍스트 지시로 어디까지 만들 수 있는가','승인한 도안 3종','실제 인게임 모습','게임에 적용한 조건','대화 원문'])})
         readme_ids.update({'게임을 하고 달라진 일':'games-and-life','움직임과 무기, 빠른 진입':'movement-and-entry','그림 작업에서 본 한계':'art-direction','지금도 고치고 있는 것':'ongoing-work'})
@@ -64,6 +87,7 @@ def article(source,dest,download,template):
     dest.write_text(str(page));shutil.copyfile(source,dest.parent/download)
 
 def main():
+    check_runtime_art_references()
     ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--checkout',type=Path,required=True);args=ap.parse_args();dist=args.checkout/'dist'
     original=(dist/'index.html').read_text();old=BeautifulSoup(original,'html.parser');images={}
     for sid in ('menu-joins','menu-result'):
@@ -147,6 +171,15 @@ def main():
         if page_name == 'lux-lunae.html':
             style=page.new_tag('style');style.string='.lux-small{display:flex;gap:24px;flex-wrap:wrap;align-items:center;padding:20px;background:#4c524f}.lux-small figure{margin:0}.lux-small img{max-width:none}.lux-small figcaption{font-size:12px;color:#fff}.lux-small a{display:block}'
             page.head.append(style)
+        if page_name == 'ground-aa-art.html':
+            for anchor in page.select('a#integrated'): anchor.decompose()
+            for link in list(page.select('a[href^="media/ground-aa/"][href$=".mp4"]')):
+                video=page.new_tag('video',controls='',playsinline='',preload='metadata',loop='')
+                video['aria-label']=link.get_text()
+                video.append(page.new_tag('source',src=link['href'],type='video/mp4'))
+                link.parent.insert_before(video)
+            style=page.new_tag('style');style.string='.gaa-art-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;background:#626e70;padding:20px}.gaa-art-pair figure{margin:0;min-width:0}.gaa-art-pair img{width:100%;height:auto}.gaa-art-pair figcaption{font-size:14px;color:#fff}.gaa-reference-strip{display:flex;flex-wrap:wrap;align-items:center;gap:28px;padding:24px;background:#626e70}.gaa-reference-strip figure{margin:0}.gaa-reference-strip img{max-width:none;width:auto;margin:0}.gaa-reference-strip img[width="200"]{width:200px}.gaa-reference-strip img[width="99"]{width:99px}.gaa-reference-strip img[width="126"]{width:126px}.gaa-reference-strip img[width="92"]{width:92px}.gaa-reference-strip img[width="90"]{width:90px}.gaa-reference-strip img[width="86"]{width:86px}.gaa-reference-strip img[width="114"]{width:114px}.gaa-reference-strip figcaption{font-size:13px;color:#fff;margin-top:8px}'
+            page.head.append(style)
         for link in page.select('a[href]'):
             if link['href'].startswith('../references/'):
                 link['href']='https://github.com/gelb2/HeavyMach/blob/main/docs/'+link['href'][3:]
@@ -167,6 +200,7 @@ def main():
         'docs/public/troubleshooting.md': 'troubleshooting.html',
         'docs/public/development-history.md': 'development-history.html',
         'docs/public/validation.md': 'validation.html',
+        'docs/ground-aa-expansion.md': 'ground-aa-implementation.html',
     }
     routes = {**reader_sources, **{'docs/public/'+src: page for src, page in public_articles},
               'docs/RESTORATION.md': 'restoration.html', 'docs/auto-aim-plan-20261026.md': 'auto-aim.html',
@@ -190,6 +224,28 @@ def main():
             try: rel = target.resolve().relative_to(ROOT).as_posix()
             except ValueError: continue
             if rel in routes: node[attr] = routes[rel]
+            elif rel.startswith('Art/GroundAA/20261028-refinement/') and rel.endswith('.json'):
+                node[attr] = 'evidence/ground-aa-refinement-'+Path(rel).name
+            elif rel.startswith('Art/GroundAA/20261028-texture-proposal/') and rel.endswith('.json'):
+                node[attr] = 'evidence/ground-aa-texture-'+Path(rel).name
+            elif rel.startswith('Art/GroundAA/20261028-aircraft-style/') and rel.endswith('.json'):
+                node[attr] = 'evidence/ground-aa-aircraft-style-'+Path(rel).name
+            elif rel.startswith('Art/GroundAA/20261028-runtime-style/') and rel.endswith('.json'):
+                node[attr] = 'evidence/ground-aa-runtime-style-'+Path(rel).name
+            elif rel == 'docs/evidence/independence-main-20261028.json':
+                node[attr] = 'evidence/independence-main-20261028.json'
+            elif rel.startswith('Art/GroundAA/20261028-shilka-turret/') and rel.endswith('.json'):
+                node[attr] = 'evidence/shilka-turret-'+Path(rel).name
+            elif rel == 'docs/evidence/shilka-height-20261028.json':
+                node[attr] = 'evidence/shilka-height-20261028.json'
+            elif rel == 'docs/evidence/shilka-turret-20261028.json':
+                node[attr] = 'evidence/shilka-turret-20261028.json'
+            elif rel.startswith('Art/GroundAA/20261028-integrated/') and rel.endswith('.json'):
+                node[attr] = 'evidence/ground-aa-integrated-'+Path(rel).name
+            elif rel == 'docs/evidence/ground-aa-integrated-20261028.json':
+                node[attr] = 'evidence/ground-aa-integrated-20261028.json'
+            elif rel == 'docs/evidence/ground-aa-20261028.json':
+                node[attr] = 'evidence/ground-aa-20261028.json'
             elif rel.startswith('docs/public/media/'):
                 node[attr] = rel.removeprefix('docs/public/')
             else:
@@ -222,6 +278,23 @@ def main():
         shutil.copyfile(ROOT/'docs/public/media'/name,dist/'media'/name)
     shutil.copyfile(ROOT/'docs/lux-lunae-plan-20261027.md',dist/'lux-lunae-plan-20261027.md')
     (dist/'evidence').mkdir(exist_ok=True)
+    for file in (ROOT/'Art/GroundAA/20261028-refinement').glob('*.json'):
+        shutil.copyfile(file,dist/'evidence'/('ground-aa-refinement-'+file.name))
+    for file in (ROOT/'Art/GroundAA/20261028-texture-proposal').glob('*.json'):
+        shutil.copyfile(file,dist/'evidence'/('ground-aa-texture-'+file.name))
+    for file in (ROOT/'Art/GroundAA/20261028-aircraft-style').glob('*.json'):
+        shutil.copyfile(file,dist/'evidence'/('ground-aa-aircraft-style-'+file.name))
+    for file in (ROOT/'Art/GroundAA/20261028-runtime-style').glob('*.json'):
+        shutil.copyfile(file,dist/'evidence'/('ground-aa-runtime-style-'+file.name))
+    shutil.copyfile(ROOT/'docs/evidence/independence-main-20261028.json',dist/'evidence/independence-main-20261028.json')
+    for file in (ROOT/'Art/GroundAA/20261028-shilka-turret').glob('*.json'):
+        shutil.copyfile(file,dist/'evidence'/('shilka-turret-'+file.name))
+    shutil.copyfile(ROOT/'docs/evidence/shilka-height-20261028.json',dist/'evidence/shilka-height-20261028.json')
+    shutil.copyfile(ROOT/'docs/evidence/shilka-turret-20261028.json',dist/'evidence/shilka-turret-20261028.json')
+    for file in (ROOT/'Art/GroundAA/20261028-integrated').glob('*.json'):
+        shutil.copyfile(file,dist/'evidence'/('ground-aa-integrated-'+file.name))
+    shutil.copyfile(ROOT/'docs/evidence/ground-aa-integrated-20261028.json',dist/'evidence/ground-aa-integrated-20261028.json')
+    shutil.copyfile(ROOT/'docs/evidence/ground-aa-20261028.json',dist/'evidence/ground-aa-20261028.json')
     shutil.copyfile(ROOT/'docs/evidence/lux-lunae-implementation-20261027.json',dist/'evidence/lux-lunae-implementation-20261027.json')
     for suffix in ['txt','cpp']:
         name='lux-lunae-inventory-20261027.'+suffix

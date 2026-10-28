@@ -1,0 +1,46 @@
+{
+  "status": "on_hold_reference_mismatch",
+  "tool": "built-in image_gen",
+  "runtime_changed": false,
+  "references": "Generation used Harrier v2 and F22 gold; the report incorrectly showed rejected Harrier v1. Current runtime Harrier is v3.",
+  "iteration": "Both first edits retained strong rims and grain; second edits soften them",
+  "files": [
+    {
+      "file": "docs/public/media/ground-aa/aircraft-style/shilka.png",
+      "sha256": "be38556490b92d1a1dc55e4e3992168c8af87c7bec91af503b187a40b6a80d63",
+      "size": [
+        1774,
+        887
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "docs/public/media/ground-aa/aircraft-style/tunguska.png",
+      "sha256": "d09da90efe93a199ccf17053fa73f706f80ee4d2fd2dcc307877f14efdec1d7b",
+      "size": [
+        1681,
+        936
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "Art/VTOL/20261027-v2/harrier-concept.png",
+      "sha256": "b40e1e5b9cae681472de34c9be748d50c0e8bf5a0b8fd3b1004ed401df983ecc",
+      "size": [
+        2033,
+        773
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "Art/LuxLunae/20261027-gold/F22.png",
+      "sha256": "8cf228dafd366849f50ce623901a1106dad35df4ccb451e1de6e346c79f6f082",
+      "size": [
+        1902,
+        827
+      ],
+      "mode": "RGBA"
+    }
+  ],
+  "reference_audit": "reference-audit.json"
+}

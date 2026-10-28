@@ -1,4 +1,5 @@
 #include "Fighters.hpp"
+#include "GroundAA.hpp"
 #include "HMAimOverlay.hpp"
 #import "HMResources.h"
 #import "HMGameView.h"
@@ -182,6 +183,7 @@
             _data=heavymach::GameData::loadDirectory(raw.fileSystemRepresentation);
             heavymach::addVTOLExpansion(_data);
             heavymach::addFighterExpansion(_data);
+            heavymach::addGroundAAExpansion(_data);
             if ([NSFileManager.defaultManager fileExistsAtPath:_saveURL.path]) {
                 NSError *error=nil;
                 NSData *bytes=[NSData dataWithContentsOfURL:_saveURL options:0 error:&error];
@@ -329,6 +331,10 @@
         // Original GameMain keeps GuiGame across screen and slot changes.
         // Its HP needle, gear and closing animations continue while hidden.
         HMMedia *media=_media;
+        // Prepare every radar/body frame before combat; animation must not decode PNGs.
+        for(const auto& art:heavymach::groundAAImages())@autoreleasepool{
+            [media imageSize:[NSString stringWithUTF8String:art.name.c_str()] scope:@"shared"];
+        }
         __weak HMGameView *randomOwner=self;
         _session=std::make_unique<heavymach::GameSession>(_data,_save.slots.at(slot),
             [media](std::string_view name) {

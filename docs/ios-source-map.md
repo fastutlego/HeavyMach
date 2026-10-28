@@ -38,6 +38,7 @@
 | 자동조준·상태 표지 | `Sources/Core/AutoAim.hpp`, `Sources/iOS/HMAimOverlay.hpp` | [자동조준](auto-aim-plan-20261026.md), Tests/AutoAimTests.cpp |
 | 수직이착륙기 | `Sources/Core/VTOL.cpp`, `Sources/Core/VTOL.hpp` | [VTOL](vtol-expansion.md), Tests/VTOLTests.cpp |
 | 럭스루나에 증원 | `Sources/Core/Fighters.cpp`, `Sources/Core/Fighters.hpp` | [기체·무기·배치](lux-lunae-plan-20261027.md), Tests/FightersTests.cpp |
+| 쉴카·퉁구스카 | `Sources/Core/GroundAA.cpp`, `Sources/Core/GroundAA.hpp`, `Sources/Core/GroundAAArt.inc` | [조립·무장·배치](ground-aa-expansion.md), Tests/GroundAATests.cpp·GroundAARuntimeTests.cpp |
 
 ## 빌드와 자원
 
