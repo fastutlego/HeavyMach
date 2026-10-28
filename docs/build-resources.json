@@ -17,7 +17,7 @@
     "Resources/RawData": 46,
     "Resources/Assets.xcassets": 3,
     "Resources/Validation": 1,
-    "Art/Extensions": 22
+    "Art/Extensions": 23
   },
   "files": [
     {
@@ -7504,6 +7504,11 @@
       "path": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
       "bytes": 2026384,
       "sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02"
+    },
+    {
+      "path": "Art/Extensions/GAA_Shilka_Turret_v3.png",
+      "bytes": 1538560,
+      "sha256": "b6d21f38c6ea995e58cb16dbf7f7f5f6f11e004d2ec2c2915b39749d6b03c331"
     }
   ]
 }

@@ -3,7 +3,7 @@
 import json
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = 'Art/GroundAA/20261028-integrated/manifest.json'
+SOURCE = 'Art/GroundAA/20261028-shilka-turret/manifest.json'
 manifest = json.loads((ROOT / SOURCE).read_text())
 lines = ['// Generated from ' + SOURCE + '. Source pixels stay unchanged.']
 for image in manifest['images']:

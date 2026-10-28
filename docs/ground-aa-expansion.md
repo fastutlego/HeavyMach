@@ -110,3 +110,7 @@
 포탑 그림에 고정 받침을 넣었고, 독립 레이더는2초 동안24프레임을 순환한다. 축의 X·Y 오차를 차량 회전으로 변환한다. `GroundAATests`는 평지·경사·덜컹거림에서 모든 프레임의 축이 같은 장착점에 붙는지 검사한다. 무장·배치·engineBounce 코드는 유지했다.
 
 [실기기 검사와 화면](public/ground-aa-art-20261028.md#integrated), [검사 기록](evidence/ground-aa-integrated-20261028.json).
+
+## 쉴카 포탑 후속 수정 — 2026-10-28
+
+`GAA_Shilka_Turret_v3.png`는 실차 사진을 참조해 장갑 측면과 뒤쪽 부피를 늘린 별도 그림이다. 이전 긴 안테나 두 개를 제거했다. 전체 파츠 크기51×16은 유지하면서 몸통이 차지하는 높이를 늘렸다. 레이더 장착점은 (14,8)이며 포탑 바닥·포 축은 유지한다. 퉁구스카는 변경하지 않았다. 현재 파츠 목록은 `Art/GroundAA/20261028-shilka-turret/manifest.json`이다. [실제 게임 화면과 검사](public/ground-aa-art-20261028.md#shilka-turret).

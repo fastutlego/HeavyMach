@@ -1,5 +1,43 @@
 # 쉴카·퉁구스카 도안과 구현
 
+## 쉴카 포탑 높이 수정
+
+퉁구스카의 비율은 유지하고, 납작해 보이는 쉴카 포탑을 수정했다.
+
+상트페테르부르크 포병박물관의 실차 사진을 형태 참조로 넣었다. 경사진 장갑 측면과 뒤쪽 몸통을 두껍게 다시 그렸다. 기존 그림의 긴 안테나 두 개를 제거해 포탑 몸통이 더 크게 보이게 했다. 차체·짧은 포신·레이더 회전 그림은 유지하고, 레이더 연결점을 새 받침 위치로 옮겼다.
+
+### 실차와 새 포탑
+
+![참고한 쉴카 실차](media/ground-aa/shilka-turret/shilka-museum.jpg)
+
+[실차 사진 원문](https://commons.wikimedia.org/wiki/File:ZSU-23-4_spb.JPG) · One half 3544 촬영 · Public domain. ZSU-23-4 실차.
+
+![높이와 뒤쪽 부피를 수정한 쉴카 포탑](media/ground-aa/shilka-turret/turret-v3.png)
+
+### 게임에서 비교
+
+수정 전과 후의 아이폰 게임 화면이다. 가운데 쉴카의 장갑 측면이 더 두꺼워졌다. 오른쪽 퉁구스카는 같은 그림과 연결점을 사용한다.
+
+![수정 전](media/ground-aa/integrated/iphone-comparison.png)
+
+![수정 후](media/ground-aa/shilka-turret/iphone-comparison.png)
+
+![아이폰에서 경사면 이동과 사격](media/ground-aa/shilka-turret/iphone-shilka.png)
+
+![아이패드 쉴카 이동과 사격](media/ground-aa/shilka-turret/ipad-shilka.png)
+
+[아이폰 쉴카 이동·레이더 회전 영상](media/ground-aa/shilka-turret/iphone-shilka-motion.mp4)
+
+### 검사와 설치 결과
+
+코어 23개, 아이패드 시뮬레이터 조립·사격 2개, 아이폰·아이패드 실기기 각각 5개 검사가 통과했다. 실기기 검사에는 무기 20종 전환·발사, 이동·점프·자동조준, 터치와 키보드 병용이 포함됐다. 사격 중 저장 횟수는 0회였다.
+
+두 기기에 일반·치트 앱을 무선 설치하고 일반 앱 실행도 확인했다. 아이패드는 잠금 해제 후 검사를 완료했다.
+
+[검사 기록](../evidence/shilka-turret-20261028.json) · [파츠·참고 사진](../../Art/GroundAA/20261028-shilka-turret/manifest.json) · [생성 지시문](../../Art/GroundAA/20261028-shilka-turret/prompt.json)
+
+---
+
 <a id="integrated"></a>
 
 ## 새 파츠와 레이더 적용

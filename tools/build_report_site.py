@@ -58,6 +58,7 @@ def article(source,dest,download,template):
         readme_ids['공중 유닛 화풍을 참조한 수정 시안']='aircraft-style'
         readme_ids['현재 에셋으로 다시 그린 두 시안']='runtime-style'
         readme_ids['새 파츠와 레이더 적용']='integrated'
+        readme_ids['쉴카 포탑 높이 수정']='shilka-turret'
         readme_ids['GitHub main 독립 빌드 재검사']='independent-build'
         readme_ids['해리어 참조 오류 정정']='reference-audit'
     if source == ROOT/'docs/ground-aa-expansion.md':
@@ -171,7 +172,7 @@ def main():
             page.head.append(style)
         if page_name == 'ground-aa-art.html':
             for anchor in page.select('a#integrated'): anchor.decompose()
-            for link in list(page.select('a[href^="media/ground-aa/integrated/"][href$=".mp4"]')):
+            for link in list(page.select('a[href^="media/ground-aa/"][href$=".mp4"]')):
                 video=page.new_tag('video',controls='',playsinline='',preload='metadata',loop='')
                 video['aria-label']=link.get_text()
                 video.append(page.new_tag('source',src=link['href'],type='video/mp4'))
@@ -232,6 +233,10 @@ def main():
                 node[attr] = 'evidence/ground-aa-runtime-style-'+Path(rel).name
             elif rel == 'docs/evidence/independence-main-20261028.json':
                 node[attr] = 'evidence/independence-main-20261028.json'
+            elif rel.startswith('Art/GroundAA/20261028-shilka-turret/') and rel.endswith('.json'):
+                node[attr] = 'evidence/shilka-turret-'+Path(rel).name
+            elif rel == 'docs/evidence/shilka-turret-20261028.json':
+                node[attr] = 'evidence/shilka-turret-20261028.json'
             elif rel.startswith('Art/GroundAA/20261028-integrated/') and rel.endswith('.json'):
                 node[attr] = 'evidence/ground-aa-integrated-'+Path(rel).name
             elif rel == 'docs/evidence/ground-aa-integrated-20261028.json':
@@ -279,6 +284,9 @@ def main():
     for file in (ROOT/'Art/GroundAA/20261028-runtime-style').glob('*.json'):
         shutil.copyfile(file,dist/'evidence'/('ground-aa-runtime-style-'+file.name))
     shutil.copyfile(ROOT/'docs/evidence/independence-main-20261028.json',dist/'evidence/independence-main-20261028.json')
+    for file in (ROOT/'Art/GroundAA/20261028-shilka-turret').glob('*.json'):
+        shutil.copyfile(file,dist/'evidence'/('shilka-turret-'+file.name))
+    shutil.copyfile(ROOT/'docs/evidence/shilka-turret-20261028.json',dist/'evidence/shilka-turret-20261028.json')
     for file in (ROOT/'Art/GroundAA/20261028-integrated').glob('*.json'):
         shutil.copyfile(file,dist/'evidence'/('ground-aa-integrated-'+file.name))
     shutil.copyfile(ROOT/'docs/evidence/ground-aa-integrated-20261028.json',dist/'evidence/ground-aa-integrated-20261028.json')
