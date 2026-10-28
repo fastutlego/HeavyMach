@@ -51,7 +51,7 @@ Codex는 일반·치트 앱을 iPhone·iPad에 각각 설치했다. 케이블을
 - 표시시간: iPhone 메뉴 기준 초과와 iPhone·iPad 전체 suite의 해당 실패 재현·원인 분리.
 - 장시간: 이동·점프·전투·미션 전환을 포함한 발열·전력·메모리 변화.
 - 입력: 실제 Bluetooth·USB 키보드 연결, 분리·재연결·키 유지·터치 병용.
-- 난도: 추가 항공기가 등장하는 전체 미션의 탄약·피해·클리어 난도.
+- 난이도: 추가 항공기가 등장하는 전체 미션의 탄약·피해·클리어 난이도.
 - 무선: iPhone XCTest·Instruments, 두 기기의 재부팅 후 반복 설치·디버깅.
 
 [전체 무기 검사 절차](../weapon-validation-procedure.md) · [현행 과제](implementation-status.md)
