@@ -1,0 +1,18 @@
+{
+  "links_checked": 1099,
+  "missing": [],
+  "original_statements": 11,
+  "images": 7,
+  "videos": 1,
+  "source_and_published_media_match": true,
+  "browser": "Safari local: artwork display and video playback confirmed",
+  "site_source_commit": "8c2908aac50d8cc2b2668c92c6ef010b589429cf",
+  "deployment": {
+    "id": "appgdep_6ae1aed466dc8191b4a23b0f9f6fb459",
+    "status": "succeeded",
+    "version_id": "appgprj_6addbf55aea081918d3d182d7e496e88~appgver_af97b79e63e881919d247f3550cc9bb3",
+    "url": "https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/lux-lunae-intent.html",
+    "audience": "owner-private"
+  },
+  "published_browser_handoff": "Safari user-changed guard interrupted navigation. Local page and video were checked; deployment succeeded."
+}

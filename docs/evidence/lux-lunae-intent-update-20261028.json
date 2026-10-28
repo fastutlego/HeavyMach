@@ -1,0 +1,28 @@
+{
+  "site_source_commit": "876ed1e30f94474979991fad50fb77d924d99f46",
+  "deployment": {
+    "id": "appgdep_6ae1b846fa688191bf8e770c2de2ef75",
+    "project_id": "appgprj_6addbf55aea081918d3d182d7e496e88",
+    "title": "HeavyMach 개발 보고",
+    "version_id": "appgprj_6addbf55aea081918d3d182d7e496e88~appgver_787d675d4ca48191a8b4ff12d43897e2",
+    "type": "publish",
+    "status": "succeeded",
+    "url": "https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site",
+    "has_mcp": false,
+    "screenshot_asset_pointer": null,
+    "provider_deployment_id": "site---6addbf55aea081918d3d182d7e496e88",
+    "failure_message": null,
+    "env_set_revision": 0,
+    "updated_at": "2026-10-28T08:55:06.052135+00:00"
+  },
+  "audience": "owner-private",
+  "browser": "Safari local: added prose, title, table of contents and source link displayed; existing artwork/video retained",
+  "original_statements": 14,
+  "images": 7,
+  "videos": 1,
+  "links_checked": 1101,
+  "missing": [],
+  "original_section_anchors_preserved": true,
+  "download_matches_manuscript": true,
+  "published_browser_handoff": "Safari user-changed guard prevented navigation; published URL supplied in response."
+}

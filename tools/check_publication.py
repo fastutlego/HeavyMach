@@ -7,7 +7,7 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
-FILES = ['README.md', 'CONTRIBUTING.md', 'LICENSE-SCOPE.md', 'ASSET-LICENSES.md',
+FILES = ['docs/public/lux-lunae-intent-20261028.md', 'README.md', 'CONTRIBUTING.md', 'LICENSE-SCOPE.md', 'ASSET-LICENSES.md',
          'THIRD_PARTY_NOTICES.md', 'CREDITS.md', 'CHANGELOG.md', 'docs/RESTORATION.md',
          'docs/README.md', 'docs/developer-background.md', 'docs/public/publication-inventory.md',
          'docs/public/features.md', 'docs/public/gameplay-guide.md',
