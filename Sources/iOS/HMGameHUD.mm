@@ -34,7 +34,7 @@ int glyph(unichar c) {return c>='0'&&c<='9'?c-'0':c=='.'?10:c=='/'?11:c==':'?12:
     // 0x169b0, 0x1767c, 0x178f0 store g_time after truncdfsf.
     float _startTime,_reloadTime,_weaponTime;
     float _hp,_hpDest,_hpRotation,_gear,_gearVelocity;
-    std::array<float,3> _menuX;
+    std::array<float,4> _menuX;
     float _upgradeX;
     std::array<uint8_t,3> _upgradeGrades;
 }
@@ -124,6 +124,34 @@ int glyph(unichar c) {return c>='0'&&c<='9'?c-'0':c=='.'?10:c=='/'?11:c==':'?12:
     if(enabled){CGSize z=[_media imageSize:name];if(z.width>0){CGRect b=CGRectMake(x-z.width/columns/2,y-z.height/rows/2,z.width/columns,z.height/rows);
         if(_layoutGroup>=0&&_layout.customized()){auto t=_layout.group(_layoutGroup).transform;auto q=_layout.legacy.inverse(t.apply(heavymach::hud::Point{b.origin.x,b.origin.y}));b.origin=CGPointMake(q.x,q.y);}
         _buttons.push_back({identifier,key,b});}}
+}
+// Compose SET GAME UI from the original menu's small-cap letters. Both
+// states sample the existing atlas; no new font, bitmap or per-frame rasterization.
+- (void)drawHUDLayoutButtonAtX:(double)x y:(double)y {
+    auto& motion=_buttonStates[104];
+    motion.pushDepth=motion.releaseHeight=motion.releaseDelay=0;motion.pushDelay=.1f;
+    const int stateY=motion.pressed?40:0;
+    const double bottom=y-20+motion.yOffset(_time,YES);
+    struct Letter {int x,y,width;};
+    // S, E, T, space, G, A, M, E, space, U, I.
+    // VISIT is one pixel lower in its atlas row; align its T/I and plate edges.
+    constexpr Letter letters[]={{25,80,16},{66,0,13},{68,161,13},{0,0,8},
+        {146,0,17},{163,0,15},{178,0,16},{195,0,12},{0,0,8},{93,0,15},{88,161,7}};
+    double width=0;for(auto letter:letters)width+=letter.width+1;
+    double left=x-(width-1)/2;
+    // Tile the blank plate around the letters, never beneath their translucent
+    // pixels. Overdrawing a plate would darken every letter rectangle twice.
+    auto blank=[&](double origin,double length){if(length>0)[_media drawRegion:@"GameMenuSub.png" source:CGRectMake(20,stateY,1,40) destination:CGRectMake(origin,bottom,length,40)];};
+    [_media drawRegion:@"GameMenuSub.png" source:CGRectMake(0,stateY,20,40) destination:CGRectMake(x-128,bottom,20,40)];
+    blank(x-108,left-(x-108));
+    for(auto letter:letters){
+        if(letter.x)[_media drawRegion:@"GameMenuSub.png" source:CGRectMake(letter.x,letter.y+stateY,letter.width,40) destination:CGRectMake(left,bottom,letter.width,40)];
+        else blank(left,letter.width);
+        left+=letter.width;blank(left,1);++left;
+    }
+    blank(left,x+108-left);
+    [_media drawRegion:@"GameMenuSub.png" source:CGRectMake(236,stateY,20,40) destination:CGRectMake(x+108,bottom,20,40)];
+    _buttons.push_back({104,104,CGRectMake(x-128,y-20,256,40)});
 }
 - (void)drawPassive:(const HMGameHUDSnapshot&)s {
     if(!s.passives)return;
@@ -226,7 +254,12 @@ int glyph(unichar c) {return c>='0'&&c<='9'?c-'0':c=='.'?10:c=='/'?11:c==':'?12:
     if(_editingLayout)return;
     [self drawUpgrade:s];[self drawPresentation:s];
     // An interrupted stage transition must leave its resume menu visible.
-    if(_menuStep)for(int i=0;i<3;++i)[self buttonImage:@"GameMenuSub.png" identifier:101+i x:_menuX[i] y:220-50*i columns:1 rows:6 tile:i*2 enabled:YES];
+    if(_menuStep){
+        [self buttonImage:@"GameMenuSub.png" identifier:101 x:_menuX[0] y:235 columns:1 rows:6 tile:0 enabled:YES];
+        [self drawHUDLayoutButtonAtX:_menuX[1] y:190];
+        [self buttonImage:@"GameMenuSub.png" identifier:102 x:_menuX[2] y:145 columns:1 rows:6 tile:2 enabled:YES];
+        [self buttonImage:@"GameMenuSub.png" identifier:103 x:_menuX[3] y:100 columns:1 rows:6 tile:4 enabled:YES];
+    }
 }
 - (void)tick:(double)time {
     _time=time;_gear+=_gearVelocity;_gearVelocity+=(0-_gearVelocity)/20;
@@ -236,8 +269,8 @@ int glyph(unichar c) {return c>='0'&&c<='9'?c-'0':c=='.'?10:c=='/'?11:c==':'?12:
         _hp+=(_hpDest-_hp)*.125f;if(std::abs(_hp-_hpDest)<.01f)_hp=_hpDest;
         _hpRotation=float(double(_hp)*-5.183627803521752-0.6000000238418579);
     }
-    if(_menuStep)for(int i=0;i<3;++i)_menuX[i]+=((_menuStep==1?220+20*i:720)-_menuX[i])/(7+2*i);
-    if(_menuStep==2&&_menuX[2]>710)_menuStep=0;
+    if(_menuStep)for(int i=0;i<4;++i)_menuX[i]+=((_menuStep==1?220+20*i:720)-_menuX[i])/(7+2*i);
+    if(_menuStep==2&&_menuX[3]>710)_menuStep=0;
     if(_upgradeStep){_upgradeX+=((_upgradeStep==1?240:660)-_upgradeX)/5;
         if(_upgradeStep==2&&_upgradeX>659){_upgradeStep=0;if(self.upgradeClosed)self.upgradeClosed();}}
 }

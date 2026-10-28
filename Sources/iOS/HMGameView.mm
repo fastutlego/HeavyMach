@@ -500,7 +500,7 @@ typedef UILabel HMEditorLabel;
     if (state!=2) return;
     // GuiGame.handleButton 0x17c4c keeps buttons active and gates actions here.
     if(world.paused && (identifier==100 || identifier==1100))return;
-    if(!world.paused && ((identifier>=101&&identifier<=103) ||
+    if(!world.paused && ((identifier>=101&&identifier<=104) ||
                          (identifier>=1200&&identifier<=1202) || identifier==1300))return;
     switch (identifier) {
         case 100:
@@ -522,6 +522,7 @@ typedef UILabel HMEditorLabel;
                 }];
 #endif
             }break;
+        case 104: if(_gameMenu&&world.gameState==0){[self openHUDEditor:nil];[_media sound:@"UI_Click"];}break;
         case 1100: _session->cycleWeapon();[_media sound:@"Game_ChangeWeapon"];break; // 0x17c4c: release, then sfxID4.
         case 1200:case 1201:case 1202: _session->selectUpgrade(identifier-1200);break;
         case 1300: _resumeRequired=NO;_session->confirmUpgrade();break;

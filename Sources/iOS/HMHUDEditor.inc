@@ -48,7 +48,7 @@
     for(int i=0;i<titles.count;++i){auto b=[self editorButton:titles[i] action:@selector(hudEditorAction:) tag:i];[_hudToolbar addSubview:b];[buttons addObject:b];}_hudEditorButtons=buttons;
 }
 - (void)updateHUDEntry {
-    BOOL hidden=_hudEditing||_loading.visible()||_keyboardSettingsOpen||!(((_gameMenu||_hudLayoutFallback)&&_session&&_session->world().gameState==0)||(_showMenu&&[_menus isMissionSelection]));
+    BOOL hidden=_hudEditing||_loading.visible()||_keyboardSettingsOpen||!(((_hudLayoutFallback&&!_gameMenu)&&_session&&_session->world().gameState==0)||(_showMenu&&[_menus isMissionSelection]));
     if(_hudEntry.hidden!=hidden)_hudEntry.hidden=hidden;
 }
 - (void)updateHUDEditorGeometry {

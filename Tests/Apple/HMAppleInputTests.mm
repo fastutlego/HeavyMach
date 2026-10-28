@@ -153,6 +153,37 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  [self.game setValue:@1 forKey:@"randomState"];[self.game updateCanvasGeometry];
 }
 - (void)tearDown {[self.game setApplicationActive:NO];self.game=nil;[NSFileManager.defaultManager removeItemAtURL:self.temp error:nil];[super tearDown];}
+- (void)testPauseMenuHUDEntryUsesGameTouchAndKeyboard {
+ [self startFixture];render(self.game);
+ auto& session=storage<std::unique_ptr<heavymach::GameSession>>(self.game,"_session");
+ [self.game gameButton:104 state:2];XCTAssertFalse([[self.game valueForKey:@"hudEditing"]boolValue]);
+ [self.game gameButton:100 state:2];frames(self.game,100);render(self.game);
+ HMGameHUD* hud=[self.game valueForKey:@"hud"];XCTAssertEqual([hud receiverAt:CGPointMake(240,190)],104);
+ XCTAssertTrue([[self.game valueForKey:@"hudEntry"]isHidden]);
+ auto before=storage<heavymach::SaveData>(self.game,"_save").encode();auto rng=storage<uint32_t>(self.game,"_randomState");
+ auto c=[self.game currentHUDLayout];auto logical=c.legacy.apply(heavymach::hud::Point{240,190});
+ auto& vp=storage<heavymach::Viewport>(self.game,"_viewport");
+ CGPoint point=CGPointMake(vp.x+logical.x*vp.scale,vp.y+(storage<CGFloat>(self.game,"_canvasHeight")-logical.y)*vp.verticalScale());
+ id token=[NSObject new];
+#if !TARGET_OS_OSX
+ auto attach=[&](NSString* name){auto a=[XCTAttachment attachmentWithImage:[(HMGLRenderer*)[self.game valueForKey:@"glRenderer"]snapshot]];a.name=name;a.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:a];};
+ attach(@"Pause_menu_HUD_entry");
+#endif
+ [self.game routePoint:point state:0 token:token];render(self.game);
+#if !TARGET_OS_OSX
+ attach(@"Pause_menu_HUD_entry_pressed");
+#endif
+ [self.game routePoint:point state:2 token:token];
+ XCTAssertTrue([[self.game valueForKey:@"hudEditing"]boolValue]);XCTAssertTrue(session->world().paused);
+ frames(self.game,60);XCTAssertEqual(before,storage<heavymach::SaveData>(self.game,"_save").encode());XCTAssertEqual(rng,storage<uint32_t>(self.game,"_randomState"));
+ [self.game closeHUDEditor];render(self.game);XCTAssertTrue(session->world().paused);
+ for(int i=0;i<12;++i){[hud moveKeyboardFocus:1];CGRect rect=[hud keyboardFocusRect];if([hud receiverAt:CGPointMake(CGRectGetMidX(rect),CGRectGetMidY(rect))]==104)break;}
+ [hud activateKeyboardFocus];XCTAssertTrue([[self.game valueForKey:@"hudEditing"]boolValue]);
+ NSArray* buttons=[self.game valueForKey:@"hudEditorButtons"];[self.game hudEditorAction:buttons[2]];
+ XCTAssertTrue(session->world().paused);XCTAssertEqual([[self.game valueForKey:@"hudLayoutWrites"]integerValue],0);
+ [self.game gameButton:101 state:2];XCTAssertFalse(session->world().paused);
+ XCTAssertEqual(((HMInputTestView*)self.game).gameSaveCalls,0u);
+}
 - (void)testHUDEditorMovesHitsFreezesBattleAndPersistsOnlyApply {
  [self startFixture];render(self.game);[self.game gameButton:100 state:2];frames(self.game,40);
  auto& session=storage<std::unique_ptr<heavymach::GameSession>>(self.game,"_session");

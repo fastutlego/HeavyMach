@@ -1,5 +1,16 @@
 # HeavyMach 보고 사이트
 
+## 2026-10-29 실제 iPhone HUD 검사와 멈춤 메뉴
+
+[아이폰 설치·조작](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/hud-improvement.html#physical-iphone)과 [SET GAME UI 메뉴](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/hud-improvement.html#pause-menu)를 추가했다. 계기판·무기 버튼 이동 화면3장과 원작 버튼에 맞춘 메뉴의 기본·눌림 화면2장을 실었다.
+
+- 소스: `fc5b45747012d180f30e6aea5376dedc95e1af47`.
+- 배포: `appgdep_6ae231ddb338819193e022917fef0a7c`, `succeeded`. 소유자 전용 유지.
+- 전체 목차45개·내부 링크와 자원1,230개 검사 오류0. 이미지 원본을 직접 확인했다.
+- 화면 도구에 접근 가능한 Mac 창이 없어 새 보고서의 브라우저 검사는 하지 않았다.
+- 아이폰 기존10개·추가3개 검사 통과. 바탕 경계1픽셀 보정 후 새 메뉴 검사1개를 다시 통과했다. [증거](evidence/hud-editor-20261029.json).
+
+
 ## 2026-10-29 실제 iPad HUD 설치·검사
 
 [실제 iPad 설치와 조작 검사](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/hud-improvement.html#physical-ipad)에 일반·치트 앱 설치, 자동 검사10개 통과, 계기판·무기 버튼 이동과 기본 복원, 캡처4장을 추가했다.
