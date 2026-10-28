@@ -69,6 +69,7 @@ def article(source,dest,download,template):
         readme_ids.update({name:f'section-{i}' for i,name in enumerate(['현재 화면과 코드','이동할 묶음과 그림 분할','배치·그림·터치를 연결하는 방법','게임 시작 전 편집 화면','자동조준 상태를 알리는 방법','구현과 검증 순서','투두에서 함께 확인한 남은 일','코드와 정책'])})
         readme_ids['HUD 부품과 분할 검사']='asset-audit'
         readme_ids['편집 구현과 시뮬레이터 검사']='editor-validation'
+        readme_ids['실제 iPad 설치와 조작 검사']='physical-ipad'
     if source == ROOT/'docs/public/lux-lunae-intent-20261028.md':
         readme_ids.update({name:f'section-{i}' for i,name in enumerate(['달빛과 두 게임','검은색과 금색','보스전의 난이도와 긴장감','텍스트 지시로 어디까지 만들 수 있는가','승인한 도안 3종','실제 인게임 모습','게임에 적용한 조건','대화 원문'])})
         readme_ids.update({'게임을 하고 달라진 일':'games-and-life','움직임과 무기, 빠른 진입':'movement-and-entry','그림 작업에서 본 한계':'art-direction','지금도 고치고 있는 것':'ongoing-work'})

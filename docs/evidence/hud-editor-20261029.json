@@ -739,5 +739,249 @@
     "Sources/Core/HUDConfiguration.hpp": "8bce9b12218577aa3b6061e73c28bf81af7cdd96f88fb60521b552ae8626256f",
     "Sources/iOS/HMHUDEditor.inc": "f1e20edffc92b240629c7da5063cf75501e5985c9408296ffc0942903d6c371b"
   },
-  "report_browser_check": "Safari and Chrome native window acquisition returned cgWindowNotFound after game UI inspection. HTML anchors, local images, manuscript copy and HTTP response checked."
+  "report_browser_check": "Safari and Chrome native window acquisition returned cgWindowNotFound after game UI inspection. HTML anchors, local images, manuscript copy and HTTP response checked.",
+  "physical_ipad_20261029": {
+    "source_commit": "8aa85ebd4bd23fdbb45b821efac7b746d98804da",
+    "test_source_sha256": "070a1ff656bbec34fbb11e8c2ff70d906132ebb2b2135a378eff39556324f4c7",
+    "device": {
+      "model": "iPad Air 13-inch (M2)",
+      "os": "27.0.1",
+      "transport_before": "localNetwork",
+      "transport_after": "localNetwork"
+    },
+    "apps": [
+      {
+        "scheme": "HeavyMachRestored",
+        "bundle_id": "com.gelb2.heavymach.restored",
+        "executable_sha256": "4353a389529ce8ddbc2ffc55731c2bd4d182b3b6bf697b29607c168a65353b82",
+        "version": "1.13",
+        "build": "1",
+        "development_signed": true,
+        "installed": true,
+        "launched": true,
+        "build_method": "Xcode GUI",
+        "build_time_kst": "2026-10-29 01:22"
+      },
+      {
+        "scheme": "HeavyMachValidation",
+        "bundle_id": "com.gelb2.heavymach.validation",
+        "executable_sha256": "b6969594a8021ca215d62f319325b8378b6956478e7be7426d736aa8bfea2449",
+        "version": "1.13",
+        "build": "1",
+        "development_signed": true,
+        "installed": true,
+        "launched": true,
+        "build_method": "Xcode GUI",
+        "build_time_kst": "2026-10-29 01:21"
+      }
+    ],
+    "tests": [
+      {
+        "class": "HMAppleInputTests",
+        "method": "testAutoAimEveryWeaponWithMovementAndJump",
+        "seconds": 6.999,
+        "result": "passed"
+      },
+      {
+        "class": "HMAppleInputTests",
+        "method": "testEveryWeaponKeyboardSelectionAndFire",
+        "seconds": 7.925,
+        "result": "passed"
+      },
+      {
+        "class": "HMAppleInputTests",
+        "method": "testHUDEditorCheatGeometryAndRepeatedClose",
+        "seconds": 1.606,
+        "result": "passed"
+      },
+      {
+        "class": "HMAppleInputTests",
+        "method": "testHUDEditorMovesHitsFreezesBattleAndPersistsOnlyApply",
+        "seconds": 5.343,
+        "result": "passed"
+      },
+      {
+        "class": "HMAppleInputTests",
+        "method": "testHUDEditorPregameExampleAndResizeDoesNotChangeSave",
+        "seconds": 1.134,
+        "result": "passed"
+      },
+      {
+        "class": "HMAppleInputTests",
+        "method": "testHUDEditorSelectionCollisionResizeAndSaveFailure",
+        "seconds": 5.26,
+        "result": "passed"
+      },
+      {
+        "class": "HMAppleInputTests",
+        "method": "testHUDMovedButtonsKeepTouchOwnershipAndAimFire",
+        "seconds": 5.242,
+        "result": "passed"
+      },
+      {
+        "class": "HMAppleInputTests",
+        "method": "testHUDMovedGaugesAnimateAndFreezeInEditor",
+        "seconds": 5.574,
+        "result": "passed"
+      },
+      {
+        "class": "HMAppleInputTests",
+        "method": "testHUDMovedMenuJumpAndAimButtons",
+        "seconds": 5.333,
+        "result": "passed"
+      },
+      {
+        "class": "HMFramePerformanceTests",
+        "method": "testProductionTimerAndFullScreenTouchViewport",
+        "seconds": 0.752,
+        "result": "passed"
+      }
+    ],
+    "tests_passed": 10,
+    "tests_failed": 0,
+    "manual_weapons": 20,
+    "automatic_weapons": 20,
+    "gauges": {
+      "moved_y": 120,
+      "reload_range": 0.972,
+      "hp_event_value_changed_needle": true,
+      "editing_frozen_frames": 120,
+      "layout_apply_writes": 1
+    },
+    "direct_ui": {
+      "tool": "Device Hub + CUA",
+      "ordinary": [
+        "mission selection HUD entry",
+        "drag gauges as one group",
+        "apply and reopen retained position",
+        "start battle with moved gauges",
+        "pause HUD entry",
+        "default restore"
+      ],
+      "cheat": [
+        "scenario start",
+        "movement and jump controls",
+        "pause HUD entry",
+        "drag weapon to right",
+        "apply and resume",
+        "tap new position changed gun to bomb",
+        "default restore"
+      ],
+      "final_state": "both layouts default; both battles paused"
+    },
+    "ordinary_save": {
+      "backup_sha256": "c33aed5184f8e610e4e4d2b3c9a733f3d93d263b9f9c94aa6cdd816431eea8df",
+      "after_install_sha256": "c33aed5184f8e610e4e4d2b3c9a733f3d93d263b9f9c94aa6cdd816431eea8df",
+      "after_play_sha256": "12bbb4ed08eec6b3ac4f29bd39173b4d543ebf8f55348696bae48fbd1a91f656",
+      "after_play_changed_byte_offsets": [
+        4,
+        5,
+        6
+      ],
+      "uninstalled": false,
+      "reset": false
+    },
+    "raw_files": [
+      {
+        "path": "build/hud-device-20261029/build-cheat.log",
+        "sha256": "c5a42e2f4add50629966552a1f9dc862fc90139f648581f2f5bd29c314dfbc0f"
+      },
+      {
+        "path": "build/hud-device-20261029/capture-cheat.log",
+        "sha256": "a7614add3978dd125af11b8d85df0f4fd42ef3e6f1451a8720edcff6552b38bd"
+      },
+      {
+        "path": "build/hud-device-20261029/capture-ordinary.log",
+        "sha256": "961f5a58fc962bb2afda3d607d6eb999b0c5be80ea5de0f3789c62b5d56f9d3e"
+      },
+      {
+        "path": "build/hud-device-20261029/capture-selected.log",
+        "sha256": "7651204979e65f09ebeffbbc0464f451db3b7a4cb64ccaa8c9bd898f3e42e9ba"
+      },
+      {
+        "path": "build/hud-device-20261029/install-cheat.log",
+        "sha256": "759d4d76b87860639ed58753009d77ff5bd09dd7025b9fd8355ff3669dcf3e6d"
+      },
+      {
+        "path": "build/hud-device-20261029/install-ordinary.log",
+        "sha256": "496180d16565d9c0154af221291c58e3c58fd0d351687dde71f36e23d252483a"
+      },
+      {
+        "path": "build/hud-device-20261029/ipad-final.log",
+        "sha256": "c94d02ce7c52adffffcd73d5486f4ffffc65a5cd87c38766564b28f5d19acfc9"
+      },
+      {
+        "path": "build/hud-device-20261029/ipad-tests.log",
+        "sha256": "d89e3e4c0b44ac7054dc17fbf6775236b97bdcfcfa71fd83f616f7aa61b7067d"
+      },
+      {
+        "path": "build/hud-device-20261029/launch-cheat.log",
+        "sha256": "d8a976d9895929ec6d5d2653cf043a7bc51b0450ea023b67c9f9a95fbf628287"
+      },
+      {
+        "path": "build/hud-device-20261029/launch-ordinary.log",
+        "sha256": "347cce23cc3c23a709d7eca72b32ef9207eae856e2246db47a423c127e01eee9"
+      },
+      {
+        "path": "build/hud-device-20261029/save-after.log",
+        "sha256": "9c085133a51c1d8ed1bee74b0ac457e2470e2cfffd0264a6c6a371bd55933555"
+      },
+      {
+        "path": "build/hud-device-20261029/save-backup.log",
+        "sha256": "e00d56f6b63ef055209df3dacaf4917191518aef1cd0238837ec6875f471eaa6"
+      },
+      {
+        "path": "build/hud-device-20261029/save-final.log",
+        "sha256": "26da4633bfe04de1147703fb13ad0bff5c3706c09df9c6d94c35b7cd209148b8"
+      },
+      {
+        "path": "build/hud-device-20261029/install-cheat.json",
+        "sha256": "fd238924e08976422f5bbbc2bc9f74af81eb57e8172ccc93137002e97eadc0a4"
+      },
+      {
+        "path": "build/hud-device-20261029/install-ordinary.json",
+        "sha256": "be4ae69f4514b0cb64570949345504bb263bbcce3d9963b333e89f177d44ec3d"
+      },
+      {
+        "path": "build/hud-device-20261029/ipad-details.json",
+        "sha256": "e9c07830595e0b4403fc2bfb88d54709725c31e523c32edcf912f5613edcaaf2"
+      },
+      {
+        "path": "build/hud-device-20261029/ipad-final.json",
+        "sha256": "1924c21c833b1d3d32920f990fb083472ec3c6d8375a70b645f4e4e49eb7b7f4"
+      },
+      {
+        "path": "build/hud-device-20261029/launch-cheat.json",
+        "sha256": "ddaa1774c17ceeed161a6cc3621d3aa11a80b3e631ef8b720ce165249aed5d0c"
+      },
+      {
+        "path": "build/hud-device-20261029/launch-ordinary.json",
+        "sha256": "c71a7ee6bfa0ffa7d42d3c0ba2688f5cb4158c7dec6b5059044bfbd8140dfd27"
+      }
+    ],
+    "images": [
+      {
+        "path": "docs/public/media/hud-editor/physical-ipad-cheat-selected.png",
+        "sha256": "ed51c2ac3d102231612c815adbfb99c11aae788312342e6d38383283cd5cce44"
+      },
+      {
+        "path": "docs/public/media/hud-editor/physical-ipad-cheat-weapon.png",
+        "sha256": "8f57b9ccd2ccffa10d96c0232e58b9fd9ee94f599306f9f930488dbb5dce25d6"
+      },
+      {
+        "path": "docs/public/media/hud-editor/physical-ipad-gauges-firing.png",
+        "sha256": "2fdcf5f12e811e18dc3c932da451cdeaebdb870f790824540aea4534d19e7d05"
+      },
+      {
+        "path": "docs/public/media/hud-editor/physical-ipad-ordinary-gauges.png",
+        "sha256": "05167ad73501c1500e97bbbebd240279d3d132ac6417d617a47b18fdc03d2469"
+      }
+    ],
+    "remaining": [
+      "iPhone physical HUD editing",
+      "long-session heat",
+      "Mac frame cost follow-up"
+    ],
+    "sustained_fps": "not_measured"
+  }
 }

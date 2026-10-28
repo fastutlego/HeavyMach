@@ -1,5 +1,15 @@
 # HeavyMach 보고 사이트
 
+## 2026-10-29 실제 iPad HUD 설치·검사
+
+[실제 iPad 설치와 조작 검사](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/hud-improvement.html#physical-ipad)에 일반·치트 앱 설치, 자동 검사10개 통과, 계기판·무기 버튼 이동과 기본 복원, 캡처4장을 추가했다.
+
+- 소스: `3a6d692db16f2c8d1f4f74f1d64e5ef534d1a959`.
+- 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_eda569665c8c8191ad44065156cc620b`.
+- 배포: `appgdep_6ae22509dac481918c543d010db842fd`, `succeeded`. 소유자 전용 유지.
+- Safari 로컬 화면에서 본문·이미지를 확인했다. 게시 후 Safari 열기는 `cgWindowNotFound`로 실패했다.
+- [기기 검사 증거](evidence/hud-editor-20261029.json).
+
 ## 2026-10-28 HUD 부품·분할 검사
 
 [HUD 부품과 분할 검사](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/hud-improvement.html#asset-audit)에 실제 런타임16개 시트, 묶음별 GPU 출력, 버튼 판정, 수정한 분할선과 재조립 비교를 추가했다. 기존 통합 목차45개를 유지했다.

@@ -255,6 +255,37 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  for(int i=0;i<180;++i){[self.game advanceOriginalFrame];render(self.game);}
  XCTAssertEqualObjects(decodes,[media cacheDiagnostics][@"decodeCount"]);XCTAssertEqual(scene,session->renderItems().size());XCTAssertEqual(beforeSave,storage<heavymach::SaveData>(self.game,"_save").encode());
 }
+- (void)testHUDMovedGaugesAnimateAndFreezeInEditor {
+ [self startFixture];auto& session=storage<std::unique_ptr<heavymach::GameSession>>(self.game,"_session");session->validationSetCheats(true);
+ [self.game gameButton:100 state:2];frames(self.game,40);[self.game openHUDEditor:nil];
+ auto c=[self.game currentHUDLayout];auto b=c.group(heavymach::hud::gauges).visualBounds;
+ auto point=[&](double x,double y){auto vp=storage<heavymach::Viewport>(self.game,"_viewport");return CGPointMake(vp.x+x*vp.scale,vp.y+(vp.logicalHeight-y)*vp.verticalScale());};
+ id token=[NSObject new];
+ [self.game routePoint:point(b.x+b.width/2,b.y+b.height/2) state:0 token:token];
+ [self.game routePoint:point(b.x+b.width/2,b.y+b.height/2+100) state:1 token:token];
+ [self.game routePoint:point(b.x+b.width/2,b.y+b.height/2+100) state:2 token:token];
+ NSArray* buttons=[self.game valueForKey:@"hudEditorButtons"];[self.game hudEditorAction:buttons[2]];
+ XCTAssertFalse([[self.game valueForKey:@"hudEditing"]boolValue]);
+ XCTAssertTrue(storage<heavymach::hud::Configuration>(self.game,"_hudLayout").positions[heavymach::hud::gauges].has_value());
+ [self.game gameButton:101 state:2];frames(self.game,50);
+ HMGameHUD* hud=[self.game valueForKey:@"hud"];
+ // Feed the same HP update used by the player event consumer, then fire through input.
+ [hud setHPGauge:1];frames(self.game,40);float healthy=storage<float>(hud,"_hpRotation");
+ [hud setHPGauge:.35];frames(self.game,30);XCTAssertNotEqual(healthy,storage<float>(hud,"_hpRotation"));
+ storage<CGPoint>(self.game,"_keyboardAim")=CGPointMake(450,220);storage<BOOL>(self.game,"_hasKeyboardAim")=YES;
+ [self.game handleKeyCode:9 pressed:YES];float lo=1,hi=0;
+ for(int i=0;i<120;++i){frames(self.game,1);float v=storage<float>(self.game,"_reloadGauge");lo=std::min(lo,v);hi=std::max(hi,v);}
+ [self.game handleKeyCode:9 pressed:NO];XCTAssertGreaterThan(hi-lo,.1f);
+ c=[self.game currentHUDLayout];XCTAssertGreaterThan(c.group(heavymach::hud::gauges).visualBounds.y,b.y+90);
+#if !TARGET_OS_OSX
+ auto a=[XCTAttachment attachmentWithImage:[(HMGLRenderer*)[self.game valueForKey:@"glRenderer"]snapshot]];a.name=@"HUD_ipad_moved_gauges_firing";a.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:a];
+#endif
+ [self.game gameButton:100 state:2];frames(self.game,40);[self.game openHUDEditor:nil];
+ float hp=storage<float>(hud,"_hpRotation"),gear=storage<float>(hud,"_gear"),reload=storage<float>(self.game,"_reloadGauge");
+ frames(self.game,120);XCTAssertEqual(hp,storage<float>(hud,"_hpRotation"));XCTAssertEqual(gear,storage<float>(hud,"_gear"));XCTAssertEqual(reload,storage<float>(self.game,"_reloadGauge"));
+ [self.game hudEditorAction:buttons[1]];XCTAssertEqual([[self.game valueForKey:@"hudLayoutWrites"]integerValue],1);
+ NSLog(@"HM_HUD_GAUGES movedY=%.2f reloadRange=%.3f hpChanged=1 frozenFrames=120 layoutWrites=1",c.group(heavymach::hud::gauges).visualBounds.y,hi-lo);
+}
 - (void)testHUDAssetOwnershipAudit {
 #if !TARGET_OS_OSX
  [self startFixture];auto& session=storage<std::unique_ptr<heavymach::GameSession>>(self.game,"_session");
