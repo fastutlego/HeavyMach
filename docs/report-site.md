@@ -1,5 +1,15 @@
 # HeavyMach 보고 사이트
 
+## 2026-10-28 HUD 부품·분할 검사
+
+[HUD 부품과 분할 검사](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/hud-improvement.html#asset-audit)에 실제 런타임16개 시트, 묶음별 GPU 출력, 버튼 판정, 수정한 분할선과 재조립 비교를 추가했다. 기존 통합 목차45개를 유지했다.
+
+- 소스 `df8355b7f6b9af75d636d8791ee08ebae360a493`.
+- 배포 `appgdep_6ae20c88617881918c1c776e0e4d09e5`, `succeeded`. 소유자 비공개 유지.
+- 로컬 링크1203개·접힌 이미지2개·자원 복사 일치 검사 통과. SVG 비교 그림을 렌더해 확인했다.
+- CUA에서 창을 찾지 못해 새 페이지의 브라우저 검사는 하지 못했다.
+- [검사 증거](evidence/hud-parts-audit-20261028.json).
+
 ## 2026-10-28 HUD 편집 심층 진단
 
 [HUD 배치 편집 설계](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/hud-improvement.html)를 갱신했다. 에셋 분할선, 터치 영역, 일시정지/시작 전 진입, 현재 장면/예시 전투, 저장·검사 순서를 담았다. 자동조준 상태 안내는 별도 페이지로 분리했다.

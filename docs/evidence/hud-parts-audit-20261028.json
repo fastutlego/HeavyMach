@@ -1,0 +1,69 @@
+{
+  "date": "2026-10-28",
+  "branch": "feat/hud-layout-editor",
+  "scope": "HUD runtime asset ownership and candidate slicing; no production renderer/input change",
+  "test": {
+    "name": "HMAppleInputTests/testHUDAssetOwnershipAudit",
+    "result": "passed",
+    "platform": "iPad Pro 13 M5 iOS 26.5 Simulator",
+    "bundle": "build/hud-audit/ownership-refined.xcresult",
+    "runtime_assets": 16,
+    "states": 18,
+    "draws": 262,
+    "unassigned": 0,
+    "reassembly_different_pixels": 0
+  },
+  "initial_failure": {
+    "bundle": "build/hud-audit/ownership.xcresult",
+    "different_pixels": 744,
+    "six_bottom_regions": [
+      0,
+      72,
+      200,
+      334,
+      382,
+      430,
+      480
+    ],
+    "cause": "not determined; final four-region candidate preserves shared right rail and passes pixel comparison",
+    "capture": "public/media/hud-audit/HUD_old_six_parts.png"
+  },
+  "candidate": {
+    "bottom_edges": [
+      0,
+      72,
+      160,
+      334,
+      480
+    ],
+    "movable_groups": 8,
+    "extra_cheat_group": 1
+  },
+  "visual_review": [
+    "native group output diagram",
+    "asset atlas with frame boundaries",
+    "original background cut diagram"
+  ],
+  "browser": "CUA returned cgWindowNotFound; new page browser inspection unavailable",
+  "remaining": [
+    "rail endcaps",
+    "runtime moved rendering and hit testing",
+    "editor UI and persistence",
+    "device validation"
+  ],
+  "sha256": {
+    "Tests/Apple/HMAppleInputTests.mm": "e5cf768eebb822c1a9a1bab41cdcfe8df12230c431a2a3d574e2bccd578e76f3",
+    "tools/audit_hud_parts.py": "87daede80868ebf7b73dead6dbe360223102ad4e13822ea83713b1a0d34fdaa3",
+    "docs/public/media/hud-audit/audit.json": "4f4686532b95d101d70fa7db2b254a7f30565b9d6096088a73fdea120c4138a4",
+    "docs/public/media/hud-audit/groups.svg": "128551659ebc65b48b88c0d117553e052cad9771b410eaaa7c1c30d80ee3e483",
+    "docs/public/media/hud-audit/cuts.svg": "90429f39ee8c8814d3656e39d1fa7b2b791206daf983571dc6a5e38a604b6c33"
+  },
+  "site": {
+    "source": "df8355b7f6b9af75d636d8791ee08ebae360a493",
+    "deployment_id": "appgdep_6ae20c88617881918c1c776e0e4d09e5",
+    "version_id": "appgprj_6addbf55aea081918d3d182d7e496e88~appgver_216c885a8a088191949758de06e18c04",
+    "status": "succeeded",
+    "url": "https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/hud-improvement.html#asset-audit",
+    "links_checked": 1203
+  }
+}

@@ -65,6 +65,9 @@ def article(source,dest,download,template):
     if source == ROOT/'docs/ground-aa-expansion.md':
         readme_ids.update({name:f'section-{i}' for i,name in enumerate(['요구와 무장','파츠와 움직임','체력과 배치','검사'])})
         readme_ids['크기와 연결부 수정 · 2026-10-28']='refinement'
+    if source == ROOT/'docs/public/hud-improvement-plan-20261028.md':
+        readme_ids.update({name:f'section-{i}' for i,name in enumerate(['현재 화면과 코드','이동할 묶음과 그림 분할','배치·그림·터치를 연결하는 방법','게임 시작 전 편집 화면','자동조준 상태를 알리는 방법','구현과 검증 순서','투두에서 함께 확인한 남은 일','코드와 정책'])})
+        readme_ids['HUD 부품과 분할 검사']='asset-audit'
     if source == ROOT/'docs/public/lux-lunae-intent-20261028.md':
         readme_ids.update({name:f'section-{i}' for i,name in enumerate(['달빛과 두 게임','검은색과 금색','보스전의 난이도와 긴장감','텍스트 지시로 어디까지 만들 수 있는가','승인한 도안 3종','실제 인게임 모습','게임에 적용한 조건','대화 원문'])})
         readme_ids.update({'게임을 하고 달라진 일':'games-and-life','움직임과 무기, 빠른 진입':'movement-and-entry','그림 작업에서 본 한계':'art-direction','지금도 고치고 있는 것':'ongoing-work'})
@@ -268,6 +271,7 @@ def main():
     shutil.copytree(ROOT/'docs/public/rea',dist/'rea',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/independence',dist/'independence',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/clone',dist/'clone',dirs_exist_ok=True)
+    shutil.copytree(ROOT/'docs/public/media/hud-audit',dist/'media/hud-audit',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/media/ground-aa',dist/'media/ground-aa',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/media/vtol',dist/'media/vtol',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/media/fullscreen',dist/'media/fullscreen',dirs_exist_ok=True)

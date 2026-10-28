@@ -1,6 +1,7 @@
 #import <XCTest/XCTest.h>
 #import <objc/runtime.h>
 #import "HMGameView.h"
+#import "HMGameHUD.h"
 #import "HMGLRenderer.h"
 #import "HMMedia.h"
 #import "HMOpenALAudio.h"
@@ -34,6 +35,53 @@
 - (void)keyboardDisconnected:(NSNotification*)notification;
 - (void)setInputAimMode:(heavymach::AimMode)mode;
 - (CGRect)aimControlRect:(int)control;
+- (void)drawAimControls;
+@end
+// Audit the sprites actually submitted by HMGameHUD, including animated frames.
+// This recorder lives only in the test bundle and never enters the game runtime.
+@interface HMHUDRecordingMedia:HMMedia
+@property NSMutableArray<NSDictionary*>* submitted;
+@property BOOL partitionBackgrounds;
+@property NSString* isolatedGroup;
+@end
+@implementation HMHUDRecordingMedia
+- (void)draw:(NSString*)name x:(CGFloat)x y:(CGFloat)y columns:(NSInteger)cols rows:(NSInteger)rows tile:(NSInteger)tile scaleX:(CGFloat)sx scaleY:(CGFloat)sy rotation:(CGFloat)r alpha:(CGFloat)a blend:(NSInteger)blend {
+ if(self.isolatedGroup.length){
+  NSString* group=@"";bool top=[name isEqualToString:@"GameUI_Top.png"],bottom=[name isEqualToString:@"GameUI_Btm.png"];
+  if(top||bottom){
+   CGRect rect=CGRectNull;
+   if(top&&[self.isolatedGroup isEqualToString:@"menu"])rect=CGRectMake(0,256,76,37);
+   if(top&&[self.isolatedGroup isEqualToString:@"progress"])rect=CGRectMake(0,293,102,27);
+   if(bottom&&[self.isolatedGroup isEqualToString:@"jump"])rect=CGRectMake(0,0,72,64);
+   if(bottom&&[self.isolatedGroup isEqualToString:@"weapon"])rect=CGRectMake(72,0,88,64);
+   if(bottom&&[self.isolatedGroup isEqualToString:@"gauges"])rect=CGRectMake(160,0,174,64);
+   if(bottom&&[self.isolatedGroup isEqualToString:@"aim"])rect=CGRectMake(334,0,146,64);
+   if(CGRectIsNull(rect))return;
+   [self setClipRect:rect];[super draw:name x:x y:y columns:cols rows:rows tile:tile scaleX:sx scaleY:sy rotation:r alpha:a blend:blend];[self resetClip];return;
+  }
+  if([name isEqualToString:@"GameMenu.png"])group=@"menu";
+  else if([name isEqualToString:@"NumSet01.png"]||[name isEqualToString:@"GameUI_Exp.png"])group=@"progress";
+  else if([name isEqualToString:@"Btn_Booster.png"])group=@"jump";
+  else if([name isEqualToString:@"Btn_Weapon.png"])group=@"weapon";
+  else if([name isEqualToString:@"WeaponTile.png"])group=y==35?@"weapon":@"preview";
+  else if([name isEqualToString:@"NumSet02b.png"])group=y==26?@"weapon":@"passives";
+  else if([name isEqualToString:@"ItemTile.png"])group=@"passives";
+  else if([name isEqualToString:@"SelWeapon.png"])group=@"preview";
+  else if([name isEqualToString:@"Extensions/AutoAimControls.png"])group=@"aim";
+  else if([name hasPrefix:@"GameUI_"])group=@"gauges";
+  if(![group isEqualToString:self.isolatedGroup])return;
+ }
+ [self.submitted addObject:@{@"asset":name,@"x":@(x),@"y":@(y),@"columns":@(cols),@"rows":@(rows),@"tile":@(tile),@"sx":@(sx),@"sy":@(sy),@"rotation":@(r),@"alpha":@(a),@"blend":@(blend)}];
+ if(self.partitionBackgrounds&&([name isEqualToString:@"GameUI_Btm.png"]||[name isEqualToString:@"GameUI_Top.png"])){
+  // Candidate divisions, at original positions. Scissor rectangles use y-up.
+  std::vector<CGRect> regions;
+  if([name isEqualToString:@"GameUI_Btm.png"]){int edges[]={0,72,160,334,480};for(int i=0;i<4;++i)regions.push_back(CGRectMake(edges[i],0,edges[i+1]-edges[i],64));}
+  else regions={CGRectMake(0,293,102,27),CGRectMake(102,293,378,27),CGRectMake(0,256,76,37),CGRectMake(76,256,404,37)};
+  for(auto rect:regions){[self setClipRect:rect];[super draw:name x:x y:y columns:cols rows:rows tile:tile scaleX:sx scaleY:sy rotation:r alpha:a blend:blend];}
+  [self resetClip];return;
+ }
+ [super draw:name x:x y:y columns:cols rows:rows tile:tile scaleX:sx scaleY:sy rotation:r alpha:a blend:blend];
+}
 @end
 #if TARGET_OS_OSX
 @interface HMValidationPanel (InputTests)
@@ -97,6 +145,55 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  [self.game setValue:@1 forKey:@"randomState"];[self.game updateCanvasGeometry];
 }
 - (void)tearDown {[self.game setApplicationActive:NO];self.game=nil;[NSFileManager.defaultManager removeItemAtURL:self.temp error:nil];[super tearDown];}
+- (void)testHUDAssetOwnershipAudit {
+#if !TARGET_OS_OSX
+ [self startFixture];auto& session=storage<std::unique_ptr<heavymach::GameSession>>(self.game,"_session");
+ session->validationSetCheats(true);session->setAimMode(heavymach::AimMode::automatic);render(self.game);
+ HMGLRenderer* gl=[self.game valueForKey:@"glRenderer"];
+ auto attach=[&](UIImage* image,NSString* name){XCTAssertNotNil(image);if(image){auto a=[XCTAttachment attachmentWithImage:image];a.name=name;a.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:a];}};
+ attach([gl snapshot],@"HUD_actual_game");
+ HMHUDRecordingMedia* media=[HMHUDRecordingMedia new];media.submitted=[NSMutableArray new];
+ NSArray* assets=@[@"GameUI_Top.png",@"GameUI_Btm.png",@"GameMenu.png",@"GameUI_Exp.png",@"NumSet01.png",@"GameUI_Gauge.png",@"GameUI_BlueLight.png",@"GameUI_RedLight.png",@"GameUI_Gear.png",@"Btn_Booster.png",@"Btn_Weapon.png",@"WeaponTile.png",@"NumSet02b.png",@"ItemTile.png",@"SelWeapon.png",@"Extensions/AutoAimControls.png"];
+ NSMutableArray* sizes=[NSMutableArray new];
+ for(NSString* name in assets){UIImage* im=[media image:name];XCTAssertNotNil(im);if(!im)continue;
+  attach(im,[@"HUD_asset_" stringByAppendingString:name.lastPathComponent.stringByDeletingPathExtension]);
+  [sizes addObject:@{@"asset":name,@"width":@(im.size.width),@"height":@(im.size.height)}];
+ }
+ [gl setLogicalWidth:480 height:320];storage<CGPoint>(self.game,"_hudOffset")=CGPointZero;storage<CGFloat>(self.game,"_hudScale")=1;
+ HMMedia* original=[self.game valueForKey:@"media"];[self.game setValue:media forKey:@"media"];
+ auto slot=storage<heavymach::SaveData>(self.game,"_save").slots[0];slot.setInt(0x28,99);
+ auto& data=storage<heavymach::GameData>(self.game,"_data");heavymach::PlayerPassives passives;
+ for(auto& p:passives.slots){p.active=true;p.number=999;p.time=30;}
+ NSMutableDictionary* samples=[NSMutableDictionary new];NSData* basePixels=nil;
+ @try {
+  for(NSString* state in @[@"normal",@"partitioned",@"normal_repeat",@"menu_pressed",@"jump_pressed",@"weapon_pressed",@"fire_pressed",@"next_pressed",@"extras",@"manual",@"group_menu",@"group_progress",@"group_jump",@"group_weapon",@"group_gauges",@"group_aim",@"group_passives",@"group_preview"]){
+   HMGameHUD* hud=[[HMGameHUD alloc]initWithMedia:media];[hud setHPGauge:.6];
+   for(int n=0;n<120;++n)[hud tick:n/60.];
+   HMGameHUDSnapshot s;s.slot=&slot;s.data=&data;s.weapon=&data.weapons.at(slot.weaponName(0));s.time=5;s.expGauge=1;s.reloadGauge=.75;s.ammo=999;
+   media.isolatedGroup=[state hasPrefix:@"group_"]?[state substringFromIndex:6]:nil;
+   if([state isEqualToString:@"extras"]||media.isolatedGroup){s.passives=&passives;[hud showWeaponChange:5];[hud setReloadComplete:5];s.time=5.05;}
+   session->setAimMode([state isEqualToString:@"manual"]?heavymach::AimMode::manual:heavymach::AimMode::automatic);
+   NSMapTable* aimTouches=[self.game valueForKey:@"aimTouches"];[aimTouches removeAllObjects];
+   if([state isEqualToString:@"fire_pressed"])[aimTouches setObject:@2 forKey:@42];
+   if([state isEqualToString:@"next_pressed"])[aimTouches setObject:@3 forKey:@42];
+   media.partitionBackgrounds=[state isEqualToString:@"partitioned"];
+   XCTAssertTrue([gl beginFrame]);media.glRenderer=gl;[media setDrawingOffset:CGPointZero];[media setDrawingScale:1];[media resetClip];
+   [hud draw:s]; // Establish the real button receivers before pressing one.
+   if([state isEqualToString:@"menu_pressed"])[hud touch:CGPointMake(38,279) state:0];
+   if([state isEqualToString:@"jump_pressed"])[hud touch:CGPointMake(34,34) state:0];
+   if([state isEqualToString:@"weapon_pressed"])[hud touch:CGPointMake(103,31) state:0];
+   [gl endFrame];XCTAssertTrue([gl beginFrame]);[media.submitted removeAllObjects];
+   [hud draw:s];[self.game drawAimControls];[gl finish];[gl endFrame];media.glRenderer=nil;
+   UIImage* im=[gl snapshot];attach(im,[@"HUD_" stringByAppendingString:state]);
+   NSData* png=UIImagePNGRepresentation(im);if([state isEqualToString:@"normal"])basePixels=png;
+   if([state isEqualToString:@"partitioned"]||[state isEqualToString:@"normal_repeat"])XCTAssertEqualObjects(png,basePixels,@"Backgrounds must reconstruct the same GPU image");
+   samples[state]=[media.submitted copy];XCTAssertEqualObjects([gl diagnostics][@"lastError"],@"");
+  }
+ } @finally {[self.game setValue:original forKey:@"media"];media.glRenderer=nil;}
+ NSData* json=[NSJSONSerialization dataWithJSONObject:@{@"assets":sizes,@"states":samples} options:NSJSONWritingPrettyPrinted error:nil];
+ auto a=[XCTAttachment attachmentWithData:json uniformTypeIdentifier:@"public.json"];a.name=@"HUD_draw_inventory";a.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:a];
+#endif
+}
 - (void)testGroundAAMediumSizeAndTurretJoin {
  [self.game setFrame:CGRectMake(0,0,1800,600)];[self.game updateCanvasGeometry];
  ((HMValidationControls*)[self.game valueForKey:@"validationControls"]).selectedSegmentIndex=1;
