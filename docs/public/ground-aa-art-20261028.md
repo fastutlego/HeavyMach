@@ -2,7 +2,53 @@
 
 차체·포탑·포신·발사관·레이더를 모두 새로 그렸다. 위쪽은 조립된 모습, 아래쪽은 분리할 파츠다. 원작 지상 유닛 5종의 파츠 연결점·겹침 순서·회전 설정을 확인해 조립안을 작성했다.
 
+## 공중 유닛 화풍을 참조한 수정 시안
+
+채택된 해리어와 F-22 그림을 직접 참조해 두 차량을 다시 칠했다. 이전 시안에서 튀던 밝은 모서리와 판금 경계의 대비를 낮추고, 표면에 부드러운 금속 명암을 넣었다. 첫 수정에서 늘어난 잔무늬는 두 번째 수정에서 줄였다. 아래는 새 조립 시안이며 게임 파츠 교체는 아직 하지 않았다.
+
+### 이번에 사용한 공중 유닛 참조
+
+<div class="gaa-art-pair">
+<figure><img src="media/vtol/harrier-concept.png" alt="화풍 참조로 사용한 채택 해리어"><figcaption>채택된 해리어 — 부드러운 금속 명암·절제된 패널선</figcaption></figure>
+<figure><img src="media/lux-lunae/F22-gold.png" alt="화풍 참조로 사용한 채택 F22"><figcaption>채택된 F-22 — 면을 따라 변하는 밝기·얇은 표면 묘사</figcaption></figure>
+</div>
+
+이전에는 원작 전차·헬기만 참조하고 추가 공중 유닛을 빠뜨렸다. 이번에는 두 채택본의 금속 표현을 기준으로 삼았다. 전투기의 금색 조종석·문양·도색은 차량에 옮기지 않았다.
+
+### 쉴카 수정 전후
+
+<div class="gaa-art-pair">
+<figure><img src="media/ground-aa/texture-proposal/shilka.png" alt="이전 쉴카 색 시안"><figcaption>이전 시안</figcaption></figure>
+<figure><img src="media/ground-aa/aircraft-style/shilka.png" alt="공중 유닛 화풍을 참조한 쉴카"><figcaption>수정 시안</figcaption></figure>
+</div>
+
+밝은 회백색으로 둘렀던 포탑 패널·차체 점검판의 경계를 줄였다. 큰 철판 면은 밝기가 조금씩 달라지는 회색 금속으로 바꿨다. 포신·레이더·바퀴의 배치와 차량 비례는 유지했다.
+
+### 퉁구스카 수정 전후
+
+<div class="gaa-art-pair">
+<figure><img src="media/ground-aa/texture-proposal/tunguska.png" alt="이전 퉁구스카 색 시안"><figcaption>이전 시안</figcaption></figure>
+<figure><img src="media/ground-aa/aircraft-style/tunguska.png" alt="공중 유닛 화풍을 참조한 퉁구스카"><figcaption>수정 시안</figcaption></figure>
+</div>
+
+포탑과 발사관의 밝은 테두리를 누그러뜨리고 차체·레이더 표면의 명암을 연결했다. 점검판·볼트가 각각 튀어나와 보이던 대비도 낮췄다. 레이더와 발사관의 형태는 유지했다.
+
+### 축소 비교
+
+<div class="gaa-reference-strip">
+<figure><img src="media/ground-aa/aircraft-style/shilka.png" alt="축소한 새 쉴카 시안" width="92"><figcaption>쉴카</figcaption></figure>
+<figure><img src="media/ground-aa/aircraft-style/tunguska.png" alt="축소한 새 퉁구스카 시안" width="90"><figcaption>퉁구스카</figcaption></figure>
+<figure><img src="media/vtol/harrier-concept.png" alt="비교용 채택 해리어" width="126"><figcaption>해리어</figcaption></figure>
+<figure><img src="media/lux-lunae/F22-gold.png" alt="비교용 채택 F22" width="126"><figcaption>F-22</figcaption></figure>
+</div>
+
+큰 그림에서는 차량의 점검판·바퀴 테두리가 여전히 항공기보다 두드러진다. 파츠 적용 때는 축소 화면에서 이 부분이 밝은 띠로 이어지는지 확인하고, 도드라지는 선만 더 줄인다. 덜컹거림·무장·크기·장착점은 현재 값을 유지한다.
+
+[이번 생성·수정 프롬프트](../../Art/GroundAA/20261028-aircraft-style/prompts.json) · [최종 시안과 참조 파일 기록](../../Art/GroundAA/20261028-aircraft-style/manifest.json)
+
 ## 색·질감 수정 시안
+
+아래는 공중 유닛과의 화풍 차이가 지적된 이전 시안이다.
 
 쉴카·퉁구스카를 원작 전차와 헬기의 회녹색·회백색 철판에 맞춰 다시 칠하는 안이다. 갈색 기운과 금색 테두리를 줄이고, 윗면·옆면·궤도의 밝기를 나눈 시안 2장을 만들었다. 이번 그림은 색·질감 제안이며 앱에 적용한 파츠는 아니다. 덜컹거림은 사용자 지시에 따라 현재 상태를 유지한다.
 

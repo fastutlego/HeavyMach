@@ -47,6 +47,7 @@ def article(source,dest,download,template):
         readme_ids['크기·연결부·레이더·포신 수정']='refinement'
         readme_ids['포신 단축·접합부 재수정과 외형 개선 계획']='barrels-and-art-plan'
         readme_ids['색·질감 수정 시안']='texture-proposal'
+        readme_ids['공중 유닛 화풍을 참조한 수정 시안']='aircraft-style'
     if source == ROOT/'docs/ground-aa-expansion.md':
         readme_ids.update({name:f'section-{i}' for i,name in enumerate(['요구와 무장','파츠와 움직임','체력과 배치','검사'])})
         readme_ids['크기와 연결부 수정 · 2026-10-28']='refinement'
@@ -144,7 +145,7 @@ def main():
             style=page.new_tag('style');style.string='.lux-small{display:flex;gap:24px;flex-wrap:wrap;align-items:center;padding:20px;background:#4c524f}.lux-small figure{margin:0}.lux-small img{max-width:none}.lux-small figcaption{font-size:12px;color:#fff}.lux-small a{display:block}'
             page.head.append(style)
         if page_name == 'ground-aa-art.html':
-            style=page.new_tag('style');style.string='.gaa-reference-strip{display:flex;flex-wrap:wrap;align-items:center;gap:28px;padding:24px;background:#626e70}.gaa-reference-strip figure{margin:0}.gaa-reference-strip img{max-width:none;width:auto;margin:0}.gaa-reference-strip img[width="200"]{width:200px}.gaa-reference-strip img[width="99"]{width:99px}.gaa-reference-strip img[width="126"]{width:126px}.gaa-reference-strip img[width="92"]{width:92px}.gaa-reference-strip img[width="90"]{width:90px}.gaa-reference-strip figcaption{font-size:13px;color:#fff;margin-top:8px}'
+            style=page.new_tag('style');style.string='.gaa-art-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;background:#626e70;padding:20px}.gaa-art-pair figure{margin:0;min-width:0}.gaa-art-pair img{width:100%;height:auto}.gaa-art-pair figcaption{font-size:14px;color:#fff}.gaa-reference-strip{display:flex;flex-wrap:wrap;align-items:center;gap:28px;padding:24px;background:#626e70}.gaa-reference-strip figure{margin:0}.gaa-reference-strip img{max-width:none;width:auto;margin:0}.gaa-reference-strip img[width="200"]{width:200px}.gaa-reference-strip img[width="99"]{width:99px}.gaa-reference-strip img[width="126"]{width:126px}.gaa-reference-strip img[width="92"]{width:92px}.gaa-reference-strip img[width="90"]{width:90px}.gaa-reference-strip figcaption{font-size:13px;color:#fff;margin-top:8px}'
             page.head.append(style)
         for link in page.select('a[href]'):
             if link['href'].startswith('../evidence/') and page_name not in ('installation.html', 'implementation.html', 'ground-units.html', 'ground-aa-art.html', 'publication.html', 'gameplay-media.html', 'github-documentation.html', 'github-licenses-and-badges.html', 'github-followup.html'):
@@ -192,6 +193,8 @@ def main():
                 node[attr] = 'evidence/ground-aa-refinement-'+Path(rel).name
             elif rel.startswith('Art/GroundAA/20261028-texture-proposal/') and rel.endswith('.json'):
                 node[attr] = 'evidence/ground-aa-texture-'+Path(rel).name
+            elif rel.startswith('Art/GroundAA/20261028-aircraft-style/') and rel.endswith('.json'):
+                node[attr] = 'evidence/ground-aa-aircraft-style-'+Path(rel).name
             elif rel == 'docs/evidence/ground-aa-20261028.json':
                 node[attr] = 'evidence/ground-aa-20261028.json'
             elif rel.startswith('docs/public/media/'):
@@ -230,6 +233,8 @@ def main():
         shutil.copyfile(file,dist/'evidence'/('ground-aa-refinement-'+file.name))
     for file in (ROOT/'Art/GroundAA/20261028-texture-proposal').glob('*.json'):
         shutil.copyfile(file,dist/'evidence'/('ground-aa-texture-'+file.name))
+    for file in (ROOT/'Art/GroundAA/20261028-aircraft-style').glob('*.json'):
+        shutil.copyfile(file,dist/'evidence'/('ground-aa-aircraft-style-'+file.name))
     shutil.copyfile(ROOT/'docs/evidence/ground-aa-20261028.json',dist/'evidence/ground-aa-20261028.json')
     shutil.copyfile(ROOT/'docs/evidence/lux-lunae-implementation-20261027.json',dist/'evidence/lux-lunae-implementation-20261027.json')
     for suffix in ['txt','cpp']:
