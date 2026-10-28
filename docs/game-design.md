@@ -51,8 +51,8 @@
 | HM-HUD-EDIT | v0.14에 포함. 영문 오른쪽 도구·원작 금속 버튼·상단 장식 이동 구현. iPhone/iPad 각13개·Mac2개·코어24개 통과. Mac 성능·장시간 검사 남음 | 일시정지의 SET GAME UI에서 현재 장면 위에 편집, 시작 전 HUD 배치에서는 독립 예시 전투. 그림/터치 공통 좌표, 취소·적용·기본 배치 복원. [구현 계획](public/hud-improvement-plan-20261028.md) |
 | HM-AIM-VIS | 표시 계획 작성·미구현 | 자동조준 대상 없음·화면 밖·지형 아래/뒤 등으로 상태를 알아보기 어려운 문제. 자동조준 동작을 유지하고 시각 안내로 구분하는 방법 연구. [연구 범위](usability-todo.md#hm-aim-vis--자동조준-상태를-알아볼-수-있는-시각-안내) |
 | HM-TUTORIAL | 연구 대기 | 현행 미션 구조를 모두 유지하고 최상단에 튜토리얼 패키지0-0~0-4 추가. 무기·틸트·전환·자동조준 등 기본 조작, 원작 UI·스프라이트·클리어 조건의 톤을 지키는 제작 절차 연구. [연구 범위](usability-todo.md#hm-tutorial--최상단-튜토리얼-미션-패키지-0-00-4) |
-| HM-ICON | TODO | iOS/iPadOS 현행 아이콘의 일러스트를 기준으로 내부 HeavyMach 등 글자를 제거한다. iOS·iPadOS·Android·macOS용 아이콘을 공용 원본에서 파생한다. [과제](usability-todo.md#앱-아이콘플레이-영상-자료--2026-10-27) |
-| HM-MEDIA | 후보 이미지8장·클립3개 제작 / 최종 게시 컷 선정 남음 | 사용자 플레이 영상에서 기능과 화면 완성도를 보여주는 장면을 선정해 GitHub·Sass용 캡처·클립·캡션·타임코드 색인을 만든다. [절차](media-publication.md) · [후보](public/gameplay-media-20261027.md) |
+| HM-ICON | 기능 브랜치 구현·Apple4빌드 통과. Android PNG 준비 | iOS/iPadOS 현행 아이콘의 일러스트를 기준으로 내부 HeavyMach 등 글자를 제거한다. iOS·iPadOS·Android·macOS용 아이콘을 공용 원본에서 파생한다. [과제](usability-todo.md#앱-아이콘플레이-영상-자료--2026-10-27) |
+| HM-MEDIA | 기존8장·클립3개 게시. 지상 유닛·HUD 최종 캡처4장과 집필용 출처·캡션 추가 | 사용자 플레이 영상에서 기능과 화면 완성도를 보여주는 장면을 선정해 GitHub·Sass용 캡처·클립·캡션·타임코드 색인을 만든다. [절차](media-publication.md) · [후보](public/gameplay-media-20261027.md) |
 | HM-FOLD | 검토 | 접힌 자세의 상단 게임/하단 조작부 구상. 기기 지원 확인·설계·구현 전이다 |
 
 최신 실행 상태와 사용자 확인은 [current-status](current-status.md), 실행할 후속 과제는 [TODO](usability-todo.md)가 소유한다. 현재 설치본은 제품 코드 `72e8c68e`이며 사용자가 모든 미션을 플레이하고 크래시·오동작·적 이동 이상은 없는 것 같다고 보고했다. 문서 정비는 이 앱의 게임 규칙을 바꾸지 않는다.

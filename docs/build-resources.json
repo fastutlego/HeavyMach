@@ -15,7 +15,7 @@
     "Resources/Images": 695,
     "Resources/Audio": 31,
     "Resources/RawData": 46,
-    "Resources/Assets.xcassets": 3,
+    "Resources/Assets.xcassets": 9,
     "Resources/Validation": 1,
     "Art/Extensions": 23
   },
@@ -7357,13 +7357,13 @@
     },
     {
       "path": "Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
-      "bytes": 1301813,
-      "sha256": "8e7240c6f7123fa3ec0ca74fb3499259ebc60772d1dc285f392e8627c7f6c89d"
+      "bytes": 1591932,
+      "sha256": "3960b126cbf2351bef44fa53797f530287c4c0cc47223ce8111f2459313a39a3"
     },
     {
       "path": "Resources/Assets.xcassets/AppIcon.appiconset/Contents.json",
-      "bytes": 207,
-      "sha256": "87422543a7d74c5ef4611ba76d337bf890601c17e4794627223b714b30735fac"
+      "bytes": 1356,
+      "sha256": "876ddb48c120f6e09941dc8dab159aa9fcdf9f67afca691a7b1963db9749d566"
     },
     {
       "path": "Resources/Assets.xcassets/Contents.json",
@@ -7509,6 +7509,36 @@
       "path": "Art/Extensions/GAA_Shilka_Turret_v3.png",
       "bytes": 1538560,
       "sha256": "b6d21f38c6ea995e58cb16dbf7f7f5f6f11e004d2ec2c2915b39749d6b03c331"
+    },
+    {
+      "path": "Resources/Assets.xcassets/AppIcon.appiconset/AppIcon128.png",
+      "bytes": 32585,
+      "sha256": "9c6a0cfaf4aa461d68be199522cd130f5b8d5b2ed8e3d5ef6186e4a5f88959e1"
+    },
+    {
+      "path": "Resources/Assets.xcassets/AppIcon.appiconset/AppIcon16.png",
+      "bytes": 805,
+      "sha256": "ee8ec31e79a74672331ab54b91ce6847617b1ee07afa0b18dd2c26bb9d904570"
+    },
+    {
+      "path": "Resources/Assets.xcassets/AppIcon.appiconset/AppIcon256.png",
+      "bytes": 120604,
+      "sha256": "b94ffeea058a07aae9fb9b8c74d5ebd3a02fb56cce31d4627ccd44bb6091ff86"
+    },
+    {
+      "path": "Resources/Assets.xcassets/AppIcon.appiconset/AppIcon32.png",
+      "bytes": 2501,
+      "sha256": "fc3f0ab182c4c2aa39ca5b1bd3db6ff18fdd7c1534820bee47c348f60aaa4ebf"
+    },
+    {
+      "path": "Resources/Assets.xcassets/AppIcon.appiconset/AppIcon512.png",
+      "bytes": 448517,
+      "sha256": "c08b4cbc6d7c61fe2b1c1b458e99a41ca7fad8fcdb1a4dbb779dd348eead4b8e"
+    },
+    {
+      "path": "Resources/Assets.xcassets/AppIcon.appiconset/AppIcon64.png",
+      "bytes": 8817,
+      "sha256": "48cecd48eb115b799cea502cade26eb9b614a86f7b6be2948dc2b23d87738b0e"
     }
   ]
 }

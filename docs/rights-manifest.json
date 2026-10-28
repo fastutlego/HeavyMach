@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-28",
+  "updated_at": "2026-10-29",
   "asset_hash_manifest": "docs/build-resources.json",
-  "asset_count": 1482,
+  "asset_count": 1504,
   "groups": [
     {
       "paths": [
@@ -46,13 +46,15 @@
         "Art/VTOL/**",
         "Art/LuxLunae/**",
         "Art/AutoAim/**",
-        "Art/Candidates/**"
+        "Art/Candidates/**",
+        "Art/AppIcon/**"
       ],
       "origin": "generated/edited art; source prompts and references retained",
       "permission_evidence": null,
       "status": "review original-game extensions and referenced livery/marks",
       "source_records": [
-        "docs/lux-lunae-plan-20261027.md"
+        "docs/lux-lunae-plan-20261027.md",
+        "Art/AppIcon/20261029/prompt.json"
       ]
     },
     {

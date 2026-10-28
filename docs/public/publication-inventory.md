@@ -65,7 +65,7 @@ python3 tools/document_contract.py check
 
 ## 버전과 남은 근거
 
-게임 버전은 v0.12다. 현재 구현과 남은 일은 [구현 상태](implementation-status.md)와 [내부 TODO](../usability-todo.md), 변경 순서는 [작업 이력](../current-status.md)에 있다. 작업 이력의 날짜별 항목은 당시 상태를 담고 있다. [변경 이력](../../CHANGELOG.md)과 [전체 문서 목차](../README.md)로 연결된다.
+게임 버전은 v0.14다. 현재 구현과 남은 일은 [구현 상태](implementation-status.md)와 [내부 TODO](../usability-todo.md), 변경 순서는 [작업 이력](../current-status.md)에 있다. 작업 이력의 날짜별 항목은 당시 상태를 담고 있다. [변경 이력](../../CHANGELOG.md)과 [전체 문서 목차](../README.md)로 연결된다.
 
 빌드 경고는 아직 전수조사하지 않았다. deprecated API 관련이라는 추정을 확인하고 추가 기능 개발과 병행해 수정할 예정이다. 빌드·실행 스크립트는 사례 조사를 마쳤고 구현이 남았다. [스크립트 조사·브랜치 정리](github-followup-20261028.md).
 
@@ -127,3 +127,11 @@ Mags의 답변은 개발자의 변과 제공 원문을 바탕으로 쓴다. 추�
 ## HUD 편집 · v0.14
 
 [HUD 편집 원고와 실제 기기 화면](hud-improvement-plan-20261028.md)에 요구·분할·입력·저장·편집 도구 수정과 iPhone/iPad 검사를 모았다. 버튼·계기판·상단 장식 이동은 구현됐고, 조준 상태 안내 개선은 별도 후속 과제다. [최신 검사 증거](../evidence/hud-editor-release-20261029.json).
+
+## 최신 기능 이미지 · 2026-10-29
+
+[쉴카·퉁구스카·HUD 편집 이미지](app-icon-and-media-20261029.md)와 [장면별 출처·캡션](media/updates-20261029/media-scenes.json)을 추가했다. 쉴카는 포탑 높이29 수정 후 이미지, 퉁구스카는 최종 파츠 적용 이미지, HUD는 영문 도구·상단 장식 복원 후 이미지를 사용한다. 각 장면의 기기·날짜·치트 앱 여부·원본 해시를 함께 기록했다.
+
+Apps에는 지상 유닛의 파츠·무장과 HUD 그림/터치 위치 공유를 설명할 때 쓴다. Mags에는 내가 지정한 유닛 조건과 화면 배치 요구를 설명하는 장면으로 쓴다. 이 작업에서는 Apps·Mags 본문을 작성하거나 sass.studio를 수정하지 않았다.
+
+새 아이콘은 [1024px PNG](media/app-icon-20261029/icon.png), 생성·파생 파일은 [아이콘 원본 폴더](../../Art/AppIcon/20261029/README.md)에 있다. 현재 공개 게임 태그는 v0.14이며 새 아이콘의 병합·배포 상태는 [현재 상태](../current-status.md)를 확인한다.

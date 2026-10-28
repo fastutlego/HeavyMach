@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-29",
+  "branch": "feat/icon-and-project-media",
+  "scope": [
+    "text-free app icons",
+    "HUD and ground-unit publication media"
+  ],
+  "builds": {
+    "HeavyMachValidation-simulator-build.log": {
+      "passed": false,
+      "sha256": "73a78a8fd820073bf9df0ea3e1fb45821badced90d2e40f5b5948c7612ae85a4"
+    },
+    "HeavyMachMac-build.log": {
+      "passed": false,
+      "sha256": "be72ec8d3c178c463a26cb81fed9a5fba720668830c2148a36a89dc270f029df"
+    },
+    "HeavyMachMacValidation-build.log": {
+      "passed": false,
+      "sha256": "14f8ad1ad40bed8150a53acca7e93eeac735545f62d1025cf3e9d6717e904852"
+    },
+    "site-build.log": {
+      "passed": false,
+      "sha256": "b8485b23228f177775e6521733b58cb56b2ded702333feb00e0ac56af1609d7f"
+    },
+    "HeavyMachRestored-simulator-build.log": {
+      "passed": false,
+      "sha256": "f38c0da27e303a73a5ec21a3937bc1ebbca074815af88145b1782b8edcd404ec"
+    }
+  },
+  "devices": {
+    "iphone": {
+      "transport": "localNetwork",
+      "save_changed_offsets": [
+        1212,
+        1213
+      ],
+      "save_progress_preserved": true,
+      "save_change_explanation": "slot 2 lastAccess (GlobalInfo.cpp setInt(4, unixTime))",
+      "hud_layout_preserved": true,
+      "ordinary_install": {
+        "outcome": "success",
+        "raw_sha256": "5ebc7eac81d522adcb7e9928fc67d4d673457fbf670b52cb7297936fd49357b3"
+      },
+      "ordinary_launch": {
+        "outcome": "success",
+        "raw_sha256": "65e1d3fbf4c61ddc344bc3a0df7be5783fc9a1621c193257e864dc49f14bb6bb"
+      },
+      "cheat_install": {
+        "outcome": "success",
+        "raw_sha256": "9ab198c4b071f1ad8dd22518f0fa62167ad05b4eaf14ec07e4d42595914a10b8"
+      },
+      "cheat_launch": {
+        "outcome": "success",
+        "raw_sha256": "4cb5ee1f28c009cd05eb00b0fd0f66d77738aff799b31d55dc4c1191be82fa60"
+      }
+    },
+    "ipad": {
+      "transport": "localNetwork",
+      "save_changed_offsets": [],
+      "save_progress_preserved": true,
+      "save_change_explanation": "identical",
+      "hud_layout_preserved": true,
+      "ordinary_install": {
+        "outcome": "success",
+        "raw_sha256": "c5c1d1e2c4b423bd4f6dad93957d5e4cecd6dafb0d1d9f9ef17c98455cc9f3d0"
+      },
+      "ordinary_launch": {
+        "outcome": "success",
+        "raw_sha256": "c10f16ad3dbf0780eeded99e7e21a7c521cc031d138f814d8d29325ac0127e55"
+      },
+      "cheat_install": {
+        "outcome": "success",
+        "raw_sha256": "1e812703f8b442f6ac88d4ebcbabb9fdd78734444daa1a08485d2f754ee06c8d"
+      },
+      "cheat_launch": {
+        "outcome": "success",
+        "raw_sha256": "e7e256a76c3517b935bd424a69def89d4fc633c64fbf3e82730769704fed8b58"
+      }
+    }
+  },
+  "media_manifest": "docs/public/media/updates-20261029/media-scenes.json",
+  "report_local_links": {
+    "checked": 236,
+    "errors": 0
+  },
+  "report_visual_check": "Safari: icon comparison, equal sizes and ground-unit images inspected"
+}
