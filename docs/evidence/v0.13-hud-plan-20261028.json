@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-28",
+  "release": {
+    "tag": "v0.13",
+    "commit": "bc4e80c0aa4920adbb09e7dc9c9d9b26fe39d888",
+    "url": "https://github.com/gelb2/HeavyMach/releases/tag/v0.13",
+    "asset_count": 1498,
+    "tracked_files": 2555,
+    "archive_sha256": "d97c4fcc7e94b7f4208f84781318c2bd857844b302cdf8eb978efa2ef93dd747",
+    "unpacked_resources_verified": true,
+    "product_matches_tested_commit": "d21cfa1c"
+  },
+  "hud": {
+    "plan_commit": "bdeb63f9",
+    "implementation": "not started",
+    "document_check": "13 task routes; 108 referenced files",
+    "publication_check": "22 linked; 141 editorial; 399 links",
+    "site_links": 1187,
+    "browser": "Safari local preview: table, image width, section navigation",
+    "site_source": "c95c404c678bb8fbf81355286c2d36a290d3e511",
+    "deployment": {
+      "id": "appgdep_6ae1f6403d9c81918dc2cfd293f04ca1",
+      "project_id": "appgprj_6addbf55aea081918d3d182d7e496e88",
+      "title": "HeavyMach 개발 보고",
+      "version_id": "appgprj_6addbf55aea081918d3d182d7e496e88~appgver_7c0ba6838e308191a8842c6c9dc67566",
+      "type": "publish",
+      "status": "succeeded",
+      "url": "https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site",
+      "has_mcp": false,
+      "screenshot_asset_pointer": null,
+      "provider_deployment_id": "site---6addbf55aea081918d3d182d7e496e88",
+      "failure_message": null,
+      "env_set_revision": 0,
+      "updated_at": "2026-10-28T13:19:23.199306+00:00"
+    }
+  }
+}
