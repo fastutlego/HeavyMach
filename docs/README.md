@@ -17,7 +17,8 @@
 | [검증](public/validation.md) | 기기·조건·빌드별 결과와 남은 검사 |
 | [쉴카·퉁구스카 도안](public/ground-aa-art-20261028.md) | 새 외형·파츠 분해도와 기존 유닛 조립 구조 비교 |
 | [지상 유닛 추가 연구](public/ground-units-research-20261028.md) | 쉴카·퉁구스카, 원작 파츠·무기·움직임 재사용과 남은 TODO |
-| [HUD 개선 계획](public/hud-improvement-plan-20261028.md) | 그림 분할·배치 편집·입력·자동조준 상태 안내 |
+| [HUD 개선 계획](public/hud-improvement-plan-20261028.md) | 그림 분할·현재 장면/예시 전투·일시정지/시작 전 편집·입력 |
+| [자동조준 상태 안내](public/auto-aim-visibility-plan-20261028.md) | HUD 편집과 별도인 대상 없음·화면 밖·가림 표시 |
 | [구현 상태](public/implementation-status.md) | 구현·문서 작업·후속 과제 |
 | [변경 이력](../CHANGELOG.md) | v0.9~v0.13과 미출시 문서 변경 |
 | [제작자·자원](../CREDITS.md) | 원작, 기획·구현 역할, 그림·라이브러리 |

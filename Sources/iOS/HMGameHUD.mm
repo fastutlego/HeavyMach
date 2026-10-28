@@ -21,6 +21,9 @@ int glyph(unichar c) {return c>='0'&&c<='9'?c-'0':c=='.'?10:c=='/'?11:c==':'?12:
 }
 @implementation HMGameHUD {
     HMMedia *_media;
+    heavymach::hud::Configuration _layout;
+    int _layoutGroup;
+    BOOL _editingLayout;
     int _keyboardFocus;
     BOOL _keyboardFocusVisible;
     std::vector<HUDButton> _buttons;
@@ -31,13 +34,40 @@ int glyph(unichar c) {return c>='0'&&c<='9'?c-'0':c=='.'?10:c=='/'?11:c==':'?12:
     // 0x169b0, 0x1767c, 0x178f0 store g_time after truncdfsf.
     float _startTime,_reloadTime,_weaponTime;
     float _hp,_hpDest,_hpRotation,_gear,_gearVelocity;
-    std::array<float,3> _menuX;
+    std::array<float,4> _menuX;
     float _upgradeX;
     std::array<uint8_t,3> _upgradeGrades;
 }
 - (instancetype)initWithMedia:(HMMedia *)media {
-    if ((self=[super init])) {_media=media;_pressed=-1;_startTime=_reloadTime=_weaponTime=-1;_menuX.fill(-240);_hpDest=0;_upgradeX=-240;}
+    if ((self=[super init])) {_media=media;_layoutGroup=-1;_pressed=-1;_startTime=_reloadTime=_weaponTime=-1;_menuX.fill(-240);_hpDest=0;_upgradeX=-240;}
     return self;
+}
+- (void)setLayout:(const heavymach::hud::Configuration&)layout editing:(BOOL)editing {_layout=layout;_editingLayout=editing;}
+- (void)useLayoutGroup:(int)group {
+    _layoutGroup=group;
+    if(!_layout.customized())return;
+    auto t=group<0?_layout.legacy:_layout.group(group).transform;
+    [_media setDrawingOffset:CGPointMake(t.offset.x,t.offset.y)];[_media setDrawingScale:t.scale];
+    if(group<0){auto r=_layout.legacy.apply(heavymach::hud::Rect{0,0,480,320});[_media setClipRect:CGRectMake(r.x,r.y,r.width,r.height)];}
+    else {auto r=_layout.group(group).visualBounds;[_media setClipRect:CGRectMake(r.x,r.y,r.width,r.height)];}
+}
+- (void)drawLayoutBackground {
+    using namespace heavymach::hud;
+    if(!_layout.customized()){[self image:@"GameUI_Btm.png" x:240 y:32];[self image:@"GameUI_Top.png" x:240 y:288];return;}
+    const int ids[]={jump,weapon,gauges,aim,progress,menu};
+    const CGRect sources[]={CGRectMake(0,0,72,64),CGRectMake(72,0,88,64),CGRectMake(160,0,174,64),CGRectMake(334,0,146,64),CGRectMake(0,0,102,27),CGRectMake(0,27,76,37)};
+    for(int n=0;n<6;++n){int g=ids[n];[self useLayoutGroup:g];CGRect src=sources[n];BOOL top=n>=4;
+        CGRect dest=CGRectMake(src.origin.x,top?320-CGRectGetMaxY(src):64-CGRectGetMaxY(src),src.size.width,src.size.height);
+        [_media drawRegion:top?@"GameUI_Top.png":@"GameUI_Btm.png" source:src destination:dest];
+        // Existing riveted vertical metal border closes the exposed rail ends.
+        if(n<4&&_layout.positions[g]){for(CGFloat x:{CGRectGetMinX(dest),CGRectGetMaxX(dest)-4})[_media drawRegion:@"GameUI_Top.png" source:CGRectMake(0,0,4,27) destination:CGRectMake(x,0,4,19)];}
+        if(g==progress&&_layout.positions[g])[_media drawRegion:@"GameUI_Top.png" source:CGRectMake(0,0,4,27) destination:CGRectMake(98,293,4,27)];
+    }
+    // Remaining upper artwork belongs to a movable decoration, never a game receiver.
+    [self useLayoutGroup:upperTrim];
+    [_media drawRegion:@"GameUI_Top.png" source:CGRectMake(102,0,378,27) destination:CGRectMake(102,293,378,27)];
+    [_media drawRegion:@"GameUI_Top.png" source:CGRectMake(76,27,404,37) destination:CGRectMake(76,256,404,37)];
+    [self useLayoutGroup:-1];
 }
 - (void)setGameStart:(double)time {_startTime=time;}
 - (void)setReloadComplete:(double)time {_reloadTime=time;}
@@ -95,18 +125,49 @@ int glyph(unichar c) {return c>='0'&&c<='9'?c-'0':c=='.'?10:c=='/'?11:c==':'?12:
     if(identifier==1300){motion.pushDepth=motion.releaseHeight=1;motion.releaseDelay=.1f;}
     int frame=motion.pressed&&enabled?tile+1:tile;
     [self sprite:name x:x y:y+motion.yOffset(_time,enabled) columns:columns rows:rows tile:frame sx:1 sy:1 rotation:0 alpha:1 blend:0];
-    if(enabled){CGSize imageSize=[_media imageSize:name];if(imageSize.width>0)_buttons.push_back({identifier,key,CGRectMake(x-imageSize.width/columns/2,y-imageSize.height/rows/2,imageSize.width/columns,imageSize.height/rows)});}
+    if(enabled){CGSize z=[_media imageSize:name];if(z.width>0){CGRect b=CGRectMake(x-z.width/columns/2,y-z.height/rows/2,z.width/columns,z.height/rows);
+        if(_layoutGroup>=0&&_layout.customized()){auto t=_layout.group(_layoutGroup).transform;auto q=_layout.legacy.inverse(t.apply(heavymach::hud::Point{b.origin.x,b.origin.y}));b.origin=CGPointMake(q.x,q.y);}
+        _buttons.push_back({identifier,key,b});}}
+}
+// Compose SET GAME UI from the original menu's small-cap letters. Both
+// states sample the existing atlas; no new font, bitmap or per-frame rasterization.
+- (void)drawHUDLayoutButtonAtX:(double)x y:(double)y {
+    auto& motion=_buttonStates[104];
+    motion.pushDepth=motion.releaseHeight=motion.releaseDelay=0;motion.pushDelay=.1f;
+    const int stateY=motion.pressed?40:0;
+    const double bottom=y-20+motion.yOffset(_time,YES);
+    struct Letter {int x,y,width;};
+    // S, E, T, space, G, A, M, E, space, U, I.
+    // VISIT is one pixel lower in its atlas row; align its T/I and plate edges.
+    constexpr Letter letters[]={{25,80,16},{66,0,13},{68,161,13},{0,0,8},
+        {146,0,17},{163,0,15},{178,0,16},{195,0,12},{0,0,8},{93,0,15},{88,161,7}};
+    double width=0;for(auto letter:letters)width+=letter.width+1;
+    double left=x-(width-1)/2;
+    // Tile the blank plate around the letters, never beneath their translucent
+    // pixels. Overdrawing a plate would darken every letter rectangle twice.
+    auto blank=[&](double origin,double length){if(length>0)[_media drawRegion:@"GameMenuSub.png" source:CGRectMake(20,stateY,1,40) destination:CGRectMake(origin,bottom,length,40)];};
+    [_media drawRegion:@"GameMenuSub.png" source:CGRectMake(0,stateY,20,40) destination:CGRectMake(x-128,bottom,20,40)];
+    blank(x-108,left-(x-108));
+    for(auto letter:letters){
+        if(letter.x)[_media drawRegion:@"GameMenuSub.png" source:CGRectMake(letter.x,letter.y+stateY,letter.width,40) destination:CGRectMake(left,bottom,letter.width,40)];
+        else blank(left,letter.width);
+        left+=letter.width;blank(left,1);++left;
+    }
+    blank(left,x+108-left);
+    [_media drawRegion:@"GameMenuSub.png" source:CGRectMake(236,stateY,20,40) destination:CGRectMake(x+108,bottom,20,40)];
+    _buttons.push_back({104,104,CGRectMake(x-128,y-20,256,40)});
 }
 - (void)drawPassive:(const HMGameHUDSnapshot&)s {
     if(!s.passives)return;
-    for(int i=0;i<4;++i)if(s.passives->slots[i].active){
+    for(int i=0;i<4;++i)if(_editingLayout||s.passives->slots[i].active){
         [self sprite:@"ItemTile.png" x:10 y:200+i*16 columns:7 rows:4 tile:i+5 sx:.5 sy:.5 rotation:0 alpha:1 blend:0];
-        [self font:@"NumSet02b.png" text:[NSString stringWithFormat:@"%02d",s.passives->slots[i].number] x:24 y:200+i*16 pitch:6 align:0 columns:16 rows:1 alpha:1];
+        [self font:@"NumSet02b.png" text:[NSString stringWithFormat:@"%02d",(s.passives->slots[i].active?s.passives->slots[i].number:999)] x:24 y:200+i*16 pitch:6 align:0 columns:16 rows:1 alpha:1];
     }
 }
 - (void)drawWeaponPreview:(const HMGameHUDSnapshot&)s {
-    if(!s.slot||!s.data||_weaponTime<0)return;
+    if(!s.slot||!s.data||(_weaponTime<0&&!_editingLayout))return;
     float elapsed=float(_time-_weaponTime),alpha=elapsed<=1?1:std::max(0.f,2.f-elapsed);
+    if(_editingLayout)alpha=1;
     if(alpha<=0)return;
     int first=std::max(0,std::min(s.selectedWeapon-2,s.slot->weaponCount()-5));
     for(int i=0;i<5&&first+i<s.slot->weaponCount();++i){
@@ -173,24 +234,36 @@ int glyph(unichar c) {return c>='0'&&c<='9'?c-'0':c=='.'?10:c=='/'?11:c==':'?12:
     _time=s.time;_buttons.clear();
     bool result=s.presentation&&s.presentation->step!=7;
     _modal=s.paused||_menuStep||_upgradeStep||result;
-    [self drawPassive:s];[self drawMissionIntro:s];[self drawWeaponPreview:s];
-    [self image:@"GameUI_Btm.png" x:240 y:32];[self image:@"GameUI_Top.png" x:240 y:288];
+    [self useLayoutGroup:heavymach::hud::passives];[self drawPassive:s];[self useLayoutGroup:-1];if(!_editingLayout)[self drawMissionIntro:s];[self useLayoutGroup:heavymach::hud::preview];[self drawWeaponPreview:s];[self useLayoutGroup:-1];
+    [self drawLayoutBackground];
+    [self useLayoutGroup:heavymach::hud::menu];
     [self buttonImage:@"GameMenu.png" identifier:100 x:38 y:279 columns:1 rows:2 tile:0 enabled:YES];
+    [self useLayoutGroup:heavymach::hud::progress];
     [self sprite:@"GameUI_Exp.png" x:27+35*s.expGauge y:300 columns:1 rows:1 tile:0 sx:s.expGauge sy:1 rotation:0 alpha:1 blend:0];
     [self font:@"NumSet01.png" text:[NSString stringWithFormat:@"%02d",s.slot?s.slot->level()+1:1] x:40 y:313 pitch:7 align:0 columns:16 rows:1 alpha:1];
+    [self useLayoutGroup:heavymach::hud::gauges];
     [self sprite:@"GameUI_Gauge.png" x:239 y:25 columns:1 rows:1 tile:0 sx:1 sy:1 rotation:_hpRotation alpha:1 blend:0];
     float reloadElapsed=float(_time-_reloadTime);
     if(_reloadTime>=0&&reloadElapsed<.15f)[self sprite:@"GameUI_BlueLight.png" x:287 y:22 columns:1 rows:1 tile:0 sx:1 sy:1 rotation:0 alpha:1.f+reloadElapsed/-.15f blend:2];
     [self sprite:@"GameUI_Gauge.png" x:287 y:22 columns:1 rows:1 tile:0 sx:1 sy:1 rotation:s.reloadGauge*2*std::numbers::pi alpha:1 blend:0];
     [self sprite:@"GameUI_RedLight.png" x:265 y:35 columns:1 rows:1 tile:0 sx:1 sy:1 rotation:0 alpha:std::min(1.f,std::cos(float(10*_time))+1.f) blend:2];
     [self sprite:@"GameUI_Gear.png" x:324 y:3 columns:1 rows:1 tile:0 sx:1 sy:1 rotation:_gear alpha:1 blend:0];
+    [self useLayoutGroup:heavymach::hud::jump];
     [self buttonImage:@"Btn_Booster.png" identifier:1000 x:34 y:34 columns:2 rows:1 tile:0 enabled:YES];
+    [self useLayoutGroup:heavymach::hud::weapon];
     [self buttonImage:@"Btn_Weapon.png" identifier:1100 x:103 y:31 columns:2 rows:1 tile:0 enabled:YES];
     [self sprite:@"WeaponTile.png" x:106 y:35 columns:7 rows:4 tile:s.weapon?s.weapon->uiTile:0 sx:1 sy:1 rotation:0 alpha:1 blend:0];
     [self font:@"NumSet02b.png" text:[NSString stringWithFormat:@"%02d",s.ammo] x:120 y:26 pitch:6 align:1 columns:16 rows:1 alpha:1];
+    [self useLayoutGroup:-1];
+    if(_editingLayout)return;
     [self drawUpgrade:s];[self drawPresentation:s];
     // An interrupted stage transition must leave its resume menu visible.
-    if(_menuStep)for(int i=0;i<3;++i)[self buttonImage:@"GameMenuSub.png" identifier:101+i x:_menuX[i] y:220-50*i columns:1 rows:6 tile:i*2 enabled:YES];
+    if(_menuStep){
+        [self buttonImage:@"GameMenuSub.png" identifier:101 x:_menuX[0] y:235 columns:1 rows:6 tile:0 enabled:YES];
+        [self drawHUDLayoutButtonAtX:_menuX[1] y:190];
+        [self buttonImage:@"GameMenuSub.png" identifier:102 x:_menuX[2] y:145 columns:1 rows:6 tile:2 enabled:YES];
+        [self buttonImage:@"GameMenuSub.png" identifier:103 x:_menuX[3] y:100 columns:1 rows:6 tile:4 enabled:YES];
+    }
 }
 - (void)tick:(double)time {
     _time=time;_gear+=_gearVelocity;_gearVelocity+=(0-_gearVelocity)/20;
@@ -200,13 +273,18 @@ int glyph(unichar c) {return c>='0'&&c<='9'?c-'0':c=='.'?10:c=='/'?11:c==':'?12:
         _hp+=(_hpDest-_hp)*.125f;if(std::abs(_hp-_hpDest)<.01f)_hp=_hpDest;
         _hpRotation=float(double(_hp)*-5.183627803521752-0.6000000238418579);
     }
-    if(_menuStep)for(int i=0;i<3;++i)_menuX[i]+=((_menuStep==1?220+20*i:720)-_menuX[i])/(7+2*i);
-    if(_menuStep==2&&_menuX[2]>710)_menuStep=0;
+    if(_menuStep)for(int i=0;i<4;++i)_menuX[i]+=((_menuStep==1?220+20*i:720)-_menuX[i])/(7+2*i);
+    if(_menuStep==2&&_menuX[3]>710)_menuStep=0;
     if(_upgradeStep){_upgradeX+=((_upgradeStep==1?240:660)-_upgradeX)/5;
         if(_upgradeStep==2&&_upgradeX>659){_upgradeStep=0;if(self.upgradeClosed)self.upgradeClosed();}}
 }
 - (void)cancelInput {_pressed=-1;_buttonStates.clear();}
-- (BOOL)touch:(CGPoint)logical state:(int)state {
+- (int)receiverAt:(CGPoint)logical {
+    for(auto i=_buttons.rbegin();i!=_buttons.rend();++i)if(originalButtonContains(i->bounds,logical))return i->key;
+    return -1;
+}
+- (BOOL)touch:(CGPoint)logical state:(int)state {return [self touch:logical state:state receiver:-1];}
+- (BOOL)touch:(CGPoint)logical state:(int)state receiver:(int)receiver {
     // 0x82b8 registers buttons at construction; 0xfc18 walks that array in
     // reverse and stops at the first hit. Drawing order is not receiver order.
     auto rank=[](const HUDButton& button){
@@ -221,6 +299,7 @@ int glyph(unichar c) {return c>='0'&&c<='9'?c-'0':c=='.'?10:c=='/'?11:c==':'?12:
     auto receivers=_buttons;
     std::stable_sort(receivers.begin(),receivers.end(),[&](const auto& a,const auto& b){return rank(a)<rank(b);});
     for(auto it=receivers.rbegin();it!=receivers.rend();++it){
+        if(receiver>=0&&it->key!=receiver)continue;
         bool inside=originalButtonContains(it->bounds,logical);
         _buttonStates[it->key].touch(inside,state,_time);
         if(!inside)continue;

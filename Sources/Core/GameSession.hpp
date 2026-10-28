@@ -55,6 +55,8 @@ public:
  void tick(double globalTime,float tilt);
  // Build a newly loaded paused scene once, without advancing simulation/time.
  void prepareInitialPausedFrame();
+ // Arrange only a separately owned HUD example session; never call on live play.
+ void prepareHUDPreview();
  // Supply current camera quake (+Y up) before tick, without recollecting draws.
  // Fixed HP images subtract this offset before rounding/culling, then add it
  // back to render positions because the host translates all world draws by -offset.

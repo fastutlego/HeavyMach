@@ -1,0 +1,2536 @@
+{
+  "runtime_assets": {
+    "GameUI_Top.png": {
+      "runtime_source": "Resources/OriginalImages/GameUI_Top.png",
+      "source_sha256": "49016c118bcebbc10baf96b0151a1e8406fa49b3453de936b6d1da3dae098885",
+      "decoded_png": "docs/public/media/hud-audit/HUD_asset_GameUI_Top.png",
+      "decoded_sha256": "bd7a803c006e8bb383604f3c3347bc282206e0118c6ccf04eb3a3e19893ed192",
+      "runtime_size": [
+        480,
+        64
+      ]
+    },
+    "GameUI_Btm.png": {
+      "runtime_source": "Resources/OriginalImages/GameUI_Btm.png",
+      "source_sha256": "d270ef73a5d19e99927ede18ab5a5089fe7b64efe15cf8a51c61b9ed36b5b5b9",
+      "decoded_png": "docs/public/media/hud-audit/HUD_asset_GameUI_Btm.png",
+      "decoded_sha256": "e935240621d22cca318b02df915624d31e3a25b7c7e5e00ebef965e9605e6f32",
+      "runtime_size": [
+        480,
+        64
+      ]
+    },
+    "GameMenu.png": {
+      "runtime_source": "Resources/OriginalImages/GameMenu.png",
+      "source_sha256": "30641162dfdf1e64ef2f62bc3eac44772484608d1be35744c17c7173733e07f8",
+      "decoded_png": "docs/public/media/hud-audit/HUD_asset_GameMenu.png",
+      "decoded_sha256": "334b95e1f2cdbb10cd791b9da3eb6ef73a5937bc2352cba9a4e590e447027aa5",
+      "runtime_size": [
+        64,
+        64
+      ]
+    },
+    "GameUI_Exp.png": {
+      "runtime_source": "Resources/OriginalImages/GameUI_Exp.png",
+      "source_sha256": "f7454da734853faf7c18d2965ebe05ad7f98855f7e7959541d899279db2ec8cb",
+      "decoded_png": "docs/public/media/hud-audit/HUD_asset_GameUI_Exp.png",
+      "decoded_sha256": "5e2c877356d2dfb39f01638a4afd3fa801cb7a77d54633f16f00d72a1f236cbd",
+      "runtime_size": [
+        70,
+        5
+      ]
+    },
+    "NumSet01.png": {
+      "runtime_source": "Resources/OriginalImages/NumSet01.png",
+      "source_sha256": "67f1e55ea0985f19cf5534f936a27e8bdb8ba2134c7eed1305c7ae4a7c0d077e",
+      "decoded_png": "docs/public/media/hud-audit/HUD_asset_NumSet01.png",
+      "decoded_sha256": "9b0a5e20fcba8e6b2ef4a8b2ae28e840f4283f253ae44758eb87c4d12dd19e90",
+      "runtime_size": [
+        256,
+        16
+      ]
+    },
+    "GameUI_Gauge.png": {
+      "runtime_source": "Resources/OriginalImages/GameUI_Gauge.png",
+      "source_sha256": "0c26874e34c4b580cf53acf55b9a43841757baeee3505d700eeb1013802e39a2",
+      "decoded_png": "docs/public/media/hud-audit/HUD_asset_GameUI_Gauge.png",
+      "decoded_sha256": "36f0eed8786bec49fbc0f7d1646be85a0bd6fc4e8b15e98d0c2a0d8868cb0e69",
+      "runtime_size": [
+        5,
+        32
+      ]
+    },
+    "GameUI_BlueLight.png": {
+      "runtime_source": "Resources/OriginalImages/GameUI_BlueLight.png",
+      "source_sha256": "478555dc7e4b7841272214e664b92eb03f0a89e529470597b170987db178ae9d",
+      "decoded_png": "docs/public/media/hud-audit/HUD_asset_GameUI_BlueLight.png",
+      "decoded_sha256": "7dbd5564b5303c4eb2e9ed06c311c1a2b9e5886fa9e2205c884e856686c6d674",
+      "runtime_size": [
+        38,
+        38
+      ]
+    },
+    "GameUI_RedLight.png": {
+      "runtime_source": "Resources/OriginalImages/GameUI_RedLight.png",
+      "source_sha256": "11b67d235106b460779e8b0a50fb9ac8cb5e3cb78ca290ab1f42289202a24f31",
+      "decoded_png": "docs/public/media/hud-audit/HUD_asset_GameUI_RedLight.png",
+      "decoded_sha256": "8f86a252098355f66eb5d59ea5643f803cb8237748b6568582c6695b710c4dc2",
+      "runtime_size": [
+        32,
+        32
+      ]
+    },
+    "GameUI_Gear.png": {
+      "runtime_source": "Resources/OriginalImages/GameUI_Gear.png",
+      "source_sha256": "b13f9077235f675b000525b8556bbcd6780bb77561ffc74f1c65a6d50bc42e03",
+      "decoded_png": "docs/public/media/hud-audit/HUD_asset_GameUI_Gear.png",
+      "decoded_sha256": "cb621f1c0bdeb4ef442b0e9afab3982392a4314a4246777bb2f15e5ffdc6cfba",
+      "runtime_size": [
+        16,
+        16
+      ]
+    },
+    "Btn_Booster.png": {
+      "runtime_source": "Resources/OriginalImages/Btn_Booster.png",
+      "source_sha256": "53d6b51ab8ac7c4136f1c2b90052d639a94a1f6b4aad3b7df0a8cf5ba41c248d",
+      "decoded_png": "docs/public/media/hud-audit/HUD_asset_Btn_Booster.png",
+      "decoded_sha256": "c95b2a841b1533912ea437546729e2aff3847b8878d9f4a14bac2efcaca01362",
+      "runtime_size": [
+        136,
+        68
+      ]
+    },
+    "Btn_Weapon.png": {
+      "runtime_source": "Resources/OriginalImages/Btn_Weapon.png",
+      "source_sha256": "431359f0a9766eab91adde0888bfabddd43e4b3767575fee72c46286cf530b04",
+      "decoded_png": "docs/public/media/hud-audit/HUD_asset_Btn_Weapon.png",
+      "decoded_sha256": "3feef7f6b78a131487004ff73fa46e548d7556561122c20d78cc0232b63ada4c",
+      "runtime_size": [
+        144,
+        62
+      ]
+    },
+    "WeaponTile.png": {
+      "runtime_source": "Resources/OriginalImages/WeaponTile.png",
+      "source_sha256": "6cb2e125f4c7c4b3f7cc01f55b0908deaf9fe8a8f7655fb015be2028ccd63f20",
+      "decoded_png": "docs/public/media/hud-audit/HUD_asset_WeaponTile.png",
+      "decoded_sha256": "2344437990c0e2f143ffad3b341992a6f59be295696c46337394ee4677ed34b2",
+      "runtime_size": [
+        245,
+        104
+      ]
+    },
+    "NumSet02b.png": {
+      "runtime_source": "Resources/OriginalImages/NumSet02b.png",
+      "source_sha256": "6984a3c0596738245cc7ab50ce2c781e51cf9964f41b49af93c3ea6d69f7a177",
+      "decoded_png": "docs/public/media/hud-audit/HUD_asset_NumSet02b.png",
+      "decoded_sha256": "50e6b00cf42c2a5281434966655add40cfe4df3d363eb7a0323f1bb6265930ff",
+      "runtime_size": [
+        128,
+        8
+      ]
+    },
+    "ItemTile.png": {
+      "runtime_source": "Resources/OriginalImages/ItemTile.png",
+      "source_sha256": "4efa6d90fdb7a9c495e1b25a6f64ba0a1c3d8dec020726145c337305b5b8f0f3",
+      "decoded_png": "docs/public/media/hud-audit/HUD_asset_ItemTile.png",
+      "decoded_sha256": "16eecaff18e9c04e6c52865777cfd47fed9f70956f7790351a69f4f7fc7f4a9d",
+      "runtime_size": [
+        245,
+        104
+      ]
+    },
+    "SelWeapon.png": {
+      "runtime_source": "Resources/OriginalImages/SelWeapon.png",
+      "source_sha256": "d96daed3864bc17b7d0a39377ea98344022b48b691271ad0241b89dc4c5065ca",
+      "decoded_png": "docs/public/media/hud-audit/HUD_asset_SelWeapon.png",
+      "decoded_sha256": "be2164e27a9149d776e5c45ceacbf908f2d2759628994a730a299d2783c271e5",
+      "runtime_size": [
+        36,
+        26
+      ]
+    },
+    "Extensions/AutoAimControls.png": {
+      "runtime_source": "Art/Extensions/AutoAimControls.png",
+      "source_sha256": "8376ff2bc4635472d52ad435688b015e94b1d907995e13e97be8079364d9800b",
+      "decoded_png": "docs/public/media/hud-audit/HUD_asset_AutoAimControls.png",
+      "decoded_sha256": "02634d7972fb83614bd2b860d04cd7bebbf2f9322aeebcfddf0df20d1d6db27f",
+      "runtime_size": [
+        138,
+        92
+      ]
+    }
+  },
+  "atlas_frames": {
+    "GameMenu.png": [
+      {
+        "tile": 0,
+        "source_rect": [
+          0.0,
+          0.0,
+          64.0,
+          32.0
+        ],
+        "alpha_bbox": [
+          9,
+          10,
+          55,
+          23
+        ]
+      },
+      {
+        "tile": 1,
+        "source_rect": [
+          0.0,
+          32.0,
+          64.0,
+          32.0
+        ],
+        "alpha_bbox": [
+          1,
+          3,
+          63,
+          32
+        ]
+      }
+    ],
+    "Btn_Booster.png": [
+      {
+        "tile": 0,
+        "source_rect": [
+          0.0,
+          0.0,
+          68.0,
+          68.0
+        ],
+        "alpha_bbox": [
+          0,
+          4,
+          68,
+          68
+        ]
+      },
+      {
+        "tile": 1,
+        "source_rect": [
+          68.0,
+          0.0,
+          68.0,
+          68.0
+        ],
+        "alpha_bbox": [
+          0,
+          30,
+          68,
+          68
+        ]
+      }
+    ],
+    "Btn_Weapon.png": [
+      {
+        "tile": 0,
+        "source_rect": [
+          0.0,
+          0.0,
+          72.0,
+          62.0
+        ],
+        "alpha_bbox": [
+          0,
+          3,
+          72,
+          62
+        ]
+      },
+      {
+        "tile": 1,
+        "source_rect": [
+          72.0,
+          0.0,
+          72.0,
+          62.0
+        ],
+        "alpha_bbox": [
+          0,
+          3,
+          72,
+          62
+        ]
+      }
+    ],
+    "Extensions/AutoAimControls.png": [
+      {
+        "tile": 0,
+        "source_rect": [
+          0.0,
+          0.0,
+          46.0,
+          46.0
+        ],
+        "alpha_bbox": [
+          2,
+          5,
+          46,
+          46
+        ]
+      },
+      {
+        "tile": 1,
+        "source_rect": [
+          46.0,
+          0.0,
+          46.0,
+          46.0
+        ],
+        "alpha_bbox": [
+          0,
+          5,
+          46,
+          46
+        ]
+      },
+      {
+        "tile": 2,
+        "source_rect": [
+          92.0,
+          0.0,
+          46.0,
+          46.0
+        ],
+        "alpha_bbox": [
+          0,
+          5,
+          44,
+          46
+        ]
+      },
+      {
+        "tile": 3,
+        "source_rect": [
+          0.0,
+          46.0,
+          46.0,
+          46.0
+        ],
+        "alpha_bbox": [
+          2,
+          0,
+          46,
+          42
+        ]
+      },
+      {
+        "tile": 4,
+        "source_rect": [
+          46.0,
+          46.0,
+          46.0,
+          46.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          46,
+          42
+        ]
+      },
+      {
+        "tile": 5,
+        "source_rect": [
+          92.0,
+          46.0,
+          46.0,
+          46.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          44,
+          46
+        ]
+      }
+    ],
+    "GameUI_Gauge.png": [
+      {
+        "tile": 0,
+        "source_rect": [
+          0.0,
+          0.0,
+          5.0,
+          32.0
+        ],
+        "alpha_bbox": [
+          0,
+          3,
+          4,
+          18
+        ]
+      }
+    ],
+    "GameUI_BlueLight.png": [
+      {
+        "tile": 0,
+        "source_rect": [
+          0.0,
+          0.0,
+          38.0,
+          38.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          38,
+          38
+        ]
+      }
+    ],
+    "GameUI_RedLight.png": [
+      {
+        "tile": 0,
+        "source_rect": [
+          0.0,
+          0.0,
+          32.0,
+          32.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          32,
+          32
+        ]
+      }
+    ],
+    "GameUI_Gear.png": [
+      {
+        "tile": 0,
+        "source_rect": [
+          0.0,
+          0.0,
+          16.0,
+          16.0
+        ],
+        "alpha_bbox": [
+          2,
+          2,
+          14,
+          14
+        ]
+      }
+    ],
+    "GameUI_Exp.png": [
+      {
+        "tile": 0,
+        "source_rect": [
+          0.0,
+          0.0,
+          70.0,
+          5.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          70,
+          5
+        ]
+      }
+    ],
+    "NumSet01.png": [
+      {
+        "tile": 0,
+        "source_rect": [
+          0.0,
+          0.0,
+          16.0,
+          16.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          16,
+          16
+        ]
+      },
+      {
+        "tile": 1,
+        "source_rect": [
+          16.0,
+          0.0,
+          16.0,
+          16.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          16,
+          16
+        ]
+      },
+      {
+        "tile": 2,
+        "source_rect": [
+          32.0,
+          0.0,
+          16.0,
+          16.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          16,
+          16
+        ]
+      },
+      {
+        "tile": 3,
+        "source_rect": [
+          48.0,
+          0.0,
+          16.0,
+          16.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          16,
+          16
+        ]
+      },
+      {
+        "tile": 4,
+        "source_rect": [
+          64.0,
+          0.0,
+          16.0,
+          16.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          16,
+          16
+        ]
+      },
+      {
+        "tile": 5,
+        "source_rect": [
+          80.0,
+          0.0,
+          16.0,
+          16.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          16,
+          16
+        ]
+      },
+      {
+        "tile": 6,
+        "source_rect": [
+          96.0,
+          0.0,
+          16.0,
+          16.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          16,
+          16
+        ]
+      },
+      {
+        "tile": 7,
+        "source_rect": [
+          112.0,
+          0.0,
+          16.0,
+          16.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          16,
+          16
+        ]
+      },
+      {
+        "tile": 8,
+        "source_rect": [
+          128.0,
+          0.0,
+          16.0,
+          16.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          16,
+          16
+        ]
+      },
+      {
+        "tile": 9,
+        "source_rect": [
+          144.0,
+          0.0,
+          16.0,
+          16.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          16,
+          16
+        ]
+      },
+      {
+        "tile": 10,
+        "source_rect": [
+          160.0,
+          0.0,
+          16.0,
+          16.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          16,
+          16
+        ]
+      },
+      {
+        "tile": 11,
+        "source_rect": [
+          176.0,
+          0.0,
+          16.0,
+          16.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          16,
+          16
+        ]
+      },
+      {
+        "tile": 12,
+        "source_rect": [
+          192.0,
+          0.0,
+          16.0,
+          16.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          16,
+          16
+        ]
+      },
+      {
+        "tile": 13,
+        "source_rect": [
+          208.0,
+          0.0,
+          16.0,
+          16.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          16,
+          16
+        ]
+      },
+      {
+        "tile": 14,
+        "source_rect": [
+          224.0,
+          0.0,
+          16.0,
+          16.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          16,
+          16
+        ]
+      },
+      {
+        "tile": 15,
+        "source_rect": [
+          240.0,
+          0.0,
+          16.0,
+          16.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          16,
+          16
+        ]
+      }
+    ],
+    "NumSet02b.png": [
+      {
+        "tile": 0,
+        "source_rect": [
+          0.0,
+          0.0,
+          8.0,
+          8.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          8,
+          8
+        ]
+      },
+      {
+        "tile": 1,
+        "source_rect": [
+          8.0,
+          0.0,
+          8.0,
+          8.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          8,
+          8
+        ]
+      },
+      {
+        "tile": 2,
+        "source_rect": [
+          16.0,
+          0.0,
+          8.0,
+          8.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          8,
+          8
+        ]
+      },
+      {
+        "tile": 3,
+        "source_rect": [
+          24.0,
+          0.0,
+          8.0,
+          8.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          8,
+          8
+        ]
+      },
+      {
+        "tile": 4,
+        "source_rect": [
+          32.0,
+          0.0,
+          8.0,
+          8.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          8,
+          8
+        ]
+      },
+      {
+        "tile": 5,
+        "source_rect": [
+          40.0,
+          0.0,
+          8.0,
+          8.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          8,
+          8
+        ]
+      },
+      {
+        "tile": 6,
+        "source_rect": [
+          48.0,
+          0.0,
+          8.0,
+          8.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          8,
+          8
+        ]
+      },
+      {
+        "tile": 7,
+        "source_rect": [
+          56.0,
+          0.0,
+          8.0,
+          8.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          8,
+          8
+        ]
+      },
+      {
+        "tile": 8,
+        "source_rect": [
+          64.0,
+          0.0,
+          8.0,
+          8.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          8,
+          8
+        ]
+      },
+      {
+        "tile": 9,
+        "source_rect": [
+          72.0,
+          0.0,
+          8.0,
+          8.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          8,
+          8
+        ]
+      },
+      {
+        "tile": 10,
+        "source_rect": [
+          80.0,
+          0.0,
+          8.0,
+          8.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          8,
+          8
+        ]
+      },
+      {
+        "tile": 11,
+        "source_rect": [
+          88.0,
+          0.0,
+          8.0,
+          8.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          8,
+          8
+        ]
+      },
+      {
+        "tile": 12,
+        "source_rect": [
+          96.0,
+          0.0,
+          8.0,
+          8.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          8,
+          8
+        ]
+      },
+      {
+        "tile": 13,
+        "source_rect": [
+          104.0,
+          0.0,
+          8.0,
+          8.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          8,
+          8
+        ]
+      },
+      {
+        "tile": 14,
+        "source_rect": [
+          112.0,
+          0.0,
+          8.0,
+          8.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          8,
+          8
+        ]
+      },
+      {
+        "tile": 15,
+        "source_rect": [
+          120.0,
+          0.0,
+          8.0,
+          8.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          8,
+          8
+        ]
+      }
+    ],
+    "WeaponTile.png": [
+      {
+        "tile": 0,
+        "source_rect": [
+          0.0,
+          0.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 1,
+        "source_rect": [
+          35.0,
+          0.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 2,
+        "source_rect": [
+          70.0,
+          0.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 3,
+        "source_rect": [
+          105.0,
+          0.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 4,
+        "source_rect": [
+          140.0,
+          0.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 5,
+        "source_rect": [
+          175.0,
+          0.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 6,
+        "source_rect": [
+          210.0,
+          0.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 7,
+        "source_rect": [
+          0.0,
+          26.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 8,
+        "source_rect": [
+          35.0,
+          26.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 9,
+        "source_rect": [
+          70.0,
+          26.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 10,
+        "source_rect": [
+          105.0,
+          26.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 11,
+        "source_rect": [
+          140.0,
+          26.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 12,
+        "source_rect": [
+          175.0,
+          26.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 13,
+        "source_rect": [
+          210.0,
+          26.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 14,
+        "source_rect": [
+          0.0,
+          52.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 15,
+        "source_rect": [
+          35.0,
+          52.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 16,
+        "source_rect": [
+          70.0,
+          52.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 17,
+        "source_rect": [
+          105.0,
+          52.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 18,
+        "source_rect": [
+          140.0,
+          52.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 19,
+        "source_rect": [
+          175.0,
+          52.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 20,
+        "source_rect": [
+          210.0,
+          52.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 21,
+        "source_rect": [
+          0.0,
+          78.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 22,
+        "source_rect": [
+          35.0,
+          78.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 23,
+        "source_rect": [
+          70.0,
+          78.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 24,
+        "source_rect": [
+          105.0,
+          78.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 25,
+        "source_rect": [
+          140.0,
+          78.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 26,
+        "source_rect": [
+          175.0,
+          78.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 27,
+        "source_rect": [
+          210.0,
+          78.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      }
+    ],
+    "ItemTile.png": [
+      {
+        "tile": 0,
+        "source_rect": [
+          0.0,
+          0.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 1,
+        "source_rect": [
+          35.0,
+          0.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 2,
+        "source_rect": [
+          70.0,
+          0.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 3,
+        "source_rect": [
+          105.0,
+          0.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 4,
+        "source_rect": [
+          140.0,
+          0.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 5,
+        "source_rect": [
+          175.0,
+          0.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 6,
+        "source_rect": [
+          210.0,
+          0.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 7,
+        "source_rect": [
+          0.0,
+          26.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 8,
+        "source_rect": [
+          35.0,
+          26.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 9,
+        "source_rect": [
+          70.0,
+          26.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 10,
+        "source_rect": [
+          105.0,
+          26.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 11,
+        "source_rect": [
+          140.0,
+          26.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 12,
+        "source_rect": [
+          175.0,
+          26.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 13,
+        "source_rect": [
+          210.0,
+          26.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 14,
+        "source_rect": [
+          0.0,
+          52.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 15,
+        "source_rect": [
+          35.0,
+          52.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 16,
+        "source_rect": [
+          70.0,
+          52.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 17,
+        "source_rect": [
+          105.0,
+          52.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 18,
+        "source_rect": [
+          140.0,
+          52.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 19,
+        "source_rect": [
+          175.0,
+          52.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 20,
+        "source_rect": [
+          210.0,
+          52.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 21,
+        "source_rect": [
+          0.0,
+          78.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 22,
+        "source_rect": [
+          35.0,
+          78.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 23,
+        "source_rect": [
+          70.0,
+          78.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 24,
+        "source_rect": [
+          105.0,
+          78.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 25,
+        "source_rect": [
+          140.0,
+          78.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 26,
+        "source_rect": [
+          175.0,
+          78.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      },
+      {
+        "tile": 27,
+        "source_rect": [
+          210.0,
+          78.0,
+          35.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          35,
+          26
+        ]
+      }
+    ],
+    "SelWeapon.png": [
+      {
+        "tile": 0,
+        "source_rect": [
+          0.0,
+          0.0,
+          36.0,
+          26.0
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          36,
+          26
+        ]
+      }
+    ]
+  },
+  "groups": {
+    "menu": {
+      "title": "MENU",
+      "candidate_bounds": [
+        0,
+        256,
+        76,
+        39
+      ],
+      "draws": [
+        {
+          "x": 38,
+          "tile": 0,
+          "columns": 1,
+          "y": 279,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 2,
+          "alpha": 1,
+          "blend": 0,
+          "sy": 1,
+          "asset": "GameMenu.png"
+        }
+      ],
+      "hit_rect": [
+        6,
+        263,
+        64,
+        32
+      ],
+      "background": [
+        "GameUI_Top.png",
+        [
+          0,
+          27,
+          76,
+          37
+        ]
+      ]
+    },
+    "progress": {
+      "title": "LEVEL / EXP",
+      "candidate_bounds": [
+        0,
+        293,
+        102,
+        27
+      ],
+      "draws": [
+        {
+          "x": 62,
+          "tile": 0,
+          "columns": 1,
+          "y": 300,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 1,
+          "alpha": 1,
+          "blend": 0,
+          "sy": 1,
+          "asset": "GameUI_Exp.png"
+        },
+        {
+          "x": 40,
+          "tile": 1,
+          "columns": 16,
+          "y": 313,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 1,
+          "alpha": 1,
+          "blend": 2,
+          "sy": 1,
+          "asset": "NumSet01.png"
+        },
+        {
+          "x": 47,
+          "tile": 0,
+          "columns": 16,
+          "y": 313,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 1,
+          "alpha": 1,
+          "blend": 2,
+          "sy": 1,
+          "asset": "NumSet01.png"
+        },
+        {
+          "x": 54,
+          "tile": 0,
+          "columns": 16,
+          "y": 313,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 1,
+          "alpha": 1,
+          "blend": 2,
+          "sy": 1,
+          "asset": "NumSet01.png"
+        }
+      ],
+      "hit_rect": null,
+      "background": [
+        "GameUI_Top.png",
+        [
+          0,
+          0,
+          102,
+          27
+        ]
+      ]
+    },
+    "jump": {
+      "title": "JUMP",
+      "candidate_bounds": [
+        0,
+        0,
+        72,
+        68
+      ],
+      "draws": [
+        {
+          "x": 34,
+          "tile": 0,
+          "columns": 2,
+          "y": 34,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 1,
+          "alpha": 1,
+          "blend": 0,
+          "sy": 1,
+          "asset": "Btn_Booster.png"
+        }
+      ],
+      "hit_rect": [
+        0,
+        0,
+        68,
+        68
+      ],
+      "background": [
+        "GameUI_Btm.png",
+        [
+          0,
+          0,
+          72,
+          64
+        ]
+      ]
+    },
+    "weapon": {
+      "title": "WEAPON / AMMO",
+      "candidate_bounds": [
+        67,
+        0,
+        93,
+        64
+      ],
+      "draws": [
+        {
+          "x": 103,
+          "tile": 0,
+          "columns": 2,
+          "y": 31,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 1,
+          "alpha": 1,
+          "blend": 0,
+          "sy": 1,
+          "asset": "Btn_Weapon.png"
+        },
+        {
+          "x": 106,
+          "tile": 0,
+          "columns": 7,
+          "y": 35,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 4,
+          "alpha": 1,
+          "blend": 0,
+          "sy": 1,
+          "asset": "WeaponTile.png"
+        },
+        {
+          "x": 108,
+          "tile": 9,
+          "columns": 16,
+          "y": 26,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 1,
+          "alpha": 1,
+          "blend": 2,
+          "sy": 1,
+          "asset": "NumSet02b.png"
+        },
+        {
+          "x": 114,
+          "tile": 9,
+          "columns": 16,
+          "y": 26,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 1,
+          "alpha": 1,
+          "blend": 2,
+          "sy": 1,
+          "asset": "NumSet02b.png"
+        },
+        {
+          "x": 120,
+          "tile": 9,
+          "columns": 16,
+          "y": 26,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 1,
+          "alpha": 1,
+          "blend": 2,
+          "sy": 1,
+          "asset": "NumSet02b.png"
+        }
+      ],
+      "hit_rect": [
+        67,
+        0,
+        72,
+        62
+      ],
+      "background": [
+        "GameUI_Btm.png",
+        [
+          72,
+          0,
+          88,
+          64
+        ]
+      ]
+    },
+    "gauges": {
+      "title": "HP / RELOAD / LIGHTS / GEAR",
+      "candidate_bounds": [
+        160,
+        0,
+        174,
+        64
+      ],
+      "draws": [
+        {
+          "x": 239,
+          "tile": 0,
+          "columns": 1,
+          "y": 25,
+          "rotation": -3.710176944732666,
+          "sx": 1,
+          "rows": 1,
+          "alpha": 1,
+          "blend": 0,
+          "sy": 1,
+          "asset": "GameUI_Gauge.png"
+        },
+        {
+          "x": 287,
+          "tile": 0,
+          "columns": 1,
+          "y": 22,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 1,
+          "alpha": 0.6666666865348816,
+          "blend": 2,
+          "sy": 1,
+          "asset": "GameUI_BlueLight.png"
+        },
+        {
+          "x": 287,
+          "tile": 0,
+          "columns": 1,
+          "y": 22,
+          "rotation": 4.71238898038469,
+          "sx": 1,
+          "rows": 1,
+          "alpha": 1,
+          "blend": 0,
+          "sy": 1,
+          "asset": "GameUI_Gauge.png"
+        },
+        {
+          "x": 265,
+          "tile": 0,
+          "columns": 1,
+          "y": 35,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 1,
+          "alpha": 1,
+          "blend": 2,
+          "sy": 1,
+          "asset": "GameUI_RedLight.png"
+        },
+        {
+          "x": 324,
+          "tile": 0,
+          "columns": 1,
+          "y": 3,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 1,
+          "alpha": 1,
+          "blend": 0,
+          "sy": 1,
+          "asset": "GameUI_Gear.png"
+        }
+      ],
+      "hit_rect": null,
+      "background": [
+        "GameUI_Btm.png",
+        [
+          160,
+          0,
+          174,
+          64
+        ]
+      ]
+    },
+    "aim": {
+      "title": "A / NEXT / FIRE + RAIL",
+      "candidate_bounds": [
+        334,
+        0,
+        146,
+        64
+      ],
+      "draws": [
+        {
+          "x": 357,
+          "tile": 3,
+          "columns": 3,
+          "y": 33,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 2,
+          "alpha": 1,
+          "blend": 0,
+          "sy": 1,
+          "asset": "Extensions/AutoAimControls.png"
+        },
+        {
+          "x": 453,
+          "tile": 1,
+          "columns": 3,
+          "y": 33,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 2,
+          "alpha": 1,
+          "blend": 0,
+          "sy": 1,
+          "asset": "Extensions/AutoAimControls.png"
+        },
+        {
+          "x": 405,
+          "tile": 2,
+          "columns": 3,
+          "y": 33,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 2,
+          "alpha": 1,
+          "blend": 0,
+          "sy": 1,
+          "asset": "Extensions/AutoAimControls.png"
+        }
+      ],
+      "hit_rect": null,
+      "background": [
+        "GameUI_Btm.png",
+        [
+          334,
+          0,
+          146,
+          64
+        ]
+      ]
+    },
+    "passives": {
+      "title": "PASSIVE ITEMS",
+      "candidate_bounds": [
+        0,
+        190,
+        50,
+        68
+      ],
+      "draws": [
+        {
+          "x": 10,
+          "tile": 5,
+          "columns": 7,
+          "y": 200,
+          "rotation": 0,
+          "sx": 0.5,
+          "rows": 4,
+          "alpha": 1,
+          "blend": 0,
+          "sy": 0.5,
+          "asset": "ItemTile.png"
+        },
+        {
+          "x": 24,
+          "tile": 9,
+          "columns": 16,
+          "y": 200,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 1,
+          "alpha": 1,
+          "blend": 2,
+          "sy": 1,
+          "asset": "NumSet02b.png"
+        },
+        {
+          "x": 30,
+          "tile": 9,
+          "columns": 16,
+          "y": 200,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 1,
+          "alpha": 1,
+          "blend": 2,
+          "sy": 1,
+          "asset": "NumSet02b.png"
+        },
+        {
+          "x": 36,
+          "tile": 9,
+          "columns": 16,
+          "y": 200,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 1,
+          "alpha": 1,
+          "blend": 2,
+          "sy": 1,
+          "asset": "NumSet02b.png"
+        },
+        {
+          "x": 10,
+          "tile": 6,
+          "columns": 7,
+          "y": 216,
+          "rotation": 0,
+          "sx": 0.5,
+          "rows": 4,
+          "alpha": 1,
+          "blend": 0,
+          "sy": 0.5,
+          "asset": "ItemTile.png"
+        },
+        {
+          "x": 24,
+          "tile": 9,
+          "columns": 16,
+          "y": 216,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 1,
+          "alpha": 1,
+          "blend": 2,
+          "sy": 1,
+          "asset": "NumSet02b.png"
+        },
+        {
+          "x": 30,
+          "tile": 9,
+          "columns": 16,
+          "y": 216,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 1,
+          "alpha": 1,
+          "blend": 2,
+          "sy": 1,
+          "asset": "NumSet02b.png"
+        },
+        {
+          "x": 36,
+          "tile": 9,
+          "columns": 16,
+          "y": 216,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 1,
+          "alpha": 1,
+          "blend": 2,
+          "sy": 1,
+          "asset": "NumSet02b.png"
+        },
+        {
+          "x": 10,
+          "tile": 7,
+          "columns": 7,
+          "y": 232,
+          "rotation": 0,
+          "sx": 0.5,
+          "rows": 4,
+          "alpha": 1,
+          "blend": 0,
+          "sy": 0.5,
+          "asset": "ItemTile.png"
+        },
+        {
+          "x": 24,
+          "tile": 9,
+          "columns": 16,
+          "y": 232,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 1,
+          "alpha": 1,
+          "blend": 2,
+          "sy": 1,
+          "asset": "NumSet02b.png"
+        },
+        {
+          "x": 30,
+          "tile": 9,
+          "columns": 16,
+          "y": 232,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 1,
+          "alpha": 1,
+          "blend": 2,
+          "sy": 1,
+          "asset": "NumSet02b.png"
+        },
+        {
+          "x": 36,
+          "tile": 9,
+          "columns": 16,
+          "y": 232,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 1,
+          "alpha": 1,
+          "blend": 2,
+          "sy": 1,
+          "asset": "NumSet02b.png"
+        },
+        {
+          "x": 10,
+          "tile": 8,
+          "columns": 7,
+          "y": 248,
+          "rotation": 0,
+          "sx": 0.5,
+          "rows": 4,
+          "alpha": 1,
+          "blend": 0,
+          "sy": 0.5,
+          "asset": "ItemTile.png"
+        },
+        {
+          "x": 24,
+          "tile": 9,
+          "columns": 16,
+          "y": 248,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 1,
+          "alpha": 1,
+          "blend": 2,
+          "sy": 1,
+          "asset": "NumSet02b.png"
+        },
+        {
+          "x": 30,
+          "tile": 9,
+          "columns": 16,
+          "y": 248,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 1,
+          "alpha": 1,
+          "blend": 2,
+          "sy": 1,
+          "asset": "NumSet02b.png"
+        },
+        {
+          "x": 36,
+          "tile": 9,
+          "columns": 16,
+          "y": 248,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 1,
+          "alpha": 1,
+          "blend": 2,
+          "sy": 1,
+          "asset": "NumSet02b.png"
+        }
+      ],
+      "hit_rect": null,
+      "background": null
+    },
+    "preview": {
+      "title": "WEAPON PREVIEW",
+      "candidate_bounds": [
+        170,
+        270,
+        224,
+        40
+      ],
+      "draws": [
+        {
+          "x": 196,
+          "tile": 0,
+          "columns": 7,
+          "y": 290,
+          "rotation": 0,
+          "sx": 1.4,
+          "rows": 4,
+          "alpha": 1,
+          "blend": 0,
+          "sy": 1.4,
+          "asset": "WeaponTile.png"
+        },
+        {
+          "x": 196,
+          "tile": 0,
+          "columns": 1,
+          "y": 290,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 1,
+          "alpha": 1,
+          "blend": 2,
+          "sy": 1,
+          "asset": "SelWeapon.png"
+        },
+        {
+          "x": 239,
+          "tile": 11,
+          "columns": 7,
+          "y": 290,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 4,
+          "alpha": 1,
+          "blend": 0,
+          "sy": 1,
+          "asset": "WeaponTile.png"
+        },
+        {
+          "x": 282,
+          "tile": 12,
+          "columns": 7,
+          "y": 290,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 4,
+          "alpha": 1,
+          "blend": 0,
+          "sy": 1,
+          "asset": "WeaponTile.png"
+        },
+        {
+          "x": 325,
+          "tile": 13,
+          "columns": 7,
+          "y": 290,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 4,
+          "alpha": 1,
+          "blend": 0,
+          "sy": 1,
+          "asset": "WeaponTile.png"
+        },
+        {
+          "x": 368,
+          "tile": 3,
+          "columns": 7,
+          "y": 290,
+          "rotation": 0,
+          "sx": 1,
+          "rows": 4,
+          "alpha": 1,
+          "blend": 0,
+          "sy": 1,
+          "asset": "WeaponTile.png"
+        }
+      ],
+      "hit_rect": null,
+      "background": null
+    }
+  },
+  "state_draw_counts": {
+    "manual": 18,
+    "extras": 43,
+    "group_weapon": 5,
+    "group_progress": 4,
+    "group_passives": 16,
+    "group_preview": 6,
+    "next_pressed": 20,
+    "weapon_pressed": 20,
+    "normal": 20,
+    "jump_pressed": 20,
+    "menu_pressed": 20,
+    "group_gauges": 5,
+    "group_aim": 3,
+    "normal_repeat": 20,
+    "fire_pressed": 20,
+    "group_menu": 1,
+    "group_jump": 1,
+    "partitioned": 20
+  },
+  "unassigned_draws": 0,
+  "reconstruction_different_pixels": 0,
+  "seams": [
+    {
+      "asset": "GameUI_Top.png",
+      "x": 76,
+      "connected_alpha_rows": 32
+    },
+    {
+      "asset": "GameUI_Top.png",
+      "x": 102,
+      "connected_alpha_rows": 27
+    },
+    {
+      "asset": "GameUI_Btm.png",
+      "x": 72,
+      "connected_alpha_rows": 37
+    },
+    {
+      "asset": "GameUI_Btm.png",
+      "x": 160,
+      "connected_alpha_rows": 26
+    },
+    {
+      "asset": "GameUI_Btm.png",
+      "x": 334,
+      "connected_alpha_rows": 23
+    }
+  ],
+  "note": "Source regions are candidates. Connected rail cut ends still need finishing before independent relocation."
+}

@@ -9,6 +9,7 @@
 
 // Kept separate from the game surface so a second screen can host controls.
 @interface HMValidationControls : HMControlBase
+@property(nonatomic) BOOL hudEditing;
 @property(nonatomic) NSInteger selectedSegmentIndex;
 @property(nonatomic,readonly) NSInteger numberOfSegments;
 @end

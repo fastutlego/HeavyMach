@@ -1,5 +1,6 @@
 #import "HMPlatform.h"
 #include "../Core/Player.hpp"
+#include "../Core/HUDConfiguration.hpp"
 #include "../Core/World.hpp"
 @class HMMedia;
 struct HMGameHUDSnapshot {
@@ -19,6 +20,7 @@ struct HMGameHUDSnapshot {
 @interface HMGameHUD : NSObject
 - (instancetype)initWithMedia:(HMMedia *)media;
 - (void)draw:(const HMGameHUDSnapshot&)snapshot;
+- (void)setLayout:(const heavymach::hud::Configuration&)layout editing:(BOOL)editing;
 - (void)tick:(double)time;
 - (void)setGameStart:(double)time;
 - (void)setReloadComplete:(double)time;
@@ -37,6 +39,8 @@ struct HMGameHUDSnapshot {
 - (void)cancelInput;
 // Logical y-up. state0 began,1 moved,2 ended,3 cancelled. YES consumes touch.
 - (BOOL)touch:(CGPoint)logical state:(int)state;
+- (int)receiverAt:(CGPoint)logical;
+- (BOOL)touch:(CGPoint)logical state:(int)state receiver:(int)receiver;
 @property(nonatomic,copy) void(^button)(int originalID,int state);
 // Original GuiGame unpauses after the upgrade panel moves past x659.
 @property(nonatomic,copy) void(^upgradeClosed)(void);

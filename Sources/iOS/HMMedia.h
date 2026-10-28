@@ -24,6 +24,7 @@ FOUNDATION_EXPORT NSData *HMOriginalImageRGBA(HMImage *image);
 - (void)drawEdgeContinuation:(NSString*)name x:(CGFloat)x y:(CGFloat)y scale:(CGFloat)scale rotation:(CGFloat)rotation width:(CGFloat)width;
 - (void)drawJoinedBackground:(NSString*)name x:(CGFloat)x y:(CGFloat)y scale:(CGFloat)scale rotation:(CGFloat)rotation;
 - (void)drawExpandedPanel:(NSString*)name x:(CGFloat)x y:(CGFloat)y left:(CGFloat)left right:(CGFloat)right top:(CGFloat)top bottom:(CGFloat)bottom;
+- (void)drawRegion:(NSString*)name source:(CGRect)source destination:(CGRect)destination;
 - (void)drawTrail:(const heavymach::TrailMesh&)mesh;
 - (HMImage *)image:(NSString *)name;
 // Called during init, before the first title frame. Repeated calls reuse voices.

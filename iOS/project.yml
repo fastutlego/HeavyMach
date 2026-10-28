@@ -38,6 +38,7 @@ targets:
     - sdk: AVFoundation.framework
     - sdk: CoreMotion.framework
     - sdk: CoreGraphics.framework
+    - sdk: CoreText.framework
     - sdk: OpenGLES.framework
     - sdk: AudioToolbox.framework
     - sdk: CoreAudio.framework
@@ -115,6 +116,7 @@ targets:
     - sdk: AVFoundation.framework
     - sdk: CoreMotion.framework
     - sdk: CoreGraphics.framework
+    - sdk: CoreText.framework
     - sdk: OpenGLES.framework
     - sdk: AudioToolbox.framework
     - sdk: CoreAudio.framework
@@ -190,6 +192,7 @@ targets:
     - target: HeavyMachValidation
     - sdk: UIKit.framework
     - sdk: CoreGraphics.framework
+    - sdk: CoreText.framework
     - sdk: OpenGLES.framework
     - sdk: AudioToolbox.framework
     - sdk: CoreAudio.framework

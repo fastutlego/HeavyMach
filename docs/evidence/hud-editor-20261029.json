@@ -1,0 +1,1418 @@
+{
+  "date": "2026-10-29",
+  "branch": "feat/hud-layout-editor",
+  "baseline": "9e7b15c3",
+  "implemented": [
+    "8 HUD groups plus cheat control group",
+    "common artwork and hit transforms",
+    "paused battle and independent example",
+    "drag, Tab, arrow, apply, cancel, default, preview",
+    "atomic changed-apply-only JSON persistence"
+  ],
+  "execution": [
+    {
+      "log": "build/hud-audit/editor-regression.log",
+      "sha256": "6a70bf40c53e52609aa919e3af0f0940e314ccb028d5cc95825b44f59bf65f8f",
+      "tests": [
+        {
+          "name": "testAutoAimEveryWeaponWithMovementAndJump",
+          "status": "passed"
+        },
+        {
+          "name": "testEveryWeaponKeyboardSelectionAndFire",
+          "status": "passed"
+        },
+        {
+          "name": "testHUDAssetOwnershipAudit",
+          "status": "passed"
+        },
+        {
+          "name": "testHUDEditorMovesHitsFreezesBattleAndPersistsOnlyApply",
+          "status": "passed"
+        },
+        {
+          "name": "testHUDEditorPregameExampleAndResizeDoesNotChangeSave",
+          "status": "passed"
+        },
+        {
+          "name": "testHUDEditorSelectionCollisionResizeAndSaveFailure",
+          "status": "passed"
+        },
+        {
+          "name": "testHUDMovedButtonsKeepTouchOwnershipAndAimFire",
+          "status": "passed"
+        }
+      ],
+      "command_succeeded": true,
+      "performance": [],
+      "owner_release_checks": 0
+    },
+    {
+      "log": "build/hud-audit/editor-final.log",
+      "sha256": "ddcd614b9f87d6093dd8101ba5a73a600d91b76440b15c980910ccb1ba6166d7",
+      "tests": [
+        {
+          "name": "testHUDEditorCheatGeometryAndRepeatedClose",
+          "status": "passed"
+        },
+        {
+          "name": "testHUDEditorMovesHitsFreezesBattleAndPersistsOnlyApply",
+          "status": "passed"
+        },
+        {
+          "name": "testHUDEditorPregameExampleAndResizeDoesNotChangeSave",
+          "status": "passed"
+        },
+        {
+          "name": "testHUDEditorSelectionCollisionResizeAndSaveFailure",
+          "status": "passed"
+        },
+        {
+          "name": "testHUDMovedButtonsKeepTouchOwnershipAndAimFire",
+          "status": "passed"
+        }
+      ],
+      "command_succeeded": true,
+      "performance": [],
+      "owner_release_checks": 0
+    },
+    {
+      "log": "build/hud-audit/iphone-editor.log",
+      "sha256": "cfd72b42234d51deb732560929d43ff1a4c524ddb1334fd24f193172339cd18e",
+      "tests": [
+        {
+          "name": "testHUDEditorCheatGeometryAndRepeatedClose",
+          "status": "passed"
+        },
+        {
+          "name": "testHUDEditorMovesHitsFreezesBattleAndPersistsOnlyApply",
+          "status": "passed"
+        },
+        {
+          "name": "testHUDEditorPregameExampleAndResizeDoesNotChangeSave",
+          "status": "passed"
+        },
+        {
+          "name": "testHUDEditorSelectionCollisionResizeAndSaveFailure",
+          "status": "passed"
+        },
+        {
+          "name": "testHUDMovedButtonsKeepTouchOwnershipAndAimFire",
+          "status": "passed"
+        }
+      ],
+      "command_succeeded": true,
+      "performance": [],
+      "owner_release_checks": 0
+    },
+    {
+      "log": "build/hud-audit/ipad-editor-supplement.log",
+      "sha256": "b8b554a29104a31a1f39038d0eed15483fa130a6b944929ad8324080dc514c29",
+      "tests": [
+        {
+          "name": "testHUDEditorCheatGeometryAndRepeatedClose",
+          "status": "passed"
+        },
+        {
+          "name": "testHUDMovedMenuJumpAndAimButtons",
+          "status": "passed"
+        }
+      ],
+      "command_succeeded": true,
+      "performance": [],
+      "owner_release_checks": 0
+    },
+    {
+      "log": "build/hud-audit/mac-editor-run.log",
+      "sha256": "ec7e92822cbfc72d8d24926abb50691f17654a4f1b520c4a9b55937ab5436b99",
+      "tests": [
+        {
+          "name": "testHUDEditorMovesHitsFreezesBattleAndPersistsOnlyApply",
+          "status": "passed"
+        },
+        {
+          "name": "testHUDEditorPregameExampleAndResizeDoesNotChangeSave",
+          "status": "passed"
+        },
+        {
+          "name": "testHUDEditorSelectionCollisionResizeAndSaveFailure",
+          "status": "passed"
+        },
+        {
+          "name": "testHUDMovedButtonsKeepTouchOwnershipAndAimFire",
+          "status": "passed"
+        }
+      ],
+      "command_succeeded": true,
+      "performance": [],
+      "owner_release_checks": 0
+    },
+    {
+      "log": "build/hud-audit/mac-editor-final.log",
+      "sha256": "42039f193ce8cf382a6fb743c5da3cd8dba36323feae4bbc0147ece2c5b4a911",
+      "tests": [
+        {
+          "name": "testHUDEditorCheatGeometryAndRepeatedClose",
+          "status": "passed"
+        },
+        {
+          "name": "testMacPresentedFrameCostsWithProductionTimer",
+          "status": "failed"
+        }
+      ],
+      "command_succeeded": false,
+      "performance": [
+        {
+          "size": "1200x800",
+          "scene": "title_animation",
+          "frame_work": {
+            "max_ms": 33.24954118579626,
+            "mean_ms": 13.590618486826619,
+            "p95_ms": 28.939499985426664,
+            "samples": 180
+          },
+          "callback_intervals": {
+            "max_ms": 33.51758304052055,
+            "mean_ms": 16.81526551126606,
+            "p95_ms": 29.272666899487376,
+            "samples": 180
+          },
+          "game_save_calls": 0,
+          "max_bullets": 0
+        },
+        {
+          "size": "1200x800",
+          "scene": "slot_preview",
+          "frame_work": {
+            "max_ms": 81.63495804183185,
+            "mean_ms": 20.103714824654162,
+            "p95_ms": 42.75658307597041,
+            "samples": 180
+          },
+          "callback_intervals": {
+            "max_ms": 81.9283751770854,
+            "mean_ms": 22.87107615524696,
+            "p95_ms": 43.00504201091826,
+            "samples": 180
+          },
+          "game_save_calls": 0,
+          "max_bullets": 0
+        },
+        {
+          "size": "1200x800",
+          "scene": "stage01_firing",
+          "frame_work": {
+            "max_ms": 30.735832871869206,
+            "mean_ms": 13.274748619490614,
+            "p95_ms": 26.61412488669157,
+            "samples": 180
+          },
+          "callback_intervals": {
+            "max_ms": 61.86712486669421,
+            "mean_ms": 17.469753939399702,
+            "p95_ms": 26.81333408690989,
+            "samples": 180
+          },
+          "game_save_calls": 0,
+          "max_bullets": 8
+        },
+        {
+          "size": "screen_size",
+          "scene": "title_animation",
+          "frame_work": {
+            "max_ms": 32.641292084008455,
+            "mean_ms": 10.71047593658376,
+            "p95_ms": 26.861167047172785,
+            "samples": 180
+          },
+          "callback_intervals": {
+            "max_ms": 32.84812509082258,
+            "mean_ms": 17.340610878697287,
+            "p95_ms": 26.95783320814371,
+            "samples": 180
+          },
+          "game_save_calls": 0,
+          "max_bullets": 0
+        },
+        {
+          "size": "screen_size",
+          "scene": "slot_preview",
+          "frame_work": {
+            "max_ms": 19.142499892041087,
+            "mean_ms": 9.836830334582677,
+            "p95_ms": 18.335582921281457,
+            "samples": 180
+          },
+          "callback_intervals": {
+            "max_ms": 19.300124840810895,
+            "mean_ms": 16.66524583318581,
+            "p95_ms": 18.427749862894416,
+            "samples": 180
+          },
+          "game_save_calls": 0,
+          "max_bullets": 0
+        },
+        {
+          "size": "screen_size",
+          "scene": "stage01_firing",
+          "frame_work": {
+            "max_ms": 18.089749850332737,
+            "mean_ms": 9.854825244595608,
+            "p95_ms": 17.463207943364978,
+            "samples": 180
+          },
+          "callback_intervals": {
+            "max_ms": 18.189582973718643,
+            "mean_ms": 16.657176622862202,
+            "p95_ms": 17.60299992747605,
+            "samples": 180
+          },
+          "game_save_calls": 0,
+          "max_bullets": 8
+        }
+      ],
+      "owner_release_checks": 24
+    },
+    {
+      "log": "build/hud-audit/mac-native-visibility.log",
+      "sha256": "f8f07cc58dbb56286bcf5d53e80f267ef4211345ab776ce083e50c28e6fced52",
+      "tests": [
+        {
+          "name": "testHUDMovedMenuJumpAndAimButtons",
+          "status": "passed"
+        },
+        {
+          "name": "testMacPresentedFrameCostsWithProductionTimer",
+          "status": "failed"
+        }
+      ],
+      "command_succeeded": false,
+      "performance": [
+        {
+          "size": "1200x800",
+          "scene": "title_animation",
+          "frame_work": {
+            "max_ms": 28.466624906286597,
+            "mean_ms": 8.937793510914263,
+            "p95_ms": 15.507417032495141,
+            "samples": 180
+          },
+          "callback_intervals": {
+            "max_ms": 28.765124967321754,
+            "mean_ms": 16.658673150878812,
+            "p95_ms": 17.964875092729926,
+            "samples": 180
+          },
+          "game_save_calls": 0,
+          "max_bullets": 0
+        },
+        {
+          "size": "1200x800",
+          "scene": "slot_preview",
+          "frame_work": {
+            "max_ms": 22.883167024701834,
+            "mean_ms": 9.384157650897073,
+            "p95_ms": 18.67649983614683,
+            "samples": 180
+          },
+          "callback_intervals": {
+            "max_ms": 23.031125077977777,
+            "mean_ms": 16.655672917194252,
+            "p95_ms": 18.82345788180828,
+            "samples": 180
+          },
+          "game_save_calls": 0,
+          "max_bullets": 0
+        },
+        {
+          "size": "1200x800",
+          "scene": "stage01_firing",
+          "frame_work": {
+            "max_ms": 32.22658298909664,
+            "mean_ms": 9.180114184144056,
+            "p95_ms": 19.03554191812873,
+            "samples": 180
+          },
+          "callback_intervals": {
+            "max_ms": 44.76199997588992,
+            "mean_ms": 16.858059488650824,
+            "p95_ms": 19.26491712220013,
+            "samples": 180
+          },
+          "game_save_calls": 0,
+          "max_bullets": 8
+        },
+        {
+          "size": "screen_size",
+          "scene": "title_animation",
+          "frame_work": {
+            "max_ms": 34.10566714592278,
+            "mean_ms": 5.9540317122203605,
+            "p95_ms": 17.866790993139148,
+            "samples": 180
+          },
+          "callback_intervals": {
+            "max_ms": 34.252375131472945,
+            "mean_ms": 16.770447221481138,
+            "p95_ms": 18.454000120982528,
+            "samples": 180
+          },
+          "game_save_calls": 0,
+          "max_bullets": 0
+        },
+        {
+          "size": "screen_size",
+          "scene": "slot_preview",
+          "frame_work": {
+            "max_ms": 23.541250033304095,
+            "mean_ms": 8.373769461953392,
+            "p95_ms": 14.497749973088503,
+            "samples": 180
+          },
+          "callback_intervals": {
+            "max_ms": 23.697624914348125,
+            "mean_ms": 16.65821180601294,
+            "p95_ms": 18.4130419511348,
+            "samples": 180
+          },
+          "game_save_calls": 0,
+          "max_bullets": 0
+        },
+        {
+          "size": "screen_size",
+          "scene": "stage01_firing",
+          "frame_work": {
+            "max_ms": 19.1494591999799,
+            "mean_ms": 9.26599285642927,
+            "p95_ms": 15.451415907591581,
+            "samples": 180
+          },
+          "callback_intervals": {
+            "max_ms": 19.33895912952721,
+            "mean_ms": 16.66737060036717,
+            "p95_ms": 17.62025011703372,
+            "samples": 180
+          },
+          "game_save_calls": 0,
+          "max_bullets": 8
+        }
+      ],
+      "owner_release_checks": 24
+    },
+    {
+      "log": "build/hud-audit/mac-isolated-perf.log",
+      "sha256": "1c8891d40677cf1b8840b99f145154e6b77e3dc501ef3872ba3a9dca4204904b",
+      "tests": [
+        {
+          "name": "testMacPresentedFrameCostsWithProductionTimer",
+          "status": "failed"
+        }
+      ],
+      "command_succeeded": false,
+      "performance": [
+        {
+          "size": "1200x800",
+          "scene": "title_animation",
+          "frame_work": {
+            "max_ms": 31.007750192657113,
+            "mean_ms": 13.946955094838309,
+            "p95_ms": 29.899459099397063,
+            "samples": 180
+          },
+          "callback_intervals": {
+            "max_ms": 31.26112511381507,
+            "mean_ms": 16.665448844691532,
+            "p95_ms": 30.028417007997632,
+            "samples": 180
+          },
+          "game_save_calls": 0,
+          "max_bullets": 0
+        },
+        {
+          "size": "1200x800",
+          "scene": "slot_preview",
+          "frame_work": {
+            "max_ms": 42.59979189373553,
+            "mean_ms": 11.992323342969435,
+            "p95_ms": 31.780875055119395,
+            "samples": 180
+          },
+          "callback_intervals": {
+            "max_ms": 42.75395884178579,
+            "mean_ms": 17.750987272140467,
+            "p95_ms": 31.988207949325442,
+            "samples": 180
+          },
+          "game_save_calls": 0,
+          "max_bullets": 0
+        },
+        {
+          "size": "1200x800",
+          "scene": "stage01_firing",
+          "frame_work": {
+            "max_ms": 28.91799993813038,
+            "mean_ms": 12.509361571735806,
+            "p95_ms": 27.36745891161263,
+            "samples": 180
+          },
+          "callback_intervals": {
+            "max_ms": 29.027874814346433,
+            "mean_ms": 17.03178773297825,
+            "p95_ms": 27.557000052183867,
+            "samples": 180
+          },
+          "game_save_calls": 0,
+          "max_bullets": 8
+        },
+        {
+          "size": "screen_size",
+          "scene": "title_animation",
+          "frame_work": {
+            "max_ms": 20.917332964017987,
+            "mean_ms": 5.93872886383906,
+            "p95_ms": 12.565459124743938,
+            "samples": 180
+          },
+          "callback_intervals": {
+            "max_ms": 20.983707858249545,
+            "mean_ms": 16.62488587769783,
+            "p95_ms": 17.4712089356035,
+            "samples": 180
+          },
+          "game_save_calls": 0,
+          "max_bullets": 0
+        },
+        {
+          "size": "screen_size",
+          "scene": "slot_preview",
+          "frame_work": {
+            "max_ms": 15.516832936555147,
+            "mean_ms": 7.512222892708248,
+            "p95_ms": 12.100541964173317,
+            "samples": 180
+          },
+          "callback_intervals": {
+            "max_ms": 17.6037501078099,
+            "mean_ms": 16.67214236092857,
+            "p95_ms": 17.400917131453753,
+            "samples": 180
+          },
+          "game_save_calls": 0,
+          "max_bullets": 0
+        },
+        {
+          "size": "screen_size",
+          "scene": "stage01_firing",
+          "frame_work": {
+            "max_ms": 22.129459073767066,
+            "mean_ms": 16.02288498284502,
+            "p95_ms": 16.362624941393733,
+            "samples": 180
+          },
+          "callback_intervals": {
+            "max_ms": 22.24437496624887,
+            "mean_ms": 16.665999072655623,
+            "p95_ms": 16.783749917522073,
+            "samples": 180
+          },
+          "game_save_calls": 0,
+          "max_bullets": 8
+        }
+      ],
+      "owner_release_checks": 24
+    },
+    {
+      "log": "build/hud-audit/mac-baseline-perf-retry.log",
+      "sha256": "a4be736610e5f268d574473ffe340aac9dd708c7325407774e29ef5636586bc4",
+      "tests": [
+        {
+          "name": "testMacPresentedFrameCostsWithProductionTimer",
+          "status": "failed"
+        }
+      ],
+      "command_succeeded": false,
+      "performance": [
+        {
+          "size": "1200x800",
+          "scene": "title_animation",
+          "frame_work": {
+            "max_ms": 18.266458995640278,
+            "mean_ms": 7.260188856162131,
+            "p95_ms": 15.91558288782835,
+            "samples": 180
+          },
+          "callback_intervals": {
+            "max_ms": 26.061124866828322,
+            "mean_ms": 16.667446755390202,
+            "p95_ms": 16.898958012461662,
+            "samples": 180
+          },
+          "game_save_calls": 0,
+          "max_bullets": 0
+        },
+        {
+          "size": "1200x800",
+          "scene": "slot_preview",
+          "frame_work": {
+            "max_ms": 27.622124878689647,
+            "mean_ms": 10.225626161425478,
+            "p95_ms": 16.71191700734198,
+            "samples": 180
+          },
+          "callback_intervals": {
+            "max_ms": 27.72979182191193,
+            "mean_ms": 16.66410208369295,
+            "p95_ms": 18.204082967713475,
+            "samples": 180
+          },
+          "game_save_calls": 0,
+          "max_bullets": 0
+        },
+        {
+          "size": "1200x800",
+          "scene": "stage01_firing",
+          "frame_work": {
+            "max_ms": 33.2454580347985,
+            "mean_ms": 9.662799551410394,
+            "p95_ms": 19.215333042666316,
+            "samples": 180
+          },
+          "callback_intervals": {
+            "max_ms": 42.698000092059374,
+            "mean_ms": 16.863949999161477,
+            "p95_ms": 19.425125094130635,
+            "samples": 180
+          },
+          "game_save_calls": 0,
+          "max_bullets": 8
+        },
+        {
+          "size": "screen_size",
+          "scene": "title_animation",
+          "frame_work": {
+            "max_ms": 32.760584028437734,
+            "mean_ms": 9.050864193381535,
+            "p95_ms": 19.228541990742087,
+            "samples": 180
+          },
+          "callback_intervals": {
+            "max_ms": 32.817458966746926,
+            "mean_ms": 16.650006944675827,
+            "p95_ms": 19.33283405378461,
+            "samples": 180
+          },
+          "game_save_calls": 0,
+          "max_bullets": 0
+        },
+        {
+          "size": "screen_size",
+          "scene": "slot_preview",
+          "frame_work": {
+            "max_ms": 23.001542082056403,
+            "mean_ms": 7.8619897779491215,
+            "p95_ms": 19.02579190209508,
+            "samples": 180
+          },
+          "callback_intervals": {
+            "max_ms": 23.09045917354524,
+            "mean_ms": 16.661481250129228,
+            "p95_ms": 19.145000027492642,
+            "samples": 180
+          },
+          "game_save_calls": 0,
+          "max_bullets": 0
+        },
+        {
+          "size": "screen_size",
+          "scene": "stage01_firing",
+          "frame_work": {
+            "max_ms": 19.913667114451528,
+            "mean_ms": 9.85954512660909,
+            "p95_ms": 16.93254103884101,
+            "samples": 180
+          },
+          "callback_intervals": {
+            "max_ms": 21.610583178699017,
+            "mean_ms": 16.668185189418082,
+            "p95_ms": 17.55329198203981,
+            "samples": 180
+          },
+          "game_save_calls": 0,
+          "max_bullets": 8
+        }
+      ],
+      "owner_release_checks": 24
+    },
+    {
+      "log": "build/hud-audit/regular-ios-arm64-final.log",
+      "sha256": "9ed35622264170a12a4e3899e457bfb348639de85c96ec973dea96e16e58096b",
+      "tests": [],
+      "command_succeeded": true,
+      "performance": [],
+      "owner_release_checks": 0
+    },
+    {
+      "log": "build/hud-audit/regular-mac-build.log",
+      "sha256": "68d089bf76d99ed9b3301feaea9defaec7d73f2179c0d649660ccab6d089a796",
+      "tests": [],
+      "command_succeeded": true,
+      "performance": [],
+      "owner_release_checks": 0
+    },
+    {
+      "log": "build/hud-audit/ipad-visible-passives.log",
+      "sha256": "948818788f5797188a4d82052332fa3cd1d866b1534006f48adc1d78542f13ae",
+      "tests": [
+        {
+          "name": "testHUDEditorPregameExampleAndResizeDoesNotChangeSave",
+          "status": "passed"
+        }
+      ],
+      "command_succeeded": true
+    },
+    {
+      "log": "build/hud-audit/regular-ios-last.log",
+      "sha256": "bc9bda480028316b459fa65f2c3bedfe8d3b5860c9045746520fa3938f157a2b",
+      "tests": [],
+      "command_succeeded": true
+    },
+    {
+      "log": "build/hud-audit/regular-mac-last.log",
+      "sha256": "e55e365f1e9e0492c0afe703d4275987c654441d2bcb73e43f5017f38ca079d9",
+      "tests": [],
+      "command_succeeded": true
+    }
+  ],
+  "direct_ui": {
+    "platform": "iPad Pro 13 M5 iOS26.5 simulator in Device Hub",
+    "verified": [
+      "mission entry",
+      "drag weapon to right",
+      "apply and reopen",
+      "default then cancel retains saved placement",
+      "default then apply restores original",
+      "hide editor guides and return"
+    ],
+    "capture_method": "xcrun simctl io screenshot",
+    "images": [
+      {
+        "path": "docs/public/media/hud-editor/ipad-preview.png",
+        "sha256": "0b92a2ded81548d95168d17e6d40f6b3569557710c5ccea18dcc36892d896c4c"
+      },
+      {
+        "path": "docs/public/media/hud-editor/ipad-moved.png",
+        "sha256": "d173bce33d16f3a964c88d10d4e9cdc20497599beb8e5988554dd9647d6e557c"
+      },
+      {
+        "path": "docs/public/media/hud-editor/ipad-default.png",
+        "sha256": "706720465c9000c19f7d47ddc55f68bbb7f908befa5bdfd1f03f69ff939b5ac9"
+      },
+      {
+        "path": "docs/public/media/hud-editor/example-passives.png",
+        "source": "XCTest GL snapshot after passive preview addition",
+        "sha256": "1bde2fe322f1e1c91ff4d12aea25b07a6c3fc591076f04ff14a1676a1ab7b3ac"
+      }
+    ]
+  },
+  "default_hud_pixel_difference": 0,
+  "remaining": [
+    "long-session heat",
+    "Mac frame cost follow-up"
+  ],
+  "source_sha256": {
+    "Sources/Core/GameSession.cpp": "d4e7ac679186f9afe5b1ce89aa16c8322eda3d163748546aecd5dbc519d6c285",
+    "Sources/Core/GameSession.hpp": "d55e82e9e4091ff18b715f7304a788ca8543f51984a6b4fe0f9e995619d30e6c",
+    "Sources/Mac/HMValidationControlsMac.mm": "df1968cad017056d6887fee86b33cfa2213b07236e0294bbb97b965ef83cab32",
+    "Sources/iOS/HMGLRenderer.h": "84f8a51795def74a1a82164bba1ebedbe4449b6b1df21c6250c35f47b0397a91",
+    "Sources/iOS/HMGLRenderer.mm": "3c03c027dd73c7b17c159a4749a0bbf9dc7514d00109f2ec0e8168fb0e3525d0",
+    "Sources/iOS/HMGameHUD.h": "c1d1812533227fc91ae749aabbea0f0c688d35951dea5b113418c626e635c3e5",
+    "Sources/iOS/HMGameHUD.mm": "487e453317928c6276db4cf8ca01798677d4fda88cbd20ad647ec02b0c8129ce",
+    "Sources/iOS/HMGameView.mm": "0cd0d4f20489d2f917ca17a4afc98e1a8c392c0df567966844271775cc2c8dba",
+    "Sources/iOS/HMMedia.h": "f13661546a2037ec4d27de75f5c696ef97000c57bc9c7763fafb983977abc8dd",
+    "Sources/iOS/HMMedia.mm": "c3c45892a6c11589597243c92f9f2d3fb85731ce3a4ef6c50cf3df15db403872",
+    "Sources/iOS/HMMenus.h": "dadab8b1c44e134f4d56ea08a5efca7ce8f5c7eedf840b488ea0cc7bb8b1419d",
+    "Sources/iOS/HMMenus.mm": "76c91ab47ecec688e28da26d3bd2760a860d54664dc7ee8d65c4eec752655014",
+    "Sources/iOS/HMValidationControls.h": "caf3cff1043eca8b3d8193fc091041df8cd192ac3d4eeca4f1250f54973e5be6",
+    "Sources/iOS/HMValidationControls.mm": "0b8ca5b693ad160584f825c08e272e7e34f2f1c9f464f64fcb004ba3df3d4290",
+    "Tests/Apple/HMAppleInputTests.mm": "7e9b57656a7a0f0bc58de634e94bdf6d91eef70480d51ef0ce66e9292dfb69e9",
+    "Tests/HUDLayoutTests.cpp": "8db57b23e0b7a04c1ac6a29c5ebd21cda652300dfeac513a3e7bbd6f0147beb9",
+    "Sources/Core/HUDConfiguration.hpp": "8bce9b12218577aa3b6061e73c28bf81af7cdd96f88fb60521b552ae8626256f",
+    "Sources/iOS/HMHUDEditor.inc": "f1e20edffc92b240629c7da5063cf75501e5985c9408296ffc0942903d6c371b"
+  },
+  "report_browser_check": "Safari and Chrome native window acquisition returned cgWindowNotFound after game UI inspection. HTML anchors, local images, manuscript copy and HTTP response checked.",
+  "physical_ipad_20261029": {
+    "source_commit": "8aa85ebd4bd23fdbb45b821efac7b746d98804da",
+    "test_source_sha256": "070a1ff656bbec34fbb11e8c2ff70d906132ebb2b2135a378eff39556324f4c7",
+    "device": {
+      "model": "iPad Air 13-inch (M2)",
+      "os": "27.0.1",
+      "transport_before": "localNetwork",
+      "transport_after": "localNetwork"
+    },
+    "apps": [
+      {
+        "scheme": "HeavyMachRestored",
+        "bundle_id": "com.gelb2.heavymach.restored",
+        "executable_sha256": "4353a389529ce8ddbc2ffc55731c2bd4d182b3b6bf697b29607c168a65353b82",
+        "version": "1.13",
+        "build": "1",
+        "development_signed": true,
+        "installed": true,
+        "launched": true,
+        "build_method": "Xcode GUI",
+        "build_time_kst": "2026-10-29 01:22"
+      },
+      {
+        "scheme": "HeavyMachValidation",
+        "bundle_id": "com.gelb2.heavymach.validation",
+        "executable_sha256": "b6969594a8021ca215d62f319325b8378b6956478e7be7426d736aa8bfea2449",
+        "version": "1.13",
+        "build": "1",
+        "development_signed": true,
+        "installed": true,
+        "launched": true,
+        "build_method": "Xcode GUI",
+        "build_time_kst": "2026-10-29 01:21"
+      }
+    ],
+    "tests": [
+      {
+        "class": "HMAppleInputTests",
+        "method": "testAutoAimEveryWeaponWithMovementAndJump",
+        "seconds": 6.999,
+        "result": "passed"
+      },
+      {
+        "class": "HMAppleInputTests",
+        "method": "testEveryWeaponKeyboardSelectionAndFire",
+        "seconds": 7.925,
+        "result": "passed"
+      },
+      {
+        "class": "HMAppleInputTests",
+        "method": "testHUDEditorCheatGeometryAndRepeatedClose",
+        "seconds": 1.606,
+        "result": "passed"
+      },
+      {
+        "class": "HMAppleInputTests",
+        "method": "testHUDEditorMovesHitsFreezesBattleAndPersistsOnlyApply",
+        "seconds": 5.343,
+        "result": "passed"
+      },
+      {
+        "class": "HMAppleInputTests",
+        "method": "testHUDEditorPregameExampleAndResizeDoesNotChangeSave",
+        "seconds": 1.134,
+        "result": "passed"
+      },
+      {
+        "class": "HMAppleInputTests",
+        "method": "testHUDEditorSelectionCollisionResizeAndSaveFailure",
+        "seconds": 5.26,
+        "result": "passed"
+      },
+      {
+        "class": "HMAppleInputTests",
+        "method": "testHUDMovedButtonsKeepTouchOwnershipAndAimFire",
+        "seconds": 5.242,
+        "result": "passed"
+      },
+      {
+        "class": "HMAppleInputTests",
+        "method": "testHUDMovedGaugesAnimateAndFreezeInEditor",
+        "seconds": 5.574,
+        "result": "passed"
+      },
+      {
+        "class": "HMAppleInputTests",
+        "method": "testHUDMovedMenuJumpAndAimButtons",
+        "seconds": 5.333,
+        "result": "passed"
+      },
+      {
+        "class": "HMFramePerformanceTests",
+        "method": "testProductionTimerAndFullScreenTouchViewport",
+        "seconds": 0.752,
+        "result": "passed"
+      }
+    ],
+    "tests_passed": 10,
+    "tests_failed": 0,
+    "manual_weapons": 20,
+    "automatic_weapons": 20,
+    "gauges": {
+      "moved_y": 120,
+      "reload_range": 0.972,
+      "hp_event_value_changed_needle": true,
+      "editing_frozen_frames": 120,
+      "layout_apply_writes": 1
+    },
+    "direct_ui": {
+      "tool": "Device Hub + CUA",
+      "ordinary": [
+        "mission selection HUD entry",
+        "drag gauges as one group",
+        "apply and reopen retained position",
+        "start battle with moved gauges",
+        "pause HUD entry",
+        "default restore"
+      ],
+      "cheat": [
+        "scenario start",
+        "movement and jump controls",
+        "pause HUD entry",
+        "drag weapon to right",
+        "apply and resume",
+        "tap new position changed gun to bomb",
+        "default restore"
+      ],
+      "final_state": "both layouts default; both battles paused"
+    },
+    "ordinary_save": {
+      "backup_sha256": "c33aed5184f8e610e4e4d2b3c9a733f3d93d263b9f9c94aa6cdd816431eea8df",
+      "after_install_sha256": "c33aed5184f8e610e4e4d2b3c9a733f3d93d263b9f9c94aa6cdd816431eea8df",
+      "after_play_sha256": "12bbb4ed08eec6b3ac4f29bd39173b4d543ebf8f55348696bae48fbd1a91f656",
+      "after_play_changed_byte_offsets": [
+        4,
+        5,
+        6
+      ],
+      "uninstalled": false,
+      "reset": false
+    },
+    "raw_files": [
+      {
+        "path": "build/hud-device-20261029/build-cheat.log",
+        "sha256": "c5a42e2f4add50629966552a1f9dc862fc90139f648581f2f5bd29c314dfbc0f"
+      },
+      {
+        "path": "build/hud-device-20261029/capture-cheat.log",
+        "sha256": "a7614add3978dd125af11b8d85df0f4fd42ef3e6f1451a8720edcff6552b38bd"
+      },
+      {
+        "path": "build/hud-device-20261029/capture-ordinary.log",
+        "sha256": "961f5a58fc962bb2afda3d607d6eb999b0c5be80ea5de0f3789c62b5d56f9d3e"
+      },
+      {
+        "path": "build/hud-device-20261029/capture-selected.log",
+        "sha256": "7651204979e65f09ebeffbbc0464f451db3b7a4cb64ccaa8c9bd898f3e42e9ba"
+      },
+      {
+        "path": "build/hud-device-20261029/install-cheat.log",
+        "sha256": "759d4d76b87860639ed58753009d77ff5bd09dd7025b9fd8355ff3669dcf3e6d"
+      },
+      {
+        "path": "build/hud-device-20261029/install-ordinary.log",
+        "sha256": "496180d16565d9c0154af221291c58e3c58fd0d351687dde71f36e23d252483a"
+      },
+      {
+        "path": "build/hud-device-20261029/ipad-final.log",
+        "sha256": "c94d02ce7c52adffffcd73d5486f4ffffc65a5cd87c38766564b28f5d19acfc9"
+      },
+      {
+        "path": "build/hud-device-20261029/ipad-tests.log",
+        "sha256": "d89e3e4c0b44ac7054dc17fbf6775236b97bdcfcfa71fd83f616f7aa61b7067d"
+      },
+      {
+        "path": "build/hud-device-20261029/launch-cheat.log",
+        "sha256": "d8a976d9895929ec6d5d2653cf043a7bc51b0450ea023b67c9f9a95fbf628287"
+      },
+      {
+        "path": "build/hud-device-20261029/launch-ordinary.log",
+        "sha256": "347cce23cc3c23a709d7eca72b32ef9207eae856e2246db47a423c127e01eee9"
+      },
+      {
+        "path": "build/hud-device-20261029/save-after.log",
+        "sha256": "9c085133a51c1d8ed1bee74b0ac457e2470e2cfffd0264a6c6a371bd55933555"
+      },
+      {
+        "path": "build/hud-device-20261029/save-backup.log",
+        "sha256": "e00d56f6b63ef055209df3dacaf4917191518aef1cd0238837ec6875f471eaa6"
+      },
+      {
+        "path": "build/hud-device-20261029/save-final.log",
+        "sha256": "26da4633bfe04de1147703fb13ad0bff5c3706c09df9c6d94c35b7cd209148b8"
+      },
+      {
+        "path": "build/hud-device-20261029/install-cheat.json",
+        "sha256": "fd238924e08976422f5bbbc2bc9f74af81eb57e8172ccc93137002e97eadc0a4"
+      },
+      {
+        "path": "build/hud-device-20261029/install-ordinary.json",
+        "sha256": "be4ae69f4514b0cb64570949345504bb263bbcce3d9963b333e89f177d44ec3d"
+      },
+      {
+        "path": "build/hud-device-20261029/ipad-details.json",
+        "sha256": "e9c07830595e0b4403fc2bfb88d54709725c31e523c32edcf912f5613edcaaf2"
+      },
+      {
+        "path": "build/hud-device-20261029/ipad-final.json",
+        "sha256": "1924c21c833b1d3d32920f990fb083472ec3c6d8375a70b645f4e4e49eb7b7f4"
+      },
+      {
+        "path": "build/hud-device-20261029/launch-cheat.json",
+        "sha256": "ddaa1774c17ceeed161a6cc3621d3aa11a80b3e631ef8b720ce165249aed5d0c"
+      },
+      {
+        "path": "build/hud-device-20261029/launch-ordinary.json",
+        "sha256": "c71a7ee6bfa0ffa7d42d3c0ba2688f5cb4158c7dec6b5059044bfbd8140dfd27"
+      }
+    ],
+    "images": [
+      {
+        "path": "docs/public/media/hud-editor/physical-ipad-cheat-selected.png",
+        "sha256": "ed51c2ac3d102231612c815adbfb99c11aae788312342e6d38383283cd5cce44"
+      },
+      {
+        "path": "docs/public/media/hud-editor/physical-ipad-cheat-weapon.png",
+        "sha256": "8f57b9ccd2ccffa10d96c0232e58b9fd9ee94f599306f9f930488dbb5dce25d6"
+      },
+      {
+        "path": "docs/public/media/hud-editor/physical-ipad-gauges-firing.png",
+        "sha256": "2fdcf5f12e811e18dc3c932da451cdeaebdb870f790824540aea4534d19e7d05"
+      },
+      {
+        "path": "docs/public/media/hud-editor/physical-ipad-ordinary-gauges.png",
+        "sha256": "05167ad73501c1500e97bbbebd240279d3d132ac6417d617a47b18fdc03d2469"
+      }
+    ],
+    "remaining": [
+      "iPhone physical HUD editing",
+      "long-session heat",
+      "Mac frame cost follow-up"
+    ],
+    "sustained_fps": "not_measured"
+  },
+  "physical_iphone_20261029": {
+    "source_commit_before_menu": "75483d4a",
+    "device": {
+      "model": "iPhone Air",
+      "os": "27.0.1",
+      "transport_before": "localNetwork",
+      "transport_after": "localNetwork"
+    },
+    "initial_tests": [
+      {
+        "class": "HMAppleInputTests",
+        "name": "testAutoAimEveryWeaponWithMovementAndJump",
+        "status": "passed",
+        "seconds": 5.533
+      },
+      {
+        "class": "HMAppleInputTests",
+        "name": "testEveryWeaponKeyboardSelectionAndFire",
+        "status": "passed",
+        "seconds": 7.101
+      },
+      {
+        "class": "HMAppleInputTests",
+        "name": "testHUDEditorCheatGeometryAndRepeatedClose",
+        "status": "passed",
+        "seconds": 1.34
+      },
+      {
+        "class": "HMAppleInputTests",
+        "name": "testHUDEditorMovesHitsFreezesBattleAndPersistsOnlyApply",
+        "status": "passed",
+        "seconds": 4.732
+      },
+      {
+        "class": "HMAppleInputTests",
+        "name": "testHUDEditorPregameExampleAndResizeDoesNotChangeSave",
+        "status": "passed",
+        "seconds": 0.972
+      },
+      {
+        "class": "HMAppleInputTests",
+        "name": "testHUDEditorSelectionCollisionResizeAndSaveFailure",
+        "status": "passed",
+        "seconds": 4.673
+      },
+      {
+        "class": "HMAppleInputTests",
+        "name": "testHUDMovedButtonsKeepTouchOwnershipAndAimFire",
+        "status": "passed",
+        "seconds": 4.73
+      },
+      {
+        "class": "HMAppleInputTests",
+        "name": "testHUDMovedGaugesAnimateAndFreezeInEditor",
+        "status": "passed",
+        "seconds": 4.919
+      },
+      {
+        "class": "HMAppleInputTests",
+        "name": "testHUDMovedMenuJumpAndAimButtons",
+        "status": "passed",
+        "seconds": 4.762
+      },
+      {
+        "class": "HMFramePerformanceTests",
+        "name": "testProductionTimerAndFullScreenTouchViewport",
+        "status": "passed",
+        "seconds": 0.69
+      }
+    ],
+    "initial_tests_passed": 10,
+    "initial_tests_failed": 0,
+    "manual_weapons": 20,
+    "automatic_weapons": 20,
+    "direct_ui": {
+      "tool": "Device Hub + CUA",
+      "ordinary": [
+        "mission selection entry",
+        "drag two gauges together",
+        "apply and reopen retained position",
+        "battle with moved gauges",
+        "pause entry",
+        "default restore"
+      ],
+      "cheat": [
+        "move right",
+        "jump",
+        "stop",
+        "touch fire",
+        "move weapon button right",
+        "apply and resume",
+        "tap moved position selects RaderBomb",
+        "default restore"
+      ],
+      "pause_menu": [
+        "ordinary entry and cancel",
+        "cheat entry"
+      ],
+      "final_install_state": "Both latest apps installed and launched. Ordinary app left on title; HUD default configuration retained."
+    },
+    "ordinary_save": {
+      "backup_sha256": "aef3ce073a3beef357b12d393e7968cc6a3617a8c77c309355b0f229ee49d1f5",
+      "after_initial_install_sha256": "aef3ce073a3beef357b12d393e7968cc6a3617a8c77c309355b0f229ee49d1f5",
+      "after_initial_play_sha256": "d17eb21dd2521d21f0c2f709965f64c1c4958085b551ec0e0ca3c7fef63b0cca",
+      "after_initial_play_changed_offsets": [
+        1212,
+        1213,
+        1214
+      ],
+      "changed_field": "slot2 last-access timestamp",
+      "uninstalled": false,
+      "reset": false,
+      "after_menu_play_changed_offsets": [
+        1212,
+        1213,
+        1214
+      ]
+    },
+    "remaining": [
+      "long-session heat",
+      "Mac frame cost follow-up"
+    ],
+    "sustained_fps": "not_measured",
+    "apps_final": {
+      "cheat": {
+        "scheme": "HeavyMachValidation",
+        "bundle_id": "com.gelb2.heavymach.validation",
+        "sha256": "db044ef0a447ac4d649c545dfa89d2ef5b4ba57991faa188497af0b50dcbaf85",
+        "codesign_exit": 0,
+        "install_exit": 0,
+        "launch_exit": 0
+      },
+      "ordinary": {
+        "scheme": "HeavyMachRestored",
+        "bundle_id": "com.gelb2.heavymach.restored",
+        "sha256": "e975747e2991b5e6bd1b8111a03d3a826d3305d9862649c16f10d02818a5c8fa",
+        "codesign_exit": 0,
+        "install_exit": 0,
+        "launch_exit": 0
+      }
+    },
+    "menu_tests": {
+      "menu-tests.log": [
+        {
+          "class": "HMAppleInputTests",
+          "name": "testHUDEditorMovesHitsFreezesBattleAndPersistsOnlyApply",
+          "status": "passed",
+          "seconds": 4.569
+        },
+        {
+          "class": "HMAppleInputTests",
+          "name": "testHUDMovedGaugesAnimateAndFreezeInEditor",
+          "status": "passed",
+          "seconds": 4.903
+        },
+        {
+          "class": "HMAppleInputTests",
+          "name": "testPauseMenuHUDEntryUsesGameTouchAndKeyboard",
+          "status": "passed",
+          "seconds": 4.889
+        }
+      ],
+      "menu-final-tests.log": [
+        {
+          "class": "HMAppleInputTests",
+          "name": "testPauseMenuHUDEntryUsesGameTouchAndKeyboard",
+          "status": "passed",
+          "seconds": 4.314
+        }
+      ]
+    },
+    "menu_implementation": {
+      "label": "SET GAME UI",
+      "order": [
+        101,
+        104,
+        102,
+        103
+      ],
+      "atlas": "Resources/OriginalImages/GameMenuSub.png",
+      "atlas_sha256": "8e72f7288b9ebf2fe57f79289b2623a2ee161d4f085e8ba05b4087787f661420",
+      "original_asset_changed": false,
+      "new_asset_count": 0,
+      "native_pause_entry_removed": true,
+      "glyph_row_alignment_pixels": 1,
+      "after_apply_or_cancel": "paused",
+      "new_entry_progress_saves": 0
+    },
+    "source_files": [
+      {
+        "path": "Sources/iOS/HMGameHUD.mm",
+        "sha256": "c9367c110ef57422515c20fc58df52568f2e2fc08d53fe02396bf75914ef13cf"
+      },
+      {
+        "path": "Sources/iOS/HMGameView.mm",
+        "sha256": "b84c46a9de54de56daab8e9fe55c2a8021f6207ca3b302f2604143ea04c3b19f"
+      },
+      {
+        "path": "Sources/iOS/HMHUDEditor.inc",
+        "sha256": "96c97817317c793c17392ff6e22bef61283da118d662a8995747fca25a6939ad"
+      },
+      {
+        "path": "Tests/Apple/HMAppleInputTests.mm",
+        "sha256": "0c1879787db521a10bd19cfb268fe5aefcebfc8d35ffefa7ea67ede59a91fed5"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "build/hud-iphone-20261029/capture-battle.log",
+        "sha256": "51d77a8f69236ad5975b6c6d1ae7ea5499d80799f65fb935ebc230ac1737e986"
+      },
+      {
+        "path": "build/hud-iphone-20261029/capture-cheat.log",
+        "sha256": "e5b0d3206846b8a1842f2355f4ae949398ad8271279f10c578c52d4d10d355d2"
+      },
+      {
+        "path": "build/hud-iphone-20261029/capture-ordinary.log",
+        "sha256": "6f1de15ecbb2a3eaca5eb37bab8a6bb0fbecf4752d0289d28cf2e875bd1ee3f4"
+      },
+      {
+        "path": "build/hud-iphone-20261029/capture-selected.log",
+        "sha256": "3f6042fe2ab52092b826d8370d1f2c6c907420c1cf7ae66de0aeee7bed9e76a5"
+      },
+      {
+        "path": "build/hud-iphone-20261029/complete-builds.json",
+        "sha256": "a0feef7715663583689cae7446448d45d86044af3662c75b53d0ab43ceb86e3b"
+      },
+      {
+        "path": "build/hud-iphone-20261029/complete-install-cheat.json",
+        "sha256": "7fd73d931b3399bd5386421c45c3068818b1dffd625a15e8b777358eca336535"
+      },
+      {
+        "path": "build/hud-iphone-20261029/complete-install-cheat.log",
+        "sha256": "0d9e749685868f67be53fa8bb863fc8ccca32f1b7cdea9854d298de3eb7a3e07"
+      },
+      {
+        "path": "build/hud-iphone-20261029/complete-install-ordinary.json",
+        "sha256": "8816510d134fd82e00f273fb9f7ff4252ddd4a0771fddb79bce31f8625ecd039"
+      },
+      {
+        "path": "build/hud-iphone-20261029/complete-install-ordinary.log",
+        "sha256": "50bd37d9f0a096651cc4486ba9ccdbc8f35a0e670793fe7152371ae19734b63f"
+      },
+      {
+        "path": "build/hud-iphone-20261029/complete-launch-cheat-retry.json",
+        "sha256": "5c3a0cb77f634457357fd23757176119129ce8c5049cf8c5b7acff29cbad3a17"
+      },
+      {
+        "path": "build/hud-iphone-20261029/complete-launch-cheat-retry.log",
+        "sha256": "d8a976d9895929ec6d5d2653cf043a7bc51b0450ea023b67c9f9a95fbf628287"
+      },
+      {
+        "path": "build/hud-iphone-20261029/complete-launch-cheat.log",
+        "sha256": "311ff532686c6b1185cb457107314f43f6e23f2b854dbfbe530b5c1bcc46b15c"
+      },
+      {
+        "path": "build/hud-iphone-20261029/complete-launch-ordinary-retry.json",
+        "sha256": "bcde8131e698dc7da285b826434fa8d4b5988ad2c53cb95f042fd1fa48cd9006"
+      },
+      {
+        "path": "build/hud-iphone-20261029/complete-launch-ordinary-retry.log",
+        "sha256": "347cce23cc3c23a709d7eca72b32ef9207eae856e2246db47a423c127e01eee9"
+      },
+      {
+        "path": "build/hud-iphone-20261029/details-after.json",
+        "sha256": "8ce0571b329688112589fd792ebef936ade425bde6204572ca62d2776ed3d9a2"
+      },
+      {
+        "path": "build/hud-iphone-20261029/details-after.log",
+        "sha256": "9f0805e138b8743add18e6be947814361cca005712ea0493bac09c8fa22ed1c7"
+      },
+      {
+        "path": "build/hud-iphone-20261029/details-before.json",
+        "sha256": "76d69f38a6d4b4b51b12a160eee3aa1c5217f4e6cc96ce8b3e5d3f3ab1af38e8"
+      },
+      {
+        "path": "build/hud-iphone-20261029/final-builds.json",
+        "sha256": "e036f23f227f23e66011cc4d7d04ccaf7ab4d9ef49d43d94afe4469a90ede689"
+      },
+      {
+        "path": "build/hud-iphone-20261029/final-capture-cheat.log",
+        "sha256": "64714cc01299692b5555738d9035dbccf7501c104a2f596e8213b32bd5fa4576"
+      },
+      {
+        "path": "build/hud-iphone-20261029/final-install-cheat.json",
+        "sha256": "e360dfc0a618dc32a48fb94a9de0578fc63938abc294696a05d236a8a47546d8"
+      },
+      {
+        "path": "build/hud-iphone-20261029/final-install-cheat.log",
+        "sha256": "387ee39f903f0f280bbf344cf4023c69c7b44268801c8b4ba6fdd9053f3b4f8c"
+      },
+      {
+        "path": "build/hud-iphone-20261029/final-install-ordinary.json",
+        "sha256": "ce8d5d7efa0453df3f0097e498f571af162f884c558cdc0c40394bc37ab94f08"
+      },
+      {
+        "path": "build/hud-iphone-20261029/final-install-ordinary.log",
+        "sha256": "d70a1c1de146487b65219549dc6e5ce75b5cc4cda534b7731a95cee816fc1d24"
+      },
+      {
+        "path": "build/hud-iphone-20261029/final-launch-cheat.json",
+        "sha256": "d2a824457079fc715c19b2372fe65e918a93534aac37e02b9d742d1799098812"
+      },
+      {
+        "path": "build/hud-iphone-20261029/final-launch-cheat.log",
+        "sha256": "d8a976d9895929ec6d5d2653cf043a7bc51b0450ea023b67c9f9a95fbf628287"
+      },
+      {
+        "path": "build/hud-iphone-20261029/install-cheat.json",
+        "sha256": "860ec793b044c76cb828935ca0592b03c2cc054ac8e6183908af12e6b8330163"
+      },
+      {
+        "path": "build/hud-iphone-20261029/install-cheat.log",
+        "sha256": "cfaeae646f36f9331598ccbf9947ce432a3090b8059ad021ddbf784c83f2ed01"
+      },
+      {
+        "path": "build/hud-iphone-20261029/install-ordinary.json",
+        "sha256": "0c673fbec71d0b2fbc1c52069e518b3c1ef12058bf9d32b535ed7953cefb9527"
+      },
+      {
+        "path": "build/hud-iphone-20261029/install-ordinary.log",
+        "sha256": "bb3f2269f2c0836443002b4914e38f47806b20335a231d62bf05dc8e5e42328e"
+      },
+      {
+        "path": "build/hud-iphone-20261029/iphone-tests.log",
+        "sha256": "fd7720803599dd9b9c95635c5185865d142ef7728b0eca17a81f405088295dce"
+      },
+      {
+        "path": "build/hud-iphone-20261029/launch-cheat.json",
+        "sha256": "fee28461e3bb5c0d819fd9691014017d23ad7081dd173cd9af740bbf795ce78d"
+      },
+      {
+        "path": "build/hud-iphone-20261029/launch-cheat.log",
+        "sha256": "d8a976d9895929ec6d5d2653cf043a7bc51b0450ea023b67c9f9a95fbf628287"
+      },
+      {
+        "path": "build/hud-iphone-20261029/launch-ordinary.json",
+        "sha256": "bf4ee49077cfe99a985b90d65610152669c12a50df3ff212df9c52d622de1c58"
+      },
+      {
+        "path": "build/hud-iphone-20261029/launch-ordinary.log",
+        "sha256": "347cce23cc3c23a709d7eca72b32ef9207eae856e2246db47a423c127e01eee9"
+      },
+      {
+        "path": "build/hud-iphone-20261029/menu-builds.json",
+        "sha256": "f1bbbd02859ab240be8c868869bcbb90422503aacab4853fc34117f562c9cdf2"
+      },
+      {
+        "path": "build/hud-iphone-20261029/menu-export.log",
+        "sha256": "800cf08edc35449974739baea8804599baa98bf91f2d8daa66eddc1be42689b0"
+      },
+      {
+        "path": "build/hud-iphone-20261029/menu-final-export.log",
+        "sha256": "c46780493bc24c23629b2f2c553f343d4999bf81e247ad125ec4f41e40d8c957"
+      },
+      {
+        "path": "build/hud-iphone-20261029/menu-final-tests.log",
+        "sha256": "ba3c9cac8eb9465213e9e99bf3dfa8e9f33d6472631e505e3032a43431085c3b"
+      },
+      {
+        "path": "build/hud-iphone-20261029/menu-install-cheat.json",
+        "sha256": "6ee4cec46284c25004afef1205bce63c9afbd516e4defbc271982cec9b0d9e37"
+      },
+      {
+        "path": "build/hud-iphone-20261029/menu-install-cheat.log",
+        "sha256": "b07760d2137c71acee23277552750d30dc762e7d0f5b9b4b1783d01735af393c"
+      },
+      {
+        "path": "build/hud-iphone-20261029/menu-install-ordinary.json",
+        "sha256": "e55aa7e1b40f8a375e267e3bb878837c196bd7f68f9ae35030d9f95c8a463d09"
+      },
+      {
+        "path": "build/hud-iphone-20261029/menu-install-ordinary.log",
+        "sha256": "555354b8397454ea7f8352f3146bf02712187ab8f60e8e1999822b6ad2870baa"
+      },
+      {
+        "path": "build/hud-iphone-20261029/menu-launch-ordinary.json",
+        "sha256": "4b1696353174f4325ad3e253755ff795d2a82a087601d1d14a5443c87b39f49d"
+      },
+      {
+        "path": "build/hud-iphone-20261029/menu-launch-ordinary.log",
+        "sha256": "347cce23cc3c23a709d7eca72b32ef9207eae856e2246db47a423c127e01eee9"
+      },
+      {
+        "path": "build/hud-iphone-20261029/menu-tests.log",
+        "sha256": "1d8f287e7a2956ce58710e7f1935925c0b13a0fb7c9c414b416dffbb825dbe2a"
+      },
+      {
+        "path": "build/hud-iphone-20261029/save-after-install.log",
+        "sha256": "95583fdbab18215fdf418630989d9116ee96bd3fc608bea6eff7f7aae5488dda"
+      },
+      {
+        "path": "build/hud-iphone-20261029/save-before.log",
+        "sha256": "8db87469a82f50bb6b8ee1256153b9648b7e7681a9a2438aeef86ca488e2fcae"
+      },
+      {
+        "path": "build/hud-iphone-20261029/save-complete.log",
+        "sha256": "cc7c6f6f4b210c7751715080e77829ecea6e08643dac66b04fa0cfc6d58d073a"
+      },
+      {
+        "path": "build/hud-iphone-20261029/save-final.log",
+        "sha256": "67c637ec863759870bdafcf726bc5711568ccd7c20478b48f793acc83f29cef8"
+      },
+      {
+        "path": "build/hud-iphone-20261029/site-build.log",
+        "sha256": "7587fbd9bfc9445e63a8b313540e673d0cbdb40337a43296fb49856c558e358d"
+      }
+    ],
+    "images": [
+      {
+        "path": "docs/public/media/hud-editor/pause-menu-normal.png",
+        "sha256": "4cbdf51cbe0f55af7a150c2d74988b71be3f67bda60df4db8f0125a8525fb2ac"
+      },
+      {
+        "path": "docs/public/media/hud-editor/pause-menu-pressed.png",
+        "sha256": "380f24bfae97e88a2920cf9f504c4b8e44317f946daa6227c707cfef2d1f7479"
+      },
+      {
+        "path": "docs/public/media/hud-editor/physical-iphone-cheat-selected.png",
+        "sha256": "7e48eb961052280ae08c789f26f9f72dfda8445fde9ec76d84db56ae7e987e85"
+      },
+      {
+        "path": "docs/public/media/hud-editor/physical-iphone-cheat-weapon.png",
+        "sha256": "7e2484cc0c793910c8e2b31323b0aecd335726b8b05820e7e0f664208fa6f6cb"
+      },
+      {
+        "path": "docs/public/media/hud-editor/physical-iphone-ordinary-gauges.png",
+        "sha256": "5fa98bb656dc8a3d9520974f4f8d3b268fda5ad98e9dd8dd993fe472f31aa6e2"
+      }
+    ]
+  }
+}

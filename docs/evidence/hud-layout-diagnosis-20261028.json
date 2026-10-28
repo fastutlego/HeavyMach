@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-28",
+  "branch": "feat/hud-layout-editor",
+  "base": "631d03e12927c41c4ef4802e25dd6771fb71cc82",
+  "scope": "HUD deep diagnosis and shared layout math; app editor not integrated",
+  "checks": {
+    "ctest": "HeavyMachHUDLayoutTests passed",
+    "sanitizers": "standalone HUDLayoutTests AddressSanitizer + UndefinedBehaviorSanitizer passed",
+    "documents": "13 routes, 110 files; publication 142 editorial documents, 400 links",
+    "browser": "Safari local HUD report, section navigation and table/preview design inspected"
+  },
+  "source_sha256": {
+    "Sources/Core/HUDLayout.hpp": "682c7c39b8d7ec5b519b44e81910ddc4c04fffe76fb8d1615ae3fd4eeb1fdf24",
+    "Tests/HUDLayoutTests.cpp": "9ea0082cdff62e191df27d8223536390e1656ef4595a3e55d7343bc5ef9221b8",
+    "Sources/iOS/HMGameHUD.mm": "52b60c61e0043524133848dd334978045121fbf03bdd24c7313349a313da8e8c",
+    "Sources/iOS/HMGameView.mm": "d8d69263e3fc57e2861f5742cc04a93476eb7ddee4cb7c4e66d7ff3c20b8e957",
+    "Sources/iOS/HMValidationControls.mm": "c5ad0529ce9bab5553b8b4fc3c8a49052ae980758f894110bfceaccd478524c6",
+    "Sources/Core/GameSession.cpp": "82c5e6a6dd32bdea04c67ca81fef2785152a6100e1d4073dd9f7028ee6ab4c92",
+    "Resources/Images/GameUI_Top.png": "d1cec3beeec27f9be7c2802af91c87274115e678b5b2dfaf15b8d3a8d771fad4",
+    "Resources/Images/GameUI_Btm.png": "44d92a2b1d6df4534e3eec26372b5b5cf06d902fb829f2ffda028a2a7bcfa093"
+  },
+  "remaining": [
+    "texture slicing and endcaps",
+    "runtime rendering/input integration",
+    "pause editor UI",
+    "isolated example battle and pregame entry",
+    "layout persistence",
+    "Apple app/device validation"
+  ],
+  "site": {
+    "source": "2a18a20c7fc4b9558886292cf0565d301d3a2702",
+    "deployment": {
+      "id": "appgdep_6ae200c4d2f48191b04222f3c5746a4e",
+      "project_id": "appgprj_6addbf55aea081918d3d182d7e496e88",
+      "title": "HeavyMach 개발 보고",
+      "version_id": "appgprj_6addbf55aea081918d3d182d7e496e88~appgver_3ad9b8db67608191b158c7d49e1662b4",
+      "type": "publish",
+      "status": "succeeded",
+      "url": "https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site",
+      "has_mcp": false,
+      "screenshot_asset_pointer": null,
+      "provider_deployment_id": "site---6addbf55aea081918d3d182d7e496e88",
+      "failure_message": null,
+      "env_set_revision": 0,
+      "updated_at": "2026-10-28T14:03:58.838473+00:00"
+    },
+    "local_links": 1196,
+    "catalog": 45
+  }
+}

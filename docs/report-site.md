@@ -1,5 +1,56 @@
 # HeavyMach 보고 사이트
 
+## 2026-10-29 HUD 편집 도구·상단 장식 수정
+
+[최종 수정과 실기기 검사](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/hud-improvement.html#editor-release)를 기존 보고서에 추가했다. 영문 금속 버튼의 일반/눌림 상태, 아이폰 장식·MENU 이동, 아이패드 상단 재조립 그림과 검사 결과를 실었다. 45개 목차와 기존 이미지·앵커를 유지했다.
+
+- source: `88531cb723b6f015aa6df063bf670472048ef3d5`
+- version: `appgver_3f9d279201208191bf5df2649e83ee82`
+- deployment: `appgdep_6ae24f8ccc28819197e2c81eace26935` · succeeded
+- 소유자 비공개 유지. HUD 페이지의 로컬 링크·이미지·앵커 오류0개.
+- Mac 잠금으로 새 게시 화면의 브라우저 직접 조작은 생략했다. 게임 캡처와 버튼 출력은 실제 기기 검사에서 확인했다.
+
+## 2026-10-29 실제 iPhone HUD 검사와 멈춤 메뉴
+
+[아이폰 설치·조작](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/hud-improvement.html#physical-iphone)과 [SET GAME UI 메뉴](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/hud-improvement.html#pause-menu)를 추가했다. 계기판·무기 버튼 이동 화면3장과 원작 버튼에 맞춘 메뉴의 기본·눌림 화면2장을 실었다.
+
+- 소스: `fc5b45747012d180f30e6aea5376dedc95e1af47`.
+- 배포: `appgdep_6ae231ddb338819193e022917fef0a7c`, `succeeded`. 소유자 전용 유지.
+- 전체 목차45개·내부 링크와 자원1,230개 검사 오류0. 이미지 원본을 직접 확인했다.
+- 화면 도구에 접근 가능한 Mac 창이 없어 새 보고서의 브라우저 검사는 하지 않았다.
+- 아이폰 기존10개·추가3개 검사 통과. 바탕 경계1픽셀 보정 후 새 메뉴 검사1개를 다시 통과했다. [증거](evidence/hud-editor-20261029.json).
+
+
+## 2026-10-29 실제 iPad HUD 설치·검사
+
+[실제 iPad 설치와 조작 검사](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/hud-improvement.html#physical-ipad)에 일반·치트 앱 설치, 자동 검사10개 통과, 계기판·무기 버튼 이동과 기본 복원, 캡처4장을 추가했다.
+
+- 소스: `3a6d692db16f2c8d1f4f74f1d64e5ef534d1a959`.
+- 버전: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_eda569665c8c8191ad44065156cc620b`.
+- 배포: `appgdep_6ae22509dac481918c543d010db842fd`, `succeeded`. 소유자 전용 유지.
+- Safari 로컬 화면에서 본문·이미지를 확인했다. 게시 후 Safari 열기는 `cgWindowNotFound`로 실패했다.
+- [기기 검사 증거](evidence/hud-editor-20261029.json).
+
+## 2026-10-28 HUD 부품·분할 검사
+
+[HUD 부품과 분할 검사](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/hud-improvement.html#asset-audit)에 실제 런타임16개 시트, 묶음별 GPU 출력, 버튼 판정, 수정한 분할선과 재조립 비교를 추가했다. 기존 통합 목차45개를 유지했다.
+
+- 소스 `df8355b7f6b9af75d636d8791ee08ebae360a493`.
+- 배포 `appgdep_6ae20c88617881918c1c776e0e4d09e5`, `succeeded`. 소유자 비공개 유지.
+- 로컬 링크1203개·접힌 이미지2개·자원 복사 일치 검사 통과. SVG 비교 그림을 렌더해 확인했다.
+- CUA에서 창을 찾지 못해 새 페이지의 브라우저 검사는 하지 못했다.
+- [검사 증거](evidence/hud-parts-audit-20261028.json).
+
+## 2026-10-28 HUD 편집 심층 진단
+
+[HUD 배치 편집 설계](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/hud-improvement.html)를 갱신했다. 에셋 분할선, 터치 영역, 일시정지/시작 전 진입, 현재 장면/예시 전투, 저장·검사 순서를 담았다. 자동조준 상태 안내는 별도 페이지로 분리했다.
+
+- Site source: `2a18a20c7fc4b9558886292cf0565d301d3a2702`
+- Deployment: `appgdep_6ae200c4d2f48191b04222f3c5746a4e`, `succeeded`. 소유자 전용 유지.
+- 전체 목차45개. 로컬 링크·앵커1,196개 오류0. Safari에서 절 이동·본문·표를 확인했다.
+- [공용 좌표 코드·검사와 남은 앱 작업](evidence/hud-layout-diagnosis-20261028.json).
+
+
 ## 2026-10-28 v0.13 배포와 HUD 개선 계획
 
 [v0.13 배포·HUD 계획](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/hud-improvement.html)을 통합 목차에 추가했다. 현재 HUD 그림과 코드, 그림 분할·배치 편집·입력·저장·자동조준 상태 안내와 검증 순서를 정리했다. 게임 코드는 변경하지 않았다.
@@ -593,3 +644,23 @@ VTOL 첫 생성 프롬프트와 스킬 수정 커밋을 대조했다. 요청에 
 - deployment: `appgdep_6ae1b846fa688191bf8e770c2de2ef75`, `succeeded`.
 - [수정한 원고](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/lux-lunae-intent.html#games-and-life). 소유자 전용 접근 유지.
 - Safari 로컬에서 추가 문단과 목차 이동을 확인했다. 내부 링크 1,101개, 원문·다운로드 일치, 기존 절 앵커 보존을 검사했다. [검사·배포 기록](evidence/lux-lunae-intent-update-20261028.json).
+
+
+## 2026-10-29 HUD 배치 편집 구현·검사
+
+[HUD 편집 보고서](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/hud-improvement.html#editor-validation)에 직접 드래그·적용·취소·복원한 iPad 화면3장과 패시브 예시1장, iPhone/iPad 시뮬레이터·Mac 기능 검사, Mac 성능 비교를 추가했다. 기존45개 목차 항목과 이전 이미지·절 앵커를 유지했다.
+
+- source: `ec4d08768fd359c47178b7e8b1910e962cd4ccbd`
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_b3765149afa081918a452f5cc7e9b674`
+- deployment: `appgdep_6ae21e56581c8191aedb68a4f986dba2`, `succeeded`.
+- 소유자 전용 접근 유지. 본문 이미지11개와 증거 JSON 경로, Markdown 원고 바이트 일치, HTTP200 확인. 게임 화면 직접 조작을 마친 뒤 Safari/Chrome 창 조회는 `cgWindowNotFound`를 반환해 이번 웹 화면 시각 검사는 수행하지 못했다.
+- [기능·성능 검사](evidence/hud-editor-20261029.json).
+
+## 2026-10-29 HUD 편집 도구 디자인 계획
+
+[편집 도구 변경 계획](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/hud-improvement.html#editor-design)에 사각형 표시 제거, 영문 오른쪽 패널, 원작 금속 버튼, 상단 장식 보존·이동 계획을 추가했다. 기존 앱 화면과 검사 결과는 보존했다.
+
+- source: `ebc0790132ca318c954bb3bb3a76e2df45e3694c`
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_f2e8a7e5cec48191afd5d36f5d194310`
+- deployment: `appgdep_6ae246fe2b4081919d89e64fe3bddb88`, `succeeded`.
+- 소유자 전용 접근 유지. 45개 보고 페이지를 생성하고 내부 링크·파일·절 앵커1,245개 오류0건을 확인했다. 이번 변경의 브라우저 시각 검사는 수행하지 않았다.

@@ -31,6 +31,7 @@ targets:
     - sdk: OpenGL.framework
     - sdk: QuartzCore.framework
     - sdk: CoreGraphics.framework
+    - sdk: CoreText.framework
     - sdk: AudioToolbox.framework
     - sdk: CoreAudio.framework
     preBuildScripts:
@@ -86,6 +87,7 @@ targets:
     - sdk: OpenGL.framework
     - sdk: QuartzCore.framework
     - sdk: CoreGraphics.framework
+    - sdk: CoreText.framework
     - sdk: AudioToolbox.framework
     - sdk: CoreAudio.framework
     preBuildScripts:
@@ -130,6 +132,7 @@ targets:
     dependencies:
     - target: HeavyMachMacValidation
     - sdk: CoreGraphics.framework
+    - sdk: CoreText.framework
     - sdk: AppKit.framework
     - sdk: AVFoundation.framework
     - sdk: OpenGL.framework
