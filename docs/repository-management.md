@@ -11,12 +11,12 @@
 
 ## 현재 태그에서 다시 빌드
 
-v0.12는 main의 `eedf245f`다. v0.10 이후 태그는 게임 자원을 Git/LFS에 포함한다. 별도 폴더에서 이전 버전을 빌드할 수 있다.
+최신 릴리스는 v0.13이다. v0.10 이후 태그는 게임 자원을 Git/LFS에 포함한다. 별도 폴더에서 이전 버전을 빌드할 수 있다.
 
 ```sh
 git fetch origin --tags
-git worktree add --detach ../HeavyMach-v0.12 v0.12
-cd ../HeavyMach-v0.12
+git worktree add --detach ../HeavyMach-v0.13 v0.13
+cd ../HeavyMach-v0.13
 git lfs pull
 python3 tools/verify_build_resources.py
 open HeavyMach.xcworkspace
@@ -67,3 +67,9 @@ Codex가 내 지시에 따라 커밋·dev 병합·브랜치 정리를 진행했�
 내 지시에 따라 남은 문서 작업을 develop에 병합하고, develop을 main에 병합한 커밋에 주석 태그 `v0.12`를 붙인다. 포함 범위는 럭스루나에 전투기3종·금색 조종석·묶음 연사·화면 밖 진입·연사속도10% 조정과 후속 투두/조사 문서다. 당시 아이콘·영상 제작·자동조준 시각 안내·튜토리얼 패키지는 후속 과제였다.
 
 제품 소스·에셋은 두 기기에 설치·검사한 `45befedc`와 같다. 기존 코어21개·시뮬레이터·실기기·Mac의 유효 검사를 재사용하고 문서 연결·자원 해시·병합 결과를 확인한다. 기존 v0.9/v0.10/v0.11 태그를 이동하지 않는다. 이번 버전은 Git 릴리스 태그이며 앱 번들 버전·새 설치 작업은 포함하지 않는다.
+
+## v0.13 — 2026-10-28
+
+쉴카·퉁구스카 추가와 최종 파츠·레이더·포탑 수정을 `feat/ground-aa-refinement`→develop→main 순서로 병합한다. main 병합 커밋에 주석 태그 v0.13을 붙인다. 제품 코드는 `d21cfa1c`, 크기·비율 승인 기록은 `4917fe75`다. 원래 적 배치를 보존하고 35개 스테이지에 152대를 추가했다.
+
+최종 제품의 코어23개·iPad 시뮬레이터2개·iPhone/iPad 각5개 검사는 통과했다. 두 기기의 일반·치트 앱은 같은 제품 코드로 무선 설치했다. 이번 릴리스에서는 소스·자원 해시와 병합 결과를 확인한다. 앱 번들 버전은 기존 값을 유지한다. [실기기 검사](evidence/shilka-height-20261028.json).
