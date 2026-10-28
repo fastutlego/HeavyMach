@@ -1,0 +1,235 @@
+{
+ "schema_version": 1,
+ "date": "2026-10-28",
+ "request": "사용자 지시: 프로젝트를 확인해 Wasm으로 이식하고 웹에서 실행한다. porting/wasm 브랜치에서 진행한다.",
+ "branch": "porting/wasm",
+ "base_commit": "db0a66c667abf3184b95babf3c056f18f8007a28",
+ "executor": "Claude Code (agent direct execution)",
+ "tools": {
+  "emscripten": "6.0.13 (Homebrew)",
+  "cmake": "4.4.2",
+  "node": "26.12.1",
+  "chrome": "Google Chrome 156.0.8078.48 (headless, SwiftShader WebGL2)",
+  "puppeteer_core": "25.16.0",
+  "git_lfs": "Homebrew git-lfs"
+ },
+ "resources": {
+  "command": "python3 tools/verify_build_resources.py",
+  "result": "PASS: 1482 build/test assets; all SHA-256 hashes match"
+ },
+ "web_build": {
+  "commands": [
+   "emcmake cmake -S Web -B build/web -DCMAKE_BUILD_TYPE=Release",
+   "cmake --build build/web"
+  ],
+  "outputs": {
+   "index.wasm": {
+    "bytes": 618169,
+    "sha256": "9fe0f282c8637e6defa82de3ce542210631f530222bc64e6cdd73ea091481303"
+   },
+   "index.js": {
+    "sha256": "5f5941e4bdb2d5bbe55a538b978bbcc7785761d18a8879caa8ac11a7b3cd9072"
+   },
+   "index.html": {
+    "sha256": "2d9ffe3eb1b77dcc56eb6492e500301de721113321a98aef360844ec2d6aacf6"
+   },
+   "hm-assets.js": {
+    "sha256": "52fdfe78453e6ead926b5738a5b5953096f320e75a15c6a38a521cc5926a000c"
+   },
+   "asset_packages": {
+    "tool": "Web/tools/package_assets.py --cap-mib 20 (Emscripten file_packager per package)",
+    "files": 783,
+    "total_bytes": 46159220,
+    "packages": [
+     {
+      "data": "hm-assets-1.data",
+      "files": 468,
+      "bytes": 20905496,
+      "sha256": "8176c4e73c8cea236f692545d1e9ba707f0a17f689f1ec4034902da960d36a10"
+     },
+     {
+      "data": "hm-assets-2.data",
+      "files": 311,
+      "bytes": 20421632,
+      "sha256": "abcc9a346de16c88bf3b6aaf09dcf54be830aab25592df6846828bb46fb4dac2"
+     },
+     {
+      "data": "hm-assets-3.data",
+      "files": 4,
+      "bytes": 4832092,
+      "sha256": "0d48bef7ad508a65c721691db18b3b97a3f61aa7dd175feb26371f2b12013ac9"
+     }
+    ],
+    "contents": [
+     "Resources/OriginalImages",
+     "Resources/Audio",
+     "Resources/RawData",
+     "Art/Extensions"
+    ],
+    "reason": "Cloudflare Pages rejects files over 25 MiB; the earlier single index.data was 46,159,220 bytes. Same 783 files and /assets paths; total bytes unchanged."
+   },
+   "superseded_2026_10_28": {
+    "index.wasm_sha256": "6e99cea7295d08d0de13a8288ffd3a05764db714f73ff03e6e93a58b23246f74",
+    "index.data_sha256": "08a1df1aead1815c198658fa7940551a1362e4fd35effde3f4f2f7c302dc362d"
+   }
+  },
+  "warnings": "Existing GameSession missing-field-initializer warnings (9) and unused stb functions; no new errors."
+ },
+ "core_tests_wasm": {
+  "commands": [
+   "emcmake cmake -S . -B build/web-core-tests -DCMAKE_BUILD_TYPE=Release -DHM_BUILD_VALIDATION_TESTS=ON -DCMAKE_CXX_FLAGS=-fwasm-exceptions -DCMAKE_EXE_LINKER_FLAGS='-fwasm-exceptions -sNODERAWFS=1 -sALLOW_MEMORY_GROWTH=1 -sSTACK_SIZE=8MB'",
+   "cmake --build build/web-core-tests",
+   "ctest --output-on-failure -j4"
+  ],
+  "result": "100% tests passed out of 21 (Node, NODERAWFS)"
+ },
+ "browser_smoke": {
+  "script": "Web/tests/browser-smoke.mjs",
+  "viewport": "912x420 landscape (iPhone Air logical ratio)",
+  "desktop_runs": {
+   "count": 10,
+   "passed": 10,
+   "fire_start_max_bullets": [
+    3,
+    3,
+    5,
+    3,
+    4,
+    4,
+    2,
+    4,
+    3,
+    3
+   ]
+  },
+  "touch_emulation_run": {
+   "passed": true,
+   "deviceScaleFactor": 2,
+   "game_frames_per_second": 59.9
+  },
+  "checked_steps": [
+   "title 59.9-60.4 game ticks/s",
+   "title -> slots -> mode -> mission -> stage 1-1",
+   "keyboard move right (x -1040 -> about -867)",
+   "keyboard fire (bullets > 0)",
+   "jump (y -40.5 -> about 13)",
+   "auto-aim A on/off with LOCKED target",
+   "Escape pause",
+   "HvM.dat 3624 bytes after slot select",
+   "reload restores 3624-byte save and occupied slot"
+  ],
+  "console_errors_final": 0,
+  "runs_2026_10_29": [
+   {
+    "url": "http://127.0.0.1:8765/",
+    "viewport": "912x420",
+    "passed": true,
+    "canvas": [
+     694.857,
+     320
+    ],
+    "note": "split asset packages, after 4:3 cap"
+   },
+   {
+    "url": "http://127.0.0.1:8765/",
+    "viewport": "690x805",
+    "passed": true,
+    "canvas": [
+     480,
+     360
+    ],
+    "note": "tall window letterboxed to 4:3"
+   },
+   {
+    "url": "http://127.0.0.1:8788/game/heavy_mach/",
+    "server": "wrangler 4 pages dev on fastutle-site _site (branch test/heavy-mach-web, local)",
+    "viewport": "912x420",
+    "passed": true,
+    "console_errors": 0
+   },
+   {
+    "url": "http://127.0.0.1:8788/game/heavy_mach/",
+    "server": "same",
+    "viewport": "690x805",
+    "passed": true,
+    "console_errors": 0
+   }
+  ]
+ },
+ "findings": [
+  {
+   "id": "idbfs-global",
+   "result": "fixed",
+   "detail": "IDBFS not exported as a global; exported via EXPORTED_RUNTIME_METHODS and mounted with Module.IDBFS."
+  },
+  {
+   "id": "audio-resume-mouse",
+   "result": "fixed",
+   "detail": "pointerdown preventDefault suppressed mousedown that resumes the Emscripten OpenAL AudioContext."
+  },
+  {
+   "id": "portrait-running",
+   "result": "fixed",
+   "detail": "Portrait phone notice covered a still-running game; portrait is now treated as inactive."
+  },
+  {
+   "id": "keyboard-aim-threshold",
+   "result": "shared behaviour, moved to TODO",
+   "detail": "Keyboard aim starts at player+100, on the setTap 0x1d300 100-unit threshold from the moving muzzle. Immediate fire without aim keys did not start in 2 of 6 headless runs; after moving the aim with ArrowRight, 10 of 10 fired. iOS/Mac use the same ensureKeyboardAim code."
+  },
+  {
+   "id": "tall-window-canvas",
+   "result": "fixed",
+   "detail": "A desktop browser window taller than 4:3 (user report, 690x805 CSS) produced a 480x560 logical canvas, outside the Apple range (iPad 4:3, 480x360). WebGameView now caps the drawable height used for CanvasGeometry at width*3/4; Viewport::drawable letterboxes the rest. Core and iOS unchanged."
+  }
+ ],
+ "not_checked": [
+  "physical phone tilt/touch/audio",
+  "Safari and Firefox",
+  "speaker output",
+  "90/120 Hz displays",
+  "cheat web build (not built)",
+  "physical phone on https://fastutle.com/game/heavy_mach/",
+  "asset redistribution permission"
+ ],
+ "unchanged": [
+  "Sources/Core",
+  "Sources/iOS",
+  "Sources/Apple",
+  "Sources/Mac",
+  "Xcode projects"
+ ],
+ "site_test_deployment": {
+  "repository": "fastutle-site main (fastutlego/fastutle-site)",
+  "path": "/game/heavy_mach/",
+  "headers": "_headers detaches the site CSP and sets one with wasm-unsafe-eval; X-Robots-Tag noindex; excluded from sitemap",
+  "site_tests": "scripts/build.sh && python3 -m unittest tests.test_site: 117 passed",
+  "wrangler_headers_checked": "/game/heavy_mach/ returns a single CSP with wasm-unsafe-eval; / keeps the site CSP; /game/heavy_mach 308 -> /game/heavy_mach/; index.wasm application/wasm",
+  "deployed": true,
+  "commit": "0be8788",
+  "push": "2d92fa4..0be8788 main, 2026-10-29, user instruction",
+  "url": "https://fastutle.com/game/heavy_mach/",
+  "live_checks": {
+   "responses": "index.wasm 200 application/wasm 618169B; hm-assets-1/2/3.data 200; /game/heavy_mach 308; / keeps site CSP; sitemap has no /game/",
+   "browser_smoke": [
+    {
+     "viewport": "912x420",
+     "steps_passed": true,
+     "canvas": [
+      694.857,
+      320
+     ]
+    },
+    {
+     "viewport": "690x805",
+     "steps_passed": true,
+     "canvas": [
+      480,
+      360
+     ]
+    }
+   ],
+   "console": "Only error: Cloudflare Web Analytics beacon (static.cloudflareinsights.com) blocked by CSP; same error on https://fastutle.com/ and /comicviewer/ (site-wide, pre-existing)."
+  }
+ }
+}
