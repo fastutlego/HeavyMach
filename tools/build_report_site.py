@@ -57,6 +57,7 @@ def article(source,dest,download,template):
         readme_ids['색·질감 수정 시안']='texture-proposal'
         readme_ids['공중 유닛 화풍을 참조한 수정 시안']='aircraft-style'
         readme_ids['현재 에셋으로 다시 그린 두 시안']='runtime-style'
+        readme_ids['새 파츠와 레이더 적용']='integrated'
         readme_ids['GitHub main 독립 빌드 재검사']='independent-build'
         readme_ids['해리어 참조 오류 정정']='reference-audit'
     if source == ROOT/'docs/ground-aa-expansion.md':
@@ -169,6 +170,12 @@ def main():
             style=page.new_tag('style');style.string='.lux-small{display:flex;gap:24px;flex-wrap:wrap;align-items:center;padding:20px;background:#4c524f}.lux-small figure{margin:0}.lux-small img{max-width:none}.lux-small figcaption{font-size:12px;color:#fff}.lux-small a{display:block}'
             page.head.append(style)
         if page_name == 'ground-aa-art.html':
+            for anchor in page.select('a#integrated'): anchor.decompose()
+            for link in list(page.select('a[href^="media/ground-aa/integrated/"][href$=".mp4"]')):
+                video=page.new_tag('video',controls='',playsinline='',preload='metadata',loop='')
+                video['aria-label']=link.get_text()
+                video.append(page.new_tag('source',src=link['href'],type='video/mp4'))
+                link.parent.insert_before(video)
             style=page.new_tag('style');style.string='.gaa-art-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;background:#626e70;padding:20px}.gaa-art-pair figure{margin:0;min-width:0}.gaa-art-pair img{width:100%;height:auto}.gaa-art-pair figcaption{font-size:14px;color:#fff}.gaa-reference-strip{display:flex;flex-wrap:wrap;align-items:center;gap:28px;padding:24px;background:#626e70}.gaa-reference-strip figure{margin:0}.gaa-reference-strip img{max-width:none;width:auto;margin:0}.gaa-reference-strip img[width="200"]{width:200px}.gaa-reference-strip img[width="99"]{width:99px}.gaa-reference-strip img[width="126"]{width:126px}.gaa-reference-strip img[width="92"]{width:92px}.gaa-reference-strip img[width="90"]{width:90px}.gaa-reference-strip img[width="86"]{width:86px}.gaa-reference-strip img[width="114"]{width:114px}.gaa-reference-strip figcaption{font-size:13px;color:#fff;margin-top:8px}'
             page.head.append(style)
         for link in page.select('a[href]'):
@@ -225,6 +232,10 @@ def main():
                 node[attr] = 'evidence/ground-aa-runtime-style-'+Path(rel).name
             elif rel == 'docs/evidence/independence-main-20261028.json':
                 node[attr] = 'evidence/independence-main-20261028.json'
+            elif rel.startswith('Art/GroundAA/20261028-integrated/') and rel.endswith('.json'):
+                node[attr] = 'evidence/ground-aa-integrated-'+Path(rel).name
+            elif rel == 'docs/evidence/ground-aa-integrated-20261028.json':
+                node[attr] = 'evidence/ground-aa-integrated-20261028.json'
             elif rel == 'docs/evidence/ground-aa-20261028.json':
                 node[attr] = 'evidence/ground-aa-20261028.json'
             elif rel.startswith('docs/public/media/'):
@@ -268,6 +279,9 @@ def main():
     for file in (ROOT/'Art/GroundAA/20261028-runtime-style').glob('*.json'):
         shutil.copyfile(file,dist/'evidence'/('ground-aa-runtime-style-'+file.name))
     shutil.copyfile(ROOT/'docs/evidence/independence-main-20261028.json',dist/'evidence/independence-main-20261028.json')
+    for file in (ROOT/'Art/GroundAA/20261028-integrated').glob('*.json'):
+        shutil.copyfile(file,dist/'evidence'/('ground-aa-integrated-'+file.name))
+    shutil.copyfile(ROOT/'docs/evidence/ground-aa-integrated-20261028.json',dist/'evidence/ground-aa-integrated-20261028.json')
     shutil.copyfile(ROOT/'docs/evidence/ground-aa-20261028.json',dist/'evidence/ground-aa-20261028.json')
     shutil.copyfile(ROOT/'docs/evidence/lux-lunae-implementation-20261027.json',dist/'evidence/lux-lunae-implementation-20261027.json')
     for suffix in ['txt','cpp']:

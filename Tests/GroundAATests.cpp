@@ -31,11 +31,20 @@ int main(){auto root=std::filesystem::path(__FILE__).parent_path().parent_path()
   for(float angle:{-.4f,0.f,.4f})for(float bounce:{-1.f,0.f,1.f}){
    auto bd=drawParts(body,{100,50},angle,bounce,1,1,1),td=drawParts(top,{100,50},angle,bounce,1,1,1);
    float dx=td.position.x-bd.position.x,dy=td.position.y-bd.position.y;Vector2 relative{dx*std::cos(angle)+dy*std::sin(angle),-dx*std::sin(angle)+dy*std::cos(angle)};
-   for(int frame=0;frame<8;++frame){auto rd=drawParts(radar,{100,50},angle,bounce,1,1,frame*.25);configureGroundAADraw(rd,radar,frame*.25);const auto* art=groundAAImage(rd.tile);float rx=rd.position.x-td.position.x,ry=rd.position.y-td.position.y;float baseY=-rx*std::sin(angle)+ry*std::cos(angle)-art->size.y/2;assert(baseY<=2.1f);}
+   for(int frame=0;frame<groundAARadarFrames;++frame){
+    double time=(frame+.25)*groundAARadarPeriod/groundAARadarFrames;
+    auto rd=drawParts(radar,{100,50},angle,bounce,1,1,time);configureGroundAADraw(rd,radar,time);
+    const auto* art=groundAAImage(rd.tile);assert(art);
+    float rx=rd.position.x-td.position.x,ry=rd.position.y-td.position.y;
+    Vector2 axle{rx*std::cos(angle)+ry*std::sin(angle)+art->radarAnchorX,-rx*std::sin(angle)+ry*std::cos(angle)+art->radarAnchorY};
+    // Actual fixed pedestal socket must stay still through all yaw frames.
+    assert(std::abs(axle.x-top.info->sockets[2].x)<.001f);
+    assert(std::abs(axle.y-top.info->sockets[2].y)<.001f);
+   }
    assert(std::abs(relative.x)<.001f);assert(relative.y-t.y/2<=b.y/2-(id.find("Shilka")!=std::string::npos?3.9f:1.9f));
   }
  }
  for(const auto& art:groundAAImages())assert(std::filesystem::exists(root/"Art"/art.source));
- for(auto name:{"GAA_Shilka_M1_Radar","GAA_Tunguska_M7_Radar"}){PartsState p;p.info=&data.parts.at(name);p.rotation=.15;for(int n=0;n<8;++n){DrawSprite d;d.rotation=.15;configureGroundAADraw(d,p,n*.25);assert(d.tile==groundAAPartTile(name,n));assert(d.rotation==.15f);}}
+ for(auto name:{"GAA_Shilka_M1_Radar","GAA_Tunguska_M7_Radar"}){PartsState p;p.info=&data.parts.at(name);p.rotation=.15;for(int n=0;n<groundAARadarFrames;++n){DrawSprite d;d.rotation=.15;configureGroundAADraw(d,p,(n+.25)*groundAARadarPeriod/groundAARadarFrames);assert(d.tile==groundAAPartTile(name,n));assert(d.rotation==.15f);}}
  std::cout<<"Ground AA definitions, original spawns, all 35 stages, bursts, pause and radar passed; added="<<total<<'\n';
 }

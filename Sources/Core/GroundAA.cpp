@@ -15,16 +15,17 @@ std::string groundAAPartTile(std::string_view part,int frame){
  auto start=part.find("_M"),end=part.find('_',start+2);if(end==std::string_view::npos)return {};
  std::string kind(part.substr(end+1));
  if(kind=="Body"&&frame)kind="Body2";
- if(kind=="Radar")kind+=std::to_string(frame%8);
+ if(kind=="Radar")kind+=std::to_string(frame%groundAARadarFrames);
  return "Extensions/"+std::string(part.substr(0,start))+"_"+kind+".png";
 }
 std::optional<Vector2> groundAAPartSize(std::string_view part){if(auto a=groundAAImage(groundAAPartTile(part)))return a->size;return {};}
 void configureGroundAADraw(DrawSprite& d,const PartsState& p,double time){
  if(!p.info||!isGroundAA(p.info->name))return;
- bool radar=p.info->name.ends_with("_Radar");int frame=radar?int(std::floor(std::max(0.,time)*4))%8:p.tileFrame;
+ bool radar=p.info->name.ends_with("_Radar");int frame=radar?int(std::floor(std::fmod(std::max(0.,time),groundAARadarPeriod)*groundAARadarFrames/groundAARadarPeriod)):p.tileFrame;
  d.tile=groundAAPartTile(p.info->name,frame);d.cols=d.rows=1;d.frame=0;
- if(radar){const auto* a=groundAAImage(d.tile);float dx=a?-a->radarAnchorX:0;
-  d.position.x+=dx*std::cos(p.rotation);d.position.y+=dx*std::sin(p.rotation);}
+ if(radar){const auto* a=groundAAImage(d.tile);float dx=a?-a->radarAnchorX:0,dy=a?-a->radarAnchorY:0;
+  d.position.x+=dx*std::cos(p.rotation)-dy*std::sin(p.rotation);
+  d.position.y+=dx*std::sin(p.rotation)+dy*std::cos(p.rotation);}
 }
 namespace {
 struct GroundHost:WorldHost{Vector2 tileSize(std::string_view)override{return {480,320};}void spawnMapObject(const MapObjectDefinition&,int)override{}void spawnEnemy(const EnemyDefinition&)override{}void spawnPlayer(Vector2)override{}void event(const WorldEvent&)override{}};
@@ -72,9 +73,9 @@ void addGroundAAExpansion(GameData& data){
    std::string id=std::string(tung?"GAA_Tunguska_M":"GAA_Shilka_M")+std::to_string(mission+1);
    auto part=[&](const char* suffix,int type,int count,std::vector<Vector2> sockets){PartsInfo p;p.name=id+suffix;p.partsType=type;p.tileCnt=count;p.sockets=std::move(sockets);data.parts.emplace(p.name,p);return p.name;};
    auto body=part("_Body",0,2,{{0,tung?-11.f:-9.f},{0,tung?9.f:5.f}});
-   auto top=part("_Turret",1,1,{{0,tung?-11.5f:-7.f},{tung?-18.f:-19.f,-1.f},{14,2.f},{12,0}});
+   auto top=part("_Turret",1,1,{{0,tung?-14.5f:-8.f},{tung?-18.f:-19.f,tung?-4.f:-1.f},{tung?20.f:17.5f,tung?4.f:4.5f},{12,-3}});
    auto gun=part("_Gun",2,1,{{tung?14.f:11.f,-2.f},{tung?-18.5f:-16.f,1.f}});
-   auto radar=part("_Radar",1,1,{{0,tung?-6.5f:-8.f}});
+   auto radar=part("_Radar",1,1,{{0,0}});
    char original[40];snprintf(original,sizeof(original),"E_Tank_Wpn_%02d",mission+1);auto w=data.weapons.at("E_Tank_Wpn_01");w.dmg=data.weapons.at(original).dmg;w.spd=data.weapons.at(original).spd;w.name=gun;w.shotCnt=tung?4:6;w.shotDly=data.weapons.at("E_0505_Wpn").shotDly;data.weapons.emplace(gun,w);
    MachPartDefinition turret{top,1,1,{{radar,2,0,{}},{gun,1,2,{}}}};
    if(tung){auto missile=part("_Missile",2,1,{{9,-3},{-15,3}});snprintf(original,sizeof(original),"E_ArmoCar_Msl_%02d",std::min(mission+1,5));w=data.weapons.at(original);w.name=missile;w.shotCnt=2;w.shotDly=.5f;data.weapons.emplace(missile,w);turret.children.push_back({missile,3,3,{}});}

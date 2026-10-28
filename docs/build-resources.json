@@ -7484,6 +7484,26 @@
       "path": "Art/Extensions/GAA_Tunguska_Turret.png",
       "bytes": 1479396,
       "sha256": "164754098fe7d5390dc43e3eedddaa18942e280118788de45cc2df6307f06aad"
+    },
+    {
+      "path": "Art/Extensions/GAA_Shilka_Parts_v2.png",
+      "bytes": 2419679,
+      "sha256": "53bb7031b265ab3439d64c217259f75d2351359fdd446e2519fef174339c8e6a"
+    },
+    {
+      "path": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+      "bytes": 2385714,
+      "sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167"
+    },
+    {
+      "path": "Art/Extensions/GAA_Tunguska_Parts_v2.png",
+      "bytes": 2308990,
+      "sha256": "a43afb7e3111085b6c1d9d841d3640976211e33e951537fef81324b48a3dcc8a"
+    },
+    {
+      "path": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+      "bytes": 2026384,
+      "sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02"
     }
   ]
 }

@@ -129,7 +129,7 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
   std::set<std::string> radars,bodies;size_t maxBullets=0;NSUInteger writes=((HMInputTestView*)self.game).gameSaveCalls;std::vector<double> work;
   for(int tick=0;tick<420;++tick){auto start=std::chrono::steady_clock::now();frames(self.game,1);if(tick>=60)work.push_back(std::chrono::duration<double,std::milli>(std::chrono::steady_clock::now()-start).count());maxBullets=std::max(maxBullets,session->bulletCount());
    for(const auto& d:session->sprites())if(d.tile.starts_with("Extensions/GAA_")){XCTAssertTrue(std::isfinite(d.rotation));if(d.tile.find("Radar")!=std::string::npos)radars.insert(d.tile);if(d.tile.find("Body")!=std::string::npos)bodies.insert(d.tile);}
-   if(tick==120||tick==240){
+   if(tick==120||tick==240||(tick<120&&tick%5==0)){
 #if TARGET_OS_OSX
     NSImage* picture=[gl snapshot];NSData* png=[[NSBitmapImageRep imageRepWithData:picture.TIFFRepresentation]representationUsingType:NSBitmapImageFileTypePNG properties:@{}];
 #else
@@ -138,7 +138,7 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
     XCTAssertNotNil(png);if(png){XCTAttachment* a=[XCTAttachment attachmentWithData:png uniformTypeIdentifier:@"public.png"];a.name=[NSString stringWithFormat:@"GroundAA_%s_%d",unit,tick];a.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:a];}
    }
   }
-  XCTAssertGreaterThanOrEqual(radars.size(),size_t(8));XCTAssertGreaterThanOrEqual(bodies.size(),size_t(2));XCTAssertGreaterThan(maxBullets,size_t(2));XCTAssertEqual(((HMInputTestView*)self.game).gameSaveCalls,writes);
+  XCTAssertEqual(radars.size(),size_t(heavymach::groundAARadarFrames));XCTAssertGreaterThanOrEqual(bodies.size(),size_t(2));XCTAssertGreaterThan(maxBullets,size_t(2));XCTAssertEqual(((HMInputTestView*)self.game).gameSaveCalls,writes);
   session->setPaused(true);double time=session->world().gameTime;frames(self.game,30);XCTAssertEqual(session->world().gameTime,time);session->setPaused(false);frames(self.game,30);XCTAssertGreaterThan(session->world().gameTime,time);
   std::sort(work.begin(),work.end());NSLog(@"HM_GROUND_AA %s radar_frames=%zu body_frames=%zu max_bullets=%zu work_p95_ms=%.3f shot_save_calls=%lu",unit,radars.size(),bodies.size(),maxBullets,work[work.size()*95/100],(unsigned long)(((HMInputTestView*)self.game).gameSaveCalls-writes));
  }

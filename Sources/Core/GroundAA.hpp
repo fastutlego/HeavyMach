@@ -9,7 +9,10 @@ struct GroundAAImage {
  std::array<int,4> crop; // authored pixels, top-down x/y/width/height
  Vector2 size; // cached logical pixels
  float radarAnchorX=0;
+ float radarAnchorY=0;
 };
+inline constexpr int groundAARadarFrames=24;
+inline constexpr double groundAARadarPeriod=2.0;
 const std::vector<GroundAAImage>& groundAAImages();
 const GroundAAImage* groundAAImage(std::string_view name);
 bool isGroundAA(std::string_view name);
