@@ -22,6 +22,7 @@ int main(){auto root=std::filesystem::path(__FILE__).parent_path().parent_path()
   state={};state.weaponInfo=&w;frame.time=4;fireWeapon(state,frame,host);int remaining=state.fireCount;frame.paused=true;frame.time=30;tickWeapon(state,frame,host);assert(state.fireCount==remaining);
  }
  for(const auto& [name,w]:before.weapons){auto& n=data.weapons.at(name);assert(w.shotCnt==n.shotCnt&&w.shotDly==n.shotDly&&w.spd==n.spd&&w.dmg==n.dmg);}
+ assert(groundAAPartSize("GAA_Shilka_M1_Turret")->y==groundAAPartSize("GAA_Tunguska_M1_Turret")->y);
  // Body/turret must overlap at their solid join on flat and sloped terrain.
  for(const char* unit:{"GAA_Shilka_M1","GAA_Tunguska_M1"}){
   std::string id=unit;PartsState body,top;body.info=&data.parts.at(id+"_Body");top.info=&data.parts.at(id+"_Turret");

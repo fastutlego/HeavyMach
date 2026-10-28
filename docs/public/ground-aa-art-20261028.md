@@ -1,5 +1,23 @@
 # 쉴카·퉁구스카 도안과 구현
 
+## 두 포탑 높이 맞춤
+
+쉴카 포탑 높이를 16에서 퉁구스카와 같은 29로 늘렸다. 폭은 쉴카51·퉁구스카50을 유지했다. 새로 그린 쉴카 포탑 그림을 그대로 사용하고, 세로 표시 크기를 바꿨다. 포탑 바닥·포신·레이더 연결점도 함께 조정했다.
+
+![높이 수정 전](media/ground-aa/shilka-turret/iphone-comparison.png)
+
+![높이 수정 후](media/ground-aa/shilka-height/comparison.png)
+
+![아이폰에서 이동과 사격](media/ground-aa/shilka-height/shilka.png)
+
+[높이를 맞춘 쉴카 이동·레이더 영상](media/ground-aa/shilka-height/motion.mp4)
+
+아이폰에서 촬영했다. 코어 23개, 시뮬레이터 2개, 아이폰·아이패드 각각 5개 검사가 통과했다. 두 기기의 일반·치트 앱을 무선 업데이트했고 일반 앱도 실행했다. 무장·배치·덜컹거림은 유지했다.
+
+[검사 기록](../evidence/shilka-height-20261028.json)
+
+---
+
 ## 쉴카 포탑 높이 수정
 
 퉁구스카의 비율은 유지하고, 납작해 보이는 쉴카 포탑을 수정했다.

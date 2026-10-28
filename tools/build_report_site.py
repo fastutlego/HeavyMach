@@ -59,6 +59,7 @@ def article(source,dest,download,template):
         readme_ids['현재 에셋으로 다시 그린 두 시안']='runtime-style'
         readme_ids['새 파츠와 레이더 적용']='integrated'
         readme_ids['쉴카 포탑 높이 수정']='shilka-turret'
+        readme_ids['두 포탑 높이 맞춤']='matched-height'
         readme_ids['GitHub main 독립 빌드 재검사']='independent-build'
         readme_ids['해리어 참조 오류 정정']='reference-audit'
     if source == ROOT/'docs/ground-aa-expansion.md':
@@ -235,6 +236,8 @@ def main():
                 node[attr] = 'evidence/independence-main-20261028.json'
             elif rel.startswith('Art/GroundAA/20261028-shilka-turret/') and rel.endswith('.json'):
                 node[attr] = 'evidence/shilka-turret-'+Path(rel).name
+            elif rel == 'docs/evidence/shilka-height-20261028.json':
+                node[attr] = 'evidence/shilka-height-20261028.json'
             elif rel == 'docs/evidence/shilka-turret-20261028.json':
                 node[attr] = 'evidence/shilka-turret-20261028.json'
             elif rel.startswith('Art/GroundAA/20261028-integrated/') and rel.endswith('.json'):
@@ -286,6 +289,7 @@ def main():
     shutil.copyfile(ROOT/'docs/evidence/independence-main-20261028.json',dist/'evidence/independence-main-20261028.json')
     for file in (ROOT/'Art/GroundAA/20261028-shilka-turret').glob('*.json'):
         shutil.copyfile(file,dist/'evidence'/('shilka-turret-'+file.name))
+    shutil.copyfile(ROOT/'docs/evidence/shilka-height-20261028.json',dist/'evidence/shilka-height-20261028.json')
     shutil.copyfile(ROOT/'docs/evidence/shilka-turret-20261028.json',dist/'evidence/shilka-turret-20261028.json')
     for file in (ROOT/'Art/GroundAA/20261028-integrated').glob('*.json'):
         shutil.copyfile(file,dist/'evidence'/('ground-aa-integrated-'+file.name))

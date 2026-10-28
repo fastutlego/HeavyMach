@@ -1,7 +1,7 @@
 // Generated from Art/GroundAA/20261028-shilka-turret/manifest.json. Source pixels stay unchanged.
   {"Extensions/GAA_Shilka_Body.png","Extensions/GAA_Shilka_Parts_v2.png",{95,26,1307,282},{80,18},0.00000f,0.00000f},
   {"Extensions/GAA_Shilka_Body2.png","Extensions/GAA_Shilka_Parts_v2.png",{96,343,1309,282},{80,18},0.00000f,0.00000f},
-  {"Extensions/GAA_Shilka_Turret.png","Extensions/GAA_Shilka_Turret_v3.png",{84,95,1804,578},{51,16},0.00000f,0.00000f},
+  {"Extensions/GAA_Shilka_Turret.png","Extensions/GAA_Shilka_Turret_v3.png",{84,95,1804,578},{51,29},0.00000f,0.00000f},
   {"Extensions/GAA_Shilka_Gun.png","Extensions/GAA_Shilka_Parts_v2.png",{445,904,580,113},{32,6},0.00000f,0.00000f},
   {"Extensions/GAA_Tunguska_Body.png","Extensions/GAA_Tunguska_Parts_v2.png",{12,93,998,265},{85,22},0.00000f,0.00000f},
   {"Extensions/GAA_Tunguska_Body2.png","Extensions/GAA_Tunguska_Parts_v2.png",{13,417,999,265},{85,22},0.00000f,0.00000f},

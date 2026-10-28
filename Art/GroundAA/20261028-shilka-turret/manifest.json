@@ -92,7 +92,7 @@
       ],
       "size": [
         51,
-        16
+        29
       ],
       "anchor": [
         0,
@@ -1091,6 +1091,13 @@
   "source_outputs": [
     "exec-18c0da02-2ed0-49f6-9a47-ef8018041832.png"
   ],
-  "revision": "Shilka armored side height and rear volume, 2026-10-28",
-  "previous_manifest": "Art/GroundAA/20261028-integrated/manifest.json"
+  "revision": "Shilka turret display height matched to Tunguska: 29 logical pixels",
+  "previous_manifest": "Art/GroundAA/20261028-integrated/manifest.json",
+  "height_adjustment": {
+    "requested_by": "user",
+    "old_height": 16,
+    "new_height": 29,
+    "width": 51,
+    "method": "existing HMMedia logical-size scaling; PNG unchanged"
+  }
 }
