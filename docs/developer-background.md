@@ -20,6 +20,8 @@
 
 9. [Cydia 이후 미국 App Store 구매 경위](references/developer-background/user-cydia-purchase-20261028.md). Cydia로 처음 접한 뒤 미국 계정을 만드는 방법을 검색해 구매했다. 당시 한국 스토어에 게임 카테고리가 없었다는 경험을 README와 개발자의 변에 반영했다.
 
+10. [왜 럭스루나에인가](public/lux-lunae-intent-20261028.md). 두 게임의 개인적인 의미, 달빛에 관한 경험, 보스전 기획과 기술 검증 의도를 담았다. [대화 원문 14개](references/developer-background/user-lux-lunae-intent-20261028.md)와 [데스 스트랜딩 사연 출처](references/developer-background/death-stranding-community-story-20261028.md)를 함께 읽는다.
+
 ## 경위
 
 | 시점 | 기록된 내용 | 근거 |

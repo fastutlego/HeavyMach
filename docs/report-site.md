@@ -565,3 +565,21 @@ VTOL 첫 생성 프롬프트와 스킬 수정 커밋을 대조했다. 요청에 
 ## 2026-10-28 GitHub 후속 작업
 
 기존 사이트에 도입문·기여 안내·CI·v0.12 소스 릴리스와 재링크 결과를 반영했다. 소스 `cc278f6b1e9c84382e221094e4e240a4b98fbf61`, 버전 `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_d6fc6009c8f881919aeb2c09a54b6627`, 배포 `appgdep_6ae0d714da7481918274d5b928a82b4d`, 결과 `succeeded`다. 원래 소유자 전용 접근 범위를 유지했다. 문서40개·내부 링크873개·기존 게임 이미지10개 보존을 확인했다. Safari 로컬 README 화면을 확인했고 배포 후 Safari 호출은 `cgWindowNotFound`로 실패했다. [배포·검사 기록](evidence/github-followup-20261028.json)
+
+
+## 2026-10-28 럭스루나에 기획 의도·도안·게임 화면
+
+[럭스루나에를 넣은 이유](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/lux-lunae-intent.html)에 개인 경험·보스전 기획·기술 검증 의도, 최종 도안 3장, 게임·크기 비교 화면 4장과 13초 플레이 영상을 게시했다. 원문 11개를 접힌 항목으로 보존했다. 기존 통합 목차에서 연결하며 소유자 전용 접근을 유지했다.
+
+- source: `8c2908aac50d8cc2b2668c92c6ef010b589429cf`
+- deployment: `appgdep_6ae1aed466dc8191b4a23b0f9f6fb459`, `succeeded`.
+- [자료 대조·브라우저·배포 검사](evidence/lux-lunae-intent-report-20261028.json).
+
+## 2026-10-28 「왜 럭스루나에인가」 후속 원고
+
+데스 스트랜딩 사연과 두 게임의 개인적인 의미, 강한 적을 만든 이유, 기술 검증과 현재의 수정 작업을 연결했다. 후속 답변을 포함해 원문 14개를 보존했다. 기존 도안·게임 화면 7장과 영상 1개를 유지했다.
+
+- source: `876ed1e30f94474979991fad50fb77d924d99f46`
+- deployment: `appgdep_6ae1b846fa688191bf8e770c2de2ef75`, `succeeded`.
+- [수정한 원고](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/lux-lunae-intent.html#games-and-life). 소유자 전용 접근 유지.
+- Safari 로컬에서 추가 문단과 목차 이동을 확인했다. 내부 링크 1,101개, 원문·다운로드 일치, 기존 절 앵커 보존을 검사했다. [검사·배포 기록](evidence/lux-lunae-intent-update-20261028.json).
