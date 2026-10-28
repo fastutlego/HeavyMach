@@ -1,5 +1,15 @@
 # HeavyMach 보고 사이트
 
+## 2026-10-28 v0.13 배포와 HUD 개선 계획
+
+[v0.13 배포·HUD 계획](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/hud-improvement.html)을 통합 목차에 추가했다. 현재 HUD 그림과 코드, 그림 분할·배치 편집·입력·저장·자동조준 상태 안내와 검증 순서를 정리했다. 게임 코드는 변경하지 않았다.
+
+- Site source: `c95c404c678bb8fbf81355286c2d36a290d3e511`
+- Deployment: `appgdep_6ae1f6403d9c81918dc2cfd293f04ca1`, `succeeded`, 소유자 전용 유지.
+- 전체 목차44개, 내부 링크·앵커1,187개, 원고 복사 일치 확인. 로컬 Safari에서 본문·표·이미지 폭·절 이동을 확인했다.
+- [릴리스·검사·게시 기록](evidence/v0.13-hud-plan-20261028.json).
+
+
 ## 2026-10-27 문장 수정
 
 GitHub 문서 계획·미디어 보고·SaaS 집필 안내에서 작성자 지침과 자기설명을 제거하고 기능의 실제 동작·구현·현재 상태로 고쳤다. 링크549개·Markdown3개 일치·기존 제목·이미지8장·영상3개를 확인했다.
