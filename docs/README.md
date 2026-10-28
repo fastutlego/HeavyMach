@@ -1,6 +1,6 @@
 # HeavyMach 문서
 
-게임 버전은 v0.12다. [프로젝트 소개와 플레이 화면](../README.md)에서 시작하거나 아래 주제로 바로 이동할 수 있다.
+게임 버전은 v0.13이다. [프로젝트 소개와 플레이 화면](../README.md)에서 시작하거나 아래 주제로 바로 이동할 수 있다.
 
 ## 게임과 개발 과정
 
@@ -17,8 +17,9 @@
 | [검증](public/validation.md) | 기기·조건·빌드별 결과와 남은 검사 |
 | [쉴카·퉁구스카 도안](public/ground-aa-art-20261028.md) | 새 외형·파츠 분해도와 기존 유닛 조립 구조 비교 |
 | [지상 유닛 추가 연구](public/ground-units-research-20261028.md) | 쉴카·퉁구스카, 원작 파츠·무기·움직임 재사용과 남은 TODO |
+| [HUD 개선 계획](public/hud-improvement-plan-20261028.md) | 그림 분할·배치 편집·입력·자동조준 상태 안내 |
 | [구현 상태](public/implementation-status.md) | 구현·문서 작업·후속 과제 |
-| [변경 이력](../CHANGELOG.md) | v0.9~v0.12와 미출시 문서 변경 |
+| [변경 이력](../CHANGELOG.md) | v0.9~v0.13과 미출시 문서 변경 |
 | [제작자·자원](../CREDITS.md) | 원작, 기획·구현 역할, 그림·라이브러리 |
 | [저장소 관리](repository-management.md) | develop→main, 태그와 이전 버전 재빌드 |
 
