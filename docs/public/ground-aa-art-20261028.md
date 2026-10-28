@@ -2,18 +2,40 @@
 
 차체·포탑·포신·발사관·레이더를 모두 새로 그렸다. 위쪽은 조립된 모습, 아래쪽은 분리할 파츠다. 원작 지상 유닛 5종의 파츠 연결점·겹침 순서·회전 설정을 확인해 조립안을 작성했다.
 
+## 해리어 참조 오류 정정
+
+보고서에서 ‘채택된 해리어’라고 보여준 그림은 탈락한 첫 시안이었다. 생성 도구에는 두 번째 시안을 넣었고, 현재 앱은 외곽선을 정리한 세 번째 파일을 사용한다. 세 파일을 대조하지 않아 생성 참조와 보고서 그림이 달라졌다. 아래 지상 유닛 시안은 보류했다.
+
+| 구분 | 확인한 파일 | SHA-256 앞 12자리 |
+|---|---|---|
+| 보고서에 잘못 표시한 탈락 시안 | `Art/VTOL/20261027/harrier-concept.png` | `aaa54c606b50` |
+| 지상 시안 생성에 실제 사용한 파일 | `Art/VTOL/20261027-v2/harrier-concept.png` | `b40e1e5b9cae` |
+| 현재 앱의 해리어 | `Art/Extensions/VTOL_Harrier.png` — v3와 동일 | `9a523efede9a` |
+
+### 현재 앱에 포함된 해리어
+
+<img src="media/vtol/refined/VTOL_Harrier.png" data-runtime-asset="Art/Extensions/VTOL_Harrier.png" alt="현재 앱의 해리어 v3">
+
+야크141·해리어·F35B·F22·Su57·MiG31 전체 6종에 대해 제작 원본, 런타임 자원, 보고서의 최신 이미지, 로컬 일반·치트 빌드의 파일 해시를 대조했다. 여섯 종 모두 일치했다. 이번 오류로 앱의 공중 유닛 자원은 바뀌지 않았다.
+
+<details><summary>보고서에서 채택본으로 잘못 표시했던 탈락 시안</summary>
+<img src="media/vtol/harrier-concept.png" alt="탈락한 해리어 첫 시안 — 참조 사용 금지">
+</details>
+
+최신 참조 그림에는 실제 런타임 경로를 붙였다. 두 파일의 해시가 다르면 보고서 생성을 중단한다. 생성 입력은 프롬프트와 파일 해시를 함께 기록한다. [파일별 대조 결과](../../Art/GroundAA/20261028-aircraft-style/reference-audit.json).
+
 ## 공중 유닛 화풍을 참조한 수정 시안
 
-채택된 해리어와 F-22 그림을 직접 참조해 두 차량을 다시 칠했다. 이전 시안에서 튀던 밝은 모서리와 판금 경계의 대비를 낮추고, 표면에 부드러운 금속 명암을 넣었다. 첫 수정에서 늘어난 잔무늬는 두 번째 수정에서 줄였다. 아래는 새 조립 시안이며 게임 파츠 교체는 아직 하지 않았다.
+아래는 해리어 v2와 F-22 금색 조종석 버전을 입력해 만든 지상 시안이다. 해리어의 최신 v3 참조로 다시 검토하기 전까지 보류한다. 이전 시안에서 튀던 밝은 모서리와 판금 경계의 대비를 낮추고, 표면에 부드러운 금속 명암을 넣었다. 첫 수정에서 늘어난 잔무늬는 두 번째 수정에서 줄였다. 아래는 새 조립 시안이며 게임 파츠 교체는 아직 하지 않았다.
 
-### 이번에 사용한 공중 유닛 참조
+### 대조를 위해 바로잡은 현재 공중 유닛 이미지
 
 <div class="gaa-art-pair">
-<figure><img src="media/vtol/harrier-concept.png" alt="화풍 참조로 사용한 채택 해리어"><figcaption>채택된 해리어 — 부드러운 금속 명암·절제된 패널선</figcaption></figure>
-<figure><img src="media/lux-lunae/F22-gold.png" alt="화풍 참조로 사용한 채택 F22"><figcaption>채택된 F-22 — 면을 따라 변하는 밝기·얇은 표면 묘사</figcaption></figure>
+<figure><img src="media/vtol/refined/VTOL_Harrier.png" data-runtime-asset="Art/Extensions/VTOL_Harrier.png" alt="현재 앱의 해리어 v3"><figcaption>현재 해리어 v3 — 생성 입력 v2의 외곽선 수정본</figcaption></figure>
+<figure><img src="media/lux-lunae/F22-gold.png" data-runtime-asset="Art/Extensions/Lux_F22.png" alt="현재 앱과 생성 입력이 같은 F22"><figcaption>채택된 F-22 — 면을 따라 변하는 밝기·얇은 표면 묘사</figcaption></figure>
 </div>
 
-이전에는 원작 전차·헬기만 참조하고 추가 공중 유닛을 빠뜨렸다. 이번에는 두 채택본의 금속 표현을 기준으로 삼았다. 전투기의 금색 조종석·문양·도색은 차량에 옮기지 않았다.
+이전에는 원작 전차·헬기만 참조하고 추가 공중 유닛을 빠뜨렸다. 생성 시 해리어 v2와 F-22를 입력했지만, 보고서에는 해리어 v1을 잘못 연결했다. 전투기의 금색 조종석·문양·도색은 차량에 옮기지 않았다.
 
 ### 쉴카 수정 전후
 
@@ -38,7 +60,7 @@
 <div class="gaa-reference-strip">
 <figure><img src="media/ground-aa/aircraft-style/shilka.png" alt="축소한 새 쉴카 시안" width="92"><figcaption>쉴카</figcaption></figure>
 <figure><img src="media/ground-aa/aircraft-style/tunguska.png" alt="축소한 새 퉁구스카 시안" width="90"><figcaption>퉁구스카</figcaption></figure>
-<figure><img src="media/vtol/harrier-concept.png" alt="비교용 채택 해리어" width="126"><figcaption>해리어</figcaption></figure>
+<figure><img src="media/vtol/refined/VTOL_Harrier.png" data-runtime-asset="Art/Extensions/VTOL_Harrier.png" alt="비교용 현재 해리어 v3" width="126"><figcaption>해리어</figcaption></figure>
 <figure><img src="media/lux-lunae/F22-gold.png" alt="비교용 채택 F22" width="126"><figcaption>F-22</figcaption></figure>
 </div>
 

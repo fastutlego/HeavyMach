@@ -11,6 +11,14 @@ ROOT=Path(__file__).resolve().parents[1]
 def render(text):
     return BeautifulSoup(markdown.markdown(text,extensions=['tables','fenced_code','attr_list']), 'html.parser')
 
+def check_runtime_art_references():
+    source=ROOT/'docs/public/ground-aa-art-20261028.md'
+    for img in render(source.read_text()).select('img[data-runtime-asset]'):
+        shown=(source.parent/img['src']).resolve()
+        runtime=ROOT/img['data-runtime-asset']
+        if hashlib.sha256(shown.read_bytes()).digest()!=hashlib.sha256(runtime.read_bytes()).digest():
+            raise ValueError(f'Current art reference differs from runtime: {shown} != {runtime}')
+
 def deduplicate_styles(soup):
     # Keep the last occurrence so CSS precedence stays unchanged on regeneration.
     seen=set()
@@ -48,6 +56,7 @@ def article(source,dest,download,template):
         readme_ids['포신 단축·접합부 재수정과 외형 개선 계획']='barrels-and-art-plan'
         readme_ids['색·질감 수정 시안']='texture-proposal'
         readme_ids['공중 유닛 화풍을 참조한 수정 시안']='aircraft-style'
+        readme_ids['해리어 참조 오류 정정']='reference-audit'
     if source == ROOT/'docs/ground-aa-expansion.md':
         readme_ids.update({name:f'section-{i}' for i,name in enumerate(['요구와 무장','파츠와 움직임','체력과 배치','검사'])})
         readme_ids['크기와 연결부 수정 · 2026-10-28']='refinement'
@@ -70,6 +79,7 @@ def article(source,dest,download,template):
     dest.write_text(str(page));shutil.copyfile(source,dest.parent/download)
 
 def main():
+    check_runtime_art_references()
     ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--checkout',type=Path,required=True);args=ap.parse_args();dist=args.checkout/'dist'
     original=(dist/'index.html').read_text();old=BeautifulSoup(original,'html.parser');images={}
     for sid in ('menu-joins','menu-result'):

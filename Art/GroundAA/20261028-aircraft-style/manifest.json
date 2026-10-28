@@ -1,8 +1,8 @@
 {
-  "status": "proposal_only",
+  "status": "on_hold_reference_mismatch",
   "tool": "built-in image_gen",
   "runtime_changed": false,
-  "references": "Accepted Harrier and F22 painting; previous ground proposals for geometry",
+  "references": "Generation used Harrier v2 and F22 gold; the report incorrectly showed rejected Harrier v1. Current runtime Harrier is v3.",
   "iteration": "Both first edits retained strong rims and grain; second edits soften them",
   "files": [
     {
@@ -41,5 +41,6 @@
       ],
       "mode": "RGBA"
     }
-  ]
+  ],
+  "reference_audit": "reference-audit.json"
 }
