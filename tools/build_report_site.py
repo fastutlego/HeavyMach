@@ -128,6 +128,7 @@ def main():
     article(ROOT/'docs/RESTORATION.md',dist/'restoration.html','RESTORATION.md',retro)
     public_articles = [
         ('hud-improvement-plan-20261028.md', 'hud-improvement.html'),
+        ('auto-aim-visibility-plan-20261028.md', 'auto-aim-visibility.html'),
         ('apple-platform-progress-20261026.md', 'apple-platforms.html'),
         ('fullscreen-transitions-20261027.md', 'fullscreen.html'),
         ('auto-aim-ipad-20261027.md', 'auto-aim-progress.html'),
@@ -211,7 +212,7 @@ def main():
     # Resolve relative Markdown paths from each manuscript's original directory.
     from urllib.parse import urlsplit, unquote, quote
     for source_name, page_name in routes.items():
-        if page_name not in list(reader_sources.values()) + ['hud-improvement.html', 'restoration.html', 'installation.html', 'implementation.html', 'ground-units.html', 'ground-aa-art.html', 'publication.html', 'gameplay-media.html', 'github-documentation.html', 'github-licenses-and-badges.html', 'github-repository-plan.html', 'github-followup.html']:
+        if page_name not in list(reader_sources.values()) + ['hud-improvement.html', 'auto-aim-visibility.html', 'restoration.html', 'installation.html', 'implementation.html', 'ground-units.html', 'ground-aa-art.html', 'publication.html', 'gameplay-media.html', 'github-documentation.html', 'github-licenses-and-badges.html', 'github-repository-plan.html', 'github-followup.html']:
             continue
         page = BeautifulSoup((dist/page_name).read_text(), 'html.parser')
         if page.footer: page.footer.decompose()

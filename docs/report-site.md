@@ -1,5 +1,15 @@
 # HeavyMach 보고 사이트
 
+## 2026-10-28 HUD 편집 심층 진단
+
+[HUD 배치 편집 설계](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/hud-improvement.html)를 갱신했다. 에셋 분할선, 터치 영역, 일시정지/시작 전 진입, 현재 장면/예시 전투, 저장·검사 순서를 담았다. 자동조준 상태 안내는 별도 페이지로 분리했다.
+
+- Site source: `2a18a20c7fc4b9558886292cf0565d301d3a2702`
+- Deployment: `appgdep_6ae200c4d2f48191b04222f3c5746a4e`, `succeeded`. 소유자 전용 유지.
+- 전체 목차45개. 로컬 링크·앵커1,196개 오류0. Safari에서 절 이동·본문·표를 확인했다.
+- [공용 좌표 코드·검사와 남은 앱 작업](evidence/hud-layout-diagnosis-20261028.json).
+
+
 ## 2026-10-28 v0.13 배포와 HUD 개선 계획
 
 [v0.13 배포·HUD 계획](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/hud-improvement.html)을 통합 목차에 추가했다. 현재 HUD 그림과 코드, 그림 분할·배치 편집·입력·저장·자동조준 상태 안내와 검증 순서를 정리했다. 게임 코드는 변경하지 않았다.

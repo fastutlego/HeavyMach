@@ -15,7 +15,7 @@ target_link_libraries(HeavyMachCoreTests PRIVATE HeavyMachCore)
 enable_testing()
 add_test(NAME HeavyMachCoreTests COMMAND HeavyMachCoreTests)
 
-foreach(domain VTOL Fighters GroundAA GroundAARuntime Combat Visuals World StageTransition GameSession AmmoSync AudioContract PlayerGauge EnemyGauge PassiveContinuity Survival CameraIntegration TextureFormat SpriteRaster)
+foreach(domain VTOL Fighters GroundAA GroundAARuntime Combat Visuals World StageTransition GameSession AmmoSync AudioContract PlayerGauge EnemyGauge PassiveContinuity Survival CameraIntegration TextureFormat SpriteRaster HUDLayout)
   add_executable(HeavyMach${domain}Tests Tests/${domain}Tests.cpp)
   target_link_libraries(HeavyMach${domain}Tests PRIVATE HeavyMachCore)
   add_test(NAME HeavyMach${domain}Tests COMMAND HeavyMach${domain}Tests)

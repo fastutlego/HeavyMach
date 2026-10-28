@@ -6,7 +6,8 @@ Codex가 일반 앱과 치트 앱을 아이폰·아이패드에 설치했다. �
 
 ## 전체 보고서 {#reports}
 
-- [v0.13 배포와 HUD 개선 계획](hud-improvement.html) — 그림 분할·시작 전 배치 편집·터치 판정·자동조준 상태 안내.
+- [HUD 배치 편집 설계](hud-improvement.html) — 그림 분할·일시정지/시작 전 편집·전투 미리보기·터치 판정.
+- [자동조준 상태 안내 계획](auto-aim-visibility.html) — HUD 편집과 분리한 대상 없음·화면 밖·가림 안내.
 
 - [쉴카·퉁구스카 도안과 게임 화면](ground-aa-art.html) — 파츠 조립, 독립 회전 레이더, 6/4/2발 무장, 실기기 검사.
 - [쉴카·퉁구스카 구현·전체 배치표](ground-aa-implementation.html) — 35개 스테이지 152대, 원작 이동·무기 재사용과 검사.
