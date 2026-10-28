@@ -49,4 +49,4 @@ HUDLayoutV1의 기존9개 그룹 인덱스를 보존하고 upperTrim을 마지�
 
 ## 웹 실행
 
-브라우저의 requestAnimationFrame마다 기한을 확인해 최대 한 번 틱한다. 기한보다 1/4 간격 이내로 이른 콜백은 그 틱으로 처리하고 밀린 틱은 보충하지 않는다. 50Hz 센서 샘플은 별도 타이머 기한을 따른다. 저장은 IDBFS `/persist/HvM.dat`에 임시 파일→rename으로 쓰고 IndexedDB에 동기화하며, 정상 저장 지점은 iOS와 같다. 탭 숨김·창 포커스 상실·pagehide·휴대폰 세로 화면은 비활성으로 처리해 게임·입력·음향을 멈추고, 복귀 후 메뉴에서 재개한다. 음향은 Emscripten OpenAL(Web Audio)로 같은 버퍼·소스·재생 순서를 쓴다. [이식 문서](web-port-20261028.md).
+브라우저의 requestAnimationFrame마다 기한을 확인한다. 60Hz 콜백에서는 iOS처럼 한 번에1틱이다. 콜백 간격의 평균이 틱 간격의 배수이면(예: iOS 저전력 모드의30Hz) 한 콜백에서 기한이 된 틱을 최대 round(간격/틱)개(최대4) 진행하고 한 번 그린다. 기한보다1/4 간격 이내로 이른 콜백은 그 틱으로 처리하고, 0.1초를 넘는 멈춤 뒤 밀린 틱은 보충하지 않는다. 50Hz 센서 샘플은 별도 타이머 기한을 따른다. 저장은 IDBFS `/persist/HvM.dat`에 임시 파일→rename으로 쓰고 IndexedDB에 동기화하며, 정상 저장 지점은 iOS와 같다. 탭 숨김·창 포커스 상실·pagehide·휴대폰 세로 화면은 비활성으로 처리해 게임·입력·음향을 멈추고, 복귀 후 메뉴에서 재개한다. 음향은 Emscripten OpenAL(Web Audio)로 같은 버퍼·소스·재생 순서를 쓴다. [이식 문서](web-port-20261028.md).

@@ -559,11 +559,27 @@ void GameView::animationFrame(double now){
     // ns_timer.rs handle_timer advances BEFORE the callback, with ceil. The
     // browser delivers display callbacks instead of a free-running NSTimer, so a
     // callback up to a quarter interval early is accepted as the due tick; on
-    // 90/120/144 Hz displays the remaining callbacks are skipped. There is never
-    // more than one tick per callback and no catch-up after a stall.
-    if(now<_nextTimerDue-originalInterval/4)return;
-    _nextTimerDue=_nextTimerDue+originalInterval*std::ceil(std::max((now-_nextTimerDue)/originalInterval,1.0));
-    frame();
+    // 90/120/144 Hz displays the remaining callbacks are skipped.
+    // At 60 Hz this is one tick per callback, as on iOS. Browsers may deliver
+    // callbacks at 30 Hz (iOS Low Power Mode, throttled tabs); one tick per
+    // callback would then run the game at half speed. The steady callback
+    // interval allows up to round(interval/tick) due ticks per callback (max 4),
+    // rendered once. A stall (gap over 0.1 s) is never caught up.
+    if(_lastFrameCallback>0){
+        const double gap=now-_lastFrameCallback;
+        if(gap>0&&gap<0.1)_frameCallbackInterval=_frameCallbackInterval>0?_frameCallbackInterval*0.9+gap*0.1:gap;
+    }
+    _lastFrameCallback=now;
+    _ticksPerCallback=std::clamp(int(std::lround(_frameCallbackInterval/originalInterval)),1,4);
+    int ticks=0;
+    while(ticks<_ticksPerCallback&&now>=_nextTimerDue-originalInterval/4){
+        ++ticks;
+        if(ticks==_ticksPerCallback)_nextTimerDue=_nextTimerDue+originalInterval*std::ceil(std::max((now-_nextTimerDue)/originalInterval,1.0));
+        else _nextTimerDue+=originalInterval;
+        if(ticks==1){if(!_active)return;updateCanvasGeometry();checkInactivity();}
+        advanceOriginalFrame();
+    }
+    if(ticks)renderOpenGLFrame();
 }
 void GameView::frame(){
     if(!_active)return;
@@ -790,13 +806,13 @@ void GameView::routePoint(Point point,int state,long touch){
     if(state==2&&_title.released(_time))requestScreen(3);
 }
 std::string GameView::debugState(){
-    char text[512];
+    char text[768];
     const char* screen=!_rendererReady?"boot":_session?"game":_showMenu?"menu":"title";
     const auto* p=_session?_session->player():nullptr;auto stage=_session?_session->stage():StagePosition{};
-    std::snprintf(text,sizeof(text),"{\"screen\":\"%s\",\"time\":%.4f,\"canvas\":[%g,%g],\"loading\":%d,\"mission\":%d,\"stage\":%d,\"playerX\":%.2f,\"playerY\":%.2f,\"hp\":%d,\"enemies\":%zu,\"bullets\":%zu,\"paused\":%d,\"gameState\":%d,\"decodes\":%u,\"loadError\":%d,\"aimMode\":%d,\"aimTarget\":%d,\"inputBlocked\":%d,\"keyboardFire\":%d,\"gameMenu\":%d,\"resumeRequired\":%d,\"active\":%d,\"keyboardAimX\":%.2f}",
+    std::snprintf(text,sizeof(text),"{\"screen\":\"%s\",\"time\":%.4f,\"canvas\":[%g,%g],\"loading\":%d,\"mission\":%d,\"stage\":%d,\"playerX\":%.2f,\"playerY\":%.2f,\"hp\":%d,\"enemies\":%zu,\"bullets\":%zu,\"paused\":%d,\"gameState\":%d,\"decodes\":%u,\"loadError\":%d,\"aimMode\":%d,\"aimTarget\":%d,\"inputBlocked\":%d,\"keyboardFire\":%d,\"gameMenu\":%d,\"resumeRequired\":%d,\"active\":%d,\"keyboardAimX\":%.2f,\"callbackInterval\":%.4f,\"ticksPerCallback\":%d,\"motion\":%d,\"tilt\":[%.3f,%.3f,%.3f]}",
         screen,_time,_canvasWidth,_canvasHeight,int(_loading.visible()),stage.mission,stage.stage,p?p->position.x:0.f,p?p->position.y:0.f,p?p->hp:0,
         _session?_session->enemyCount():size_t(0),_session?_session->bulletCount():size_t(0),_session?int(_session->world().paused):0,_session?_session->world().gameState:0,_media->decodeCount(),int(!_loadError.empty()),
-        _session?int(_session->aimMode()):int(_preferredAimMode),_session&&_session->aimSnapshot().target?1:0,int(worldInputBlocked()),int(_keyboardFire),int(_gameMenu),int(_resumeRequired),int(_active),_keyboardAim.x);
+        _session?int(_session->aimMode()):int(_preferredAimMode),_session&&_session->aimSnapshot().target?1:0,int(worldInputBlocked()),int(_keyboardFire),int(_gameMenu),int(_resumeRequired),int(_active),_keyboardAim.x,_frameCallbackInterval,_ticksPerCallback,int(_acceleration.available),_acceleration.x,_acceleration.y,_acceleration.z);
     return text;
 }
 }

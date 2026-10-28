@@ -120,6 +120,10 @@ SaaS·기능 안내의 v0.12 잔여 문구와 조작 안내의 미션 선택 진
 README에 지상 유닛·HUD 편집 화면을 추가하고 SaaS 집필 자료에 최종 캡처 4장의 출처·캡션을 연결했다. `feat/icon-and-project-media`에서 작업했으며 main은 v0.14다. [보고서](public/app-icon-and-media-20261029.md), [검사](evidence/icon-and-media-20261029.json).
 
 
+## 2026-10-29 iPad 웹 보고 수정
+
+사용자가 iPad에서 웹 게임의 제목 표시줄 잘림·이동 불가·느린 속도를 보고했다. 코드상 원인을 고쳤다: 터치를 뗄 때 기울기 권한과 전체 화면을 요청하고, 30Hz 화면 갱신에서도 초당60틱을 진행한다. 헤드리스 검사(60Hz·30Hz·터치)는 통과했다. 실제 iPad 확인은 WDA 서명과 Safari Web Inspector 연결이 막혀 아직이다. fastutle.com 반영 커밋은 준비했지만 push 전이다. [이식 문서](web-port-20261028.md#ipad-사용자-보고-수정--2026-10-29)
+
 ## 2026-10-29 웹 화면 비율 수정과 fastutle.com 배포
 
 사용자 보고: 데스크톱 브라우저 창이 세로로 길면(690×805) 게임 화면이 이상했다. 논리 화면이 480×560으로 늘어난 것이 원인이었다. 웹은 이제 4:3보다 세로로 긴 창에서 iPad와 같은 480×360을 쓰고 위아래를 여백으로 둔다. 자원은 Cloudflare Pages 파일 한도(25MiB) 아래의 묶음 3개로 나눴다. fastutle-site 로컬 브랜치 `test/heavy-mach-web`에 `/game/heavy_mach/`로 배치했고, 사이트 검사 117개와 wrangler 로컬 서버의 브라우저 검사(912×420·690×805)가 통과했다. 사용자 지시에 따라 fastutle-site main에 push해 https://fastutle.com/game/heavy_mach/ 로 배포했다(`0be8788`). 배포된 주소에서도 헤드리스 Chrome 검사가 두 창 크기 모두 통과했다. 모두 에이전트가 직접 실행한 헤드리스 결과이고 실제 휴대폰 확인은 아직이다. 원작 자원의 재배포 허락은 미확인이다. [이식 문서](web-port-20261028.md#사이트-테스트-배치)

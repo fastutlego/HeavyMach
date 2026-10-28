@@ -122,6 +122,7 @@ private:
     unsigned long _screenResourceGeneration=0;
     std::string _loadError;
     double _nextTimerDue=0,_nextMotionDue=0;
+    double _lastFrameCallback=0,_frameCallbackInterval=0;int _ticksPerCallback=1;
     heavymach::TitleState _title;
     heavymach::LoadingTransition _loading;
     heavymach::Viewport _viewport{0,0,0};

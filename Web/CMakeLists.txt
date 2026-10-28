@@ -49,6 +49,7 @@ add_custom_command(
   COMMENT "Packaging HeavyMach web assets"
   VERBATIM)
 add_custom_target(hm_assets ALL DEPENDS "${CMAKE_BINARY_DIR}/dist/hm-assets.js")
+configure_file("${CMAKE_CURRENT_SOURCE_DIR}/manifest.webmanifest" "${CMAKE_BINARY_DIR}/dist/manifest.webmanifest" COPYONLY)
 add_dependencies(index hm_assets)
 target_link_options(index PRIVATE ${HM_COMMON_FLAGS}
   "--shell-file=${CMAKE_CURRENT_SOURCE_DIR}/shell.html"

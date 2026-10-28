@@ -10,7 +10,14 @@ namespace {
 std::unique_ptr<hmweb::GameView> view;
 std::string debugText;
 
-void animationFrame(){if(view)view->animationFrame(emscripten_get_now()/1000.0);}
+// ?fps=30 (test only) delivers every second display callback, like Safari in
+// iOS Low Power Mode; the game must still advance 60 ticks per second.
+EM_JS(int,hm_callback_divisor,(),{const m=/[?&]fps=(\d+)/.exec(location.search);if(!m)return 1;const fps=Number(m[1]);return fps>0&&fps<60?Math.round(60/fps):1;});
+int callbackDivisor=1,callbackCount=0;
+void animationFrame(){
+    if(callbackDivisor>1&&(callbackCount++%callbackDivisor))return;
+    if(view)view->animationFrame(emscripten_get_now()/1000.0);
+}
 // NSTimer-style one-shot 50 Hz accelerometer deadline, independent of display callbacks.
 void motionTick(void*){
     if(view)view->motionTimer(emscripten_get_now()/1000.0);
@@ -44,6 +51,7 @@ int main(){
     if(!view->initRenderer())return 0;
     EM_ASM({if(Module.hmReady)Module.hmReady();});
     emscripten_set_timeout(motionTick,1000.0*double(.02f),nullptr);
+    callbackDivisor=hm_callback_divisor();
     emscripten_set_main_loop(animationFrame,0,false);
     return 0;
 }

@@ -4,6 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="theme-color" content="#000000">
+<!-- Added to the home screen, iOS/Android open the game without browser bars. -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Heavy Mach">
+<link rel="manifest" href="manifest.webmanifest">
 <title>Heavy Mach 1</title>
 <link rel="icon" href="data:,">
 <style>
@@ -77,13 +83,19 @@
   // No preventDefault on pointerdown: the compatibility mousedown/touchstart
   // events resume the Web Audio context created by Emscripten's OpenAL.
   canvas.addEventListener('pointerdown', e => {
-    canvas.focus({ preventScroll: true }); unlockMotion();
+    canvas.focus({ preventScroll: true });
+    if (e.pointerType === 'mouse') unlockMotion();
     if (e.pointerType === 'mouse' && e.button !== 0) return;
     active.add(e.pointerId); try { canvas.setPointerCapture(e.pointerId); } catch (_) {}
     pointer(e, 0);
   });
   canvas.addEventListener('pointermove', e => { if (active.has(e.pointerId)) { e.preventDefault(); pointer(e, 1); } });
-  canvas.addEventListener('pointerup', e => { if (active.delete(e.pointerId)) { e.preventDefault(); pointer(e, 2); } });
+  // Touch grants user activation on pointerup/touchend, not pointerdown. iOS
+  // rejects DeviceMotionEvent.requestPermission and fullscreen outside it.
+  canvas.addEventListener('pointerup', e => {
+    if (e.pointerType !== 'mouse') { unlockMotion(); enterFullscreen(); }
+    if (active.delete(e.pointerId)) { e.preventDefault(); pointer(e, 2); }
+  });
   canvas.addEventListener('pointercancel', e => { if (active.delete(e.pointerId)) pointer(e, 3); });
   canvas.addEventListener('contextmenu', e => e.preventDefault());
 
@@ -100,19 +112,40 @@
 
   // DeviceMotion reports m/s^2 including gravity (+Z out of the screen at rest);
   // CoreMotion reports g with gravity as -Z. Convert to CoreMotion units here.
-  let motionUnlocked = false;
+  // motionState: idle -> pending -> granted/denied. A request rejected for a
+  // missing user gesture returns to idle so the next tap asks again.
+  let motionState = 'idle';
   function onMotion(e) {
     const a = e.accelerationIncludingGravity;
     if (!ready || !a || a.x === null) return;
     Module._hm_motion(1, -a.x / 9.80665, -a.y / 9.80665, -a.z / 9.80665);
   }
+  function listenMotion() { motionState = 'granted'; window.addEventListener('devicemotion', onMotion); }
   function unlockMotion() {
-    if (motionUnlocked) return; motionUnlocked = true;
+    if (motionState !== 'idle') return;
     const DME = window.DeviceMotionEvent;
-    if (DME && typeof DME.requestPermission === 'function') {
-      DME.requestPermission().then(s => { if (s === 'granted') window.addEventListener('devicemotion', onMotion); }).catch(() => {});
-    } else if (DME) window.addEventListener('devicemotion', onMotion);
+    if (!DME) { motionState = 'denied'; return; }
+    if (typeof DME.requestPermission !== 'function') { listenMotion(); return; }
+    motionState = 'pending';
+    DME.requestPermission().then(result => {
+      if (result === 'granted') listenMotion(); else motionState = 'denied';
+    }).catch(error => { motionState = 'idle'; console.warn('HeavyMach motion permission', error && error.name); });
   }
+  window.hmMotionState = () => motionState;
+
+  // Touch devices play full screen: the landscape game must not lose its top
+  // rows to browser bars. iPhone Safari has no element fullscreen; there the
+  // home-screen web app (meta tags above) opens without bars.
+  const coarsePointer = window.matchMedia('(pointer: coarse)');
+  function enterFullscreen() {
+    if (!coarsePointer.matches || document.fullscreenElement || document.webkitFullscreenElement) return;
+    const root = document.documentElement;
+    const request = root.requestFullscreen || root.webkitRequestFullscreen;
+    if (!request) return;
+    try { const r = request.call(root, { navigationUI: 'hide' }); if (r && r.catch) r.catch(() => {}); } catch (_) {}
+  }
+  document.addEventListener('fullscreenchange', () => resize());
+  document.addEventListener('webkitfullscreenchange', () => resize());
 
   // Resign/become active: hidden tab, window blur or page hide pause the game.
   // A phone held in portrait shows the rotate notice; the landscape-only game
