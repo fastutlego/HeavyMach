@@ -114,3 +114,12 @@ Mags의 답변은 개발자의 변과 제공 원문을 바탕으로 쓴다. 추�
 [쉴카·퉁구스카 추가 연구와 남은 과제](ground-units-research-20261028.md)에 재사용 후보, 차체·파츠의 덜컹거림 요구, 무장 1종/2종 구성안과 검증 계획을 정리했다. [새 외형·파츠 도안 2장과 조립안](ground-aa-art-20261028.md)을 추가했다. 게임 구현·설치는 아직 없다.
 
 2026-10-28 구매 경위 추가: Cydia로 처음 접한 뒤 미국 App Store 계정을 만드는 방법을 찾아 구매했다. 당시 한국 스토어에는 게임 카테고리가 없었다. [추가 원문](../references/developer-background/user-cydia-purchase-20261028.md)을 README·개발자의 변·채택 원고에 반영했다.
+
+
+## 럭스루나에 기획 의도 보고
+
+[왜 럭스루나에인가](lux-lunae-intent-20261028.md)에 개인 경험·보스전 기획·기술 검증 의도, 도안 3장, 게임 화면 4장과 플레이 영상 1개를 모았다. 대화 원문 14개를 함께 보존한다. [통합 보고 사이트](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/lux-lunae-intent.html).
+
+기종 선택과 형태의 유사성에 대한 아쉬움, 악역의 위협과 매력, 실제 필살기 사용 증가, Codex의 원작 화풍 재현 실패, 직접 지시하지 않았지만 마음에 들어 유지한 빠른 진입을 담았다. 편대 밀집은 내부 TODO의 `HM-LUX-FORMATION`으로 남아 있다. 화면 밖 이탈·재등장은 구상이다.
+
+사용자가 채택한 해석을 반영해 두 게임이 삶에서 했던 역할과 럭스루나에를 강한 적으로 구현한 이유를 연결했다. [데스 스트랜딩 사연 조사](../references/developer-background/death-stranding-community-story-20261028.md)를 참고했고, 마지막에는 현재도 이어지는 수정과 구상을 적었다. Apps·Mags 집필 때에는 [사용자 원문](../references/developer-background/user-lux-lunae-intent-20261028.md)과 이 원고를 함께 읽는다.
