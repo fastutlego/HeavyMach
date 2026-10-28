@@ -70,6 +70,7 @@ def article(source,dest,download,template):
         readme_ids['HUD 부품과 분할 검사']='asset-audit'
         readme_ids['편집 구현과 시뮬레이터 검사']='editor-validation'
         readme_ids['실제 iPad 설치와 조작 검사']='physical-ipad'
+        readme_ids['편집 도구 디자인 변경 계획']='editor-design'
         readme_ids['실제 iPhone 설치와 조작 검사']='physical-iphone'
         readme_ids['원작 버튼에 맞춘 멈춤 메뉴']='pause-menu'
     if source == ROOT/'docs/public/lux-lunae-intent-20261028.md':

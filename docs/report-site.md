@@ -645,3 +645,12 @@ VTOL 첫 생성 프롬프트와 스킬 수정 커밋을 대조했다. 요청에 
 - deployment: `appgdep_6ae21e56581c8191aedb68a4f986dba2`, `succeeded`.
 - 소유자 전용 접근 유지. 본문 이미지11개와 증거 JSON 경로, Markdown 원고 바이트 일치, HTTP200 확인. 게임 화면 직접 조작을 마친 뒤 Safari/Chrome 창 조회는 `cgWindowNotFound`를 반환해 이번 웹 화면 시각 검사는 수행하지 못했다.
 - [기능·성능 검사](evidence/hud-editor-20261029.json).
+
+## 2026-10-29 HUD 편집 도구 디자인 계획
+
+[편집 도구 변경 계획](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/hud-improvement.html#editor-design)에 사각형 표시 제거, 영문 오른쪽 패널, 원작 금속 버튼, 상단 장식 보존·이동 계획을 추가했다. 기존 앱 화면과 검사 결과는 보존했다.
+
+- source: `ebc0790132ca318c954bb3bb3a76e2df45e3694c`
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_f2e8a7e5cec48191afd5d36f5d194310`
+- deployment: `appgdep_6ae246fe2b4081919d89e64fe3bddb88`, `succeeded`.
+- 소유자 전용 접근 유지. 45개 보고 페이지를 생성하고 내부 링크·파일·절 앵커1,245개 오류0건을 확인했다. 이번 변경의 브라우저 시각 검사는 수행하지 않았다.
