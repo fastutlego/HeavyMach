@@ -71,6 +71,7 @@ def article(source,dest,download,template):
         readme_ids['편집 구현과 시뮬레이터 검사']='editor-validation'
         readme_ids['실제 iPad 설치와 조작 검사']='physical-ipad'
         readme_ids['편집 도구 디자인 변경 계획']='editor-design'
+        readme_ids['HUD 편집 도구·상단 장식 수정']='editor-release'
         readme_ids['실제 iPhone 설치와 조작 검사']='physical-iphone'
         readme_ids['원작 버튼에 맞춘 멈춤 메뉴']='pause-menu'
     if source == ROOT/'docs/public/lux-lunae-intent-20261028.md':
@@ -242,6 +243,8 @@ def main():
                 node[attr] = 'evidence/ground-aa-aircraft-style-'+Path(rel).name
             elif rel.startswith('Art/GroundAA/20261028-runtime-style/') and rel.endswith('.json'):
                 node[attr] = 'evidence/ground-aa-runtime-style-'+Path(rel).name
+            elif rel == 'docs/evidence/hud-editor-release-20261029.json':
+                node[attr] = 'evidence/hud-editor-release-20261029.json'
             elif rel == 'docs/evidence/hud-editor-20261029.json':
                 node[attr] = 'evidence/hud-editor-20261029.json'
             elif rel == 'docs/evidence/independence-main-20261028.json':
@@ -293,6 +296,7 @@ def main():
     shutil.copyfile(ROOT/'docs/lux-lunae-plan-20261027.md',dist/'lux-lunae-plan-20261027.md')
     (dist/'evidence').mkdir(exist_ok=True)
     shutil.copyfile(ROOT/'docs/evidence/hud-editor-20261029.json',dist/'evidence/hud-editor-20261029.json')
+    shutil.copyfile(ROOT/'docs/evidence/hud-editor-release-20261029.json',dist/'evidence/hud-editor-release-20261029.json')
     for file in (ROOT/'Art/GroundAA/20261028-refinement').glob('*.json'):
         shutil.copyfile(file,dist/'evidence'/('ground-aa-refinement-'+file.name))
     for file in (ROOT/'Art/GroundAA/20261028-texture-proposal').glob('*.json'):

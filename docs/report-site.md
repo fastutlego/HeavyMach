@@ -1,5 +1,15 @@
 # HeavyMach 보고 사이트
 
+## 2026-10-29 HUD 편집 도구·상단 장식 수정
+
+[최종 수정과 실기기 검사](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/hud-improvement.html#editor-release)를 기존 보고서에 추가했다. 영문 금속 버튼의 일반/눌림 상태, 아이폰 장식·MENU 이동, 아이패드 상단 재조립 그림과 검사 결과를 실었다. 45개 목차와 기존 이미지·앵커를 유지했다.
+
+- source: `88531cb723b6f015aa6df063bf670472048ef3d5`
+- version: `appgver_3f9d279201208191bf5df2649e83ee82`
+- deployment: `appgdep_6ae24f8ccc28819197e2c81eace26935` · succeeded
+- 소유자 비공개 유지. HUD 페이지의 로컬 링크·이미지·앵커 오류0개.
+- Mac 잠금으로 새 게시 화면의 브라우저 직접 조작은 생략했다. 게임 캡처와 버튼 출력은 실제 기기 검사에서 확인했다.
+
 ## 2026-10-29 실제 iPhone HUD 검사와 멈춤 메뉴
 
 [아이폰 설치·조작](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/hud-improvement.html#physical-iphone)과 [SET GAME UI 메뉴](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/hud-improvement.html#pause-menu)를 추가했다. 계기판·무기 버튼 이동 화면3장과 원작 버튼에 맞춘 메뉴의 기본·눌림 화면2장을 실었다.

@@ -1,6 +1,6 @@
 # HeavyMach
 
-[![Git tag v0.13](docs/public/media/badges/version.svg)](https://github.com/gelb2/HeavyMach/tree/v0.13)
+[![Git tag v0.14](docs/public/media/badges/version.svg)](https://github.com/gelb2/HeavyMach/tree/v0.14)
 [![Platforms iOS iPadOS macOS](docs/public/media/badges/platforms.svg)](docs/public/validation.md)
 [![Architecture arm64](docs/public/media/badges/arch.svg)](docs/public/build-and-install.md)
 [![C++20 and Objective-C++](docs/public/media/badges/code.svg)](docs/public/architecture.md)
@@ -32,7 +32,7 @@ HeavyMach를 만든 두 제작자는 내 수명을 9년 하고도 3개월 더 �
 
 2009년의 횡스크롤 전차 게임 **HeavyMach**를 현재의 iPhone·iPad·Mac에서 실행하도록 다시 만들었다. 전차를 움직이고 뛰어오르며, 무기를 바꿔 지상·공중의 적과 싸운다. 원작의 전투와 성장 구조에 넓은 화면, 키보드 조작, 자동조준과 새로운 항공기를 추가했다.
 
-현재 게임 버전은 [v0.13](https://github.com/gelb2/HeavyMach/tree/v0.13)다. 일반 앱과 치트 검증 앱을 각각 설치할 수 있다. 치트 앱에서는 미션·무기·강화 조건을 지정해 같은 게임을 검사한다.
+현재 게임 버전은 [v0.14](https://github.com/gelb2/HeavyMach/tree/v0.14)다. 일반 앱과 치트 검증 앱을 각각 설치할 수 있다. 치트 앱에서는 미션·무기·강화 조건을 지정해 같은 게임을 검사한다.
 
 [설치](docs/public/build-and-install.md) · [조작](docs/public/gameplay-guide.md) · [기능](docs/public/features.md) · [트러블슈팅](docs/public/troubleshooting.md) · [전체 문서](docs/README.md)
 
@@ -103,7 +103,7 @@ HUD의 **A 버튼**으로 자동조준을 켜면 전방의 가까운 적을 선�
 
 설치한 iPhone·iPad 앱을 직접 플레이했을 때 프레임 드랍이나 오작동은 보이지 않았다. 기기별 자동 검사에는 표시시간 기준 실패가 남아 있다. [측정 조건과 결과](docs/public/validation.md)
 
-자동조준·공용 모듈·Apple 세 플랫폼·항공기 6종·전체 화면 도어는 구현됐다. HUD 위치 편집, 자동조준 상태 안내 개선, 튜토리얼 0-0~0-4, 글자를 뺀 앱 아이콘과 Android는 후속 과제다. [완료·진행·남은 과제](docs/public/implementation-status.md)
+자동조준·공용 모듈·Apple 세 플랫폼·항공기 6종·지상 유닛 2종·전체 화면 도어는 구현됐다. HUD 위치 편집도 구현했다. 자동조준 상태 안내 개선, 튜토리얼 0-0~0-4, 글자를 뺀 앱 아이콘과 Android는 후속 과제다. [완료·진행·남은 과제](docs/public/implementation-status.md)
 
 ### 남은 과제
 
@@ -133,7 +133,7 @@ python3 tools/verify_build_resources.py
 open HeavyMach.xcworkspace
 ```
 
-Xcode에서 본인의 개발 팀을 지정하고 실행 대상을 선택한다. iPhone·iPad 일반 앱은 `HeavyMachRestored`, 치트 앱은 `HeavyMachValidation`이다. Mac은 `HeavyMachMac`, `HeavyMachMacValidation`이다. 저장소를 clone하거나 [v0.13 Releases](https://github.com/gelb2/HeavyMach/releases/tag/v0.13)에서 소스·자원 압축본을 내려받은 뒤, Xcode에서 빌드해 설치한다.
+Xcode에서 본인의 개발 팀을 지정하고 실행 대상을 선택한다. iPhone·iPad 일반 앱은 `HeavyMachRestored`, 치트 앱은 `HeavyMachValidation`이다. Mac은 `HeavyMachMac`, `HeavyMachMacValidation`이다. 저장소를 clone하거나 [v0.14 Releases](https://github.com/gelb2/HeavyMach/releases/tag/v0.14)에서 소스·자원 압축본을 내려받은 뒤, Xcode에서 빌드해 설치한다.
 
 [시뮬레이터 명령·기기 설치·서명·오류 해결](docs/public/build-and-install.md)
 

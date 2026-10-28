@@ -18,6 +18,7 @@
 		183771D849D3154C3EA3831A /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78337F678A716FD48171D145 /* CoreMotion.framework */; };
 		1F641C68A0B7E296DAAE6581 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC604AAB654EE3345C901005 /* CoreGraphics.framework */; };
 		2451B5AB7D4E9F2BA9F63E38 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E74F76EA57F3C2606331405 /* AVFoundation.framework */; };
+		2E7965A163C71819E687BA5B /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE8D17E6D0A18CF938C5D06 /* CoreText.framework */; };
 		314132D3771FC74332CE87BC /* HMAudioTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 40B5BBD1408F95F15D983471 /* HMAudioTests.mm */; };
 		327642E52C1A6546ED5652EC /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 108A90E6EAF7981E0C0E1ED7 /* CoreAudio.framework */; };
 		3536AABD414BF2B178A3510D /* HMCompatibilityPixelsTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = D4DB0812856CF552EC502E0D /* HMCompatibilityPixelsTests.mm */; };
@@ -42,6 +43,7 @@
 		957BA4845B4E227896045187 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58A684CE07FDE7E0FFE2E04F /* CoreFoundation.framework */; };
 		A551B58C2AF7B2983FF88719 /* HMSaveParityTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 74CBD1A90F134DB49486AC54 /* HMSaveParityTests.mm */; };
 		A7DFA04F9BA10C33CB1CF24B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0E3F23BC796185FFA68D58 /* UIKit.framework */; };
+		AC492752323CA47C054EEA7F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE8D17E6D0A18CF938C5D06 /* CoreText.framework */; };
 		B532FAE688D3AAD6E11228EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F004D6E34EDF564EF4BB5AE /* Assets.xcassets */; };
 		C0E8C989EDE5082F8D93EB9C /* HMMediaParityTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1E155672CFC9DAA270003894 /* HMMediaParityTests.mm */; };
 		C3A732964DACF7D6A2EBCD63 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C91BD13C30DCFCC76905D3 /* OpenGLES.framework */; };
@@ -53,6 +55,7 @@
 		E29301B93D07736F142C3C86 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7FD2C0696FF7BD1B4CD0B0D /* QuartzCore.framework */; };
 		E9C36A8A05A661DA8A550F37 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 468052086D7E83CA9082C781 /* AudioToolbox.framework */; };
 		ECEBBD48B846C1078936FAFF /* HMFramePerformanceTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1444DF3A88378EF608F49C96 /* HMFramePerformanceTests.mm */; };
+		F26096C7CA693C77399EAD5A /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE8D17E6D0A18CF938C5D06 /* CoreText.framework */; };
 		F503D89183101F91F0801F8D /* HMAppleInputTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 702071702E196F492D99DF82 /* HMAppleInputTests.mm */; };
 		FB14C7D9822E8DCA3BCA5768 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F004D6E34EDF564EF4BB5AE /* Assets.xcassets */; };
 		FCFCC64A8791C6D3D109EA96 /* Application.mm in Sources */ = {isa = PBXBuildFile; fileRef = 28395D016CD926BE352FCB23 /* Application.mm */; };
@@ -376,6 +379,7 @@
 		E8432EED144FFE452F8B6904 /* handover-20261024.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "handover-20261024.md"; sourceTree = "<group>"; };
 		E98970B311A0BFCE501D0899 /* game-calculation-policy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "game-calculation-policy.md"; sourceTree = "<group>"; };
 		E9F5C780F43FDA4DE574BF1D /* harrier-concept.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "harrier-concept.png"; sourceTree = "<group>"; };
+		EAE8D17E6D0A18CF938C5D06 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		EC5A4726B46F9E01D381071A /* audio-fidelity.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "audio-fidelity.md"; sourceTree = "<group>"; };
 		EC8E6C601E9AA56A6321BEA5 /* before-wide-mode-912-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "before-wide-mode-912-0.png"; sourceTree = "<group>"; };
 		EEF173AB49983E4525BCF020 /* sprite-gl-reference.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "sprite-gl-reference.md"; sourceTree = "<group>"; };
@@ -402,6 +406,7 @@
 				2451B5AB7D4E9F2BA9F63E38 /* AVFoundation.framework in Frameworks */,
 				71A46AA6181850919B1DB1A6 /* CoreMotion.framework in Frameworks */,
 				1F641C68A0B7E296DAAE6581 /* CoreGraphics.framework in Frameworks */,
+				2E7965A163C71819E687BA5B /* CoreText.framework in Frameworks */,
 				C3A732964DACF7D6A2EBCD63 /* OpenGLES.framework in Frameworks */,
 				3549F8743EC5CB5DC2333AE1 /* AudioToolbox.framework in Frameworks */,
 				327642E52C1A6546ED5652EC /* CoreAudio.framework in Frameworks */,
@@ -420,6 +425,7 @@
 				548B305C0AD032F92AB803F0 /* AVFoundation.framework in Frameworks */,
 				183771D849D3154C3EA3831A /* CoreMotion.framework in Frameworks */,
 				180826C99754D5EB0CF0B9EA /* CoreGraphics.framework in Frameworks */,
+				F26096C7CA693C77399EAD5A /* CoreText.framework in Frameworks */,
 				711F8A053B4F4247ABFCA7BF /* OpenGLES.framework in Frameworks */,
 				D168BE0E326B483676E32AFD /* AudioToolbox.framework in Frameworks */,
 				0728037FBC16A0C2CE630FD5 /* CoreAudio.framework in Frameworks */,
@@ -435,6 +441,7 @@
 			files = (
 				CD27B8602F7402D80167A8CD /* UIKit.framework in Frameworks */,
 				C4983BCA6FB5720C0E430EFB /* CoreGraphics.framework in Frameworks */,
+				AC492752323CA47C054EEA7F /* CoreText.framework in Frameworks */,
 				873937B540401FE32FEE4D6E /* OpenGLES.framework in Frameworks */,
 				E9C36A8A05A661DA8A550F37 /* AudioToolbox.framework in Frameworks */,
 				4EC187C9BCB896C3EEB75536 /* CoreAudio.framework in Frameworks */,
@@ -550,6 +557,7 @@
 				58A684CE07FDE7E0FFE2E04F /* CoreFoundation.framework */,
 				AC604AAB654EE3345C901005 /* CoreGraphics.framework */,
 				78337F678A716FD48171D145 /* CoreMotion.framework */,
+				EAE8D17E6D0A18CF938C5D06 /* CoreText.framework */,
 				208157197CDE999B8C845E9F /* GameController.framework */,
 				36C91BD13C30DCFCC76905D3 /* OpenGLES.framework */,
 				B7FD2C0696FF7BD1B4CD0B0D /* QuartzCore.framework */,

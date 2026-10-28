@@ -69,5 +69,8 @@ int main(){
     assert(valid(config));config.positions[Group::weapon]=Placement{0,.5};assert(valid(config));
     auto target=config.group(Group::jump).visualBounds;config.positions[Group::weapon]=placementForOrigin(bounds[Group::weapon],config.legacy,config.safe,{target.x,target.y});assert(!valid(config));
     config.positions={};assert(valid(config));
+    config.positions[upperTrim]=Placement{0,.5};assert(valid(config));
+    assert(config.group(upperTrim).fits);assert(!config.positions[Group::weapon]);
+    config.positions={};assert(valid(config));
     std::cout<<"HUD layout: original geometry, moved hits, groups, scaling, rotation, window recovery and invalid settings passed\n";
 }

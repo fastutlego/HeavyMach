@@ -19,6 +19,7 @@
 #import <CoreMotion/CoreMotion.h>
 #endif
 #import <mach/mach_time.h>
+#import <CoreText/CoreText.h>
 #import <GameController/GameController.h>
 #import <TargetConditionals.h>
 #include "GameSession.hpp"
@@ -32,21 +33,33 @@
 #include <ctime>
 
 #if TARGET_OS_OSX
+@interface HMHUDPanelView:NSView
+@end
+@implementation HMHUDPanelView
+- (BOOL)isFlipped {return YES;}
+- (void)mouseDown:(NSEvent*)event {}
+- (void)mouseDragged:(NSEvent*)event {}
+- (void)mouseUp:(NSEvent*)event {}
+@end
+typedef NSScrollView HMEditorScroll;
 typedef NSButton HMEditorButton;
 typedef NSTextField HMEditorLabel;
 #else
+typedef UIView HMHUDPanelView;
+typedef UIScrollView HMEditorScroll;
 typedef UIButton HMEditorButton;
 typedef UILabel HMEditorLabel;
 #endif
 @implementation HMGameView {
     heavymach::hud::Configuration _hudLayout,_hudDraft;
-    BOOL _hudLayoutFallback,_hudEditing,_hudFromMenu,_hudExample,_hudToolsBottom,_hudHideGuides,_hudShowHits;
+    BOOL _hudLayoutFallback,_hudEditing,_hudFromMenu,_hudExample,_hudHideGuides,_hudShowHits;
     int _hudSelected;
     id _hudDragToken;
     CGPoint _hudGrab;
-    HMNativeGameView *_hudToolbar;
+    HMHUDPanelView *_hudToolbar,*_hudToolRows;
+    HMEditorScroll *_hudToolScroll;
     HMEditorLabel *_hudEditorLabel;
-    HMEditorButton *_hudEntry;
+    HMEditorButton *_hudEntry,*_hudToolsToggle;
     NSArray<HMEditorButton*> *_hudEditorButtons;
     NSUInteger _hudLayoutWrites;
     std::unique_ptr<heavymach::GameSession> _hudExampleSession;

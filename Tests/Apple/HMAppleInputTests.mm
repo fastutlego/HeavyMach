@@ -21,6 +21,9 @@
 #include <chrono>
 #include <vector>
 #include <set>
+@interface HMGameHUD (BackgroundTests)
+- (void)drawLayoutBackground;
+@end
 @interface HMGameView (AppleInputTests)
 - (void)frame:(id)sender;
 - (BOOL)handleKeyCode:(unsigned)key pressed:(BOOL)down;
@@ -40,6 +43,8 @@
 - (void)hudEditorAction:(id)sender;
 - (void)closeHUDEditor;
 - (void)loadHUDLayout;
+- (void)layoutHUDControls;
+- (CGRect)safeContentRect;
 - (NSURL*)hudLayoutURL;
 - (heavymach::hud::Configuration)currentHUDLayout;
 - (void)gameButton:(int)identifier state:(int)state;
@@ -153,6 +158,57 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  [self.game setValue:@1 forKey:@"randomState"];[self.game updateCanvasGeometry];
 }
 - (void)tearDown {[self.game setApplicationActive:NO];self.game=nil;[NSFileManager.defaultManager removeItemAtURL:self.temp error:nil];[super tearDown];}
+- (void)testHUDUpperTrimPreservesOriginalPixels {
+#if !TARGET_OS_OSX
+ HMGLRenderer* gl=[self.game valueForKey:@"glRenderer"];HMMedia* media=[self.game valueForKey:@"media"];HMGameHUD* hud=[[HMGameHUD alloc]initWithMedia:media];
+ [gl setLogicalWidth:480 height:320];heavymach::hud::Configuration c;
+ auto capture=[&](){[hud setLayout:c editing:YES];XCTAssertTrue([gl beginFrame]);media.glRenderer=gl;[media setDrawingOffset:CGPointZero];[media setDrawingScale:1];[media resetClip];[hud drawLayoutBackground];[gl finish];[gl endFrame];media.glRenderer=nil;return UIImagePNGRepresentation([gl snapshot]);};
+ NSData* original=capture();c.positions[heavymach::hud::cheat]=heavymach::hud::Placement{0,0};NSData* partitioned=capture();
+ XCTAssertEqualObjects(original,partitioned,@"Custom layout must retain the complete original upper artwork");
+ c.positions[heavymach::hud::upperTrim]=heavymach::hud::Placement{0,.5};NSData* moved=capture();XCTAssertNotEqualObjects(original,moved);
+ auto a=[XCTAttachment attachmentWithData:moved uniformTypeIdentifier:@"public.png"];a.name=@"HUD_upper_trim_moved";a.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:a];
+#endif
+}
+- (void)testHUDEditorRightToolsTrimAndLegacySave {
+ using namespace heavymach::hud;
+ [self startFixture];[self.game gameButton:100 state:2];frames(self.game,40);[self.game openHUDEditor:nil];
+ NSArray* buttons=[self.game valueForKey:@"hudEditorButtons"];id toggle=[self.game valueForKey:@"hudToolsToggle"];
+ XCTAssertEqual(buttons.count,5u);XCTAssertFalse([[self.game valueForKey:@"hudShowHits"]boolValue]);
+ // Phone and tablet geometry: the two commit controls always remain visible.
+ for(auto size:{CGSizeMake(852,393),CGSizeMake(1180,820),CGSizeMake(640,260)}){
+  self.game.frame=CGRectMake(0,0,size.width,size.height);[self.game updateCanvasGeometry];[self.game layoutHUDControls];
+  CGRect safe=[self.game safeContentRect];auto toolbar=[self.game valueForKey:@"hudToolbar"];
+  XCTAssertLessThanOrEqual(CGRectGetMaxY([toolbar frame]),CGRectGetMaxY(safe));
+  XCTAssertEqualWithAccuracy(CGRectGetMaxX([toolbar frame]),CGRectGetMaxX(safe)-8,.01);
+  for(int i:{1,2}){CGRect f=[buttons[i]frame];XCTAssertGreaterThanOrEqual(f.size.height,44);XCTAssertGreaterThanOrEqual(f.origin.y,0);XCTAssertLessThanOrEqual(CGRectGetMaxY(f),[toolbar bounds].size.height);}
+#if !TARGET_OS_OSX
+  for(UIButton* b in @[buttons[1],buttons[2],toggle]){CGPoint q=[b convertPoint:CGPointMake(CGRectGetMidX(b.bounds),CGRectGetMidY(b.bounds)) toView:self.game];XCTAssertEqual([self.game hitTest:q withEvent:nil],b);}
+#endif
+ }
+ self.game.frame=CGRectMake(0,0,1180,820);[self.game updateCanvasGeometry];[self.game layoutHUDControls];
+ auto c=[self.game currentHUDLayout];auto& draft=storage<Configuration>(self.game,"_hudDraft");
+ // The newly restored trim can move without changing any combat input rectangle.
+ auto before=draft;[self.game setValue:@(upperTrim) forKey:@"hudSelected"];
+ [self.game handleKeyCode:0x51 pressed:YES];XCTAssertTrue(draft.positions[upperTrim].has_value());
+ for(size_t i=0;i<hits.size();++i){auto a=before.group(hitGroups[i]).hitRect(hits[i]),b=draft.group(hitGroups[i]).hitRect(hits[i]);XCTAssertEqual(a.x,b.x);XCTAssertEqual(a.y,b.y);}
+ [self.game hudEditorAction:buttons[3]];XCTAssertTrue([[self.game valueForKey:@"hudToolbar"]isHidden]);XCTAssertFalse([toggle isHidden]);
+ // A release in the world no longer reopens tools or moves the selected part.
+ auto& vp=storage<heavymach::Viewport>(self.game,"_viewport");
+ CGPoint q=CGPointMake(vp.x+vp.logicalWidth/2*vp.scale,vp.y+vp.logicalHeight/2*vp.verticalScale());
+ id token=[NSObject new];auto positions=draft;[self.game routePoint:q state:2 token:token];XCTAssertTrue([[self.game valueForKey:@"hudToolbar"]isHidden]);XCTAssertTrue(positions.samePositions(draft));
+ [self.game hudEditorAction:toggle];XCTAssertFalse([[self.game valueForKey:@"hudToolbar"]isHidden]);
+ [self.game hudEditorAction:buttons[2]];XCTAssertFalse([[self.game valueForKey:@"hudEditing"]boolValue]);
+ auto saved=storage<Configuration>(self.game,"_hudLayout");XCTAssertTrue(saved.positions[upperTrim].has_value());storage<Configuration>(self.game,"_hudLayout")={};[self.game loadHUDLayout];XCTAssertTrue(saved.samePositions(storage<Configuration>(self.game,"_hudLayout")));
+ // A V1 file produced before upperTrim existed keeps its original placement IDs.
+ NSMutableArray* old=[NSMutableArray new];for(int i=0;i<9;++i)[old addObject:NSNull.null];old[weapon]=@[@0,@0.5];
+ [[NSJSONSerialization dataWithJSONObject:@{@"version":@1,@"positions":old} options:0 error:nil]writeToURL:[self.game hudLayoutURL] atomically:YES];
+ [self.game loadHUDLayout];auto migrated=storage<Configuration>(self.game,"_hudLayout");XCTAssertTrue(migrated.positions[weapon].has_value());XCTAssertFalse(migrated.positions[upperTrim].has_value());
+#if !TARGET_OS_OSX
+ auto attach=[&](UIImage* image,NSString* name){XCTAssertNotNil(image);auto a=[XCTAttachment attachmentWithImage:image];a.name=name;a.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:a];};
+ [self.game openHUDEditor:nil];render(self.game);attach([(HMGLRenderer*)[self.game valueForKey:@"glRenderer"]snapshot],@"HUD_restored_upper_trim");
+ attach([buttons[2]backgroundImageForState:UIControlStateNormal],@"HUD_tool_apply_normal");attach([buttons[2]backgroundImageForState:UIControlStateHighlighted],@"HUD_tool_apply_pressed");
+#endif
+}
 - (void)testPauseMenuHUDEntryUsesGameTouchAndKeyboard {
  [self startFixture];render(self.game);
  auto& session=storage<std::unique_ptr<heavymach::GameSession>>(self.game,"_session");

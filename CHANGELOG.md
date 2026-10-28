@@ -1,5 +1,15 @@
 # 변경 이력
 
+## v0.14 — 2026-10-29
+
+- 미션 선택·일시정지의 SET GAME UI에서 HUD 위치 편집.
+- 버튼·계기판·상단 장식 이동, 새 위치의 터치 판정, 기본 복원·취소·적용.
+- 멈춘 게임과 예시 전투 미리보기, 오른쪽 영문 금속 도구 패널.
+- 기존 배치 저장 호환. 변경한 배치 적용 때만 한 번 저장.
+- iPhone·iPad 각각13개, 코어24개, native Mac2개 검사 통과. 두 기기 정식·치트 앱 무선 설치.
+
+[화면과 검사](docs/public/hud-improvement-plan-20261028.md).
+
 ## v0.13 — 2026-10-28
 
 [main 병합 bc4e80c0](https://github.com/gelb2/HeavyMach/commit/bc4e80c0)

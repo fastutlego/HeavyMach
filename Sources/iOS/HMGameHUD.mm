@@ -60,9 +60,13 @@ int glyph(unichar c) {return c>='0'&&c<='9'?c-'0':c=='.'?10:c=='/'?11:c==':'?12:
         CGRect dest=CGRectMake(src.origin.x,top?320-CGRectGetMaxY(src):64-CGRectGetMaxY(src),src.size.width,src.size.height);
         [_media drawRegion:top?@"GameUI_Top.png":@"GameUI_Btm.png" source:src destination:dest];
         // Existing riveted vertical metal border closes the exposed rail ends.
-        if(n<4){for(CGFloat x:{CGRectGetMinX(dest),CGRectGetMaxX(dest)-4})[_media drawRegion:@"GameUI_Top.png" source:CGRectMake(0,0,4,27) destination:CGRectMake(x,0,4,19)];}
-        if(g==progress)[_media drawRegion:@"GameUI_Top.png" source:CGRectMake(0,0,4,27) destination:CGRectMake(98,293,4,27)];
+        if(n<4&&_layout.positions[g]){for(CGFloat x:{CGRectGetMinX(dest),CGRectGetMaxX(dest)-4})[_media drawRegion:@"GameUI_Top.png" source:CGRectMake(0,0,4,27) destination:CGRectMake(x,0,4,19)];}
+        if(g==progress&&_layout.positions[g])[_media drawRegion:@"GameUI_Top.png" source:CGRectMake(0,0,4,27) destination:CGRectMake(98,293,4,27)];
     }
+    // Remaining upper artwork belongs to a movable decoration, never a game receiver.
+    [self useLayoutGroup:upperTrim];
+    [_media drawRegion:@"GameUI_Top.png" source:CGRectMake(102,0,378,27) destination:CGRectMake(102,293,378,27)];
+    [_media drawRegion:@"GameUI_Top.png" source:CGRectMake(76,27,404,37) destination:CGRectMake(76,256,404,37)];
     [self useLayoutGroup:-1];
 }
 - (void)setGameStart:(double)time {_startTime=time;}

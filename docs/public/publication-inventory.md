@@ -86,9 +86,9 @@ python3 tools/document_contract.py check
 | 구분 | 설명할 내용 | 원고·그림 |
 |---|---|---|
 | 원작에서 이어온 기능 | 틸트 이동·점프·터치 사격, 무기 전환·지원 공격, 강화·미션 진행 | [조작](gameplay-guide.md), 플레이 이미지 02~06 |
-| 내가 요구한 추가 기능 | 화면 확장, 가로 회전, iPad·Mac·키보드, 자동조준, VTOL·전투기 | [기획 의도·조건·구현](features.md), [공용 모듈](architecture.md), 플레이 이미지 07→01·08 |
+| 내가 요구한 추가 기능 | 화면 확장, 가로 회전, iPad·Mac·키보드, 자동조준, VTOL·전투기·쉴카·퉁구스카·HUD 편집 | [기획 의도·조건·구현](features.md), [공용 모듈](architecture.md), 플레이 이미지 07→01·08 |
 | 개발 중 발견하고 고친 문제 | 발사마다 저장, 렌더링·갱신 주기, 좌표·그림·입력, 임의로 바꾼 기체 외형과 탄도 | [트러블슈팅](troubleshooting.md), [수정 순서](development-history.md) |
-| 아직 남은 기능·검사 | HUD 편집, 조준 상태 안내, 튜토리얼, 아이콘, Android, 빌드 경고·실행 스크립트 등 | [상태표](implementation-status.md), [상세 TODO](../usability-todo.md) |
+| 아직 남은 기능·검사 | 조준 상태 안내, 튜토리얼, 아이콘, Android, 빌드 경고·실행 스크립트 등 | [상태표](implementation-status.md), [상세 TODO](../usability-todo.md) |
 
 자동조준은 표적 선택·추적과 포신 각도 조절을 맡는다. 이동·점프·무기 선택·발사는 플레이어가 한다. 탄속·탄도·분산을 바꾸던 C 기능은 삭제했다. 추가 유닛의 기획 조건과 실제 채택 수치는 기능 문서에서 각각 설명한다.
 
@@ -123,3 +123,7 @@ Mags의 답변은 개발자의 변과 제공 원문을 바탕으로 쓴다. 추�
 기종 선택과 형태의 유사성에 대한 아쉬움, 악역의 위협과 매력, 실제 필살기 사용 증가, Codex의 원작 화풍 재현 실패, 직접 지시하지 않았지만 마음에 들어 유지한 빠른 진입을 담았다. 편대 밀집은 내부 TODO의 `HM-LUX-FORMATION`으로 남아 있다. 화면 밖 이탈·재등장은 구상이다.
 
 사용자가 채택한 해석을 반영해 두 게임이 삶에서 했던 역할과 럭스루나에를 강한 적으로 구현한 이유를 연결했다. [데스 스트랜딩 사연 조사](../references/developer-background/death-stranding-community-story-20261028.md)를 참고했고, 마지막에는 현재도 이어지는 수정과 구상을 적었다. Apps·Mags 집필 때에는 [사용자 원문](../references/developer-background/user-lux-lunae-intent-20261028.md)과 이 원고를 함께 읽는다.
+
+## HUD 편집 · v0.14
+
+[HUD 편집 원고와 실제 기기 화면](hud-improvement-plan-20261028.md)에 요구·분할·입력·저장·편집 도구 수정과 iPhone/iPad 검사를 모았다. 버튼·계기판·상단 장식 이동은 구현됐고, 조준 상태 안내 개선은 별도 후속 과제다. [최신 검사 증거](../evidence/hud-editor-release-20261029.json).
