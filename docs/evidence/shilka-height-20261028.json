@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-28",
+  "branch": "feat/ground-aa-refinement",
+  "base_commit": "35fd08a5942a776467835d4eed546d6669b161e2",
+  "request": "Match Shilka turret height to Tunguska",
+  "display_size": {
+    "shilka": [
+      51,
+      29
+    ],
+    "tunguska": [
+      50,
+      29
+    ]
+  },
+  "shilka_sockets": {
+    "base": [
+      0,
+      -14.5
+    ],
+    "gun": [
+      -19,
+      -1.8125
+    ],
+    "radar": [
+      14,
+      14.5
+    ]
+  },
+  "method": "Existing logical-size scaling; source PNG unchanged",
+  "preserved": [
+    "Tunguska",
+    "hull and gun size",
+    "weapon properties",
+    "spawn counts",
+    "bounce and radar animation"
+  ],
+  "tests": {
+    "core": {
+      "passed": 23,
+      "failed": 0
+    },
+    "ipad_sim": {
+      "passed": 2,
+      "failed": 0
+    },
+    "iphone": {
+      "passed": 5,
+      "failed": 0
+    },
+    "ipad": {
+      "passed": 5,
+      "failed": 0
+    }
+  },
+  "install": {
+    "iphone-normal-install": {
+      "outcome": "success",
+      "receipt_sha256": "25b020607bce9ecbf5cfbd0ab534c418702d3e0d4718f0bf676a2ace86e54883"
+    },
+    "iphone-normal-launch": {
+      "outcome": "success",
+      "receipt_sha256": "5f317527ed5b28a9329bbac73a04d172ff8a18f93f33e5ad1cc7d1c43282f90a"
+    },
+    "ipad-normal-install": {
+      "outcome": "success",
+      "receipt_sha256": "216aadede8dec77c203eac88a17b7f686d20358225583a1292293bd36aab07b9"
+    },
+    "ipad-normal-launch": {
+      "outcome": "success",
+      "receipt_sha256": "8f7400c739306f9ac31dc9571640d9b9fdccc5da271a688dd62dd63cc2b9b2d6"
+    }
+  },
+  "transport": {
+    "iphone": {
+      "before": "localNetwork",
+      "after": "localNetwork"
+    },
+    "ipad": {
+      "before": "localNetwork",
+      "after": "localNetwork"
+    }
+  },
+  "media": [
+    {
+      "path": "docs/public/media/ground-aa/shilka-height/comparison.png",
+      "sha256": "6022fce8e6f6f929dea9d4add2daa065f268f14da783ffe80569978d94ae1e17"
+    },
+    {
+      "path": "docs/public/media/ground-aa/shilka-height/motion.mp4",
+      "sha256": "a40a0bcb628e45a54579c3e5b1639ac24f1f3969ad16c208520df728bd25d30d"
+    },
+    {
+      "path": "docs/public/media/ground-aa/shilka-height/shilka.png",
+      "sha256": "f0117121fa8207d172794af0bc04d1c31771c69f72b6ceda1b29f8f617d1aaa7"
+    }
+  ],
+  "apps": {
+    "HeavyMachRestored": {
+      "binary_sha256": "ffd9ff6657ea9bb0bab79a5bf7888d0a8550d40b33a1d83d2e6c31d4edc90fcd"
+    },
+    "HeavyMachValidation": {
+      "binary_sha256": "5a456bca9e3429da14df3ad50b322aae75b84bd7bcfb98fd91e0c03b14963635"
+    }
+  },
+  "logs": {
+    "build/shilka-height/core-tests.log": "b4bc543b837abe079b5d4b1eb998fca70b9e8fe4c3e770ee187543b48e32d636",
+    "build/shilka-height/ipad-sim.log": "272b4cc6e3d34baf5ce6eac7cbb1b2ecb2ee04cd5a93798de064810a3bf34657",
+    "build/shilka-height/iphone.log": "c452106327800beaaa779c27c162113deeb24326c432fc217c0e5560a1c2f69e",
+    "build/shilka-height/ipad.log": "0fa576239fd444390773f828dd1192b9d49d1c8c140551023c49a6516373d804"
+  }
+}

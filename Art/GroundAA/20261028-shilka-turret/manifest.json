@@ -1,0 +1,1103 @@
+{
+  "renderer": "existing HMMedia crop and cache",
+  "radar_frames": 24,
+  "radar_period_seconds": 2,
+  "files": [
+    {
+      "path": "Art/Extensions/GAA_Shilka_Parts_v2.png",
+      "sha256": "53bb7031b265ab3439d64c217259f75d2351359fdd446e2519fef174339c8e6a",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "path": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+      "sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "path": "Art/Extensions/GAA_Tunguska_Parts_v2.png",
+      "sha256": "a43afb7e3111085b6c1d9d841d3640976211e33e951537fef81324b48a3dcc8a",
+      "size": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "path": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+      "sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "path": "Art/Extensions/GAA_Shilka_Turret_v3.png",
+      "sha256": "b6d21f38c6ea995e58cb16dbf7f7f5f6f11e004d2ec2c2915b39749d6b03c331",
+      "size": [
+        1961,
+        802
+      ]
+    }
+  ],
+  "images": [
+    {
+      "name": "Extensions/GAA_Shilka_Body.png",
+      "source": "Extensions/GAA_Shilka_Parts_v2.png",
+      "crop": [
+        95,
+        26,
+        1307,
+        282
+      ],
+      "size": [
+        80,
+        18
+      ],
+      "anchor": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Shilka_Body2.png",
+      "source": "Extensions/GAA_Shilka_Parts_v2.png",
+      "crop": [
+        96,
+        343,
+        1309,
+        282
+      ],
+      "size": [
+        80,
+        18
+      ],
+      "anchor": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Shilka_Turret.png",
+      "source": "Extensions/GAA_Shilka_Turret_v3.png",
+      "crop": [
+        84,
+        95,
+        1804,
+        578
+      ],
+      "size": [
+        51,
+        29
+      ],
+      "anchor": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Shilka_Gun.png",
+      "source": "Extensions/GAA_Shilka_Parts_v2.png",
+      "crop": [
+        445,
+        904,
+        580,
+        113
+      ],
+      "size": [
+        32,
+        6
+      ],
+      "anchor": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Tunguska_Body.png",
+      "source": "Extensions/GAA_Tunguska_Parts_v2.png",
+      "crop": [
+        12,
+        93,
+        998,
+        265
+      ],
+      "size": [
+        85,
+        22
+      ],
+      "anchor": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Tunguska_Body2.png",
+      "source": "Extensions/GAA_Tunguska_Parts_v2.png",
+      "crop": [
+        13,
+        417,
+        999,
+        265
+      ],
+      "size": [
+        85,
+        22
+      ],
+      "anchor": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Tunguska_Turret.png",
+      "source": "Extensions/GAA_Tunguska_Parts_v2.png",
+      "crop": [
+        199,
+        690,
+        776,
+        447
+      ],
+      "size": [
+        50,
+        29
+      ],
+      "anchor": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Tunguska_Gun.png",
+      "source": "Extensions/GAA_Tunguska_Parts_v2.png",
+      "crop": [
+        110,
+        1167,
+        706,
+        137
+      ],
+      "size": [
+        37,
+        7
+      ],
+      "anchor": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Tunguska_Missile.png",
+      "source": "Extensions/GAA_Tunguska_Parts_v2.png",
+      "crop": [
+        347,
+        1323,
+        378,
+        194
+      ],
+      "size": [
+        30,
+        15
+      ],
+      "anchor": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Shilka_Radar0.png",
+      "source": "Extensions/GAA_Shilka_Radar_v2.png",
+      "crop": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0.75,
+        -7.4375
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Shilka_Radar1.png",
+      "source": "Extensions/GAA_Shilka_Radar_v2.png",
+      "crop": [
+        256,
+        0,
+        256,
+        256
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0.7585227272727266,
+        -7.4375
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Shilka_Radar2.png",
+      "source": "Extensions/GAA_Shilka_Radar_v2.png",
+      "crop": [
+        512,
+        0,
+        256,
+        256
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0.5396825396825395,
+        -7.4375
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Shilka_Radar3.png",
+      "source": "Extensions/GAA_Shilka_Radar_v2.png",
+      "crop": [
+        768,
+        0,
+        256,
+        256
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0.1130514705882355,
+        -7.4375
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Shilka_Radar4.png",
+      "source": "Extensions/GAA_Shilka_Radar_v2.png",
+      "crop": [
+        1024,
+        0,
+        256,
+        256
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        -0.0625,
+        -7.4375
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Shilka_Radar5.png",
+      "source": "Extensions/GAA_Shilka_Radar_v2.png",
+      "crop": [
+        1280,
+        0,
+        256,
+        256
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        -0.47980769230769216,
+        -7.4375
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Shilka_Radar6.png",
+      "source": "Extensions/GAA_Shilka_Radar_v2.png",
+      "crop": [
+        0,
+        256,
+        256,
+        256
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0.8137019230769234,
+        -7.25
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Shilka_Radar7.png",
+      "source": "Extensions/GAA_Shilka_Radar_v2.png",
+      "crop": [
+        256,
+        256,
+        256,
+        256
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0.7759433962264151,
+        -7.25
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Shilka_Radar8.png",
+      "source": "Extensions/GAA_Shilka_Radar_v2.png",
+      "crop": [
+        512,
+        256,
+        256,
+        256
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0.5250000000000004,
+        -7.25
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Shilka_Radar9.png",
+      "source": "Extensions/GAA_Shilka_Radar_v2.png",
+      "crop": [
+        768,
+        256,
+        256,
+        256
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0.08946078431372584,
+        -7.25
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Shilka_Radar10.png",
+      "source": "Extensions/GAA_Shilka_Radar_v2.png",
+      "crop": [
+        1024,
+        256,
+        256,
+        256
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        -0.05718085106382986,
+        -7.25
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Shilka_Radar11.png",
+      "source": "Extensions/GAA_Shilka_Radar_v2.png",
+      "crop": [
+        1280,
+        256,
+        256,
+        256
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        -0.47405660377358494,
+        -7.25
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Shilka_Radar12.png",
+      "source": "Extensions/GAA_Shilka_Radar_v2.png",
+      "crop": [
+        0,
+        512,
+        256,
+        256
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        2.107558139534884,
+        -7.9375
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Shilka_Radar13.png",
+      "source": "Extensions/GAA_Shilka_Radar_v2.png",
+      "crop": [
+        256,
+        512,
+        256,
+        256
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        2.155585106382979,
+        -7.9375
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Shilka_Radar14.png",
+      "source": "Extensions/GAA_Shilka_Radar_v2.png",
+      "crop": [
+        512,
+        512,
+        256,
+        256
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        1.875,
+        -7.9375
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Shilka_Radar15.png",
+      "source": "Extensions/GAA_Shilka_Radar_v2.png",
+      "crop": [
+        768,
+        512,
+        256,
+        256
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        1.3067129629629637,
+        -7.9375
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Shilka_Radar16.png",
+      "source": "Extensions/GAA_Shilka_Radar_v2.png",
+      "crop": [
+        1024,
+        512,
+        256,
+        256
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        -0.46875,
+        -7.9375
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Shilka_Radar17.png",
+      "source": "Extensions/GAA_Shilka_Radar_v2.png",
+      "crop": [
+        1280,
+        512,
+        256,
+        256
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        -0.951171875,
+        -7.9375
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Shilka_Radar18.png",
+      "source": "Extensions/GAA_Shilka_Radar_v2.png",
+      "crop": [
+        0,
+        768,
+        256,
+        256
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0.8514344262295079,
+        -5.9375
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Shilka_Radar19.png",
+      "source": "Extensions/GAA_Shilka_Radar_v2.png",
+      "crop": [
+        256,
+        768,
+        256,
+        256
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0.8125,
+        -5.9375
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Shilka_Radar20.png",
+      "source": "Extensions/GAA_Shilka_Radar_v2.png",
+      "crop": [
+        512,
+        768,
+        256,
+        256
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0.6335227272727266,
+        -5.9375
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Shilka_Radar21.png",
+      "source": "Extensions/GAA_Shilka_Radar_v2.png",
+      "crop": [
+        768,
+        768,
+        256,
+        256
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0.13541666666666607,
+        -5.9375
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Shilka_Radar22.png",
+      "source": "Extensions/GAA_Shilka_Radar_v2.png",
+      "crop": [
+        1024,
+        768,
+        256,
+        256
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        -0.03125,
+        -5.9375
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Shilka_Radar23.png",
+      "source": "Extensions/GAA_Shilka_Radar_v2.png",
+      "crop": [
+        1280,
+        768,
+        256,
+        256
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        -0.5,
+        -5.9375
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Tunguska_Radar0.png",
+      "source": "Extensions/GAA_Tunguska_Radar_v2.png",
+      "crop": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "size": [
+        21,
+        21
+      ],
+      "anchor": [
+        0.973902925531915,
+        -9.6796875
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Tunguska_Radar1.png",
+      "source": "Extensions/GAA_Tunguska_Radar_v2.png",
+      "crop": [
+        256,
+        0,
+        256,
+        256
+      ],
+      "size": [
+        21,
+        21
+      ],
+      "anchor": [
+        1.23046875,
+        -9.6796875
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Tunguska_Radar2.png",
+      "source": "Extensions/GAA_Tunguska_Radar_v2.png",
+      "crop": [
+        512,
+        0,
+        256,
+        256
+      ],
+      "size": [
+        21,
+        21
+      ],
+      "anchor": [
+        0.29414062500000027,
+        -9.76171875
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Tunguska_Radar3.png",
+      "source": "Extensions/GAA_Tunguska_Radar_v2.png",
+      "crop": [
+        768,
+        0,
+        256,
+        256
+      ],
+      "size": [
+        21,
+        21
+      ],
+      "anchor": [
+        -0.4441692073170737,
+        -9.92578125
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Tunguska_Radar4.png",
+      "source": "Extensions/GAA_Tunguska_Radar_v2.png",
+      "crop": [
+        1024,
+        0,
+        256,
+        256
+      ],
+      "size": [
+        21,
+        21
+      ],
+      "anchor": [
+        -0.9206928453947367,
+        -10.0078125
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Tunguska_Radar5.png",
+      "source": "Extensions/GAA_Tunguska_Radar_v2.png",
+      "crop": [
+        1280,
+        0,
+        256,
+        256
+      ],
+      "size": [
+        21,
+        21
+      ],
+      "anchor": [
+        -1.4874195772058818,
+        -10.0078125
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Tunguska_Radar6.png",
+      "source": "Extensions/GAA_Tunguska_Radar_v2.png",
+      "crop": [
+        0,
+        256,
+        256,
+        256
+      ],
+      "size": [
+        21,
+        21
+      ],
+      "anchor": [
+        1.0073837652439024,
+        -9.0234375
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Tunguska_Radar7.png",
+      "source": "Extensions/GAA_Tunguska_Radar_v2.png",
+      "crop": [
+        256,
+        256,
+        256,
+        256
+      ],
+      "size": [
+        21,
+        21
+      ],
+      "anchor": [
+        2.659266218354431,
+        -9.0234375
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Tunguska_Radar8.png",
+      "source": "Extensions/GAA_Tunguska_Radar_v2.png",
+      "crop": [
+        512,
+        256,
+        256,
+        256
+      ],
+      "size": [
+        21,
+        21
+      ],
+      "anchor": [
+        1.3799479166666666,
+        -8.94140625
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Tunguska_Radar9.png",
+      "source": "Extensions/GAA_Tunguska_Radar_v2.png",
+      "crop": [
+        768,
+        256,
+        256,
+        256
+      ],
+      "size": [
+        21,
+        21
+      ],
+      "anchor": [
+        0.4673016151685384,
+        -9.0234375
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Tunguska_Radar10.png",
+      "source": "Extensions/GAA_Tunguska_Radar_v2.png",
+      "crop": [
+        1024,
+        256,
+        256,
+        256
+      ],
+      "size": [
+        21,
+        21
+      ],
+      "anchor": [
+        0.13007812500000027,
+        -9.10546875
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Tunguska_Radar11.png",
+      "source": "Extensions/GAA_Tunguska_Radar_v2.png",
+      "crop": [
+        1280,
+        256,
+        256,
+        256
+      ],
+      "size": [
+        21,
+        21
+      ],
+      "anchor": [
+        -0.13821703767123245,
+        -9.10546875
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Tunguska_Radar12.png",
+      "source": "Extensions/GAA_Tunguska_Radar_v2.png",
+      "crop": [
+        0,
+        512,
+        256,
+        256
+      ],
+      "size": [
+        21,
+        21
+      ],
+      "anchor": [
+        1.024479166666666,
+        -8.3671875
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Tunguska_Radar13.png",
+      "source": "Extensions/GAA_Tunguska_Radar_v2.png",
+      "crop": [
+        256,
+        512,
+        256,
+        256
+      ],
+      "size": [
+        21,
+        21
+      ],
+      "anchor": [
+        1.025390625,
+        -8.3671875
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Tunguska_Radar14.png",
+      "source": "Extensions/GAA_Tunguska_Radar_v2.png",
+      "crop": [
+        512,
+        512,
+        256,
+        256
+      ],
+      "size": [
+        21,
+        21
+      ],
+      "anchor": [
+        0.4353966346153857,
+        -8.3671875
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Tunguska_Radar15.png",
+      "source": "Extensions/GAA_Tunguska_Radar_v2.png",
+      "crop": [
+        768,
+        512,
+        256,
+        256
+      ],
+      "size": [
+        21,
+        21
+      ],
+      "anchor": [
+        -0.48033854166666656,
+        -8.203125
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Tunguska_Radar16.png",
+      "source": "Extensions/GAA_Tunguska_Radar_v2.png",
+      "crop": [
+        1024,
+        512,
+        256,
+        256
+      ],
+      "size": [
+        21,
+        21
+      ],
+      "anchor": [
+        -0.727627840909091,
+        -8.12109375
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Tunguska_Radar17.png",
+      "source": "Extensions/GAA_Tunguska_Radar_v2.png",
+      "crop": [
+        1280,
+        512,
+        256,
+        256
+      ],
+      "size": [
+        21,
+        21
+      ],
+      "anchor": [
+        -1.1788535814606735,
+        -8.0390625
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Tunguska_Radar18.png",
+      "source": "Extensions/GAA_Tunguska_Radar_v2.png",
+      "crop": [
+        0,
+        768,
+        256,
+        256
+      ],
+      "size": [
+        21,
+        21
+      ],
+      "anchor": [
+        1.0068493150684925,
+        -6.48046875
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Tunguska_Radar19.png",
+      "source": "Extensions/GAA_Tunguska_Radar_v2.png",
+      "crop": [
+        256,
+        768,
+        256,
+        256
+      ],
+      "size": [
+        21,
+        21
+      ],
+      "anchor": [
+        1.1484375,
+        -6.48046875
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Tunguska_Radar20.png",
+      "source": "Extensions/GAA_Tunguska_Radar_v2.png",
+      "crop": [
+        512,
+        768,
+        256,
+        256
+      ],
+      "size": [
+        21,
+        21
+      ],
+      "anchor": [
+        -0.02580758426966262,
+        -6.3984375
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Tunguska_Radar21.png",
+      "source": "Extensions/GAA_Tunguska_Radar_v2.png",
+      "crop": [
+        768,
+        768,
+        256,
+        256
+      ],
+      "size": [
+        21,
+        21
+      ],
+      "anchor": [
+        -0.1435546875,
+        -6.3984375
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Tunguska_Radar22.png",
+      "source": "Extensions/GAA_Tunguska_Radar_v2.png",
+      "crop": [
+        1024,
+        768,
+        256,
+        256
+      ],
+      "size": [
+        21,
+        21
+      ],
+      "anchor": [
+        -0.11113911290322614,
+        -6.3984375
+      ]
+    },
+    {
+      "name": "Extensions/GAA_Tunguska_Radar23.png",
+      "source": "Extensions/GAA_Tunguska_Radar_v2.png",
+      "crop": [
+        1280,
+        768,
+        256,
+        256
+      ],
+      "size": [
+        21,
+        21
+      ],
+      "anchor": [
+        -0.7766788563829782,
+        -6.3984375
+      ]
+    }
+  ],
+  "generator": "built-in image_gen",
+  "inputs": [
+    {
+      "path": "Art/Extensions/GAA_Shilka_Parts_v2.png",
+      "role": "current runtime style and turret edit target",
+      "sha256": "53bb7031b265ab3439d64c217259f75d2351359fdd446e2519fef174339c8e6a"
+    },
+    {
+      "path": "Art/GroundAA/20261028-shilka-turret/shilka-museum.jpg",
+      "role": "real turret shape",
+      "source": "https://commons.wikimedia.org/wiki/File:ZSU-23-4_spb.JPG",
+      "author": "One half 3544",
+      "license": "Public domain (PD-self)",
+      "sha256": "3ec1313734960ad23526deb2728dc36409431ce3386b92e7adb9d2cfaed732f5"
+    }
+  ],
+  "source_outputs": [
+    "exec-18c0da02-2ed0-49f6-9a47-ef8018041832.png"
+  ],
+  "revision": "Shilka turret display height matched to Tunguska: 29 logical pixels",
+  "previous_manifest": "Art/GroundAA/20261028-integrated/manifest.json",
+  "height_adjustment": {
+    "requested_by": "user",
+    "old_height": 16,
+    "new_height": 29,
+    "width": 51,
+    "method": "existing HMMedia logical-size scaling; PNG unchanged"
+  }
+}

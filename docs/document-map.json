@@ -42,7 +42,8 @@
     "docs/public/troubleshooting.md",
     "docs/public/development-history.md",
     "docs/public/validation.md",
-    "docs/public/github-followup-20261028.md"
+    "docs/public/github-followup-20261028.md",
+    "docs/ground-aa-expansion.md"
   ],
   "base_read": [
     "AGENTS.md",
@@ -61,7 +62,8 @@
       "read": [
         "docs/game-calculation-policy.md",
         "docs/stage-transition-contract.md",
-        "docs/lux-lunae-plan-20261027.md"
+        "docs/lux-lunae-plan-20261027.md",
+        "docs/ground-aa-expansion.md"
       ],
       "sources": [
         "Sources/Core/GameSession.cpp",
@@ -107,7 +109,8 @@
         "docs/rendering-policy.md",
         "docs/coordinate-policy.md",
         "docs/weapon-validation-procedure.md",
-        "docs/vtol-expansion.md"
+        "docs/vtol-expansion.md",
+        "docs/ground-aa-expansion.md"
       ],
       "sources": [
         "Sources/iOS/HMGLRenderer.*",
@@ -158,7 +161,8 @@
         "docs/coordinate-policy.md",
         "docs/weapon-validation-procedure.md",
         "docs/vtol-expansion.md",
-        "docs/lux-lunae-plan-20261027.md"
+        "docs/lux-lunae-plan-20261027.md",
+        "docs/ground-aa-expansion.md"
       ],
       "sources": [
         "Sources/Core/Combat.*",

@@ -76,3 +76,7 @@ MAP/MCH 관찰 구조는 LE u32 `declared_size,type,data_size`, payload, LE u32 
 ## 럭스루나에 전투기
 
 `Fighters.cpp`는 신규 3종과 무기 복사본·14개 증원표를 제공한다. `GameSession`은 원본 맵을 수정하지 않고 대형보스 활성/마지막 구간 진입 때 증원한다. `aircraftSpec`은 신규 전투기와 기존 VTOL의 자세·발사점·피격·그리기를 연결한다. 신규 후방 배기만 가로 방향으로 그린다. 증원은 화면 오른쪽 밖에서 생성하고 `aircraftEntering` 동안 기존 비행 위치 갱신으로 진입한다. 목표점 도착 때 무기 AI 대기 시각을 시작한다. [수치·배치·검사](lux-lunae-plan-20261027.md).
+
+## 추가 지상 적
+
+`GroundAA.cpp`가 별도 무기·파츠·차량 정의와 배치를 추가한다. `GameSession`의 기존 부모·자식 파츠, 지상 AI, 충돌·무기 갱신을 사용한다. 변경 분기는 `GAA_Shilka_M*`·`GAA_Tunguska_M*`에 한정한다. `GroundAAArt.inc`는 그림의 영역·표시 크기·레이더 축을 소유한다. [조립·무장·배치와 검사](ground-aa-expansion.md).

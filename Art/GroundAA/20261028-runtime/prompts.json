@@ -1,0 +1,46 @@
+[
+  {
+    "prompt": "Extract/repaint ONLY the lower hull and tracked chassis from the approved ZSU-23-4 Shilka reference, as a single game sprite on true transparent background. Absolutely no turret, gun, radar, labels, scenery, cast shadow or surrounding glow. The track assembly MUST have SIX large road wheels in a row between the small raised front/rear sprockets (8 circular wheels total including two sprockets). This wheel count is mandatory. Copy the approved reference hull exactly, facing LEFT, horizontal side view, realistic proportions, olive brown weathered hand-painted metal, delicate dark outline. Single component centered, keep empty transparent padding all sides. Not a sprite sheet.",
+    "asset_name": "shilkaBody"
+  },
+  {
+    "prompt": "Extract/repaint ONLY the lower hull and tracked chassis from the approved 2S6 Tunguska reference, as a single game sprite on true transparent background. Absolutely no turret, gun, radar, labels, scenery, cast shadow or surrounding glow. The track assembly MUST have SIX large road wheels in a row between the small raised front/rear sprockets (8 circular wheels total including two sprockets). This wheel count is mandatory. Copy the approved reference hull exactly, facing LEFT, horizontal side view, realistic proportions, olive green weathered hand-painted metal, delicate dark outline. Single component centered, keep empty transparent padding all sides. Not a sprite sheet.",
+    "asset_name": "tunguskaBody"
+  },
+  {
+    "prompt": "This is harmless non-combat 2D videogame artwork, no people, no violence, no firing or combat scene. Create one isolated mechanical vehicle component from the supplied approved illustration: the low rectangular cabin shown separately in part B of the reference, without the long projecting tubes and without the dish antenna. Copy its shape, horizontal orientation, olive metal paint, rivets and subtle painted game texture. No other parts, no labels or text, no ground, no shadow, no glow. True transparent background, single component centered with margin, suitable for assembling a layered game sprite.",
+    "asset_name": "shilkaTurret"
+  },
+  {
+    "prompt": "This is harmless non-combat 2D videogame artwork, no people, no violence, no firing or combat scene. Create one isolated mechanical vehicle component from the supplied approved illustration: the central cabin shown separately in part B of the reference, including its small front round sensor on the LEFT, without long projecting tubes or the rear rectangular antenna. Copy its shape, horizontal orientation, olive metal paint, rivets and subtle painted game texture. No other parts, no labels or text, no ground, no shadow, no glow. True transparent background, single component centered with margin, suitable for assembling a layered game sprite.",
+    "asset_name": "tunguskaTurret"
+  },
+  {
+    "prompt": "Non-combat videogame sprite component, no firing, no scene, no people. Copy the separate mechanical part C in the attached approved vehicle illustration, with FOUR clearly distinct parallel horizontal barrels, all four equally long, spaced so their four circular muzzle openings are visible at LEFT, one shared pivot cradle at RIGHT. Same olive painted metal breech and dark steel tubes with rings, same realistic proportions and delicate game-art outline. Single isolated component on true transparent background with transparent padding. Tubes point exactly horizontally LEFT (zero elevation), NOT diagonally. No body, other objects, text, labels, background, shadows or glow.",
+    "asset_name": "shilkaGun"
+  },
+  {
+    "prompt": "Non-combat videogame sprite component, no firing, no scene, no people. Copy the separate mechanical part C in the attached approved vehicle illustration, with TWO clearly distinct parallel horizontal barrels, two equally long tubes pointing LEFT, one shared pivot cradle at RIGHT. Same olive painted metal breech and dark steel tubes with rings, same realistic proportions and delicate game-art outline. Single isolated component on true transparent background with transparent padding. Tubes point exactly horizontally LEFT (zero elevation), NOT diagonally. No body, other objects, text, labels, background, shadows or glow.",
+    "asset_name": "tunguskaGun"
+  },
+  {
+    "prompt": "Non-combat videogame mechanical animation sprite sheet on transparent background. Draw ONLY the round circular dish antenna with olive painted face and mechanical ribs on the back from attached design on its short vertical pedestal. No vehicle, text, numbers, outlines of cells, background, shadows or glow. EXACTLY 4 columns x 2 rows in 1536x1024 canvas. 8 EQUAL 384x512 CELLS, with ONE frame per cell. The pedestal is upright, identical position and size in all frames; base center at local x192,y400. Antenna center at local x192,y220. Entire object fits local x64..320,y96..400. These are consecutive YAW angles around vertical mast: top row 0° front face,45° front oblique,90° edge-on,135° rear oblique; bottom row 180° rear face,225° rear oblique,270° other edge,315° front oblique. Antenna rotates horizontally on upright mast, NEVER tips or rolls. Same dimensions, scale, height and lighting in all frames. Preserve reference riveted painted olive game illustration texture. Separate alpha cutout frames, clean edges.",
+    "asset_name": "shilkaRadar"
+  },
+  {
+    "prompt": "Create an eight-frame animation sheet of a rectangular olive-green mechanical antenna panel on a vertical pedestal. Harmless game-art prop, no combat or people. Hand-painted metallic olive green with rivets like the reference. Exactly 4 columns by 2 rows, canvas1536x1024. Panel rotates about vertical axis: front, front oblique, edge, rear oblique, rear, opposite rear oblique, opposite edge, opposite front oblique. Keep mast upright and in identical location in each cell. Panel is rectangular, wide, thin, NOT a round dish. Each 384x512 cell has one prop, with 40px transparent margin. Nothing else. TRUE transparent background, no black or green glow outside silhouette, no text, no numbers. Reference is for the rear top rectangular antenna and its pedestal only.",
+    "asset_name": "tunguskaRadar"
+  },
+  {
+    "prompt": "Harmless non-combat videogame component, copy ONLY mechanical part D from the attached approved illustration: an olive green four-tube launcher bank, two rows, two tubes in each row, circular openings facing LEFT, horizontal straight tubes, shared mounting pivot at right and below. Match reference proportions, hand painted olive metal and rivets, subtle outline. Single isolated component centred on true transparent background, no firing, ammunition, vehicle, people, labels, text, ground, shadow or glow.",
+    "asset_name": "tunguskaMissile"
+  },
+  {
+    "prompt": "Create animation frame 2 of this exact tracked vehicle chassis sprite. Keep image dimensions, alpha background, chassis position, all armor, silhouette, colors, six road wheels, front and rear sprockets EXACTLY unchanged. Change ONLY the wheel spokes by a small rotation and shift the track link pattern slightly to indicate rolling. Do not move or scale the component, no added objects, turret, guns, text, background or shadows. True alpha transparency.",
+    "asset_name": "shilkaBody2"
+  },
+  {
+    "prompt": "Create animation frame 2 of this exact tracked vehicle chassis sprite. Keep image dimensions, alpha background, chassis position, all armor, silhouette, colors, six road wheels, front and rear sprockets EXACTLY unchanged. Change ONLY the wheel spokes by a small rotation and shift the track link pattern slightly to indicate rolling. Do not move or scale the component, no added objects, turret, guns, text, background or shadows. True alpha transparency.",
+    "asset_name": "tunguskaBody2"
+  }
+]

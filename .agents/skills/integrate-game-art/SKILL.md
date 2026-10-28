@@ -5,6 +5,12 @@ description: HeavyMach 아트 변경에서 원본 에셋·생성 배경·실제 
 
 # 게임 아트 연결
 
+## 참조 파일 확인
+
+채택본이라는 파일명·폴더명·문구만으로 참조를 고르지 않는다. 현재 소비 코드의 자원 경로에서 시작해 제작 원본 → 런타임 자원 → 생성 도구 입력 → 보고서 이미지를 파일별 SHA-256으로 대조한다. 채택 후 외곽선·크기·색 보정본이 있으면 그 후속본을 확인한다. 실제 앱 사용 파일과 과거 시안을 구분한다. 보고서가 생성에 사용한 파일과 다른 그림을 보여주면 먼저 바로잡는다.
+
+2026-10-28 오류: 해리어 생성 참조는 v2였지만 보고서가 탈락한 v1을 ‘채택본’으로 표시했다. 앱은 v3을 사용했다. 상세 기록은 `Art/GroundAA/20261028-aircraft-style/reference-audit.json`이다.
+
 HeavyMach 아트는 `docs/canonical.md`, `docs/game-design.md`, `docs/rendering-policy.md`, `docs/coordinate-policy.md`와 `Art/generation-20261025.json`·`Art/menu-joins-20261025.json`를 읽고 원본 중앙 에셋·좌우 확장·실제 앱 합성을 대조한다. 이미지 생성이 필요하면 현재 제공된 imagegen 스킬을 사용한다.
 
 원본 이미지는 수정하지 않고 별도 파생 에셋을 만든다. 변경한 메뉴·게임 화면의 실제 합성과 터치 위치를 검증하고, 결과는 이 저장소의 present-game-artifacts와 docs/report-site.md를 따른다.

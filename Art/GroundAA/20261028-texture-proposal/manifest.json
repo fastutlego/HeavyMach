@@ -1,0 +1,82 @@
+{
+  "status": "proposal_only",
+  "runtime_assets_changed": false,
+  "motion_change": "Keep current bounce and body poses per user 2026-10-28",
+  "files": [
+    {
+      "file": "docs/public/media/ground-aa/texture-proposal/original-tank-body.png",
+      "sha256": "e259aec0679ef75ec195adb9fa361d6b705d8ac3e4f22ae522a014263a9f3bff",
+      "size": [
+        200,
+        51
+      ],
+      "alpha_bounds": [
+        7,
+        22,
+        186,
+        46
+      ],
+      "transparent_pixels": 7201
+    },
+    {
+      "file": "docs/public/media/ground-aa/texture-proposal/original-heli-03.png",
+      "sha256": "c870140bcbf6b641b85be4b2eacc5ed9a17d4dd8dd8c414a29f398aea0b85bd3",
+      "size": [
+        99,
+        47
+      ],
+      "alpha_bounds": [
+        0,
+        0,
+        99,
+        47
+      ],
+      "transparent_pixels": 2603
+    },
+    {
+      "file": "docs/public/media/ground-aa/texture-proposal/tunguska.png",
+      "sha256": "48a4a276df61209c71bc3b7c4cea26072780332e0e1a25e62890160e64bf79f2",
+      "size": [
+        1681,
+        936
+      ],
+      "alpha_bounds": [
+        33,
+        9,
+        1635,
+        936
+      ],
+      "transparent_pixels": 776352
+    },
+    {
+      "file": "docs/public/media/ground-aa/texture-proposal/original-heli-06.png",
+      "sha256": "35bb833f7768194ff6aff6503774351aeda0ff3d58c715f05d20b6ae38267537",
+      "size": [
+        126,
+        48
+      ],
+      "alpha_bounds": [
+        0,
+        0,
+        126,
+        48
+      ],
+      "transparent_pixels": 2969
+    },
+    {
+      "file": "docs/public/media/ground-aa/texture-proposal/shilka.png",
+      "sha256": "6615e1728bbe79b9dccc8780080f32a35df7ff38bda9b0a73160b695e4c4f61a",
+      "size": [
+        1774,
+        887
+      ],
+      "alpha_bounds": [
+        0,
+        64,
+        1740,
+        861
+      ],
+      "transparent_pixels": 832666
+    }
+  ]
+}

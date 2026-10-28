@@ -1,0 +1,288 @@
+{
+  "inputs": {
+    "source_commit": "dc41705ef1c36709c2a23c373955bd35a81fdcff",
+    "source": "https://github.com/gelb2/HeavyMach.git",
+    "branch": "main",
+    "sandbox_probes": [
+      {
+        "path": "/Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/README.md",
+        "exit_code": 1
+      },
+      {
+        "path": "/private/tmp/heavymach-independent-20261028.EtRlqT/access-probe.ipa",
+        "exit_code": 1
+      },
+      {
+        "path": "/private/tmp/heavymach-independent-20261028.EtRlqT/repo/Sources/Core/GameSession.cpp",
+        "exit_code": 0
+      }
+    ],
+    "ipa_files": [],
+    "tracked_symlinks": [
+      "120000 80662e97c9e718192fef9a790f7da0a5c2cbc02c 0\t.claude/skills/engineering-browser",
+      "120000 3a77a59bc80935255baaf3a24c67273fb68cdf8a 0\t.claude/skills/engineering-debug",
+      "120000 ce9f4c8dfa2510a5ae7678940bbba0fa7dd9c488 0\t.claude/skills/engineering-review",
+      "120000 0c8a5308b3ebc2deb1d89238036884caff1535cb 0\t.claude/skills/engineering-test",
+      "120000 e491e619ff1389ebcc5aa383fc124e10abfedf98 0\t.claude/skills/integrate-game-art",
+      "120000 10a14b158170756115debf63d63b32414a50426e 0\t.claude/skills/port-heavymach-android",
+      "120000 e5aa080ed3cf1027ec214d72a8d5008626b345b2 0\t.claude/skills/present-game-artifacts",
+      "120000 769610bf4e7dc30f9ca18079b0306629ca379916 0\t.claude/skills/write-project-text"
+    ],
+    "resource_count": 1482
+  },
+  "builds": [
+    {
+      "name": "resources",
+      "command": [
+        "python3",
+        "tools/verify_build_resources.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "openal-simulator",
+      "command": [
+        "bash",
+        "tools/build_openal.sh",
+        "iphonesimulator"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "HeavyMachRestored",
+      "command": [
+        "xcodebuild",
+        "-workspace",
+        "HeavyMach.xcworkspace",
+        "-scheme",
+        "HeavyMachRestored",
+        "-configuration",
+        "Debug",
+        "-sdk",
+        "iphonesimulator",
+        "-destination",
+        "generic/platform=iOS Simulator",
+        "-derivedDataPath",
+        "/private/tmp/heavymach-independent-20261028.EtRlqT/derived",
+        "ARCHS=arm64",
+        "ONLY_ACTIVE_ARCH=YES",
+        "CODE_SIGNING_ALLOWED=NO",
+        "COMPILER_INDEX_STORE_ENABLE=NO",
+        "build"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "HeavyMachValidation",
+      "command": [
+        "xcodebuild",
+        "-workspace",
+        "HeavyMach.xcworkspace",
+        "-scheme",
+        "HeavyMachValidation",
+        "-configuration",
+        "Debug",
+        "-sdk",
+        "iphonesimulator",
+        "-destination",
+        "generic/platform=iOS Simulator",
+        "-derivedDataPath",
+        "/private/tmp/heavymach-independent-20261028.EtRlqT/derived",
+        "ARCHS=arm64",
+        "ONLY_ACTIVE_ARCH=YES",
+        "CODE_SIGNING_ALLOWED=NO",
+        "COMPILER_INDEX_STORE_ENABLE=NO",
+        "build"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "core-configure",
+      "command": [
+        "cmake",
+        "-S",
+        ".",
+        "-B",
+        "build/core",
+        "-DCMAKE_BUILD_TYPE=Debug"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "core-build",
+      "command": [
+        "cmake",
+        "--build",
+        "build/core",
+        "-j",
+        "4"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "core-tests",
+      "command": [
+        "ctest",
+        "--test-dir",
+        "build/core",
+        "--output-on-failure"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "runtime": [
+    {
+      "name": "install-HeavyMachRestored",
+      "command": [
+        "xcrun",
+        "simctl",
+        "install",
+        "263B1D04-3C87-42CE-AE3E-D4E69F4B981E",
+        "/private/tmp/heavymach-independent-20261028.EtRlqT/derived/Build/Products/Debug-iphonesimulator/HeavyMachRestored.app"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "launch-HeavyMachRestored",
+      "command": [
+        "xcrun",
+        "simctl",
+        "launch",
+        "263B1D04-3C87-42CE-AE3E-D4E69F4B981E",
+        "com.gelb2.heavymach.restored"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "capture-HeavyMachRestored",
+      "command": [
+        "xcrun",
+        "simctl",
+        "io",
+        "263B1D04-3C87-42CE-AE3E-D4E69F4B981E",
+        "screenshot",
+        "/private/tmp/heavymach-independent-20261028.EtRlqT/HeavyMachRestored.png"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "stop-HeavyMachRestored",
+      "command": [
+        "xcrun",
+        "simctl",
+        "terminate",
+        "263B1D04-3C87-42CE-AE3E-D4E69F4B981E",
+        "com.gelb2.heavymach.restored"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "install-HeavyMachValidation",
+      "command": [
+        "xcrun",
+        "simctl",
+        "install",
+        "263B1D04-3C87-42CE-AE3E-D4E69F4B981E",
+        "/private/tmp/heavymach-independent-20261028.EtRlqT/derived/Build/Products/Debug-iphonesimulator/HeavyMachValidation.app"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "launch-HeavyMachValidation",
+      "command": [
+        "xcrun",
+        "simctl",
+        "launch",
+        "263B1D04-3C87-42CE-AE3E-D4E69F4B981E",
+        "com.gelb2.heavymach.validation"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "capture-HeavyMachValidation",
+      "command": [
+        "xcrun",
+        "simctl",
+        "io",
+        "263B1D04-3C87-42CE-AE3E-D4E69F4B981E",
+        "screenshot",
+        "/private/tmp/heavymach-independent-20261028.EtRlqT/HeavyMachValidation.png"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "stop-HeavyMachValidation",
+      "command": [
+        "xcrun",
+        "simctl",
+        "terminate",
+        "263B1D04-3C87-42CE-AE3E-D4E69F4B981E",
+        "com.gelb2.heavymach.validation"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "runtime-tests",
+      "command": [
+        "sandbox-exec",
+        "-f",
+        "/private/tmp/heavymach-independent-20261028.EtRlqT/deny-originals.sb",
+        "xcodebuild",
+        "-workspace",
+        "HeavyMach.xcworkspace",
+        "-scheme",
+        "HeavyMachValidation",
+        "-configuration",
+        "Debug",
+        "-sdk",
+        "iphonesimulator",
+        "-destination",
+        "platform=iOS Simulator,id=263B1D04-3C87-42CE-AE3E-D4E69F4B981E",
+        "-derivedDataPath",
+        "/private/tmp/heavymach-independent-20261028.EtRlqT/derived",
+        "-resultBundlePath",
+        "/private/tmp/heavymach-independent-20261028.EtRlqT/independent.xcresult",
+        "-parallel-testing-enabled",
+        "NO",
+        "ARCHS=arm64",
+        "ONLY_ACTIVE_ARCH=YES",
+        "CODE_SIGNING_ALLOWED=NO",
+        "COMPILER_INDEX_STORE_ENABLE=NO",
+        "test",
+        "-only-testing:HeavyMachRenderTests/HMMediaParityTests",
+        "-only-testing:HeavyMachRenderTests/HMOpenALAudioTests",
+        "-only-testing:HeavyMachRenderTests/HMFramePerformanceTests/testAllWeaponsKeepTargetsAcrossTouchRelease",
+        "-only-testing:HeavyMachRenderTests/HMFramePerformanceTests/testExpandedEdgeTouchFiresAndOutsideReleaseAndModalStopIt"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "bundles": {
+    "HeavyMachRestored": {
+      "checked_assets": 1478,
+      "mismatches": [],
+      "ipa_files": [],
+      "binary_dependencies": "derived/Build/Products/Debug-iphonesimulator/HeavyMachRestored.app/HeavyMachRestored:\n\t@rpath/HeavyMachRestored.debug.dylib (compatibility version 0.0.0, current version 0.0.0)\n\t/usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 2200.27.0)\n\t/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1359.0.0)\n"
+    },
+    "HeavyMachValidation": {
+      "checked_assets": 1478,
+      "mismatches": [],
+      "ipa_files": [],
+      "binary_dependencies": "derived/Build/Products/Debug-iphonesimulator/HeavyMachValidation.app/HeavyMachValidation:\n\t@rpath/HeavyMachValidation.debug.dylib (compatibility version 0.0.0, current version 0.0.0)\n\t/usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 2200.27.0)\n\t/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1359.0.0)\n"
+    }
+  },
+  "date": "2026-10-28",
+  "core_tests": {
+    "passed": 21,
+    "failed": 0
+  },
+  "ios_tests": {
+    "passed": 10,
+    "failed": 0
+  },
+  "source_scope": "Remote main dc41705e; local ground-aa branch not on GitHub",
+  "raw_logs": "build/independence-main-20261028",
+  "initial_lfs_check": "Before git lfs install --local, pull downloaded objects but skipped checkout. After documented local install and pull, all 1482 hashes matched.",
+  "simulator_setup": "Initial bootstatus reported data migration failed; device reached Booted and both launches and 10 tests subsequently passed.",
+  "device_reinstall": false
+}
