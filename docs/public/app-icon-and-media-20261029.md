@@ -24,13 +24,21 @@ iPhone·iPad 정식/치트 앱은 같은 1024px 그림을 사용한다. Mac 정�
 
 ## HUD 위치 편집
 
-미션 선택 또는 일시정지의 **SET GAME UI**에서 버튼·계기판·상단 장식을 옮긴다. 그림과 터치 판정이 같은 위치로 이동한다. 편집 중에는 전투가 멈추며, **APPLY**로 저장하고 **RESET LAYOUT**으로 기본 배치로 돌린다.
+일시정지의 **SET GAME UI**에서 버튼·계기판·상단 장식을 옮긴다. 그림과 터치 판정이 같은 위치로 이동한다. 편집 중에는 전투가 멈추며, **APPLY**로 저장하고 **RESET LAYOUT**으로 기본 배치로 돌린다.
 
 ![아이폰 치트 앱에서 상단 금속 장식을 아래로 옮긴 화면](media/hud-editor/release-iphone-trim.png)
 
 ![MENU를 오른쪽으로 옮긴 뒤 새 위치를 눌러 연 멈춤 메뉴](media/hud-editor/release-iphone-menu.png)
 
 상단의 방향키는 치트 앱의 검증용 버튼이다. 정식 앱에도 같은 HUD 편집 기능이 들어 있다. [편집 기능과 검사](hud-improvement-plan-20261028.md).
+
+## 미션 선택 화면 버튼 제거
+
+Select Mission의 SET GAME UI 버튼을 제거했다. HUD 편집은 게임 중 MENU → SET GAME UI에서 연다.
+
+![SET GAME UI를 제거한 미션 선택 화면](media/updates-20261029/mission-without-hud-entry.png)
+
+iPhone 시뮬레이터에서 버튼 숨김·직접 진입 차단, 멈춤 메뉴의 터치·키보드 진입, 예시 화면·저장 보존을 검사했다. 시뮬레이터 3개와 native Mac 2개 검사가 통과했다. 수정본의 정식·치트 앱을 실제 iPhone과 iPad에 다시 설치하고 실행했다.
 
 ## 빌드와 설치 확인
 

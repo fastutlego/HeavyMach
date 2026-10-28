@@ -104,7 +104,7 @@ HUD의 **A 버튼**으로 자동조준을 켜면 전방의 가까운 적을 선�
 
 ## HUD 위치 편집
 
-미션 선택 또는 일시정지 메뉴의 **SET GAME UI**에서 버튼·계기판·상단 장식을 끌어 옮긴다. 버튼 그림과 터치 영역이 함께 이동한다. **APPLY**로 저장하고, **RESET LAYOUT**으로 기본 배치로 돌릴 수 있다.
+일시정지 메뉴의 **SET GAME UI**에서 버튼·계기판·상단 장식을 끌어 옮긴다. 버튼 그림과 터치 영역이 함께 이동한다. **APPLY**로 저장하고, **RESET LAYOUT**으로 기본 배치로 돌릴 수 있다.
 
 ![아이폰 치트 앱에서 상단 장식을 아래로 옮긴 HUD 편집 화면](docs/public/media/hud-editor/release-iphone-trim.png)
 

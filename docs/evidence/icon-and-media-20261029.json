@@ -83,5 +83,50 @@
     "checked": 236,
     "errors": 0
   },
-  "report_visual_check": "Safari: icon comparison, equal sizes and ground-unit images inspected"
+  "report_visual_check": "Safari: icon comparison, equal sizes and ground-unit images inspected",
+  "mission_entry_removal": {
+    "request": "Remove SET GAME UI from Select Mission; preserve pause-menu editor",
+    "simulator_tests": 3,
+    "native_mac_tests": 2,
+    "failures": 0,
+    "test_logs": {
+      "mission-entry-tests.log": "aed641d3db6ddc9c677e9bfb82149930630f948359f33777480606ae4624d2d8",
+      "mac-mission-entry-corrected.log": "b725586b6f8bb25f5e10a79a7c2f76e59e46a622596fc1d3b191726463fe3b90"
+    },
+    "first_mac_invocation": "Wrong test-target name rejected before tests; corrected to HeavyMachMacInputTests.",
+    "updated_apps": {
+      "iphone-ordinary-final-install": {
+        "outcome": "success",
+        "raw_sha256": "7bad8f7184fb81eb4a172e8d16f111ccf2c33940462c046fb5c97d9e1b842366"
+      },
+      "iphone-ordinary-final-launch": {
+        "outcome": "success",
+        "raw_sha256": "b99153d87e39328cd71bb51aebb61fa5879b3a59db624a59d6f78fc468b1ac2d"
+      },
+      "iphone-cheat-final-install": {
+        "outcome": "success",
+        "raw_sha256": "af96c31beca640564f996788e5d23fa0eaa6a66e50f743d9419af0c2bc48298a"
+      },
+      "iphone-cheat-final-launch": {
+        "outcome": "success",
+        "raw_sha256": "2653c94283f7cad9b077746d2fb98c29ad1dc1a1e6cd36520d4da800c4e42e78"
+      },
+      "ipad-ordinary-final-install": {
+        "outcome": "success",
+        "raw_sha256": "de745346448921aa4e1fd3e98756f026b6b5a824ee674ba4d8b9ab1ac90a743f"
+      },
+      "ipad-ordinary-final-launch": {
+        "outcome": "success",
+        "raw_sha256": "d54125373941cd7a4cad2c9d6d9fb3b9e817e4d8d3d5a9c006b4e0858eea36ca"
+      },
+      "ipad-cheat-final-install": {
+        "outcome": "success",
+        "raw_sha256": "868ce87f6de73af99b3a0088d046cce002ed2fcb8192a5632f09a14754870d63"
+      },
+      "ipad-cheat-final-launch": {
+        "outcome": "success",
+        "raw_sha256": "265ad474952e5e0d63277723c2fcab38a4cf7cd67097e75014b2ef2698f1506a"
+      }
+    }
+  }
 }
