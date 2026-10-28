@@ -1,5 +1,6 @@
 #include "WebGameView.hpp"
 #include "Fighters.hpp"
+#include "GroundAA.hpp"
 #include "VTOL.hpp"
 #include "HMAimOverlay.hpp"
 #include "CanvasGeometry.hpp"
@@ -72,6 +73,7 @@ GameView::GameView(std::string assetRoot,std::string saveDirectory):_assetRoot(s
         _data=GameData::loadDirectory(_assetRoot+"/RawData");
         addVTOLExpansion(_data);
         addFighterExpansion(_data);
+        addGroundAAExpansion(_data);
         if(std::filesystem::exists(_savePath)){
             std::ifstream file(_savePath,std::ios::binary);
             if(!file)throw std::runtime_error("Cannot read save file");
@@ -138,6 +140,8 @@ void GameView::startSlot(int slot,int mode,int mission,int stage){
         // Original GameMain keeps GuiGame across screen and slot changes.
         // Its HP needle, gear and closing animations continue while hidden.
         Media* media=_media.get();
+        // Prepare every radar/body frame before combat; animation must not decode PNGs.
+        for(const auto& art:groundAAImages())media->imageSize(art.name,"shared");
         _session=std::make_unique<GameSession>(_data,_save.slots.at(slot),
             [media](std::string_view name){Size size=media->imageSize(std::string(name),"shared");return Vector2{float(size.width),float(size.height)};},
             [this]{return nextOriginalRandom();},&_passives,

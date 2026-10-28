@@ -12,7 +12,7 @@ endif()
 get_filename_component(HM_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/.." ABSOLUTE)
 
 # Same core sources as the root CMakeLists HeavyMachCore target; no web copy of game rules.
-set(HM_CORE_SOURCES SaveData GlobalInfo Geometry Motion TitleState GameData VTOL Fighters Combat Enemy Visuals Player World ItemBox GameSession BulletVisual Trail TrailRaster SpriteRaster CameraShake LoadingTransition)
+set(HM_CORE_SOURCES SaveData GlobalInfo Geometry Motion TitleState GameData VTOL Fighters GroundAA Combat Enemy Visuals Player World ItemBox GameSession BulletVisual Trail TrailRaster SpriteRaster CameraShake LoadingTransition)
 list(TRANSFORM HM_CORE_SOURCES PREPEND "${HM_ROOT}/Sources/Core/")
 list(TRANSFORM HM_CORE_SOURCES APPEND ".cpp")
 set(HM_WEB_SOURCES WebAudio WebGLRenderer WebMedia WebMenus WebGameHUD WebGameView WebMain)

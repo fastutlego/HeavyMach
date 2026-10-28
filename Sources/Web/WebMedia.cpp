@@ -2,6 +2,7 @@
 #include "WebAudio.hpp"
 #include "WebGLRenderer.hpp"
 #include "Fighters.hpp"
+#include "GroundAA.hpp"
 #include "VTOL.hpp"
 #define STB_IMAGE_IMPLEMENTATION
 #define STB_IMAGE_STATIC
@@ -83,8 +84,11 @@ DecodedImage* Media::image(const std::string& name){
     const std::string key=resourceKey(name);
     if(auto found=images_.find(key);found!=images_.end())return &found->second;
     // Generated extensions are separate resources; never replace OriginalImages.
+    // Ground AA parts are crops of shared source sheets (GroundAAArt.inc).
+    const auto* groundArt=heavymach::groundAAImage(name);
+    const std::string fileName=groundArt?groundArt->source:name;
     const bool extension=startsWith(name,"Extensions/");
-    const std::string path=assetRoot_+(extension?"/Extensions/"+lastPathComponent(name):"/OriginalImages/"+name);
+    const std::string path=assetRoot_+(extension?"/Extensions/"+lastPathComponent(fileName):"/OriginalImages/"+fileName);
     std::vector<uint8_t> file;
     if(!readFile(path,file)||file.empty()||file.size()>size_t(INT_MAX)){std::fprintf(stderr,"Missing original image %s\n",name.c_str());return nullptr;}
     // Same stb revision/options and float truncation as touchHLE src/image.rs.
@@ -105,14 +109,24 @@ DecodedImage* Media::image(const std::string& name){
     const bool rgb565=channels==3||channels==1;
     // Prefilter new aircraft to their logical drawing size once. Sampling a
     // 512px texture into ~110 scene pixels skipped thin edges and fine details.
-    int spriteWidth=0;
+    int spriteWidth=0,spriteHeight=0;
+    // HMMedia: CGImageCreateWithImageInRect on the decoded sheet, then one resize to the logical size.
+    if(groundArt){
+        const auto& r=groundArt->crop;
+        if(r[0]>=0&&r[1]>=0&&r[2]>0&&r[3]>0&&r[0]+r[2]<=width&&r[1]+r[3]<=height){
+            std::vector<uint8_t> cropped(size_t(r[2])*r[3]*4);
+            for(int y=0;y<r[3];++y)std::memcpy(&cropped[size_t(y)*r[2]*4],&decoded.rgba[(size_t(r[1]+y)*width+r[0])*4],size_t(r[2])*4);
+            decoded.rgba=std::move(cropped);decoded.width=width=r[2];decoded.height=height=r[3];
+        }
+        spriteWidth=int(groundArt->size.x);spriteHeight=int(groundArt->size.y);
+    }
     if(startsWith(name,"Extensions/VTOL_"))for(const auto& spec:heavymach::vtolSpecs())
         if(name==spec.tile){spriteWidth=int(std::lround(spec.width));break;}
     if(startsWith(name,"Extensions/Lux_"))for(const auto& spec:heavymach::fighterSpecs())
         if(name==spec.tile){spriteWidth=int(std::lround(spec.width));break;}
     if(name=="Extensions/AutoAimControls.png")spriteWidth=138; // 3 columns of 46 logical pixels, cached once.
     if(spriteWidth>0&&width>spriteWidth){
-        int smallWidth=spriteWidth,smallHeight=std::max(1,int(std::lround(double(height)*spriteWidth/width)));
+        int smallWidth=spriteWidth,smallHeight=spriteHeight?spriteHeight:std::max(1,int(std::lround(double(height)*spriteWidth/width)));
         decoded.rgba=areaResize(decoded.rgba,width,height,smallWidth,smallHeight);decoded.width=smallWidth;decoded.height=smallHeight;
     }
     auto& stored=images_[key]=std::move(decoded);
