@@ -6,6 +6,7 @@
 - (instancetype)initWithMedia:(HMMedia *)media save:(heavymach::SaveData *)save data:(const heavymach::GameData *)data;
 // Original hidden World survives screen changes; previews read its clock/pause.
 - (void)setPreviewWorldTime:(double)time paused:(BOOL)paused;
+- (BOOL)isMissionSelection;
 - (void)showSlots;
 - (void)showMode;
 - (void)showMissions;

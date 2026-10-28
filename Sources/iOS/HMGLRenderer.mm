@@ -221,6 +221,16 @@ static NSString *glString(GLenum name){const auto p=glGetString(name);return p?[
     glLoadIdentity();glTranslatef(_drawingOffset.x,_drawingOffset.y,0);glScalef(_drawingScale,_drawingScale,1);glTranslatef(position.x,position.y,0);glScalef(scale.width,scale.height,1);glRotatef(rotation*57.29577951308232,0,0,1);
     glVertexPointer(2,GL_FLOAT,0,positions);glTexCoordPointer(2,GL_FLOAT,0,uv);glColorPointer(4,GL_FLOAT,0,colors);glDrawArrays(GL_TRIANGLE_STRIP,0,4);_drawCalls++;
 }
+- (void)drawRegion:(NSString*)name source:(CGRect)source destination:(CGRect)d rgb565:(BOOL)rgb565 {
+    if(!_active||CGRectIsEmpty(source)||CGRectIsEmpty(d))return;
+    Texture* t=[self textureForImage:nil name:name rgb565:rgb565];if(!t)return;
+    GLfloat x=d.origin.x,y=d.origin.y,w=d.size.width,h=d.size.height;
+    GLfloat u=source.origin.x/t->pw,v=source.origin.y/t->ph,uw=source.size.width/t->pw,vh=source.size.height/t->ph;
+    GLfloat p[]={x,y,x+w,y,x,y+h,x+w,y+h},uv[]={u,v+vh,u+uw,v+vh,u,v,u+uw,v},c[]={1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
+    glBindTexture(GL_TEXTURE_2D,t->id);glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
+    glLoadIdentity();glTranslatef(_drawingOffset.x,_drawingOffset.y,0);glScalef(_drawingScale,_drawingScale,1);
+    glVertexPointer(2,GL_FLOAT,0,p);glTexCoordPointer(2,GL_FLOAT,0,uv);glColorPointer(4,GL_FLOAT,0,c);glDrawArrays(GL_TRIANGLE_STRIP,0,4);_drawCalls++;
+}
 - (void)drawJoinedBackground:(NSString*)name position:(CGPoint)position scale:(CGFloat)scale rotation:(CGFloat)rotation rgb565:(BOOL)rgb565 {
     if(!_active||!std::isfinite(position.x)||!std::isfinite(position.y)||!std::isfinite(scale)||scale<=0||!std::isfinite(rotation))return;
     Texture* t=[self textureForImage:nil name:name rgb565:rgb565];if(!t)return;

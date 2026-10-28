@@ -503,6 +503,14 @@ GameSession::~GameSession()=default;GameSession::GameSession(GameSession&&)noexc
 void GameSession::start(int m,int mission,int stage){start(m,mission,stage,impl_->world.gameTime);}
 void GameSession::start(int m,int mission,int stage,double retainedWorldTime){impl_->start(m,{mission,stage},retainedWorldTime);}
 void GameSession::tick(double t,float tilt){impl_->tick(t,tilt);}
+void GameSession::prepareHUDPreview(){
+ auto& i=*impl_;if(!i.player)return;
+ auto ground=[&](float x){float y=i.world.mapHeight(x);return y==10000?0.f:y;};
+ float x=i.world.map.left+100;i.player->position={x,ground(x)+10};i.player->visible=true;
+ i.world.camera={i.world.map.left+i.world.canvasWidth*.5f,ground(x)+60};
+ for(auto& m:i.enemies){bool air=m.definition->machType==1;float ex=i.world.map.left+(air?350:250);m.enemy->position={ex,ground(ex)+(air?130:10)};m.enemy->visible=true;}
+ i.world.paused=true;i.collect();i.events.clear();
+}
 void GameSession::prepareInitialPausedFrame(){
  if(!impl_->world.paused||!impl_->render.empty())return;
  impl_->world.processCamera(impl_->player?std::optional<Vector2>(impl_->player->position):std::nullopt);

@@ -613,3 +613,14 @@ VTOL 첫 생성 프롬프트와 스킬 수정 커밋을 대조했다. 요청에 
 - deployment: `appgdep_6ae1b846fa688191bf8e770c2de2ef75`, `succeeded`.
 - [수정한 원고](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/lux-lunae-intent.html#games-and-life). 소유자 전용 접근 유지.
 - Safari 로컬에서 추가 문단과 목차 이동을 확인했다. 내부 링크 1,101개, 원문·다운로드 일치, 기존 절 앵커 보존을 검사했다. [검사·배포 기록](evidence/lux-lunae-intent-update-20261028.json).
+
+
+## 2026-10-29 HUD 배치 편집 구현·검사
+
+[HUD 편집 보고서](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/hud-improvement.html#editor-validation)에 직접 드래그·적용·취소·복원한 iPad 화면3장과 패시브 예시1장, iPhone/iPad 시뮬레이터·Mac 기능 검사, Mac 성능 비교를 추가했다. 기존45개 목차 항목과 이전 이미지·절 앵커를 유지했다.
+
+- source: `ec4d08768fd359c47178b7e8b1910e962cd4ccbd`
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_b3765149afa081918a452f5cc7e9b674`
+- deployment: `appgdep_6ae21e56581c8191aedb68a4f986dba2`, `succeeded`.
+- 소유자 전용 접근 유지. 본문 이미지11개와 증거 JSON 경로, Markdown 원고 바이트 일치, HTTP200 확인. 게임 화면 직접 조작을 마친 뒤 Safari/Chrome 창 조회는 `cgWindowNotFound`를 반환해 이번 웹 화면 시각 검사는 수행하지 못했다.
+- [기능·성능 검사](evidence/hud-editor-20261029.json).

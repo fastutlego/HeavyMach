@@ -36,6 +36,14 @@
 - (void)setInputAimMode:(heavymach::AimMode)mode;
 - (CGRect)aimControlRect:(int)control;
 - (void)drawAimControls;
+- (void)openHUDEditor:(id)sender;
+- (void)hudEditorAction:(id)sender;
+- (void)closeHUDEditor;
+- (void)loadHUDLayout;
+- (NSURL*)hudLayoutURL;
+- (heavymach::hud::Configuration)currentHUDLayout;
+- (void)gameButton:(int)identifier state:(int)state;
+
 @end
 // Audit the sprites actually submitted by HMGameHUD, including animated frames.
 // This recorder lives only in the test bundle and never enters the game runtime.
@@ -140,11 +148,113 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  [[self.game valueForKey:@"frameTimer"]invalidate];[[self.game valueForKey:@"motionTimer"]invalidate];
  self.temp=[NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingPathComponent:NSUUID.UUID.UUIDString] isDirectory:YES];[NSFileManager.defaultManager createDirectoryAtURL:self.temp withIntermediateDirectories:YES attributes:nil error:nil];
  [self.game setValue:[self.temp URLByAppendingPathComponent:@"HvM.dat"] forKey:@"saveURL"];
- storage<heavymach::SaveData>(self.game,"_save")={};storage<heavymach::KeyboardInput>(self.game,"_keyboardControls")={};
+ storage<heavymach::hud::Configuration>(self.game,"_hudLayout")={};storage<heavymach::SaveData>(self.game,"_save")={};storage<heavymach::KeyboardInput>(self.game,"_keyboardControls")={};
  storage<heavymach::AimMode>(self.game,"_preferredAimMode")=heavymach::AimMode::manual;
  [self.game setValue:@1 forKey:@"randomState"];[self.game updateCanvasGeometry];
 }
 - (void)tearDown {[self.game setApplicationActive:NO];self.game=nil;[NSFileManager.defaultManager removeItemAtURL:self.temp error:nil];[super tearDown];}
+- (void)testHUDEditorMovesHitsFreezesBattleAndPersistsOnlyApply {
+ [self startFixture];render(self.game);[self.game gameButton:100 state:2];frames(self.game,40);
+ auto& session=storage<std::unique_ptr<heavymach::GameSession>>(self.game,"_session");
+ auto before=storage<heavymach::SaveData>(self.game,"_save").encode();auto rng=storage<uint32_t>(self.game,"_randomState");double time=storage<double>(self.game,"_time");auto pos=session->player()->position;
+ [self.game openHUDEditor:nil];XCTAssertTrue([[self.game valueForKey:@"hudEditing"]boolValue]);
+ auto c=[self.game currentHUDLayout];auto b=c.group(heavymach::hud::weapon).visualBounds;
+ auto& vp=storage<heavymach::Viewport>(self.game,"_viewport");auto point=[&](double x,double y){return CGPointMake(vp.x+x*vp.scale,vp.y+(storage<CGFloat>(self.game,"_canvasHeight")-y)*vp.verticalScale());};
+ id token=[NSObject new];[self.game routePoint:point(b.x+30,b.y+30) state:0 token:token];
+ [self.game routePoint:point(c.safe.x+30,c.safe.y+150) state:1 token:token];
+ [self.game routePoint:point(c.safe.x+30,c.safe.y+150) state:2 token:token];
+ for(int i=0;i<120;++i){[self.game handleKeyCode:0x09 pressed:YES];[self.game advanceOriginalFrame];}
+ XCTAssertEqual(before,storage<heavymach::SaveData>(self.game,"_save").encode());XCTAssertEqual(rng,storage<uint32_t>(self.game,"_randomState"));XCTAssertEqual(time,storage<double>(self.game,"_time"));XCTAssertEqual(pos.x,session->player()->position.x);XCTAssertEqual(pos.y,session->player()->position.y);
+ XCTAssertEqual([[self.game valueForKey:@"hudLayoutWrites"]integerValue],0);XCTAssertFalse([NSFileManager.defaultManager fileExistsAtPath:[self.game hudLayoutURL].path]);
+ render(self.game);
+#if !TARGET_OS_OSX
+ auto a=[XCTAttachment attachmentWithImage:[(HMGLRenderer*)[self.game valueForKey:@"glRenderer"]snapshot]];a.name=@"HUD_editor_moved";a.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:a];
+#endif
+ NSArray* buttons=[self.game valueForKey:@"hudEditorButtons"];[self.game hudEditorAction:buttons[2]];
+ XCTAssertFalse([[self.game valueForKey:@"hudEditing"]boolValue]);XCTAssertEqual([[self.game valueForKey:@"hudLayoutWrites"]integerValue],1);
+ auto saved=storage<heavymach::hud::Configuration>(self.game,"_hudLayout");XCTAssertTrue(saved.positions[heavymach::hud::weapon].has_value());
+ [self.game gameButton:101 state:2];frames(self.game,50);render(self.game);
+ c=[self.game currentHUDLayout];auto moved=c.group(heavymach::hud::weapon).transform.apply(heavymach::hud::Point{103,31});
+ int old=session->selectedWeapon();id click=[NSObject new];[self.game routePoint:point(moved.x,moved.y) state:0 token:click];[self.game routePoint:point(moved.x,moved.y) state:2 token:click];XCTAssertNotEqual(session->selectedWeapon(),old);
+ old=session->selectedWeapon();auto original=c.legacy.apply(heavymach::hud::Point{103,31});[self.game routePoint:point(original.x,original.y) state:0 token:click];[self.game routePoint:point(original.x,original.y) state:2 token:click];XCTAssertEqual(session->selectedWeapon(),old);
+ storage<heavymach::hud::Configuration>(self.game,"_hudLayout")={};[self.game loadHUDLayout];XCTAssertTrue(saved.samePositions(storage<heavymach::hud::Configuration>(self.game,"_hudLayout")));
+ [self.game gameButton:100 state:2];frames(self.game,40);[self.game openHUDEditor:nil];[self.game hudEditorAction:buttons[0]];[self.game hudEditorAction:buttons[1]];XCTAssertTrue(saved.samePositions(storage<heavymach::hud::Configuration>(self.game,"_hudLayout")));XCTAssertEqual([[self.game valueForKey:@"hudLayoutWrites"]integerValue],1);
+ [self.game openHUDEditor:nil];[self.game hudEditorAction:buttons[0]];[self.game hudEditorAction:buttons[2]];XCTAssertFalse(storage<heavymach::hud::Configuration>(self.game,"_hudLayout").customized());XCTAssertEqual([[self.game valueForKey:@"hudLayoutWrites"]integerValue],2);
+}
+- (void)testHUDEditorPregameExampleAndResizeDoesNotChangeSave {
+ [self.game refreshScreen:4];auto before=storage<heavymach::SaveData>(self.game,"_save").encode();auto rng=storage<uint32_t>(self.game,"_randomState");
+ [self.game openHUDEditor:nil];XCTAssertTrue([[self.game valueForKey:@"hudEditing"]boolValue]);render(self.game);
+ auto& example=storage<std::unique_ptr<heavymach::GameSession>>(self.game,"_hudExampleSession");XCTAssertTrue(bool(example));XCTAssertGreaterThan(example->enemyCount(),size_t(0));
+ self.game.frame=CGRectMake(0,0,1400,700);[self.game updateCanvasGeometry];render(self.game);
+ XCTAssertEqual(before,storage<heavymach::SaveData>(self.game,"_save").encode());XCTAssertEqual(rng,storage<uint32_t>(self.game,"_randomState"));
+#if !TARGET_OS_OSX
+ auto a=[XCTAttachment attachmentWithImage:[(HMGLRenderer*)[self.game valueForKey:@"glRenderer"]snapshot]];a.name=@"HUD_editor_example";a.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:a];
+#endif
+ [self.game closeHUDEditor];XCTAssertTrue([[self.game valueForKey:@"showMenu"]boolValue]);XCTAssertEqual([[self.game valueForKey:@"hudLayoutWrites"]integerValue],0);
+}
+- (void)testHUDEditorSelectionCollisionResizeAndSaveFailure {
+ [self startFixture];[self.game gameButton:100 state:2];frames(self.game,40);[self.game openHUDEditor:nil];
+ auto c=[self.game currentHUDLayout];auto point=[&](heavymach::hud::Point p){auto vp=storage<heavymach::Viewport>(self.game,"_viewport");return CGPointMake(vp.x+p.x*vp.scale,vp.y+(vp.logicalHeight-p.y)*vp.verticalScale());};
+ id token=[NSObject new];auto center=c.group(heavymach::hud::jump).transform.apply(heavymach::hud::Point{34,34});
+ [self.game routePoint:point(center) state:0 token:token];[self.game routePoint:point(center) state:2 token:token];XCTAssertFalse(storage<heavymach::hud::Configuration>(self.game,"_hudDraft").customized());
+ auto& draft=storage<heavymach::hud::Configuration>(self.game,"_hudDraft");draft.positions[heavymach::hud::weapon]=heavymach::hud::placementForOrigin(heavymach::hud::bounds[heavymach::hud::weapon],c.legacy,c.safe,{c.legacy.offset.x,c.legacy.offset.y});
+ NSArray* buttons=[self.game valueForKey:@"hudEditorButtons"];[self.game hudEditorAction:buttons[2]];XCTAssertTrue([[self.game valueForKey:@"hudEditing"]boolValue]);XCTAssertEqual([[self.game valueForKey:@"hudLayoutWrites"]integerValue],0);
+ draft.positions={};draft.positions[heavymach::hud::weapon]=heavymach::hud::Placement{0,.5};
+ NSURL* original=[self.game valueForKey:@"saveURL"];[self.game setValue:[self.temp URLByAppendingPathComponent:@"missing/HvM.dat"] forKey:@"saveURL"];
+ [self.game hudEditorAction:buttons[2]];XCTAssertTrue([[self.game valueForKey:@"hudEditing"]boolValue]);XCTAssertEqual([[self.game valueForKey:@"hudLayoutWrites"]integerValue],0);
+ [self.game setValue:original forKey:@"saveURL"];[self.game hudEditorAction:buttons[2]];XCTAssertFalse([[self.game valueForKey:@"hudEditing"]boolValue]);
+ auto saved=storage<heavymach::hud::Configuration>(self.game,"_hudLayout");[@"invalid json" writeToURL:[self.game hudLayoutURL] atomically:YES encoding:NSUTF8StringEncoding error:nil];[self.game loadHUDLayout];XCTAssertTrue(saved.samePositions(storage<heavymach::hud::Configuration>(self.game,"_hudLayout")));
+ self.game.frame=CGRectMake(0,0,1920,640);[self.game updateCanvasGeometry];auto& layout=storage<heavymach::hud::Configuration>(self.game,"_hudLayout");layout.positions={};layout.positions[heavymach::hud::jump]=heavymach::hud::Placement{.43,.5};layout.positions[heavymach::hud::weapon]=heavymach::hud::Placement{.56,.5};[self.game updateCanvasGeometry];XCTAssertTrue([self.game currentHUDLayout].customized());
+ self.game.frame=CGRectMake(0,0,960,640);[self.game updateCanvasGeometry];XCTAssertFalse([self.game currentHUDLayout].customized());XCTAssertTrue(layout.customized());
+ self.game.frame=CGRectMake(0,0,1920,640);[self.game updateCanvasGeometry];XCTAssertTrue([self.game currentHUDLayout].customized());
+}
+- (void)testHUDEditorCheatGeometryAndRepeatedClose {
+ [self.game refreshScreen:4];
+ auto point=[&](heavymach::hud::Point p){auto vp=storage<heavymach::Viewport>(self.game,"_viewport");return CGPointMake(vp.x+p.x*vp.scale,vp.y+(vp.logicalHeight-p.y)*vp.verticalScale());};
+ for(int i=0;i<10;++i){
+  [self.game openHUDEditor:nil];render(self.game);
+  auto c=[self.game currentHUDLayout];auto r=c.group(heavymach::hud::cheat).visualBounds;id token=[NSObject new];
+  [self.game routePoint:point({r.x+r.width/2,r.y+r.height/2}) state:0 token:token];[self.game routePoint:point({r.x+r.width/2,r.y+r.height/2}) state:2 token:token];
+  XCTAssertFalse(storage<heavymach::hud::Configuration>(self.game,"_hudDraft").customized());
+  CGRect controls=((HMValidationControls*)[self.game valueForKey:@"validationControls"]).frame;
+  XCTAssertFalse(CGRectIntersectsRect(controls,[[self.game valueForKey:@"hudToolbar"] frame]));
+  auto& draft=storage<heavymach::hud::Configuration>(self.game,"_hudDraft");
+  [self.game setValue:@(heavymach::hud::cheat) forKey:@"hudSelected"];[self.game handleKeyCode:0x51 pressed:YES];
+  XCTAssertFalse(CGRectEqualToRect(controls,((HMValidationControls*)[self.game valueForKey:@"validationControls"]).frame));
+  draft.positions={};draft.positions[heavymach::hud::weapon]=heavymach::hud::placementForOrigin(c.localBounds(heavymach::hud::weapon),c.legacy,c.safe,{r.x,r.y});XCTAssertFalse(heavymach::hud::valid(draft,true));
+  draft.positions={};draft.positions[heavymach::hud::cheat]=heavymach::hud::Placement{.5,.5};
+  NSArray* buttons=[self.game valueForKey:@"hudEditorButtons"];[self.game hudEditorAction:buttons[0]];
+  XCTAssertTrue(CGRectEqualToRect(controls,((HMValidationControls*)[self.game valueForKey:@"validationControls"]).frame));
+  [self.game closeHUDEditor];XCTAssertFalse(bool(storage<std::unique_ptr<heavymach::GameSession>>(self.game,"_hudExampleSession")));
+ }
+ XCTAssertEqual([[self.game valueForKey:@"hudLayoutWrites"]integerValue],0);
+}
+- (void)testHUDMovedButtonsKeepTouchOwnershipAndAimFire {
+ [self startFixture];auto& layout=storage<heavymach::hud::Configuration>(self.game,"_hudLayout");layout.positions[heavymach::hud::weapon]=heavymach::hud::Placement{0,.5};layout.positions[heavymach::hud::jump]=heavymach::hud::Placement{1,.5};layout.positions[heavymach::hud::aim]=heavymach::hud::Placement{1,.1};render(self.game);
+ auto& session=storage<std::unique_ptr<heavymach::GameSession>>(self.game,"_session");session->validationSetCheats(true);
+ auto c=[self.game currentHUDLayout];auto point=[&](heavymach::hud::Point p){auto vp=storage<heavymach::Viewport>(self.game,"_viewport");return CGPointMake(vp.x+p.x*vp.scale,vp.y+(vp.logicalHeight-p.y)*vp.verticalScale());};
+ auto jump=c.group(heavymach::hud::jump).transform.apply(heavymach::hud::Point{34,34}),weapon=c.group(heavymach::hud::weapon).transform.apply(heavymach::hud::Point{103,31});id touch=[NSObject new];int selected=session->selectedWeapon();
+ [self.game routePoint:point(jump) state:0 token:touch];[self.game routePoint:point(weapon) state:1 token:touch];[self.game routePoint:point(weapon) state:2 token:touch];XCTAssertEqual(session->selectedWeapon(),selected);
+ [self.game setInputAimMode:heavymach::AimMode::automatic];render(self.game);CGRect fire=[self.game aimControlRect:2];heavymach::hud::Point f{CGRectGetMidX(fire),CGRectGetMidY(fire)};
+ [self.game routePoint:point(f) state:0 token:touch];XCTAssertEqual([[self.game valueForKey:@"aimTouches"]count],NSUInteger(1));
+ [self.game routePoint:point({f.x,f.y+100}) state:1 token:touch];XCTAssertEqual([[self.game valueForKey:@"aimTouches"]count],NSUInteger(0));[self.game routePoint:point(f) state:2 token:touch];
+}
+- (void)testHUDMovedMenuJumpAndAimButtons {
+ [self startFixture];auto& session=storage<std::unique_ptr<heavymach::GameSession>>(self.game,"_session");session->validationSetCheats(true);
+ auto& layout=storage<heavymach::hud::Configuration>(self.game,"_hudLayout");
+ layout.positions[heavymach::hud::menu]=heavymach::hud::Placement{1,.7};layout.positions[heavymach::hud::jump]=heavymach::hud::Placement{0,.4};layout.positions[heavymach::hud::aim]=heavymach::hud::Placement{.5,.4};render(self.game);
+ auto c=[self.game currentHUDLayout];XCTAssertTrue(c.customized());
+ auto point=[&](heavymach::hud::Point p){auto vp=storage<heavymach::Viewport>(self.game,"_viewport");return CGPointMake(vp.x+p.x*vp.scale,vp.y+(vp.logicalHeight-p.y)*vp.verticalScale());};
+ auto tap=[&](heavymach::hud::Point p){id token=[NSObject new];[self.game routePoint:point(p) state:0 token:token];[self.game routePoint:point(p) state:2 token:token];};
+ auto before=session->player()->position;tap(c.group(heavymach::hud::jump).transform.apply(heavymach::hud::Point{34,34}));frames(self.game,10);XCTAssertGreaterThan(session->player()->position.y,before.y);
+ CGRect mode=[self.game aimControlRect:1];tap({CGRectGetMidX(mode),CGRectGetMidY(mode)});XCTAssertEqual(session->aimMode(),heavymach::AimMode::automatic);
+ tap({CGRectGetMidX(mode),CGRectGetMidY(mode)});XCTAssertEqual(session->aimMode(),heavymach::AimMode::manual);
+ tap(c.group(heavymach::hud::menu).transform.apply(heavymach::hud::Point{38,279}));XCTAssertTrue(session->world().paused);XCTAssertTrue([[self.game valueForKey:@"gameMenu"]boolValue]);
+ [self.game openHUDEditor:nil];auto scene=session->renderItems().size();auto beforeSave=storage<heavymach::SaveData>(self.game,"_save").encode();
+ HMMedia* media=[self.game valueForKey:@"media"];render(self.game);auto decodes=[media cacheDiagnostics][@"decodeCount"];
+ for(int i=0;i<180;++i){[self.game advanceOriginalFrame];render(self.game);}
+ XCTAssertEqualObjects(decodes,[media cacheDiagnostics][@"decodeCount"]);XCTAssertEqual(scene,session->renderItems().size());XCTAssertEqual(beforeSave,storage<heavymach::SaveData>(self.game,"_save").encode());
+}
 - (void)testHUDAssetOwnershipAudit {
 #if !TARGET_OS_OSX
  [self startFixture];auto& session=storage<std::unique_ptr<heavymach::GameSession>>(self.game,"_session");

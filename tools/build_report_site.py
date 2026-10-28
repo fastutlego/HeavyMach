@@ -68,6 +68,7 @@ def article(source,dest,download,template):
     if source == ROOT/'docs/public/hud-improvement-plan-20261028.md':
         readme_ids.update({name:f'section-{i}' for i,name in enumerate(['현재 화면과 코드','이동할 묶음과 그림 분할','배치·그림·터치를 연결하는 방법','게임 시작 전 편집 화면','자동조준 상태를 알리는 방법','구현과 검증 순서','투두에서 함께 확인한 남은 일','코드와 정책'])})
         readme_ids['HUD 부품과 분할 검사']='asset-audit'
+        readme_ids['편집 구현과 시뮬레이터 검사']='editor-validation'
     if source == ROOT/'docs/public/lux-lunae-intent-20261028.md':
         readme_ids.update({name:f'section-{i}' for i,name in enumerate(['달빛과 두 게임','검은색과 금색','보스전의 난이도와 긴장감','텍스트 지시로 어디까지 만들 수 있는가','승인한 도안 3종','실제 인게임 모습','게임에 적용한 조건','대화 원문'])})
         readme_ids.update({'게임을 하고 달라진 일':'games-and-life','움직임과 무기, 빠른 진입':'movement-and-entry','그림 작업에서 본 한계':'art-direction','지금도 고치고 있는 것':'ongoing-work'})
@@ -188,7 +189,7 @@ def main():
         for link in page.select('a[href]'):
             if link['href'].startswith('../references/'):
                 link['href']='https://github.com/gelb2/HeavyMach/blob/main/docs/'+link['href'][3:]
-            if link['href'].startswith('../evidence/') and page_name not in ('installation.html', 'implementation.html', 'ground-units.html', 'ground-aa-art.html', 'publication.html', 'gameplay-media.html', 'github-documentation.html', 'github-licenses-and-badges.html', 'github-followup.html'):
+            if link['href'].startswith('../evidence/') and page_name not in ('hud-improvement.html', 'installation.html', 'implementation.html', 'ground-units.html', 'ground-aa-art.html', 'publication.html', 'gameplay-media.html', 'github-documentation.html', 'github-licenses-and-badges.html', 'github-followup.html'):
                 link['href']=link['href'][3:]
             if link['href'] in ('../apple-platforms.md','../keyboard-input-policy.md','../current-status.md','../auto-aim-plan-20261026.md','../wireless-device-workflow.md'):
                 link['href']=link['href'].removeprefix('../')
@@ -237,6 +238,8 @@ def main():
                 node[attr] = 'evidence/ground-aa-aircraft-style-'+Path(rel).name
             elif rel.startswith('Art/GroundAA/20261028-runtime-style/') and rel.endswith('.json'):
                 node[attr] = 'evidence/ground-aa-runtime-style-'+Path(rel).name
+            elif rel == 'docs/evidence/hud-editor-20261029.json':
+                node[attr] = 'evidence/hud-editor-20261029.json'
             elif rel == 'docs/evidence/independence-main-20261028.json':
                 node[attr] = 'evidence/independence-main-20261028.json'
             elif rel.startswith('Art/GroundAA/20261028-shilka-turret/') and rel.endswith('.json'):
@@ -272,6 +275,7 @@ def main():
     shutil.copytree(ROOT/'docs/public/independence',dist/'independence',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/clone',dist/'clone',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/media/hud-audit',dist/'media/hud-audit',dirs_exist_ok=True)
+    shutil.copytree(ROOT/'docs/public/media/hud-editor',dist/'media/hud-editor',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/media/ground-aa',dist/'media/ground-aa',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/media/vtol',dist/'media/vtol',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/media/fullscreen',dist/'media/fullscreen',dirs_exist_ok=True)
@@ -284,6 +288,7 @@ def main():
         shutil.copyfile(ROOT/'docs/public/media'/name,dist/'media'/name)
     shutil.copyfile(ROOT/'docs/lux-lunae-plan-20261027.md',dist/'lux-lunae-plan-20261027.md')
     (dist/'evidence').mkdir(exist_ok=True)
+    shutil.copyfile(ROOT/'docs/evidence/hud-editor-20261029.json',dist/'evidence/hud-editor-20261029.json')
     for file in (ROOT/'Art/GroundAA/20261028-refinement').glob('*.json'):
         shutil.copyfile(file,dist/'evidence'/('ground-aa-refinement-'+file.name))
     for file in (ROOT/'Art/GroundAA/20261028-texture-proposal').glob('*.json'):

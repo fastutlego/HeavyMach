@@ -7,6 +7,7 @@
 #import "HMGLRenderer.h"
 #import "HMGLPlatform.h"
 #include "KeyboardInput.hpp"
+#include "HUDConfiguration.hpp"
 #import "HMMedia.h"
 #import "HMMenus.h"
 #import "HMGameHUD.h"
@@ -30,7 +31,30 @@
 #include "GlobalInfo.hpp"
 #include <ctime>
 
+#if TARGET_OS_OSX
+typedef NSButton HMEditorButton;
+typedef NSTextField HMEditorLabel;
+#else
+typedef UIButton HMEditorButton;
+typedef UILabel HMEditorLabel;
+#endif
 @implementation HMGameView {
+    heavymach::hud::Configuration _hudLayout,_hudDraft;
+    BOOL _hudLayoutFallback,_hudEditing,_hudFromMenu,_hudExample,_hudToolsBottom,_hudHideGuides,_hudShowHits;
+    int _hudSelected;
+    id _hudDragToken;
+    CGPoint _hudGrab;
+    HMNativeGameView *_hudToolbar;
+    HMEditorLabel *_hudEditorLabel;
+    HMEditorButton *_hudEntry;
+    NSArray<HMEditorButton*> *_hudEditorButtons;
+    NSUInteger _hudLayoutWrites;
+    std::unique_ptr<heavymach::GameSession> _hudExampleSession;
+    heavymach::GameData _hudExampleData;
+    heavymach::SaveSlot _hudExampleSlot;
+    heavymach::PlayerPassives _hudExamplePassives;
+    uint32_t _hudExampleRandom;
+
     HMMedia *_media;
     #if !TARGET_OS_OSX
     UIGraphicsImageRenderer *_logicalRenderer; // CPU reference, offscreen validation only.
@@ -87,7 +111,7 @@
     BOOL _wideCanvasEnabled,_appliedWideCanvas;
     CGRect _menuSafeRect;
     NSHashTable<id> *_worldTouches, *_hudTouches;
-    NSMapTable<id,NSNumber*> *_aimTouches;
+    NSMapTable<id,NSNumber*> *_aimTouches,*_hudCapturedReceivers;
     NSHashTable<id> *_aimCancelledTouches;
     std::array<bool,256> _aimBlockedKeys;
     heavymach::AimMode _preferredAimMode;
@@ -157,7 +181,7 @@
             if(valid)_keyboardControls.bindings=candidate;
         }
         [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(keyboardDisconnected:) name:GCKeyboardDidDisconnectNotification object:nil];
-        _heldTouches=[NSHashTable weakObjectsHashTable];_worldTouches=[NSHashTable weakObjectsHashTable];_hudTouches=[NSHashTable weakObjectsHashTable];_lastInteraction=[self interactionTime];
+        _hudCapturedReceivers=[NSMapTable weakToStrongObjectsMapTable];_heldTouches=[NSHashTable weakObjectsHashTable];_worldTouches=[NSHashTable weakObjectsHashTable];_hudTouches=[NSHashTable weakObjectsHashTable];_lastInteraction=[self interactionTime];
         _aimTouches=[NSMapTable strongToStrongObjectsMapTable];_aimCancelledTouches=[NSHashTable weakObjectsHashTable];
         NSNumber* savedAim=[NSUserDefaults.standardUserDefaults objectForKey:@"AimModeV1"];
         _preferredAimMode=savedAim.integerValue==int(heavymach::AimMode::automatic)?heavymach::AimMode::automatic:heavymach::AimMode::manual;
@@ -212,6 +236,7 @@
         _hud=[[HMGameHUD alloc] initWithMedia:_media];
         _hud.button=^(int identifier,int state) {[weakSelf gameButton:identifier state:state];};
         _hud.upgradeClosed=^{[weakSelf finishUpgrade];};
+        [self loadHUDLayout];[self prepareHUDEditor];
         [self prepareScreenResources:1];
 #if !TARGET_OS_OSX
         _motion=[CMMotionManager new];
@@ -259,6 +284,7 @@
     _validationControls.selectedSegmentIndex=1+int(_rightPressed)-int(_leftPressed);
 }
 - (void)openValidation {
+    if(_hudEditing)return;
 #if TARGET_OS_OSX
     if(_nativeValidationPanel.window.visible)return;
 #else
@@ -268,17 +294,17 @@
     HMValidationPanel *panel=[[HMValidationPanel alloc] initWithData:&_data];
     __weak HMGameView *weakSelf=self;
     panel.wideCanvas=_wideCanvasEnabled;
-    panel.canvasChanged=^(BOOL enabled){[weakSelf setWideCanvasEnabled:enabled];};
+    panel.canvasChanged=^(BOOL enabled){HMGameView* view=weakSelf;if(view&&!view->_hudEditing)[view setWideCanvasEnabled:enabled];};
     auto pausedSession=_session.get();bool wasPaused=_session&&_session->world().paused;
     if(_session)_session->setPaused(true);
-    panel.closed=^{HMGameView *view=weakSelf;if(view&&view->_session.get()==pausedSession&&view->_session)view->_session->setPaused(wasPaused||view->_resumeRequired);};
+    panel.closed=^{HMGameView *view=weakSelf;if(view&&!view->_hudEditing&&view->_session.get()==pausedSession&&view->_session)view->_session->setPaused(wasPaused||view->_resumeRequired);};
     panel.applyFixture=^(const heavymach::ValidationScenario& scenario){
-        HMGameView *view=weakSelf;if(!view)return;
+        HMGameView *view=weakSelf;if(!view||view->_hudEditing)return;
         view->_resumeRequired=NO;view->_validationFixture=scenario;view->_loadError=nil;view->_loading=heavymach::LoadingTransition{};
         [view startSlot:0 mode:0 mission:scenario.mission stage:scenario.stage];[view persistSave];
     };
-    panel.resumeSave=^{HMGameView* view=weakSelf;if(view)view->_resumeRequired=NO;[view resumeValidationSave];};
-    panel.addExperience=^{HMGameView *view=weakSelf;if(view&&view->_session){
+    panel.resumeSave=^{HMGameView* view=weakSelf;if(!view||view->_hudEditing)return;view->_resumeRequired=NO;[view resumeValidationSave];};
+    panel.addExperience=^{HMGameView *view=weakSelf;if(view&&!view->_hudEditing&&view->_session){
         view->_session->validationAddExperience(1);[view consumeGameEvents];
         NSLog(@"HM_VALIDATION actual addExperience(1): exp=%d level=%d",view->_save.slots[view->_slotIndex].experience(),view->_save.slots[view->_slotIndex].level());
     }};
@@ -436,7 +462,7 @@
 #endif
     [_aimTouches removeAllObjects];
     _leftPressed=_rightPressed=_upPressed=_downPressed=_keyboardFire=NO;_hasKeyboardAim=NO;_keyboardAimVisible=NO;
-    [_heldTouches removeAllObjects];[_worldTouches removeAllObjects];[_hudTouches removeAllObjects];[_hud cancelInput];
+    [_heldTouches removeAllObjects];[_worldTouches removeAllObjects];[_hudTouches removeAllObjects];[_hudCapturedReceivers removeAllObjects];[_hud cancelInput];
     if(_session)_session->releaseFire();
     else if(_showMenu)[_menus touch:CGPointMake(-1000,-1000) state:3];
     _tilt={};_keyboardControls.cancel();
@@ -578,6 +604,7 @@
 - (BOOL)handleKeyCode:(unsigned)code pressed:(BOOL)pressed {
     using A=heavymach::KeyAction;
     if(!_active)return NO;
+    if(_hudEditing)return [self hudEditorKey:code pressed:pressed];
     if(code<_aimBlockedKeys.size()&&_aimBlockedKeys[code]){if(!pressed)_aimBlockedKeys[code]=false;return YES;}
     if(_keyboardSettingsOpen){
         if(!_keyboardControls.set(code,pressed)||!pressed)return YES;
@@ -819,12 +846,13 @@
         _hudScale=std::max(CGFloat(.01),std::min({CGFloat(1),(right-left)/480,(top-bottom)/320}));
         _hudOffset=CGPointMake((left+right-480*_hudScale)/2,(bottom+top-320*_hudScale)/2);
     }
+    [self updateHUDEditorGeometry];
     [_menus setCanvasWidth:_canvasWidth safeRect:CGRectOffset(_menuSafeRect,0,-(_canvasHeight-320)/2)];
 #if defined(HM_VALIDATION) && HM_VALIDATION
-    _validationControls.hidden=!_session||_showMenu;
+    _validationControls.hidden=!_hudEditing&&(!_session||_showMenu);
 #endif
-    if(_session&&_session->canvasHeight()!=float(_canvasHeight))_session->setCanvasHeight(float(_canvasHeight));
-    if(_session&&_session->canvasWidth()!=float(_canvasWidth))_session->setCanvasWidth(float(_canvasWidth));
+    if(!_hudEditing&&_session&&_session->canvasHeight()!=float(_canvasHeight))_session->setCanvasHeight(float(_canvasHeight));
+    if(!_hudEditing&&_session&&_session->canvasWidth()!=float(_canvasWidth))_session->setCanvasWidth(float(_canvasWidth));
 }
 - (BOOL)worldInputBlocked {
     if(!_session)return YES;
@@ -853,6 +881,7 @@
         _validationControls.frame=CGRectMake(_viewport.x-68,CGRectGetMidY(safe)-94,60,188);
     else _validationControls.frame=CGRectMake(CGRectGetMidX(safe)-104,CGRectGetMinY(safe)+8,208,44);
 #endif
+    [self layoutHUDControls];
     // Original EAGLView::layoutSubviews (0x27dc) only resizes its surface.
     // Drawing here would advance stateful menu weapon visuals outside the timer.
 }
@@ -860,6 +889,7 @@
 // ticks and draws once. A wall-time accumulator can alternate zero/two ticks
 // on adjacent display callbacks and visibly stutter even at a steady 60 Hz.
 - (void)advanceOriginalFrame {
+    if(_hudEditing)return;
     _time+=0.01666666753590107; // Original constant 0x3f91111120000000.
     if(_session)_worldShake.tick(_time);
     else if(!_showMenu)_titleShake.tick(_time);
@@ -902,7 +932,7 @@
 - (void)frame:(id)sender {
     (void)sender;
     if (!_active) return;
-    [self updateCanvasGeometry];[self checkInactivity];
+    [self updateCanvasGeometry];[self updateHUDEntry];if(!_hudEditing)[self checkInactivity];
     [self advanceOriginalFrame];
     [self renderOpenGLFrame];
 }
@@ -967,6 +997,7 @@
         if(ctx)[_loadError drawInRect:CGRectMake(24,100,432,180) withAttributes:@{NSForegroundColorAttributeName:HMWhiteColor(),NSFontAttributeName:HMSystemFont(14)}];
         if(ctx)CGContextRestoreGState(ctx); return;
     }
+    if(_hudEditing){[self drawHUDEditor];if(ctx)CGContextRestoreGState(ctx);return;}
     if (_showMenu) {_media.resourceScope=_screenResourceScope;
         if(_canvasHeight>320){CGSize size=[_media imageSize:@"Extensions/MenuMetal.png"];CGFloat scale=std::max(_canvasWidth/size.width,_canvasHeight/size.height);[_media draw:@"Extensions/MenuMetal.png" x:_canvasWidth/2 y:_canvasHeight/2 columns:1 rows:1 tile:0 scaleX:scale scaleY:scale rotation:0 alpha:1];}
         _media.presentationOffset=CGPointMake(0,(_canvasHeight-320)/2);[_menus draw];_media.presentationOffset=CGPointZero;_media.resourceScope=@"shared";[self drawLoading];if(ctx)CGContextRestoreGState(ctx);return;}
@@ -1000,6 +1031,7 @@
             snapshot.upgradeVisible=player->upgradeStep==1;
             snapshot.upgradeSelection=player->upgradeSelection;
         }
+        [_hud setLayout:[self currentHUDLayout] editing:NO];
         [_hud draw:snapshot];
         [self drawAimControls];
         [self drawLoading];[_media resetClip];[_media setDrawingOffset:CGPointZero];[_media setDrawingScale:1];if(ctx)CGContextRestoreGState(ctx);return;
@@ -1041,7 +1073,8 @@
     // Mount to the same 480-unit HUD rail as booster/weapon, including safe-area scale.
     int slot=control==1?0:control==3?1:2; // A, next target, fire.
     CGRect r=CGRectMake(334+slot*48,10,46,46);
-    return CGRectMake(_hudOffset.x+r.origin.x*_hudScale,_hudOffset.y+r.origin.y*_hudScale,r.size.width*_hudScale,r.size.height*_hudScale);
+    auto c=[self currentHUDLayout];auto q=c.group(heavymach::hud::aim).hitRect({r.origin.x,r.origin.y,r.size.width,r.size.height});
+    return CGRectMake(q.x,q.y,q.width,q.height);
 }
 - (void)saveAimMode { [NSUserDefaults.standardUserDefaults setInteger:int(_preferredAimMode) forKey:@"AimModeV1"]; }
 - (void)setInputAimMode:(heavymach::AimMode)mode {
@@ -1065,6 +1098,7 @@
     if(!_session)return NO;
     NSNumber* captured=[_aimTouches objectForKey:token];
     if(captured){
+        if(state==1&&captured.intValue==2&&!CGRectContainsPoint([self aimControlRect:2],p)){[_aimTouches removeObjectForKey:token];[_aimCancelledTouches addObject:token];[self refreshAutoFire];return YES;}
         if(state>=2){int action=captured.intValue;[_aimTouches removeObjectForKey:token];
             if(action==2)[self refreshAutoFire];
             else if(state==2&&![self worldInputBlocked]&&CGRectContainsPoint([self aimControlRect:action],p)){
@@ -1082,16 +1116,16 @@
     return NO;
 }
 - (void)drawAimControls {
-    if(!_session||[self worldInputBlocked]||_loading.visible())return;
+    if((!_session&&!_hudEditing)||(!_hudEditing&&[self worldInputBlocked])||_loading.visible())return;
     [_media resetClip];[_media setDrawingOffset:CGPointZero];[_media setDrawingScale:1];
-    auto mode=_session->aimMode();int count=mode==heavymach::AimMode::automatic?4:2;
+    auto mode=_hudEditing?heavymach::AimMode::automatic:_session->aimMode();int count=mode==heavymach::AimMode::automatic?4:2;
     for(int action=1;action<count;++action){auto r=[self aimControlRect:action];float x=CGRectGetMidX(r),y=CGRectGetMidY(r);
         bool selected=(action==1&&mode==heavymach::AimMode::automatic);
         for(NSNumber* held in _aimTouches.objectEnumerator)if(held.intValue==action)selected=true;
         NSString* sheet=@"Extensions/AutoAimControls.png";CGSize size=[_media imageSize:sheet];
         [_media draw:sheet x:x y:y columns:3 rows:2 tile:(selected?3:0)+action-1 scaleX:r.size.width/std::max(CGFloat(1),size.width/3) scaleY:r.size.height/std::max(CGFloat(1),size.height/2) rotation:0 alpha:1];
     }
-    if(mode!=heavymach::AimMode::automatic)return;auto aim=_session->aimSnapshot();if(!aim.target){_drawnAimTarget=0;return;}
+    if(_hudEditing||mode!=heavymach::AimMode::automatic)return;auto aim=_session->aimSnapshot();if(!aim.target){_drawnAimTarget=0;return;}
     if(_drawnAimTarget!=aim.target){_drawnAimTarget=aim.target;_aimAcquiredTime=_time;}
     float gap=4+12*std::max(0.,1-(_time-_aimAcquiredTime)/.15);
     float left=aim.screenPosition.x+aim.bounds.left-gap,right=aim.screenPosition.x+aim.bounds.right+gap;
@@ -1120,22 +1154,24 @@
 }
 - (void)routePoint:(CGPoint)point state:(int)state token:(id)touch {
     if(!_active||_loadError||_keyboardSettingsOpen)return;
+    if(_hudEditing){auto q=_viewport.logical(point.x,point.y);[self hudEditorPoint:q?CGPointMake(q->first,q->second):CGPointMake(-1000,-1000) state:state token:touch];return;}
     _keyboardAimVisible=NO;
     if([_aimCancelledTouches containsObject:touch]){if(state>=2)[_aimCancelledTouches removeObject:touch];return;}
         auto logical=_viewport.logical(point.x,point.y);
         if(state>=2)[_heldTouches removeObject:touch];
         if(logical){[self noteInteraction];if(state==0)[_heldTouches addObject:touch];}
         if([self routeAimPoint:logical?CGPointMake(logical->first,logical->second):CGPointMake(-1000,-1000) state:state token:touch])return;
-        if(_session&&(_canvasWidth>480||_canvasHeight>320)){
+        if(_session&&(_canvasWidth>480||_canvasHeight>320||_hudLayout.customized())){
             const CGPoint p=logical?CGPointMake(logical->first,logical->second):CGPointMake(-1000,-1000);
             const CGPoint hp=CGPointMake((p.x-_hudOffset.x)/_hudScale,(p.y-_hudOffset.y)/_hudScale);
-            const BOOL insideHUD=hp.x>=0&&hp.x<=480&&hp.y>=0&&hp.y<=320;
+            const BOOL insideHUD=_hudLayout.customized()||(hp.x>=0&&hp.x<=480&&hp.y>=0&&hp.y<=320);
             if(state==0){
-                if(insideHUD&&[_hud touch:hp state:0])[_hudTouches addObject:touch];
+                if(insideHUD&&[_hud touch:hp state:0]){[_hudTouches addObject:touch];if(_hudLayout.customized())[_hudCapturedReceivers setObject:@([_hud receiverAt:hp]) forKey:touch];}
                 else if(logical&&![self worldInputBlocked]){[_worldTouches addObject:touch];_session->touch({float(p.x),float(p.y)},0);_keyboardAim=p;_hasKeyboardAim=YES;}
             }else if([_hudTouches containsObject:touch]){
-                [_hud touch:insideHUD?hp:CGPointMake(-1000,-1000) state:state];
-                if(state>=2)[_hudTouches removeObject:touch];
+                NSNumber* receiver=[_hudCapturedReceivers objectForKey:touch];
+                [_hud touch:insideHUD?hp:CGPointMake(-1000,-1000) state:state receiver:receiver?receiver.intValue:-1];
+                if(state>=2){[_hudTouches removeObject:touch];[_hudCapturedReceivers removeObjectForKey:touch];}
             }else if([_worldTouches containsObject:touch]){
                 if(state>=2){
                     [_worldTouches removeObject:touch];
@@ -1178,4 +1214,5 @@
 - (void)mouseDragged:(NSEvent*)event {[self routePoint:[self convertPoint:event.locationInWindow fromView:nil] state:1 token:_mouseToken];}
 - (void)mouseUp:(NSEvent*)event {[self routePoint:[self convertPoint:event.locationInWindow fromView:nil] state:2 token:_mouseToken];}
 #endif
+#include "HMHUDEditor.inc"
 @end

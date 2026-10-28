@@ -1,4 +1,5 @@
 #include "HUDLayout.hpp"
+#include "HUDConfiguration.hpp"
 #include <array>
 #include <cassert>
 #include <iostream>
@@ -64,5 +65,9 @@ int main(){
     rejects([&]{resolve(jump,{{0,0},0},safe);});
     rejects([&]{resolve(jump,original,{0,0,-1,10});});
     rejects([&]{placementForOrigin(jump,original,safe,{0,nan});});
+    Configuration config;config.legacy={{100,0},1};config.safe={0,0,680,320};
+    assert(valid(config));config.positions[Group::weapon]=Placement{0,.5};assert(valid(config));
+    auto target=config.group(Group::jump).visualBounds;config.positions[Group::weapon]=placementForOrigin(bounds[Group::weapon],config.legacy,config.safe,{target.x,target.y});assert(!valid(config));
+    config.positions={};assert(valid(config));
     std::cout<<"HUD layout: original geometry, moved hits, groups, scaling, rotation, window recovery and invalid settings passed\n";
 }
