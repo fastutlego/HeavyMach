@@ -1,5 +1,12 @@
 # 2026-10-25 문서·코드·앱 일치 체계 점검 및 보완
 
+## Android 앱 구현·Galaxy 검사 — 2026-10-30
+
+`develop`의 `d46e122a`에서 만든 `feat/android-app`에서 Android 일반·치트 앱을 구현했다. 기존 Apple·코어·자원 2,166개 파일의 해시는 그대로다. Android 16 ARM64 에뮬레이터와 Galaxy SM-S731N에서 두 앱을 설치했다. Galaxy의 이동·점프·20종 무기·복귀 31개, HUD·GPU 재생성 9개, 35스테이지 진입과 자동조준·키 입력 39개 검사를 통과했다. 에뮬레이터에서는 Clock 알람이 실제 오디오 포커스를 가져간 뒤의 정지·복귀·재발사도 확인했다.
+
+USB를 뺀 뒤 두 APK를 무선 재설치하고 저장 보존·실행·로그·종료·홈 복귀를 확인했다. 최종 무선 실행 검사 11개를 통과했다. 보스 전투 45초의 표시 간격은 P99 17ms 구간이며 33ms 초과는 0개였다. [구현 기록](android-implementation-20261030.md). `develop`·`main`에는 병합하지 않았다. 아래의 “APK 미구현”은 작업 시작 전 조사 기록이다.
+
+
 ## Apple 변경 없는 Android 준비 — 2026-10-30
 
 후속 사용자 지시에 따라 Apple 선행 공통화·폴더 이동 계획을 철회했다. 기존 Apple·코어·자원·vendor 등 2,000개 보호 파일의 해시가 작업 전후 같았다. 기존 코어 전체와 OpenAL/OpenSL ES·stb·JNI·EGL/GLES1·AssetManager를 연결한 Android ARM64 일반·치트 공유 라이브러리 두 개를 빌드했다. 기존 빌드/검사 자원 1,504개 해시도 통과했다. [증거](evidence/android-isolation-20261030.json), [현재 계획](android-port-plan-20261026.md). APK·화면·GL 복구·실제 음향은 아직 미구현이다. 아래 최초 공통화 제안은 이 후속 계획으로 대체한다.

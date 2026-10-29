@@ -754,3 +754,11 @@ VTOL 첫 생성 프롬프트와 스킬 수정 커밋을 대조했다. 요청에 
 - source: `470eaff43ba38e46464de5edb3c25bb0d827f06f`
 - deployment: `appgdep_6ae322ce514c8191bb5fd731bbcacf63` · succeeded
 - 소유자 전용 접근 유지. Safari에서 본문·캡처를 확인하고 해당 페이지 링크27개와 기존 절 앵커8개를 검사했다. 다른 보고 원고는 재생성하지 않았다.
+
+## 2026-10-30 Android 앱·Galaxy 유선/무선 검사
+
+[Android 구현과 검사](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/android-implementation.html)를 기존 전체 보고서 목차에 추가했다. 일반·치트 앱의 Galaxy 화면, HUD 편집, 에뮬레이터 태블릿 화면비와 검사 결과를 담았다. 기존 Android 계획 페이지도 현재 구현 상태로 갱신했다.
+
+- source: `2d47a120a1f504848defa5af14cb705c8dfdc6c6`
+- deployment: `appgdep_6ae3925be7f08191ab59bbcf5db1dcfd` · succeeded
+- 소유자 전용 접근 유지. 두 페이지의 내부 파일·앵커와 캡처 5개를 검사했다. 이번 게시의 브라우저 화면 검사는 CUA 접근 실패로 수행하지 못했다.

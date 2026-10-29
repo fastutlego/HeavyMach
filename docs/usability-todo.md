@@ -361,7 +361,7 @@ Apple의 scene 기반 앱에서는 `sceneWillResignActive`가 일시적 중단�
 - [x] 중단한 hm-defense 포크·로컬 브랜치·기존 APK·남은 TODO 확인. 작업 파일 보존.
 - [x] HeavyMach 코어 NDK ARM64 컴파일·개발 계획·전용 스킬·읽기 경로 작성. [Android 계획](android-port-plan-20261026.md).
 - [x] 2026-10-30 최신 일반용·치트용 코어 NDK 컴파일, Apple 의존성·HUD/메뉴 경계 조사. [결과](android-port-plan-20261026.md#코어와-플랫폼-경계-조사--2026-10-30).
-- [ ] A0.5 기존 Apple·코어·자원·vendor 파일 해시를 개발 기준에 고정. Android 전용 경로·빌드·보존 검사 구성. 앞선 Shared·Apple 폴더 이동 계획은 철회.
+- [x] A0.5 기존 파일 2,166개 해시 고정과 Android 전용 경로·빌드·보존 검사 구성. Apple·코어 수정 없음.
 - [x] 기존 파일 2,000개 보존 및 Android 일반·치트 native 라이브러리 링크 검사. [결과](evidence/android-isolation-20261030.json).
 - [ ] A1 Android 앱·EGL/OpenAL·일반/치트 debug APK 뼈대. Surface/컨텍스트 강제 재생성·GPU 자원 복구, 자원 패키징·색/크롭/축소 비교, OpenAL audio focus·실제 출력 복귀 검사를 포함.
 - [ ] A2 Android 전용 프레임·메뉴·HUD 구현. 기본 무기 탄약99·슬롯 선택/삭제·이벤트/저장 순서를 기존 Apple판과 대조. Apple 파일 수정 없음.
@@ -369,7 +369,14 @@ Apple의 scene 기반 앱에서는 `sceneWillResignActive`가 일시적 중단�
 - [ ] A4 전체 미션·화면비·context·고주사율·16KB·실기기 발열 검사.
 - [ ] A5 일반 release·치트 APK 서명·설치·저장 보존·재현 기록.
 
-Android는 계획 수립과 공용 코어 컴파일까지 진행했다. APK 제작과 다른 타이틀의 복원은 후속 과제다.
+2026-10-30 진행: 일반·치트 APK 구현과 Galaxy USB 설치를 완료했다. 전체 무기 20종을 포함한 실행 검사 31개, HUD·GPU 재생성 9개, 35스테이지 진입·자동조준·키 입력 39개를 통과했다. 에뮬레이터의 두 가로 방향·태블릿 화면비와 Clock 알람 복귀도 검사했다. A1~A5의 종합 완료 여부는 남은 대조·장시간 검사·배포 서명까지 확인한 뒤 갱신한다. [구현 기록](android-implementation-20261030.md).
+
+- [x] Android 유선·무선 설치·실행·로그·종료 도구와 전용 스킬 작성.
+- [x] Galaxy USB 설치·실행과 Wi-Fi 연결의 기기 일치 확인.
+- [x] USB를 뺀 Galaxy에서 일반·치트 재설치·저장 보존·실행·로그·종료·홈 복귀 확인. 최종 실행 검사 11개 통과.
+- [ ] 전체 미션의 실제 클리어·성장·서바이벌 장시간 플레이와 태블릿 실기기·16KB 페이지 기기 검사.
+- [ ] 확장 에셋 축소 결과의 Apple/Android 시각 대조. Android는 area prefilter, Apple은 CoreGraphics 축소를 사용한다.
+- [ ] 배포용 서명 키·release APK와 공개 설치 문서. 현재 APK는 최적화한 debug 서명 빌드다.
 
 ## 자동조준 연구개발 계획 요청 — 2026-10-26
 

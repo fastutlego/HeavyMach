@@ -25,3 +25,5 @@ description: HeavyMach 1의 검증된 C++ 코어를 Android에 연결하고 일�
 5. 실패의 입력·소스·도구·로그를 보존하고 수정 범위를 좁힌다. 빌드·서명·설치·플레이·배포를 구분해 docs/current-status.md와 계획의 진행 상태를 갱신한다.
 
 원본 해석이 필요할 때만 REA를 사용한다. 기존 iOS 성공을 Android 성공으로, 코어 정적 라이브러리를 APK로 보고하지 않는다. 조사 요청을 임의의 기기 설치·앱 배포로 확대하지 않는다.
+
+Android 구현과 빌드는 [Android/README.md](../../../Android/README.md), USB·무선 실행과 종료는 [debug-heavymach-android](../debug-heavymach-android/SKILL.md)를 따른다. 현재 앱은 `feat/android-app`에서 검사 중이다.

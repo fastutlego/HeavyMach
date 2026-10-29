@@ -319,21 +319,40 @@
         "docs/rendering-policy.md",
         "docs/runtime-policy.md",
         "docs/weapon-validation-procedure.md",
-        ".agents/skills/port-heavymach-android/SKILL.md"
+        ".agents/skills/port-heavymach-android/SKILL.md",
+        "Android/README.md",
+        "docs/android-implementation-20261030.md",
+        ".agents/skills/debug-heavymach-android/SKILL.md"
       ],
       "sources": [
         "CMakeLists.txt",
         "Sources/Core/*",
         "Sources/iOS/*",
         "docs/android-port-plan-20261026.md",
-        ".agents/skills/port-heavymach-android/*"
+        ".agents/skills/port-heavymach-android/*",
+        "Android/cmake/*",
+        "Android/tools/*",
+        ".agents/skills/debug-heavymach-android/*",
+        "Android/app/src/**/*.cpp",
+        "Android/app/src/**/*.hpp",
+        "Android/app/src/**/*.kt",
+        "Android/app/src/**/AndroidManifest.xml"
       ],
       "tests": [
         "Tests/CoreTests.cpp",
         "Tests/AudioContractTests.cpp",
-        "Tests/GameSessionTests.cpp"
+        "Tests/GameSessionTests.cpp",
+        "Android/tools/check_isolation.py",
+        "Android/tools/validate_runtime.py",
+        "Android/tools/validate_platform.py",
+        "Android/tools/validate_audio_timer.py",
+        "Android/tools/validate_campaign.py",
+        "Android/tools/verify_apks.py",
+        "Android/tools/measure_combat.py",
+        "Android/tools/validate_tilt.py"
       ],
       "evidence": [
+        "docs/evidence/android-app-20261030.json",
         "docs/evidence/android-isolation-20261030.json",
         "docs/evidence/android-boundaries-20261030.json",
         "docs/research/android-and-titles-evidence-20261026.json",
