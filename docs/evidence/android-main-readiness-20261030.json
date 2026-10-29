@@ -1,0 +1,80 @@
+{
+  "base": "d46e122ac49ebdf8a3eb5d89b6af4ea5ccf18cd8",
+  "remote_main": "3962d7b7c48fe67fa996860b16a2ab194a260c26",
+  "feature_head_before_media": "fcf7e1f5e4576b4913016fa0a8b1b251962ee1fe",
+  "protected": {
+    "base": "d46e122ac49ebdf8a3eb5d89b6af4ea5ccf18cd8",
+    "protected_files": 2166,
+    "errors": []
+  },
+  "changed_apple_paths": [],
+  "main_develop_tree_difference": [],
+  "apple_configs_without_android_references": [
+    "iOS/project.yml",
+    "iOS/HeavyMachRestored.xcodeproj/project.pbxproj",
+    "iOS/HeavyMachRestored.xcodeproj/project.xcworkspace/contents.xcworkspacedata",
+    "iOS/HeavyMachRestored.xcodeproj/xcshareddata/xcschemes/HeavyMachRestored.xcscheme",
+    "iOS/HeavyMachRestored.xcodeproj/xcshareddata/xcschemes/HeavyMachValidation.xcscheme",
+    "macOS/project.yml",
+    "macOS/HeavyMachMac.xcodeproj/project.pbxproj",
+    "macOS/HeavyMachMac.xcodeproj/project.xcworkspace/contents.xcworkspacedata",
+    "macOS/HeavyMachMac.xcodeproj/xcshareddata/xcschemes/HeavyMachMac.xcscheme",
+    "macOS/HeavyMachMac.xcodeproj/xcshareddata/xcschemes/HeavyMachMacValidation.xcscheme",
+    "Modules/project.yml",
+    "Modules/HeavyMachModules.xcodeproj/project.pbxproj",
+    "Modules/HeavyMachModules.xcodeproj/project.xcworkspace/contents.xcworkspacedata",
+    "HeavyMach.xcworkspace/contents.xcworkspacedata"
+  ],
+  "apple_builds": [
+    {
+      "platform": "ios",
+      "configuration": "Debug",
+      "signing": false,
+      "architecture": "arm64",
+      "success": true,
+      "dependency_files_checked": 80,
+      "android_dependencies": [],
+      "apps": [
+        {
+          "scheme": "HeavyMachRestored",
+          "app": "build/android-release-audit/apple-ios/Build/Products/Debug-iphonesimulator/HeavyMachRestored.app",
+          "binary_sha256": "daf238104aec0ae6fe0cff0ad1eb035583204c3ca99329383a3746968b6a5d45"
+        },
+        {
+          "scheme": "HeavyMachValidation",
+          "app": "build/android-release-audit/apple-ios/Build/Products/Debug-iphonesimulator/HeavyMachValidation.app",
+          "binary_sha256": "b40f99e959a063cf4589d34ff434282d173d7f411768f072c8737bf37db598c9"
+        }
+      ]
+    },
+    {
+      "platform": "mac",
+      "configuration": "Debug",
+      "signing": false,
+      "architecture": "arm64",
+      "success": true,
+      "dependency_files_checked": 84,
+      "android_dependencies": [],
+      "apps": [
+        {
+          "scheme": "HeavyMachMac",
+          "app": "build/android-release-audit/apple-mac/Build/Products/Debug/HeavyMachMac.app",
+          "binary_sha256": "d9a8b77c03088510e2d9d46b982f38fc3c5c0c8a9a182ba63fc7d19f22d38b4f"
+        },
+        {
+          "scheme": "HeavyMachMacValidation",
+          "app": "build/android-release-audit/apple-mac/Build/Products/Debug/HeavyMachMacValidation.app",
+          "binary_sha256": "c31e2602e3ccb41929425dc8588be099beddcf83d72bbb64a0685fecb36cf865"
+        }
+      ]
+    }
+  ],
+  "review": {
+    "android_asset_destination": "Android/app/build/generated/gameAssets",
+    "android_cmake_output": "Android/app/.cxx",
+    "shared_core_use": "read-only source input to NDK; root CMake unchanged",
+    "apple_input_globs": "Sources/Core, Sources/iOS, Sources/Apple, Sources/Mac, Resources and Art only",
+    "new_apple_device_runtime_test": false,
+    "remaining_apple_risks": "Existing OS/device/toolchain-specific issues are outside file-isolation proof."
+  }
+}

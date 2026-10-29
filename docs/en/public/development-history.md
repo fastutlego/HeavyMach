@@ -107,3 +107,9 @@ Ghidra, otool and byte parsers worked around Mach-O inspection errors in old too
 v0.9 is the baseline I confirmed through play. v0.10 added shared modules, Apple platforms and VTOLs; v0.11 added doors, auto-aim and C removal; v0.12 added fighters and their entry and firing-rate fixes. v0.13 added Shilka and Tunguska, v0.14 HUD editing, v0.15 icons and the pause-menu entry, and v0.16 fighter entry spacing. [Changelog](../../../CHANGELOG.en.md)
 
 GitHub contains current features, development history and gameplay media. Next game tasks include auto-aim status, tutorials and Android. Display timing, long-session heat and additional-enemy difficulty still need testing. [Current status](implementation-status.md)
+
+<a id="android-구현--2026-10-30"></a>
+
+## Android implementation · 2026-10-30
+
+The [Android development account](../../public/android-development-20261030.md) covers the regular and cheat APKs, Galaxy USB and wireless installation, the shared core, the Android host, tests and fixes. The implementation was developed on `feat/android-app`; existing Apple sources were preserved.

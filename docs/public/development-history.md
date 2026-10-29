@@ -90,6 +90,6 @@ v0.9는 내가 정상 플레이를 확인한 기준, v0.10은 공용 모듈·App
 
 GitHub에는 현재 기능·개발 과정과 플레이 자료를 정리했다. 다음 게임 과제는 자동조준 상태 안내·튜토리얼·Android이며, 표시시간·장시간 발열·추가 적 난이도 검사가 남아 있다. [현재 상태](implementation-status.md)
 
-## Android 작업 브랜치 · 2026-10-30
+## Android 구현 · 2026-10-30
 
-일반·치트 APK 구현, Galaxy 유선·무선 설치, 공용 코어와 전용 호스트, 검사와 수정 내역은 [Android 개발 과정](android-development-20261030.md)에 정리했다. 개발 브랜치는 `feat/android-app`이며 Apple 릴리스와 별도로 진행한다.
+일반·치트 APK 구현, Galaxy 유선·무선 설치, 공용 코어와 전용 호스트, 검사와 수정 내역은 [Android 개발 과정](android-development-20261030.md)에 정리했다. `feat/android-app`에서 구현했고 기존 Apple 소스는 유지했다.

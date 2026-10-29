@@ -778,3 +778,11 @@ VTOL 첫 생성 프롬프트와 스킬 수정 커밋을 대조했다. 요청에 
 - source: `989f843e26794f95b111ad468af13562797a7df5`
 - deployment: `appgdep_6ae3a176c5a08191aab2794050f3d7e7` · succeeded
 - 기존 접근 범위, 절 앵커와 이미지5장을 유지했다. 문서 연결·중복 앵커·이미지 수를 검사했다. 브라우저 화면 검사는 수행하지 않았다.
+
+## 2026-10-30 Galaxy 실제 플레이와 Apple 보존 검사
+
+[Galaxy 플레이 자료](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/android-gameplay.html)에 캡처 8장·GIF 3개·MP4 3개를 게시했다. [Android 개발 과정](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/android-development.html#galaxy-gameplay)과 전체 목차에서 연결했다. [병합·태그 준비](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/android-release-readiness.html)에는 Apple 해시·빌드 의존성·네 앱 재빌드 결과를 담았다.
+
+- source: `9b7131851d1137791ed7c47597aa4d2487b9aa3b`
+- deployment: `appgdep_6ae3a6e555848191b96b597f205499e6` · succeeded
+- 기존 소유자 전용 접근을 유지했다. 페이지 링크와 이미지·영상 파일을 검사했다. 원본 캡처와 GIF의 시작·중간·끝 프레임을 직접 확인했다. 이번 게시의 브라우저 화면 검사는 수행하지 않았다.

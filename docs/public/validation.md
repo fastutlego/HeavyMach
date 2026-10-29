@@ -61,6 +61,6 @@ Codex는 일반·치트 앱을 iPhone·iPad에 각각 설치했다. 케이블을
 
 [전체 무기 검사 절차](../weapon-validation-procedure.md) · [현행 과제](implementation-status.md)
 
-## Android 작업 브랜치 · 2026-10-30
+## Android 구현 · 2026-10-30
 
-일반·치트 APK 구현, Galaxy 유선·무선 설치, 공용 코어와 전용 호스트, 검사와 수정 내역은 [Android 개발 과정](android-development-20261030.md)에 정리했다. 개발 브랜치는 `feat/android-app`이며 Apple 릴리스와 별도로 진행한다.
+일반·치트 APK 구현, Galaxy 유선·무선 설치, 공용 코어와 전용 호스트, 검사와 수정 내역은 [Android 개발 과정](android-development-20261030.md)에 정리했다. `feat/android-app`에서 구현했고 기존 Apple 소스는 유지했다.

@@ -54,6 +54,6 @@ GitHub 문서와 플레이 미디어는 main에 반영했다. 게임 릴리스 �
 
 저장소는 2026-10-28 공개했다. 통합 보고 사이트는 소유자 로그인으로 열람한다. Git 태그는 v0.9~v0.16이며, v0.16 Releases에서 소스·자원 압축본을 받을 수 있다. iPhone·iPad·Mac 앱은 Xcode에서 빌드해 설치한다. 새 clone은 Git/LFS 자원으로 빌드한다. v0.9는 자원 등록 이전 태그이므로 당시 코드를 빌드할 때 자원 준비가 추가로 필요하다. [설치](build-and-install.md) · [버전 복원](../repository-management.md)
 
-## Android 작업 브랜치 · 2026-10-30
+## Android 구현 · 2026-10-30
 
-일반·치트 APK 구현, Galaxy 유선·무선 설치, 공용 코어와 전용 호스트, 검사와 수정 내역은 [Android 개발 과정](android-development-20261030.md)에 정리했다. 개발 브랜치는 `feat/android-app`이며 Apple 릴리스와 별도로 진행한다.
+일반·치트 APK 구현, Galaxy 유선·무선 설치, 공용 코어와 전용 호스트, 검사와 수정 내역은 [Android 개발 과정](android-development-20261030.md)에 정리했다. `feat/android-app`에서 구현했고 기존 Apple 소스는 유지했다.

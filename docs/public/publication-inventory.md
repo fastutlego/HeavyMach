@@ -2,7 +2,7 @@
 
 HeavyMach에 관해 내가 쓴 원문과 기술 설명·수정 과정·이미지를 이 저장소에 모았다. Apps는 기술 설명, Mags는 매거진 인터뷰 형식이다. 두 곳 모두 현재 기능과 시정 과정을 다룬다. SaaS 담당 세션이 이 자료로 원고를 작성하고 서비스에 반영한다.
 
-집필은 이 저장소 **main의 최신 문서**에서 시작한다. Apple 게임 릴리스는 **v0.16**이다. Android 추가 자료는 `feat/android-app`의 [개발 원고](android-development-20261030.md)에 있다. 이후 추가한 글과 이미지 설명은 main에 있다.
+집필은 이 저장소 **main의 최신 문서**에서 시작한다. Apple 게임 릴리스는 **v0.16**이다. Android 추가 자료는 [개발 원고](android-development-20261030.md)에 있다. 이후 추가한 글과 이미지 설명은 main에 있다.
 
 ```sh
 python3 tools/document_contract.py plan --task developer_story
@@ -14,7 +14,7 @@ python3 tools/document_contract.py check
 ## 읽는 순서
 
 1. [개발자의 변](../RESTORATION.md)과 [개발 동기 자료](../developer-background.md): 내가 제공한 원문, 연도 정정, 잡지사·필리핀 근무와 개발자 전업, HeavyMach를 선택한 이유.
-2. [README](../../README.md), [기능](features.md), [구현 상태](implementation-status.md): v0.15 게임과 추가 기능, 완료·남은 과제.
+2. [README](../../README.md), [기능](features.md), [구현 상태](implementation-status.md): v0.16 게임과 추가 기능, 완료·남은 과제.
 3. [개발 과정](development-history.md), [트러블슈팅](troubleshooting.md): 분석·비교 순서, 내 질문과 시정 지시, 기술 원인과 결과.
 4. [구조](architecture.md), [설치](build-and-install.md), [검증](validation.md): 기술 구성, 실제 사용 절차, 날짜·기기·조건별 수치.
 5. [미디어 명세](media/gameplay-20261027/media-scenes.json), [문장 스킬](../../.agents/skills/write-project-text/SKILL.md): 장면·캡션·원본 시간과 집필 규칙.
@@ -143,3 +143,7 @@ Apps에는 지상 유닛의 파츠·무장과 HUD 그림/터치 위치 공유를
 세부 수치는 [구현 기록](../android-implementation-20261030.md), [시간 근거](../evidence/android-development-timeline-20261030.json), [업그레이드 오류 증거](../evidence/android-upgrade-fix-20261030.json)에 있다. [이미지와 캡션](media/android-20261030/scenes.json)은 타이틀·보스 전투·오류 전후 5장이다. Android 자료는 아직 작업 브랜치에 있으며 Apple 릴리스와 구분한다.
 
 [개발 범위를 정한 네 가지 판단](android-development-20261030.md#개발-범위를-정한-네-가지-판단)에 부분적인 코어 공유, Apple 파일 변경 금지, 컨텍스트·생명주기 사전 확인, Android 스킬 준비를 실제 코드와 검사 결과에 연결했다. Apps에는 플랫폼 분리와 재사용 방식, Mags에는 내가 작업 범위와 검사 대상을 정한 이유를 설명하는 자료로 사용한다. 수정 빌드 완료 시각과 이후 내 플레이에서 오작동이 보이지 않았다는 확인도 추가했다.
+
+## Android 실제 플레이 자료 · 2026-10-30
+
+[Galaxy 미션 3-4·3-5 캡처 8장·GIF 3개·영상 3개](android-gameplay-20261030.md). [출처·타임코드·해시](media/android-gameplay-20261030/scenes.json). Android 기술 원고는 [개발 과정](android-development-20261030.md), 빌드와 설치는 [Android 안내](../../Android/README.md)를 읽는다. iOS 자료와 구분된 폴더이며, 인터뷰에는 직접 플레이한 경험과 구현·검사 기록을 함께 활용할 수 있다.

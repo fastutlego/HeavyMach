@@ -425,7 +425,8 @@
         ".agents/skills/write-project-text/SKILL.md",
         "docs/public/publication-inventory.md",
         "docs/public/gameplay-media-20261027.md",
-        "docs/public/github-documentation-plan-20261027.md"
+        "docs/public/github-documentation-plan-20261027.md",
+        "docs/public/android-gameplay-20261030.md"
       ],
       "sources": [
         "docs/public/media/*",
@@ -437,7 +438,8 @@
         "docs/public/media/manifest.json",
         "docs/current-status.md",
         "docs/public/media/gameplay-20261027/media-scenes.json",
-        "docs/evidence/gameplay-media-20261027.json"
+        "docs/evidence/gameplay-media-20261027.json",
+        "docs/public/media/android-gameplay-20261030/scenes.json"
       ]
     },
     "apple_platforms": {
@@ -504,7 +506,8 @@
       "read": [
         "docs/repository-management.md",
         "docs/release-notes-plan.md",
-        "CHANGELOG.md"
+        "CHANGELOG.md",
+        "docs/android-release-readiness-20261030.md"
       ],
       "sources": [
         "tools/release.py",
@@ -517,7 +520,8 @@
       ],
       "evidence": [
         "docs/evidence/release-tool-20261029.json",
-        "docs/evidence/release-history-20261029.json"
+        "docs/evidence/release-history-20261029.json",
+        "docs/evidence/android-main-readiness-20261030.json"
       ]
     }
   }

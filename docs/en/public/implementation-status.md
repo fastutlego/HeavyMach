@@ -62,3 +62,9 @@ Remaining tests cover display timing, long-session heat/memory, physical keyboar
 ## Distribution and versions
 
 The repository became public on October 28, 2026. The unified report site requires owner login. Git tags run from v0.9 through v0.16; v0.16 Releases offers a source-and-resource archive. Build and install iPhone, iPad and Mac apps through Xcode. A fresh clone builds using Git/LFS resources. v0.9 predates resource registration and needs additional resource preparation to build that historical code. [Installation](build-and-install.md) · [Version restoration](../../repository-management.md)
+
+<a id="android-구현--2026-10-30"></a>
+
+## Android implementation · 2026-10-30
+
+The [Android development account](../../public/android-development-20261030.md) covers the regular and cheat APKs, Galaxy USB and wireless installation, the shared core, the Android host, tests and fixes. The implementation was developed on `feat/android-app`; existing Apple sources were preserved.

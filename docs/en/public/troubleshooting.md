@@ -179,3 +179,9 @@ Applying moral judgments and safety rules to quoting literature in a manuscript.
 Those actions left me with one feeling.
 
 Engineering disgust.
+
+<a id="android-미션-진입-직후-업그레이드-창에서-전투-진행"></a>
+
+## Combat continued behind the upgrade panel at Android mission entry
+
+After the first boss, entering 2-1 opened the upgrade panel while combat continued. Selection and confirmation buttons did not respond. Remaining experience opened the panel, then the screen startup code cleared the pause. The Android host now keeps combat paused until the upgrade finishes. Twelve regression checks passed on Galaxy and twelve on the emulator. [Save data, cause and before/after screenshots](../../public/android-development-20261030.md#직접-플레이에서-발견한-업그레이드-오류).

@@ -2,7 +2,7 @@
 
 2026년 10월 30일, HeavyMach의 일반 앱과 치트 앱을 Galaxy SM-S731N에서 실행했다. 기존 C++ 전투 코어와 게임 자원을 그대로 빌드하고, Android의 화면·입력·음향·저장 연결을 추가했다. iPhone·iPad·Mac이 사용하는 소스와 프로젝트, 코어, 자원 2,166개 파일은 작업 전후 해시가 같다.
 
-나는 정상 동작하는 Apple판을 Android 작업 때문에 바꾸지 말라고 요구했다. Codex는 `develop`에서 `feat/android-app`을 만들고 새 앱을 `Android/` 아래에 모았다. 현재 Android판은 이 브랜치에서 개발 중이며, 일반 앱과 치트 앱 모두 최적화한 debug 서명 APK다.
+나는 정상 동작하는 Apple판을 Android 작업 때문에 바꾸지 말라고 요구했다. Codex는 `develop`에서 `feat/android-app`을 만들고 새 앱을 `Android/` 아래에 모았다. 일반 앱과 치트 앱 모두 최적화한 debug 서명 APK다.
 
 ![Galaxy 일반 앱 타이틀](media/android-20261030/galaxy-title.png)
 
@@ -143,3 +143,13 @@ Galaxy에서 이동·점프·20종 무기·자동조준·HUD 편집·백그라�
 ![Galaxy의 보스 구간과 추가 항공기](media/android-20261030/galaxy-boss.png)
 
 전체 캠페인 클리어와 성장·결과 화면의 연속 검사, 장시간 발열·메모리, Android 태블릿 및 16KB 페이지 실기기, 배포용 서명은 남아 있다. [Android 빌드·설치](../../Android/README.md), [현재 과제](../usability-todo.md#2026-10-26-후속-타이틀android-apk)
+
+## Galaxy에서 직접 플레이한 두 미션
+
+업그레이드 오류 수정본으로 미션 3-4와 3-5를 플레이했다. 녹화에는 점프·무기 전환·럭스루나에 교전·보스전·방어 업그레이드와 미션 4 선택 화면이 담겼다. Codex는 원본을 두 미션으로 나누고 캡처 8장·GIF 3개·8초 영상 3개를 추렸다. [전체 이미지·영상](android-gameplay-20261030.md).
+
+![Galaxy 항공기형 보스전](media/android-gameplay-20261030/06-boss.png)
+
+## main 병합 전 Apple 검사
+
+기존 Apple 소스·공용 코어·자원 등 2,166개 파일의 해시가 작업 전과 같았다. Apple 프로젝트와 기존 빌드 설정·도구의 변경은 0개다. 일반·치트 앱을 iOS Simulator와 네이티브 Mac으로 다시 빌드했고 네 빌드가 모두 성공했다. 빌드 의존 파일·링크 목록 164개에서 Android 참조는 0개였다. [검사 결과와 v0.17 준비](../android-release-readiness-20261030.md).
