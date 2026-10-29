@@ -115,6 +115,33 @@ HUD의 **A 버튼**으로 자동조준을 켜면 전방의 가까운 적을 선�
 
 아이폰 치트 앱에서 상단 장식을 옮긴 화면이다. 드래그하면 오른쪽 도구가 접히고 **TOOLS**로 다시 연다. 편집 중 전투는 멈춘다. 정식 앱에도 같은 편집 기능이 있다. [MENU 이동 후 실제 조작과 검사](docs/public/app-icon-and-media-20261029.md#hud-위치-편집)
 
+## iOS 플레이 캡처 모음
+
+내가 제공한 두 녹화본의 이미지 8장·GIF 2개·음향 포함 영상 3개를 한 페이지에 모았다. 점프·무기·공중 지원·강화·미션 클리어·추가 항공기·자동조준을 볼 수 있다.
+
+[전체 iOS 플레이 캡처와 영상](docs/public/ios-gameplay-gallery-20261030.md)
+
+<details>
+<summary>iPhone·iPad 치트 앱 기능 검수 화면 4장 펼치기</summary>
+
+**iPhone Air · 최종 포탑 높이를 적용한 쉴카가 경사면에서 흰색 총탄을 발사한다.**
+
+![최종 포탑 높이를 적용한 쉴카가 경사면에서 흰색 총탄을 발사한다.](docs/public/media/ground-aa/shilka-height/shilka.png)
+
+**iPad Air13 M2 · 퉁구스카가 경사면에서 미사일을 발사한다. 포신 위의 레이더는 따로 회전한다.**
+
+![퉁구스카가 경사면에서 미사일을 발사한다. 포신 위의 레이더는 따로 회전한다.](docs/public/media/ground-aa/integrated/ipad-tunguska.png)
+
+**iPhone Air · 상단 금속 장식을 아래로 옮긴 HUD 편집 화면. 드래그하면서 오른쪽 도구가 접혔다.**
+
+![상단 금속 장식을 아래로 옮긴 HUD 편집 화면. 드래그하면서 오른쪽 도구가 접혔다.](docs/public/media/hud-editor/release-iphone-trim.png)
+
+**iPhone Air · MENU를 오른쪽으로 옮겨 적용한 뒤 새 위치를 눌러 멈춤 메뉴를 열었다.**
+
+![MENU를 오른쪽으로 옮겨 적용한 뒤 새 위치를 눌러 멈춤 메뉴를 열었다.](docs/public/media/hud-editor/release-iphone-menu.png)
+
+</details>
+
 ## 플랫폼과 개발 상태
 
 화면 확장, iPad·Mac 지원과 키보드 조작도 내가 추가로 요구한 기능이다. 넓은 화면에는 더 많은 월드를 표시하고, 키보드로 이동·점프·조준·발사·무기 전환과 메뉴를 모두 조작할 수 있게 했다. iPad에서는 터치·틸트와 키보드를 함께 지원한다.
