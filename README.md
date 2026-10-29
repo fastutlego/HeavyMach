@@ -33,6 +33,8 @@ HeavyMach도 2015년, 2016년 생활을 청산하고 다른 직업을 택하게 
 
 현재 게임 버전은 [v0.16](https://github.com/gelb2/HeavyMach/tree/v0.16)다. 일반 앱과 치트 검증 앱을 각각 설치할 수 있다. 치트 앱에서는 미션·무기·강화 조건을 지정해 같은 게임을 검사한다.
 
+[최신 릴리스](https://github.com/gelb2/HeavyMach/releases/latest) · [전체 버전 이력](CHANGELOG.md)
+
 [설치](docs/public/build-and-install.md) · [조작](docs/public/gameplay-guide.md) · [기능](docs/public/features.md) · [트러블슈팅](docs/public/troubleshooting.md) · [전체 문서](docs/README.md)
 
 ## 원작의 전투와 조작
