@@ -1,0 +1,52 @@
+[
+  {
+    "file": "galaxy-title.png",
+    "caption": "Galaxy 일반 앱 타이틀",
+    "source": "Android/build/evidence/galaxy-final/normal-title.png",
+    "sha256": "e00fc6d7e92f9d07102a9105e34f4c5436996de20c825e5fa0dcb34f054ac45c",
+    "size": [
+      2340,
+      1080
+    ]
+  },
+  {
+    "file": "galaxy-boss.png",
+    "caption": "Galaxy 치트 앱 미션 3-5 전투",
+    "source": "Android/build/evidence/galaxy-final/boss-combat.png",
+    "sha256": "60dd07445d5a064b9b9445c28c3a34ad997153d43b306332585510a5e2225318",
+    "size": [
+      2340,
+      1080
+    ]
+  },
+  {
+    "file": "upgrade-before.png",
+    "caption": "수정 전: 업그레이드 창 뒤에서 전투 진행",
+    "source": "Android/build/evidence/upgrade-bug-20261030-035243/before-repro.png",
+    "sha256": "306a3cb011171aa9c8f31d133d8846fdde5cc42ab9d4ea4257ef077323eaefe0",
+    "size": [
+      2340,
+      1080
+    ]
+  },
+  {
+    "file": "upgrade-fixed.png",
+    "caption": "수정 후: 업그레이드 선택 중 전투 정지",
+    "source": "Android/build/evidence/upgrade-20261030-035624/entry.png",
+    "sha256": "825725462e0014239a129543d6dafd0d3504b5456a38a7fa28d1ae58adb31f6b",
+    "size": [
+      2340,
+      1080
+    ]
+  },
+  {
+    "file": "upgrade-confirmed.png",
+    "caption": "수정 후: 이동 강화 확인 뒤 전투 재개",
+    "source": "Android/build/evidence/upgrade-20261030-035624/confirmed.png",
+    "sha256": "e3bc56bbc339f76d42d18b8bedeeb407ebead804f37a09caa8695c85bb0bb8ff",
+    "size": [
+      2340,
+      1080
+    ]
+  }
+]

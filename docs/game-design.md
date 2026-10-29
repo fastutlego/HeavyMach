@@ -61,7 +61,7 @@
 
 ## 플랫폼 확장 조사 — 2026-10-26
 
-현재 HeavyMach 1의 게임 규칙·에셋·사용성 정책을 Android 일반/치트 앱에서도 유지하는 개발 계획을 수립했다. 코어 NDK 컴파일은 확인했고 앱 연결·APK·실기기 검증은 앞으로 할 일이다. [Android 계획](android-port-plan-20261026.md)을 따른다. Heavy Mach 2와 Defense는 [별도 타이틀 조사](related-titles-20261026.md)이며 이 게임의 구현에 혼합하지 않는다.
+현재 HeavyMach 1의 게임 규칙·에셋·사용성 정책을 Android 일반/치트 앱에서도 유지하는 개발 계획을 수립했다. 2026-10-30 Android 전용 호스트와 일반·치트 APK를 구현했다. Galaxy에서 입력·20종 무기·HUD·캠페인 진입·자동조준과 무선 설치를 검사했다. 전체 캠페인 클리어와 장시간 검사는 남아 있다. [구현 기록](android-implementation-20261030.md). [Android 계획](android-port-plan-20261026.md)을 따른다. Heavy Mach 2와 Defense는 [별도 타이틀 조사](related-titles-20261026.md)이며 이 게임의 구현에 혼합하지 않는다.
 
 ## 추가 지상 적: 쉴카·퉁구스카
 

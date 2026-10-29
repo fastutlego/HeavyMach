@@ -51,7 +51,7 @@ GitHub documents and gameplay media have been merged into main. The game release
 | Build/run script | Examples researched; implementation planned | Combine resource download/checks, dependency/app builds, Mac launch and iPhone/iPad installation/signing guidance |
 | Auto-aim indicators | [Display plan](../../public/auto-aim-visibility-plan-20261028.md); not implemented | Show no target, off-screen and underground targets while retaining the aiming algorithm |
 | Tutorial | Research pending | Keep existing missions; add top package 0-0 through 0-4 covering tilt, weapons, switching and auto-aim using original UI, art and clear-condition conventions |
-| Android | Development plan written; no app or APK | NDK core build, platform input, graphics, audio, saves and device testing |
+| Android | Regular and cheat apps implemented; Galaxy USB/wireless installation and gameplay checked | Full campaign completion, extended thermal tests, physical tablets and distribution signing |
 | Folded screen | Concept recorded | Explore a game screen above controls and the associated input layout |
 | Enemy AI and fixed coordinates | Follow-up preventive review | Check aircraft movement and activation ranges affected by screen width |
 
@@ -62,3 +62,9 @@ Remaining tests cover display timing, long-session heat/memory, physical keyboar
 ## Distribution and versions
 
 The repository became public on October 28, 2026. The unified report site requires owner login. Git tags run from v0.9 through v0.16; v0.16 Releases offers a source-and-resource archive. Build and install iPhone, iPad and Mac apps through Xcode. A fresh clone builds using Git/LFS resources. v0.9 predates resource registration and needs additional resource preparation to build that historical code. [Installation](build-and-install.md) · [Version restoration](../../repository-management.md)
+
+<a id="android-구현--2026-10-30"></a>
+
+## Android implementation · 2026-10-30
+
+The [Android development account](../../public/android-development-20261030.md) covers the regular and cheat APKs, Galaxy USB and wireless installation, the shared core, the Android host, tests and fixes. The implementation was developed on `feat/android-app`; existing Apple sources were preserved.

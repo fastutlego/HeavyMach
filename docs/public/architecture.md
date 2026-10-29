@@ -66,6 +66,6 @@ iPhone·iPad는 같은 iOS target의 기기군 1·2를 사용하며, Mac은 AppK
 
 [좌표 정책](../coordinate-policy.md) · [렌더링 정책](../rendering-policy.md) · [시간·저장·음향](../runtime-policy.md) · [데미지·성장 계산](../game-calculation-policy.md)
 
-## Android 계획
+## Android 구현
 
-공용 C++ 코어는 CMake·NDK로 빌드하고 Android의 창·입력·음향·그래픽 연결을 추가하는 계획이다. 현재 Android 앱과 APK는 없다. [개발 단계와 필요한 검사](../android-port-plan-20261026.md)
+`feat/android-app`에서 같은 C++ 코어와 자원을 NDK로 빌드했다. `Android/`의 Kotlin·JNI·C++ 호스트가 화면·입력·EGL/GLES·OpenAL·저장을 연결한다. 기존 Apple 소스와 프로젝트는 변경하지 않았다. Galaxy에 일반·치트 APK를 설치했다. [공유 범위·전용 파일·개발 기록](android-development-20261030.md), [빌드와 설치](../../Android/README.md).

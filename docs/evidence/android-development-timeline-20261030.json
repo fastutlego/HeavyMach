@@ -1,0 +1,72 @@
+{
+  "timezone": "Asia/Seoul",
+  "commits": [
+    {
+      "sha": "5b01df755bce99a925dc4954983402993bf21e9f",
+      "author_time": "2026-10-26T13:11:55+09:00",
+      "commit_time": "2026-10-26T13:11:55+09:00",
+      "subject": "docs: investigate related titles and plan native Android APK port"
+    },
+    {
+      "sha": "e93e0c243f77f484dcb5aa1ad7ad69f5402fa67e",
+      "author_time": "2026-10-30T01:41:53+09:00",
+      "commit_time": "2026-10-30T02:15:21+09:00",
+      "subject": "docs: audit Android core boundaries and platform layout"
+    },
+    {
+      "sha": "962a5690042129c43e1be67d272e7c28ccecfda9",
+      "author_time": "2026-10-30T02:06:26+09:00",
+      "commit_time": "2026-10-30T02:15:21+09:00",
+      "subject": "docs: prepare Android port without Apple source changes"
+    },
+    {
+      "sha": "9d536ce0b0dbb2f81d2793406736cc3c870e1423",
+      "author_time": "2026-10-30T03:38:12+09:00",
+      "commit_time": "2026-10-30T03:38:12+09:00",
+      "subject": "feat(android): add standalone Android host and Galaxy device validation"
+    }
+  ],
+  "logs": [
+    {
+      "file": "Android/build-first.log",
+      "created": "2026-10-30T02:34:13.725104+09:00",
+      "last_written": "2026-10-30T02:35:00.759309+09:00"
+    },
+    {
+      "file": "Android/build-second.log",
+      "created": "2026-10-30T02:35:11.890164+09:00",
+      "last_written": "2026-10-30T02:35:35.458667+09:00"
+    },
+    {
+      "file": "Android/build-window-fix.log",
+      "created": "2026-10-30T02:37:33.834261+09:00",
+      "last_written": "2026-10-30T02:37:36.095070+09:00"
+    },
+    {
+      "file": "Android/galaxy-runtime-validation.log",
+      "created": "2026-10-30T03:03:57.894931+09:00",
+      "last_written": "2026-10-30T03:05:59.491354+09:00"
+    },
+    {
+      "file": "Android/galaxy-wireless-validation-final.log",
+      "created": "2026-10-30T03:23:35.327478+09:00",
+      "last_written": "2026-10-30T03:24:18.785561+09:00"
+    },
+    {
+      "file": "Android/build-upgrade-fix.log",
+      "created": "2026-10-30T03:54:35.477463+09:00",
+      "last_written": "2026-10-30T03:54:44.164007+09:00"
+    }
+  ],
+  "initial_plan_to_first_apk": "3 days 13 hours 23 minutes 40 seconds (approximately; log end timestamp)",
+  "oct30_audit_commit_to_implementation_commit_seconds": 6979,
+  "separate_active_work_timer": false,
+  "initial_plan_to_upgrade_fix_seconds": 312169,
+  "oct30_audit_to_upgrade_fix_seconds": 7971,
+  "android_branch_to_upgrade_fix_seconds": 5963,
+  "user_play_report_after_upgrade_fix": {
+    "date": "2026-10-30",
+    "reported": "업그레이드 오류 수정 빌드를 이어서 플레이한 결과 오작동은 보이지 않았다.",
+    "duration_minutes": null
+  }
+}

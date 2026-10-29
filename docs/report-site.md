@@ -1,5 +1,27 @@
 # HeavyMach 보고 사이트
 
+
+## 2026-10-30 Apple 변경 없는 Android 개발 계획
+
+[Android 보고서](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/android-plan.html#section-10)에 Apple 파일 이동·수정 없는 개발 조건, 코어/음향/그래픽 네이티브 링크 검사, 공용 게임 기능, GL 복구·에셋·오디오 계획을 반영했다. 앞선 Apple 선행 공통화 계획은 철회했다. [원고](android-port-plan-20261026.md), [검사](evidence/android-isolation-20261030.json).
+
+- source: `1dbbee304c700593c48d757f8a9b5e64686e53a0`
+- deployment: `appgdep_6ae37ce7789c8191bf3dc67cbd530448` · succeeded
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_49f04c49c2d48191ad5293f32892307b`
+- 소유자 전용 접근 유지. 기존 절 앵커·로컬 링크·다운로드 일치 확인. 브라우저 직접 화면 검사는 기존 Computer Use URL 제한으로 미실행.
+
+
+
+## 2026-10-30 Android 코어·플랫폼 경계 조사
+
+[Android 보고서](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/android-plan.html#section-9)에 최신 일반용·치트용 코어의 NDK 컴파일 결과, Apple 화면 코드에 남은 공통 처리, Shared·Apple·Android 폴더 계획을 추가했다. [원고](android-port-plan-20261026.md), [증거](evidence/android-boundaries-20261030.json).
+
+- source: `ba96da719524b47cc800fa44f68d7dc47e96b405`
+- deployment: `appgdep_6ae3772461148191a5219efc6ef62ea3` · succeeded
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_c3c0697eef948191bb08938bd58c6110`
+- 소유자 전용 접근 유지. 기존 절 앵커·페이지 내 로컬 링크·다운로드 원고 일치를 확인했다. 브라우저 화면 검사는 기존 Computer Use URL 제한으로 미실행.
+
+
 ## 2026-10-30 GitHub 국문·영문 문서 작성과 검사
 
 [기존 번역 보고서](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/document-localization.html)에 20쌍 작성 결과와 국영문 문서 링크를 추가했다. 언어 전환·명령·표·절·그림·원문 보존 검사 결과를 담았다. [원고](document-localization-plan.md), [실행 기록](evidence/visitor-english-20261030.json).
@@ -732,3 +754,35 @@ VTOL 첫 생성 프롬프트와 스킬 수정 커밋을 대조했다. 요청에 
 - source: `470eaff43ba38e46464de5edb3c25bb0d827f06f`
 - deployment: `appgdep_6ae322ce514c8191bb5fd731bbcacf63` · succeeded
 - 소유자 전용 접근 유지. Safari에서 본문·캡처를 확인하고 해당 페이지 링크27개와 기존 절 앵커8개를 검사했다. 다른 보고 원고는 재생성하지 않았다.
+
+## 2026-10-30 Android 앱·Galaxy 유선/무선 검사
+
+[Android 구현과 검사](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/android-implementation.html)를 기존 전체 보고서 목차에 추가했다. 일반·치트 앱의 Galaxy 화면, HUD 편집, 에뮬레이터 태블릿 화면비와 검사 결과를 담았다. 기존 Android 계획 페이지도 현재 구현 상태로 갱신했다.
+
+- source: `2d47a120a1f504848defa5af14cb705c8dfdc6c6`
+- deployment: `appgdep_6ae3925be7f08191ab59bbcf5db1dcfd` · succeeded
+- 소유자 전용 접근 유지. 두 페이지의 내부 파일·앵커와 캡처 5개를 검사했다. 이번 게시의 브라우저 화면 검사는 CUA 접근 실패로 수행하지 못했다.
+
+## 2026-10-30 Android 개발 과정·업그레이드 오류 수정
+
+[개발 원고](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/android-development.html)에 기간·공유 코어·전용 구현·수정 내역과 게임 화면5장을 게시했다. 기존 Android 검사 보고서의 갤러리·절 앵커를 유지하고 후속 수정 링크를 추가했다.
+
+- source: `d3ca9446a4fc39a8730777bed681c1a4b696ff41`
+- deployment: `appgdep_6ae3984f01588191aabb6195df43cbc1` · succeeded
+- 소유자 전용 접근 유지. 새 원고 링크와 이미지 파일을 검사했다. 브라우저 화면 검사는 수행하지 않았다.
+
+## 2026-10-30 Android 개발 범위와 사전 준비
+
+[개발 범위를 정한 네 가지 판단](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/android-development.html#development-decision-1)을 추가했다. 코어 공유, Apple 파일 보존, 컨텍스트·생명주기 사전 확인, Android 스킬 준비를 구현·검사와 연결했다. 수정 빌드 완료 시각과 이후 직접 플레이 확인도 반영했다.
+
+- source: `989f843e26794f95b111ad468af13562797a7df5`
+- deployment: `appgdep_6ae3a176c5a08191aab2794050f3d7e7` · succeeded
+- 기존 접근 범위, 절 앵커와 이미지5장을 유지했다. 문서 연결·중복 앵커·이미지 수를 검사했다. 브라우저 화면 검사는 수행하지 않았다.
+
+## 2026-10-30 Galaxy 실제 플레이와 Apple 보존 검사
+
+[Galaxy 플레이 자료](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/android-gameplay.html)에 캡처 8장·GIF 3개·MP4 3개를 게시했다. [Android 개발 과정](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/android-development.html#galaxy-gameplay)과 전체 목차에서 연결했다. [병합·태그 준비](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/android-release-readiness.html)에는 Apple 해시·빌드 의존성·네 앱 재빌드 결과를 담았다.
+
+- source: `9b7131851d1137791ed7c47597aa4d2487b9aa3b`
+- deployment: `appgdep_6ae3a6e555848191b96b597f205499e6` · succeeded
+- 기존 소유자 전용 접근을 유지했다. 페이지 링크와 이미지·영상 파일을 검사했다. 원본 캡처와 GIF의 시작·중간·끝 프레임을 직접 확인했다. 이번 게시의 브라우저 화면 검사는 수행하지 않았다.

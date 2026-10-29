@@ -1,0 +1,291 @@
+{
+  "source_filename": "Screen_Recording_20261030_044404_Heavy Mach 1.mp4",
+  "source_sha256": "79d2ea7d76ce7e9f349d21b8b55eef843132d82113680bbd3b6838d4561d014e",
+  "device": "Galaxy SM-S731N",
+  "platform": "Android 16",
+  "source_resolution": [
+    2340,
+    1080
+  ],
+  "source_duration_seconds": 258.595833,
+  "mission_boundary_seconds": 132.801033,
+  "selection": [
+    {
+      "file": "01-mission-select.png",
+      "start_seconds": 0.5,
+      "duration_seconds": null,
+      "caption": "미션 3-4 선택",
+      "bytes": 1950989,
+      "sha256": "bb3770ba3b06087a44d7483733739a0b5bab2931b3dc7c4068120a424c0e2729",
+      "streams": [
+        {
+          "codec_name": "png",
+          "width": 2340,
+          "height": 1080,
+          "avg_frame_rate": "25/1",
+          "sample_rate": null,
+          "channels": null
+        }
+      ]
+    },
+    {
+      "file": "02-jump.png",
+      "start_seconds": 31.5,
+      "duration_seconds": null,
+      "caption": "경사로에서 점프하며 사격",
+      "bytes": 1595509,
+      "sha256": "a92ab27896d5f78c9095d4999073caf88c64bb33b653da0af8454002a4384682",
+      "streams": [
+        {
+          "codec_name": "png",
+          "width": 2340,
+          "height": 1080,
+          "avg_frame_rate": "25/1",
+          "sample_rate": null,
+          "channels": null
+        }
+      ]
+    },
+    {
+      "file": "03-weapons.png",
+      "start_seconds": 72,
+      "duration_seconds": null,
+      "caption": "무기 선택과 전투",
+      "bytes": 1835250,
+      "sha256": "c02e77f0715a5a0eb1d590059217503465d65bf00fc2127fe79ae7f573c1f1cc",
+      "streams": [
+        {
+          "codec_name": "png",
+          "width": 2340,
+          "height": 1080,
+          "avg_frame_rate": "25/1",
+          "sample_rate": null,
+          "channels": null
+        }
+      ]
+    },
+    {
+      "file": "04-fighters.png",
+      "start_seconds": 90.5,
+      "duration_seconds": null,
+      "caption": "럭스루나에 편대와 교전",
+      "bytes": 1776858,
+      "sha256": "22782f54573325c23a7aff4b861430ceab663ca731b712a541aad73109bbc019",
+      "streams": [
+        {
+          "codec_name": "png",
+          "width": 2340,
+          "height": 1080,
+          "avg_frame_rate": "25/1",
+          "sample_rate": null,
+          "channels": null
+        }
+      ]
+    },
+    {
+      "file": "05-stage-clear.png",
+      "start_seconds": 132.23,
+      "duration_seconds": null,
+      "caption": "미션 3-4 클리어",
+      "bytes": 1710478,
+      "sha256": "ce083e2d40677f2839e8ffc3a24eaf9b1b4151f14013c9f4b8834b712bd44e35",
+      "streams": [
+        {
+          "codec_name": "png",
+          "width": 2340,
+          "height": 1080,
+          "avg_frame_rate": "25/1",
+          "sample_rate": null,
+          "channels": null
+        }
+      ]
+    },
+    {
+      "file": "06-boss.png",
+      "start_seconds": 164.5,
+      "duration_seconds": null,
+      "caption": "미션 3-5 항공기형 보스와 교전",
+      "bytes": 1635857,
+      "sha256": "44cb17761275502c3455d02267ea60732f942c08c3ada061bac1482c7838756a",
+      "streams": [
+        {
+          "codec_name": "png",
+          "width": 2340,
+          "height": 1080,
+          "avg_frame_rate": "25/1",
+          "sample_rate": null,
+          "channels": null
+        }
+      ]
+    },
+    {
+      "file": "07-upgrade.png",
+      "start_seconds": 247,
+      "duration_seconds": null,
+      "caption": "전투 중 업그레이드",
+      "bytes": 1705845,
+      "sha256": "e82ee9eef70bf1ddab7ff6510b2e3e7582a954b478b8b853a8b11e455e7fdbb8",
+      "streams": [
+        {
+          "codec_name": "png",
+          "width": 2340,
+          "height": 1080,
+          "avg_frame_rate": "25/1",
+          "sample_rate": null,
+          "channels": null
+        }
+      ]
+    },
+    {
+      "file": "08-next-mission.png",
+      "start_seconds": 258.1,
+      "duration_seconds": null,
+      "caption": "다음 미션 선택",
+      "bytes": 2111870,
+      "sha256": "26540ded1c9d64d86b67b73428bca1b0c497f6f2e50dc1ad53727f9f589aa36b",
+      "streams": [
+        {
+          "codec_name": "png",
+          "width": 2340,
+          "height": 1080,
+          "avg_frame_rate": "25/1",
+          "sample_rate": null,
+          "channels": null
+        }
+      ]
+    },
+    {
+      "file": "jump.gif",
+      "start_seconds": 29.5,
+      "duration_seconds": 6,
+      "caption": "점프와 사격",
+      "bytes": 9514495,
+      "sha256": "9780a6f04ef594b5014df9e5c904c0f5c5204c5f06506fd1f7feb1eacaefe6ac",
+      "streams": [
+        {
+          "codec_name": "gif",
+          "width": 768,
+          "height": 354,
+          "avg_frame_rate": "25/2",
+          "sample_rate": null,
+          "channels": null
+        }
+      ]
+    },
+    {
+      "file": "jump.mp4",
+      "start_seconds": 29.5,
+      "duration_seconds": 8,
+      "caption": "점프와 사격",
+      "bytes": 4452631,
+      "sha256": "10d2b9e615482b11602acd68afbb39027fecd145fee59f362402ea03ffe2dd5f",
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 2340,
+          "height": 1080,
+          "avg_frame_rate": "241/4",
+          "sample_rate": null,
+          "channels": null
+        },
+        {
+          "codec_name": "aac",
+          "width": null,
+          "height": null,
+          "avg_frame_rate": "0/0",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "file": "fighters.gif",
+      "start_seconds": 89,
+      "duration_seconds": 6,
+      "caption": "럭스루나에 편대와 교전",
+      "bytes": 10509862,
+      "sha256": "0afd1364e9024af6a32574cfcb73e891a1a340e40c0de61d1d81740ee6713c1c",
+      "streams": [
+        {
+          "codec_name": "gif",
+          "width": 768,
+          "height": 354,
+          "avg_frame_rate": "25/2",
+          "sample_rate": null,
+          "channels": null
+        }
+      ]
+    },
+    {
+      "file": "fighters.mp4",
+      "start_seconds": 89,
+      "duration_seconds": 8,
+      "caption": "럭스루나에 편대와 교전",
+      "bytes": 5936266,
+      "sha256": "82ed6e518300ed16f194cf05ef27395bb46f08214564bd43a17a11c1699f8739",
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 2340,
+          "height": 1080,
+          "avg_frame_rate": "28980/479",
+          "sample_rate": null,
+          "channels": null
+        },
+        {
+          "codec_name": "aac",
+          "width": null,
+          "height": null,
+          "avg_frame_rate": "0/0",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "file": "boss.gif",
+      "start_seconds": 162,
+      "duration_seconds": 6,
+      "caption": "항공기형 보스와 교전",
+      "bytes": 6518346,
+      "sha256": "7b645c40f25a32fd4b3700049d5224df38222e379580b5fdfe92a558a2f8f396",
+      "streams": [
+        {
+          "codec_name": "gif",
+          "width": 768,
+          "height": 354,
+          "avg_frame_rate": "25/2",
+          "sample_rate": null,
+          "channels": null
+        }
+      ]
+    },
+    {
+      "file": "boss.mp4",
+      "start_seconds": 162,
+      "duration_seconds": 8,
+      "caption": "항공기형 보스와 교전",
+      "bytes": 4680399,
+      "sha256": "c78686711444a7f2e73a9b7b4343ea48243b6ddc0627ed3de2effcdf942e75d7",
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 2340,
+          "height": 1080,
+          "avg_frame_rate": "29040/479",
+          "sample_rate": null,
+          "channels": null
+        },
+        {
+          "codec_name": "aac",
+          "width": null,
+          "height": null,
+          "avg_frame_rate": "0/0",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    }
+  ],
+  "decode_errors": 0
+}

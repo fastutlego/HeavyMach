@@ -39,7 +39,7 @@ This describes game v0.16. I saw no abnormal behavior while playing the installe
 
 - A script connecting download, resource checks, OpenAL preparation, build and launch. Choose Mac launch or iPhone/iPad installation, regular or cheat app, with development-team/signing guidance.
 - Full wireless XCTest/Instruments runs on iPhone and repeated installation/debugging after reboot on both devices.
-- Android regular/cheat apps and APKs using the shared core through the NDK. Implement input, graphics, audio and saves, then test on devices. Icon PNGs are ready.
+- Android regular and cheat APKs run on Galaxy. Full campaign completion, extended thermal tests, physical tablet tests and distribution signing remain. [Development account](../../public/android-development-20261030.md).
 - Explore folded-screen layouts with the game above and controls below.
 - Record the release tool's actual GitHub upload/publication in the next new version. Existing v0.9–v0.16 releases are organized.
 

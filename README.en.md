@@ -142,11 +142,11 @@ Wider screens, iPad and Mac support, and keyboard controls were also my requests
 | iPhone | Landscape rotation, touch, tilt, keyboard, regular and cheat apps | iPhone Air installation, input and combat tests; my play |
 | iPad | Aspect-ratio canvas, combined touch, tilt and keyboard | iPad Air 13-inch M2 installation, input and combat tests; my play |
 | Mac | AppKit app, window/full-screen modes, keyboard | Mac mini execution, 33 tests, zero leaks in development-signed apps |
-| Android | Plan using the shared C++ core | No app or APK yet |
+| Android | Regular and cheat apps using the shared C++ core | Galaxy USB/wireless installation and gameplay checked. [Installation](Android/README.md) · [Development and screenshots](docs/public/android-development-20261030.md) |
 
 I saw no frame drops or malfunctions while playing the installed iPhone and iPad apps. Device automation still has display-timing threshold failures. [Measurement conditions and results](docs/en/public/validation.md)
 
-Auto-aim, shared modules, three Apple platforms, six aircraft, two ground units and full-screen doors are implemented. HUD editing is also implemented. Clearer auto-aim indicators, tutorials 0-0 through 0-4 and Android remain. Text-free app icons shipped in v0.15. [Completed, ongoing and remaining work](docs/en/public/implementation-status.md)
+Auto-aim, shared modules, three Apple platforms, six aircraft, two ground units and full-screen doors are implemented. HUD editing is also implemented. Clearer auto-aim indicators, tutorials 0-0 through 0-4 remain. Android runs on Galaxy; extended sessions, tablet tests and distribution signing remain. Text-free app icons shipped in v0.15. [Completed, ongoing and remaining work](docs/en/public/implementation-status.md)
 
 <a id="남은-과제"></a>
 

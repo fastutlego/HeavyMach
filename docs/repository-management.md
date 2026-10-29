@@ -101,3 +101,17 @@ HUD 편집과 도구·장식 수정을 feat/hud-layout-editor→develop→main �
 ## 버전별 릴리스 노트
 
 [CHANGELOG](../CHANGELOG.md)를 원본으로 쓰고 버전별 GitHub Releases에 같은 본문과 다운로드·검사 링크를 게시한다. README와 문서 목차에서 전체 버전 이력으로 연결한다. [작성·공개 절차](release-notes-plan.md). 기존 태그와 첨부 파일은 유지한다.
+
+
+## 플랫폼별 폴더와 공용 모듈 — 2026-10-30
+
+HeavyMach는 Apple·Android를 같은 저장소에서 관리한다. 최신 사용자 지시는 **Android 개발 때문에 기존 iOS 프로젝트나 파일을 변경하지 않는 것**이다. 따라서 앞서 제안한 Shared·Apple 폴더 이동과 Apple 코드 선행 공통화는 철회한다.
+
+- 새 Android 앱·Kotlin·JNI·C++ 실행 코드·빌드 설정·검사·로컬 ignore는 `Android/` 아래에 둔다.
+- 기존 `HeavyMach.xcworkspace`, `iOS/`, `macOS/`, `Modules/`, `Sources/`, 루트 `CMakeLists.txt`와 Apple 빌드 도구는 이동·수정하지 않는다.
+- `Sources/Core`, `Resources`, `Art`, `vendor`는 Android 빌드에서도 기존 파일을 읽어 사용한다. 이 작업에서 수정·덮어쓰지 않는다.
+- Android용 실행·메뉴·HUD·렌더·음향 연결은 별도 구현한다. 기존 Apple 코드와 같은 동작을 비교한다.
+- 플랫폼별 영구 브랜치는 만들지 않는다. Android 작업 브랜치는 develop에서 분기하고 기존 병합 규칙을 따른다.
+- 작업 전후 보호 파일의 경로·해시와 Git 변경 목록을 검사한다. 문서·계획·지침은 최신 요구에 맞춰 갱신한다.
+
+[구성과 검증 순서](android-port-plan-20261026.md#android-구성안). 기존 파일을 이동하지 않으므로 현재 Apple 빌드·설치 문서의 경로도 유지한다.

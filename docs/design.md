@@ -80,3 +80,9 @@ MAP/MCH 관찰 구조는 LE u32 `declared_size,type,data_size`, payload, LE u32 
 ## 추가 지상 적
 
 `GroundAA.cpp`가 별도 무기·파츠·차량 정의와 배치를 추가한다. `GameSession`의 기존 부모·자식 파츠, 지상 AI, 충돌·무기 갱신을 사용한다. 변경 분기는 `GAA_Shilka_M*`·`GAA_Tunguska_M*`에 한정한다. `GroundAAArt.inc`는 그림의 영역·표시 크기·레이더 축을 소유한다. [조립·무장·배치와 검사](ground-aa-expansion.md).
+
+## Android 호스트 — 2026-10-30
+
+`Android/app/src/main/java`의 Activity가 Surface·터치·키·센서·오디오 포커스를 받는다. `GameEngine`이 전용 HandlerThread에 JNI 호출을 순서대로 전달한다. Android C++ `Runtime`이 기존 코어와 메뉴·HUD·저장을 연결하고 `Media`와 `Audio`가 EGL/GLES·OpenAL을 담당한다. Activity가 다시 만들어져도 프로세스 내 게임 세션은 유지한다.
+
+기존 Apple 파일과 `Sources/Core`를 수정하지 않고 이 호스트를 추가했다. 새 게임 규칙 복사본은 만들지 않았다. [폴더·빌드](../Android/README.md), [검사 범위](android-implementation-20261030.md).

@@ -314,27 +314,53 @@
       "label": "Android 이식·APK",
       "read": [
         "docs/android-port-plan-20261026.md",
+        "docs/repository-management.md",
         "docs/coordinate-policy.md",
         "docs/rendering-policy.md",
         "docs/runtime-policy.md",
         "docs/weapon-validation-procedure.md",
-        ".agents/skills/port-heavymach-android/SKILL.md"
+        ".agents/skills/port-heavymach-android/SKILL.md",
+        "Android/README.md",
+        "docs/android-implementation-20261030.md",
+        ".agents/skills/debug-heavymach-android/SKILL.md",
+        "docs/public/android-development-20261030.md"
       ],
       "sources": [
         "CMakeLists.txt",
         "Sources/Core/*",
         "Sources/iOS/*",
         "docs/android-port-plan-20261026.md",
-        ".agents/skills/port-heavymach-android/*"
+        ".agents/skills/port-heavymach-android/*",
+        "Android/cmake/*",
+        "Android/tools/*",
+        ".agents/skills/debug-heavymach-android/*",
+        "Android/app/src/**/*.cpp",
+        "Android/app/src/**/*.hpp",
+        "Android/app/src/**/*.kt",
+        "Android/app/src/**/AndroidManifest.xml"
       ],
       "tests": [
         "Tests/CoreTests.cpp",
         "Tests/AudioContractTests.cpp",
-        "Tests/GameSessionTests.cpp"
+        "Tests/GameSessionTests.cpp",
+        "Android/tools/check_isolation.py",
+        "Android/tools/validate_runtime.py",
+        "Android/tools/validate_platform.py",
+        "Android/tools/validate_audio_timer.py",
+        "Android/tools/validate_campaign.py",
+        "Android/tools/verify_apks.py",
+        "Android/tools/measure_combat.py",
+        "Android/tools/validate_tilt.py",
+        "Android/tools/validate_upgrade.py"
       ],
       "evidence": [
+        "docs/evidence/android-app-20261030.json",
+        "docs/evidence/android-isolation-20261030.json",
+        "docs/evidence/android-boundaries-20261030.json",
         "docs/research/android-and-titles-evidence-20261026.json",
-        "docs/current-status.md"
+        "docs/current-status.md",
+        "docs/evidence/android-upgrade-fix-20261030.json",
+        "docs/evidence/android-development-timeline-20261030.json"
       ]
     },
     "developer_story": {
@@ -399,7 +425,8 @@
         ".agents/skills/write-project-text/SKILL.md",
         "docs/public/publication-inventory.md",
         "docs/public/gameplay-media-20261027.md",
-        "docs/public/github-documentation-plan-20261027.md"
+        "docs/public/github-documentation-plan-20261027.md",
+        "docs/public/android-gameplay-20261030.md"
       ],
       "sources": [
         "docs/public/media/*",
@@ -411,7 +438,8 @@
         "docs/public/media/manifest.json",
         "docs/current-status.md",
         "docs/public/media/gameplay-20261027/media-scenes.json",
-        "docs/evidence/gameplay-media-20261027.json"
+        "docs/evidence/gameplay-media-20261027.json",
+        "docs/public/media/android-gameplay-20261030/scenes.json"
       ]
     },
     "apple_platforms": {
@@ -478,7 +506,8 @@
       "read": [
         "docs/repository-management.md",
         "docs/release-notes-plan.md",
-        "CHANGELOG.md"
+        "CHANGELOG.md",
+        "docs/android-release-readiness-20261030.md"
       ],
       "sources": [
         "tools/release.py",
@@ -491,7 +520,8 @@
       ],
       "evidence": [
         "docs/evidence/release-tool-20261029.json",
-        "docs/evidence/release-history-20261029.json"
+        "docs/evidence/release-history-20261029.json",
+        "docs/evidence/android-main-readiness-20261030.json"
       ]
     }
   }

@@ -154,4 +154,4 @@ Codex ran 21 core tests and combat, input and off-screen entry tests on iPhone, 
 
 ## Further features
 
-HUD editing is available through SET GAME UI in the pause menu. Drag buttons, gauges and upper decorations; their hit areas move with them. Reset, cancel, apply and game preview are available. [Screens and tests](../../public/hud-improvement-plan-20261028.md). Further work includes clearer auto-aim status, tutorial missions 0-0 through 0-4, Android and separate controls on a folded screen. [Detailed status](implementation-status.md)
+HUD editing is available through SET GAME UI in the pause menu. Drag buttons, gauges and upper decorations; their hit areas move with them. Reset, cancel, apply and game preview are available. [Screens and tests](../../public/hud-improvement-plan-20261028.md). Further work includes clearer auto-aim status, tutorial missions 0-0 through 0-4 and separate controls on a folded screen. Android runs on Galaxy; extended sessions, tablet tests and distribution signing remain. [Detailed status](implementation-status.md)

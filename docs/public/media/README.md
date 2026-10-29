@@ -25,3 +25,7 @@
 ## 2026-10-29 추가 자료
 
 [쉴카·퉁구스카·HUD 편집4장](updates-20261029/README.md), [장면별 캡션·출처](updates-20261029/media-scenes.json), [글자 없는 아이콘](app-icon-20261029/icon.png).
+
+## 2026-10-30 Android 플레이
+
+[Galaxy 캡처 8장·GIF 3개·영상 3개](../android-gameplay-20261030.md), [파일 안내](android-gameplay-20261030/README.md).

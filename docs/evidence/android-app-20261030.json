@@ -1,0 +1,323 @@
+{
+  "date": "2026-10-30",
+  "branch": "feat/android-app",
+  "base": "d46e122ac49ebdf8a3eb5d89b6af4ea5ccf18cd8",
+  "protected_files": 2166,
+  "protected_files_changed": 0,
+  "device": {
+    "model": "SM-S731N",
+    "android": 16,
+    "abi": "arm64-v8a",
+    "page_size": 4096
+  },
+  "apks": [
+    {
+      "edition": "normal",
+      "package": "com.gelb2.heavymach.restored",
+      "sha256": "e5488f2bb747ab8bfe02b77a30d33a6aadf0daef15811791e2abd06e1af1a24a",
+      "bytes": 79148233,
+      "asset_files": 801,
+      "elf_load_alignment": [
+        16384,
+        16384,
+        16384
+      ],
+      "signature_verified": true,
+      "apk_16kb_alignment": true,
+      "cheat_receiver": false,
+      "signing": "Android debug certificate"
+    },
+    {
+      "edition": "cheat",
+      "package": "com.gelb2.heavymach.validation",
+      "sha256": "b69a6b344f0f0b57a2b265bd078058a20532935ab945072ca06d97bfd9bb0db7",
+      "bytes": 79232489,
+      "asset_files": 801,
+      "elf_load_alignment": [
+        16384,
+        16384,
+        16384
+      ],
+      "signature_verified": true,
+      "apk_16kb_alignment": true,
+      "cheat_receiver": true,
+      "signing": "Android debug certificate"
+    }
+  ],
+  "tests": {
+    "emulator_runtime": {
+      "checks": 31,
+      "passed": 31,
+      "failed": [],
+      "check_names": [
+        "game started",
+        "keyboard forward",
+        "keyboard backward",
+        "jump rises",
+        "touch fire at expanded right side",
+        "firing does not save",
+        "background/foreground pauses world",
+        "explicit resume advances world",
+        "audio focus loss pauses and recovery retains pause",
+        "audio requests resume after focus recovery",
+        "automatic aim mode remains enabled",
+        "weapon P_Wpn_Gun01",
+        "weapon P_Wpn_RaderBomb",
+        "weapon P_Wpn_RaderMsl",
+        "weapon P_Wpn_RaderLsr",
+        "weapon P_Wpn_Canon01",
+        "weapon P_Wpn_Canon02",
+        "weapon P_Wpn_Canon03",
+        "weapon P_Wpn_ElShock",
+        "weapon P_Wpn_Gun02",
+        "weapon P_Wpn_Gun03",
+        "weapon P_Wpn_Gun04",
+        "weapon P_Wpn_Gun05",
+        "weapon P_Wpn_Gun06",
+        "weapon P_Wpn_Gun07",
+        "weapon P_Wpn_Laser",
+        "weapon P_Wpn_Missile01",
+        "weapon P_Wpn_Missile02",
+        "weapon P_Wpn_Missile03",
+        "weapon P_Wpn_Shotgun01",
+        "weapon P_Wpn_Shotgun02"
+      ],
+      "local_evidence": "Android/build/evidence/runtime-20261030-024901"
+    },
+    "emulator_platform": {
+      "checks": 13,
+      "passed": 13,
+      "failed": [],
+      "check_names": [
+        "HUD drag freezes world and does not save",
+        "sample scene preserves live world",
+        "Apply saves moved HUD once",
+        "moved Jump responds at new position",
+        "old Jump position no longer jumps",
+        "Cancel retains applied file",
+        "HUD persists across process restart",
+        "Reset restores default positions",
+        "GPU rebuild retains paused world",
+        "landscape rotation 1",
+        "landscape rotation 3",
+        "tablet aspect extends canvas height",
+        "resume after surface changes"
+      ],
+      "local_evidence": "Android/build/evidence/platform-20261030-032921"
+    },
+    "emulator_alarm": {
+      "checks": 3,
+      "passed": 3,
+      "failed": [],
+      "check_names": [
+        "Clock alarm stops audio and pauses game",
+        "Alarm dismissal restores audio with game paused",
+        "Resume fires and plays after alarm"
+      ],
+      "local_evidence": "Android/build/evidence/audio-20261030-030256"
+    },
+    "galaxy_runtime": {
+      "checks": 31,
+      "passed": 31,
+      "failed": [],
+      "check_names": [
+        "game started",
+        "keyboard forward",
+        "keyboard backward",
+        "jump rises",
+        "touch fire at expanded right side",
+        "firing does not save",
+        "background/foreground pauses world",
+        "explicit resume advances world",
+        "audio focus loss pauses and recovery retains pause",
+        "audio requests resume after focus recovery",
+        "automatic aim mode remains enabled",
+        "weapon P_Wpn_Gun01",
+        "weapon P_Wpn_RaderBomb",
+        "weapon P_Wpn_RaderMsl",
+        "weapon P_Wpn_RaderLsr",
+        "weapon P_Wpn_Canon01",
+        "weapon P_Wpn_Canon02",
+        "weapon P_Wpn_Canon03",
+        "weapon P_Wpn_ElShock",
+        "weapon P_Wpn_Gun02",
+        "weapon P_Wpn_Gun03",
+        "weapon P_Wpn_Gun04",
+        "weapon P_Wpn_Gun05",
+        "weapon P_Wpn_Gun06",
+        "weapon P_Wpn_Gun07",
+        "weapon P_Wpn_Laser",
+        "weapon P_Wpn_Missile01",
+        "weapon P_Wpn_Missile02",
+        "weapon P_Wpn_Missile03",
+        "weapon P_Wpn_Shotgun01",
+        "weapon P_Wpn_Shotgun02"
+      ],
+      "local_evidence": "Android/build/evidence/runtime-20261030-030357"
+    },
+    "galaxy_hud": {
+      "checks": 9,
+      "passed": 9,
+      "failed": [],
+      "check_names": [
+        "HUD drag freezes world and does not save",
+        "sample scene preserves live world",
+        "Apply saves moved HUD once",
+        "moved Jump responds at new position",
+        "old Jump position no longer jumps",
+        "Cancel retains applied file",
+        "HUD persists across process restart",
+        "Reset restores default positions",
+        "GPU rebuild retains paused world"
+      ],
+      "local_evidence": "Android/build/evidence/platform-20261030-030608"
+    },
+    "galaxy_campaign": {
+      "checks": 39,
+      "passed": 39,
+      "failed": [],
+      "check_names": [
+        "campaign 1-1 starts",
+        "campaign 1-2 starts",
+        "campaign 1-3 starts",
+        "campaign 1-4 starts",
+        "campaign 2-1 starts",
+        "campaign 2-2 starts",
+        "campaign 2-3 starts",
+        "campaign 2-4 starts",
+        "campaign 2-5 starts",
+        "campaign 3-1 starts",
+        "campaign 3-2 starts",
+        "campaign 3-3 starts",
+        "campaign 3-4 starts",
+        "campaign 3-5 starts",
+        "campaign 4-1 starts",
+        "campaign 4-2 starts",
+        "campaign 4-3 starts",
+        "campaign 4-4 starts",
+        "campaign 4-5 starts",
+        "campaign 5-1 starts",
+        "campaign 5-2 starts",
+        "campaign 5-3 starts",
+        "campaign 5-4 starts",
+        "campaign 5-5 starts",
+        "campaign 6-1 starts",
+        "campaign 6-2 starts",
+        "campaign 6-3 starts",
+        "campaign 6-4 starts",
+        "campaign 6-5 starts",
+        "campaign 7-1 starts",
+        "campaign 7-2 starts",
+        "campaign 7-3 starts",
+        "campaign 7-4 starts",
+        "campaign 7-5 starts",
+        "campaign 7-6 starts",
+        "automatic aim acquires boss-stage enemy",
+        "auto-aim fires original weapon",
+        "Android F key fires",
+        "Android E key changes weapon"
+      ],
+      "local_evidence": "Android/build/evidence/campaign-20261030-031417"
+    },
+    "galaxy_wireless_final": {
+      "checks": 11,
+      "passed": 11,
+      "failed": [],
+      "check_names": [
+        "game started",
+        "keyboard forward",
+        "keyboard backward",
+        "jump rises",
+        "touch fire at expanded right side",
+        "firing does not save",
+        "background/foreground pauses world",
+        "explicit resume advances world",
+        "audio focus loss pauses and recovery retains pause",
+        "audio requests resume after focus recovery",
+        "automatic aim mode remains enabled"
+      ],
+      "local_evidence": "Android/build/evidence/runtime-20261030-032335"
+    },
+    "emulator_tilt": {
+      "checks": 4,
+      "passed": 4,
+      "failed": [],
+      "results": [
+        {
+          "rotation": 1,
+          "direction": 1,
+          "delta_x": 116.55899999999997,
+          "passed": true
+        },
+        {
+          "rotation": 1,
+          "direction": -1,
+          "delta_x": -137.98900000000003,
+          "passed": true
+        },
+        {
+          "rotation": 3,
+          "direction": 1,
+          "delta_x": 119.15899999999999,
+          "passed": true
+        },
+        {
+          "rotation": 3,
+          "direction": -1,
+          "delta_x": -141.41899999999998,
+          "passed": true
+        }
+      ],
+      "local_evidence": "Android/build/evidence/tilt-20261030-033141"
+    }
+  },
+  "performance": {
+    "duration_seconds": 45,
+    "surfaceflinger": [
+      {
+        "layer": "7c966b5 SurfaceView[com.gelb2.heavymach.validation/com.gelb2.heavymach.GameActivity]@0(BLAST)#454",
+        "histogram_frames": 2763,
+        "p90_bucket_ms": 16,
+        "p99_bucket_ms": 17,
+        "max_nonempty_bucket_ms": 17,
+        "over_33ms": 0
+      }
+    ],
+    "pss_kb": [
+      197636,
+      198093
+    ],
+    "native_alloc_kb": [
+      52639,
+      52790
+    ],
+    "battery_celsius": [
+      32.3,
+      32.4
+    ],
+    "thermal_status_end": 0,
+    "perfetto_recorded": true,
+    "local_evidence": "Android/build/evidence/performance-20261030-031833"
+  },
+  "wireless": {
+    "transport": "ADB TCP over same LAN",
+    "identity_matches_usb": true,
+    "usb_removed": true,
+    "normal_and_cheat_installed": true,
+    "normal_save_preserved": true,
+    "final_launch_logs_home_check": "passed",
+    "final_artifacts": "Android/build/evidence/galaxy-final"
+  },
+  "not_merged": [
+    "develop",
+    "main"
+  ],
+  "pending": [
+    "full campaign completion and survival",
+    "long-run memory and thermal",
+    "Android tablet device",
+    "16KB page device",
+    "expanded image downsample comparison",
+    "distribution signing and release APK"
+  ]
+}
