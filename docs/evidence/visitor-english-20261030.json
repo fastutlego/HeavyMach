@@ -184,5 +184,18 @@
     }
   ],
   "browser_ui": "Not run: Computer Use rejected the current browser URL. GitHub Markdown API rendering and local link/anchor checks completed.",
-  "game_tests": "Not rerun; game source, resources and project settings unchanged."
+  "game_tests": "Not rerun; game source, resources and project settings unchanged.",
+  "publication": {
+    "feature_commit": "553a4b0a1a110243c55791c22bc6da6bdf50f403",
+    "develop_pr": 38,
+    "develop_merge": "54d8cec27c766c251cf21dd2e2d1bdc0050cd15e",
+    "main_pr": 39,
+    "main_merge": "ec7e0bc7c5ef41b380a941539bcd4a8f7eed6445",
+    "ci": "documentation, translations, develop-only and GitGuardian passed",
+    "report_source": "7048470a1f44f8eb34f7a34d3c36d43c7b6d8aee",
+    "report_deployment": "appgdep_6ae363cdd79481919e05814c9c3027cc",
+    "report_status": "succeeded",
+    "report_pages": 48,
+    "report_links_checked": 156
+  }
 }

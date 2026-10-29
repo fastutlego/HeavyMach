@@ -1,5 +1,16 @@
 # HeavyMach 보고 사이트
 
+## 2026-10-30 GitHub 국문·영문 문서 작성과 검사
+
+[기존 번역 보고서](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/document-localization.html)에 20쌍 작성 결과와 국영문 문서 링크를 추가했다. 언어 전환·명령·표·절·그림·원문 보존 검사 결과를 담았다. [원고](document-localization-plan.md), [실행 기록](evidence/visitor-english-20261030.json).
+
+- source: `7048470a1f44f8eb34f7a34d3c36d43c7b6d8aee`
+- deployment: `appgdep_6ae363cdd79481919e05814c9c3027cc` · succeeded
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_9918e918bf408191a175c2bff7d046ff`
+- 소유자 전용 접근 유지. 기존 보고서48개 목차·돌아가기, 로컬 링크156개와 원고 복사 일치 검사 통과.
+- GitHub Markdown API 렌더21개 확인. 브라우저 직접 화면 검사는 현재 URL의 Computer Use 제한으로 미실행.
+- GitHub 원고는 PR38→PR39로 main `ec7e0bc7`에 반영했다. 게임 태그는 v0.16 유지.
+
 ## 2026-10-29 번역 범위를 GitHub 방문자용 문서로 수정
 
 [수정 계획](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/document-localization.html)을 같은 보고서 주소에 반영했다. 기존 공개 원고17개와 새 공개 목차·기획 의도·남은 과제3개를 대상으로 정했다. 개발 명령·정본·내부 기획서·정책·스킬은 제외했다. 이전209개 전수 목록의 번역 제안은 철회 표시했다.
