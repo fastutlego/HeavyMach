@@ -463,5 +463,31 @@
    "handled_as": "LandscapeLeft (not 90), matches measured movement",
    "physical": "user: charging port left, top camera right = UIInterfaceOrientationLandscapeLeft"
   }
+ },
+ "v015_sync_20261029": {
+  "upstream_develop": "805b857 (merge of #23)",
+  "conflicts": [
+   "docs/current-status.md",
+   "docs/rendering-policy.md (both sides kept)"
+  ],
+  "web_change": "WebHUDEditor.inc updateHUDEntry/openHUDEditor conditions copied from iOS HMHUDEditor.inc v0.15 (no mission-selection entry)",
+  "headless": {
+   "hud-editor.mjs": "pass (mission-no-entry, reopen-from-pause, sample-scene, reset)",
+   "browser-smoke.mjs": "pass",
+   "orientation-hold.mjs": "pass"
+  },
+  "build_resources": "PASS 1504 hashes",
+  "fastutle_com": {
+   "source": "986d54c",
+   "fastutle_site": "main e11324f..2b4c504",
+   "changed": [
+    "index.wasm"
+   ],
+   "live_matches_local": true,
+   "live_checks": {
+    "hud-editor.mjs": "all steps",
+    "browser-smoke.mjs": "pass on rerun (first run timed out waiting for title while downloading assets)"
+   }
+  }
  }
 }
