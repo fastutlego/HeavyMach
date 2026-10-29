@@ -386,6 +386,15 @@
    "landscape": "continues, no menu",
    "blur_during_hold": "becomes ordinary pause with menu, kept after landscape"
   },
-  "device": "pending: Android pad disconnected before the recheck"
+  "device": {
+   "device": "Lenovo TB322FC, Chrome 156",
+   "rows": [
+    "0.0 -90 active",
+    "17.2 90 active (direct 180 turn, no portrait)",
+    "21.6 0 hold=1 active=0 time 40.53 frozen, no menu",
+    "22.0 -90 active, no menu, time continues to 52.07"
+   ],
+   "result": "pass"
+  }
  }
 }
