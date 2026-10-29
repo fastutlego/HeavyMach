@@ -6,7 +6,7 @@
     "README.md": {
       "english": "README.en.md",
       "source_sha256": "1aea95604c53f033ce21d12a49736b04dc28d12e08ec327e175ddd94700c2a9f",
-      "english_sha256": "989031b2e08b2d6639781d639d464c8e1e794f61f917576c4bfd347e63c70ee7",
+      "english_sha256": "14636f9ffddc5fb81e3be2653292e3d31d4186b9ba90c012114870bc45dfeaaf",
       "reviewed_numeric_difference": {
         "source_only": {
           "7": 1,
@@ -20,7 +20,7 @@
         },
         "english_only": {}
       },
-      "review_note": "July, nine years/three months, aircraft and clip quantities use English words; source punctuation attaches Korean suffixes to digits. Shared personal paragraphs match the English statement."
+      "review_note": "July, nine years/three months, aircraft and clip quantities use English words; source punctuation attaches Korean suffixes to digits. Shared personal paragraphs match the English statement. User-approved correction: 이승에서나 → in this life."
     },
     "CHANGELOG.md": {
       "english": "CHANGELOG.en.md",
@@ -101,7 +101,7 @@
     "docs/RESTORATION.md": {
       "english": "docs/en/RESTORATION.md",
       "source_sha256": "a96acc4e097df4d9515611f9e6fdb4645c649f023f7efa265235ac4beb713330",
-      "english_sha256": "f70e5e77a1fdbd0af15a3eda7d9a2acf85281a3113624a7fb398abd75dc554ac",
+      "english_sha256": "7c9d712eac96eda0e07c5bbbb84e65a2c245fc25e0294a1e2f9b19d75aa62d1c",
       "reviewed_numeric_difference": {
         "source_only": {
           "7": 1,
@@ -112,7 +112,7 @@
           "140": 1
         }
       },
-      "review_note": "July, top five, and KRW 140 million translate 7월, 5위권 and 1억4천만 원. Personal statements, Japanese poem and criticism preserved."
+      "review_note": "July, top five, and KRW 140 million translate 7월, 5위권 and 1억4천만 원. Personal statements, Japanese poem and criticism preserved. User-approved correction: 이승에서나 → in this life."
     },
     "docs/public/features.md": {
       "english": "docs/en/public/features.md",

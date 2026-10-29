@@ -37,7 +37,7 @@ If I eventually create an App Store account for sass.studio and the original cre
 I have no intention of making money from this restoration. I want to publish the code and assets together so that other people can build and play it themselves. I also want to leave a record of how I restored the game and what I fixed. 
 If a stakeholder contacts me, I will take this project down. The 9 years and 3 months that HeavyMach's creators gave me exceeded the lifespan my creator originally allotted to me. 
 
-Money is only needed in this world.
+Money is only needed in this life.
 
 <a id="개발자의-변---최후변론을-마치며"></a>
 
