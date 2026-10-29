@@ -436,7 +436,8 @@
    "window.orientation": 0,
    "screen.orientation": "portrait-primary 90",
    "portrait_media_query": false,
-   "handled_as": "LandscapeLeft (not 90), matches measured movement"
+   "handled_as": "LandscapeLeft (not 90), matches measured movement",
+   "physical": "user: charging port left, top camera right = UIInterfaceOrientationLandscapeLeft"
   }
  }
 }
