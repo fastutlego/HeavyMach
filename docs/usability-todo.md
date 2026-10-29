@@ -60,7 +60,7 @@ main에 배포한 버전마다 변경 내용과 검사 결과를 정리하고 Gi
 - [x] fastutle.com `/game/heavy_mach/` 테스트 배포(2026-10-29, fastutle-site `0be8788`). 배포 주소에서 헤드리스 검사 통과.
 - [ ] 원작 자원(46MB)을 fastutle.com에 계속 공개할지 정한다. 재배포 허락은 미확인이다.
 - [x] iPad mini 6 로컬 빌드에서 전체 화면·기울기 권한·이동 방향·초당60틱 확인(2026-10-29).
-- [ ] 수정본을 fastutle.com에 배포하고 배포 주소에서 iPad를 다시 확인한다.
+- [x] 수정본을 fastutle.com에 배포(fastutle-site `8f09692`)하고 iPad에서 로드·초당60틱 확인(2026-10-29).
 - [ ] iPad Safari 전체 화면의 닫기(X) 버튼이 LV·EXP를 가리는 문제를 정한다(HUD 이동 또는 홈 화면 웹 앱 안내).
 - [ ] iPhone·Android에서 기울기 부호와 반대 가로 방향을 확인한다.
 - [ ] v0.14 HUD 편집기(멈춤 메뉴 `SET GAME UI`, HUD 배치 저장)를 웹에 옮긴다. 현재 웹은 기본 HUD와3버튼 멈춤 메뉴다.

@@ -258,6 +258,16 @@
    "60Hz": "pass 59.9",
    "30Hz (?fps=30)": "pass 59.5",
    "touch emulation": "pass 56.9"
+  },
+  "deployment": {
+   "heavymach_fork": "porting/wasm be4e9aa..3bfed10",
+   "fastutle_site": "main 0be8788..8f09692",
+   "live_index_html_matches_local": true,
+   "ipad_live": {
+    "loaded": true,
+    "ticks_per_second": 60.2,
+    "motion_permission": "asked again per origin on first tap"
+   }
   }
  }
 }
