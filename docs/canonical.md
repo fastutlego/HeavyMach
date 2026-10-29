@@ -1,5 +1,10 @@
 # HeavyMach 정본과 작업 기준
 
+## Android 추가 시 기존 Apple 파일 보존 — 2026-10-30
+
+Android 개발 때문에 기존 iOS·macOS 프로젝트·소스·공용 코어·에셋·vendor·Apple 빌드 도구를 이동하거나 수정하지 않는다. Android 전용 구현과 빌드·검사는 `Android/`에 추가한다. 기존 코어와 자원은 읽어 사용한다. Apple 선행 공통화와 Shared·Apple 폴더 이동 제안은 철회했다. [Android 계획](android-port-plan-20261026.md), [경로·검사 규칙](repository-management.md#플랫폼별-폴더와-공용-모듈--2026-10-30).
+
+
 ## Apple 플랫폼 확장 — 2026-10-26
 
 2026-10-29 지원 범위: Mac 앱과 iOS 시뮬레이터는 Apple Silicon arm64만 지원한다. Intel Mac은 지원하지 않는다.
@@ -53,7 +58,7 @@ Apple 플랫폼 공용 모듈·native Mac·키보드 요구는 2026-10-26 사용
 
 ## Android 후속 계획
 
-2026-10-26 요청으로 [Android APK 개발 계획](android-port-plan-20261026.md)과 [후속 타이틀 조사](related-titles-20261026.md)를 추가했다. Android는 C++ 코어 컴파일 조사까지 완료했으며 APK는 미구현이다. 관련 업무는 document-map의 android와 port-heavymach-android 스킬을 읽는다. 현행 iOS 완료 상태와 후속 계획을 구분한다.
+2026-10-26 요청으로 [Android APK 개발 계획](android-port-plan-20261026.md)과 [후속 타이틀 조사](related-titles-20261026.md)를 추가했다. 2026-10-30 `feat/android-app`에서 일반·치트 APK를 구현하고 Galaxy USB·무선 설치와 실행을 검사했다. [현재 구현·검사 범위](android-implementation-20261030.md). 관련 업무는 document-map의 android, port-heavymach-android와 debug-heavymach-android 스킬을 읽는다. Android는 기능 브랜치에서 검사 중이며 `develop`·`main`에 병합하지 않았다.
 
 ## 개발자의 변과 프로젝트 소개
 

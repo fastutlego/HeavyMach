@@ -72,3 +72,9 @@ The current resource check matched SHA-256 hashes for 1,504 build and test input
 - Wireless: iPhone XCTest/Instruments and repeated installation/debugging after reboot on both devices.
 
 [All-weapon test procedure](../../weapon-validation-procedure.md) · [Current tasks](implementation-status.md)
+
+<a id="android-구현--2026-10-30"></a>
+
+## Android implementation · 2026-10-30
+
+The [Android development account](../../public/android-development-20261030.md) covers the regular and cheat APKs, Galaxy USB and wireless installation, the shared core, the Android host, tests and fixes. The implementation was developed on `feat/android-app`; existing Apple sources were preserved.

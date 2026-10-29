@@ -5,8 +5,8 @@
   "documents": {
     "README.md": {
       "english": "README.en.md",
-      "source_sha256": "54255156d94cb18d87409877f3aa334192e08417ccb0cec8918344154c36f275",
-      "english_sha256": "6ebe765dbed528f4882e6ea010086aeb88902240bad29c7d67273334fce44059",
+      "source_sha256": "61ee864497a5ac450a712dacffffa4d73d1153c7f1176041fb0c4684812b61f4",
+      "english_sha256": "71f623024fea8841c326cf624ddcdb966b43ac449fef06d1fa5df019a951705c",
       "reviewed_numeric_difference": {
         "source_only": {
           "7": 1,
@@ -20,7 +20,7 @@
         },
         "english_only": {}
       },
-      "review_note": "July, nine years/three months, aircraft and clip quantities use English words; source punctuation attaches Korean suffixes to digits. Shared personal paragraphs match the English statement. User-approved correction: 이승에서나 → in this life."
+      "review_note": "July, nine years/three months, aircraft and clip quantities use English words; source punctuation attaches Korean suffixes to digits. Shared personal paragraphs match the English statement. User-approved correction: 이승에서나 → in this life. Updated Android availability; personal paragraphs unchanged."
     },
     "CHANGELOG.md": {
       "english": "CHANGELOG.en.md",
@@ -116,8 +116,8 @@
     },
     "docs/public/features.md": {
       "english": "docs/en/public/features.md",
-      "source_sha256": "e8e4143f245de43684a51ad9927392367391ac8dfd529cd5b22dda800b7e069f",
-      "english_sha256": "5d727c92e569b8803023b192ce988a3f1d71c4b48de124ad05c4dce0ffe882e0",
+      "source_sha256": "3a2c097e9b1c0410c5ebe4d0c13c7d74d1a437f721d8708bc675c2822807eca5",
+      "english_sha256": "a6692aab11147e374e609b98c1be4df54cebad0c682f00acff29ba51e384883f",
       "reviewed_numeric_difference": {
         "source_only": {
           "6": 1,
@@ -130,12 +130,12 @@
           "7": 1
         }
       },
-      "review_note": "Counts and durations sometimes use words. Ace Combat 7 and 8 expands 에이스 컴뱃7·8; only the digit preceded by Korean text is omitted by the numeric extractor. All weapon and placement tables compared."
+      "review_note": "Counts and durations sometimes use words. Ace Combat 7 and 8 expands 에이스 컴뱃7·8; only the digit preceded by Korean text is omitted by the numeric extractor. All weapon and placement tables compared. Updated Android availability; personal paragraphs unchanged."
     },
     "docs/public/implementation-status.md": {
       "english": "docs/en/public/implementation-status.md",
-      "source_sha256": "e1b3a1f9b72ba5795d8d63c5b06ad644b116f033359d2e06ec547257c0a7904d",
-      "english_sha256": "d31ac73f04b801fc4c4b4fe3eae1e2730850afd23e5d0fe12fcf12caf3a89cb6",
+      "source_sha256": "49de7e726cb76a182e3b102f80f24763c839d0d83175f813696884f024477182",
+      "english_sha256": "86a13888cc7d06bba0ca66e6bb31bdf3c28b92141e49619fe5fd6fc887aeb3ce",
       "reviewed_numeric_difference": {
         "source_only": {
           "10": 2,
@@ -150,7 +150,7 @@
           "13": 1
         }
       },
-      "review_note": "English month/date syntax, word counts and iPad 13-inch spacing differ. Current v0.16 and historical v0.15 tests distinguished."
+      "review_note": "English month/date syntax, word counts and iPad 13-inch spacing differ. Current v0.16 and historical v0.15 tests distinguished. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Updated Android availability; personal paragraphs unchanged."
     },
     "docs/public/build-and-install.md": {
       "english": "docs/en/public/build-and-install.md",
@@ -177,18 +177,18 @@
     },
     "docs/public/architecture.md": {
       "english": "docs/en/public/architecture.md",
-      "source_sha256": "076961af0b7a4df326ae9d4e5e97255dda0d02929beeb72767d01c5efd0652c3",
-      "english_sha256": "2c3655082e3eda3333c2e9961876434f9f3f08559fe2ef228b5d922a005914aa",
+      "source_sha256": "ea0a62c16d3709ad565d3062fd9fc0e1781dc0c7f4ec11543b502c6f0378a5e0",
+      "english_sha256": "4542e29b261538690a44efb2e1349221eb8d87b5ad4368029d3f359041496dc0",
       "reviewed_numeric_difference": {
         "source_only": {},
         "english_only": {}
       },
-      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match."
+      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed."
     },
     "docs/public/development-history.md": {
       "english": "docs/en/public/development-history.md",
-      "source_sha256": "f86ab7d1090428d3a7ff2d3bcfd35f13e791c270dd7c9358f4fa69d0d330cce7",
-      "english_sha256": "f967521bbb85994f13ce090bd3a725a04b055a2ecf8dff0cc0b7732ab0dd4bb8",
+      "source_sha256": "f5cc86765a99122805ce339d94ef22b575368f36c08ce3dbd0d6f583bc705024",
+      "english_sha256": "5a3d7e2e210825b5b81d21babbcdaf4edf087b64351b860b33c6c8953b924c24",
       "reviewed_numeric_difference": {
         "source_only": {
           "7": 1,
@@ -198,28 +198,29 @@
           "3": 1
         }
       },
-      "review_note": "July and zero/two ticks use English words. Mission 3-5 is separated from Korean text in English. Operator order, formulas and tool IDs preserved."
+      "review_note": "July and zero/two ticks use English words. Mission 3-5 is separated from Korean text in English. Operator order, formulas and tool IDs preserved. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Updated Android availability; personal paragraphs unchanged."
     },
     "docs/public/troubleshooting.md": {
       "english": "docs/en/public/troubleshooting.md",
-      "source_sha256": "54f8a2182044027ea9632d44eb9716d2af8fe0cc0e7a7c9ef6c9e7233992765b",
-      "english_sha256": "ba3fd7d1f0cf9cd212f80ffe23171a47203c1442ebf23801eea99b89a145f721",
+      "source_sha256": "8d6978645b1761a78d10f5d98ca48e939c3fd685b2714359c88cd062d29eeec2",
+      "english_sha256": "b61ab73a14a1b4a6f43300406f18b5781eb8a99edbdf6d1e59e93cc02a8b1350",
       "reviewed_numeric_difference": {
         "source_only": {
           "1": 1,
           "0": 4,
           "2": 1,
           "3": 1,
-          "10": 1
+          "10": 1,
+          "12": 1
         },
         "english_only": {}
       },
-      "review_note": "English words replace counts and months. Historical 1482-resource result retained. Subject attribution, failures and author criticism preserved."
+      "review_note": "English words replace counts and months. Historical 1482-resource result retained. Subject attribution, failures and author criticism preserved. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed."
     },
     "docs/public/validation.md": {
       "english": "docs/en/public/validation.md",
-      "source_sha256": "e85c272b96673b11b5ee730fa9176d0c728ee727e7a4fbc3bf81b09991d63446",
-      "english_sha256": "e57428ef97e77fbf7ab4712a7f070df4e35d730edc4b93c05ebf680e11036795",
+      "source_sha256": "65742d53ba3658645360e0ab63c5cd8f88fa0841a133a9089ab61c59d2c7cf1d",
+      "english_sha256": "25a291df431d35b603970872bd64fee2427b52e148c5074a11ad36da36104144",
       "reviewed_numeric_difference": {
         "source_only": {
           "10": 4,
@@ -234,7 +235,7 @@
           "20": 1
         }
       },
-      "review_note": "Dates and counts use English words. The two 20ms references are preserved; source 기준20ms attaches digits to Korean text. Historical failures and current v0.16 check separated."
+      "review_note": "Dates and counts use English words. The two 20ms references are preserved; source 기준20ms attaches digits to Korean text. Historical failures and current v0.16 check separated. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed."
     },
     "docs/public/lux-lunae-intent-20261028.md": {
       "english": "docs/en/public/lux-lunae-intent-20261028.md",
@@ -283,13 +284,13 @@
     },
     "docs/public/roadmap.md": {
       "english": "docs/en/public/roadmap.md",
-      "source_sha256": "a3f972cbff39eb8c4d8c80d15e8b5ecf0e26de3a1e2bd0fe7861430e25aa0dae",
-      "english_sha256": "7a0d827c7e84c6dbfc5ae536755bc9aa9cd25566d7dd93f01e146e53c14d2abe",
+      "source_sha256": "1bea11cc3b8f2645c121a5b370e8d18531e0c6d4a1961819f5ec5f0537f1911d",
+      "english_sha256": "0081e5a42535ca21983c06e3e42fe7f149f258e9035f63f149e48e50cc284b6d",
       "reviewed_numeric_difference": {
         "source_only": {},
         "english_only": {}
       },
-      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match."
+      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed."
     }
   }
 }

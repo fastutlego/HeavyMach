@@ -80,6 +80,8 @@ The canvas shows more of the world according to the device's aspect ratio. World
 
 <a id="android-계획"></a>
 
-## Android plan
+<a id="android-구현"></a>
 
-The plan is to build the shared C++ core with CMake and the NDK, then add Android window, input, audio and graphics connections. There is no Android app or APK yet. [Development stages and tests](../../android-port-plan-20261026.md)
+## Android implementation
+
+On `feat/android-app`, the NDK builds the same C++ core and assets. The Kotlin, JNI and C++ host in `Android/` connects the display, input, EGL/GLES, OpenAL and saves. Existing Apple sources and projects were unchanged. Both regular and cheat APKs were installed on Galaxy. [Shared and Android-specific files and development history](../../public/android-development-20261030.md), [Build and installation](../../../Android/README.md).

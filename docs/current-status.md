@@ -1,5 +1,31 @@
 # 2026-10-25 문서·코드·앱 일치 체계 점검 및 보완
 
+## Android 미디어·main 병합 준비 — 2026-10-30
+
+Galaxy 미션 3-4·3-5 녹화를 분할하고 PNG 8장·GIF 3개·짧은 MP4 3개를 만들었다. [플레이 자료](public/android-gameplay-20261030.md). 기존 Apple 파일 2,166개 해시와 빌드 입력을 대조하고 일반·치트 Apple 앱 네 빌드를 통과했다. [병합·v0.17 준비](android-release-readiness-20261030.md).
+
+
+## Android 업그레이드 입력·정지 수정 — 2026-10-30
+
+2-1 진입 직후 업그레이드 창에서 전투가 진행되고 버튼이 무시되는 오류를 사용자 저장 복사본으로 재현했다. Android Runtime만 수정하고 에뮬레이터·Galaxy에서 각각 12개 검사를 통과했다. 일반·치트 앱을 재설치했고 일반 저장 원본을 보존했다. [원인·수정·화면](public/android-development-20261030.md).
+
+## Android 앱 구현·Galaxy 검사 — 2026-10-30
+
+`develop`의 `d46e122a`에서 만든 `feat/android-app`에서 Android 일반·치트 앱을 구현했다. 기존 Apple·코어·자원 2,166개 파일의 해시는 그대로다. Android 16 ARM64 에뮬레이터와 Galaxy SM-S731N에서 두 앱을 설치했다. Galaxy의 이동·점프·20종 무기·복귀 31개, HUD·GPU 재생성 9개, 35스테이지 진입과 자동조준·키 입력 39개 검사를 통과했다. 에뮬레이터에서는 Clock 알람이 실제 오디오 포커스를 가져간 뒤의 정지·복귀·재발사도 확인했다.
+
+USB를 뺀 뒤 두 APK를 무선 재설치하고 저장 보존·실행·로그·종료·홈 복귀를 확인했다. 최종 무선 실행 검사 11개를 통과했다. 보스 전투 45초의 표시 간격은 P99 17ms 구간이며 33ms 초과는 0개였다. [구현 기록](android-implementation-20261030.md).  아래의 “APK 미구현”은 작업 시작 전 조사 기록이다.
+
+
+## Apple 변경 없는 Android 준비 — 2026-10-30
+
+후속 사용자 지시에 따라 Apple 선행 공통화·폴더 이동 계획을 철회했다. 기존 Apple·코어·자원·vendor 등 2,000개 보호 파일의 해시가 작업 전후 같았다. 기존 코어 전체와 OpenAL/OpenSL ES·stb·JNI·EGL/GLES1·AssetManager를 연결한 Android ARM64 일반·치트 공유 라이브러리 두 개를 빌드했다. 기존 빌드/검사 자원 1,504개 해시도 통과했다. [증거](evidence/android-isolation-20261030.json), [현재 계획](android-port-plan-20261026.md). APK·화면·GL 복구·실제 음향은 아직 미구현이다. 아래 최초 공통화 제안은 이 후속 계획으로 대체한다.
+
+
+## Android 코어·플랫폼 경계 조사 — 2026-10-30
+
+`d46e122a`의 코어를 수정 없이 NDK ARM64 일반용·치트용 정적 라이브러리로 컴파일했다. 코어 56개 파일에서 Apple SDK 의존성은 없었다. 프레임 실행 순서·메뉴와 HUD의 데이터 변경은 Apple 화면 코드에 남아 있다. 이를 공통 Runtime으로 추출하는 계획과 Shared·Apple·Android 폴더 구분을 [Android 계획](android-port-plan-20261026.md)에 반영했다. [컴파일 증거](evidence/android-boundaries-20261030.json). 제품 소스·현재 폴더·앱 설치본은 변경하지 않았다.
+
+
 ## 릴리스 도구 — 2026-10-29
 
 `tools/release.py prepare/publish`를 구현했다. v0.16의 추적 파일2,672개·자원1,504개 압축·재추출 검사와 임시 저장소/게시 응답17개 검사를 통과했다. 기존 v0.16 공개본 수정 차단을 실제 GitHub 조회로 확인했다. 새 버전의 실제 업로드·공개는 다음 배포 때 검증한다. [명령과 재개 방법](release-notes-plan.md#릴리스-도구), [증거](evidence/release-tool-20261029.json).

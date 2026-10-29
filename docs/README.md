@@ -13,6 +13,7 @@
 | [빌드·설치](public/build-and-install.md) | clone·LFS·workspace·scheme·서명·실행 |
 | [구조](public/architecture.md) | 코어·Apple 런타임·자원·플랫폼 경계와 모듈화 이유 |
 | [트러블슈팅](public/troubleshooting.md) | 17개 문제의 증상·내 지적·원인·수정·결과 |
+| [Android판 개발 과정](public/android-development-20261030.md) | 개발 기간·공유 코어·전용 구현·Galaxy 검사·업그레이드 오류 수정 |
 | [개발 과정](public/development-history.md) | 분석·구현·비교·검증 순서와 도구·스킬 |
 | [검증](public/validation.md) | 기기·조건·빌드별 결과와 남은 검사 |
 | [쉴카·퉁구스카 도안](public/ground-aa-art-20261028.md) | 새 외형·파츠 분해도와 기존 유닛 조립 구조 비교 |
