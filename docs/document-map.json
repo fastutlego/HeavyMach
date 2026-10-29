@@ -280,7 +280,8 @@
         "docs/public/troubleshooting.md",
         "docs/public/development-history.md",
         "docs/public/validation.md",
-        "docs/public/github-followup-20261028.md"
+        "docs/public/github-followup-20261028.md",
+        "docs/public/ios-gameplay-gallery-20261030.md"
       ],
       "sources": [
         "docs/*",
@@ -426,7 +427,8 @@
         "docs/public/publication-inventory.md",
         "docs/public/gameplay-media-20261027.md",
         "docs/public/github-documentation-plan-20261027.md",
-        "docs/public/android-gameplay-20261030.md"
+        "docs/public/android-gameplay-20261030.md",
+        "docs/public/ios-gameplay-gallery-20261030.md"
       ],
       "sources": [
         "docs/public/media/*",

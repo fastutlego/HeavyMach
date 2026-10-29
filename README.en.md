@@ -131,6 +131,35 @@ Open **SET GAME UI** in the pause menu to drag buttons, gauges and upper decorat
 
 The upper decoration has been moved in the iPhone cheat app. Dragging collapses the right-hand tools; **TOOLS** reopens them. Combat pauses during editing. The regular app has the same editor. [Moving MENU and testing its input](docs/public/app-icon-and-media-20261029.md#hud-위치-편집)
 
+<a id="ios-플레이-캡처-모음"></a>
+
+## iOS gameplay gallery
+
+The two recordings I provided contain eight selected images, two GIFs and three videos with sound. The gallery covers jumping, weapons, air support, upgrades, stage completion, added aircraft and auto-aim.
+
+[All iOS gameplay images and videos](docs/public/ios-gameplay-gallery-20261030.md)
+
+<details>
+<summary>Show four iPhone and iPad cheat-app validation captures</summary>
+
+**Shilka firing on a slope — iPhone Air**
+
+![Shilka firing on a slope — iPhone Air](docs/public/media/ground-aa/shilka-height/shilka.png)
+
+**Tunguska firing missiles on a slope — iPad Air 13-inch M2**
+
+![Tunguska firing missiles on a slope — iPad Air 13-inch M2](docs/public/media/ground-aa/integrated/ipad-tunguska.png)
+
+**Upper HUD trim moved downward — iPhone Air**
+
+![Upper HUD trim moved downward — iPhone Air](docs/public/media/hud-editor/release-iphone-trim.png)
+
+**Pause menu opened after moving MENU — iPhone Air**
+
+![Pause menu opened after moving MENU — iPhone Air](docs/public/media/hud-editor/release-iphone-menu.png)
+
+</details>
+
 <a id="플랫폼과-개발-상태"></a>
 
 ## Platforms and development status
