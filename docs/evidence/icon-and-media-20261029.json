@@ -1,0 +1,240 @@
+{
+  "date": "2026-10-29",
+  "branch": "feat/icon-and-project-media",
+  "scope": [
+    "text-free app icons",
+    "HUD and ground-unit publication media"
+  ],
+  "devices": {
+    "iphone": {
+      "transport": "localNetwork",
+      "save_changed_offsets": [
+        1212,
+        1213
+      ],
+      "save_progress_preserved": true,
+      "save_change_explanation": "slot 2 lastAccess (GlobalInfo.cpp setInt(4, unixTime))",
+      "hud_layout_preserved": true,
+      "ordinary_install": {
+        "outcome": "success",
+        "raw_sha256": "5ebc7eac81d522adcb7e9928fc67d4d673457fbf670b52cb7297936fd49357b3"
+      },
+      "ordinary_launch": {
+        "outcome": "success",
+        "raw_sha256": "65e1d3fbf4c61ddc344bc3a0df7be5783fc9a1621c193257e864dc49f14bb6bb"
+      },
+      "cheat_install": {
+        "outcome": "success",
+        "raw_sha256": "9ab198c4b071f1ad8dd22518f0fa62167ad05b4eaf14ec07e4d42595914a10b8"
+      },
+      "cheat_launch": {
+        "outcome": "success",
+        "raw_sha256": "4cb5ee1f28c009cd05eb00b0fd0f66d77738aff799b31d55dc4c1191be82fa60"
+      }
+    },
+    "ipad": {
+      "transport": "localNetwork",
+      "save_changed_offsets": [],
+      "save_progress_preserved": true,
+      "save_change_explanation": "identical",
+      "hud_layout_preserved": true,
+      "ordinary_install": {
+        "outcome": "success",
+        "raw_sha256": "c5c1d1e2c4b423bd4f6dad93957d5e4cecd6dafb0d1d9f9ef17c98455cc9f3d0"
+      },
+      "ordinary_launch": {
+        "outcome": "success",
+        "raw_sha256": "c10f16ad3dbf0780eeded99e7e21a7c521cc031d138f814d8d29325ac0127e55"
+      },
+      "cheat_install": {
+        "outcome": "success",
+        "raw_sha256": "1e812703f8b442f6ac88d4ebcbabb9fdd78734444daa1a08485d2f754ee06c8d"
+      },
+      "cheat_launch": {
+        "outcome": "success",
+        "raw_sha256": "e7e256a76c3517b935bd424a69def89d4fc633c64fbf3e82730769704fed8b58"
+      }
+    }
+  },
+  "media_manifest": "docs/public/media/updates-20261029/media-scenes.json",
+  "report_local_links": {
+    "checked": 236,
+    "errors": 0
+  },
+  "report_visual_check": "Safari: icon comparison, equal sizes and ground-unit images inspected",
+  "mission_entry_removal": {
+    "request": "Remove SET GAME UI from Select Mission; preserve pause-menu editor",
+    "simulator_tests": 3,
+    "native_mac_tests": 2,
+    "failures": 0,
+    "test_logs": {
+      "mission-entry-tests.log": "aed641d3db6ddc9c677e9bfb82149930630f948359f33777480606ae4624d2d8",
+      "mac-mission-entry-corrected.log": "b725586b6f8bb25f5e10a79a7c2f76e59e46a622596fc1d3b191726463fe3b90"
+    },
+    "first_mac_invocation": "Wrong test-target name rejected before tests; corrected to HeavyMachMacInputTests.",
+    "updated_apps": {
+      "iphone-ordinary-final-install": {
+        "outcome": "success",
+        "raw_sha256": "7bad8f7184fb81eb4a172e8d16f111ccf2c33940462c046fb5c97d9e1b842366"
+      },
+      "iphone-ordinary-final-launch": {
+        "outcome": "success",
+        "raw_sha256": "b99153d87e39328cd71bb51aebb61fa5879b3a59db624a59d6f78fc468b1ac2d"
+      },
+      "iphone-cheat-final-install": {
+        "outcome": "success",
+        "raw_sha256": "af96c31beca640564f996788e5d23fa0eaa6a66e50f743d9419af0c2bc48298a"
+      },
+      "iphone-cheat-final-launch": {
+        "outcome": "success",
+        "raw_sha256": "2653c94283f7cad9b077746d2fb98c29ad1dc1a1e6cd36520d4da800c4e42e78"
+      },
+      "ipad-ordinary-final-install": {
+        "outcome": "success",
+        "raw_sha256": "de745346448921aa4e1fd3e98756f026b6b5a824ee674ba4d8b9ab1ac90a743f"
+      },
+      "ipad-ordinary-final-launch": {
+        "outcome": "success",
+        "raw_sha256": "d54125373941cd7a4cad2c9d6d9fb3b9e817e4d8d3d5a9c006b4e0858eea36ca"
+      },
+      "ipad-cheat-final-install": {
+        "outcome": "success",
+        "raw_sha256": "868ce87f6de73af99b3a0088d046cce002ed2fcb8192a5632f09a14754870d63"
+      },
+      "ipad-cheat-final-launch": {
+        "outcome": "success",
+        "raw_sha256": "265ad474952e5e0d63277723c2fcab38a4cf7cd67097e75014b2ef2698f1506a"
+      }
+    }
+  },
+  "initial_local_build_logs": {
+    "HeavyMachValidation-simulator-build.log": {
+      "sha256": "73a78a8fd820073bf9df0ea3e1fb45821badced90d2e40f5b5948c7612ae85a4",
+      "interpretation": "Quiet build output has no success banner; completion confirmed by CI below."
+    },
+    "HeavyMachMac-build.log": {
+      "sha256": "be72ec8d3c178c463a26cb81fed9a5fba720668830c2148a36a89dc270f029df",
+      "interpretation": "Quiet build output has no success banner; completion confirmed by CI below."
+    },
+    "HeavyMachMacValidation-build.log": {
+      "sha256": "14f8ad1ad40bed8150a53acca7e93eeac735545f62d1025cf3e9d6717e904852",
+      "interpretation": "Quiet build output has no success banner; completion confirmed by CI below."
+    },
+    "site-build.log": {
+      "sha256": "b8485b23228f177775e6521733b58cb56b2ded702333feb00e0ac56af1609d7f",
+      "interpretation": "Initial report build failed because the new page was missing from the catalog; later site-build-mission.log succeeded."
+    },
+    "HeavyMachRestored-simulator-build.log": {
+      "sha256": "f38c0da27e303a73a5ec21a3937bc1ebbca074815af88145b1782b8edcd404ec",
+      "interpretation": "Quiet build output has no success banner; completion confirmed by CI below."
+    }
+  },
+  "builds": {
+    "source_commit": "f2144b84322fe699da6f39720abe25635ffface4",
+    "run_url": "https://github.com/gelb2/HeavyMach/actions/runs/40768810985",
+    "conclusion": "success",
+    "jobs": [
+      {
+        "name": "core",
+        "conclusion": "success",
+        "url": "https://github.com/gelb2/HeavyMach/actions/runs/40768810985/job/123100661121",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run python3 tools/verify_build_resources.py",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run cmake -S . -B build/core -DCMAKE_BUILD_TYPE=Debug",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run cmake --build build/core --parallel 4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run ctest --test-dir build/core --output-on-failure",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ]
+      },
+      {
+        "name": "apple",
+        "conclusion": "success",
+        "url": "https://github.com/gelb2/HeavyMach/actions/runs/40768810985/job/123100661844",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Toolchain",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run python3 tools/verify_build_resources.py",
+            "conclusion": "success"
+          },
+          {
+            "name": "iOS and iPadOS — normal and cheat",
+            "conclusion": "success"
+          },
+          {
+            "name": "Native Mac — normal and cheat",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ]
+      }
+    ]
+  },
+  "evidence_correction": "The earlier passed=false values came from looking for BUILD SUCCEEDED in -quiet output, and included an unrelated initial site failure. Replaced with the same product-source CI results.",
+  "premerge_review": {
+    "date": "2026-10-29",
+    "product_source_commit": "bc764a28",
+    "ipad_simulator_tests": 3,
+    "failures": 0,
+    "test_log_sha256": "7dbe05eba71a320c07df2a14e994833882b99fca8e18f4c0b7ae29b7813d1fe7",
+    "app_icon_export_repeated": "All generated files identical to committed assets; 1504 resource hashes passed.",
+    "fixes": [
+      "SaaS release version and completed HUD status corrected",
+      "Duplicate report anchors and HUD link corrected",
+      "Quiet-build evidence classification corrected using CI results",
+      "Icon export manifest update restricted to AppIcon folder",
+      "Mission screen capture provenance added"
+    ],
+    "merge_performed": false,
+    "report_links": {
+      "pages": 47,
+      "links": 1303,
+      "errors": [],
+      "duplicate_anchors": 0
+    }
+  }
+}

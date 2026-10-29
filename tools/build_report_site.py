@@ -46,6 +46,7 @@ def article(source,dest,download,template):
         '간단한 설명과 설치': 'introduction-and-installation',
         '원작의 전투와 조작': 'section-0', '원작의 무기와 성장': 'section-1',
         '내가 추가한 항공기': 'section-2', '내가 추가한 자동조준': 'auto-aim',
+        '내가 추가한 지상 유닛': 'ground-units', 'HUD 위치 편집': 'hud-layout',
         '플랫폼과 개발 상태': 'section-3', '빌드하기': 'section-4',
         '개발 중 고친 문제': 'section-5', '코드 구조와 버전': 'section-6',
         '라이선스와 자원': 'section-7',
@@ -67,6 +68,7 @@ def article(source,dest,download,template):
         readme_ids['크기와 연결부 수정 · 2026-10-28']='refinement'
     if source == ROOT/'docs/public/hud-improvement-plan-20261028.md':
         readme_ids.update({name:f'section-{i}' for i,name in enumerate(['현재 화면과 코드','이동할 묶음과 그림 분할','배치·그림·터치를 연결하는 방법','게임 시작 전 편집 화면','자동조준 상태를 알리는 방법','구현과 검증 순서','투두에서 함께 확인한 남은 일','코드와 정책'])})
+        readme_ids['미션 선택 버튼 제거 · 2026-10-29']='mission-entry-removal'
         readme_ids['HUD 부품과 분할 검사']='asset-audit'
         readme_ids['편집 구현과 시뮬레이터 검사']='editor-validation'
         readme_ids['실제 iPad 설치와 조작 검사']='physical-ipad'
@@ -136,6 +138,7 @@ def main():
     aim_page.write_text(aim_page.read_text().replace('href="public/auto-aim-ipad-20261027.md"', 'href="auto-aim-progress.html"'))
     article(ROOT/'docs/RESTORATION.md',dist/'restoration.html','RESTORATION.md',retro)
     public_articles = [
+        ('app-icon-and-media-20261029.md', 'icon-and-media.html'),
         ('hud-improvement-plan-20261028.md', 'hud-improvement.html'),
         ('auto-aim-visibility-plan-20261028.md', 'auto-aim-visibility.html'),
         ('apple-platform-progress-20261026.md', 'apple-platforms.html'),
@@ -162,7 +165,7 @@ def main():
         article(ROOT/'docs/public'/source_name, dist/page_name, source_name, retro)
         page = BeautifulSoup((dist/page_name).read_text(), 'html.parser')
         if page.footer: page.footer.decompose()
-        if page_name in ('hud-improvement.html','fullscreen.html','auto-aim-progress.html','lux-lunae.html','lux-lunae-intent.html','gameplay-media.html','ground-aa-art.html'):
+        if page_name in ('icon-and-media.html','hud-improvement.html','fullscreen.html','auto-aim-progress.html','lux-lunae.html','lux-lunae-intent.html','gameplay-media.html','ground-aa-art.html'):
             style=page.new_tag('style');style.string='main img,main video{display:block;max-width:100%;height:auto;margin:16px 0}main video{width:100%}';page.head.append(style)
             for img in page.select('main img'):
                 link=page.new_tag('a',href=img['src']);img.wrap(link)
@@ -221,7 +224,7 @@ def main():
     # Resolve relative Markdown paths from each manuscript's original directory.
     from urllib.parse import urlsplit, unquote, quote
     for source_name, page_name in routes.items():
-        if page_name not in list(reader_sources.values()) + ['hud-improvement.html', 'auto-aim-visibility.html', 'restoration.html', 'installation.html', 'implementation.html', 'ground-units.html', 'ground-aa-art.html', 'publication.html', 'gameplay-media.html', 'github-documentation.html', 'github-licenses-and-badges.html', 'github-repository-plan.html', 'github-followup.html']:
+        if page_name not in list(reader_sources.values()) + ['icon-and-media.html', 'hud-improvement.html', 'auto-aim-visibility.html', 'restoration.html', 'installation.html', 'implementation.html', 'ground-units.html', 'ground-aa-art.html', 'publication.html', 'gameplay-media.html', 'github-documentation.html', 'github-licenses-and-badges.html', 'github-repository-plan.html', 'github-followup.html']:
             continue
         page = BeautifulSoup((dist/page_name).read_text(), 'html.parser')
         if page.footer: page.footer.decompose()
@@ -235,6 +238,8 @@ def main():
             try: rel = target.resolve().relative_to(ROOT).as_posix()
             except ValueError: continue
             if rel in routes: node[attr] = routes[rel]
+            elif rel.startswith('Art/AppIcon/20261029/'):
+                node[attr] = 'app-icon-source/'+rel.removeprefix('Art/AppIcon/20261029/')
             elif rel.startswith('Art/GroundAA/20261028-refinement/') and rel.endswith('.json'):
                 node[attr] = 'evidence/ground-aa-refinement-'+Path(rel).name
             elif rel.startswith('Art/GroundAA/20261028-texture-proposal/') and rel.endswith('.json'):
@@ -265,10 +270,16 @@ def main():
                 node[attr] = rel.removeprefix('docs/public/')
             else:
                 node[attr] = 'https://github.com/gelb2/HeavyMach/blob/main/'+quote(rel, safe='/')
-            if url.fragment: node[attr] += '#'+url.fragment
+            if url.fragment:
+                fragment = 'section-2' if rel == 'docs/public/app-icon-and-media-20261029.md' and unquote(url.fragment) == 'hud-위치-편집' else url.fragment
+                node[attr] += '#'+fragment
         style = page.new_tag('style')
         style.string = 'main img,main video{display:block;max-width:100%;height:auto;margin:18px 0}main h1{line-height:1.25}main img[src^="media/badges/"]{display:inline-block;width:auto;height:20px;margin:0 4px 6px 0;vertical-align:middle}'
         page.head.append(style)
+        if page_name == 'icon-and-media.html':
+            icon_style = page.new_tag('style')
+            icon_style.string = 'main table{table-layout:fixed;width:100%}main th,main td{width:50%;vertical-align:top}main td img{width:100%;max-width:360px;margin:12px auto}'
+            page.head.append(icon_style)
         deduplicate_styles(page)
         (dist/page_name).write_text(str(page))
     article(ROOT/'docs/media-publication.md', dist/'media-preparation.html', 'media-publication.md', retro)
@@ -283,6 +294,9 @@ def main():
     shutil.copytree(ROOT/'docs/public/clone',dist/'clone',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/media/hud-audit',dist/'media/hud-audit',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/media/hud-editor',dist/'media/hud-editor',dirs_exist_ok=True)
+    shutil.copytree(ROOT/'Art/AppIcon/20261029',dist/'app-icon-source',dirs_exist_ok=True)
+    shutil.copytree(ROOT/'docs/public/media/app-icon-20261029',dist/'media/app-icon-20261029',dirs_exist_ok=True)
+    shutil.copytree(ROOT/'docs/public/media/updates-20261029',dist/'media/updates-20261029',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/media/ground-aa',dist/'media/ground-aa',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/media/vtol',dist/'media/vtol',dirs_exist_ok=True)
     shutil.copytree(ROOT/'docs/public/media/fullscreen',dist/'media/fullscreen',dirs_exist_ok=True)
@@ -333,6 +347,8 @@ def main():
     for name in report_pages:
         page=BeautifulSoup((dist/name).read_text(),'html.parser')
         assert page.select_one('a[href="index.html#reports"]'), f'Missing catalog backlink: {name}'
+        anchors = [node['id'] for node in page.select('[id]')]
+        assert len(anchors) == len(set(anchors)), f'Duplicate anchors: {name}'
     report['catalog_report_count']=len(report_pages)
     print(json.dumps(report,ensure_ascii=False))
 if __name__=='__main__':main()

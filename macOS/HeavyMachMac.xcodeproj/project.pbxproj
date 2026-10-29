@@ -36,6 +36,7 @@
 		CBD23DCD6670B188781E39AE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529E08B5127E6D63C9DBB880 /* CoreText.framework */; };
 		CF2833F221DD4C9940D4D136 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431DD1041B73B74FCFDE460F /* CoreAudio.framework */; };
 		D2ED5CFB87ACA087589B056F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529E08B5127E6D63C9DBB880 /* CoreText.framework */; };
+		D6DCC7BD669E0CD4B0D1C118 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B246C73BD3990266274504F /* Assets.xcassets */; };
 		D908932FBC025A318CF0D1E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE50A6D593570089B65CA5F /* CoreGraphics.framework */; };
 		DDD2DC6CD53B901B66A6F72C /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E5578437581ECD45CAACEF /* OpenGL.framework */; };
 		DF0907B286ECBAA86A49DBB9 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431DD1041B73B74FCFDE460F /* CoreAudio.framework */; };
@@ -43,6 +44,7 @@
 		E4FC00BCF6ABAF553BFBFF11 /* HeavyMachCore_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B19751A4E7E2E941435651D /* HeavyMachCore_macOS.framework */; };
 		F0FDC122DAE8A341425F31C6 /* HeavyMachAssets.bundle in Copy Bundle Resources */ = {isa = PBXBuildFile; fileRef = 2EF51FFD0951FFCB548CFE56 /* HeavyMachAssets.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F6F3FA3FEE266E1FCB5296D6 /* HMMediaParityTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7813FC29C8B8597E30ADF7B7 /* HMMediaParityTests.mm */; };
+		F73826B0EBACEAEAFBCE6E60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B246C73BD3990266274504F /* Assets.xcassets */; };
 		FB3FEC152A917D948327C740 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F292C9FFBED37AD84638A48E /* GameController.framework */; };
 /* End PBXBuildFile section */
 
@@ -157,6 +159,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0B246C73BD3990266274504F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15358B7A6664A3522109E262 /* HeavyMachMacInputTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeavyMachMacInputTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C0EDBDDA825378CE17739B2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		2EF51FFD0951FFCB548CFE56 /* HeavyMachAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = wrapper.cfbundle; path = HeavyMachAssets.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -233,6 +236,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A0FB4F4DE8E6ED1E513B6F6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0B246C73BD3990266274504F /* Assets.xcassets */,
+			);
+			name = Resources;
+			path = ../Resources;
+			sourceTree = "<group>";
+		};
 		1CA2147D4CAC3AC36EBB0AB4 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,6 +318,7 @@
 				E96E29F14A0C2E47FB034AEC /* Apple */,
 				1CA2147D4CAC3AC36EBB0AB4 /* iOS */,
 				8222A7B48A131E6890DF2372 /* Mac */,
+				0A0FB4F4DE8E6ED1E513B6F6 /* Resources */,
 				597605202E24B91920468927 /* Bundles */,
 				56C573DCCDEF48E4C7821E9C /* Frameworks */,
 				CE2E02562D260188DCA0CCF1 /* Products */,
@@ -384,6 +397,7 @@
 			buildPhases = (
 				7FB95C3D1E1627CE19D03A49 /* Build OpenAL Soft */,
 				CA6712C0983028B8EF79CB9F /* Sources */,
+				DD052C489AD01D98DD2EB3E1 /* Resources */,
 				BB244A201A8E5919F727B3C8 /* Frameworks */,
 				8D318530C8D990C0AC6370A2 /* Copy Bundle Resources */,
 			);
@@ -494,7 +508,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F73826B0EBACEAEAFBCE6E60 /* Assets.xcassets in Resources */,
 				389E3178FDFC344D3A6F64E9 /* Validation in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD052C489AD01D98DD2EB3E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6DCC7BD669E0CD4B0D1C118 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

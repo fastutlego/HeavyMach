@@ -1,0 +1,78 @@
+{
+  "date": "2026-10-29",
+  "game_release": "v0.14",
+  "selection": "Existing final-product captures. Current unit art and HUD implementation matched to v0.14.",
+  "scenes": [
+    {
+      "id": "ground-shilka",
+      "path": "docs/public/media/ground-aa/shilka-height/shilka.png",
+      "sha256": "f0117121fa8207d172794af0bc04d1c31771c69f72b6ceda1b29f8f617d1aaa7",
+      "captured_on": "2026-10-28",
+      "device": "iPhone Air",
+      "capture_kind": "GPU output from cheat-app assembly and firing test",
+      "app_variant": "cheat",
+      "evidence": "docs/evidence/shilka-height-20261028.json",
+      "caption": "최종 포탑 높이를 적용한 쉴카가 경사면에서 흰색 총탄을 발사한다.",
+      "alt": "최종 포탑 높이를 적용한 쉴카가 경사면에서 흰색 총탄을 발사한다.",
+      "placement": "README 신규 지상 유닛 / Apps 파츠·무장 / Mags 신규 유닛 기획",
+      "image_edited": false
+    },
+    {
+      "id": "ground-tunguska",
+      "path": "docs/public/media/ground-aa/integrated/ipad-tunguska.png",
+      "sha256": "384b7ac0dd0371922968a2888d07e029deebeb85af2a9912ce119de1da507b37",
+      "captured_on": "2026-10-28",
+      "device": "iPad Air13 M2",
+      "capture_kind": "GPU output from cheat-app assembly and firing test",
+      "app_variant": "cheat",
+      "evidence": "docs/evidence/ground-aa-integrated-20261028.json",
+      "caption": "퉁구스카가 경사면에서 미사일을 발사한다. 포신 위의 레이더는 따로 회전한다.",
+      "alt": "퉁구스카가 경사면에서 미사일을 발사한다. 포신 위의 레이더는 따로 회전한다.",
+      "placement": "README 신규 지상 유닛 / Apps 복합 무장 / Mags 원작 파츠 재사용",
+      "image_edited": false
+    },
+    {
+      "id": "hud-upper-trim",
+      "path": "docs/public/media/hud-editor/release-iphone-trim.png",
+      "sha256": "1a8684c04a232a03e3cce731f208b6f64abed8b9d8dbb19114d5d517f59ebf5f",
+      "captured_on": "2026-10-29",
+      "device": "iPhone Air",
+      "capture_kind": "device screenshot, cheat app, HUD editor",
+      "app_variant": "cheat",
+      "evidence": "docs/evidence/hud-editor-release-20261029.json",
+      "caption": "상단 금속 장식을 아래로 옮긴 HUD 편집 화면. 드래그하면서 오른쪽 도구가 접혔다.",
+      "alt": "상단 금속 장식을 아래로 옮긴 HUD 편집 화면. 드래그하면서 오른쪽 도구가 접혔다.",
+      "placement": "README HUD 편집 / Apps 그림·입력 좌표 / Mags 사용자 배치 기획",
+      "image_edited": false
+    },
+    {
+      "id": "hud-moved-menu",
+      "path": "docs/public/media/hud-editor/release-iphone-menu.png",
+      "sha256": "a7c637a6c919d4e7b848d4ac853027ae891fdce55def68afee6a396e8ab9b55a",
+      "captured_on": "2026-10-29",
+      "device": "iPhone Air",
+      "capture_kind": "device screenshot, cheat app, paused gameplay",
+      "app_variant": "cheat",
+      "evidence": "docs/evidence/hud-editor-release-20261029.json",
+      "caption": "MENU를 오른쪽으로 옮겨 적용한 뒤 새 위치를 눌러 멈춤 메뉴를 열었다.",
+      "alt": "MENU를 오른쪽으로 옮겨 적용한 뒤 새 위치를 눌러 멈춤 메뉴를 열었다.",
+      "placement": "HUD 편집 상세 / Apps 터치 위치 검증",
+      "image_edited": false
+    }
+  ],
+  "supplemental_scenes": [
+    {
+      "id": "mission-without-hud-entry",
+      "path": "docs/public/media/updates-20261029/mission-without-hud-entry.png",
+      "sha256": "85f3f76620a870370377604f1a97ac04e94eb04013cb5b77f4c02a1f3b4ed19f",
+      "captured_on": "2026-10-29",
+      "device": "iPhone Air simulator iOS 26.5",
+      "capture_kind": "GPU output from HMAppleInputTests/testMissionSelectionHasNoHUDEntryAndPauseExamplePreservesSave",
+      "app_variant": "cheat",
+      "evidence": "docs/evidence/icon-and-media-20261029.json",
+      "caption": "SET GAME UI 버튼을 제거한 미션 선택 화면. HUD 편집은 전투 일시정지 메뉴에서 연다.",
+      "image_edited": false,
+      "product_source": "bc764a28"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # HeavyMach 개발 보고
 
-현재 릴리스는 **v0.13**이다. 완성분을 develop→main 순서로 병합하고 main에 태그를 붙였다. 자동조준·추가 항공기와 쉴카·퉁구스카 최종 수정을 포함한다. [GitHub 본문](github.html)에 플레이 이미지8장·GIF2개·MP4 3개를 배치했다.
+현재 릴리스는 **v0.15**다. 완성분을 develop→main 순서로 병합하고 main에 태그를 붙였다. 자동조준·추가 항공기·쉴카·퉁구스카와 HUD 위치 편집을 포함한다. [GitHub 본문](github.html)에 플레이 이미지8장·GIF2개·MP4 3개를 배치했다.
 
 Codex가 일반 앱과 치트 앱을 아이폰·아이패드에 설치했다. 내가 최신 설치본을 직접 플레이했을 때 프레임 드랍이나 오작동은 보이지 않았다. 과거 계측 수치와 당시 실패는 각 보고서에 남아 있다.
 
@@ -27,11 +27,13 @@ Codex가 일반 앱과 치트 앱을 아이폰·아이패드에 설치했다. �
 - [트러블슈팅17개](troubleshooting.html) — 내 지적, 원인·변경·결과.
 - [개발 과정](development-history.html) — 비교 순서와 사용 도구·스킬.
 - [검증 결과](validation.html) — 날짜·기기·조건별 성공과 남은 검사.
-- [변경 이력](changelog.html) — v0.9~v0.12.
+- [변경 이력](changelog.html) — v0.9~v0.15.
 - [제작자·자원](credits.html) — 원작·추가 작업·라이브러리.
 
 
 ### 플레이 화면·이미지
+
+- [글자 없는 앱 아이콘과 최신 기능 이미지](icon-and-media.html) — 아이콘 변경, 쉴카·퉁구스카 사격과 HUD 편집 화면, SaaS 집필 자료.
 
 - [플레이 영상에서 고른 이미지8장·클립3개](gameplay-media.html) — 이미지 8장 전체 배치, GIF2개·MP4 3개, GitHub 운영 절차와 스킬 조사.
 - [전체 화면·도어 전환 수정](fullscreen.html) — 게임 진입 전 화면 전환.
@@ -91,7 +93,7 @@ Mac의 표시 대기·표면 갱신·Retina 설정을 수정했다. 잠금을 �
 
 iPad Simulator는44.311~48.133ms, 변경 전 main도39.972~40.580ms로16.67ms 기준을 넘었다. Instruments에서 Simulator의 최종 화면 확대·표시가 주된 비용임을 확인했다. iPad 누수는0건이었다.
 
-자동조준은 정식·치트 앱에 적용했고 main의 v0.12에 포함돼 있다. A로 켜고 끄며 표적 전환·사격 버튼은 하단 HUD에 배치했다. C 보정은 삭제해 원래 탄속·분산을 유지한다. [구현·검사·캡처](auto-aim-progress.html), [요구·계획](auto-aim.html). 게임 시작 전 HUD 드래그 배치 편집은 남은 과제다.
+자동조준은 정식·치트 앱에 적용했고 main의 v0.12에 포함돼 있다. A로 켜고 끄며 표적 전환·사격 버튼은 하단 HUD에 배치했다. C 보정은 삭제해 원래 탄속·분산을 유지한다. [구현·검사·캡처](auto-aim-progress.html), [요구·계획](auto-aim.html). HUD 배치 편집은 v0.14에 포함됐다. v0.15에서는 미션 선택 버튼을 제거하고 전투 일시정지의 SET GAME UI에서 편집하도록 바꿨다. [HUD 편집](hud-improvement.html), [아이콘·최신 화면](icon-and-media.html).
 
 [구현 범위·검사 결과·추가 요구](apple-platforms.html)
 

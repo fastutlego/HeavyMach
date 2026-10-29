@@ -1,6 +1,6 @@
 # HeavyMach
 
-[![Git tag v0.14](docs/public/media/badges/version.svg)](https://github.com/gelb2/HeavyMach/tree/v0.14)
+[![Git tag v0.15](docs/public/media/badges/version.svg)](https://github.com/gelb2/HeavyMach/tree/v0.15)
 [![Platforms iOS iPadOS macOS](docs/public/media/badges/platforms.svg)](docs/public/validation.md)
 [![Architecture arm64](docs/public/media/badges/arch.svg)](docs/public/build-and-install.md)
 [![C++20 and Objective-C++](docs/public/media/badges/code.svg)](docs/public/architecture.md)
@@ -14,7 +14,7 @@ HeavyMach도 그중 하나다. 대학생 시절 아이팟터치에서 이 게임
 
 지인들과 소주잔을 기울이면, 내가 2015년과 2016년의 일을 계속했다면 투신자살로 생을 마감했을 거라는 이야기를 듣곤 한다. 그들이 맞는지는 아직 잘 모르겠다.
 
-HeavyMach를 만든 두 제작자는 내 수명을 9년 하고도 3개월 더 연장해 주었다.
+이해관계자가 연락하면 이 프로젝트는 내릴 것이다. HeavyMach 제작진이 내게 준 9년 3개월은 나를 만든 창조주가 나에게 최초로 할당한 수명을 초과한 값이다. 돈은 이승에서나 필요한 것이다.
 
 요즘 나는 내게 남은 시간이 많지 않다는 느낌을 받는다. 건강 문제 때문도, 극단적인 무기력 때문도 아니다. 오히려 내 정신은 한 달 전, 두 달 전, 반년 전보다 명료하다고 느낀다. 그래서 지금 무엇을 해보고, 무엇을 남기고 싶은지 생각한다. 내가 택한 일 중 하나가 HeavyMach 복원이다. 한때 내게 방향을 보여준 게임을, 개발자가 된 내가 다시 작동하게 만드는 것. 나는 이 연결을 수미상관이라고 생각한다.
 
@@ -24,15 +24,13 @@ HeavyMach를 만든 두 제작자는 내 수명을 9년 하고도 3개월 더 �
 
 그러므로 나는 내가 한 일이 거의 없다고 생각한다. 이것으로 돈을 벌 생각을 하면 더더욱 안 된다고 생각하는 것도 이 때문이다. 내가 한 것은, 내 표현을 빌리자면 Codex가 원본의 소스코드와 원작자의 미학적 성취에서 벗어나 자의적으로 잘못된 행동을 할 때 멱살을 쥐어 잡아서 따귀를 올려붙인 것뿐이다.
 
-만일 원작자 혹은 다른 이해관계자가 게시 중단을 요청하면, 난 미련없이 이 레포지토리를 지울 것이다.
-
 [개발자의 변 전문](docs/RESTORATION.md)
 
 ## 간단한 설명과 설치
 
 2009년의 횡스크롤 전차 게임 **HeavyMach**를 현재의 iPhone·iPad·Mac에서 실행하도록 다시 만들었다. 전차를 움직이고 뛰어오르며, 무기를 바꿔 지상·공중의 적과 싸운다. 원작의 전투와 성장 구조에 넓은 화면, 키보드 조작, 자동조준과 새로운 항공기를 추가했다.
 
-현재 게임 버전은 [v0.14](https://github.com/gelb2/HeavyMach/tree/v0.14)다. 일반 앱과 치트 검증 앱을 각각 설치할 수 있다. 치트 앱에서는 미션·무기·강화 조건을 지정해 같은 게임을 검사한다.
+현재 게임 버전은 [v0.15](https://github.com/gelb2/HeavyMach/tree/v0.15)다. 일반 앱과 치트 검증 앱을 각각 설치할 수 있다. 치트 앱에서는 미션·무기·강화 조건을 지정해 같은 게임을 검사한다.
 
 [설치](docs/public/build-and-install.md) · [조작](docs/public/gameplay-guide.md) · [기능](docs/public/features.md) · [트러블슈팅](docs/public/troubleshooting.md) · [전체 문서](docs/README.md)
 
@@ -68,6 +66,18 @@ Yak-141·Harrier GR3·F-35B는 기존 적 배치 사이에 추가했다. F-22·S
 
 HeavyMach는 내가 개발자가 되는 데 영향을 줬고, 에이스컴뱃 8은 출시를 기다리고 싶은 이유가 됐다. 럭스루나에의 외형과 직접 상대하며 느낀 위협을 이 게임에 담고 싶었다. [왜 럭스루나에인가](docs/public/lux-lunae-intent-20261028.md)
 
+## 내가 추가한 지상 유닛
+
+쉴카와 퉁구스카는 기존 적 배치를 유지하면서 35개 스테이지에 총 152대를 추가했다. 원작 지상 유닛의 이동과 파츠 동작을 재사용하고, 레이더는 포신과 독립적으로 회전한다.
+
+![경사면에서 흰색 총탄을 발사하는 쉴카](docs/public/media/ground-aa/shilka-height/shilka.png)
+
+쉴카는 흰색 총탄 6발을 연속 발사한다. 내 요청으로 포탑 높이를 퉁구스카와 같게 맞췄다.
+
+![경사면에서 미사일을 발사하는 퉁구스카](docs/public/media/ground-aa/integrated/ipad-tunguska.png)
+
+퉁구스카는 흰색 총탄 4발과 미사일 2발을 연속 발사한다. 실제 기기의 치트 앱에서 촬영한 두 유닛의 사격 장면이다. [파츠·무장·수정 내역](docs/public/ground-aa-art-20261028.md)
+
 ## 내가 추가한 자동조준
 
 나는 아머드 코어와 에이스 컴뱃의 표적 선택·추적을 참고해, 이동하고 점프하는 동안 포신이 적을 따라가도록 기획했다. Codex가 표적 선택과 무기별 탄도 계산, 포신 조절과 HUD 버튼을 구현했다.
@@ -90,6 +100,14 @@ HUD의 **A 버튼**으로 자동조준을 켜면 전방의 가까운 적을 선�
 
 내 플레이 녹화에서 추출한 장면이다. GIF는 원래 속도로 재생하며 소리는 MP4에 있다. [영상 시간·파일 목록](docs/public/media/gameplay-20261027/README.md)
 
+## HUD 위치 편집
+
+일시정지 메뉴의 **SET GAME UI**에서 버튼·계기판·상단 장식을 끌어 옮긴다. 버튼 그림과 터치 영역이 함께 이동한다. **APPLY**로 저장하고, **RESET LAYOUT**으로 기본 배치로 돌릴 수 있다.
+
+![아이폰 치트 앱에서 상단 장식을 아래로 옮긴 HUD 편집 화면](docs/public/media/hud-editor/release-iphone-trim.png)
+
+아이폰 치트 앱에서 상단 장식을 옮긴 화면이다. 드래그하면 오른쪽 도구가 접히고 **TOOLS**로 다시 연다. 편집 중 전투는 멈춘다. 정식 앱에도 같은 편집 기능이 있다. [MENU 이동 후 실제 조작과 검사](docs/public/app-icon-and-media-20261029.md#hud-위치-편집)
+
 ## 플랫폼과 개발 상태
 
 화면 확장, iPad·Mac 지원과 키보드 조작도 내가 추가로 요구한 기능이다. 넓은 화면에는 더 많은 월드를 표시하고, 키보드로 이동·점프·조준·발사·무기 전환과 메뉴를 모두 조작할 수 있게 했다. iPad에서는 터치·틸트와 키보드를 함께 지원한다.
@@ -103,7 +121,7 @@ HUD의 **A 버튼**으로 자동조준을 켜면 전방의 가까운 적을 선�
 
 설치한 iPhone·iPad 앱을 직접 플레이했을 때 프레임 드랍이나 오작동은 보이지 않았다. 기기별 자동 검사에는 표시시간 기준 실패가 남아 있다. [측정 조건과 결과](docs/public/validation.md)
 
-자동조준·공용 모듈·Apple 세 플랫폼·항공기 6종·지상 유닛 2종·전체 화면 도어는 구현됐다. HUD 위치 편집도 구현했다. 자동조준 상태 안내 개선, 튜토리얼 0-0~0-4, 글자를 뺀 앱 아이콘과 Android는 후속 과제다. [완료·진행·남은 과제](docs/public/implementation-status.md)
+자동조준·공용 모듈·Apple 세 플랫폼·항공기 6종·지상 유닛 2종·전체 화면 도어는 구현됐다. HUD 위치 편집도 구현했다. 자동조준 상태 안내 개선, 튜토리얼 0-0~0-4와 Android는 후속 과제다. 글자를 뺀 앱 아이콘은 v0.15에 포함했다. [완료·진행·남은 과제](docs/public/implementation-status.md)
 
 ### 남은 과제
 
@@ -133,7 +151,7 @@ python3 tools/verify_build_resources.py
 open HeavyMach.xcworkspace
 ```
 
-Xcode에서 본인의 개발 팀을 지정하고 실행 대상을 선택한다. iPhone·iPad 일반 앱은 `HeavyMachRestored`, 치트 앱은 `HeavyMachValidation`이다. Mac은 `HeavyMachMac`, `HeavyMachMacValidation`이다. 저장소를 clone하거나 [v0.14 Releases](https://github.com/gelb2/HeavyMach/releases/tag/v0.14)에서 소스·자원 압축본을 내려받은 뒤, Xcode에서 빌드해 설치한다.
+Xcode에서 본인의 개발 팀을 지정하고 실행 대상을 선택한다. iPhone·iPad 일반 앱은 `HeavyMachRestored`, 치트 앱은 `HeavyMachValidation`이다. Mac은 `HeavyMachMac`, `HeavyMachMacValidation`이다. 저장소를 clone하거나 [v0.15 Releases](https://github.com/gelb2/HeavyMach/releases/tag/v0.15)에서 소스·자원 압축본을 내려받은 뒤, Xcode에서 빌드해 설치한다.
 
 [시뮬레이터 명령·기기 설치·서명·오류 해결](docs/public/build-and-install.md)
 
@@ -162,4 +180,4 @@ HeavyMach 원작은 변해준이 개발하고 박재철이 그림을 맡았다. 
 
 이 프로젝트에서 새로 작성한 코드에는 [MIT](LICENSE)를 적용한다. [적용 범위](LICENSE-SCOPE.md)에 원작 유래 자료·외부 코드·문서를 구분했다. 원작 그림·음원·게임 데이터와 추가 그림은 [자원 이용 조건](ASSET-LICENSES.md), OpenAL Soft·stb 등은 [외부 라이브러리 고지](THIRD_PARTY_NOTICES.md)를 따른다.
 
-나는 이 복원판으로 돈을 벌 생각이 없다. [개발자의 변](docs/RESTORATION.md)에 적었다시피, 나에겐 남은 시간이 얼마 없으며, 돈은 이승에서나 필요한 것이다.
+나는 이 복원판으로 돈을 벌 생각이 없다. [개발자의 변](docs/RESTORATION.md)
