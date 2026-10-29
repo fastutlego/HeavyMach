@@ -8,6 +8,8 @@
 
 I started this project to play HeavyMach, a game I played in college, on a current iPhone. I think it contributed about 35% to my decision to become a developer in July 2017. In 2026, I instructed Codex to analyze the original behavior and implement it again from source. [Developer's statement](../RESTORATION.md)
 
+The restoration used [HeavyMach 1.13 from Internet Archive](https://archive.org/details/Heavy_Mach_1.13_ios_2.1). Codex analyzed its executable, images, sounds and game data, then compared the new implementation with the original game running. [Source and file hashes](../../source-provenance.md)
+
 <a id="게임-규칙을-소스로-옮기기"></a>
 
 ## Turning game rules into source code

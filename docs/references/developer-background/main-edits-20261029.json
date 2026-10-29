@@ -1,7 +1,8 @@
 {
   "commit": "87c6e522e8e695f9720b616cd941c07644e08f46",
   "files": {
-    "docs/RESTORATION.md": "a96acc4e097df4d9515611f9e6fdb4645c649f023f7efa265235ac4beb713330",
+    "docs/RESTORATION.md": "2f5dd00a7e4bab4e477ea74e3e3c103b49d20687fb04204b9c9811569eff62a1",
     "docs/public/lux-lunae-intent-20261028.md": "f0809010725138a8e3e4e4516b3ac201b8a752c458e8ce5c59765cd0d096f4f7"
-  }
+  },
+  "authorized_update_20261030": "Internet Archive 출처 명시 요청에 따라 복원 시작 문단의 사이트명·자료 링크만 수정했다. 나머지 사용자 본문은 유지했다."
 }

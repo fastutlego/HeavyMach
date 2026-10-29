@@ -5,8 +5,8 @@
   "documents": {
     "README.md": {
       "english": "README.en.md",
-      "source_sha256": "1aea95604c53f033ce21d12a49736b04dc28d12e08ec327e175ddd94700c2a9f",
-      "english_sha256": "14636f9ffddc5fb81e3be2653292e3d31d4186b9ba90c012114870bc45dfeaaf",
+      "source_sha256": "ae3a4f37b25864fcba457857c5cfe3b6cf1988f0035dbbdc880ffb21aa8b02ad",
+      "english_sha256": "1ce6b7e920d695e4aa92e8bafa768cfda3ec345cf7253b5e6b1a4a6d15f6a67f",
       "reviewed_numeric_difference": {
         "source_only": {
           "7": 1,
@@ -100,8 +100,8 @@
     },
     "docs/RESTORATION.md": {
       "english": "docs/en/RESTORATION.md",
-      "source_sha256": "a96acc4e097df4d9515611f9e6fdb4645c649f023f7efa265235ac4beb713330",
-      "english_sha256": "7c9d712eac96eda0e07c5bbbb84e65a2c245fc25e0294a1e2f9b19d75aa62d1c",
+      "source_sha256": "2f5dd00a7e4bab4e477ea74e3e3c103b49d20687fb04204b9c9811569eff62a1",
+      "english_sha256": "dd1cecba0e4d8052fc6072092cdc7ca1dbef13296d6d4cdbb80fe4f2f82ed87c",
       "reviewed_numeric_difference": {
         "source_only": {
           "7": 1,
@@ -187,8 +187,8 @@
     },
     "docs/public/development-history.md": {
       "english": "docs/en/public/development-history.md",
-      "source_sha256": "fc8892198bc9076acbdf71283c48b53030f4b59ca3507d5e8c7cacdadd641ab4",
-      "english_sha256": "61be358346f1d8a5d7f590670f5199ecc842b150f0b9353111725574383442eb",
+      "source_sha256": "b91a54003c21cd8d8e19e507956d307bb47c5ed35ae14580cc5ab9ebbbf5c223",
+      "english_sha256": "5c3766a1d7f27520a70ae2b55edda728509d65c0698373921b6f15ea98543698",
       "reviewed_numeric_difference": {
         "source_only": {
           "7": 1,

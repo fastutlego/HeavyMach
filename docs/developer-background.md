@@ -67,3 +67,7 @@ SaaS 홈페이지는 이번 웹 조회에서 시간 초과로 읽지 못했다. 
 ## 2026-10-29 문장 변경
 
 [추가 원문](references/developer-background/user-foreword-20261029.md)의 게시 중단·9년 3개월·수익에 관한 문장을 README 첫 소개와 개발자의 변에 같은 문단으로 반영했다.
+
+## 원본을 받은 사이트 — 2026-10-30
+
+사용자가 최초 복원 원본의 Internet Archive 출처 확인과 GitHub 명시를 지시했다. 최초 보관본과 재다운로드의 SHA-256이 같음을 확인했다. README·개발자의 변·개발 과정에서 [HeavyMach 1.13 자료](https://archive.org/details/Heavy_Mach_1.13_ios_2.1)를 연결한다. [출처 증거](source-provenance.md).

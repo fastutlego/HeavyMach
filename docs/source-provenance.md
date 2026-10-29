@@ -1,6 +1,6 @@
 # 원본과 증거 출처
 
-2026-10-24 기준. 외부 페이지 내용의 새 검증이 아니라 사용자 제공 링크와 기존 확보 증거를 기록한다.
+2026-10-24에 확보한 원본과 분석 증거다. 2026-10-30에 같은 Internet Archive 모음의 파일을 다시 받아 최초 보관본과 SHA-256을 대조했다.
 
 ## 입력 경로
 
@@ -46,3 +46,7 @@ Clutch-2.0.4는 아카이브 이름의 도구 표기다. Assault 앱 버전은 I
 ## 빌드 자원 관리 — 2026-10-26
 
 앱에서 읽는 OriginalImages 695개, 변환 Images 695개, Audio 31개, RawData 46개, 앱 아이콘 구성 3개, 이미지 비교 자료 1개를 Git/LFS에 포함한다. 기존 Art/Extensions 4개와 합쳐 [자원 목록](build-resources.json) 1,475개를 관리한다. 이번 변경은 기존 파일의 바이트를 수정하지 않는다. `python3 tools/verify_build_resources.py`로 크기·SHA-256을 검사한다. 원본 IPA와 ARMv6 실행 파일은 앱 빌드 입력에 포함하지 않는다.
+
+## Internet Archive 원본 재대조 — 2026-10-30
+
+최초 복원에 사용한 `Heavy_Mach_1.13_ios_2.1.ipa`와 모음의 `HeavyMach v1.13 - (kr.connect.touch.HeavyMach.game).ipa`는 SHA-256이 `477c672f92110c6020be3f744dfa7a3456739e6f970c66715e3b7b3cd32b7776`으로 같다. 최초 Assault 비교본도 이번 모음의 Clutch 표기 파일과 바이트가 같다. [19개 파일 확보·패키지 검사](research/series-acquisition-20261030.json), [타이틀별 결과](related-titles-20261026.md#전체-파일-확보--2026-10-30).

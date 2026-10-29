@@ -2,6 +2,8 @@
 
 2026-10-26에 Codex가 내가 전달한 Internet Archive 검색과 그 검색에서 선택한 모음을 조사했다. **Heavy Mach 2, Heavy Mach 2 HD, Mach Defense, Heavy MACH: Defense의 IPA가 모두 있다.** 중단한 Defense 작업도 원격 저장소와 로컬 폴더에서 찾았다.
 
+2026-10-30에 아래 모음의 IPA 19개를 모두 내려받고 서버 SHA-1·파일 크기·ZIP CRC를 검사했다. [확보 결과](#전체-파일-확보--2026-10-30).
+
 ## 원래 링크에서 확인한 파일
 
 출발점은 [내가 전달한 검색](https://archive.org/search?query=heavy+mach&tab=all), 파일 모음은 [Heavy MACH IPA Archive](https://archive.org/details/heavy-mach-archive_202406)다. 상세 페이지의 브라우징 도구 조회는 실패했으나 [Archive 메타데이터 API](https://archive.org/metadata/heavy-mach-archive_202406)를 직접 조회해 IPA 19개의 이름·크기·SHA-1을 받았다.
@@ -26,7 +28,7 @@
 | Mach_Defense v1.0.5 | 62,698,352 | 72ade18b5c5b62e37e9e71363597136559518cbe |
 | MachDefense v1.0.3, WeMade | 62,512,014 | 1e22f0c772cb5ec23525dd34ca5157c733d502bc |
 
-파일 전체를 내려받거나 해독·실행하지는 않았다. 위 SHA-1은 서버가 제공한 값이다. 새 복원에 사용할 때는 실제 다운로드의 SHA-256도 계산하고 아키텍처·암호화 상태·호환 실행 여부를 별도로 확인한다. Heavy MACH: Battle은 모음의 검색어에는 있지만, 현재 19개 IPA 목록에는 없다. 다른 항목이나 `Extra/HeavyMachTrailers.7z` 내부의 존재까지 조사한 결과는 아니다.
+2026-10-26 조사에서는 파일 전체를 내려받거나 해독·실행하지 않았다. 위 SHA-1은 서버가 제공한 값이다. 새 복원에 사용할 때는 실제 다운로드의 SHA-256도 계산하고 아키텍처·암호화 상태·호환 실행 여부를 별도로 확인한다. Heavy MACH: Battle은 모음의 검색어에는 있지만, 현재 19개 IPA 목록에는 없다. 다른 항목이나 `Extra/HeavyMachTrailers.7z` 내부의 존재까지 조사한 결과는 아니다.
 
 전체 파일명과 서버 해시는 [19개 IPA 목록](https://github.com/gelb2/HeavyMach/blob/main/docs/research/related-title-archive-20261026.csv), 네 다운로드 주소와 응답은 [조사 근거 JSON](https://github.com/gelb2/HeavyMach/blob/main/docs/research/android-and-titles-evidence-20261026.json)에 보존했다.
 
@@ -55,4 +57,31 @@
 3. 선택한 IPA별 해시·Info.plist·Mach-O 아키텍처·암호화·자원 목록을 REA 기록으로 남긴다. 실행 가능한 비교판을 확보한 뒤 저장·메뉴·전투·수치를 대조한다.
 4. Defense는 현재 Kotlin 소스와 남은 TODO를 이어서 조사한다. 현재 HeavyMach 1의 C++ 소스와는 다른 게임이다. 두 프로젝트의 게임 로직을 합치지 않는다.
 
-이번 요청에서 완료한 것은 타이틀 존재 확인과 중단 작업 위치 조사다. 후속 타이틀 다운로드·디컴파일·복원 개발은 아직 시작하지 않았다.
+2026-10-26에는 타이틀 존재와 중단 작업 위치를 확인했다. 2026-10-30에 파일 확보와 패키지 검사를 추가했다. 후속 타이틀의 복원 개발은 미착수다.
+
+## 전체 파일 확보 — 2026-10-30
+
+[Internet Archive 모음](https://archive.org/details/heavy-mach-archive_202406)의 IPA **19개, 858,465,819바이트**를 원래 파일명과 폴더 구조로 보관했다. 19개 모두 서버 SHA-1과 크기가 일치하고 ZIP CRC 검사를 통과했다. 파일별 SHA-256, Info.plist, 실행 파일의 아키텍처·암호화 표시는 [확보 기록](research/series-acquisition-20261030.json)에 있다.
+
+로컬 보관 폴더: `/Users/sokol/Documents/Codex/Originals/HeavyMach/heavy-mach-archive_202406`.
+
+| 타이틀 | 확보 수 | 패키지에서 확인한 기기 |
+|---|---:|---|
+| HeavyMach 1 | 8 | 초기 iPhone 계열 |
+| HeavyMach 2 | 4 | 2.0.1의 UIDeviceFamily는 `[1]`: iPhone·iPod touch |
+| HeavyMach 2 HD | 2 | 두 버전 모두 `[2]`: iPad |
+| Mach Defense | 2 | 두 버전 모두 `[1, 2]`: iPhone·iPad |
+| Heavy MACH: Defense | 1 | `[1, 2]`: iPhone·iPad |
+| Heavy MACH: Assault | 2 | 두 파일 모두 `[1]`: iPhone·iPod touch |
+
+HeavyMach 2와 2 HD의 차이를 아이폰판·아이패드판으로 기억한 것이 맞다. 초기 HeavyMach 2 세 버전에는 UIDeviceFamily 키가 없으며, 위 기기 구분은 2.0.1과 HD 두 버전에서 확인했다. [Apple 기기 식별 값 설명](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW11).
+
+### Assault는 어떤 판본인가
+
+**Heavy MACH: Assault는 HeavyMach 1을 위메이드가 이름을 바꾸고 무료화한 판본이다.** 2011년 10월 11일 발표는 10월 19일 업데이트와 함께 이 관계를 명시했다. 같은 발표에서 HeavyMach 2의 새 이름을 Heavy MACH: Battle로 소개했다. [당시 발표](https://www.newswire.com/news/the-heavy-mach-trilogy-for-ios-will-be-free-to-play-172675).
+
+이번에 확보한 Assault 두 파일의 앱 버전은 모두 **1.0.3**이다. 파일명의 `Clutch-2.0.4`는 추출 도구 표기다. 일반 파일의 실행 파일은 `cryptid=1`, Clutch 표기 파일은 `cryptid=0`이다. 앱 내부 파일 805개가 같고, 실행 파일·CodeResources와 SC_Info 포함 여부가 다르다.
+
+Clutch 표기 파일은 최초 복원 때 보조 분석에 사용한 Assault와 SHA-256이 같다. 기존 분석에서 Life 구매·광고·Game Center와 일부 스테이지 변경을 확인했다. HeavyMach 1.13의 무기·부품 데이터와 WAV 31개는 Assault와 같다. [1.13과 Assault 비교](heavy-mach-113-assault-analysis-20261024.md).
+
+최초 복원 기준 HeavyMach 1.13도 이번 모음의 `kr.connect.touch.HeavyMach.game` 판본과 SHA-256이 같다. README·개발자의 변·개발 과정의 국문과 영문에 Internet Archive 자료 링크를 추가했다. [출처와 원본 해시](source-provenance.md).
