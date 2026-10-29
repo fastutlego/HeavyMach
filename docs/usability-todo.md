@@ -374,6 +374,8 @@ Apple의 scene 기반 앱에서는 `sceneWillResignActive`가 일시적 중단�
 - [x] Android 유선·무선 설치·실행·로그·종료 도구와 전용 스킬 작성.
 - [x] Galaxy USB 설치·실행과 Wi-Fi 연결의 기기 일치 확인.
 - [x] USB를 뺀 Galaxy에서 일반·치트 재설치·저장 보존·실행·로그·종료·홈 복귀 확인. 최종 실행 검사 11개 통과.
+- [x] Android 미션 진입 시 남은 경험치로 열린 강화 창의 정지·버튼 처리 수정. 에뮬레이터·Galaxy 각 12개 검사.
+- [ ] Apple 호스트의 같은 미션 시작 정지 해제 순서가 남은 경험치 조건에서 재현되는지 별도 확인. 이번 수정에서 Apple 파일은 변경하지 않음.
 - [ ] 전체 미션의 실제 클리어·성장·서바이벌 장시간 플레이와 태블릿 실기기·16KB 페이지 기기 검사.
 - [ ] 확장 에셋 축소 결과의 Apple/Android 시각 대조. Android는 area prefilter, Apple은 CoreGraphics 축소를 사용한다.
 - [ ] 배포용 서명 키·release APK와 공개 설치 문서. 현재 APK는 최적화한 debug 서명 빌드다.

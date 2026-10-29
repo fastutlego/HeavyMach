@@ -2,7 +2,7 @@
 
 HeavyMach에 관해 내가 쓴 원문과 기술 설명·수정 과정·이미지를 이 저장소에 모았다. Apps는 기술 설명, Mags는 매거진 인터뷰 형식이다. 두 곳 모두 현재 기능과 시정 과정을 다룬다. SaaS 담당 세션이 이 자료로 원고를 작성하고 서비스에 반영한다.
 
-집필은 이 저장소 **main의 최신 문서**에서 시작한다. 게임 릴리스는 **v0.15**다. 이후 추가한 글과 이미지 설명은 main에 있다.
+집필은 이 저장소 **main의 최신 문서**에서 시작한다. Apple 게임 릴리스는 **v0.16**이다. Android 추가 자료는 `feat/android-app`의 [개발 원고](android-development-20261030.md)에 있다. 이후 추가한 글과 이미지 설명은 main에 있다.
 
 ```sh
 python3 tools/document_contract.py plan --task developer_story
@@ -135,3 +135,9 @@ Mags의 답변은 개발자의 변과 제공 원문을 바탕으로 쓴다. 추�
 Apps에는 지상 유닛의 파츠·무장과 HUD 그림/터치 위치 공유를 설명할 때 쓴다. Mags에는 내가 지정한 유닛 조건과 화면 배치 요구를 설명하는 장면으로 쓴다. 이 작업에서는 Apps·Mags 본문을 작성하거나 sass.studio를 수정하지 않았다.
 
 새 아이콘은 [1024px PNG](media/app-icon-20261029/icon.png), 생성·파생 파일은 [아이콘 원본 폴더](../../Art/AppIcon/20261029/README.md)에 있다. 현재 공개 게임 태그는 v0.15이며 새 아이콘의 병합·배포 상태는 [현재 상태](../current-status.md)를 확인한다.
+
+## Android판 · 2026-10-30
+
+[Android 개발 원고](android-development-20261030.md)를 Apps의 플랫폼 확장 설명과 Mags의 개발 과정 문답에 사용한다. 개발 기간, Apple 소스를 바꾸지 말라는 지시, 공유 코어·자원, Android 전용 파일, 빌드·입력·GPU·무선 연결 수정과 직접 플레이에서 발견한 업그레이드 오류를 담았다.
+
+세부 수치는 [구현 기록](../android-implementation-20261030.md), [시간 근거](../evidence/android-development-timeline-20261030.json), [업그레이드 오류 증거](../evidence/android-upgrade-fix-20261030.json)에 있다. [이미지와 캡션](media/android-20261030/scenes.json)은 타이틀·보스 전투·오류 전후 5장이다. Android 자료는 아직 작업 브랜치에 있으며 Apple 릴리스와 구분한다.

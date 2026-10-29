@@ -322,7 +322,8 @@
         ".agents/skills/port-heavymach-android/SKILL.md",
         "Android/README.md",
         "docs/android-implementation-20261030.md",
-        ".agents/skills/debug-heavymach-android/SKILL.md"
+        ".agents/skills/debug-heavymach-android/SKILL.md",
+        "docs/public/android-development-20261030.md"
       ],
       "sources": [
         "CMakeLists.txt",
@@ -349,14 +350,17 @@
         "Android/tools/validate_campaign.py",
         "Android/tools/verify_apks.py",
         "Android/tools/measure_combat.py",
-        "Android/tools/validate_tilt.py"
+        "Android/tools/validate_tilt.py",
+        "Android/tools/validate_upgrade.py"
       ],
       "evidence": [
         "docs/evidence/android-app-20261030.json",
         "docs/evidence/android-isolation-20261030.json",
         "docs/evidence/android-boundaries-20261030.json",
         "docs/research/android-and-titles-evidence-20261026.json",
-        "docs/current-status.md"
+        "docs/current-status.md",
+        "docs/evidence/android-upgrade-fix-20261030.json",
+        "docs/evidence/android-development-timeline-20261030.json"
       ]
     },
     "developer_story": {

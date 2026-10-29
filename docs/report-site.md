@@ -762,3 +762,11 @@ VTOL 첫 생성 프롬프트와 스킬 수정 커밋을 대조했다. 요청에 
 - source: `2d47a120a1f504848defa5af14cb705c8dfdc6c6`
 - deployment: `appgdep_6ae3925be7f08191ab59bbcf5db1dcfd` · succeeded
 - 소유자 전용 접근 유지. 두 페이지의 내부 파일·앵커와 캡처 5개를 검사했다. 이번 게시의 브라우저 화면 검사는 CUA 접근 실패로 수행하지 못했다.
+
+## 2026-10-30 Android 개발 과정·업그레이드 오류 수정
+
+[개발 원고](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/android-development.html)에 기간·공유 코어·전용 구현·수정 내역과 게임 화면5장을 게시했다. 기존 Android 검사 보고서의 갤러리·절 앵커를 유지하고 후속 수정 링크를 추가했다.
+
+- source: `d3ca9446a4fc39a8730777bed681c1a4b696ff41`
+- deployment: `appgdep_6ae3984f01588191aabb6195df43cbc1` · succeeded
+- 소유자 전용 접근 유지. 새 원고 링크와 이미지 파일을 검사했다. 브라우저 화면 검사는 수행하지 않았다.

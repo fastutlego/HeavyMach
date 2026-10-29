@@ -71,3 +71,7 @@ Galaxy에서 보스 구간을 예열한 뒤 45초간 사격했다. SurfaceFlinge
 - 배포용 서명과 release APK. 지금 설치한 일반·치트 APK는 최적화한 debug 서명 빌드다.
 
 [현재 과제](usability-todo.md#2026-10-26-후속-타이틀android-apk) · [개발 계획](android-port-plan-20261026.md) · [문서 목차](index.md)
+
+## 2-1 진입 업그레이드 오류 수정
+
+저장된 경험치 2,415와 표시 레벨4에서 미션 시작 시 레벨5 업그레이드가 열렸으나 화면 시작 코드가 정지를 풀었다. 전투가 진행되고 강화 버튼이 입력 조건에서 거부됐다. Android 호스트가 강화 완료까지 정지를 유지하도록 수정했다. 에뮬레이터·Galaxy 각각 12개 검사 통과 후 일반·치트 APK를 다시 설치했다. [개발 원고와 화면](public/android-development-20261030.md), [검사 증거와 새 APK 해시](evidence/android-upgrade-fix-20261030.json).

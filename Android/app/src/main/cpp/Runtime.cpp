@@ -23,7 +23,7 @@ Runtime::Runtime(AAssetManager* a,std::string files):assets_(a),files_(std::move
  random_=uint32_t(std::chrono::steady_clock::now().time_since_epoch().count())|1u;
  loadData();auto bytes=readLocal(files_+"/HvM.dat");if(!bytes.empty())_save=heavymach::SaveData::decode(bytes);
  loadSettings();hudOwner_=std::make_unique<HUD>(_media);_hud=hudOwner_.get();menuOwner_=std::make_unique<Menus>(_media,&_save,&_data);_menus=menuOwner_.get();
- _hud->button=[this](int i,int s){gameButton(i,s);};_hud->upgradeClosed=[this]{if(_session){_session->finishUpgradeSlide();consumeGameEvents();}};
+ _hud->button=[this](int i,int s){gameButton(i,s);};_hud->upgradeClosed=[this]{if(_session){_session->finishUpgradeSlide();if(_resumeRequired)pauseForInterruption();consumeGameEvents();}};
  _menus->random31=[this]{return nextOriginalRandom();};_menus->changeScreen=[this](int s){requestScreen(s);};_menus->startGame=[this](int s,int m,int mi,int st){startSlot(s,m,mi,st);};_menus->saveChanged=[this]{persistSave();};
  _menus->slotSelected=[this](int s){_originalSelectedSlot=&_save.slots.at(s);};
  _menus->previewPlayerCreated=[this]{_ammoPreview=_hud->changeWeaponForSlot(_originalSelectedSlot,_originalSelectedWeapon,_originalWeaponSlot,_originalWeaponIndex,_time).value_or(_ammoPreview);};
@@ -74,7 +74,7 @@ void Runtime::startSlot(int slot,int mode,int mission,int stage){
 #else
  _session->start(mode,mission,stage,_retainedWorldTime);
 #endif
- _session->setAimMode(_preferredAimMode);_hud->setGameStart(_time);consumeGameEvents();_session->setPaused(false);lastInteraction_=realTime_;if(_resumeRequired){pauseForInterruption();_session->prepareInitialPausedFrame();}
+ _session->setAimMode(_preferredAimMode);_hud->setGameStart(_time);consumeGameEvents();_session->setPaused(_session->player()&&_session->player()->upgradeStep!=0);lastInteraction_=realTime_;if(_resumeRequired){pauseForInterruption();_session->prepareInitialPausedFrame();}
 }
 void Runtime::preloadScreen(int screen){
  std::vector<std::string> names;
@@ -110,7 +110,7 @@ void Runtime::consumeGameEvents(){
   else if(e.kind==SessionEventKind::AudioName)_media->sound(e.text,e.pan);
   else if(e.kind==SessionEventKind::PersistSave)persistSave(e.savedSlot);
   else if(e.kind==SessionEventKind::CombatUI)switch(CombatEventKind(e.code)){case CombatEventKind::ReloadGauge:_reloadGauge=e.value;_hud->setReloadGauge(e.value);break;case CombatEventKind::ReloadComplete:_ammoPreview=-1;_hud->setReloadComplete(_time);break;case CombatEventKind::ChargePreview:_ammoPreview=int(e.value);break;default:break;}
-  else if(e.kind==SessionEventKind::PlayerUI)switch(PlayerEventKind(e.code)){case PlayerEventKind::Quake:_worldShake.setQuake(e.value,e.amount,e.delay,_time);break;case PlayerEventKind::HPGauge:_hpGauge=e.value;_hud->setHPGauge(e.value);break;case PlayerEventKind::UpgradeOpen:_hud->openUpgrade(_save.slots.at(_slotIndex));break;case PlayerEventKind::UpgradeClose:_hud->closeUpgrade();break;case PlayerEventKind::ExperienceGauge:_expGauge=e.value;break;case PlayerEventKind::WeaponInventory:_ammoPreview=-1;_hud->showWeaponChange(_time);break;default:break;}
+  else if(e.kind==SessionEventKind::PlayerUI)switch(PlayerEventKind(e.code)){case PlayerEventKind::Quake:_worldShake.setQuake(e.value,e.amount,e.delay,_time);break;case PlayerEventKind::HPGauge:_hpGauge=e.value;_hud->setHPGauge(e.value);break;case PlayerEventKind::UpgradeOpen:cancelGameInput();_gameMenu=false;_hud->setMenuVisible(false);_hud->openUpgrade(_save.slots.at(_slotIndex));break;case PlayerEventKind::UpgradeClose:_hud->closeUpgrade();break;case PlayerEventKind::ExperienceGauge:_expGauge=e.value;break;case PlayerEventKind::WeaponInventory:_ammoPreview=-1;_hud->showWeaponChange(_time);break;default:break;}
   else if(e.kind==SessionEventKind::WorldUI)switch(WorldEventKind(e.code)){case WorldEventKind::Quake:_worldShake.setQuake(10,4,.3f,_time);break;case WorldEventKind::GameStart:_hud->setGameStart(_time);break;case WorldEventKind::ClearTileResources:_media->releaseScope("world");break;case WorldEventKind::ChangeScreen:requestScreen(e.index);break;default:break;}
   else if(e.kind==SessionEventKind::Unsupported)throw std::runtime_error(e.text);
  }
@@ -125,13 +125,13 @@ void Runtime::gameButton(int id,int state){
  if(id==1000&&state==0){if(!w.paused){_session->booster();_media->sound("UI_Click");}return;}if(state!=2)return;
  if(w.paused&&(id==100||id==1100))return;if(!w.paused&&((id>=101&&id<=104)||(id>=1200&&id<=1202)||id==1300))return;
  switch(id){case 100:cancelGameInput();_gameMenu=true;_hud->setMenuVisible(true);_session->setPaused(true);_media->sound("UI_Click");break;
- case 101:_resumeRequired=false;_tilt={};_gameMenu=false;_hud->setMenuVisible(false);_session->setPaused(w.gameState!=0);_media->sound("UI_Click");break;
+ case 101:if(!_gameMenu||(_session->player()&&_session->player()->upgradeStep!=0))return;_resumeRequired=false;_tilt={};_gameMenu=false;_hud->setMenuVisible(false);_session->setPaused(w.gameState!=0);_media->sound("UI_Click");break;
  case 102:_resumeRequired=false;_session->setPaused(false);_gameMenu=false;_hud->setMenuVisible(false);_media->sound("UI_Click");persistSave();requestScreen(3);break;
  case 103:if(w.paused){_media->sound("UI_Click");pendingURL="http://www.indiean.com";}break;
  case 104:if(_gameMenu&&w.gameState==0){openHUDEditor();_media->sound("UI_Click");}break;
  case 1100:_session->cycleWeapon();_media->sound("Game_ChangeWeapon");break;
- case 1200:case 1201:case 1202:_session->selectUpgrade(id-1200);break;
- case 1300:_resumeRequired=false;_session->confirmUpgrade();break;}
+ case 1200:case 1201:case 1202:if(_session->player()&&_session->player()->upgradeStep==1)_session->selectUpgrade(id-1200);break;
+ case 1300:if(_session->player()&&_session->player()->upgradeStep==1){_resumeRequired=false;_session->confirmUpgrade();}break;}
  consumeGameEvents();
 }
 void Runtime::advanceOriginalFrame(){
@@ -343,7 +343,7 @@ void Runtime::command(const std::string& name,int a,int b,int c,int d){
  (void)a;(void)b;(void)c;(void)d;
 #endif
 }
-std::string Runtime::diagnostics(){std::ostringstream s;s<<"{\"frames\":"<<_media->frames<<",\"drawCalls\":"<<_media->_drawCalls<<",\"uploads\":"<<_media->uploads<<",\"contexts\":"<<_media->contextCreations<<",\"editor\":"<<(_hudEditing?"true":"false")<<",\"time\":"<<_time<<",\"canvas\":["<<_canvasWidth<<','<<_canvasHeight<<"],\"saveWrites\":"<<saveWrites_<<",\"hudWrites\":"<<hudWrites_<<",\"voices\":"<<_media->audio->voices()<<",\"audioStarts\":"<<_media->audio->starts()<<",\"audioStops\":"<<_media->audio->stops()<<",\"audioActive\":"<<(_media->audio->isActive()?"true":"false")<<",\"active\":"<<(_active?"true":"false")<<",\"error\":\""<<escape(error)<<'"';if(_session){auto*p=_session->player();auto stage=_session->stage();s<<",\"worldTime\":"<<_session->world().gameTime<<",\"mission\":"<<stage.mission<<",\"stage\":"<<stage.stage<<",\"paused\":"<<(_session->world().paused?"true":"false")<<",\"x\":"<<(p?p->position.x:0)<<",\"y\":"<<(p?p->position.y:0)<<",\"hp\":"<<(p?p->hp:0)<<",\"enemies\":"<<_session->enemyCount()<<",\"bullets\":"<<_session->bulletCount()<<",\"weapon\":"<<_session->selectedWeapon()<<",\"aim\":"<<int(_session->aimMode())<<",\"aimTarget\":"<<_session->aimSnapshot().target<<",\"aimStatus\":"<<int(_session->aimSnapshot().status)<<",\"assistedShots\":"<<_session->aimSnapshot().assistedShots<<",\"targetHits\":"<<_session->aimSnapshot().targetHits;
+std::string Runtime::diagnostics(){std::ostringstream s;s<<"{\"frames\":"<<_media->frames<<",\"drawCalls\":"<<_media->_drawCalls<<",\"uploads\":"<<_media->uploads<<",\"contexts\":"<<_media->contextCreations<<",\"editor\":"<<(_hudEditing?"true":"false")<<",\"time\":"<<_time<<",\"canvas\":["<<_canvasWidth<<','<<_canvasHeight<<"],\"saveWrites\":"<<saveWrites_<<",\"hudWrites\":"<<hudWrites_<<",\"voices\":"<<_media->audio->voices()<<",\"audioStarts\":"<<_media->audio->starts()<<",\"audioStops\":"<<_media->audio->stops()<<",\"audioActive\":"<<(_media->audio->isActive()?"true":"false")<<",\"active\":"<<(_active?"true":"false")<<",\"error\":\""<<escape(error)<<'"';if(_session){auto*p=_session->player();auto stage=_session->stage();const auto& slot=_save.slots.at(_slotIndex);s<<",\"level\":"<<slot.level()<<",\"experience\":"<<slot.experience()<<",\"upgradeStep\":"<<(p?p->upgradeStep:0)<<",\"gameMenu\":"<<(_gameMenu?"true":"false")<<",\"grades\":["<<int(slot.bytes[0x2f])<<','<<int(slot.bytes[0x2e])<<','<<int(slot.bytes[0x2d])<<']';s<<",\"worldTime\":"<<_session->world().gameTime<<",\"mission\":"<<stage.mission<<",\"stage\":"<<stage.stage<<",\"paused\":"<<(_session->world().paused?"true":"false")<<",\"x\":"<<(p?p->position.x:0)<<",\"y\":"<<(p?p->position.y:0)<<",\"hp\":"<<(p?p->hp:0)<<",\"enemies\":"<<_session->enemyCount()<<",\"bullets\":"<<_session->bulletCount()<<",\"weapon\":"<<_session->selectedWeapon()<<",\"aim\":"<<int(_session->aimMode())<<",\"aimTarget\":"<<_session->aimSnapshot().target<<",\"aimStatus\":"<<int(_session->aimSnapshot().status)<<",\"assistedShots\":"<<_session->aimSnapshot().assistedShots<<",\"targetHits\":"<<_session->aimSnapshot().targetHits;
 #if HM_VALIDATION
  s<<",\"shots\":"<<observedShots_;
 #endif
