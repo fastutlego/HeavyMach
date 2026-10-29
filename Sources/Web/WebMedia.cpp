@@ -169,6 +169,11 @@ void Media::draw(const std::string& name,double x,double y,long columns,long row
     if(!prepareTexture(name,*glRenderer_))return;
     glRenderer_->drawImage(key,columns,rows,tile,{x-cameraOffset_.x,y-cameraOffset_.y},{sx,sy},r,a,blend,rgb565Images_.contains(key));
 }
+void Media::drawRegion(const std::string& name,Rect source,Rect destination){
+    if(!glRenderer_||!prepareTexture(name,*glRenderer_))return;
+    const std::string key=resourceKey(name);
+    glRenderer_->drawRegion(key,source,destination,rgb565Images_.contains(key));
+}
 void Media::drawJoinedBackground(const std::string& name,double x,double y,double scale,double rotation){
     if(!glRenderer_)return;
     if(!prepareTexture(name,*glRenderer_))return;

@@ -41,6 +41,9 @@ std::string format(const char *pattern,int a,int b) {
 struct GameHUD::State {
     GameHUD& _owner;
     Media& _media;
+    heavymach::hud::Configuration _layout;
+    int _layoutGroup=0;
+    bool _editingLayout=false;
     int _keyboardFocus=0;
     bool _keyboardFocusVisible=false;
     std::vector<HUDButton> _buttons;
@@ -51,12 +54,38 @@ struct GameHUD::State {
     // 0x169b0, 0x1767c, 0x178f0 store g_time after truncdfsf.
     float _startTime=0,_reloadTime=0,_weaponTime=0;
     float _hp=0,_hpDest=0,_hpRotation=0,_gear=0,_gearVelocity=0;
-    std::array<float,3> _menuX{};
+    std::array<float,4> _menuX{};
     float _upgradeX=0;
     std::array<uint8_t,3> _upgradeGrades{};
 
     State(GameHUD& owner,Media& media):_owner(owner),_media(media) {
-        _pressed=-1;_startTime=_reloadTime=_weaponTime=-1;_menuX.fill(-240);_hpDest=0;_upgradeX=-240;
+        _layoutGroup=-1;_pressed=-1;_startTime=_reloadTime=_weaponTime=-1;_menuX.fill(-240);_hpDest=0;_upgradeX=-240;
+    }
+    void useLayoutGroup(int group) {
+        _layoutGroup=group;
+        if(!_layout.customized())return;
+        auto t=group<0?_layout.legacy:_layout.group(group).transform;
+        _media.setDrawingOffset(makePoint(t.offset.x,t.offset.y));_media.setDrawingScale(t.scale);
+        if(group<0){auto r=_layout.legacy.apply(heavymach::hud::Rect{0,0,480,320});_media.setClipRect(makeRect(r.x,r.y,r.width,r.height));}
+        else {auto r=_layout.group(group).visualBounds;_media.setClipRect(makeRect(r.x,r.y,r.width,r.height));}
+    }
+    void drawLayoutBackground() {
+        using namespace heavymach::hud;
+        if(!_layout.customized()){image("GameUI_Btm.png",240,32);image("GameUI_Top.png",240,288);return;}
+        const int ids[]={jump,weapon,gauges,aim,progress,menu};
+        const hmweb::Rect sources[]={makeRect(0,0,72,64),makeRect(72,0,88,64),makeRect(160,0,174,64),makeRect(334,0,146,64),makeRect(0,0,102,27),makeRect(0,27,76,37)};
+        for(int n=0;n<6;++n){int g=ids[n];useLayoutGroup(g);hmweb::Rect src=sources[n];bool top=n>=4;
+            hmweb::Rect dest=makeRect(src.origin.x,top?320-maxY(src):64-maxY(src),src.size.width,src.size.height);
+            _media.drawRegion(top?"GameUI_Top.png":"GameUI_Btm.png",src,dest);
+            // Existing riveted vertical metal border closes the exposed rail ends.
+            if(n<4&&_layout.positions[g]){for(double x:{minX(dest),maxX(dest)-4})_media.drawRegion("GameUI_Top.png",makeRect(0,0,4,27),makeRect(x,0,4,19));}
+            if(g==progress&&_layout.positions[g])_media.drawRegion("GameUI_Top.png",makeRect(0,0,4,27),makeRect(98,293,4,27));
+        }
+        // Remaining upper artwork belongs to a movable decoration, never a game receiver.
+        useLayoutGroup(upperTrim);
+        _media.drawRegion("GameUI_Top.png",makeRect(102,0,378,27),makeRect(102,293,378,27));
+        _media.drawRegion("GameUI_Top.png",makeRect(76,27,404,37),makeRect(76,256,404,37));
+        useLayoutGroup(-1);
     }
 
     void sprite(const std::string& name,double x,double y,int columns,int rows,int tile,double sx,double sy,double rotation,double alpha,int blend) {
@@ -84,18 +113,49 @@ struct GameHUD::State {
         if(identifier==1300){motion.pushDepth=motion.releaseHeight=1;motion.releaseDelay=.1f;}
         int frame=motion.pressed&&enabled?tile+1:tile;
         sprite(name,x,y+motion.yOffset(_time,enabled),columns,rows,frame,1,1,0,1,0);
-        if(enabled){Size imageSize=_media.imageSize(name);if(imageSize.width>0)_buttons.push_back({identifier,key,makeRect(x-imageSize.width/columns/2,y-imageSize.height/rows/2,imageSize.width/columns,imageSize.height/rows)});}
+        if(enabled){Size z=_media.imageSize(name);if(z.width>0){Rect b=makeRect(x-z.width/columns/2,y-z.height/rows/2,z.width/columns,z.height/rows);
+            if(_layoutGroup>=0&&_layout.customized()){auto t=_layout.group(_layoutGroup).transform;auto q=_layout.legacy.inverse(t.apply(heavymach::hud::Point{b.origin.x,b.origin.y}));b.origin=makePoint(q.x,q.y);}
+            _buttons.push_back({identifier,key,b});}}
+    }
+    // Compose SET GAME UI from the original menu's small-cap letters. Both
+    // states sample the existing atlas; no new font, bitmap or per-frame rasterization.
+    void drawHUDLayoutButton(double x,double y) {
+        auto& motion=_buttonStates[104];
+        motion.pushDepth=motion.releaseHeight=motion.releaseDelay=0;motion.pushDelay=.1f;
+        const int stateY=motion.pressed?40:0;
+        const double bottom=y-20+motion.yOffset(_time,true);
+        struct Letter {int x,y,width;};
+        // S, E, T, space, G, A, M, E, space, U, I.
+        // VISIT is one pixel lower in its atlas row; align its T/I and plate edges.
+        constexpr Letter letters[]={{25,80,16},{66,0,13},{68,161,13},{0,0,8},
+            {146,0,17},{163,0,15},{178,0,16},{195,0,12},{0,0,8},{93,0,15},{88,161,7}};
+        double width=0;for(auto letter:letters)width+=letter.width+1;
+        double left=x-(width-1)/2;
+        // Tile the blank plate around the letters, never beneath their translucent
+        // pixels. Overdrawing a plate would darken every letter rectangle twice.
+        auto blank=[&](double origin,double length){if(length>0)_media.drawRegion("GameMenuSub.png",makeRect(20,stateY,1,40),makeRect(origin,bottom,length,40));};
+        _media.drawRegion("GameMenuSub.png",makeRect(0,stateY,20,40),makeRect(x-128,bottom,20,40));
+        blank(x-108,left-(x-108));
+        for(auto letter:letters){
+            if(letter.x)_media.drawRegion("GameMenuSub.png",makeRect(letter.x,letter.y+stateY,letter.width,40),makeRect(left,bottom,letter.width,40));
+            else blank(left,letter.width);
+            left+=letter.width;blank(left,1);++left;
+        }
+        blank(left,x+108-left);
+        _media.drawRegion("GameMenuSub.png",makeRect(236,stateY,20,40),makeRect(x+108,bottom,20,40));
+        _buttons.push_back({104,104,makeRect(x-128,y-20,256,40)});
     }
     void drawPassive(const GameHUDSnapshot& s) {
         if(!s.passives)return;
-        for(int i=0;i<4;++i)if(s.passives->slots[i].active){
+        for(int i=0;i<4;++i)if(_editingLayout||s.passives->slots[i].active){
             sprite("ItemTile.png",10,200+i*16,7,4,i+5,.5,.5,0,1,0);
-            font("NumSet02b.png",format("%02d",s.passives->slots[i].number),24,200+i*16,6,0,16,1,1);
+            font("NumSet02b.png",format("%02d",(s.passives->slots[i].active?s.passives->slots[i].number:999)),24,200+i*16,6,0,16,1,1);
         }
     }
     void drawWeaponPreview(const GameHUDSnapshot& s) {
-        if(!s.slot||!s.data||_weaponTime<0)return;
+        if(!s.slot||!s.data||(_weaponTime<0&&!_editingLayout))return;
         float elapsed=float(_time-_weaponTime),alpha=elapsed<=1?1:std::max(0.f,2.f-elapsed);
+        if(_editingLayout)alpha=1;
         if(alpha<=0)return;
         int first=std::max(0,std::min(s.selectedWeapon-2,s.slot->weaponCount()-5));
         for(int i=0;i<5&&first+i<s.slot->weaponCount();++i){
@@ -163,24 +223,36 @@ struct GameHUD::State {
         _time=s.time;_buttons.clear();
         bool result=s.presentation&&s.presentation->step!=7;
         _modal=s.paused||_menuStep||_upgradeStep||result;
-        drawPassive(s);drawMissionIntro(s);drawWeaponPreview(s);
-        image("GameUI_Btm.png",240,32);image("GameUI_Top.png",240,288);
+        useLayoutGroup(heavymach::hud::passives);drawPassive(s);useLayoutGroup(-1);if(!_editingLayout)drawMissionIntro(s);useLayoutGroup(heavymach::hud::preview);drawWeaponPreview(s);useLayoutGroup(-1);
+        drawLayoutBackground();
+        useLayoutGroup(heavymach::hud::menu);
         buttonImage("GameMenu.png",100,38,279,1,2,0,true);
+        useLayoutGroup(heavymach::hud::progress);
         sprite("GameUI_Exp.png",27+35*s.expGauge,300,1,1,0,s.expGauge,1,0,1,0);
         font("NumSet01.png",format("%02d",s.slot?s.slot->level()+1:1),40,313,7,0,16,1,1);
+        useLayoutGroup(heavymach::hud::gauges);
         sprite("GameUI_Gauge.png",239,25,1,1,0,1,1,_hpRotation,1,0);
         float reloadElapsed=float(_time-_reloadTime);
         if(_reloadTime>=0&&reloadElapsed<.15f)sprite("GameUI_BlueLight.png",287,22,1,1,0,1,1,0,1.f+reloadElapsed/-.15f,2);
         sprite("GameUI_Gauge.png",287,22,1,1,0,1,1,s.reloadGauge*2*std::numbers::pi,1,0);
         sprite("GameUI_RedLight.png",265,35,1,1,0,1,1,0,std::min(1.f,std::cos(float(10*_time))+1.f),2);
         sprite("GameUI_Gear.png",324,3,1,1,0,1,1,_gear,1,0);
+        useLayoutGroup(heavymach::hud::jump);
         buttonImage("Btn_Booster.png",1000,34,34,2,1,0,true);
+        useLayoutGroup(heavymach::hud::weapon);
         buttonImage("Btn_Weapon.png",1100,103,31,2,1,0,true);
         sprite("WeaponTile.png",106,35,7,4,s.weapon?s.weapon->uiTile:0,1,1,0,1,0);
         font("NumSet02b.png",format("%02d",s.ammo),120,26,6,1,16,1,1);
+        useLayoutGroup(-1);
+        if(_editingLayout)return;
         drawUpgrade(s);drawPresentation(s);
         // An interrupted stage transition must leave its resume menu visible.
-        if(_menuStep)for(int i=0;i<3;++i)buttonImage("GameMenuSub.png",101+i,_menuX[i],220-50*i,1,6,i*2,true);
+        if(_menuStep){
+            buttonImage("GameMenuSub.png",101,_menuX[0],235,1,6,0,true);
+            drawHUDLayoutButton(_menuX[1],190);
+            buttonImage("GameMenuSub.png",102,_menuX[2],145,1,6,2,true);
+            buttonImage("GameMenuSub.png",103,_menuX[3],100,1,6,4,true);
+        }
     }
     void tick(double time) {
         _time=time;_gear+=_gearVelocity;_gearVelocity+=(0-_gearVelocity)/20;
@@ -190,12 +262,17 @@ struct GameHUD::State {
             _hp+=(_hpDest-_hp)*.125f;if(std::abs(_hp-_hpDest)<.01f)_hp=_hpDest;
             _hpRotation=float(double(_hp)*-5.183627803521752-0.6000000238418579);
         }
-        if(_menuStep)for(int i=0;i<3;++i)_menuX[i]+=((_menuStep==1?220+20*i:720)-_menuX[i])/(7+2*i);
-        if(_menuStep==2&&_menuX[2]>710)_menuStep=0;
+        if(_menuStep)for(int i=0;i<4;++i)_menuX[i]+=((_menuStep==1?220+20*i:720)-_menuX[i])/(7+2*i);
+        if(_menuStep==2&&_menuX[3]>710)_menuStep=0;
         if(_upgradeStep){_upgradeX+=((_upgradeStep==1?240:660)-_upgradeX)/5;
             if(_upgradeStep==2&&_upgradeX>659){_upgradeStep=0;if(_owner.upgradeClosed)_owner.upgradeClosed();}}
     }
-    bool touch(Point logical,int state) {
+    int receiverAt(Point logical) {
+        for(auto i=_buttons.rbegin();i!=_buttons.rend();++i)if(originalButtonContains(i->bounds,logical))return i->key;
+        return -1;
+    }
+    bool touch(Point logical,int state) {return touch(logical,state,-1);}
+    bool touch(Point logical,int state,int receiver) {
         // 0x82b8 registers buttons at construction; 0xfc18 walks that array in
         // reverse and stops at the first hit. Drawing order is not receiver order.
         auto rank=[](const HUDButton& button){
@@ -210,6 +287,7 @@ struct GameHUD::State {
         auto receivers=_buttons;
         std::stable_sort(receivers.begin(),receivers.end(),[&](const auto& a,const auto& b){return rank(a)<rank(b);});
         for(auto it=receivers.rbegin();it!=receivers.rend();++it){
+            if(receiver>=0&&it->key!=receiver)continue;
             bool inside=originalButtonContains(it->bounds,logical);
             _buttonStates[it->key].touch(inside,state,_time);
             if(!inside)continue;
@@ -249,6 +327,7 @@ struct GameHUD::State {
 
 GameHUD::GameHUD(Media& media):s(std::make_unique<State>(*this,media)) {}
 GameHUD::~GameHUD()=default;
+void GameHUD::setLayout(const heavymach::hud::Configuration& layout,bool editing) {s->_layout=layout;s->_editingLayout=editing;}
 void GameHUD::setGameStart(double time) {s->_startTime=float(time);}
 void GameHUD::setReloadComplete(double time) {s->_reloadTime=float(time);}
 void GameHUD::showWeaponChange(double time) {s->_weaponTime=float(time);}
@@ -283,7 +362,9 @@ void GameHUD::setMenuVisible(bool visible) {
 void GameHUD::draw(const GameHUDSnapshot& snapshot) {s->draw(snapshot);}
 void GameHUD::tick(double time) {s->tick(time);}
 void GameHUD::cancelInput() {s->_pressed=-1;s->_buttonStates.clear();}
+int GameHUD::receiverAt(Point logical) {return s->receiverAt(logical);}
 bool GameHUD::touch(Point logical,int state) {return s->touch(logical,state);}
+bool GameHUD::touch(Point logical,int state,int receiver) {return s->touch(logical,state,receiver);}
 void GameHUD::moveKeyboardFocus(int delta) {s->moveKeyboardFocus(delta);}
 void GameHUD::activateKeyboardFocus() {s->activateKeyboardFocus();}
 Rect GameHUD::keyboardFocusRect() {return s->keyboardFocusRect();}

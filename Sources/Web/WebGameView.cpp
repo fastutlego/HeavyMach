@@ -104,6 +104,7 @@ bool GameView::initRenderer(){
     _hud=std::make_unique<GameHUD>(*_media);
     _hud->button=[this](int identifier,int state){gameButton(identifier,state);};
     _hud->upgradeClosed=[this]{finishUpgrade();};
+    loadHUDLayout();prepareHUDEditor();
     prepareScreenResources(1);
     const double now=interactionTime();
     // The host samples the latest motion at the original 50 Hz delegate interval.
@@ -223,7 +224,7 @@ void GameView::noteInteraction(){_lastInteraction=interactionTime();}
 void GameView::cancelGameInput(){
     _aimTouches.clear();
     _leftPressed=_rightPressed=_upPressed=_downPressed=_keyboardFire=false;_hasKeyboardAim=false;_keyboardAimVisible=false;
-    _heldTouches.clear();_worldTouches.clear();_hudTouches.clear();if(_hud)_hud->cancelInput();
+    _heldTouches.clear();_worldTouches.clear();_hudTouches.clear();_hudCapturedReceivers.clear();if(_hud)_hud->cancelInput();
     if(_session)_session->releaseFire();
     else if(_showMenu&&_menus)_menus->touch({-1000,-1000},3);
     _tilt={};_keyboardControls.cancel();
@@ -261,7 +262,7 @@ void GameView::gameButton(int identifier,int state){
     if(state!=2)return;
     // GuiGame.handleButton 0x17c4c keeps buttons active and gates actions here.
     if(world.paused&&(identifier==100||identifier==1100))return;
-    if(!world.paused&&((identifier>=101&&identifier<=103)||
+    if(!world.paused&&((identifier>=101&&identifier<=104)||
                        (identifier>=1200&&identifier<=1202)||identifier==1300))return;
     switch(identifier){
         case 100:
@@ -274,6 +275,7 @@ void GameView::gameButton(int identifier,int state){
                 _media->sound("UI_Click");
                 hm_open_url("http://www.indiean.com");
             }break;
+        case 104:if(_gameMenu&&world.gameState==0){openHUDEditor();_media->sound("UI_Click");}break;
         case 1100:_session->cycleWeapon();_media->sound("Game_ChangeWeapon");break; // 0x17c4c: release, then sfxID4.
         case 1200:case 1201:case 1202:_session->selectUpgrade(identifier-1200);break;
         case 1300:_resumeRequired=false;_session->confirmUpgrade();break;
@@ -349,6 +351,7 @@ void GameView::ensureKeyboardAim(){
 bool GameView::key(unsigned code,bool pressed){
     using A=KeyAction;
     if(!_active||!_rendererReady)return false;
+    if(_hudEditing)return hudEditorKey(code,pressed);
     if(code<_aimBlockedKeys.size()&&_aimBlockedKeys[code]){if(!pressed)_aimBlockedKeys[code]=false;return true;}
     if(_keyboardSettingsOpen){
         if(!_keyboardControls.set(code,pressed)||!pressed)return true;
@@ -500,9 +503,10 @@ void GameView::updateCanvasGeometry(){
         _hudScale=std::max(.01,std::min({1.0,(right-left)/480,(top-bottom)/320}));
         _hudOffset={(left+right-480*_hudScale)/2,(bottom+top-320*_hudScale)/2};
     }
+    updateHUDEditorGeometry();
     _menus->setCanvasWidth(_canvasWidth,offset(_menuSafeRect,0,-(_canvasHeight-320)/2));
-    if(_session&&_session->canvasHeight()!=float(_canvasHeight))_session->setCanvasHeight(float(_canvasHeight));
-    if(_session&&_session->canvasWidth()!=float(_canvasWidth))_session->setCanvasWidth(float(_canvasWidth));
+    if(!_hudEditing&&_session&&_session->canvasHeight()!=float(_canvasHeight))_session->setCanvasHeight(float(_canvasHeight));
+    if(!_hudEditing&&_session&&_session->canvasWidth()!=float(_canvasWidth))_session->setCanvasWidth(float(_canvasWidth));
 }
 bool GameView::worldInputBlocked() const{
     if(!_session)return true;
@@ -515,6 +519,7 @@ Rect GameView::safeContentRect() const{
 // ticks and draws once. A wall-time accumulator can alternate zero/two ticks
 // on adjacent display callbacks and visibly stutter even at a steady 60 Hz.
 void GameView::advanceOriginalFrame(){
+    if(_hudEditing)return;
     _time+=originalInterval;
     if(_session)_worldShake.tick(_time);
     else if(!_showMenu)_titleShake.tick(_time);
@@ -576,14 +581,14 @@ void GameView::animationFrame(double now){
         ++ticks;
         if(ticks==_ticksPerCallback)_nextTimerDue=_nextTimerDue+originalInterval*std::ceil(std::max((now-_nextTimerDue)/originalInterval,1.0));
         else _nextTimerDue+=originalInterval;
-        if(ticks==1){if(!_active)return;updateCanvasGeometry();checkInactivity();}
+        if(ticks==1){if(!_active)return;updateCanvasGeometry();updateHUDEntry();if(!_hudEditing)checkInactivity();}
         advanceOriginalFrame();
     }
     if(ticks)renderOpenGLFrame();
 }
 void GameView::frame(){
     if(!_active)return;
-    updateCanvasGeometry();checkInactivity();
+    updateCanvasGeometry();updateHUDEntry();if(!_hudEditing)checkInactivity();
     advanceOriginalFrame();
     renderOpenGLFrame();
 }
@@ -605,6 +610,7 @@ void GameView::drawLogicalFrame(){
     _media->presentationOffset={};
     _media->setCameraOffset({});_media->setDrawingOffset({});_media->setDrawingScale(1);_media->resetClip();_media->resourceScope="shared";
     if(!_loadError.empty())return;
+    if(_hudEditing){drawHUDEditor();return;}
     if(_showMenu){_media->resourceScope=_screenResourceScope;
         if(_canvasHeight>320){Size size=_media->imageSize("Extensions/MenuMetal.png");double scale=std::max(_canvasWidth/size.width,_canvasHeight/size.height);_media->draw("Extensions/MenuMetal.png",_canvasWidth/2,_canvasHeight/2,1,1,0,scale,scale,0,1);}
         _media->presentationOffset={0,(_canvasHeight-320)/2};_menus->draw();_media->presentationOffset={};_media->resourceScope="shared";drawLoading();return;}
@@ -638,6 +644,7 @@ void GameView::drawLogicalFrame(){
             snapshot.upgradeVisible=player->upgradeStep==1;
             snapshot.upgradeSelection=player->upgradeSelection;
         }
+        _hud->setLayout(currentHUDLayout(),false);
         _hud->draw(snapshot);
         drawAimControls();
         drawLoading();_media->resetClip();_media->setDrawingOffset({});_media->setDrawingScale(1);return;
@@ -678,7 +685,8 @@ Rect GameView::aimControlRect(int control) const{
     // Mount to the same 480-unit HUD rail as booster/weapon, including safe-area scale.
     int slot=control==1?0:control==3?1:2; // A, next target, fire.
     Rect r=makeRect(334+slot*48,10,46,46);
-    return makeRect(_hudOffset.x+r.origin.x*_hudScale,_hudOffset.y+r.origin.y*_hudScale,r.size.width*_hudScale,r.size.height*_hudScale);
+    auto c=currentHUDLayout();auto q=c.group(heavymach::hud::aim).hitRect({r.origin.x,r.origin.y,r.size.width,r.size.height});
+    return makeRect(q.x,q.y,q.width,q.height);
 }
 void GameView::saveAimMode(){hm_pref_set_int("AimModeV1",int(_preferredAimMode));}
 void GameView::setInputAimMode(AimMode mode){
@@ -702,6 +710,7 @@ bool GameView::routeAimPoint(Point p,int state,long token){
     if(!_session)return false;
     auto captured=_aimTouches.find(token);
     if(captured!=_aimTouches.end()){
+        if(state==1&&captured->second==2&&!contains(aimControlRect(2),p)){_aimTouches.erase(captured);_aimCancelledTouches.insert(token);refreshAutoFire();return true;}
         if(state>=2){int action=captured->second;_aimTouches.erase(captured);
             if(action==2)refreshAutoFire();
             else if(state==2&&!worldInputBlocked()&&contains(aimControlRect(action),p)){
@@ -719,16 +728,16 @@ bool GameView::routeAimPoint(Point p,int state,long token){
     return false;
 }
 void GameView::drawAimControls(){
-    if(!_session||worldInputBlocked()||_loading.visible())return;
+    if((!_session&&!_hudEditing)||(!_hudEditing&&worldInputBlocked())||_loading.visible())return;
     _media->resetClip();_media->setDrawingOffset({});_media->setDrawingScale(1);
-    auto mode=_session->aimMode();int count=mode==AimMode::automatic?4:2;
+    auto mode=_hudEditing?AimMode::automatic:_session->aimMode();int count=mode==AimMode::automatic?4:2;
     for(int action=1;action<count;++action){auto r=aimControlRect(action);float x=float(midX(r)),y=float(midY(r));
         bool selected=(action==1&&mode==AimMode::automatic);
         for(const auto& held:_aimTouches)if(held.second==action)selected=true;
         const std::string sheet="Extensions/AutoAimControls.png";Size size=_media->imageSize(sheet);
         _media->draw(sheet,x,y,3,2,(selected?3:0)+action-1,r.size.width/std::max(1.0,size.width/3),r.size.height/std::max(1.0,size.height/2),0,1);
     }
-    if(mode!=AimMode::automatic)return;auto aim=_session->aimSnapshot();if(!aim.target){_drawnAimTarget=0;return;}
+    if(_hudEditing||mode!=AimMode::automatic)return;auto aim=_session->aimSnapshot();if(!aim.target){_drawnAimTarget=0;return;}
     if(_drawnAimTarget!=aim.target){_drawnAimTarget=aim.target;_aimAcquiredTime=_time;}
     float gap=float(4+12*std::max(0.,1-(_time-_aimAcquiredTime)/.15));
     float left=aim.screenPosition.x+aim.bounds.left-gap,right=aim.screenPosition.x+aim.bounds.right+gap;
@@ -761,22 +770,24 @@ void GameView::pointer(long token,double x,double y,int state){
 }
 void GameView::routePoint(Point point,int state,long touch){
     if(!_active||!_loadError.empty()||_keyboardSettingsOpen)return;
+    if(_hudEditing){auto q=_viewport.logical(point.x,point.y);hudEditorPoint(q?Point{q->first,q->second}:Point{-1000,-1000},state,touch);return;}
     _keyboardAimVisible=false;
     if(_aimCancelledTouches.contains(touch)){if(state>=2)_aimCancelledTouches.erase(touch);return;}
     auto logical=_viewport.logical(point.x,point.y);
     if(state>=2)_heldTouches.erase(touch);
     if(logical){noteInteraction();if(state==0)_heldTouches.insert(touch);}
     if(routeAimPoint(logical?Point{logical->first,logical->second}:Point{-1000,-1000},state,touch))return;
-    if(_session&&(_canvasWidth>480||_canvasHeight>320)){
+    if(_session&&(_canvasWidth>480||_canvasHeight>320||_hudLayout.customized())){
         const Point p=logical?Point{logical->first,logical->second}:Point{-1000,-1000};
         const Point hp{(p.x-_hudOffset.x)/_hudScale,(p.y-_hudOffset.y)/_hudScale};
-        const bool insideHUD=hp.x>=0&&hp.x<=480&&hp.y>=0&&hp.y<=320;
+        const bool insideHUD=_hudLayout.customized()||(hp.x>=0&&hp.x<=480&&hp.y>=0&&hp.y<=320);
         if(state==0){
-            if(insideHUD&&_hud->touch(hp,0))_hudTouches.insert(touch);
+            if(insideHUD&&_hud->touch(hp,0)){_hudTouches.insert(touch);if(_hudLayout.customized())_hudCapturedReceivers[touch]=_hud->receiverAt(hp);}
             else if(logical&&!worldInputBlocked()){_worldTouches.insert(touch);_session->touch({float(p.x),float(p.y)},0);_keyboardAim=p;_hasKeyboardAim=true;}
         }else if(_hudTouches.contains(touch)){
-            _hud->touch(insideHUD?hp:Point{-1000,-1000},state);
-            if(state>=2)_hudTouches.erase(touch);
+            auto receiver=_hudCapturedReceivers.find(touch);
+            _hud->touch(insideHUD?hp:Point{-1000,-1000},state,receiver!=_hudCapturedReceivers.end()?receiver->second:-1);
+            if(state>=2){_hudTouches.erase(touch);_hudCapturedReceivers.erase(touch);}
         }else if(_worldTouches.contains(touch)){
             if(state>=2){
                 _worldTouches.erase(touch);
@@ -809,10 +820,11 @@ std::string GameView::debugState(){
     char text[768];
     const char* screen=!_rendererReady?"boot":_session?"game":_showMenu?"menu":"title";
     const auto* p=_session?_session->player():nullptr;auto stage=_session?_session->stage():StagePosition{};
-    std::snprintf(text,sizeof(text),"{\"screen\":\"%s\",\"time\":%.4f,\"canvas\":[%g,%g],\"loading\":%d,\"mission\":%d,\"stage\":%d,\"playerX\":%.2f,\"playerY\":%.2f,\"hp\":%d,\"enemies\":%zu,\"bullets\":%zu,\"paused\":%d,\"gameState\":%d,\"decodes\":%u,\"loadError\":%d,\"aimMode\":%d,\"aimTarget\":%d,\"inputBlocked\":%d,\"keyboardFire\":%d,\"gameMenu\":%d,\"resumeRequired\":%d,\"active\":%d,\"keyboardAimX\":%.2f,\"callbackInterval\":%.4f,\"ticksPerCallback\":%d,\"motion\":%d,\"tilt\":[%.3f,%.3f,%.3f]}",
+    std::snprintf(text,sizeof(text),"{\"screen\":\"%s\",\"time\":%.4f,\"canvas\":[%g,%g],\"loading\":%d,\"mission\":%d,\"stage\":%d,\"playerX\":%.2f,\"playerY\":%.2f,\"hp\":%d,\"enemies\":%zu,\"bullets\":%zu,\"paused\":%d,\"gameState\":%d,\"decodes\":%u,\"loadError\":%d,\"aimMode\":%d,\"aimTarget\":%d,\"inputBlocked\":%d,\"keyboardFire\":%d,\"gameMenu\":%d,\"resumeRequired\":%d,\"active\":%d,\"keyboardAimX\":%.2f,\"callbackInterval\":%.4f,\"ticksPerCallback\":%d,\"motion\":%d,\"tilt\":[%.3f,%.3f,%.3f],\"hudEditing\":%d,\"hudCustomized\":%d,\"hudFallback\":%d,\"hudSelected\":%d,\"hudDraftCustomized\":%d}",
         screen,_time,_canvasWidth,_canvasHeight,int(_loading.visible()),stage.mission,stage.stage,p?p->position.x:0.f,p?p->position.y:0.f,p?p->hp:0,
         _session?_session->enemyCount():size_t(0),_session?_session->bulletCount():size_t(0),_session?int(_session->world().paused):0,_session?_session->world().gameState:0,_media->decodeCount(),int(!_loadError.empty()),
-        _session?int(_session->aimMode()):int(_preferredAimMode),_session&&_session->aimSnapshot().target?1:0,int(worldInputBlocked()),int(_keyboardFire),int(_gameMenu),int(_resumeRequired),int(_active),_keyboardAim.x,_frameCallbackInterval,_ticksPerCallback,int(_acceleration.available),_acceleration.x,_acceleration.y,_acceleration.z);
+        _session?int(_session->aimMode()):int(_preferredAimMode),_session&&_session->aimSnapshot().target?1:0,int(worldInputBlocked()),int(_keyboardFire),int(_gameMenu),int(_resumeRequired),int(_active),_keyboardAim.x,_frameCallbackInterval,_ticksPerCallback,int(_acceleration.available),_acceleration.x,_acceleration.y,_acceleration.z,int(_hudEditing),int(_hudLayout.customized()),int(_hudLayoutFallback),_hudSelected,int(_hudDraft.customized()));
     return text;
 }
 }
+#include "WebHUDEditor.inc"

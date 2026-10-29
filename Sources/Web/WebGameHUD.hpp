@@ -3,6 +3,7 @@
 // panel, result presentation buttons).
 #include "WebTypes.hpp"
 #include "Player.hpp"
+#include "HUDConfiguration.hpp"
 #include "World.hpp"
 #include <functional>
 #include <memory>
@@ -29,6 +30,7 @@ public:
     explicit GameHUD(Media& media);
     ~GameHUD();
     void draw(const GameHUDSnapshot& snapshot);
+    void setLayout(const heavymach::hud::Configuration& layout,bool editing);
     void tick(double time);
     void setGameStart(double time);
     void setReloadComplete(double time);
@@ -46,6 +48,8 @@ public:
     void cancelInput();
     // Logical y-up. state0 began,1 moved,2 ended,3 cancelled. true consumes touch.
     bool touch(Point logical,int state);
+    int receiverAt(Point logical);
+    bool touch(Point logical,int state,int receiver);
     void moveKeyboardFocus(int delta);
     void activateKeyboardFocus();
     Rect keyboardFocusRect();

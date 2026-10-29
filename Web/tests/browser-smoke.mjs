@@ -63,7 +63,7 @@ try {
   await sleep(2000);
   s = await state();
   const fps = (s.time - t0) / 0.01666666753590107 / ((Date.now() - w0) / 1000);
-  step('title', { canvas: s.canvas, gameFramesPerSecond: Number(fps.toFixed(1)) });
+  step('title', { canvas: s.canvas, gameFramesPerSecond: Number(fps.toFixed(1)), callbackInterval: s.callbackInterval, ticksPerCallback: s.ticksPerCallback });
   await sleep(5000); await shot('01-title');
 
   await tap(347, 160);

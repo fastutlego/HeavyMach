@@ -269,5 +269,43 @@
     "motion_permission": "asked again per origin on first tap"
    }
   }
+ },
+ "hud_editor_20261029": {
+  "decision": "user: port the v0.14 HUD editor (X button covers LV/EXP); no cheat web build",
+  "files": [
+   "Sources/Web/WebHUDEditor.inc",
+   "Sources/Web/WebGameHUD.cpp",
+   "Sources/Web/WebMedia.cpp (drawRegion)",
+   "Sources/Web/WebGLRenderer.cpp (drawRegion)",
+   "Sources/Web/WebMenus.cpp (isMissionSelection)",
+   "Web/shell.html (DOM tool panel)"
+  ],
+  "storage": "/persist/HUDLayoutV1-web.json",
+  "headless_hud_editor": {
+   "script": "Web/tests/hud-editor.mjs",
+   "viewport": "912x420",
+   "passed": true,
+   "saved": "{\"version\":1,\"positions\":[null,[0.28240962895373811,0.76109215017064846],null,null,null,null,null,null,null,null]}",
+   "checks": [
+    "mission entry visible",
+    "pause SET GAME UI opens editor",
+    "drag LEVEL/EXP, time frozen",
+    "TOOLS then APPLY writes 10 entries",
+    "MENU works with custom layout",
+    "restored after reload",
+    "mission entry + sample scene",
+    "RESET LAYOUT + APPLY writes all null"
+   ]
+  },
+  "regression": {
+   "60Hz": "pass 58.9 (2 s window)",
+   "30Hz ?fps=30": "pass, callbackInterval 0.0333, ticksPerCallback 2, 10 s average 60.0 ticks/s",
+   "touch": "pass 59.6"
+  },
+  "note": "the earlier ?fps=30 run used a broken regex (\\\\d escaped to d) and ran at 60 Hz; fixed to [0-9]",
+  "not_checked": [
+   "physical iPad editor",
+   "Safari/Firefox desktop"
+  ]
  }
 }

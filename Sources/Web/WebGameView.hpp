@@ -18,6 +18,7 @@
 #include "TitleState.hpp"
 #include "Viewport.hpp"
 #include "AutoAim.hpp"
+#include "HUDConfiguration.hpp"
 #include <array>
 #include <map>
 #include <memory>
@@ -51,6 +52,9 @@ public:
     bool key(unsigned hidCode,bool pressed);
     void blurKeyboard(){cancelGameInput();}
     std::string debugState();
+    // DOM HUD-editor controls (Web/shell.html): -1 opens the editor (SET GAME UI),
+    // 0 RESET LAYOUT, 1 CANCEL, 2 APPLY, 3 PREVIEW, 4 SAMPLE/CURRENT SCENE, 5 TOOLS.
+    void hudControl(int tag);
     std::string loadError() const {return _loadError;}
 private:
     void persistSave();
@@ -91,6 +95,23 @@ private:
     bool routeAimPoint(Point p,int state,long token);
     void drawAimControls();
     void routePoint(Point point,int state,long token);
+    // HMHUDEditor.inc translation (WebHUDEditor.inc).
+    heavymach::hud::Configuration currentHUDLayout() const;
+    std::string hudLayoutPath() const;
+    void loadHUDLayout();
+    void prepareHUDEditor();
+    void updateHUDEntry();
+    void updateHUDEditorGeometry();
+    void layoutHUDControls();
+    void refreshHUDEditorLabel(const char* error);
+    void openHUDEditor();
+    void closeHUDEditor();
+    void hudEditorAction(int tag);
+    bool hudEditorKey(unsigned code,bool pressed);
+    void hudEditorPoint(Point p,int state,long token);
+    void prepareHUDExample();
+    void drawHUDEditor();
+    void publishHUDControls();
 
     HostSurface _surface;
     Acceleration _acceleration;
@@ -138,6 +159,20 @@ private:
     double _aimAcquiredTime=0;
     double _time=0,_retainedWorldTime=0;
     uint32_t _randomState=0;
+    heavymach::hud::Configuration _hudLayout,_hudDraft;
+    bool _hudLayoutFallback=false,_hudEditing=false,_hudFromMenu=false,_hudExample=false,_hudHideGuides=false;
+    int _hudSelected=heavymach::hud::jump;
+    std::optional<long> _hudDragToken;
+    Point _hudGrab;
+    unsigned _hudLayoutWrites=0;
+    std::map<long,int> _hudCapturedReceivers;
+    std::unique_ptr<heavymach::GameSession> _hudExampleSession;
+    heavymach::GameData _hudExampleData;
+    heavymach::SaveSlot _hudExampleSlot;
+    heavymach::PlayerPassives _hudExamplePassives;
+    uint32_t _hudExampleRandom=0;
+    bool _hudEntryHidden=true;
+    std::string _hudEditorText,_hudPublished;
     heavymach::Vector2 _retainedWorldCamera{};
     bool _active=true,_trace=false,_resumeRequired=false;
     double _lastInteraction=0;

@@ -18,6 +18,7 @@ public:
     void showSlots();
     void showMode();
     void showMissions();
+    bool isMissionSelection() const;
     // Called only at LoadingTransition RefreshScreen for screen6.
     void startSelectedGame();
     void showMissions(int mission,int stage);

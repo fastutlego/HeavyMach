@@ -12,7 +12,7 @@ std::string debugText;
 
 // ?fps=30 (test only) delivers every second display callback, like Safari in
 // iOS Low Power Mode; the game must still advance 60 ticks per second.
-EM_JS(int,hm_callback_divisor,(),{const m=/[?&]fps=(\d+)/.exec(location.search);if(!m)return 1;const fps=Number(m[1]);return fps>0&&fps<60?Math.round(60/fps):1;});
+EM_JS(int,hm_callback_divisor,(),{const m=/[?&]fps=([0-9]+)/.exec(location.search);if(!m)return 1;const fps=Number(m[1]);return fps>0&&fps<60?Math.round(60/fps):1;});
 int callbackDivisor=1,callbackCount=0;
 void animationFrame(){
     if(callbackDivisor>1&&(callbackCount++%callbackDivisor))return;
@@ -37,6 +37,7 @@ EMSCRIPTEN_KEEPALIVE int hm_key(int code,int pressed){return view&&code>0&&code<
 EMSCRIPTEN_KEEPALIVE void hm_keyboard_blur(){if(view)view->blurKeyboard();}
 EMSCRIPTEN_KEEPALIVE void hm_motion(int available,double x,double y,double z){if(view)view->setAcceleration({available!=0,x,y,z});}
 EMSCRIPTEN_KEEPALIVE void hm_active(int active){if(view)view->setApplicationActive(active!=0);}
+EMSCRIPTEN_KEEPALIVE void hm_hud_control(int tag){if(view)view->hudControl(tag);}
 EMSCRIPTEN_KEEPALIVE const char* hm_debug_state(){debugText=view?view->debugState():"{}";return debugText.c_str();}
 }
 

@@ -32,6 +32,8 @@ public:
     Size imageSize(const std::string& name);
     Size imageSize(const std::string& name,const std::string& scope);
     void releaseScope(const std::string& scope);
+    // Decoded (premultiplied RGBA) pixels of one image for host UI, e.g. the HUD editor buttons.
+    const DecodedImage* decodedImage(const std::string& name){return image(name);}
     Audio& audio(){return audio_;}
 
     void setCameraOffset(Point offset);
@@ -44,6 +46,7 @@ public:
     void drawEdgeContinuation(const std::string& name,double x,double y,double scale,double rotation,double width);
     void drawJoinedBackground(const std::string& name,double x,double y,double scale,double rotation);
     void drawExpandedPanel(const std::string& name,double x,double y,double left,double right,double top,double bottom);
+    void drawRegion(const std::string& name,Rect source,Rect destination);
     void drawTrail(const heavymach::TrailMesh& mesh);
 
     void sound(const std::string& name,float pan=0);

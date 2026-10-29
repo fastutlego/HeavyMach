@@ -257,6 +257,19 @@ void GLRenderer::drawImage(const std::string& name,long columns,long rows,long t
     float m[16];spriteMatrix(m,position,s.width,s.height,rotation,true);
     submit(vertices,4,GL_TRIANGLE_STRIP,m,t,Env::replace);
 }
+void GLRenderer::drawRegion(const std::string& name,Rect source,Rect d,bool rgb565){
+    if(!active_||isEmpty(source)||isEmpty(d))return;
+    Texture* t=texture(name,rgb565);if(!t)return;
+    // CGFloat (double) arithmetic, then GLfloat storage, as in HMGLRenderer.
+    const float x=float(d.origin.x),y=float(d.origin.y),w=float(d.size.width),h=float(d.size.height);
+    const float u=float(source.origin.x/t->pw),v=float(source.origin.y/t->ph),uw=float(source.size.width/t->pw),vh=float(source.size.height/t->ph);
+    Vertex vertices[]={{x,y,u,v+vh,1,1,1,1},{x+w,y,u+uw,v+vh,1,1,1,1},{x,y+h,u,v,1,1,1,1},{x+w,y+h,u+uw,v,1,1,1,1}};
+    glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
+    // glLoadIdentity; glTranslatef(drawingOffset); glScalef(drawingScale)
+    float m[16];identity(m);translate(m,float(drawingOffset_.x),float(drawingOffset_.y));scale(m,float(drawingScale_),float(drawingScale_));
+    // beginFrame sets GL_REPLACE and drawEdgeContinuation restores it; drawRegion inherits REPLACE.
+    submit(vertices,4,GL_TRIANGLE_STRIP,m,t,Env::replace);
+}
 void GLRenderer::drawJoinedBackground(const std::string& name,Point position,double s,double rotation,bool rgb565){
     if(!active_||!std::isfinite(position.x)||!std::isfinite(position.y)||!std::isfinite(s)||s<=0||!std::isfinite(rotation))return;
     Texture* t=texture(name,rgb565);if(!t)return;

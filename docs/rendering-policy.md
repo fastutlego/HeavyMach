@@ -108,3 +108,5 @@ M·C 버튼은 표시와 터치 판정에서 제거한다. A 하나로 자동/�
 ## 웹(WebGL2)
 
 웹은 고정 파이프라인이 없어 `Sources/Web/WebGLRenderer.cpp`의 셰이더로 GLES 1.1 상태를 재현한다. 텍스처 환경 REPLACE/MODULATE를 RGBA·RGB565별로 구분하고, sprite blend 표·Trail의 setBlend 값·가위 영역·DITHER·POT LINEAR/REPEAT·touchHLE 감마 왕복·RGB565 패킹을 iOS와 같게 쓴다. 장면은 ceil(W)×ceil(H) RGBA8 renderbuffer에 그리고 glCopyTexSubImage2D로 LINEAR/CLAMP 텍스처에 복사해 최종 사각형으로 표시한다. WebGL은 선 폭을 1로 제한하므로 2픽셀 선은 사각형으로 그린다. 신규 기체·자동조준 버튼 시트의 1회 축소는 CoreGraphics 대신 면적 평균을 쓴다. [이식 문서](web-port-20261028.md).
+
+HUD 편집 배치는 iOS `drawRegion`과 같은 영역 그리기(`GLRenderer::drawRegion`, GL_REPLACE, SRC_ALPHA/ONE_MINUS_SRC_ALPHA)로 원본 HUD 텍스처의 부분을 그린다. 편집기 도구 버튼은 GL이 아닌 DOM이며, CgBI 원본을 stb로 디코딩한 픽셀로 만든다.

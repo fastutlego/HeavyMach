@@ -36,6 +36,8 @@ public:
     void drawEdgeContinuation(const std::string& name,Point position,double scale,double rotation,double width,bool rgb565);
     void drawJoinedBackground(const std::string& name,Point position,double scale,double rotation,bool rgb565);
     void drawExpandedPanel(const std::string& name,Point position,double left,double right,double top,double bottom,bool rgb565);
+    // HMGLRenderer drawRegion: source in texture pixels (top-left origin), destination in local y-up coordinates.
+    void drawRegion(const std::string& name,Rect source,Rect destination,bool rgb565);
     void drawTrail(const heavymach::TrailMesh& mesh,const std::string& name,bool rgb565,Point cameraOffset);
     // viewport: CSS pixels, top-left origin, inside a canvas of cssWidth x cssHeight
     // whose drawing buffer is drawableWidth x drawableHeight device pixels.

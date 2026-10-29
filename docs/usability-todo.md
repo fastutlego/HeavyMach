@@ -56,14 +56,14 @@ main에 배포한 버전마다 변경 내용과 검사 결과를 정리하고 Gi
 - [ ] 실제 iPhone Safari·Android Chrome에서 양쪽 가로 방향 틸트, 멀티터치, 소리, 안전영역, 프레임을 확인한다. DeviceMotion 축·부호 변환을 실측과 대조한다.
 - [ ] Safari·Firefox 데스크톱과 실제 스피커 출력을 확인한다.
 - [ ] 90/120Hz 표시 장치에서 초당 틱 수를 계측한다.
-- [ ] 치트 웹 빌드가 필요한지 정하고, 필요하면 검증 패널·방향 입력·분리 저장을 구현한다.
+- [x] 치트 웹 빌드: 만들지 않는다(2026-10-29 사용자 결정). 무기 검증은 iOS·Mac 치트 앱으로 한다.
 - [x] fastutle.com `/game/heavy_mach/` 테스트 배포(2026-10-29, fastutle-site `0be8788`). 배포 주소에서 헤드리스 검사 통과.
 - [ ] 원작 자원(46MB)을 fastutle.com에 계속 공개할지 정한다. 재배포 허락은 미확인이다.
 - [x] iPad mini 6 로컬 빌드에서 전체 화면·기울기 권한·이동 방향·초당60틱 확인(2026-10-29).
 - [x] 수정본을 fastutle.com에 배포(fastutle-site `8f09692`)하고 iPad에서 로드·초당60틱 확인(2026-10-29).
-- [ ] iPad Safari 전체 화면의 닫기(X) 버튼이 LV·EXP를 가리는 문제를 정한다(HUD 이동 또는 홈 화면 웹 앱 안내).
+- [ ] iPad Safari 전체 화면의 닫기(X) 버튼이 LV·EXP를 가리는 문제: HUD 편집기로 LV·EXP를 옮길 수 있게 했다. 실제 iPad에서 편집·저장을 확인한다.
 - [ ] iPhone·Android에서 기울기 부호와 반대 가로 방향을 확인한다.
-- [ ] v0.14 HUD 편집기(멈춤 메뉴 `SET GAME UI`, HUD 배치 저장)를 웹에 옮긴다. 현재 웹은 기본 HUD와3버튼 멈춤 메뉴다.
+- [x] v0.14 HUD 편집기를 웹에 옮겼다(2026-10-29, 헤드리스 검사 통과). 실제 iPad 확인은 아래 항목.
 - [ ] iOS·웹·Android가 함께 쓰는 `Sources/Platform`으로 메뉴·HUD·프레임 조립을 합친다.
 
 <a id="hm-keyboard-aim-threshold"></a>

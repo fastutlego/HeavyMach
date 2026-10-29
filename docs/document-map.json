@@ -545,6 +545,7 @@
       ],
       "tests": [
         "Web/tests/browser-smoke.mjs",
+        "Web/tests/hud-editor.mjs",
         "Tests/CoreTests.cpp",
         "Tests/GameSessionTests.cpp",
         "Tests/KeyboardInputTests.cpp"

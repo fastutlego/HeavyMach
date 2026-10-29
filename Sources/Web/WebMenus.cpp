@@ -416,6 +416,7 @@ void Menus::setPreviewWorldTime(double time,bool paused) {s->setPreviewWorldTime
 void Menus::showSlots() {s->showSlots();}
 void Menus::showMode() {s->showMode();}
 void Menus::showMissions() {s->showMissions();}
+bool Menus::isMissionSelection() const {return s->_screen==MenuScreen::mission;}
 void Menus::startSelectedGame() {s->startSelectedGame();}
 void Menus::showMissions(int mission,int stage) {s->showMissions(mission,stage);}
 void Menus::setCanvasWidth(double width,Rect safeRect) {s->setCanvasWidth(width,safeRect);}
