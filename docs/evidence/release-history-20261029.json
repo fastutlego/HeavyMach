@@ -1,0 +1,184 @@
+{
+  "date": "2026-10-29",
+  "latest": "v0.16",
+  "document_targets_verified": 29,
+  "release_pages": [
+    {
+      "tag": "v0.16",
+      "commit": "0dfb2a02dbdfe356087b789f3ab03476bd94ce02",
+      "title": "HeavyMach v0.16 — 럭스루나에 진입 배치",
+      "release_url": "https://github.com/gelb2/HeavyMach/releases/tag/v0.16",
+      "published_at": "2026-10-29T11:12:43Z",
+      "body_sha256": "195b9ac0118bbe3d9153dea078aafc67e37c71f381069e8dbda426505d0c4292",
+      "assets": {
+        "HeavyMach-v0.16-notices.zip": {
+          "id": "RA_kwDOVW_5js4pBoAF",
+          "digest": "sha256:88580bac95c68089498a027cf4953c053138a9246a0c04735d9f10b9280e9384",
+          "size": 24561,
+          "url": "https://github.com/gelb2/HeavyMach/releases/download/v0.16/HeavyMach-v0.16-notices.zip"
+        },
+        "HeavyMach-v0.16-source-with-assets.tar.gz": {
+          "id": "RA_kwDOVW_5js4pBoAd",
+          "digest": "sha256:16b4b804233bac83cd91d648dbfee38408d11012f0f6497dca82d856c820ff93",
+          "size": 298699967,
+          "url": "https://github.com/gelb2/HeavyMach/releases/download/v0.16/HeavyMach-v0.16-source-with-assets.tar.gz"
+        },
+        "SHA256SUMS.txt": {
+          "id": "RA_kwDOVW_5js4pBoAO",
+          "digest": "sha256:872ace9ab3faefe73154bf049c059ee4bd66638a3adee87122f3956d1bf0952c",
+          "size": 202,
+          "url": "https://github.com/gelb2/HeavyMach/releases/download/v0.16/SHA256SUMS.txt"
+        }
+      },
+      "body_matches_changelog": true
+    },
+    {
+      "tag": "v0.15",
+      "commit": "a442e69e0f340dc76b0ca2d90208f47241194f52",
+      "title": "HeavyMach v0.15 — 앱 아이콘·HUD 편집 진입 정리",
+      "release_url": "https://github.com/gelb2/HeavyMach/releases/tag/v0.15",
+      "published_at": "2026-10-29T09:04:55Z",
+      "body_sha256": "400eb49cd01c533145de08b463257682dd9cdcc8fddd57c610db3f0b244dd52b",
+      "assets": {
+        "HeavyMach-v0.15-notices.zip": {
+          "id": "RA_kwDOVW_5js4pAXT8",
+          "digest": "sha256:f2cd583ed7dd74a6da9dacf04fccf61d3c9f625033e67e572ba6c48cef6d0aba",
+          "size": 19984,
+          "url": "https://github.com/gelb2/HeavyMach/releases/download/v0.15/HeavyMach-v0.15-notices.zip"
+        },
+        "HeavyMach-v0.15-source-with-assets.tar.gz": {
+          "id": "RA_kwDOVW_5js4pAXT7",
+          "digest": "sha256:22e96f35d9870f76777529d39735d2d5f02688e3cd481df7863a19ce55c59453",
+          "size": 297276548,
+          "url": "https://github.com/gelb2/HeavyMach/releases/download/v0.15/HeavyMach-v0.15-source-with-assets.tar.gz"
+        },
+        "SHA256SUMS.txt": {
+          "id": "RA_kwDOVW_5js4pAXT9",
+          "digest": "sha256:886e557f426134c000ec5165f68f6b60d103891da7b9c3841905d6b36dbf6fd7",
+          "size": 202,
+          "url": "https://github.com/gelb2/HeavyMach/releases/download/v0.15/SHA256SUMS.txt"
+        }
+      },
+      "body_matches_changelog": true
+    },
+    {
+      "tag": "v0.14",
+      "commit": "9025b585fb4777f02255b048a74a26b6f5f854e9",
+      "title": "HeavyMach v0.14 — HUD 배치 편집",
+      "release_url": "https://github.com/gelb2/HeavyMach/releases/tag/v0.14",
+      "published_at": "2026-10-28T19:42:57Z",
+      "body_sha256": "8a63d82f5f1628a0db5082bc0de91ac2c31aa26e707847f3017f737690cabbd9",
+      "assets": {
+        "HeavyMach-v0.14-notices.zip": {
+          "id": "RA_kwDOVW_5js4o5Yvr",
+          "digest": "sha256:e1efa0341ad5d7f94371ef00fc5beb8e25be8154ecf80c88c0ae4262fc9e4b77",
+          "size": 36315,
+          "url": "https://github.com/gelb2/HeavyMach/releases/download/v0.14/HeavyMach-v0.14-notices.zip"
+        },
+        "HeavyMach-v0.14-source-with-assets.tar.gz": {
+          "id": "RA_kwDOVW_5js4o5Yvt",
+          "digest": "sha256:59ac271aa537c69049100c697a89ca51735561c51c36d80edd4d814a0d4dc31d",
+          "size": 289114917,
+          "url": "https://github.com/gelb2/HeavyMach/releases/download/v0.14/HeavyMach-v0.14-source-with-assets.tar.gz"
+        },
+        "SHA256SUMS.txt": {
+          "id": "RA_kwDOVW_5js4o5Yvs",
+          "digest": "sha256:d8373dff5357b4cd1811bf7a53328e3e7b9f594e3310407e5ad90af49db07dda",
+          "size": 202,
+          "url": "https://github.com/gelb2/HeavyMach/releases/download/v0.14/SHA256SUMS.txt"
+        }
+      },
+      "body_matches_changelog": true
+    },
+    {
+      "tag": "v0.13",
+      "commit": "bc4e80c0aa4920adbb09e7dc9c9d9b26fe39d888",
+      "title": "HeavyMach v0.13 — 쉴카·퉁구스카",
+      "release_url": "https://github.com/gelb2/HeavyMach/releases/tag/v0.13",
+      "published_at": "2026-10-28T13:09:26Z",
+      "body_sha256": "5c7357fb1abacb6b588726191d0edcd53f70ed7e23d4b92f75cc81ca4e80e21c",
+      "assets": {
+        "HeavyMach-v0.13-notices.zip": {
+          "id": "RA_kwDOVW_5js4o1NTE",
+          "digest": "sha256:e1efa0341ad5d7f94371ef00fc5beb8e25be8154ecf80c88c0ae4262fc9e4b77",
+          "size": 36315,
+          "url": "https://github.com/gelb2/HeavyMach/releases/download/v0.13/HeavyMach-v0.13-notices.zip"
+        },
+        "HeavyMach-v0.13-source-with-assets.tar.gz": {
+          "id": "RA_kwDOVW_5js4o1NTC",
+          "digest": "sha256:d97c4fcc7e94b7f4208f84781318c2bd857844b302cdf8eb978efa2ef93dd747",
+          "size": 264481897,
+          "url": "https://github.com/gelb2/HeavyMach/releases/download/v0.13/HeavyMach-v0.13-source-with-assets.tar.gz"
+        },
+        "SHA256SUMS.txt": {
+          "id": "RA_kwDOVW_5js4o1NTF",
+          "digest": "sha256:6207b61c16ce0f3ca97ca964a1a5300237f4346711bdaeb77814da3d4cc0f738",
+          "size": 202,
+          "url": "https://github.com/gelb2/HeavyMach/releases/download/v0.13/SHA256SUMS.txt"
+        }
+      },
+      "body_matches_changelog": true
+    },
+    {
+      "tag": "v0.12",
+      "commit": "eedf245f859a5224adf8f1c4a4b010eda1b5a5bb",
+      "title": "HeavyMach v0.12 — 럭스루나에 전투기",
+      "release_url": "https://github.com/gelb2/HeavyMach/releases/tag/v0.12",
+      "published_at": "2026-10-27T16:49:38Z",
+      "body_sha256": "733513079268bf789d88d26c05c36a115a803fea55db039f8995cc83b2c561dc",
+      "assets": {
+        "HeavyMach-v0.12-notices.zip": {
+          "id": "RA_kwDOVW_5js4oqeR7",
+          "digest": "sha256:6dc12cd4c37cf9e26fb13cc959e3a5e83daed21d3a2b4bebef30901822070607",
+          "size": 27763,
+          "url": "https://github.com/gelb2/HeavyMach/releases/download/v0.12/HeavyMach-v0.12-notices.zip"
+        },
+        "HeavyMach-v0.12-source-with-assets.tar.gz": {
+          "id": "RA_kwDOVW_5js4oqeR9",
+          "digest": "sha256:06ef5e0f0fb31e7fe4f716293030a9d76dee4d3d0c45ac0d56f7ed4f672d5296",
+          "size": 146187445,
+          "url": "https://github.com/gelb2/HeavyMach/releases/download/v0.12/HeavyMach-v0.12-source-with-assets.tar.gz"
+        },
+        "SHA256SUMS.txt": {
+          "id": "RA_kwDOVW_5js4oqeR2",
+          "digest": "sha256:e537b8f177fbe99f3fed43a28794f063a944058c2ed25f07ded0228c8a6e025f",
+          "size": 202,
+          "url": "https://github.com/gelb2/HeavyMach/releases/download/v0.12/SHA256SUMS.txt"
+        }
+      },
+      "body_matches_changelog": true
+    },
+    {
+      "tag": "v0.11",
+      "commit": "f0c4432f073a2b5bdea02026f279fbd91bb7b093",
+      "title": "HeavyMach v0.11 — 자동조준·전체 화면 도어",
+      "release_url": "https://github.com/gelb2/HeavyMach/releases/tag/v0.11",
+      "published_at": "2026-10-29T12:30:56Z",
+      "body_sha256": "fe7a3c90861bdb8b7ece307f2bf4d391df34d908441fd400e05459cb81870c1d",
+      "assets": {},
+      "body_matches_changelog": true
+    },
+    {
+      "tag": "v0.10",
+      "commit": "76cbd21c17d077d385be5a4695b0a598fc8e9aba",
+      "title": "HeavyMach v0.10 — Apple 플랫폼·키보드·VTOL",
+      "release_url": "https://github.com/gelb2/HeavyMach/releases/tag/v0.10",
+      "published_at": "2026-10-29T12:30:55Z",
+      "body_sha256": "ccabb5e8b63dcfcda3d3532eaf0aaa7dd9eb86b36662d15f549b8186a8d19fcd",
+      "assets": {},
+      "body_matches_changelog": true
+    },
+    {
+      "tag": "v0.9",
+      "commit": "4e17f5efd786095dfcd74a7334229908954da930",
+      "title": "HeavyMach v0.9 — iPhone 복원판",
+      "release_url": "https://github.com/gelb2/HeavyMach/releases/tag/v0.9",
+      "published_at": "2026-10-29T12:30:53Z",
+      "body_sha256": "7ae0343235d373ec0af6d356741cb02068184656b3101e43cb5fb351bafcd282",
+      "assets": {},
+      "body_matches_changelog": true
+    }
+  ],
+  "existing_tag_targets_unchanged": true,
+  "existing_release_assets_unchanged": true
+}
