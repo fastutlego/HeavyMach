@@ -2,7 +2,7 @@
 
 ## Apple 코드 보존 검사 · 2026-10-30
 
-Android 작업 전 기준은 `d46e122a`, 검사 당시 원격 main은 `3962d7b7`다. 두 브랜치의 파일 트리는 같았다. 기존 Apple 소스·공용 코어·자원 등 2,166개 파일의 해시가 기준과 같았다. `Sources/`, `Resources/`, `Art/`, `Modules/`, `iOS/`, `macOS/`, `vendor/`, workspace, 루트 CMake, 기존 도구·CI·Git 설정의 변경은 0개다.
+Android 작업 전 기준은 `d46e122a`, 검사 당시 원격 main은 `3962d7b7`다. 두 브랜치의 파일 트리는 같았다. 병합 준비 첫 검사에서 보호 목록 2,166개 파일의 해시가 기준과 같았다. 이후 이 목록에 포함된 국문·영문 README 2개의 Android 현황을 갱신했다. 나머지 2,164개 파일의 해시는 그대로다. `Sources/`, `Resources/`, `Art/`, `Modules/`, `iOS/`, `macOS/`, `vendor/`, workspace, 루트 CMake, 기존 도구·CI·Git 설정의 변경은 0개다.
 
 Apple 프로젝트는 기존 소스와 자원 경로를 명시한다. Android 디렉터리를 포함하는 참조나 전체 저장소 검색 규칙이 없다. Android는 기존 코어와 자원을 읽고 자체 `app/.cxx/`와 `app/build/`에 빌드 결과를 만든다. Apple의 자원·생성물 경로에 쓰지 않는다.
 

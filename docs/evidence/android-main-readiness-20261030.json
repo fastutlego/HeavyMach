@@ -76,5 +76,14 @@
     "apple_input_globs": "Sources/Core, Sources/iOS, Sources/Apple, Sources/Mac, Resources and Art only",
     "new_apple_device_runtime_test": false,
     "remaining_apple_risks": "Existing OS/device/toolchain-specific issues are outside file-isolation proof."
+  },
+  "later_editorial_update": {
+    "changed": [
+      "README.md",
+      "README.en.md"
+    ],
+    "reason": "Android current availability and installation links",
+    "unchanged_protected_files": 2164,
+    "apple_build_inputs_changed": 0
   }
 }

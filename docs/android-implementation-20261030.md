@@ -1,6 +1,6 @@
 # Android 앱 구현과 Galaxy 검사
 
-2026-10-30. `develop`의 `d46e122a`에서 `feat/android-app`을 만들었다. Android 일반 앱과 치트 앱을 구현하고 Galaxy SM-S731N에 설치했다. 기존 Apple 소스·프로젝트·코어·자원 2,166개 파일의 해시는 작업 전후 같다. `develop`과 `main`에는 병합하지 않았다.
+2026-10-30. `develop`의 `d46e122a`에서 `feat/android-app`을 만들었다. Android 일반 앱과 치트 앱을 구현하고 Galaxy SM-S731N에 설치했다. 기존 Apple 소스·프로젝트·코어·자원 2,166개 파일의 해시는 작업 전후 같다.
 
 ## 구현한 부분
 
