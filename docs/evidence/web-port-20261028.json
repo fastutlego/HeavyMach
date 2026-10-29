@@ -231,5 +231,33 @@
    ],
    "console": "Only error: Cloudflare Web Analytics beacon (static.cloudflareinsights.com) blocked by CSP; same error on https://fastutle.com/ and /comicviewer/ (site-wide, pre-existing)."
   }
+ },
+ "ipad_device_check_20261029": {
+  "device": "iPad mini (6th generation), iPadOS 18.7, Safari 27.0.1",
+  "transport": "wired (devicectl transportType wired)",
+  "access": "local HTTPS server on the same Wi-Fi (mkcert certificate, same game CSP as fastutle.com); Safari remote Web Inspector via pymobiledevice3",
+  "operator": "user tapped, allowed motion permission and tilted the device; agent read state and drove menus through Module._hm_pointer",
+  "wda": "not available: xcodebuild had no Xcode account to sign WebDriverAgent; installed runner failed initializationForUITesting",
+  "findings": {
+   "motion_prompt": "requestPermission and requestFullscreen in the same pointerup left the permission pending without a prompt",
+   "motion_sign": "landscape, window.orientation 90, device +X up: accelerationIncludingGravity x -9.29, y -0.11, z -3.14 (CoreMotion sign)",
+   "orientation_angle": "screen.orientation type landscape-primary angle 0 while window.orientation 90",
+   "safe_area_fullscreen": "top 32px, bottom 33px; Safari close button overlaps LV/EXP"
+  },
+  "results": {
+   "fullscreen": true,
+   "motion_permission": "granted, restored without a tap after reload",
+   "tilt_movement": "raw y -0.21..-0.34 (right side down): playerX 497 -> 738; y +0.16..+0.31: 765 -> 629; repeated segments agree",
+   "ticks_per_second": {
+    "title": 60.0,
+    "combat": 60.0
+   },
+   "display_callback_interval_s": 0.0167
+  },
+  "headless_after_fix": {
+   "60Hz": "pass 59.9",
+   "30Hz (?fps=30)": "pass 59.5",
+   "touch emulation": "pass 56.9"
+  }
  }
 }
