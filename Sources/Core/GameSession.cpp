@@ -354,19 +354,28 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
    for(size_t n=0;n<world.map.enemies.size();++n)if(world.map.enemies[n].name==reinforcement->boss&&world.bossEncounterActivated[n]&&!world.mapEnemiesDefeated[n]){ready=true;break;}
   }else ready=player->position.x>=world.map.right-800;
   if(!ready)return;
-  reinforcementSpawned=true;int index=0;
+  reinforcementSpawned=true;int count=0;
+  for(int n:reinforcement->counts)count+=n;
+  float spanX=0,spanY=0;
+  for(int n=0;n<count;++n){spanX=std::max(spanX,reinforcement->positions[n].x);spanY=std::max(spanY,reinforcement->positions[n].y);}
+  const float screenRight=std::max(world.camera.x+world.canvasWidth*.5f,
+   std::min(world.frontLine,player->position.x+140+world.canvasWidth*.5f));
+  // Translate the whole authored formation. Each aircraft travels the same
+  // distance, retaining its X/Y separation until the original flight AI starts.
+  const float endLeft=std::min(world.frontLine-90,screenRight-72)-spanX;
+  const float spawnLeft=std::max(screenRight+100,player->position.x+180);
+  float ground=world.map.bottom;
+  // Include body width and terrain crossed during the horizontal entry.
+  for(float x=endLeft-60;x<=std::min(world.map.right,spawnLeft+spanX+60);x+=10){
+   float h=world.mapHeight(x);if(h!=10000)ground=std::max(ground,h);
+  }
+  const float floor=ground+45,ceiling=world.map.top-45;
+  const float baseY=std::clamp(ground+80,floor,std::max(floor,ceiling-spanY));
+  int index=0;
   for(size_t type=0;type<reinforcement->counts.size();++type)for(int n=0;n<reinforcement->counts[type];++n,++index){
-   const auto& spec=fighterSpecs()[type];
-   const float screenRight=std::max(world.camera.x+world.canvasWidth*.5f,
-    std::min(world.frontLine,player->position.x+140+world.canvasWidth*.5f));
-   const float endX=std::min(world.frontLine-90,screenRight-spec.width*.6f);
-   // The entire aircraft begins beyond the visible right edge. Boss arena
-   // limits constrain its destination, never its off-screen spawn position.
-   const float x=std::max(screenRight+spec.width*.5f+40,player->position.x+180)+float(index%4)*90;
-   float ground=world.mapHeight(endX);if(ground==10000)ground=player->position.y-10;
-   float y=std::min({world.map.top-35,world.camera.y+130,ground+115+float(index/4)*55});
-   spawnEnemy({spec.name,{x,y},false});
-   auto& aircraft=enemies.back();aircraft.aircraftEntering=true;aircraft.aircraftEntryEndX=endX;aircraft.inScreen=false;
+   const auto& spec=fighterSpecs()[type];const auto offset=reinforcement->positions[index];
+   spawnEnemy({spec.name,{spawnLeft+offset.x,baseY+offset.y},false});
+   auto& aircraft=enemies.back();aircraft.aircraftEntering=true;aircraft.aircraftEntryEndX=endLeft+offset.x;aircraft.inScreen=false;
   }
  }
  MotionEvents advanceAircraftEntry(Machine& m){

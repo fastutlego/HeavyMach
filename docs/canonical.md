@@ -2,6 +2,8 @@
 
 ## Apple 플랫폼 확장 — 2026-10-26
 
+2026-10-29 지원 범위: Mac 앱과 iOS 시뮬레이터는 Apple Silicon arm64만 지원한다. Intel Mac은 지원하지 않는다.
+
 Apple 플랫폼 공용 모듈·native Mac·키보드 요구는 2026-10-26 사용자 지시를 따른다. [구조](apple-platforms.md)와 [키보드 정책](keyboard-input-policy.md)을 적용한다. Catalyst는 사용하지 않는다. iPad는 터치·기울기·키보드를 함께 지원한다.
 
 현행 기준: 2026-10-25. 적용 범위는 이 독립 저장소다. Unity는 별도 저장소이며 IPA 호환 실행기는 `Compatibility/`에 보존한다.

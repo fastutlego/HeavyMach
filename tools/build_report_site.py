@@ -79,6 +79,8 @@ def article(source,dest,download,template):
     if source == ROOT/'docs/public/lux-lunae-intent-20261028.md':
         readme_ids.update({name:f'section-{i}' for i,name in enumerate(['달빛과 두 게임','검은색과 금색','보스전의 난이도와 긴장감','텍스트 지시로 어디까지 만들 수 있는가','승인한 도안 3종','실제 인게임 모습','게임에 적용한 조건','대화 원문'])})
         readme_ids.update({'게임을 하고 달라진 일':'games-and-life','움직임과 무기, 빠른 진입':'movement-and-entry','그림 작업에서 본 한계':'art-direction','지금도 고치고 있는 것':'ongoing-work'})
+    if source == ROOT/'docs/public/lux-formation-plan-20261029.md':
+        readme_ids.update({'X·Y 배치 적용과 기기 검사': 'implementation', '원작 공중 적의 생성 위치': 'original-spawns', '생성 높이만 바꾼 추가 비교': 'vertical-spawns', '현재 코드에서 확인한 원인': 'section-0', '게임 코어 비교': 'section-1', '수정할 배치 규칙': 'section-2', '구현과 확인 순서': 'section-3', '조사 자료': 'section-4'})
     nav=BeautifulSoup('<nav aria-label="본문 목차"><ol></ol></nav>','html.parser')
     for i,h in enumerate(content.select('h2')):
         h['id']=readme_ids.get(h.get_text(), ids[i] if i<len(ids) and ids[i] else f'section-{i}')
@@ -138,6 +140,7 @@ def main():
     aim_page.write_text(aim_page.read_text().replace('href="public/auto-aim-ipad-20261027.md"', 'href="auto-aim-progress.html"'))
     article(ROOT/'docs/RESTORATION.md',dist/'restoration.html','RESTORATION.md',retro)
     public_articles = [
+        ('lux-formation-plan-20261029.md', 'lux-formation.html'),
         ('app-icon-and-media-20261029.md', 'icon-and-media.html'),
         ('hud-improvement-plan-20261028.md', 'hud-improvement.html'),
         ('auto-aim-visibility-plan-20261028.md', 'auto-aim-visibility.html'),
@@ -165,7 +168,7 @@ def main():
         article(ROOT/'docs/public'/source_name, dist/page_name, source_name, retro)
         page = BeautifulSoup((dist/page_name).read_text(), 'html.parser')
         if page.footer: page.footer.decompose()
-        if page_name in ('icon-and-media.html','hud-improvement.html','fullscreen.html','auto-aim-progress.html','lux-lunae.html','lux-lunae-intent.html','gameplay-media.html','ground-aa-art.html'):
+        if page_name in ('lux-formation.html','icon-and-media.html','hud-improvement.html','fullscreen.html','auto-aim-progress.html','lux-lunae.html','lux-lunae-intent.html','gameplay-media.html','ground-aa-art.html'):
             style=page.new_tag('style');style.string='main img,main video{display:block;max-width:100%;height:auto;margin:16px 0}main video{width:100%}';page.head.append(style)
             for img in page.select('main img'):
                 link=page.new_tag('a',href=img['src']);img.wrap(link)
@@ -248,6 +251,8 @@ def main():
                 node[attr] = 'evidence/ground-aa-aircraft-style-'+Path(rel).name
             elif rel.startswith('Art/GroundAA/20261028-runtime-style/') and rel.endswith('.json'):
                 node[attr] = 'evidence/ground-aa-runtime-style-'+Path(rel).name
+            elif rel.startswith(('docs/evidence/lux-formation-20261029.', 'docs/evidence/lux-xy-20261029.', 'docs/evidence/lux-vertical-20261029.', 'docs/evidence/original-air-spawns-20261029.')):
+                node[attr] = 'evidence/'+Path(rel).name
             elif rel == 'docs/evidence/hud-editor-release-20261029.json':
                 node[attr] = 'evidence/hud-editor-release-20261029.json'
             elif rel == 'docs/evidence/hud-editor-20261029.json':
@@ -309,6 +314,12 @@ def main():
         shutil.copyfile(ROOT/'docs/public/media'/name,dist/'media'/name)
     shutil.copyfile(ROOT/'docs/lux-lunae-plan-20261027.md',dist/'lux-lunae-plan-20261027.md')
     (dist/'evidence').mkdir(exist_ok=True)
+    for pattern in ('lux-xy-20261029.*', 'lux-vertical-20261029.*', 'original-air-spawns-20261029.*'):
+        for file in (ROOT/'docs/evidence').glob(pattern):
+            shutil.copyfile(file,dist/'evidence'/file.name)
+    for suffix in ('cpp','csv','json'):
+        name='lux-formation-20261029.'+suffix
+        shutil.copyfile(ROOT/'docs/evidence'/name,dist/'evidence'/name)
     shutil.copyfile(ROOT/'docs/evidence/hud-editor-20261029.json',dist/'evidence/hud-editor-20261029.json')
     shutil.copyfile(ROOT/'docs/evidence/hud-editor-release-20261029.json',dist/'evidence/hud-editor-release-20261029.json')
     for file in (ROOT/'Art/GroundAA/20261028-refinement').glob('*.json'):

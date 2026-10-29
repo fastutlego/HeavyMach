@@ -659,6 +659,39 @@ void emit(NSDictionary* record){NSData* json=[NSJSONSerialization dataWithJSONOb
  @finally {[old makeKeyAndVisible];[host setApplicationActive:YES];}
  emit(@{@"phase":@"autoaim_p95_added_cost",@"prediction_ms":@([costs[@"prediction"][@"p95_ms"]doubleValue]-[costs[@"manual"][@"p95_ms"]doubleValue])});
 }
+- (void)testLuxWavePresentedFramesOnDeviceCanvas {
+ UIWindowScene* scene=nil;for(UIScene* s in UIApplication.sharedApplication.connectedScenes)if([s isKindOfClass:UIWindowScene.class]){scene=(UIWindowScene*)s;break;}
+ XCTAssertNotNil(scene);if(!scene)return;
+ UIWindow* old=scene.keyWindow;HMGameView* host=(HMGameView*)old.rootViewController.view;[host setApplicationActive:NO];
+ @try {for(int warmup:{5,240}){@autoreleasepool{
+  HMProductionTimerView* view=[[HMProductionTimerView alloc]initWithFrame:scene.coordinateSpace.bounds];
+  [view setApplicationActive:NO];[view setWideCanvasEnabled:YES];
+  perfStorage<heavymach::SaveData>(view,"_save")={};
+  auto& data=perfStorage<heavymach::GameData>(view,"_data");const auto& map=data.maps.at("Stage29");
+  auto boss=std::find_if(map.enemies.begin(),map.enemies.end(),[](const auto& e){return e.name=="Boss03";});XCTAssertTrue(boss!=map.enemies.end());if(boss==map.enemies.end())continue;
+  heavymach::ValidationScenario fixture;fixture.mission=3;fixture.stage=4;fixture.allWeapons=true;fixture.internalLevel=50;fixture.grades={6,6,6};fixture.playerPosition=heavymach::Vector2{boss->position.x-450,boss->position.y};
+  perfStorage<std::optional<heavymach::ValidationScenario>>(view,"_validationFixture")=fixture;
+  UIWindow* window=[[UIWindow alloc]initWithWindowScene:scene];UIViewController* vc=[UIViewController new];vc.view=view;window.rootViewController=vc;[window makeKeyAndVisible];[view layoutIfNeeded];[view updateCanvasGeometry];
+  [view startSlot:0 mode:0 mission:3 stage:4];
+  auto& session=perfStorage<std::unique_ptr<heavymach::GameSession>>(view,"_session");session->validationSetCheats(true);
+  ((HMValidationControls*)[view valueForKey:@"validationControls"]).selectedSegmentIndex=1;
+  for(int n=0;n<warmup;++n)[view advanceOriginalFrame];
+  view.firing=YES;view.timerDone=[self expectationWithDescription:@"Lux real timer"];[view setApplicationActive:YES];[self waitForExpectations:@[view.timerDone] timeout:20];
+  int jets=0;for(const auto& e:session->validationEnemies())if(e.name.starts_with("Lux_"))++jets;
+  NSDictionary* work=metrics(view->timerWork),*intervals=metrics(view->timerIntervals);
+  std::vector<double> activeWork;for(size_t n=0;n<view->timerWork.size();++n)activeWork.push_back(view->timerWork[n]-view->waitTimes[n]);
+  NSDictionary* active=metrics(activeWork);
+  emit(@{@"phase":@"lux_production_timer",@"warmup":@(warmup),@"jets":@(jets),@"canvas_width":@(session->canvasWidth()),@"frame_work":work,@"callback_intervals":intervals,@"work_before_wait":active,@"copy":metrics(view->copyTimes),@"quad":metrics(view->quadTimes),@"swap":metrics(view->swapTimes),@"wait_and_restore":metrics(view->waitTimes)});
+  XCTAssertEqual(view->timerWork.size(),size_t(180));XCTAssertEqual(jets,8);
+  // presentToLayer deliberately waits to cap presentation at 60 Hz. Keep
+  // that wall time above, but apply the work budget to time before the wait.
+  XCTAssertLessThan([active[@"p95_ms"]doubleValue],1000.0/60.0);XCTAssertLessThan([intervals[@"p95_ms"]doubleValue],20.0);
+  HMGLRenderer* gl=[view valueForKey:@"glRenderer"];XCTAssertEqualObjects([gl diagnostics][@"lastError"],@"");
+  UIImage* image=[gl snapshot];XCTAssertNotNil(image);if(image){XCTAttachment* a=[XCTAttachment attachmentWithImage:image];a.name=[NSString stringWithFormat:@"Lux_Device_Canvas_%d",warmup];a.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:a];}
+  [view setApplicationActive:NO];window.hidden=YES;window.rootViewController=nil;
+ }}}
+ @finally {[old makeKeyAndVisible];[host setApplicationActive:YES];}
+}
 - (void)testProductionNSTimerTitleMenuAndFiring {
  UIWindowScene* scene=nil;for(UIScene* s in UIApplication.sharedApplication.connectedScenes)if([s isKindOfClass:UIWindowScene.class]){scene=(UIWindowScene*)s;break;}
  XCTAssertNotNil(scene);if(!scene)return;

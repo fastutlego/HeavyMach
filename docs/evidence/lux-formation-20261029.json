@@ -1,0 +1,82 @@
+{
+  "scope": "14 reinforcement maps x 4 canvas sizes; isolated entry and Enemy motion, stationary player, no combat/camera movement after setup; unrotated sprite rectangles",
+  "variants": {
+    "0": "production spawn and destinations",
+    "1": "unique spawn X at 140 spacing, original Y/destinations",
+    "2": "same 140 spacing; X destinations interpolated from max(backLine+70,playerX+120) to original first destination"
+  },
+  "results": {
+    "0": {
+      "spawn": {
+        "cases": 56,
+        "overlapping_cases": 56,
+        "pairs": 211
+      },
+      "last_entry": {
+        "cases": 56,
+        "overlapping_cases": 56,
+        "pairs": 503
+      },
+      "after_5s": {
+        "cases": 56,
+        "overlapping_cases": 55,
+        "pairs": 551
+      },
+      "after_20s": {
+        "cases": 56,
+        "overlapping_cases": 53,
+        "pairs": 372
+      }
+    },
+    "1": {
+      "spawn": {
+        "cases": 56,
+        "overlapping_cases": 0,
+        "pairs": 0
+      },
+      "last_entry": {
+        "cases": 56,
+        "overlapping_cases": 56,
+        "pairs": 488
+      },
+      "after_5s": {
+        "cases": 56,
+        "overlapping_cases": 55,
+        "pairs": 501
+      },
+      "after_20s": {
+        "cases": 56,
+        "overlapping_cases": 53,
+        "pairs": 374
+      }
+    },
+    "2": {
+      "spawn": {
+        "cases": 56,
+        "overlapping_cases": 0,
+        "pairs": 0
+      },
+      "last_entry": {
+        "cases": 56,
+        "overlapping_cases": 52,
+        "pairs": 389
+      },
+      "after_5s": {
+        "cases": 56,
+        "overlapping_cases": 52,
+        "pairs": 480
+      },
+      "after_20s": {
+        "cases": 56,
+        "overlapping_cases": 53,
+        "pairs": 426
+      }
+    }
+  },
+  "sources": {
+    "Sources/Core/GameSession.cpp": "d4e7ac679186f9afe5b1ce89aa16c8322eda3d163748546aecd5dbc519d6c285",
+    "Sources/Core/Fighters.cpp": "b41c4026325727804ec70b711894c74bb2c6da8e4e269db53132df1454c8a904",
+    "Sources/Core/Enemy.cpp": "fe8e22021e65fcd9f677c175e98375bfe37fcf18519a4c157e94c5407b309160",
+    "Sources/Core/Motion.cpp": "e7f7c655dc1a07119933053fb90219b2ce64a6f8060d3a929c52395cce2075ea"
+  }
+}

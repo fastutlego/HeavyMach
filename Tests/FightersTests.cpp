@@ -47,7 +47,7 @@ int main(){
  // All fourteen real map triggers; wide prefetch and pause must not emit a wave.
  int totalWaves=0,totalJets=0;
  for(int mission=0;mission<7;++mission)for(int stage=0;stage<GlobalInfo::stageCount(mission);++stage){char key[32];snprintf(key,sizeof(key),"Stage%02d",GlobalInfo::mapNumber({mission,stage}));auto wave=fighterWave(key);if(!wave)continue;
-  for(float width:{480.f,900.f}){SaveSlot save;GlobalInfo(save).selectSlot(0);uint32_t seed=9;GameSession game(data,save,dims,[&]{seed=seed*1664525+1013904223;return int32_t(seed>>1);});game.setCanvasWidth(width);game.start(0,mission,stage);auto& i=*game.impl_;
+  for(auto canvas:{Vector2{480,320},Vector2{480,360},Vector2{695,320},Vector2{569,320},Vector2{900,320}}){float width=canvas.x;for(float jump:{0.f,200.f}){SaveSlot save;GlobalInfo(save).selectSlot(0);uint32_t seed=9;GameSession game(data,save,dims,[&]{seed=seed*1664525+1013904223;return int32_t(seed>>1);});game.setCanvasWidth(width);game.start(0,mission,stage);auto& i=*game.impl_;i.world.canvasHeight=canvas.y;
    auto jets=[&]{int n=0;for(auto& e:i.enemies)if(e.definition->name.starts_with("Lux_"))++n;return n;};assert(jets()==0);
    float trigger=i.world.map.right-800;if(wave->boss[0]){auto boss=std::find_if(i.world.map.enemies.begin(),i.world.map.enemies.end(),[&](const auto& e){return e.name==wave->boss;});assert(boss!=i.world.map.enemies.end());trigger=boss->position.x-490;}
    i.player->position.x=trigger-40;i.world.processRegen(i.player->position.x,i);
@@ -55,8 +55,27 @@ int main(){
    for(size_t n=0;n<i.world.map.enemies.size();++n)if(i.world.bossEncounterActivated[n]&&!i.world.mapEnemiesDefeated[n]&&i.world.map.enemies[n].name!=wave->boss)i.world.killMapBoss(n);
    i.spawnReinforcements();assert(jets()==0);
    i.player->position.x=trigger;i.world.processRegen(trigger,i);i.world.paused=true;i.spawnReinforcements();assert(jets()==0);i.world.paused=false;
+   float playerGround=i.world.mapHeight(trigger);i.player->position.y=(playerGround==10000?i.world.map.bottom:playerGround)+30+jump;
    for(int c=0;c<60;++c)i.world.processCamera(i.player->position);
    int bossCount=i.world.bossCount;auto seedBefore=seed;i.spawnReinforcements();assert(seed==seedBefore);int expected=0;for(int n:wave->counts)expected+=n;assert(jets()==expected&&i.world.bossCount==bossCount);
+   // Simultaneous flight catches the old convergence on one shared endpoint.
+   std::vector<GameSession::Impl::Machine*> formation;
+   for(auto& e:i.enemies)if(e.definition->name.starts_with("Lux_"))formation.push_back(&e);
+   std::vector<Vector2> starts;for(auto* e:formation)starts.push_back(e->enemy->position);
+   auto separated=[&]{for(size_t a=0;a<formation.size();++a){auto& e=*formation[a];
+     assert(e.enemy->position.y+e.vtol->width*e.vtol->aspect*.5f<i.world.map.top);
+     auto ground=i.world.mapHeight(e.enemy->position.x);assert(ground==10000||e.enemy->position.y-e.vtol->width*e.vtol->aspect*.5f>ground);
+     for(size_t b=0;b<a;++b){auto& other=*formation[b];
+      float dx=std::abs(e.enemy->position.x-other.enemy->position.x),dy=std::abs(e.enemy->position.y-other.enemy->position.y);
+      assert(dx>=(e.vtol->width+other.vtol->width)*.5f+10 || dy>=(e.vtol->width*e.vtol->aspect+other.vtol->width*other.vtol->aspect)*.5f+10);
+     }
+   }};
+   separated();int entryTicks=0;
+   while(formation.front()->aircraftEntering&&entryTicks++<1000){for(auto* e:formation)i.advanceAircraftEntry(*e);separated();
+    for(auto* e:formation)assert(e->aircraftEntering==formation.front()->aircraftEntering);
+   }
+   assert(entryTicks<1000);
+   for(size_t n=0;n<formation.size();++n){formation[n]->enemy->position=starts[n];formation[n]->aircraftEntering=true;}
    for(auto& e:i.enemies)if(e.definition->name.starts_with("Lux_")){assert(!e.enemy->isBoss&&e.enemy->hp==765);assert(e.enemy->position.x-e.vtol->width*.5f>i.world.camera.x+width*.5f);
     assert(e.aircraftEntering);auto start=e.enemy->position;auto beforeRng=seed;
     i.world.paused=true;i.advanceAircraftEntry(e);assert(e.enemy->position.x==start.x&&e.aircraftEntering);i.world.paused=false;
@@ -65,8 +84,8 @@ int main(){
     assert(e.enemy->position.y<i.world.map.top);auto ground=i.world.mapHeight(e.enemy->position.x);assert(ground==10000||e.enemy->position.y>ground+10);}
    game.setCanvasWidth(width==480?900:480);i.spawnReinforcements();i.world.paused=true;i.world.paused=false;i.spawnReinforcements();assert(jets()==expected);
    game.start(0,mission,stage);assert(!i.reinforcementSpawned&&jets()==0);
-   if(width==480){++totalWaves;totalJets+=expected;}
-  }
+   if(width==480&&canvas.y==320&&jump==0){++totalWaves;totalJets+=expected;}
+  }}
  }
  {SaveSlot save;GlobalInfo(save).selectSlot(0);GameSession game(data,save,dims,[]{return 0;});game.start(1,0,0);auto& i=*game.impl_;assert(!i.reinforcement);i.player->position.x=i.world.map.right;i.spawnReinforcements();assert(!i.reinforcementSpawned);}
  assert(totalWaves==14&&totalJets==72);std::cout<<"14 wave triggers, 72 additions; original map entries preserved PASS\n";

@@ -30,10 +30,12 @@
 
 - Apple 플랫폼·키보드 작업은 `docs/apple-platforms.md`, `docs/keyboard-input-policy.md`와 `.agents/skills/game-keyboard-input/SKILL.md`를 읽는다. 앱별 소스 복사를 추가하지 않으며 Catalyst를 사용하지 않는다. iPad 터치·기울기와 키보드를 함께 유지한다.
 
-- iPhone·iPad 무선 설치·디버깅에는 `.agents/skills/apple-wireless-device/SKILL.md`와 `docs/wireless-device-workflow.md`를 읽는다. 실제 transport와 스킴을 확인하고 일반 저장을 보존한다.
+- iPhone·iPad 무선 설치·디버깅에는 `.agents/skills/apple-wireless-device/SKILL.md`와 `docs/wireless-device-workflow.md`를 읽는다. 실제 transport와 스킴을 확인하고 일반 저장을 보존한다. 설치·실행·자체 검사 후에는 결과를 저장하고 대상 앱을 종료한 뒤 기기 홈 화면 복귀를 확인한다. 사용자가 앱을 켜 두라고 지시하면 그 지시를 따른다.
 
 - 사용자 지시(2026-10-27): 자동조준은 develop에서 분기한 `feat/auto-aim-ipad-validation`에서 개발한다. iPad 치트 앱에서 이동·점프·사격·무기/표적 전환을 검증한다. 충분히 완성하기 전에는 develop 또는 main에 병합하지 않는다. 후속 사용자 지시에 따라 정식 앱에도 자동조준을 제공한다. 기본값은 OFF이며 A로 켜고 끈다. 정식 앱의 치트 기능은 계속 비활성화한다.
 
 - 사용자 후속 지시(2026-10-27): C 명중 보정 기능은 삭제한다. 자동조준에서도 실제 탄속·분산·비행 경로를 덮어쓰지 않는다. 수동 사격은 자동조준 추가 전 코드와 동일 입력·난수로 대조한다.
 
 - 사용자 후속 지시(2026-10-27): 위 자동조준 미병합 지시 이후 develop→main 병합과 버전 태그를 요청했다. `v0.11`로 원격 반영 완료. 신규 F-22·Su-57·MiG-31 작업은 `feat/lux-lunae-fighters`와 `docs/lux-lunae-plan-20261027.md`를 따른다.
+
+- 사용자 지시(2026-10-29): main 병합 직전에 원격 main·develop을 fetch하고 main에서 사용자가 직접 수정한 문서·커밋을 확인한다. 공통 조상 이후 양쪽 변경과 병합 후보의 최종 본문을 대조한다. Git 충돌이 없어도 최신 사용자 문구가 덮이지 않았는지 확인한다. 충돌은 최신 사용자 원문을 보존해 해결하며 ours/theirs 일괄 선택으로 처리하지 않는다. 상세 절차는 `docs/repository-management.md`의 main 직접 수정 문서 보존 항목을 따른다.
