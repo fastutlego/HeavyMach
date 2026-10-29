@@ -259,7 +259,6 @@
 		57AC2B9EC0FD2A52BC1DD562 /* RESTORATION.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = RESTORATION.md; sourceTree = "<group>"; };
 		58988EB22F82530CBB4CA5FD /* heavymach-recovery-20261024.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "heavymach-recovery-20261024.md"; sourceTree = "<group>"; };
 		58A684CE07FDE7E0FFE2E04F /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		58F9CEFD736EDAAE6031F5C1 /* sass-mutiny-source.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "sass-mutiny-source.txt"; sourceTree = "<group>"; };
 		5A2C56D93AEE15B804838961 /* instruments-validation-20261024.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "instruments-validation-20261024.md"; sourceTree = "<group>"; };
 		5A8423B0BCC0B6480D8B16C0 /* core-items.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "core-items.md"; sourceTree = "<group>"; };
 		5AD7E667DDFC38AA9F8F5E3C /* user-restoration-reason-20261026.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "user-restoration-reason-20261026.md"; sourceTree = "<group>"; };
@@ -479,7 +478,6 @@
 			isa = PBXGroup;
 			children = (
 				7C96EEAE67C5C2D61771E0DA /* hm-defense-origin.md */,
-				58F9CEFD736EDAAE6031F5C1 /* sass-mutiny-source.txt */,
 				9AC080A75FE4676E7C571853 /* source-manifest.json */,
 				035EA9FA2B4620448BB28C7E /* unity-planning-origin.md */,
 				1E690824D09AA5F5A9A72384 /* user-background-20261026.md */,

@@ -6,11 +6,11 @@
 
 1. [사용자가 추가한 경험과 연도 정정](references/developer-background/user-background-20261026.md). 필리핀 근무는 2016년, iOS 개발자 전업은 2017년 7월이다. 약 35%는 본인이 평가한 HeavyMach의 영향 비중이다.
 2. [기존 MachDefense 복원 문서의 시작 배경](references/developer-background/hm-defense-origin.md). 대학생 시절의 플레이와 이후 직업 전환, Mesabloo 프로젝트 발견을 기록했다. 원문의 2008년 표기는 그대로 보존하되 새 원고에는 최신 사용자 설명과 당시 출시 자료의 2009년을 사용한다. 첫 플레이의 정확한 날짜는 새로 만들지 않는다.
-3. [SaaS 「항명의 대가」 소스 발췌](references/developer-background/sass-mutiny-source.txt). V09, № 06. 편집디자인팀의 집단 항명과 정시 퇴근, 편집부에 내려진 반대 처우를 기록했다. 사용자 경험에 관한 글이다. 보존 시점의 로컬 파일에는 staged 수정이 있어, 운영 사이트의 현재 게시본과 동일하다고 표시하지 않는다.
+3. [SaaS 「항명의 대가」 공개 글](https://sass.studio/magazine/cerulean). V09, № 06. 편집디자인팀의 집단 항명과 근무 조건에 관한 작성자의 경험이다.
 4. [Unity 초기 기획 발췌](references/developer-background/unity-planning-origin.md). 2026년 7월 21일 개발·학습 목적과 7월 22일 HeavyMach 1을 참고한 게임 착수 결정이다.
 5. [개발자의 변 원고](RESTORATION.md). 첫 글감과 [후속 글감](references/developer-background/user-restoration-reason-20261026.md)을 반영했다. 현재 복원 동기·원작자 연락·조건부 무료 배포 의향까지 작성했다.
 
-복사 범위·출처 커밋·파일 해시는 [출처 목록](references/developer-background/source-manifest.json)에 있다. hm-defense의 기존 RESTORATION.md와 SaaS 소스는 수정하지 않는다. 외부 폴더가 없어도 위 발췌로 작성 근거를 확인할 수 있다.
+복사 범위·출처 커밋·파일 해시는 [출처 목록](references/developer-background/source-manifest.json)에 있다. hm-defense의 기존 RESTORATION.md는 수정하지 않는다. 다른 비공개 프로젝트의 소스와 내부 문서는 이 저장소에 복사하지 않는다.
 
 6. [복원 시작과 꿈에 관한 글감·정정](references/developer-background/user-project-origin-20261028.md). 복원 시작에 관한 세 문단은 README와 개발자의 변에 같은 문장으로 싣는다. 최신 README는 아래 채택 원고의 순서를 따른다.
 
@@ -50,7 +50,7 @@
 
 사용자 원문에는 ‘대한민국 최초 미국 앱스토어 1위’, ‘대한민국 최초 1억원 매출’이 있다. 이번에 읽은 자료로는 두 ‘최초’를 확인하지 못했다. [2009년 8월 11일 전자신문에 실린 연합뉴스 기사](https://www.etnews.com/200908110002)는 미국 유료 전체 첫 1위를 Cartoon Wars로, HeavyMach의 앞선 기록을 전체 5위로 설명한다. 분야별 순위와 전체 순위를 섞지 않는다. 현재 원고에는 인터뷰에서 확인한 5위권·1억4천만 원만 사용했다.
 
-SaaS 홈페이지는 이번 웹 조회에서 시간 초과로 읽지 못했다. 「항명의 대가」는 연결된 웹 저장소의 실제 화면 데이터에서 확인했다. 로크웰 오토메이션·B&R·요코가와 임원 인터뷰 경험은 이번 사용자 설명을 근거로 기록하며 기사 제목이나 취재 날짜를 추정하지 않는다.
+「항명의 대가」는 위 공개 글에서 읽을 수 있다. 로크웰 오토메이션·B&R·요코가와 임원 인터뷰 경험은 이번 사용자 설명을 근거로 기록하며 기사 제목이나 취재 날짜를 추정하지 않는다.
 
 ## 후속 글감의 출처
 
