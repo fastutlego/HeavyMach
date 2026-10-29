@@ -64,7 +64,8 @@ main에 배포한 버전마다 변경 내용과 검사 결과를 정리하고 Gi
 - [x] HUD 편집기·Android 부호·세로 보류 빌드 배포(fastutle-site `8e13936`, 배포 주소 헤드리스3종 통과, 2026-10-29).
 - [ ] iPad Safari 전체 화면의 닫기(X) 버튼이 LV·EXP를 가리는 문제: HUD 편집기로 LV·EXP를 옮길 수 있게 했다. 실제 iPad에서 편집·저장을 확인한다.
 - [x] Android 패드 양쪽 가로 방향 기울기 이동 확인, Android 부호 판별 수정(2026-10-29).
-- [ ] iPhone 기울기와 iPad 반대 가로 방향을 확인한다.
+- [x] iPad mini 6 fastutle.com 양쪽 가로 기울기·HUD 편집기·초당60틱 확인(2026-10-29).
+- [ ] iPhone 기울기 확인. 다른 iPadOS 버전에서 반대 가로의 방향 값(`window.orientation` 0으로 보고) 확인.
 - [x] 세로를 지날 때 멈춤 메뉴 대신 보류 후 가로 복귀 시 자동 재개(2026-10-29 사용자 결정, 헤드리스·Android 패드 실기기 확인). iPhone 확인은 남음.
 - [x] v0.14 HUD 편집기를 웹에 옮겼다(2026-10-29, 헤드리스 검사 통과). 실제 iPad 확인은 아래 항목.
 - [ ] iOS·웹·Android가 함께 쓰는 `Sources/Platform`으로 메뉴·HUD·프레임 조립을 합친다.

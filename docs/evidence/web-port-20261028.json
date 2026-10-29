@@ -418,5 +418,25 @@
    "orientation-hold.mjs": "all steps"
   },
   "console": "only the site-wide Cloudflare Web Analytics beacon blocked by CSP"
+ },
+ "ipad_live_20261029": {
+  "device": "iPad mini 6, iPadOS 18.7, Safari 27.0.1, wired",
+  "url": "https://fastutle.com/game/heavy_mach/ (fastutle-site 8e13936)",
+  "ticks_per_second": [
+   60.1,
+   60.1,
+   60.0
+  ],
+  "hud_editor": "pause SET GAME UI opened over the live 1-2 scene; CANCEL, no layout file; RESUME",
+  "tilt": {
+   "orientation_90": "y -0.6 -> right (-1000 -> -772)",
+   "reverse_landscape": "y +0.3 -> right (-940 -> -825); y -0.5 -> left (-770 -> -964)"
+  },
+  "reverse_landscape_reports": {
+   "window.orientation": 0,
+   "screen.orientation": "portrait-primary 90",
+   "portrait_media_query": false,
+   "handled_as": "LandscapeLeft (not 90), matches measured movement"
+  }
  }
 }
