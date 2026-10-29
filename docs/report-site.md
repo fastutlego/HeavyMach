@@ -1,5 +1,14 @@
 # HeavyMach 보고 사이트
 
+## 2026-10-29 번역 범위를 GitHub 방문자용 문서로 수정
+
+[수정 계획](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/document-localization.html)을 같은 보고서 주소에 반영했다. 기존 공개 원고17개와 새 공개 목차·기획 의도·남은 과제3개를 대상으로 정했다. 개발 명령·정본·내부 기획서·정책·스킬은 제외했다. 이전209개 전수 목록의 번역 제안은 철회 표시했다.
+
+- source: `325dbf16079a542c532df04afcde454624044e1a`
+- deployment: `appgdep_6ae35b5d835081918025aab89f8df122` · succeeded
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_126a104faf148191892ebe2018678fbe`
+- 소유자 전용 접근 유지. 보고서48개 목차 연결·로컬 링크152개·원고 복사 일치 검사 통과. 브라우저 직접 화면 검사는 수행하지 않았다.
+
 ## 2026-10-29 국문·영문 문서 조사와 구현 계획
 
 [조사와 계획](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/document-localization.html)을 통합 목차에 추가했다. 문서209개의 목록·해시, 해외 사례6개, 번역 스킬·문체·언어 선택·원문 변경 검사와 구현 순서를 담았다. [저장소 원고](document-localization-plan.md).

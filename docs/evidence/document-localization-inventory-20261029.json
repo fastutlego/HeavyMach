@@ -21,9 +21,9 @@
       "has_hangul": true,
       "category": "skills-policy",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/repository/agents/policy.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/agents/policy.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": ".agents/project.md",
@@ -32,9 +32,9 @@
       "has_hangul": true,
       "category": "skills-policy",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/repository/agents/project.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/agents/project.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": ".agents/skills/apple-wireless-device/SKILL.md",
@@ -43,9 +43,9 @@
       "has_hangul": true,
       "category": "skills-policy",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/repository/agents/skills/apple-wireless-device/SKILL.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/agents/skills/apple-wireless-device/SKILL.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": ".agents/skills/engineering-browser/SKILL.md",
@@ -54,9 +54,9 @@
       "has_hangul": true,
       "category": "skills-policy",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/repository/agents/skills/engineering-browser/SKILL.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/agents/skills/engineering-browser/SKILL.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": ".agents/skills/engineering-debug/SKILL.md",
@@ -65,9 +65,9 @@
       "has_hangul": true,
       "category": "skills-policy",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/repository/agents/skills/engineering-debug/SKILL.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/agents/skills/engineering-debug/SKILL.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": ".agents/skills/engineering-debug/references/upstream.md",
@@ -76,9 +76,9 @@
       "has_hangul": false,
       "category": "skills-policy",
       "preserve_original": false,
-      "proposed_english_path": ".agents/skills/engineering-debug/references/upstream.md",
-      "action": "review-existing-english-or-data",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": ".agents/skills/engineering-debug/references/upstream.md",
+      "historical_action": "review-existing-english-or-data"
     },
     {
       "source": ".agents/skills/engineering-review/SKILL.md",
@@ -87,9 +87,9 @@
       "has_hangul": true,
       "category": "skills-policy",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/repository/agents/skills/engineering-review/SKILL.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/agents/skills/engineering-review/SKILL.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": ".agents/skills/engineering-review/references/upstream.md",
@@ -98,9 +98,9 @@
       "has_hangul": false,
       "category": "skills-policy",
       "preserve_original": false,
-      "proposed_english_path": ".agents/skills/engineering-review/references/upstream.md",
-      "action": "review-existing-english-or-data",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": ".agents/skills/engineering-review/references/upstream.md",
+      "historical_action": "review-existing-english-or-data"
     },
     {
       "source": ".agents/skills/engineering-test/SKILL.md",
@@ -109,9 +109,9 @@
       "has_hangul": true,
       "category": "skills-policy",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/repository/agents/skills/engineering-test/SKILL.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/agents/skills/engineering-test/SKILL.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": ".agents/skills/engineering-test/references/upstream.md",
@@ -120,9 +120,9 @@
       "has_hangul": false,
       "category": "skills-policy",
       "preserve_original": false,
-      "proposed_english_path": ".agents/skills/engineering-test/references/upstream.md",
-      "action": "review-existing-english-or-data",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": ".agents/skills/engineering-test/references/upstream.md",
+      "historical_action": "review-existing-english-or-data"
     },
     {
       "source": ".agents/skills/game-keyboard-input/SKILL.md",
@@ -131,9 +131,9 @@
       "has_hangul": true,
       "category": "skills-policy",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/repository/agents/skills/game-keyboard-input/SKILL.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/agents/skills/game-keyboard-input/SKILL.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": ".agents/skills/integrate-game-art/SKILL.md",
@@ -142,9 +142,9 @@
       "has_hangul": true,
       "category": "skills-policy",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/repository/agents/skills/integrate-game-art/SKILL.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/agents/skills/integrate-game-art/SKILL.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": ".agents/skills/integrate-game-art/references/unity-original.md",
@@ -153,9 +153,9 @@
       "has_hangul": true,
       "category": "skills-policy",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/repository/agents/skills/integrate-game-art/references/unity-original.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/agents/skills/integrate-game-art/references/unity-original.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": ".agents/skills/port-heavymach-android/SKILL.md",
@@ -164,9 +164,9 @@
       "has_hangul": true,
       "category": "skills-policy",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/repository/agents/skills/port-heavymach-android/SKILL.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/agents/skills/port-heavymach-android/SKILL.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": ".agents/skills/present-game-artifacts/SKILL.md",
@@ -175,9 +175,9 @@
       "has_hangul": true,
       "category": "skills-policy",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/repository/agents/skills/present-game-artifacts/SKILL.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/agents/skills/present-game-artifacts/SKILL.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": ".agents/skills/write-project-text/SKILL.md",
@@ -186,9 +186,9 @@
       "has_hangul": true,
       "category": "skills-policy",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/repository/agents/skills/write-project-text/SKILL.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/agents/skills/write-project-text/SKILL.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": ".agents/skills/write-project-text/references/upstream/candidate-editorial-rules.md",
@@ -197,9 +197,9 @@
       "has_hangul": true,
       "category": "upstream-skills",
       "preserve_original": true,
-      "proposed_english_path": "docs/en/repository/agents/skills/write-project-text/references/upstream/candidate-editorial-rules.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/agents/skills/write-project-text/references/upstream/candidate-editorial-rules.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": ".agents/skills/write-project-text/references/upstream/present-candidate-review/SKILL.md",
@@ -208,9 +208,9 @@
       "has_hangul": true,
       "category": "upstream-skills",
       "preserve_original": true,
-      "proposed_english_path": "docs/en/repository/agents/skills/write-project-text/references/upstream/present-candidate-review/SKILL.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/agents/skills/write-project-text/references/upstream/present-candidate-review/SKILL.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": ".agents/skills/write-project-text/references/upstream/present-candidate-review/references/materials.md",
@@ -219,9 +219,9 @@
       "has_hangul": true,
       "category": "upstream-skills",
       "preserve_original": true,
-      "proposed_english_path": "docs/en/repository/agents/skills/write-project-text/references/upstream/present-candidate-review/references/materials.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/agents/skills/write-project-text/references/upstream/present-candidate-review/references/materials.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": ".agents/skills/write-project-text/references/upstream/sass-application-writing.md",
@@ -230,9 +230,9 @@
       "has_hangul": true,
       "category": "upstream-skills",
       "preserve_original": true,
-      "proposed_english_path": "docs/en/repository/agents/skills/write-project-text/references/upstream/sass-application-writing.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/agents/skills/write-project-text/references/upstream/sass-application-writing.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": ".agents/skills/write-project-text/references/upstream/sass-applications/SKILL.md",
@@ -241,9 +241,9 @@
       "has_hangul": true,
       "category": "upstream-skills",
       "preserve_original": true,
-      "proposed_english_path": "docs/en/repository/agents/skills/write-project-text/references/upstream/sass-applications/SKILL.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/agents/skills/write-project-text/references/upstream/sass-applications/SKILL.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": ".agents/skills/write-project-text/references/upstream/sass-authoring-workflows.md",
@@ -252,9 +252,9 @@
       "has_hangul": true,
       "category": "upstream-skills",
       "preserve_original": true,
-      "proposed_english_path": "docs/en/repository/agents/skills/write-project-text/references/upstream/sass-authoring-workflows.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/agents/skills/write-project-text/references/upstream/sass-authoring-workflows.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": ".agents/skills/write-project-text/references/upstream/sass-content-authoring-canon.md",
@@ -263,9 +263,9 @@
       "has_hangul": true,
       "category": "upstream-skills",
       "preserve_original": true,
-      "proposed_english_path": "docs/en/repository/agents/skills/write-project-text/references/upstream/sass-content-authoring-canon.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/agents/skills/write-project-text/references/upstream/sass-content-authoring-canon.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": ".agents/skills/write-project-text/references/upstream/sass-content/SKILL.md",
@@ -274,9 +274,9 @@
       "has_hangul": true,
       "category": "upstream-skills",
       "preserve_original": true,
-      "proposed_english_path": "docs/en/repository/agents/skills/write-project-text/references/upstream/sass-content/SKILL.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/agents/skills/write-project-text/references/upstream/sass-content/SKILL.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": ".agents/skills/write-project-text/references/upstream/sass-proposal-authoring-canon.md",
@@ -285,9 +285,9 @@
       "has_hangul": true,
       "category": "upstream-skills",
       "preserve_original": true,
-      "proposed_english_path": "docs/en/repository/agents/skills/write-project-text/references/upstream/sass-proposal-authoring-canon.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/agents/skills/write-project-text/references/upstream/sass-proposal-authoring-canon.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": ".agents/skills/write-project-text/references/upstream/sass-review-materials.md",
@@ -296,9 +296,9 @@
       "has_hangul": true,
       "category": "upstream-skills",
       "preserve_original": true,
-      "proposed_english_path": "docs/en/repository/agents/skills/write-project-text/references/upstream/sass-review-materials.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/agents/skills/write-project-text/references/upstream/sass-review-materials.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": ".agents/skills/write-project-text/references/upstream/sass-review-publication/SKILL.md",
@@ -307,9 +307,9 @@
       "has_hangul": true,
       "category": "upstream-skills",
       "preserve_original": true,
-      "proposed_english_path": "docs/en/repository/agents/skills/write-project-text/references/upstream/sass-review-publication/SKILL.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/agents/skills/write-project-text/references/upstream/sass-review-publication/SKILL.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": ".agents/skills/write-project-text/references/upstream/write-candidate-report/SKILL.md",
@@ -318,9 +318,9 @@
       "has_hangul": true,
       "category": "upstream-skills",
       "preserve_original": true,
-      "proposed_english_path": "docs/en/repository/agents/skills/write-project-text/references/upstream/write-candidate-report/SKILL.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/agents/skills/write-project-text/references/upstream/write-candidate-report/SKILL.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": ".github/pull_request_template.md",
@@ -329,9 +329,9 @@
       "has_hangul": true,
       "category": "other",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/repository/github/pull_request_template.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/github/pull_request_template.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "AGENTS.md",
@@ -340,9 +340,9 @@
       "has_hangul": true,
       "category": "other",
       "preserve_original": false,
-      "proposed_english_path": "AGENTS.en.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "AGENTS.en.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "ASSET-LICENSES.md",
@@ -351,9 +351,9 @@
       "has_hangul": true,
       "category": "other",
       "preserve_original": false,
-      "proposed_english_path": "ASSET-LICENSES.en.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "ASSET-LICENSES.en.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "Art/AppIcon/20261029/README.md",
@@ -362,9 +362,9 @@
       "has_hangul": true,
       "category": "other",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/repository/Art/AppIcon/20261029/README.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/Art/AppIcon/20261029/README.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "Art/AutoAim/20261027/prompts.md",
@@ -373,9 +373,9 @@
       "has_hangul": true,
       "category": "other",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/repository/Art/AutoAim/20261027/prompts.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/Art/AutoAim/20261027/prompts.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "CHANGELOG.md",
@@ -384,9 +384,9 @@
       "has_hangul": true,
       "category": "other",
       "preserve_original": false,
-      "proposed_english_path": "CHANGELOG.en.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "CHANGELOG.en.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "CLAUDE.md",
@@ -395,9 +395,9 @@
       "has_hangul": false,
       "category": "other",
       "preserve_original": false,
-      "proposed_english_path": "CLAUDE.md",
-      "action": "review-existing-english-or-data",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "CLAUDE.md",
+      "historical_action": "review-existing-english-or-data"
     },
     {
       "source": "CONTRIBUTING.md",
@@ -406,9 +406,9 @@
       "has_hangul": true,
       "category": "other",
       "preserve_original": false,
-      "proposed_english_path": "CONTRIBUTING.en.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "CONTRIBUTING.en.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "CREDITS.md",
@@ -417,9 +417,9 @@
       "has_hangul": true,
       "category": "other",
       "preserve_original": false,
-      "proposed_english_path": "CREDITS.en.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "CREDITS.en.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "Compatibility/AGENTS.md",
@@ -428,9 +428,9 @@
       "has_hangul": true,
       "category": "other",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/repository/Compatibility/AGENTS.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/Compatibility/AGENTS.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "Compatibility/README.md",
@@ -439,9 +439,9 @@
       "has_hangul": true,
       "category": "other",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/repository/Compatibility/README.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/Compatibility/README.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "Compatibility/originals/README.md",
@@ -450,9 +450,9 @@
       "has_hangul": true,
       "category": "other",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/repository/Compatibility/originals/README.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/Compatibility/originals/README.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "LICENSE-SCOPE.md",
@@ -461,9 +461,9 @@
       "has_hangul": true,
       "category": "other",
       "preserve_original": false,
-      "proposed_english_path": "LICENSE-SCOPE.en.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "LICENSE-SCOPE.en.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "README.md",
@@ -472,9 +472,9 @@
       "has_hangul": true,
       "category": "other",
       "preserve_original": false,
-      "proposed_english_path": "README.en.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "README.en.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "THIRD_PARTY_NOTICES.md",
@@ -483,9 +483,9 @@
       "has_hangul": true,
       "category": "other",
       "preserve_original": false,
-      "proposed_english_path": "THIRD_PARTY_NOTICES.en.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "THIRD_PARTY_NOTICES.en.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "Tests/HighLevelEvidence.md",
@@ -494,9 +494,9 @@
       "has_hangul": true,
       "category": "other",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/repository/Tests/HighLevelEvidence.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository/Tests/HighLevelEvidence.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/README.md",
@@ -505,9 +505,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/README.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/README.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/RESTORATION.md",
@@ -516,9 +516,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/RESTORATION.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/RESTORATION.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/android-port-plan-20261026.md",
@@ -527,9 +527,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/android-port-plan-20261026.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/android-port-plan-20261026.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/apple-platforms.md",
@@ -538,9 +538,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/apple-platforms.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/apple-platforms.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/audio-fidelity.md",
@@ -549,9 +549,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/audio-fidelity.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/audio-fidelity.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/audio-preload.md",
@@ -560,9 +560,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/audio-preload.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/audio-preload.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/auto-aim-plan-20261026.md",
@@ -571,9 +571,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/auto-aim-plan-20261026.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/auto-aim-plan-20261026.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/blend-reachability.md",
@@ -582,9 +582,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/blend-reachability.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/blend-reachability.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/boss-battles-v1.md",
@@ -593,9 +593,9 @@
       "has_hangul": false,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/boss-battles-v1.md",
-      "action": "review-existing-english-or-data",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/boss-battles-v1.md",
+      "historical_action": "review-existing-english-or-data"
     },
     {
       "source": "docs/boss-battles-v5.md",
@@ -604,9 +604,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/boss-battles-v5.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/boss-battles-v5.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/boss-battles-v6.md",
@@ -615,9 +615,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/boss-battles-v6.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/boss-battles-v6.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/boss-motion-fix-20261025.md",
@@ -626,9 +626,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/boss-motion-fix-20261025.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/boss-motion-fix-20261025.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/camera-integration.md",
@@ -637,9 +637,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/camera-integration.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/camera-integration.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/canonical.md",
@@ -648,9 +648,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/canonical.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/canonical.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/canvas-ai-and-rotation-research-20261025.md",
@@ -659,9 +659,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/canvas-ai-and-rotation-research-20261025.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/canvas-ai-and-rotation-research-20261025.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/cheat-stage-check.md",
@@ -670,9 +670,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/cheat-stage-check.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/cheat-stage-check.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/clear-illustration-fix-20261025.md",
@@ -681,9 +681,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/clear-illustration-fix-20261025.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/clear-illustration-fix-20261025.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/compat-source-comparison-20261024.md",
@@ -692,9 +692,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/compat-source-comparison-20261024.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/compat-source-comparison-20261024.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/coordinate-policy.md",
@@ -703,9 +703,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/coordinate-policy.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/coordinate-policy.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/core-bullet-visual.md",
@@ -714,9 +714,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/core-bullet-visual.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/core-bullet-visual.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/core-camera.md",
@@ -725,9 +725,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/core-camera.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/core-camera.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/core-enemy.md",
@@ -736,9 +736,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/core-enemy.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/core-enemy.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/core-geometry.md",
@@ -747,9 +747,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/core-geometry.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/core-geometry.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/core-items.md",
@@ -758,9 +758,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/core-items.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/core-items.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/core-loading-transition.md",
@@ -769,9 +769,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/core-loading-transition.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/core-loading-transition.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/core-motion.md",
@@ -780,9 +780,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/core-motion.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/core-motion.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/core-player.md",
@@ -791,9 +791,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/core-player.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/core-player.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/core-session.md",
@@ -802,9 +802,9 @@
       "has_hangul": false,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/core-session.md",
-      "action": "review-existing-english-or-data",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/core-session.md",
+      "historical_action": "review-existing-english-or-data"
     },
     {
       "source": "docs/core-title.md",
@@ -813,9 +813,9 @@
       "has_hangul": false,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/core-title.md",
-      "action": "review-existing-english-or-data",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/core-title.md",
+      "historical_action": "review-existing-english-or-data"
     },
     {
       "source": "docs/core-trail-raster.md",
@@ -824,9 +824,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/core-trail-raster.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/core-trail-raster.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/core-trail.md",
@@ -835,9 +835,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/core-trail.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/core-trail.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/core-visuals.md",
@@ -846,9 +846,9 @@
       "has_hangul": false,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/core-visuals.md",
-      "action": "review-existing-english-or-data",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/core-visuals.md",
+      "historical_action": "review-existing-english-or-data"
     },
     {
       "source": "docs/core-world.md",
@@ -857,9 +857,9 @@
       "has_hangul": false,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/core-world.md",
-      "action": "review-existing-english-or-data",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/core-world.md",
+      "historical_action": "review-existing-english-or-data"
     },
     {
       "source": "docs/current-status.md",
@@ -868,9 +868,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/current-status.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/current-status.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/design.md",
@@ -879,9 +879,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/design.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/design.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/developer-background.md",
@@ -890,9 +890,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/developer-background.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/developer-background.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/device-validation-ready.md",
@@ -901,9 +901,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/device-validation-ready.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/device-validation-ready.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/document-governance.md",
@@ -912,9 +912,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/document-governance.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/document-governance.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/documentation-audit-20261025.md",
@@ -923,9 +923,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/documentation-audit-20261025.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/documentation-audit-20261025.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/evidence/ground-unit-inventory-20261028.txt",
@@ -934,9 +934,9 @@
       "has_hangul": false,
       "category": "docs",
       "preserve_original": true,
-      "proposed_english_path": "docs/evidence/ground-unit-inventory-20261028.txt",
-      "action": "review-existing-english-or-data",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/evidence/ground-unit-inventory-20261028.txt",
+      "historical_action": "review-existing-english-or-data"
     },
     {
       "source": "docs/evidence/lux-lunae-inventory-20261027.txt",
@@ -945,9 +945,9 @@
       "has_hangul": false,
       "category": "docs",
       "preserve_original": true,
-      "proposed_english_path": "docs/evidence/lux-lunae-inventory-20261027.txt",
-      "action": "review-existing-english-or-data",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/evidence/lux-lunae-inventory-20261027.txt",
+      "historical_action": "review-existing-english-or-data"
     },
     {
       "source": "docs/frame-drop-investigation-20261024.md",
@@ -956,9 +956,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/frame-drop-investigation-20261024.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/frame-drop-investigation-20261024.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/game-calculation-policy.md",
@@ -967,9 +967,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/game-calculation-policy.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/game-calculation-policy.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/game-design.md",
@@ -978,9 +978,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/game-design.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/game-design.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/gauge-registration.md",
@@ -989,9 +989,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/gauge-registration.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/gauge-registration.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/ground-aa-expansion.md",
@@ -1000,9 +1000,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/ground-aa-expansion.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/ground-aa-expansion.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/handoff-20261024-rea-install.md",
@@ -1011,9 +1011,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/handoff-20261024-rea-install.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/handoff-20261024-rea-install.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/handover-20261024.md",
@@ -1022,9 +1022,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/handover-20261024.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/handover-20261024.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/heavy-mach-113-assault-analysis-20261024.md",
@@ -1033,9 +1033,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/heavy-mach-113-assault-analysis-20261024.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/heavy-mach-113-assault-analysis-20261024.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/heavymach-recovery-20261024.md",
@@ -1044,9 +1044,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/heavymach-recovery-20261024.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/heavymach-recovery-20261024.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/hud-event-order.md",
@@ -1055,9 +1055,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/hud-event-order.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/hud-event-order.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/instruments-validation-20261024.md",
@@ -1066,9 +1066,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/instruments-validation-20261024.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/instruments-validation-20261024.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/ios-completeness-audit-20261026.md",
@@ -1077,9 +1077,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/ios-completeness-audit-20261026.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/ios-completeness-audit-20261026.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/ios-source-map.md",
@@ -1088,9 +1088,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/ios-source-map.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/ios-source-map.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/keyboard-input-policy.md",
@@ -1099,9 +1099,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/keyboard-input-policy.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/keyboard-input-policy.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/lux-lunae-plan-20261027.md",
@@ -1110,9 +1110,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/lux-lunae-plan-20261027.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/lux-lunae-plan-20261027.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/media-publication.md",
@@ -1121,9 +1121,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/media-publication.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/media-publication.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/menu-art-extension-20261025.md",
@@ -1132,9 +1132,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/menu-art-extension-20261025.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/menu-art-extension-20261025.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/menu-joins-20261025.md",
@@ -1143,9 +1143,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/menu-joins-20261025.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/menu-joins-20261025.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/migration/commit-map.txt",
@@ -1154,9 +1154,9 @@
       "has_hangul": false,
       "category": "docs",
       "preserve_original": true,
-      "proposed_english_path": "docs/migration/commit-map.txt",
-      "action": "review-existing-english-or-data",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/migration/commit-map.txt",
+      "historical_action": "review-existing-english-or-data"
     },
     {
       "source": "docs/migration/completeness-audit-20261026.md",
@@ -1165,9 +1165,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": true,
-      "proposed_english_path": "docs/en/migration/completeness-audit-20261026.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/migration/completeness-audit-20261026.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/migration/legacy-ios/AGENTS.md.txt",
@@ -1176,9 +1176,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": true,
-      "proposed_english_path": "docs/en/migration/legacy-ios/AGENTS.md.txt",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/migration/legacy-ios/AGENTS.md.txt",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/migration/legacy-ios/README.md.txt",
@@ -1187,9 +1187,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": true,
-      "proposed_english_path": "docs/en/migration/legacy-ios/README.md.txt",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/migration/legacy-ios/README.md.txt",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/named-machine-bounds.md",
@@ -1198,9 +1198,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/named-machine-bounds.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/named-machine-bounds.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/native-hud.md",
@@ -1209,9 +1209,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/native-hud.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/native-hud.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/native-menus.md",
@@ -1220,9 +1220,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/native-menus.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/native-menus.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/nil-parts-boundary.md",
@@ -1231,9 +1231,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/nil-parts-boundary.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/nil-parts-boundary.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/nil-parts-observation.md",
@@ -1242,9 +1242,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/nil-parts-observation.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/nil-parts-observation.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/nil-parts-runtime-analysis.md",
@@ -1253,9 +1253,9 @@
       "has_hangul": false,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/nil-parts-runtime-analysis.md",
-      "action": "review-existing-english-or-data",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/nil-parts-runtime-analysis.md",
+      "historical_action": "review-existing-english-or-data"
     },
     {
       "source": "docs/normal-fidelity-ui-check.md",
@@ -1264,9 +1264,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/normal-fidelity-ui-check.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/normal-fidelity-ui-check.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/objc-reconstruction.md",
@@ -1275,9 +1275,9 @@
       "has_hangul": false,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/objc-reconstruction.md",
-      "action": "review-existing-english-or-data",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/objc-reconstruction.md",
+      "historical_action": "review-existing-english-or-data"
     },
     {
       "source": "docs/opengl-migration-20261024.md",
@@ -1286,9 +1286,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/opengl-migration-20261024.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/opengl-migration-20261024.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/physical-edge-check-20261025.md",
@@ -1297,9 +1297,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/physical-edge-check-20261025.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/physical-edge-check-20261025.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/physical-self-test-20261025.md",
@@ -1308,9 +1308,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/physical-self-test-20261025.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/physical-self-test-20261025.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/player-gauge.md",
@@ -1319,9 +1319,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/player-gauge.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/player-gauge.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/presentation-ab-20261024.md",
@@ -1330,9 +1330,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/presentation-ab-20261024.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/presentation-ab-20261024.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/app-icon-and-media-20261029.md",
@@ -1341,9 +1341,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/app-icon-and-media-20261029.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/app-icon-and-media-20261029.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/apple-platform-progress-20261026.md",
@@ -1352,9 +1352,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/apple-platform-progress-20261026.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/apple-platform-progress-20261026.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/architecture.md",
@@ -1363,9 +1363,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/architecture.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/architecture.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/auto-aim-ipad-20261027.md",
@@ -1374,9 +1374,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/auto-aim-ipad-20261027.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/auto-aim-ipad-20261027.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/auto-aim-visibility-plan-20261028.md",
@@ -1385,9 +1385,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/auto-aim-visibility-plan-20261028.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/auto-aim-visibility-plan-20261028.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/build-and-install.md",
@@ -1396,9 +1396,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/build-and-install.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/build-and-install.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/clone-build-20261026.md",
@@ -1407,9 +1407,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/clone-build-20261026.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/clone-build-20261026.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/development-history.md",
@@ -1418,9 +1418,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/development-history.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/development-history.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/engineering-retrospective-20261025.md",
@@ -1429,9 +1429,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/engineering-retrospective-20261025.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/engineering-retrospective-20261025.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/features.md",
@@ -1440,9 +1440,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/features.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/features.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/fullscreen-transitions-20261027.md",
@@ -1451,9 +1451,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/fullscreen-transitions-20261027.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/fullscreen-transitions-20261027.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/gameplay-guide.md",
@@ -1462,9 +1462,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/gameplay-guide.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/gameplay-guide.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/gameplay-media-20261027.md",
@@ -1473,9 +1473,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/gameplay-media-20261027.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/gameplay-media-20261027.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/github-documentation-plan-20261027.md",
@@ -1484,9 +1484,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/github-documentation-plan-20261027.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/github-documentation-plan-20261027.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/github-followup-20261028.md",
@@ -1495,9 +1495,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/github-followup-20261028.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/github-followup-20261028.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/github-licenses-and-badges-20261028.md",
@@ -1506,9 +1506,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/github-licenses-and-badges-20261028.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/github-licenses-and-badges-20261028.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/github-repository-plan-20261028.md",
@@ -1517,9 +1517,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/github-repository-plan-20261028.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/github-repository-plan-20261028.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/ground-aa-art-20261028.md",
@@ -1528,9 +1528,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/ground-aa-art-20261028.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/ground-aa-art-20261028.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/ground-units-research-20261028.md",
@@ -1539,9 +1539,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/ground-units-research-20261028.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/ground-units-research-20261028.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/hud-improvement-plan-20261028.md",
@@ -1550,9 +1550,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/hud-improvement-plan-20261028.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/hud-improvement-plan-20261028.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/implementation-status.md",
@@ -1561,9 +1561,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/implementation-status.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/implementation-status.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/ipa-independent-build-20261026.md",
@@ -1572,9 +1572,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/ipa-independent-build-20261026.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/ipa-independent-build-20261026.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/ipa-port-and-native-app-20261026.md",
@@ -1583,9 +1583,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/ipa-port-and-native-app-20261026.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/ipa-port-and-native-app-20261026.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/lux-formation-plan-20261029.md",
@@ -1594,9 +1594,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/lux-formation-plan-20261029.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/lux-formation-plan-20261029.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/lux-lunae-design-20261027.md",
@@ -1605,9 +1605,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/lux-lunae-design-20261027.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/lux-lunae-design-20261027.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/lux-lunae-intent-20261028.md",
@@ -1616,9 +1616,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/lux-lunae-intent-20261028.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/lux-lunae-intent-20261028.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/media/README.md",
@@ -1627,9 +1627,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/media/README.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/media/README.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/media/gameplay-20261027/README.md",
@@ -1638,9 +1638,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/media/gameplay-20261027/README.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/media/gameplay-20261027/README.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/media/lux-lunae/gold-prompt.txt",
@@ -1649,9 +1649,9 @@
       "has_hangul": false,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/public/media/lux-lunae/gold-prompt.txt",
-      "action": "review-existing-english-or-data",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/public/media/lux-lunae/gold-prompt.txt",
+      "historical_action": "review-existing-english-or-data"
     },
     {
       "source": "docs/public/media/updates-20261029/README.md",
@@ -1660,9 +1660,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/media/updates-20261029/README.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/media/updates-20261029/README.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/publication-inventory.md",
@@ -1671,9 +1671,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/publication-inventory.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/publication-inventory.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/rea-implementation-audit-20261026.md",
@@ -1682,9 +1682,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/rea-implementation-audit-20261026.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/rea-implementation-audit-20261026.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/rea-restoration-method-20261025.md",
@@ -1693,9 +1693,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/rea-restoration-method-20261025.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/rea-restoration-method-20261025.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/report-overview-20261025.md",
@@ -1704,9 +1704,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/report-overview-20261025.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/report-overview-20261025.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/troubleshooting.md",
@@ -1715,9 +1715,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/troubleshooting.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/troubleshooting.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/validation.md",
@@ -1726,9 +1726,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/validation.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/validation.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/public/vtol-art-and-loadout-20261027.md",
@@ -1737,9 +1737,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/public/vtol-art-and-loadout-20261027.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/public/vtol-art-and-loadout-20261027.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/rea-availability-20261026.md",
@@ -1748,9 +1748,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/rea-availability-20261026.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/rea-availability-20261026.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/references/README.md",
@@ -1759,9 +1759,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/references/README.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/references/README.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/references/developer-background/approved-readme-opening-20261028.md",
@@ -1770,9 +1770,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": true,
-      "proposed_english_path": "docs/en/references/developer-background/approved-readme-opening-20261028.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/references/developer-background/approved-readme-opening-20261028.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/references/developer-background/approved-readme-opening-20261029.md",
@@ -1781,9 +1781,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": true,
-      "proposed_english_path": "docs/en/references/developer-background/approved-readme-opening-20261029.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/references/developer-background/approved-readme-opening-20261029.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/references/developer-background/approved-readme-opening-main-20261029.md",
@@ -1792,9 +1792,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": true,
-      "proposed_english_path": "docs/en/references/developer-background/approved-readme-opening-main-20261029.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/references/developer-background/approved-readme-opening-main-20261029.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/references/developer-background/death-stranding-community-story-20261028.md",
@@ -1803,9 +1803,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": true,
-      "proposed_english_path": "docs/en/references/developer-background/death-stranding-community-story-20261028.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/references/developer-background/death-stranding-community-story-20261028.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/references/developer-background/hm-defense-origin.md",
@@ -1814,9 +1814,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": true,
-      "proposed_english_path": "docs/en/references/developer-background/hm-defense-origin.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/references/developer-background/hm-defense-origin.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/references/developer-background/sass-mutiny-source.txt",
@@ -1825,9 +1825,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": true,
-      "proposed_english_path": "docs/en/references/developer-background/sass-mutiny-source.txt",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/references/developer-background/sass-mutiny-source.txt",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/references/developer-background/unity-planning-origin.md",
@@ -1836,9 +1836,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": true,
-      "proposed_english_path": "docs/en/references/developer-background/unity-planning-origin.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/references/developer-background/unity-planning-origin.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/references/developer-background/user-background-20261026.md",
@@ -1847,9 +1847,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": true,
-      "proposed_english_path": "docs/en/references/developer-background/user-background-20261026.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/references/developer-background/user-background-20261026.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/references/developer-background/user-cydia-purchase-20261028.md",
@@ -1858,9 +1858,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": true,
-      "proposed_english_path": "docs/en/references/developer-background/user-cydia-purchase-20261028.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/references/developer-background/user-cydia-purchase-20261028.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/references/developer-background/user-foreword-20261029.md",
@@ -1869,9 +1869,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": true,
-      "proposed_english_path": "docs/en/references/developer-background/user-foreword-20261029.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/references/developer-background/user-foreword-20261029.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/references/developer-background/user-lux-lunae-intent-20261028.md",
@@ -1880,9 +1880,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": true,
-      "proposed_english_path": "docs/en/references/developer-background/user-lux-lunae-intent-20261028.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/references/developer-background/user-lux-lunae-intent-20261028.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/references/developer-background/user-project-origin-20261028.md",
@@ -1891,9 +1891,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": true,
-      "proposed_english_path": "docs/en/references/developer-background/user-project-origin-20261028.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/references/developer-background/user-project-origin-20261028.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/references/developer-background/user-restoration-reason-20261026.md",
@@ -1902,9 +1902,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": true,
-      "proposed_english_path": "docs/en/references/developer-background/user-restoration-reason-20261026.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/references/developer-background/user-restoration-reason-20261026.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/references/developer-background/user-wemade-discovery-20261028.md",
@@ -1913,9 +1913,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": true,
-      "proposed_english_path": "docs/en/references/developer-background/user-wemade-discovery-20261028.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/references/developer-background/user-wemade-discovery-20261028.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/related-titles-20261026.md",
@@ -1924,9 +1924,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/related-titles-20261026.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/related-titles-20261026.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/release-notes-plan.md",
@@ -1935,9 +1935,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/release-notes-plan.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/release-notes-plan.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/release-review-20261025.md",
@@ -1946,9 +1946,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/release-review-20261025.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/release-review-20261025.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/release-v0.9.md",
@@ -1957,9 +1957,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/release-v0.9.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/release-v0.9.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/render-fidelity-audit.md",
@@ -1968,9 +1968,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/render-fidelity-audit.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/render-fidelity-audit.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/render-performance.md",
@@ -1979,9 +1979,9 @@
       "has_hangul": false,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/render-performance.md",
-      "action": "review-existing-english-or-data",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/render-performance.md",
+      "historical_action": "review-existing-english-or-data"
     },
     {
       "source": "docs/rendering-policy.md",
@@ -1990,9 +1990,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/rendering-policy.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/rendering-policy.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/report-site.md",
@@ -2001,9 +2001,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/report-site.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/report-site.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/repository-management.md",
@@ -2012,9 +2012,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/repository-management.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository-management.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/repository-split-20261026.md",
@@ -2023,9 +2023,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/repository-split-20261026.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/repository-split-20261026.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/resource-formats.md",
@@ -2034,9 +2034,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/resource-formats.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/resource-formats.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/restoration-contract.md",
@@ -2045,9 +2045,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/restoration-contract.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/restoration-contract.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/runtime-policy.md",
@@ -2056,9 +2056,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/runtime-policy.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/runtime-policy.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/same-save-comparison.md",
@@ -2067,9 +2067,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/same-save-comparison.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/same-save-comparison.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/scene-render-comparison.md",
@@ -2078,9 +2078,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/scene-render-comparison.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/scene-render-comparison.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/session-lifecycle.md",
@@ -2089,9 +2089,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/session-lifecycle.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/session-lifecycle.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/source-coverage.md",
@@ -2100,9 +2100,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/source-coverage.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/source-coverage.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/source-provenance.md",
@@ -2111,9 +2111,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/source-provenance.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/source-provenance.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/sprite-gl-reference.md",
@@ -2122,9 +2122,9 @@
       "has_hangul": false,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/sprite-gl-reference.md",
-      "action": "review-existing-english-or-data",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/sprite-gl-reference.md",
+      "historical_action": "review-existing-english-or-data"
     },
     {
       "source": "docs/sprite-native-integration.md",
@@ -2133,9 +2133,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/sprite-native-integration.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/sprite-native-integration.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/sprite-raster.md",
@@ -2144,9 +2144,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/sprite-raster.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/sprite-raster.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/stage-journeys.md",
@@ -2155,9 +2155,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/stage-journeys.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/stage-journeys.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/stage-transition-contract.md",
@@ -2166,9 +2166,9 @@
       "has_hangul": false,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/stage-transition-contract.md",
-      "action": "review-existing-english-or-data",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/stage-transition-contract.md",
+      "historical_action": "review-existing-english-or-data"
     },
     {
       "source": "docs/status-history-20261024.md",
@@ -2177,9 +2177,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/status-history-20261024.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/status-history-20261024.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/survival-audit.md",
@@ -2188,9 +2188,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/survival-audit.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/survival-audit.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/survival-native-check.md",
@@ -2199,9 +2199,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/survival-native-check.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/survival-native-check.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/texture-sampling-diagnosis.md",
@@ -2210,9 +2210,9 @@
       "has_hangul": false,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/texture-sampling-diagnosis.md",
-      "action": "review-existing-english-or-data",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/texture-sampling-diagnosis.md",
+      "historical_action": "review-existing-english-or-data"
     },
     {
       "source": "docs/usability-todo.md",
@@ -2221,9 +2221,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/usability-todo.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/usability-todo.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/validation-mode.md",
@@ -2232,9 +2232,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/validation-mode.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/validation-mode.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/verification.md",
@@ -2243,9 +2243,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/verification.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/verification.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/vtol-expansion.md",
@@ -2254,9 +2254,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/vtol-expansion.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/vtol-expansion.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/weapon-result-fix-20261025.md",
@@ -2265,9 +2265,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/weapon-result-fix-20261025.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/weapon-result-fix-20261025.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/weapon-validation-procedure.md",
@@ -2276,9 +2276,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/weapon-validation-procedure.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/weapon-validation-procedure.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/wide-canvas-plan.md",
@@ -2287,9 +2287,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/wide-canvas-plan.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/wide-canvas-plan.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "docs/wireless-device-workflow.md",
@@ -2298,9 +2298,9 @@
       "has_hangul": true,
       "category": "docs",
       "preserve_original": false,
-      "proposed_english_path": "docs/en/wireless-device-workflow.md",
-      "action": "parallel-translation",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "docs/en/wireless-device-workflow.md",
+      "historical_action": "parallel-translation"
     },
     {
       "source": "vendor/openal-soft/README.md",
@@ -2309,9 +2309,12 @@
       "has_hangul": false,
       "category": "vendor",
       "preserve_original": true,
-      "proposed_english_path": "vendor/openal-soft/README.md",
-      "action": "review-existing-english-or-data",
-      "status": "inventoried"
+      "status": "historical-proposal-withdrawn",
+      "historical_proposed_english_path": "vendor/openal-soft/README.md",
+      "historical_action": "review-existing-english-or-data"
     }
-  ]
+  ],
+  "status": "historical-inventory-not-translation-input",
+  "superseded_by": "docs/public/document-translation-scope.json",
+  "scope_correction": "Only visitor-facing documents are to be translated. Earlier whole-repository translation proposals are withdrawn."
 }
