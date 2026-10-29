@@ -1,5 +1,9 @@
 # 2026-10-25 문서·코드·앱 일치 체계 점검 및 보완
 
+## 릴리스 도구 — 2026-10-29
+
+`tools/release.py prepare/publish`를 구현했다. v0.16의 추적 파일2,672개·자원1,504개 압축·재추출 검사와 임시 저장소/게시 응답17개 검사를 통과했다. 기존 v0.16 공개본 수정 차단을 실제 GitHub 조회로 확인했다. 새 버전의 실제 업로드·공개는 다음 배포 때 검증한다. [명령과 재개 방법](release-notes-plan.md#릴리스-도구), [증거](evidence/release-tool-20261029.json).
+
 ## 버전별 릴리스 노트 정리 — 2026-10-29
 
 [GitHub Releases](https://github.com/gelb2/HeavyMach/releases)에 v0.9~v0.11을 새로 게시하고 v0.12~v0.16을 정리했다. 8개 본문·태그와 기존 첨부15개 보존을 확인했다. [검사 기록](evidence/release-history-20261029.json). v0.9~v0.16 태그·당시 검사 기록과 기존 GitHub Releases를 대조해 [CHANGELOG](../CHANGELOG.md)에 버전별 본문·목록을 정리했다. README·문서 목차에서 최신 Release와 전체 이력으로 연결한다. v0.12 압축본의 후속 검사는 작성 시점과 커밋을 구분해 연결했다. 기존 태그·다운로드 파일과 main의 사용자 원고는 유지한다. [작성·공개 절차](release-notes-plan.md).

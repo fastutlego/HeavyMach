@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-29",
+  "prepared": {
+    "schema_version": 1,
+    "version": "v0.16",
+    "commit": "0dfb2a02dbdfe356087b789f3ab03476bd94ce02",
+    "repository": "gelb2/HeavyMach",
+    "notes_sha256": "273b160aed75822c43f47f405378d037a1abbcf97168f8e48da9de44580463f6",
+    "artifacts": {
+      "HeavyMach-v0.16-source-with-assets.tar.gz": {
+        "sha256": "d2c22f79b85932bd0f5d2dec967c96993a671c14f7fb46e1f986ad012b2d4d35",
+        "bytes": 298642114
+      },
+      "HeavyMach-v0.16-notices.zip": {
+        "sha256": "6d1aa3d99470a6cbdd88ab3f60da02ab6b430b2824ca409483444c64183b209d",
+        "bytes": 24561
+      },
+      "SHA256SUMS.txt": {
+        "sha256": "5a09303ab8dfef51f13878618f9b78313b8aa36f42f4cfc996b431c701aaed95",
+        "bytes": 202
+      }
+    },
+    "checks": {
+      "tracked_files": 2672,
+      "build_assets": 1504,
+      "note_links": [
+        "docs/public/lux-formation-plan-20261029.md",
+        "docs/usability-todo.md"
+      ],
+      "unpacked_hashes": true,
+      "notices_content": true,
+      "lfs_pointers": 0
+    }
+  },
+  "unit_tests": {
+    "count": 17,
+    "result": "passed",
+    "command": "python3 -W error::ResourceWarning -m unittest discover -s tools/tests -p test_release.py",
+    "isolation": "temporary Git repositories and in-memory GitHub responses"
+  },
+  "live_preflight": {
+    "version": "v0.16",
+    "result": "existing published Release rejected before any write",
+    "published_body_sha256": "195b9ac0118bbe3d9153dea078aafc67e37c71f381069e8dbda426505d0c4292",
+    "existing_assets_unchanged": true
+  },
+  "live_new_release_publication": "pending next version",
+  "game_sources_changed": false
+}

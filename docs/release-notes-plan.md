@@ -30,10 +30,57 @@ README에는 최신 버전, Releases 링크, CHANGELOG 링크를 둔다. 긴 릴
 
 태그 버전은 현재 Git 배포 버전이다. 앱 번들 버전은 별도로 관리해 왔으므로 릴리스 노트에서 두 값을 혼동하지 않는다. 설치한 앱과 태그의 제품 소스·자원이 같다는 근거도 남긴다.
 
-## 자동화할 범위
+## 릴리스 도구
 
-GitHub의 자동 생성 노트는 병합 PR·기여자·전체 변경 비교를 제공한다. 이를 누락 검사에 쓰고, 플레이어가 읽을 본문은 위 형식으로 편집한다. [GitHub 자동 생성 노트](https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes)
+[tools/release.py](../tools/release.py)는 Python 3.12 이상, Git, Git LFS, GitHub CLI를 사용한다. `gh auth login`으로 게시할 저장소에 로그인한다. 태그의 파일과 LFS 자원으로 압축본을 만들므로 작업 폴더의 미커밋 수정과 미추적 파일은 포함되지 않는다.
 
-후속 구현은 하나의 도구로 CHANGELOG의 지정 버전 추출, 태그 링크 변환, 압축본·해시 생성, Release 초안 생성을 묶는다. 검사 실패나 남은 문제를 자동으로 삭제하지 않는다. 공개 명령은 초안 생성과 분리해 잘못된 태그·파일이 게시되지 않게 한다. 사용자가 main 배포와 릴리스 공개를 지시한 작업에서는 확인을 마친 뒤 같은 작업에서 게시한다. [GitHub 릴리스 관리](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository)
+다음 예시는 새 버전을 v0.17로 정했을 때의 명령이다. develop→main 병합과 주석 태그 push를 먼저 마친다.
 
-8개 버전의 본문과 링크·기존 첨부 보존은 [검사 기록](evidence/release-history-20261029.json)에 남겼다. 후속 도구는 v0.16 원고로 추출 결과와 링크를 대조하고, 임시 폴더에서 압축본·해시 생성을 검사한다. 실제 게시 검증은 다음 승인된 릴리스에서 수행한다. 이 문서는 계획이며 새 자동 게시 workflow는 아직 추가하지 않았다.
+```sh
+git fetch origin main develop --tags
+git lfs fetch origin v0.17
+python3 tools/release.py prepare v0.17
+python3 tools/release.py publish v0.17 --check
+python3 tools/release.py publish v0.17
+```
+
+`prepare`는 주석 태그·main 포함 여부·병합 커밋을 확인하고 **태그에 저장된 CHANGELOG**에서 해당 버전 본문을 읽는다. 상대 문서 링크를 그 태그의 GitHub 주소로 바꾸고 파일 존재를 검사한다. 설치 안내·이전 태그 비교 링크도 붙인다. 따라서 CHANGELOG는 새 태그를 붙이기 전에 작성한다.
+
+출력은 `build/releases/v0.17/`에 생긴다. 같은 폴더가 있으면 덮어쓰지 않는다. 다시 준비할 때는 `--output build/releases/v0.17-recheck`처럼 새 경로를 지정하고, 게시 명령에도 같은 경로를 전달한다.
+
+| 파일 | 내용 |
+|---|---|
+| `release-notes.md` | GitHub Release 본문 |
+| `HeavyMach-v0.17-source-with-assets.tar.gz` | 태그의 추적 파일과 실제 LFS 자원 |
+| `HeavyMach-v0.17-notices.zip` | LICENSE·적용 범위·자원 고지·크레딧·외부 라이선스 |
+| `SHA256SUMS.txt` | 두 압축본의 SHA-256 |
+| `manifest.json` | 태그 커밋·출력 해시·파일 수·자원 검사 결과 |
+| `publish-result.json` | 게시 단계·Release ID·공개 결과·실패 이유 |
+
+압축 후 새 폴더에 풀어 추적 파일 전체의 내용·권한·심볼릭 링크를 대조한다. 빌드 자원은 `docs/build-resources.json`의 수량과 해시로 검사한다. LFS 파일이 없거나 내용이 다르면 압축본을 완료 처리하지 않는다.
+
+`publish --check`는 로컬 해시·원격 태그·기존 Release를 읽는다. `publish`는 초안을 만들고 압축본 2개와 SHA256SUMS를 업로드한 뒤 원고·파일명·크기·서버 SHA-256·태그를 대조한다. 모두 맞으면 공개하고 최신 릴리스로 지정한다. 공개 후 한 번 더 대조해 URL을 기록한다. GitHub의 [첨부 파일 API](https://docs.github.com/en/rest/releases/assets)와 [릴리스 편집 명령](https://cli.github.com/manual/gh_release_edit)을 사용한다.
+
+## 실패 후 재개
+
+업로드가 중단되면 초안과 `publish-result.json`이 남는다. 같은 폴더로 재개하면 이미 올라간 정상 파일은 유지하고 빠진 파일만 올린다.
+
+```sh
+python3 tools/release.py publish v0.17 --resume
+```
+
+태그·원고·기존 첨부가 바뀌었거나 다른 작업이 만든 초안이면 재개를 중단한다. GitHub의 해당 초안과 `publish-result.json`의 실패 단계를 확인한다. 업로드 중 불완전한 파일이 생겼으면 해당 파일만 초안에서 제거한 뒤 같은 명령으로 재개한다. 공개된 Release는 이 도구로 수정하지 않는다.
+
+게시 요청 뒤 연결이 끊기면 `published`는 `null`로 남는다. 해당 버전의 GitHub Release 공개 상태를 먼저 확인한다. 이후 `publish`를 다시 실행해도 이미 공개된 버전은 변경되지 않는다.
+
+## 검사 결과 · 2026-10-29
+
+v0.16 태그로 실제 압축본을 만들고 다시 풀어 **추적 파일 2,672개·빌드 자원 1,504개**를 대조했다. 원고 링크와 고지 묶음도 통과했다. v0.16의 태그 당시 CHANGELOG를 추출했으며, 이후 보강한 공개 릴리스 본문은 그대로 보존했다.
+
+임시 Git 저장소와 메모리 내 GitHub 응답으로 17개 검사를 실행했다. 태그 밖 파일 제외, LFS 누락·변조, 원고·첨부 변조, 원격 태그 변경, 기존 공개본 보호, 업로드 실패·재개, 게시 응답 유실을 확인했다. 같은 검사를 문서 CI에 추가했다.
+
+```sh
+python3 -m unittest discover -s tools/tests -p 'test_release.py'
+```
+
+실제 GitHub에는 v0.16의 게시 사전 검사를 실행해 기존 공개본 수정 차단을 확인했다. 새 Release의 업로드·공개 실검사는 다음 버전 배포 때 수행한다. [도구 검사 기록](evidence/release-tool-20261029.json), [기존 8개 릴리스 정리 기록](evidence/release-history-20261029.json).
