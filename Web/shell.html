@@ -130,8 +130,12 @@
   // m/s^2 (+Z when lying face up); CoreMotion reports g with gravity as -Z.
   // iOS WebKit already uses the CoreMotion sign: measured on iPad mini 6 held in
   // landscape (window.orientation 90, device +X up) x = -9.29, z = -3.14.
-  // WebKit on iOS is the engine with DeviceMotionEvent.requestPermission.
-  const motionSign = window.DeviceMotionEvent && typeof DeviceMotionEvent.requestPermission === 'function' ? 1 : -1;
+  // Android Chrome 156 also has DeviceMotionEvent.requestPermission but keeps the
+  // spec sign (Lenovo TB322FC, same landscape: x = +9.30), so the engine is
+  // identified as Apple mobile WebKit: iPhone/iPad UA, or iPadOS's desktop UA
+  // with touch points.
+  const appleMobile = /iPhone|iPad|iPod/.test(navigator.userAgent) || (/Macintosh/.test(navigator.userAgent) && navigator.maxTouchPoints > 1);
+  const motionSign = appleMobile ? 1 : -1;
   // motionState: idle -> pending -> granted/denied. A request rejected for a
   // missing user gesture returns to idle so the next tap asks again.
   let motionState = 'idle', motionRequest = 0;

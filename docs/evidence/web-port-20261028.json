@@ -339,5 +339,41 @@
    "safaridriver": "session timed out launching Safari",
    "apple_events_js": "disabled in Safari settings; state not read"
   }
+ },
+ "android_pad_20261029": {
+  "device": "Lenovo TB322FC, Android 16, 1904x3040, 120 Hz",
+  "browser": "Chrome 156.0.8078.47",
+  "access": "adb reverse tcp:8765; CDP via adb forward to chrome_devtools_remote; only the game tab was driven",
+  "motion_sign": {
+   "finding": "Android Chrome 156 exposes DeviceMotionEvent.requestPermission; previous check applied the iOS sign",
+   "ipad_x_landscape90": -9.29,
+   "android_x_landscape90": 9.3,
+   "fix": "Apple mobile WebKit by UA (iPhone|iPad|iPod or Macintosh with maxTouchPoints>1)"
+  },
+  "tilt_movement": {
+   "orientation_90": {
+    "y_negative": "-1031 -> -872 (right)",
+    "y_positive": "-950 -> -1031 (left)"
+   },
+   "orientation_minus90": {
+    "y_positive": "674 -> 978 (right)",
+    "y_negative": "993 -> 834 (left)"
+   }
+  },
+  "fullscreen": "first tap; innerHeight 557 -> 692",
+  "frame": {
+   "callback_interval_s": 0.0084,
+   "ticks_per_callback": 1,
+   "ticks_per_second": 59.9
+  },
+  "input": {
+   "jump": [
+    -40.5,
+    14.7
+   ],
+   "touch_fire_max_bullets": 9,
+   "hud_editor": "touch drag, TOOLS, APPLY saved positions[1]"
+  },
+  "note": "passing through portrait while rotating pauses the game (portrait inactive rule)"
  }
 }
