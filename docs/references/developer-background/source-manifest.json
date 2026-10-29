@@ -41,22 +41,6 @@
       "copy_sha256": "a6d1a5cd927a754aa13132a5005b662ac59dcce66af12eb8c2f9b91a073d19f9",
       "working_file_equals_HEAD": true,
       "source_status": ""
-    },
-    {
-      "copy": "sass-mutiny-source.txt",
-      "source_repository": "/Users/sokol/Git/ProjectPersonalFunnelPage/ProjectPersonalFunnelPageWeb",
-      "source_path": "src/entities/content/interview.ts",
-      "source_head": "a4fd6ada10a37a84baa1de6e5201fd36b3820aee",
-      "line_ranges": [
-        [
-          2171,
-          2191
-        ]
-      ],
-      "source_file_sha256": "3ca2926ec33c455372cff033a47aad0cd128eb5e28f3ee7abd49340ae556818f",
-      "copy_sha256": "c7b2313b3c7b29ee3368a24a2f58d1d0a2143954a25fe4a26e50e5a36c3547d2",
-      "working_file_equals_HEAD": false,
-      "source_status": "M  src/entities/content/interview.ts"
     }
   ],
   "user_statement": {

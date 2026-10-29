@@ -1819,17 +1819,6 @@
       "historical_action": "parallel-translation"
     },
     {
-      "source": "docs/references/developer-background/sass-mutiny-source.txt",
-      "sha256": "c7b2313b3c7b29ee3368a24a2f58d1d0a2143954a25fe4a26e50e5a36c3547d2",
-      "characters": 1398,
-      "has_hangul": true,
-      "category": "docs",
-      "preserve_original": true,
-      "status": "historical-proposal-withdrawn",
-      "historical_proposed_english_path": "docs/en/references/developer-background/sass-mutiny-source.txt",
-      "historical_action": "parallel-translation"
-    },
-    {
       "source": "docs/references/developer-background/unity-planning-origin.md",
       "sha256": "a6d1a5cd927a754aa13132a5005b662ac59dcce66af12eb8c2f9b91a073d19f9",
       "characters": 1462,
