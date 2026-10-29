@@ -1,5 +1,15 @@
 # HeavyMach 보고 사이트
 
+## 2026-10-29 국문·영문 문서 조사와 구현 계획
+
+[조사와 계획](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/document-localization.html)을 통합 목차에 추가했다. 문서209개의 목록·해시, 해외 사례6개, 번역 스킬·문체·언어 선택·원문 변경 검사와 구현 순서를 담았다. [저장소 원고](document-localization-plan.md).
+
+- source: `e547b9b24fd0086a5bda2183f2985d4a1f38e7f7`
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_7e920c8728888191be3fc14d1867bcb8`
+- deployment: `appgdep_6ae35824ce98819190a11f8f20821ee5` · succeeded
+- 소유자 전용 접근 유지. 보고서48개 목차·돌아가기, 새 페이지와 목차의 로컬 링크152개, 원고 복사 일치 검사 통과.
+- 브라우저 화면 검사는 현재 URL에 대한 컴퓨터 사용 제한으로 중단됐다.
+
 ## 2026-10-29 HUD 편집 도구·상단 장식 수정
 
 [최종 수정과 실기기 검사](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/hud-improvement.html#editor-release)를 기존 보고서에 추가했다. 영문 금속 버튼의 일반/눌림 상태, 아이폰 장식·MENU 이동, 아이패드 상단 재조립 그림과 검사 결과를 실었다. 45개 목차와 기존 이미지·앵커를 유지했다.

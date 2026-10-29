@@ -46,7 +46,8 @@
     "docs/ground-aa-expansion.md",
     "docs/public/hud-improvement-plan-20261028.md",
     "docs/public/auto-aim-visibility-plan-20261028.md",
-    "docs/release-notes-plan.md"
+    "docs/release-notes-plan.md",
+    "docs/document-localization-plan.md"
   ],
   "base_read": [
     "AGENTS.md",
@@ -280,7 +281,8 @@
         "docs/public/troubleshooting.md",
         "docs/public/development-history.md",
         "docs/public/validation.md",
-        "docs/public/github-followup-20261028.md"
+        "docs/public/github-followup-20261028.md",
+        "docs/document-localization-plan.md"
       ],
       "sources": [
         "docs/*",
@@ -307,7 +309,8 @@
       ],
       "evidence": [
         "docs/current-status.md",
-        "docs/ios-completeness-audit-20261026.md"
+        "docs/ios-completeness-audit-20261026.md",
+        "docs/evidence/document-localization-inventory-20261029.json"
       ]
     },
     "android": {
