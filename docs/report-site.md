@@ -678,3 +678,27 @@ VTOL 첫 생성 프롬프트와 스킬 수정 커밋을 대조했다. 요청에 
 - source: `a795d6facc53bdca393b877d9611d57ffca8732c`
 - deployment: `appgdep_6ae2631002e88191af82b0a89ea6fdf8`, `succeeded`.
 - 시뮬레이터 3개·Mac 2개 검사, 실제 두 기기 정식/치트 설치·실행 결과를 반영했다.
+
+
+## 2026-10-29 럭스루나에 편대 밀집 조사
+
+[생성·진입 비교와 수정 계획](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/lux-formation.html)을 기존 통합 목차에 추가했다. 생성 간격·목적지 비교 3안, 14개 구간×4개 화면 크기의 코어 결과, 좌표 그림과 재현 코드·CSV를 제공한다. Safari 로컬 보고서에서 비교 표·좌표 그림과 목차 이동을 확인했다.
+
+- source: `c224f3fa4d2cb71b0a778d0d8f7af874928fbb8a`
+- deployment: `appgdep_6ae3140631288191b18d9e1f3edf049d` · succeeded
+- 기존 소유자 전용 접근 유지. 제품 코드와 설치 앱은 변경하지 않았다.
+
+원작 공중 유닛의 X·Y 배치와 높이만 바꾼 비교 결과를 추가했다. 수정 계획은 기체별 배치 좌표와 진입 목적지를 조정하고 기존 공중 적 AI를 유지하는 방식으로 정리했다.
+
+- source: `a483000658503715387ee74d70fed72a1e0a6d79`
+- deployment: `appgdep_6ae317e33e008191b9e20dc7f3abb86b` · succeeded
+- Safari에서 원작 좌표 표·높이 비교·그림과 목차 이동을 확인했다. 제품 코드와 설치 앱은 변경하지 않았다.
+
+
+## 2026-10-29 럭스루나에 X·Y 배치 적용·무선 검사
+
+[적용 결과](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/lux-formation.html#implementation)에 동시 진입140조건, 두 기기 기능 검사, 전체 화면 캡처, 무선 설치·저장 보존을 추가했다. iPad 진입 프레임 기준 초과도 수치와 함께 기록했다.
+
+- source: `470eaff43ba38e46464de5edb3c25bb0d827f06f`
+- deployment: `appgdep_6ae322ce514c8191bb5fd731bbcacf63` · succeeded
+- 소유자 전용 접근 유지. Safari에서 본문·캡처를 확인하고 해당 페이지 링크27개와 기존 절 앵커8개를 검사했다. 다른 보고 원고는 재생성하지 않았다.

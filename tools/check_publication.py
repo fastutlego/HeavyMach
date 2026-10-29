@@ -80,7 +80,7 @@ def check(root):
     if len(readme_blocks) < 2 or not readme_blocks[1].startswith('[!['):
         errors.append('README badges must follow the title')
     readme_text = (root / 'README.md').read_text()
-    approved = (root / 'docs/references/developer-background/approved-readme-opening-20261029.md').read_text().strip()
+    approved = (root / 'docs/references/developer-background/approved-readme-opening-main-20261029.md').read_text().strip()
     expected = '#' + approved
     if len(readme_blocks) < 3 or readme_blocks[2] != '## HeavyMach를 다시 만든 이유':
         errors.append('README motive heading must follow the badges')
@@ -88,10 +88,13 @@ def check(root):
         errors.append('README opening differs from the approved manuscript')
     restoration_paragraphs = (root / 'docs/RESTORATION.md').read_text().split('\n\n')
     shared = restoration_paragraphs[1:4]
-    shared += [next(p for p in restoration_paragraphs if p.startswith(start)) for start in
-               ('지인들과 소주잔을', '이해관계자가 연락하면', '요즘 나는 내게 남은 시간이')]
+    shared += [p for p in restoration_paragraphs if p.startswith('요즘 나는 내게 남은 시간이')]
     if any(p not in expected for p in shared):
         errors.append('README and restoration shared paragraphs differ')
+    main_edits = json.loads((root / 'docs/references/developer-background/main-edits-20261029.json').read_text())
+    for name, digest in main_edits['files'].items():
+        if hashlib.sha256((root / name).read_bytes()).hexdigest() != digest:
+            errors.append(f'Changed author manuscript from main: {name}')
     sources = root / 'docs/references/developer-background'
     manifest = json.loads((sources / 'source-manifest.json').read_text())
     entries = manifest['sources'] + [manifest['user_statement']] + manifest['user_followups']

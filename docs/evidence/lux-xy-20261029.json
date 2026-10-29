@@ -1,0 +1,398 @@
+{
+  "date": "2026-10-29",
+  "branch": "fix/lux-formation-xy",
+  "source_sha256": {
+    "Sources/Core/Fighters.cpp": "d88d097dd602d73986179c6472b7f3c6ef85704ceaea9d5f43d4436802526763",
+    "Sources/Core/Fighters.hpp": "f31ea58044012a1257ba4e075d9048dad6705f8626d5a241347d14cb3ba19a14",
+    "Sources/Core/GameSession.cpp": "a45755ce6ae33133a3a7755131b4f0cbc7d90b97833b61873bc493ad871be867",
+    "Tests/FightersTests.cpp": "6494bfe138ae24aaf5eba195d70a41dd97e42ad7c24fed4f6a60bdb25680d388",
+    "Tests/Apple/HMAppleInputTests.mm": "586d19e3dc4eac66144a103790443e7ab64c74e438765f6c07e15c1bf3e5434f",
+    "Tests/iOS/HMFramePerformanceTests.mm": "3ae8508caef593abef8eed0fa365888d49050a4674d72ba6c606cbb1aca658df"
+  },
+  "core": {
+    "regression_tests": 23,
+    "failed": 0,
+    "formation_conditions": 140,
+    "maps": 14,
+    "canvases": [
+      [
+        480,
+        320
+      ],
+      [
+        480,
+        360
+      ],
+      [
+        695,
+        320
+      ],
+      [
+        569,
+        320
+      ],
+      [
+        900,
+        320
+      ]
+    ],
+    "player_heights_above_ground": [
+      30,
+      230
+    ],
+    "minimum_sprite_rectangle_gap": 10
+  },
+  "devices": {
+    "iphone": {
+      "model": "iPhone Air",
+      "os": "27.0.1",
+      "functional_tests": 3,
+      "functional_failures": 0,
+      "frame_test_passed": true,
+      "frame_metrics": [
+        {
+          "callback_intervals": {
+            "frames": 180,
+            "max_ms": 60.59174984693527,
+            "mean_ms": 17.05724051118725,
+            "over_60hz_budget": 89,
+            "p95_ms": 17.0740419998765
+          },
+          "canvas_width": 694.8571166992188,
+          "copy": {
+            "frames": 180,
+            "max_ms": 7.891875226050615,
+            "mean_ms": 6.69348471177121,
+            "over_60hz_budget": 0,
+            "p95_ms": 7.465791888535023
+          },
+          "frame_work": {
+            "frames": 180,
+            "max_ms": 60.461082961410284,
+            "mean_ms": 13.624672920236158,
+            "over_60hz_budget": 7,
+            "p95_ms": 16.61391695961356
+          },
+          "jets": 8,
+          "phase": "lux_production_timer",
+          "quad": {
+            "frames": 180,
+            "max_ms": 0.14962488785386086,
+            "mean_ms": 0.08282547092272176,
+            "over_60hz_budget": 0,
+            "p95_ms": 0.1066667027771473
+          },
+          "swap": {
+            "frames": 180,
+            "max_ms": 0.14595827087759972,
+            "mean_ms": 0.07937754400902325,
+            "over_60hz_budget": 0,
+            "p95_ms": 0.10624993592500687
+          },
+          "wait_and_restore": {
+            "frames": 180,
+            "max_ms": 9.118291549384594,
+            "mean_ms": 4.771281491654615,
+            "over_60hz_budget": 0,
+            "p95_ms": 8.425791747868061
+          },
+          "warmup": 5,
+          "work_before_wait": {
+            "frames": 180,
+            "max_ms": 60.460708104074,
+            "mean_ms": 8.853391428581542,
+            "over_60hz_budget": 4,
+            "p95_ms": 9.050958324223757
+          }
+        },
+        {
+          "callback_intervals": {
+            "frames": 180,
+            "max_ms": 27.00562495738268,
+            "mean_ms": 16.665245602942175,
+            "over_60hz_budget": 87,
+            "p95_ms": 16.8095831759274
+          },
+          "canvas_width": 694.8571166992188,
+          "copy": {
+            "frames": 180,
+            "max_ms": 7.5720832683146,
+            "mean_ms": 6.670215749181807,
+            "over_60hz_budget": 0,
+            "p95_ms": 7.276833523064852
+          },
+          "frame_work": {
+            "frames": 180,
+            "max_ms": 26.93658322095871,
+            "mean_ms": 15.967184946768814,
+            "over_60hz_budget": 5,
+            "p95_ms": 16.573625151067972
+          },
+          "jets": 8,
+          "phase": "lux_production_timer",
+          "quad": {
+            "frames": 180,
+            "max_ms": 0.11654151603579521,
+            "mean_ms": 0.07941781853636105,
+            "over_60hz_budget": 0,
+            "p95_ms": 0.0922083854675293
+          },
+          "swap": {
+            "frames": 180,
+            "max_ms": 0.13345852494239807,
+            "mean_ms": 0.07868563601126273,
+            "over_60hz_budget": 0,
+            "p95_ms": 0.09558349847793579
+          },
+          "wait_and_restore": {
+            "frames": 180,
+            "max_ms": 7.899541407823563,
+            "mean_ms": 7.3897090430061025,
+            "over_60hz_budget": 0,
+            "p95_ms": 7.8482916578650475
+          },
+          "warmup": 240,
+          "work_before_wait": {
+            "frames": 180,
+            "max_ms": 26.936249807476997,
+            "mean_ms": 8.57747590376271,
+            "over_60hz_budget": 2,
+            "p95_ms": 9.191458113491535
+          }
+        }
+      ],
+      "transport_after": "localNetwork",
+      "save_files_unchanged": {
+        "HvM.dat": true,
+        "HUDLayoutV1-iphone.json": true
+      },
+      "apps": {
+        "ordinary": {
+          "install": {
+            "outcome": "success",
+            "raw_sha256": "4d055aa58ba0dc7e788a8d8ecfcef091fe6b43b5a81b281e18d995a75833ea86"
+          },
+          "launch": {
+            "outcome": "success",
+            "raw_sha256": "b330e4b19940d05cd6faf6591489d05fd6751211536b814eb4c73d3d00051c8c"
+          }
+        },
+        "cheat": {
+          "install": {
+            "outcome": "success",
+            "raw_sha256": "048341e40461ade3a8aa2eb4c0f0f40a906715bdf5f76814407f7100f87772f7"
+          },
+          "launch": {
+            "outcome": "success",
+            "raw_sha256": "171d38e1fa8fc3583505bdcc6cb3f002cfdcb9309d7702be5910b051556afeaf"
+          }
+        }
+      }
+    },
+    "ipad": {
+      "model": "iPad Air 13-inch (M2)",
+      "os": "27.0.1",
+      "functional_tests": 3,
+      "functional_failures": 0,
+      "frame_test_passed": false,
+      "frame_metrics": [
+        {
+          "callback_intervals": {
+            "frames": 180,
+            "max_ms": 74.27766668843105,
+            "mean_ms": 17.501687731580912,
+            "over_60hz_budget": 94,
+            "p95_ms": 21.393583330791444
+          },
+          "canvas_width": 480,
+          "copy": {
+            "frames": 180,
+            "max_ms": 5.4477916564792395,
+            "mean_ms": 4.485585186274774,
+            "over_60hz_budget": 0,
+            "p95_ms": 5.23224999778904
+          },
+          "frame_work": {
+            "frames": 180,
+            "max_ms": 74.12695835228078,
+            "mean_ms": 17.24249236156336,
+            "over_60hz_budget": 42,
+            "p95_ms": 21.184041659580544
+          },
+          "jets": 8,
+          "phase": "lux_production_timer",
+          "quad": {
+            "frames": 180,
+            "max_ms": 12.28754167095758,
+            "mean_ms": 3.46993217503445,
+            "over_60hz_budget": 0,
+            "p95_ms": 11.179333319887519
+          },
+          "swap": {
+            "frames": 180,
+            "max_ms": 0.10904169175773859,
+            "mean_ms": 0.07228333448033987,
+            "over_60hz_budget": 0,
+            "p95_ms": 0.0856249826028943
+          },
+          "wait_and_restore": {
+            "frames": 180,
+            "max_ms": 11.40433334512636,
+            "mean_ms": 5.874667360169244,
+            "over_60hz_budget": 0,
+            "p95_ms": 9.721958311274648
+          },
+          "warmup": 5,
+          "work_before_wait": {
+            "frames": 180,
+            "max_ms": 74.12645834847353,
+            "mean_ms": 11.367825001394117,
+            "over_60hz_budget": 5,
+            "p95_ms": 16.48441664292477
+          }
+        },
+        {
+          "callback_intervals": {
+            "frames": 180,
+            "max_ms": 34.509333316236734,
+            "mean_ms": 16.84791018520223,
+            "over_60hz_budget": 90,
+            "p95_ms": 18.95099997636862
+          },
+          "canvas_width": 480,
+          "copy": {
+            "frames": 180,
+            "max_ms": 5.3193333151284605,
+            "mean_ms": 4.726903933947647,
+            "over_60hz_budget": 0,
+            "p95_ms": 5.146041658008471
+          },
+          "frame_work": {
+            "frames": 180,
+            "max_ms": 34.41266666050069,
+            "mean_ms": 16.701481482596137,
+            "over_60hz_budget": 84,
+            "p95_ms": 18.807874992489815
+          },
+          "jets": 8,
+          "phase": "lux_production_timer",
+          "quad": {
+            "frames": 180,
+            "max_ms": 5.452208308270201,
+            "mean_ms": 0.6449451391947352,
+            "over_60hz_budget": 0,
+            "p95_ms": 2.3013750032987446
+          },
+          "swap": {
+            "frames": 180,
+            "max_ms": 0.0879999715834856,
+            "mean_ms": 0.06880046356753963,
+            "over_60hz_budget": 0,
+            "p95_ms": 0.07579167140647769
+          },
+          "wait_and_restore": {
+            "frames": 180,
+            "max_ms": 11.687416670611128,
+            "mean_ms": 8.371694212190858,
+            "over_60hz_budget": 0,
+            "p95_ms": 9.66116666677408
+          },
+          "warmup": 240,
+          "work_before_wait": {
+            "frames": 180,
+            "max_ms": 34.41220833337866,
+            "mean_ms": 8.329787270405278,
+            "over_60hz_budget": 2,
+            "p95_ms": 9.213083336362615
+          }
+        }
+      ],
+      "transport_after": "localNetwork",
+      "save_files_unchanged": {
+        "HvM.dat": true,
+        "HUDLayoutV1-ipad.json": true
+      },
+      "apps": {
+        "ordinary": {
+          "install": {
+            "outcome": "success",
+            "raw_sha256": "daa87d06d4d6e034e4c2356a04979b158b83ba653532c76f5337c22e704acb6d"
+          },
+          "launch": {
+            "outcome": "success",
+            "raw_sha256": "d1928fe979d861903114c69d535046952ef63029700305155fcc76bdeb2f19e3"
+          }
+        },
+        "cheat": {
+          "install": {
+            "outcome": "success",
+            "raw_sha256": "11cdc42a35c402274a9ba8a316d4a155ad8986cb7b03ef0599d3995cb22d493b"
+          },
+          "launch": {
+            "outcome": "success",
+            "raw_sha256": "b92a5353b2b2cba4dc4eb03bd46d07f8a70957bb65acf678076c4743d46e6422"
+          }
+        }
+      }
+    }
+  },
+  "comparison": {
+    "conditions": 56,
+    "old_pairs": {
+      "spawn": 211,
+      "last_entry": 503,
+      "after_5s": 551,
+      "after_20s": 372
+    },
+    "new_pairs": {
+      "spawn": 0,
+      "last_entry": 0,
+      "after_5s": 377,
+      "after_20s": 533
+    }
+  },
+  "unchanged": [
+    "original map entries",
+    "72 fighters in 14 waves",
+    "HP and weapons",
+    "entry speed",
+    "Enemy.cpp flight AI",
+    "renderer",
+    "frame timer"
+  ],
+  "merge": false,
+  "performance_failures": {
+    "ipad_initial_with_diagnostics": "frame_work p95 17.04/22.99 ms; callback p95 17.56/23.14 ms",
+    "ipad_without_diagnostics": "entry callback p95 21.39 ms exceeded 20 ms; steady combat passed",
+    "measurement_correction": "frame_work included the intentional 60 Hz wait. Updated test separately records work_before_wait and raw wall time; callback threshold remains 20 ms.",
+    "status": "iPad entry timing remains open; no renderer changes in this patch."
+  },
+  "logs": {
+    "ipad-export.log": "71d1116077b1e4e87c5086d3ced3a05a46080b86d25d6529bdb7ba98edef1934",
+    "iphone-ordinary-install.log": "082df66f7eae1997507a515d7a2ec96db7f4f91f54a2231abba80b892f91bde9",
+    "ipad-ordinary-install.log": "9ea1fa26629b37fb9872bfdeef28f87ecf593bf51ab7429d1a0bbc0c23b7133d",
+    "ipad-save-after.log": "c5e92f7eaf513d18a12876a2c52e263ac71a80174fb4d99384ea304a3c509c65",
+    "ipad-cheat-install.log": "421ff1c57e6d8137a992103305d1ebd34c6ec1ea1274c61364cddfa221b9b6b2",
+    "ipad-save-before.log": "4640e6d82dbe5c4a4e480afab148be2a8fedda53e494a22b3158dcbd6b80270e",
+    "ipad-ordinary-launch.log": "347cce23cc3c23a709d7eca72b32ef9207eae856e2246db47a423c127e01eee9",
+    "build-cheat.log": "c7a706217807a58575db5d1304b72f8c1c03cb9f6d94b976bf902c8d24deac2e",
+    "iphone-cheat-launch.log": "d8a976d9895929ec6d5d2653cf043a7bc51b0450ea023b67c9f9a95fbf628287",
+    "iphone-save-after.log": "01f2bbc80a3b3dfe97c630cebcd1260e24335b2e56c49835f2c0232846229c58",
+    "iphone-ordinary-launch.log": "347cce23cc3c23a709d7eca72b32ef9207eae856e2246db47a423c127e01eee9",
+    "ipad-after.log": "842dd7d3e7dc8f23855d8fb540bf08ceb532b9bc0fdd55640dd1c46fa83d9eb1",
+    "iphone-cheat-install.log": "b45ff3491fefa5b3ee4d51b17c146128de2212af11f31939e8de7180b6729332",
+    "iphone-save-before.log": "51c599abfa2351e64fff2de5699c3278ba57d3c0835324f163c4bedc297a7d58",
+    "ipad-frames-clean.log": "cbf694eb538e651042c75bceb15c0896b622540806ef9c9f46062116925f3661",
+    "iphone-after.log": "fe3ca38c1b2e90ffc4b4998e8611e614919d866e0b19804e11a198fc43ac5281",
+    "ipad-cheat-launch.log": "d8a976d9895929ec6d5d2653cf043a7bc51b0450ea023b67c9f9a95fbf628287",
+    "ipad-ordinary-capture.log": "ae21a50a04931e690149c1a0a1b7fc6f8cd7823517c5e65a6e901f1dbf1b8f52",
+    "iphone-ordinary-final-launch.log": "347cce23cc3c23a709d7eca72b32ef9207eae856e2246db47a423c127e01eee9",
+    "ipad-tests.log": "f09f48ff28f7e8548538c62e28b7afd3e1bed87c391701425adcbd559304a51f",
+    "iphone-export.log": "e20c64a370f16222508824c90a457a2a795bf8e7142711830ac0bf3dad4ab105",
+    "iphone-frames-clean.log": "a18a024ed5c84beecd962aa8ac7f486b380e6f2dcb53d08486f81d8c646c5ea6",
+    "ipad-ordinary-final-launch.log": "347cce23cc3c23a709d7eca72b32ef9207eae856e2246db47a423c127e01eee9",
+    "iphone-ordinary-capture.log": "96c9a0cb000596b687739cd50ac9c981fcdd2102e61bb9572d2547d5c02464d2",
+    "ipad-frames.log": "ae31bda220907117aaf327b87a234033ce82d5651ea5ad31dbd922fa1b2b6d6e",
+    "iphone-tests.log": "c9dc2d7f3cc3d3eb43643a2892e12c29587a3cfae8f4ed7f83822708e8651119"
+  }
+}

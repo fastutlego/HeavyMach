@@ -11,15 +11,21 @@ const std::array<VTOLSpec,3>& fighterSpecs(){
 }
 const VTOLSpec* aircraftSpec(std::string_view name){for(const auto& s:fighterSpecs())if(name==s.name)return &s;return vtolSpec(name);}
 const std::array<FighterWave,14>& fighterWaves(){
+ // Authored spacing, like campaign EnemyDefinition positions. Aircraft are
+ // 112..120 wide and at most 49 high; 140 X / 70 Y leaves visible separation.
+ static constexpr std::array<Vector2,8> pair{{{0,0},{0,70}}};
+ static constexpr std::array<Vector2,8> four{{{0,0},{0,70},{140,0},{140,70}}};
+ static constexpr std::array<Vector2,8> six{{{0,0},{0,70},{0,140},{140,0},{140,70},{140,140}}};
+ static constexpr std::array<Vector2,8> eight{{{0,0},{0,70},{0,140},{140,0},{140,70},{140,140},{280,0},{280,70}}};
  static const std::array<FighterWave,14> waves{{
-  {"Stage04","Boss02",{1,1,0}},{"Stage09","Boss04",{1,1,2}},
-  {"Stage14","Boss05",{2,2,2}},{"Stage29","Boss03",{3,3,2}},
-  {"Stage19","Boss01",{3,2,3}},{"Stage24","Boss06",{2,3,3}},
-  {"Stage35","Boss07",{3,3,2}},
-  {"Stage03","",{2,1,1}},{"Stage08","",{1,2,1}},
-  {"Stage13","",{1,1,2}},{"Stage28","",{2,1,1}},
-  {"Stage18","",{1,2,1}},{"Stage23","",{1,1,2}},
-  {"Stage34","",{2,1,1}}
+  {"Stage04","Boss02",{1,1,0},pair},{"Stage09","Boss04",{1,1,2},four},
+  {"Stage14","Boss05",{2,2,2},six},{"Stage29","Boss03",{3,3,2},eight},
+  {"Stage19","Boss01",{3,2,3},eight},{"Stage24","Boss06",{2,3,3},eight},
+  {"Stage35","Boss07",{3,3,2},eight},
+  {"Stage03","",{2,1,1},four},{"Stage08","",{1,2,1},four},
+  {"Stage13","",{1,1,2},four},{"Stage28","",{2,1,1},four},
+  {"Stage18","",{1,2,1},four},{"Stage23","",{1,1,2},four},
+  {"Stage34","",{2,1,1},four}
  }};return waves;
 }
 const FighterWave* fighterWave(std::string_view map){for(const auto& w:fighterWaves())if(map==w.map)return &w;return nullptr;}

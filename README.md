@@ -1,6 +1,6 @@
 # HeavyMach
 
-[![Git tag v0.15](docs/public/media/badges/version.svg)](https://github.com/gelb2/HeavyMach/tree/v0.15)
+[![Git tag v0.16](docs/public/media/badges/version.svg)](https://github.com/gelb2/HeavyMach/tree/v0.16)
 [![Platforms iOS iPadOS macOS](docs/public/media/badges/platforms.svg)](docs/public/validation.md)
 [![Architecture arm64](docs/public/media/badges/arch.svg)](docs/public/build-and-install.md)
 [![C++20 and Objective-C++](docs/public/media/badges/code.svg)](docs/public/architecture.md)
@@ -8,13 +8,9 @@
 
 ## HeavyMach를 다시 만든 이유
 
-나는 2017년 7월, 세 번째 직업으로 iOS 개발자를 택했다. 그전에는 2015년 잡지사에서 기자로 일했고, 2016년에는 필리핀에서 근무했다. 소프트웨어와 거리가 먼 일을 하며 겪었던 세계는 내게 비결정론적이고 비합리적이었다. 그 생활을 청산하고 다른 직업을 택한 데에는 여러 이유가 있다.
+나는 2017년 7월, 세 번째 직업으로 iOS 개발자를 택했다. 그전에는 2015년 잡지사에서 기자로 일했고, 2016년에는 필리핀에서 근무했다. 소프트웨어와 거리가 먼 일을 하며 겪었던 세계는 내게 비결정론적이고 비합리적이었다. 그 생활을 청산하고 다른 직업을 택한 데에는 여러 이유가 있다. 지인들과 소주잔을 기울이면, 내가 2015년과 2016년의 일을 계속했다면 투신자살로 생을 마감했을 거라는 이야기를 듣곤 한다. 그들이 맞는지는 아직 잘 모르겠다.
 
-HeavyMach도 그중 하나다. 대학생 시절 아이팟터치에서 이 게임을 만났다. Cydia로 처음 접한 이 게임을 나중에는 애플 앱스토어 미국 계정을 만드는 방법을 검색해 구매했다. 당시 한국 앱스토어에는 게임 카테고리가 아예 없었기 때문이다. 기기를 기울여 전차를 움직이고 사격했으며, 스테이지를 마치면 일러스트가 나왔다. 나는 이 게임이 개발자로 직업을 바꾸는 데 약 35%의 영향을 주었다고 생각한다.
-
-지인들과 소주잔을 기울이면, 내가 2015년과 2016년의 일을 계속했다면 투신자살로 생을 마감했을 거라는 이야기를 듣곤 한다. 그들이 맞는지는 아직 잘 모르겠다.
-
-이해관계자가 연락하면 이 프로젝트는 내릴 것이다. HeavyMach 제작진이 내게 준 9년 3개월은 나를 만든 창조주가 나에게 최초로 할당한 수명을 초과한 값이다. 돈은 이승에서나 필요한 것이다.
+HeavyMach도 2015년, 2016년 생활을 청산하고 다른 직업을 택하게 한 이유 중 하나다. 대학생 시절 아이팟터치에서 이 게임을 만났다. Cydia로 처음 접한 이 게임을 나중에는 애플 앱스토어 미국 계정을 만드는 방법을 검색해 구매했다. 당시 한국 앱스토어에는 게임 카테고리가 아예 없었기 때문이다. 기기를 기울여 전차를 움직이고 사격했으며, 스테이지를 마치면 일러스트가 나왔다. 나는 이 게임이 개발자로 직업을 바꾸는 데 약 35%의 영향을 주었다고 생각한다.
 
 요즘 나는 내게 남은 시간이 많지 않다는 느낌을 받는다. 건강 문제 때문도, 극단적인 무기력 때문도 아니다. 오히려 내 정신은 한 달 전, 두 달 전, 반년 전보다 명료하다고 느낀다. 그래서 지금 무엇을 해보고, 무엇을 남기고 싶은지 생각한다. 내가 택한 일 중 하나가 HeavyMach 복원이다. 한때 내게 방향을 보여준 게임을, 개발자가 된 내가 다시 작동하게 만드는 것. 나는 이 연결을 수미상관이라고 생각한다.
 
@@ -24,13 +20,18 @@ HeavyMach도 그중 하나다. 대학생 시절 아이팟터치에서 이 게임
 
 그러므로 나는 내가 한 일이 거의 없다고 생각한다. 이것으로 돈을 벌 생각을 하면 더더욱 안 된다고 생각하는 것도 이 때문이다. 내가 한 것은, 내 표현을 빌리자면 Codex가 원본의 소스코드와 원작자의 미학적 성취에서 벗어나 자의적으로 잘못된 행동을 할 때 멱살을 쥐어 잡아서 따귀를 올려붙인 것뿐이다.
 
+나는 이 복원판으로 돈을 벌 생각이 없다. 코드와 에셋을 함께 공개해 다른 사람도 직접 빌드하고 플레이할 수 있게 하고 싶다. 이 게임을 어떻게 복원했고 무엇을 고쳤는지도 기록으로 남기려 한다. 
+이해관계자가 연락하면 이 프로젝트는 내릴 것이다. HeavyMach 제작진이 내게 준 9년 3개월은 나를 만든 창조주가 나에게 최초로 할당한 수명을 초과한 값이다. 
+
+돈은 이승에서나 필요한 것이다.
+
 [개발자의 변 전문](docs/RESTORATION.md)
 
 ## 간단한 설명과 설치
 
 2009년의 횡스크롤 전차 게임 **HeavyMach**를 현재의 iPhone·iPad·Mac에서 실행하도록 다시 만들었다. 전차를 움직이고 뛰어오르며, 무기를 바꿔 지상·공중의 적과 싸운다. 원작의 전투와 성장 구조에 넓은 화면, 키보드 조작, 자동조준과 새로운 항공기를 추가했다.
 
-현재 게임 버전은 [v0.15](https://github.com/gelb2/HeavyMach/tree/v0.15)다. 일반 앱과 치트 검증 앱을 각각 설치할 수 있다. 치트 앱에서는 미션·무기·강화 조건을 지정해 같은 게임을 검사한다.
+현재 게임 버전은 [v0.16](https://github.com/gelb2/HeavyMach/tree/v0.16)다. 일반 앱과 치트 검증 앱을 각각 설치할 수 있다. 치트 앱에서는 미션·무기·강화 조건을 지정해 같은 게임을 검사한다.
 
 [설치](docs/public/build-and-install.md) · [조작](docs/public/gameplay-guide.md) · [기능](docs/public/features.md) · [트러블슈팅](docs/public/troubleshooting.md) · [전체 문서](docs/README.md)
 
@@ -151,7 +152,7 @@ python3 tools/verify_build_resources.py
 open HeavyMach.xcworkspace
 ```
 
-Xcode에서 본인의 개발 팀을 지정하고 실행 대상을 선택한다. iPhone·iPad 일반 앱은 `HeavyMachRestored`, 치트 앱은 `HeavyMachValidation`이다. Mac은 `HeavyMachMac`, `HeavyMachMacValidation`이다. 저장소를 clone하거나 [v0.15 Releases](https://github.com/gelb2/HeavyMach/releases/tag/v0.15)에서 소스·자원 압축본을 내려받은 뒤, Xcode에서 빌드해 설치한다.
+Xcode에서 본인의 개발 팀을 지정하고 실행 대상을 선택한다. iPhone·iPad 일반 앱은 `HeavyMachRestored`, 치트 앱은 `HeavyMachValidation`이다. Mac은 `HeavyMachMac`, `HeavyMachMacValidation`이다. 저장소를 clone하거나 [v0.16 Releases](https://github.com/gelb2/HeavyMach/releases/tag/v0.16)에서 소스·자원 압축본을 내려받은 뒤, Xcode에서 빌드해 설치한다.
 
 [시뮬레이터 명령·기기 설치·서명·오류 해결](docs/public/build-and-install.md)
 

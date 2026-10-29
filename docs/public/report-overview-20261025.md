@@ -6,6 +6,8 @@ Codex가 일반 앱과 치트 앱을 아이폰·아이패드에 설치했다. �
 
 ## 전체 보고서 {#reports}
 
+- [럭스루나에 편대 밀집 조사·수정 계획](lux-formation.html) — 생성점·목적지·높이 분산과 코어 비교.
+
 - [HUD 배치 편집 설계](hud-improvement.html) — HUD16개 자원·버튼별 할당·분할선·실제 GPU 재조립과 편집 계획.
 - [자동조준 상태 안내 계획](auto-aim-visibility.html) — HUD 편집과 분리한 대상 없음·화면 밖·가림 안내.
 
