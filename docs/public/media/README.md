@@ -21,3 +21,7 @@
 수정 전후 캡처의 Simulator·iPhone 조건을 캡션에 유지한다. 해상도가 같다고 같은 환경의 성능 비교로 바꾸지 않는다. menu-art는 첫 적용 당시, menu-joins는 후속 연결부 수정 당시다. 원본480 슬롯 화면과 확장 화면의 역할을 구분한다.
 
 2026-10-27에 Codex가 내 플레이 영상 2개를 분석했다. [플레이 후보 8장·클립 3개](../gameplay-media-20261027.md)와 [장면별 출처 명세](gameplay-20261027/media-scenes.json)를 추가했다. [미디어 폴더 안내](gameplay-20261027/README.md)에 원본 보관과 재추출 방법을 적었다.
+
+## 2026-10-29 추가 자료
+
+[쉴카·퉁구스카·HUD 편집4장](updates-20261029/README.md), [장면별 캡션·출처](updates-20261029/media-scenes.json), [글자 없는 아이콘](app-icon-20261029/icon.png).

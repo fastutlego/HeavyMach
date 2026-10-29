@@ -80,7 +80,7 @@ def check(root):
     if len(readme_blocks) < 2 or not readme_blocks[1].startswith('[!['):
         errors.append('README badges must follow the title')
     readme_text = (root / 'README.md').read_text()
-    approved = (root / 'docs/references/developer-background/approved-readme-opening-20261028.md').read_text().strip()
+    approved = (root / 'docs/references/developer-background/approved-readme-opening-20261029.md').read_text().strip()
     expected = '#' + approved
     if len(readme_blocks) < 3 or readme_blocks[2] != '## HeavyMach를 다시 만든 이유':
         errors.append('README motive heading must follow the badges')
@@ -89,7 +89,7 @@ def check(root):
     restoration_paragraphs = (root / 'docs/RESTORATION.md').read_text().split('\n\n')
     shared = restoration_paragraphs[1:4]
     shared += [next(p for p in restoration_paragraphs if p.startswith(start)) for start in
-               ('지인들과 소주잔을', 'HeavyMach를 만든 두 제작자는', '요즘 나는 내게 남은 시간이')]
+               ('지인들과 소주잔을', '이해관계자가 연락하면', '요즘 나는 내게 남은 시간이')]
     if any(p not in expected for p in shared):
         errors.append('README and restoration shared paragraphs differ')
     sources = root / 'docs/references/developer-background'

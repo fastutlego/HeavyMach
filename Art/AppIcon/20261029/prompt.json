@@ -1,0 +1,8 @@
+{
+  "tool": "built-in image_gen",
+  "mode": "edit",
+  "input": "before.png",
+  "output": "master.png",
+  "transparent_background": false,
+  "prompt": "Edit this exact 1024x1024 HeavyMach app icon. Remove ALL lettering: the yellow 'Episode 1 : STORM OF BULLETS' at lower center and the large silver 'HEAVY MACH' title across the bottom. Reconstruct only the artwork hidden by those letters and their shadows: continue the existing tank hull, tracks, wreckage and dark battlefield into those areas naturally. Preserve the existing tank design, gun, muzzle flash, original composition, all object positions, warm ochre/olive palette, rough painterly 2009 game illustration texture, shadows and lighting. Keep the upper two thirds and unobscured areas as close to the input as possible. Do not redesign or improve the tank, add objects, change crop, zoom, add labels, logos, frames, rounded corners or gradients. Output one opaque square full-bleed production app-icon illustration with absolutely no text or typography. This is restrained removal/inpainting, not a new concept illustration."
+}

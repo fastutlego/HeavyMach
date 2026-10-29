@@ -78,7 +78,7 @@
     for(int i=0;i<titles.count;++i){auto b=[self editorButton:titles[i] action:@selector(hudEditorAction:) tag:i];[(i==1||i==2)?_hudToolbar:_hudToolRows addSubview:b];[buttons addObject:b];}_hudEditorButtons=buttons;
 }
 - (void)updateHUDEntry {
-    BOOL hidden=_hudEditing||_loading.visible()||_keyboardSettingsOpen||!(((_hudLayoutFallback&&!_gameMenu)&&_session&&_session->world().gameState==0)||(_showMenu&&[_menus isMissionSelection]));
+    BOOL hidden=_hudEditing||_loading.visible()||_keyboardSettingsOpen||!(!_showMenu&&_hudLayoutFallback&&!_gameMenu&&_session&&_session->world().gameState==0);
     if(_hudEntry.hidden!=hidden)_hudEntry.hidden=hidden;
 }
 - (void)updateHUDEditorGeometry {
@@ -156,7 +156,7 @@
 #endif
 }
 - (void)openHUDEditor:(id)sender {
-    if(_loading.visible()||_hudEditing||!((_session&&(_gameMenu||_hudLayoutFallback)&&_session->world().gameState==0)||(_showMenu&&[_menus isMissionSelection])))return;
+    if(_loading.visible()||_hudEditing||_showMenu||!(_session&&(_gameMenu||_hudLayoutFallback)&&_session->world().gameState==0))return;
     if(_session&&!_gameMenu){_gameMenu=YES;[_hud setMenuVisible:YES];}
     [self cancelGameInput];_hudFromMenu=_showMenu;_hudExample=_hudFromMenu;_hudDraft=_hudLayout;_hudEditing=YES;_hudHideGuides=NO;_hudDragToken=nil;
     _hudToolbar.hidden=NO;
@@ -179,7 +179,7 @@
 #else
     [self setNeedsLayout];[self layoutIfNeeded];
 #endif
-    // Leave the mission selector / pause menu exactly where editing began.
+    // Return to the pause menu after editing.
 }
 - (void)hudEditorAction:(HMEditorButton*)sender {
     if(!_hudEditing)return;

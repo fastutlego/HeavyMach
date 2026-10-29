@@ -664,3 +664,17 @@ VTOL 첫 생성 프롬프트와 스킬 수정 커밋을 대조했다. 요청에 
 - version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_f2e8a7e5cec48191afd5d36f5d194310`
 - deployment: `appgdep_6ae246fe2b4081919d89e64fe3bddb88`, `succeeded`.
 - 소유자 전용 접근 유지. 45개 보고 페이지를 생성하고 내부 링크·파일·절 앵커1,245개 오류0건을 확인했다. 이번 변경의 브라우저 시각 검사는 수행하지 않았다.
+
+## 2026-10-29 앱 아이콘·최신 기능 이미지
+
+[아이콘·최신 기능](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/icon-and-media.html)에 아이콘 전후 비교와 최종 쉴카·퉁구스카·HUD 편집 화면을 추가했다. 기존 사이트의 전체 보고서 목차에서 연결한다.
+
+- source: `33cc014d443f1ba522275c89895dc89484e416d6`
+- deployment: `appgdep_6ae261d93124819193f3a08cd523edb0`, `succeeded`.
+- 기존 소유자 전용 접근 유지. Safari에서 아이콘 비교·지상 유닛 표시를 확인했고 관련 페이지의 내부 링크 236개 오류 0건을 확인했다.
+
+미션 선택 버튼 제거 후 같은 보고서에 화면과 검사 결과를 추가했다.
+
+- source: `a795d6facc53bdca393b877d9611d57ffca8732c`
+- deployment: `appgdep_6ae2631002e88191af82b0a89ea6fdf8`, `succeeded`.
+- 시뮬레이터 3개·Mac 2개 검사, 실제 두 기기 정식/치트 설치·실행 결과를 반영했다.

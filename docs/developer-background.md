@@ -63,3 +63,7 @@ SaaS 홈페이지는 이번 웹 조회에서 시간 초과로 읽지 못했다. 
 ## 게시용 원고
 
 [게시 자료 목록](public/publication-inventory.md)에 GitHub·Apps·Mags별 원고와 아직 필요한 자료를 모았다. 설치와 구현 상태는 연결된 기술 문서를 사용한다. Apps·Mags 본문은 SaaS 담당 세션이 이 프로젝트의 자료를 읽고 작성한다. 개인 서사의 수정은 RESTORATION과 사용자 정정 원문을 먼저 반영한다.
+
+## 2026-10-29 문장 변경
+
+[추가 원문](references/developer-background/user-foreword-20261029.md)의 게시 중단·9년 3개월·수익에 관한 문장을 README 첫 소개와 개발자의 변에 같은 문단으로 반영했다.

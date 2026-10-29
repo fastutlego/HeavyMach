@@ -268,16 +268,23 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  [self.game gameButton:100 state:2];frames(self.game,40);[self.game openHUDEditor:nil];[self.game hudEditorAction:buttons[0]];[self.game hudEditorAction:buttons[1]];XCTAssertTrue(saved.samePositions(storage<heavymach::hud::Configuration>(self.game,"_hudLayout")));XCTAssertEqual([[self.game valueForKey:@"hudLayoutWrites"]integerValue],1);
  [self.game openHUDEditor:nil];[self.game hudEditorAction:buttons[0]];[self.game hudEditorAction:buttons[2]];XCTAssertFalse(storage<heavymach::hud::Configuration>(self.game,"_hudLayout").customized());XCTAssertEqual([[self.game valueForKey:@"hudLayoutWrites"]integerValue],2);
 }
-- (void)testHUDEditorPregameExampleAndResizeDoesNotChangeSave {
- [self.game refreshScreen:4];auto before=storage<heavymach::SaveData>(self.game,"_save").encode();auto rng=storage<uint32_t>(self.game,"_randomState");
- [self.game openHUDEditor:nil];XCTAssertTrue([[self.game valueForKey:@"hudEditing"]boolValue]);render(self.game);
+- (void)testMissionSelectionHasNoHUDEntryAndPauseExamplePreservesSave {
+ [self.game refreshScreen:4];render(self.game);
+ XCTAssertTrue([[self.game valueForKey:@"hudEntry"]isHidden]);
+ auto menuSave=storage<heavymach::SaveData>(self.game,"_save").encode();
+ [self.game openHUDEditor:nil];XCTAssertFalse([[self.game valueForKey:@"hudEditing"]boolValue]);
+ XCTAssertEqual(menuSave,storage<heavymach::SaveData>(self.game,"_save").encode());
+#if !TARGET_OS_OSX
+ auto menu=[XCTAttachment attachmentWithImage:[(HMGLRenderer*)[self.game valueForKey:@"glRenderer"]snapshot]];menu.name=@"Mission_selection_without_HUD_entry";menu.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:menu];
+#endif
+ [self startFixture];[self.game gameButton:100 state:2];frames(self.game,40);
+ auto before=storage<heavymach::SaveData>(self.game,"_save").encode();auto rng=storage<uint32_t>(self.game,"_randomState");
+ [self.game openHUDEditor:nil];XCTAssertTrue([[self.game valueForKey:@"hudEditing"]boolValue]);
+ NSArray* buttons=[self.game valueForKey:@"hudEditorButtons"];[self.game hudEditorAction:buttons[4]];render(self.game);
  auto& example=storage<std::unique_ptr<heavymach::GameSession>>(self.game,"_hudExampleSession");XCTAssertTrue(bool(example));XCTAssertGreaterThan(example->enemyCount(),size_t(0));
  self.game.frame=CGRectMake(0,0,1400,700);[self.game updateCanvasGeometry];render(self.game);
  XCTAssertEqual(before,storage<heavymach::SaveData>(self.game,"_save").encode());XCTAssertEqual(rng,storage<uint32_t>(self.game,"_randomState"));
-#if !TARGET_OS_OSX
- auto a=[XCTAttachment attachmentWithImage:[(HMGLRenderer*)[self.game valueForKey:@"glRenderer"]snapshot]];a.name=@"HUD_editor_example";a.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:a];
-#endif
- [self.game closeHUDEditor];XCTAssertTrue([[self.game valueForKey:@"showMenu"]boolValue]);XCTAssertEqual([[self.game valueForKey:@"hudLayoutWrites"]integerValue],0);
+ [self.game closeHUDEditor];XCTAssertTrue([[self.game valueForKey:@"gameMenu"]boolValue]);XCTAssertEqual([[self.game valueForKey:@"hudLayoutWrites"]integerValue],0);
 }
 - (void)testHUDEditorSelectionCollisionResizeAndSaveFailure {
  [self startFixture];[self.game gameButton:100 state:2];frames(self.game,40);[self.game openHUDEditor:nil];
@@ -296,7 +303,7 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  self.game.frame=CGRectMake(0,0,1920,640);[self.game updateCanvasGeometry];XCTAssertTrue([self.game currentHUDLayout].customized());
 }
 - (void)testHUDEditorCheatGeometryAndRepeatedClose {
- [self.game refreshScreen:4];
+ [self startFixture];[self.game gameButton:100 state:2];frames(self.game,40);
  auto point=[&](heavymach::hud::Point p){auto vp=storage<heavymach::Viewport>(self.game,"_viewport");return CGPointMake(vp.x+p.x*vp.scale,vp.y+(vp.logicalHeight-p.y)*vp.verticalScale());};
  for(int i=0;i<10;++i){
   [self.game openHUDEditor:nil];render(self.game);

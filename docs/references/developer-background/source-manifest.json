@@ -94,6 +94,16 @@
       "copy": "user-lux-lunae-intent-20261028.md",
       "source": "2026-10-28 현재 대화의 럭스루나에 선택·기술 검증·개인 경험·게임기획·Codex 평가·후속 개선·해석 채택에 관한 사용자 원문 14개와 진입 코드 확인",
       "sha256": "8539f120634e4bca31cf147a78f3a7b64dba18da936b482053945a09ba6a63b1"
+    },
+    {
+      "copy": "user-foreword-20261029.md",
+      "sha256": "96311b5e6847f5f3c46b751aad6c83dce10fb7fd8d28c1a628357578c0749d30",
+      "note": "2026-10-29 README 최상단과 개발자의 변 문장 변경 지시"
+    },
+    {
+      "copy": "approved-readme-opening-20261029.md",
+      "sha256": "202f8a5347d3ae6c32d9ae73779c5f07313fdeda4a4798838d109f726bd384b7",
+      "note": "2026-10-29 사용자 추가 문장을 반영한 README 도입부"
     }
   ]
 }
