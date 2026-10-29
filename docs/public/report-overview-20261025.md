@@ -93,7 +93,7 @@ Mac의 표시 대기·표면 갱신·Retina 설정을 수정했다. 잠금을 �
 
 iPad Simulator는44.311~48.133ms, 변경 전 main도39.972~40.580ms로16.67ms 기준을 넘었다. Instruments에서 Simulator의 최종 화면 확대·표시가 주된 비용임을 확인했다. iPad 누수는0건이었다.
 
-자동조준은 정식·치트 앱에 적용했고 main의 v0.12에 포함돼 있다. A로 켜고 끄며 표적 전환·사격 버튼은 하단 HUD에 배치했다. C 보정은 삭제해 원래 탄속·분산을 유지한다. [구현·검사·캡처](auto-aim-progress.html), [요구·계획](auto-aim.html). 게임 시작 전 HUD 드래그 배치 편집은 남은 과제다.
+자동조준은 정식·치트 앱에 적용했고 main의 v0.12에 포함돼 있다. A로 켜고 끄며 표적 전환·사격 버튼은 하단 HUD에 배치했다. C 보정은 삭제해 원래 탄속·분산을 유지한다. [구현·검사·캡처](auto-aim-progress.html), [요구·계획](auto-aim.html). HUD 배치 편집은 v0.14에 포함됐다. 현재 작업 브랜치는 미션 선택 버튼을 제거하고 전투 일시정지의 SET GAME UI에서 편집하도록 바꿨다. [HUD 편집](hud-improvement.html), [아이콘·최신 화면](icon-and-media.html).
 
 [구현 범위·검사 결과·추가 요구](apple-platforms.html)
 

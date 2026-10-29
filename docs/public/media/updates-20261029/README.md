@@ -7,3 +7,5 @@ v0.14의 구현과 일치하는 최종 캡처4장을 골랐다. 이미지 파일
 - HUD: 영문 도구·선택선 제거·상단 장식 복원 후 아이폰 화면이다. 상단 방향키는 치트 앱의 검증용 조작부다.
 
 Apps는 구현·파츠·입력 설명에, Mags는 신규 유닛과 HUD를 요구한 의도를 설명하는 장면에 사용한다. 원고 자료는 [집필 안내](../../publication-inventory.md), 이미지와 설명은 [이번 갱신](../../app-icon-and-media-20261029.md)에 있다.
+
+추가 화면 `mission-without-hud-entry.png`는 10월 29일 미션 선택의 SET GAME UI 버튼을 제거한 뒤 iPhone 시뮬레이터에서 저장했다. 출처는 같은 JSON의 `supplemental_scenes`에 있다.

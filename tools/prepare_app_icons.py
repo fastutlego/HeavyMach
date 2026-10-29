@@ -34,7 +34,7 @@ def main():
     path = ROOT / 'docs/build-resources.json'
     manifest = json.loads(path.read_text())
     entries = {entry['path']: entry for entry in manifest['files']}
-    for asset in sorted((ROOT / 'Resources/Assets.xcassets').rglob('*')):
+    for asset in sorted(CATALOG.rglob('*')):
         if asset.is_file():
             data = asset.read_bytes()
             name = str(asset.relative_to(ROOT))

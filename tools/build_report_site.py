@@ -46,6 +46,7 @@ def article(source,dest,download,template):
         '간단한 설명과 설치': 'introduction-and-installation',
         '원작의 전투와 조작': 'section-0', '원작의 무기와 성장': 'section-1',
         '내가 추가한 항공기': 'section-2', '내가 추가한 자동조준': 'auto-aim',
+        '내가 추가한 지상 유닛': 'ground-units', 'HUD 위치 편집': 'hud-layout',
         '플랫폼과 개발 상태': 'section-3', '빌드하기': 'section-4',
         '개발 중 고친 문제': 'section-5', '코드 구조와 버전': 'section-6',
         '라이선스와 자원': 'section-7',
@@ -67,6 +68,7 @@ def article(source,dest,download,template):
         readme_ids['크기와 연결부 수정 · 2026-10-28']='refinement'
     if source == ROOT/'docs/public/hud-improvement-plan-20261028.md':
         readme_ids.update({name:f'section-{i}' for i,name in enumerate(['현재 화면과 코드','이동할 묶음과 그림 분할','배치·그림·터치를 연결하는 방법','게임 시작 전 편집 화면','자동조준 상태를 알리는 방법','구현과 검증 순서','투두에서 함께 확인한 남은 일','코드와 정책'])})
+        readme_ids['미션 선택 버튼 제거 · 2026-10-29']='mission-entry-removal'
         readme_ids['HUD 부품과 분할 검사']='asset-audit'
         readme_ids['편집 구현과 시뮬레이터 검사']='editor-validation'
         readme_ids['실제 iPad 설치와 조작 검사']='physical-ipad'
@@ -268,7 +270,9 @@ def main():
                 node[attr] = rel.removeprefix('docs/public/')
             else:
                 node[attr] = 'https://github.com/gelb2/HeavyMach/blob/main/'+quote(rel, safe='/')
-            if url.fragment: node[attr] += '#'+url.fragment
+            if url.fragment:
+                fragment = 'section-2' if rel == 'docs/public/app-icon-and-media-20261029.md' and unquote(url.fragment) == 'hud-위치-편집' else url.fragment
+                node[attr] += '#'+fragment
         style = page.new_tag('style')
         style.string = 'main img,main video{display:block;max-width:100%;height:auto;margin:18px 0}main h1{line-height:1.25}main img[src^="media/badges/"]{display:inline-block;width:auto;height:20px;margin:0 4px 6px 0;vertical-align:middle}'
         page.head.append(style)
@@ -343,6 +347,8 @@ def main():
     for name in report_pages:
         page=BeautifulSoup((dist/name).read_text(),'html.parser')
         assert page.select_one('a[href="index.html#reports"]'), f'Missing catalog backlink: {name}'
+        anchors = [node['id'] for node in page.select('[id]')]
+        assert len(anchors) == len(set(anchors)), f'Duplicate anchors: {name}'
     report['catalog_report_count']=len(report_pages)
     print(json.dumps(report,ensure_ascii=False))
 if __name__=='__main__':main()

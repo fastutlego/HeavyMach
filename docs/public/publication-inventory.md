@@ -2,7 +2,7 @@
 
 HeavyMach에 관해 내가 쓴 원문과 기술 설명·수정 과정·이미지를 이 저장소에 모았다. Apps는 기술 설명, Mags는 매거진 인터뷰 형식이다. 두 곳 모두 현재 기능과 시정 과정을 다룬다. SaaS 담당 세션이 이 자료로 원고를 작성하고 서비스에 반영한다.
 
-집필은 이 저장소 **main의 최신 문서**에서 시작한다. 게임 릴리스는 **v0.12**다. 이후 추가한 글과 이미지 설명은 main에 있다.
+집필은 이 저장소 **main의 최신 문서**에서 시작한다. 게임 릴리스는 **v0.14**다. 이후 추가한 글과 이미지 설명은 main에 있다.
 
 ```sh
 python3 tools/document_contract.py plan --task developer_story
@@ -14,7 +14,7 @@ python3 tools/document_contract.py check
 ## 읽는 순서
 
 1. [개발자의 변](../RESTORATION.md)과 [개발 동기 자료](../developer-background.md): 내가 제공한 원문, 연도 정정, 잡지사·필리핀 근무와 개발자 전업, HeavyMach를 선택한 이유.
-2. [README](../../README.md), [기능](features.md), [구현 상태](implementation-status.md): v0.12 게임과 추가 기능, 완료·남은 과제.
+2. [README](../../README.md), [기능](features.md), [구현 상태](implementation-status.md): v0.14 게임과 추가 기능, 완료·남은 과제.
 3. [개발 과정](development-history.md), [트러블슈팅](troubleshooting.md): 분석·비교 순서, 내 질문과 시정 지시, 기술 원인과 결과.
 4. [구조](architecture.md), [설치](build-and-install.md), [검증](validation.md): 기술 구성, 실제 사용 절차, 날짜·기기·조건별 수치.
 5. [미디어 명세](media/gameplay-20261027/media-scenes.json), [문장 스킬](../../.agents/skills/write-project-text/SKILL.md): 장면·캡션·원본 시간과 집필 규칙.

@@ -59,5 +59,20 @@
       "placement": "HUD 편집 상세 / Apps 터치 위치 검증",
       "image_edited": false
     }
+  ],
+  "supplemental_scenes": [
+    {
+      "id": "mission-without-hud-entry",
+      "path": "docs/public/media/updates-20261029/mission-without-hud-entry.png",
+      "sha256": "85f3f76620a870370377604f1a97ac04e94eb04013cb5b77f4c02a1f3b4ed19f",
+      "captured_on": "2026-10-29",
+      "device": "iPhone Air simulator iOS 26.5",
+      "capture_kind": "GPU output from HMAppleInputTests/testMissionSelectionHasNoHUDEntryAndPauseExamplePreservesSave",
+      "app_variant": "cheat",
+      "evidence": "docs/evidence/icon-and-media-20261029.json",
+      "caption": "SET GAME UI 버튼을 제거한 미션 선택 화면. HUD 편집은 전투 일시정지 메뉴에서 연다.",
+      "image_edited": false,
+      "product_source": "bc764a28"
+    }
   ]
 }
