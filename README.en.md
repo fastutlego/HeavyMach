@@ -22,7 +22,7 @@ Lately, I have felt that I do not have much time left. It is neither a health pr
 
 Someone named [mesabloo](https://github.com/Mesabloo/hm-defense) worked on a similar project. He obtained HeavyMach Defense assets and wrote its source code from scratch. He appears to have stopped while implementing combat between units. My starting point was better than his, since he had to write the source code from scratch.
 
-One weekend, I had a dream. I saw myself from a third-person perspective, encountering the iPod touch and Cydia for the first time. After waking up, I searched Google for heavy Mach. Gemini in Google Search pointed me to a web archive where I could download the original HeavyMach. That was how this restoration project began.
+One weekend, I had a dream. I saw myself from a third-person perspective, encountering the iPod touch and Cydia for the first time. After waking up, I searched Google for heavy Mach. Gemini in Google Search pointed me to [Internet Archive](https://archive.org), where I downloaded [HeavyMach 1.13](https://archive.org/details/Heavy_Mach_1.13_ios_2.1) and began the restoration.
 
 So I think I did very little. This is also why I feel I have even less reason to think of making money from it. In my own words, all I did was grab Codex by the collar and slap it whenever it arbitrarily departed from the original source code and its creators' artistic achievement and did something wrong.
 
