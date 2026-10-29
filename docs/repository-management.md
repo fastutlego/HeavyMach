@@ -23,12 +23,12 @@
 
 ## 현재 태그에서 다시 빌드
 
-최신 릴리스는 v0.15다. v0.10 이후 태그는 게임 자원을 Git/LFS에 포함한다. 별도 폴더에서 이전 버전을 빌드할 수 있다.
+이번 릴리스 태그는 v0.16이다. v0.10 이후 태그는 게임 자원을 Git/LFS에 포함한다. 별도 폴더에서 이전 버전을 빌드할 수 있다.
 
 ```sh
 git fetch origin --tags
-git worktree add --detach ../HeavyMach-v0.15 v0.15
-cd ../HeavyMach-v0.15
+git worktree add --detach ../HeavyMach-v0.16 v0.16
+cd ../HeavyMach-v0.16
 git lfs pull
 python3 tools/verify_build_resources.py
 open HeavyMach.xcworkspace
@@ -93,3 +93,7 @@ HUD 편집과 도구·장식 수정을 feat/hud-layout-editor→develop→main �
 ## v0.15 — 2026-10-29
 
 글자 없는 앱 아이콘, 최신 기능 이미지·설명, 미션 선택 HUD 편집 버튼 제거를 포함한다. 작업 브랜치→develop→main 순서로 병합하고 main 병합 커밋에 태그를 붙인다. 앱 번들 버전은 유지한다. iPhone·iPad 시뮬레이터 각 3개와 native Mac 2개 검사, 실제 두 기기 정식·치트 설치·실행, Apple 4종 CI 빌드가 통과했다. [검사](evidence/icon-and-media-20261029.json).
+
+## v0.16 — 2026-10-29
+
+럭스루나에 X·Y 진입 배치와 실기기 검사, 무선 검사 후 앱 종료 절차를 포함한다. 작업 브랜치→develop→main 순서로 병합하고 main 병합 커밋에 주석 태그 v0.16을 붙인다. 앱 번들 버전은 유지한다. iPad 진입 프레임 검사 실패와 전투 중 재밀집은 [변경 이력](../CHANGELOG.md)에 남긴다. 버전별 릴리스 노트·GitHub 공개 절차의 후속 계획은 [투두](usability-todo.md#hm-release-notes--버전별-릴리스-노트와-github-공개-절차--2026-10-29)에 등록했다.
