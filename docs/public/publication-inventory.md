@@ -141,3 +141,5 @@ Apps에는 지상 유닛의 파츠·무장과 HUD 그림/터치 위치 공유를
 [Android 개발 원고](android-development-20261030.md)를 Apps의 플랫폼 확장 설명과 Mags의 개발 과정 문답에 사용한다. 개발 기간, Apple 소스를 바꾸지 말라는 지시, 공유 코어·자원, Android 전용 파일, 빌드·입력·GPU·무선 연결 수정과 직접 플레이에서 발견한 업그레이드 오류를 담았다.
 
 세부 수치는 [구현 기록](../android-implementation-20261030.md), [시간 근거](../evidence/android-development-timeline-20261030.json), [업그레이드 오류 증거](../evidence/android-upgrade-fix-20261030.json)에 있다. [이미지와 캡션](media/android-20261030/scenes.json)은 타이틀·보스 전투·오류 전후 5장이다. Android 자료는 아직 작업 브랜치에 있으며 Apple 릴리스와 구분한다.
+
+[개발 범위를 정한 네 가지 판단](android-development-20261030.md#개발-범위를-정한-네-가지-판단)에 부분적인 코어 공유, Apple 파일 변경 금지, 컨텍스트·생명주기 사전 확인, Android 스킬 준비를 실제 코드와 검사 결과에 연결했다. Apps에는 플랫폼 분리와 재사용 방식, Mags에는 내가 작업 범위와 검사 대상을 정한 이유를 설명하는 자료로 사용한다. 수정 빌드 완료 시각과 이후 내 플레이에서 오작동이 보이지 않았다는 확인도 추가했다.

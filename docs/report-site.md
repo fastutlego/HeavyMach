@@ -770,3 +770,11 @@ VTOL 첫 생성 프롬프트와 스킬 수정 커밋을 대조했다. 요청에 
 - source: `d3ca9446a4fc39a8730777bed681c1a4b696ff41`
 - deployment: `appgdep_6ae3984f01588191aabb6195df43cbc1` · succeeded
 - 소유자 전용 접근 유지. 새 원고 링크와 이미지 파일을 검사했다. 브라우저 화면 검사는 수행하지 않았다.
+
+## 2026-10-30 Android 개발 범위와 사전 준비
+
+[개발 범위를 정한 네 가지 판단](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/android-development.html#development-decision-1)을 추가했다. 코어 공유, Apple 파일 보존, 컨텍스트·생명주기 사전 확인, Android 스킬 준비를 구현·검사와 연결했다. 수정 빌드 완료 시각과 이후 직접 플레이 확인도 반영했다.
+
+- source: `989f843e26794f95b111ad468af13562797a7df5`
+- deployment: `appgdep_6ae3a176c5a08191aab2794050f3d7e7` · succeeded
+- 기존 접근 범위, 절 앵커와 이미지5장을 유지했다. 문서 연결·중복 앵커·이미지 수를 검사했다. 브라우저 화면 검사는 수행하지 않았다.

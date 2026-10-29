@@ -60,5 +60,13 @@
   ],
   "initial_plan_to_first_apk": "3 days 13 hours 23 minutes 40 seconds (approximately; log end timestamp)",
   "oct30_audit_commit_to_implementation_commit_seconds": 6979,
-  "separate_active_work_timer": false
+  "separate_active_work_timer": false,
+  "initial_plan_to_upgrade_fix_seconds": 312169,
+  "oct30_audit_to_upgrade_fix_seconds": 7971,
+  "android_branch_to_upgrade_fix_seconds": 5963,
+  "user_play_report_after_upgrade_fix": {
+    "date": "2026-10-30",
+    "reported": "업그레이드 오류 수정 빌드를 이어서 플레이한 결과 오작동은 보이지 않았다.",
+    "duration_minutes": null
+  }
 }
