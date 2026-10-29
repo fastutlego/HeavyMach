@@ -70,4 +70,4 @@ SaaS 홈페이지는 이번 웹 조회에서 시간 초과로 읽지 못했다. 
 
 ## 원본을 받은 사이트 — 2026-10-30
 
-사용자가 최초 복원 원본의 Internet Archive 출처 확인과 GitHub 명시를 지시했다. 최초 보관본과 재다운로드의 SHA-256이 같음을 확인했다. README·개발자의 변·개발 과정에서 [HeavyMach 1.13 자료](https://archive.org/details/Heavy_Mach_1.13_ios_2.1)를 연결한다. [출처 증거](source-provenance.md).
+사용자가 최초 복원 원본의 Internet Archive 출처 확인과 GitHub 명시를 지시했다. 최초 보관본과 재다운로드의 SHA-256이 같음을 확인했다. README·개발자의 변·개발 과정에서 [HeavyMach 시리즈 모음](https://archive.org/details/heavy-mach-archive_202406)에서 1.13을 받았다고 적고 해당 모음을 연결한다. 사용자의 후속 출처 표기 지시를 반영했다. [출처 증거](source-provenance.md).

@@ -6,7 +6,7 @@
 
 - 사용자 제공 검색: [Internet Archive heavy mach 검색](https://archive.org/search?query=heavy+mach&tab=all).
 - 검색에서 확인한 모음: [Heavy MACH IPA Archive](https://archive.org/details/heavy-mach-archive_202406).
-- 복원 대상: [Heavy Mach 1.13, iOS 2.1](https://archive.org/details/Heavy_Mach_1.13_ios_2.1).
+- 복원 대상: [시리즈 모음](https://archive.org/details/heavy-mach-archive_202406)의 `HeavyMach v1.13 - (kr.connect.touch.HeavyMach.game).ipa`. [1.13 개별 자료](https://archive.org/details/Heavy_Mach_1.13_ios_2.1)와 파일 크기·SHA-1이 같다. GitHub 소개에서는 사용자 지시에 따라 시리즈 모음을 출처로 연결한다.
 - 비교 대상: [Heavy Mach Assault](https://archive.org/details/com.wemadeent.heavymachassault-ios4.3-clutch-2.0.4).
 
 파일 보관 루트 `REA=/Users/sokol/Documents/Codex/2026-10-24/rea-ready`. `REA`는 이 문서의 경로 약칭이며 환경 변수 설정이 아니다.
