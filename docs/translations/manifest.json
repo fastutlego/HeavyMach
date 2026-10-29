@@ -5,22 +5,25 @@
   "documents": {
     "README.md": {
       "english": "README.en.md",
-      "source_sha256": "61ee864497a5ac450a712dacffffa4d73d1153c7f1176041fb0c4684812b61f4",
-      "english_sha256": "71f623024fea8841c326cf624ddcdb966b43ac449fef06d1fa5df019a951705c",
+      "source_sha256": "44af21de3ea3fe9b29c9806ff2e1f88acddf9a5509f15ae0568f64137d419011",
+      "english_sha256": "f1717db48094aa7398d7e324a6f4a059374e9d83684b346ab53c74eb680e794c",
       "reviewed_numeric_difference": {
         "source_only": {
           "7": 1,
           "9": 1,
-          "3": 1,
+          "3": 2,
           "6": 4,
-          "4": 1,
-          "2": 2,
+          "8": 1,
+          "4": 2,
+          "2": 3,
           "5": 1,
           "0": 1
         },
-        "english_only": {}
+        "english_only": {
+          "13": 2
+        }
       },
-      "review_note": "July, nine years/three months, aircraft and clip quantities use English words; source punctuation attaches Korean suffixes to digits. Shared personal paragraphs match the English statement. User-approved correction: 이승에서나 → in this life. Updated Android availability; personal paragraphs unchanged."
+      "review_note": "July, nine years/three months, aircraft and clip quantities use English words; source punctuation attaches Korean suffixes to digits. Shared personal paragraphs match the English statement. User-approved correction: 이승에서나 → in this life. Updated Android availability; personal paragraphs unchanged. Added iOS gallery and four physical-device cheat captures in both languages."
     },
     "CHANGELOG.md": {
       "english": "CHANGELOG.en.md",

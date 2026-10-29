@@ -147,3 +147,7 @@ Apps에는 지상 유닛의 파츠·무장과 HUD 그림/터치 위치 공유를
 ## Android 실제 플레이 자료 · 2026-10-30
 
 [Galaxy 미션 3-4·3-5 캡처 8장·GIF 3개·영상 3개](android-gameplay-20261030.md). [출처·타임코드·해시](media/android-gameplay-20261030/scenes.json). Android 기술 원고는 [개발 과정](android-development-20261030.md), 빌드와 설치는 [Android 안내](../../Android/README.md)를 읽는다. iOS 자료와 구분된 폴더이며, 인터뷰에는 직접 플레이한 경험과 구현·검사 기록을 함께 활용할 수 있다.
+
+## iOS 플레이 캡처 모음 · 2026-10-30
+
+[iOS 플레이 갤러리](ios-gameplay-gallery-20261030.md)에 이미지 8장·GIF 2개·음향 포함 영상 3개를 모았다. 실제 iPhone·iPad 치트 앱 검수 화면 4장은 별도 절에 배치했다. 각 장면의 출처·시간·기기 정보는 갤러리에서 연결한 미디어 명세에 있다.
