@@ -375,5 +375,17 @@
    "hud_editor": "touch drag, TOOLS, APPLY saved positions[1]"
   },
   "note": "passing through portrait while rotating pauses the game (portrait inactive rule)"
+ },
+ "orientation_hold_20261029": {
+  "decision": "user: passing through portrait continues automatically back in landscape",
+  "api": "hm_active(state): 1 active, 0 interruption, 2 portrait only",
+  "headless": {
+   "script": "Web/tests/orientation-hold.mjs",
+   "passed": true,
+   "portrait": "active 0, hold 1, no menu, time frozen",
+   "landscape": "continues, no menu",
+   "blur_during_hold": "becomes ordinary pause with menu, kept after landscape"
+  },
+  "device": "pending: Android pad disconnected before the recheck"
  }
 }

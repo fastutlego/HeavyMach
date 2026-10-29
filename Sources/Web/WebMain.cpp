@@ -36,7 +36,8 @@ EMSCRIPTEN_KEEPALIVE void hm_pointer(int token,double x,double y,int state){if(v
 EMSCRIPTEN_KEEPALIVE int hm_key(int code,int pressed){return view&&code>0&&code<256&&view->key(unsigned(code),pressed!=0)?1:0;}
 EMSCRIPTEN_KEEPALIVE void hm_keyboard_blur(){if(view)view->blurKeyboard();}
 EMSCRIPTEN_KEEPALIVE void hm_motion(int available,double x,double y,double z){if(view)view->setAcceleration({available!=0,x,y,z});}
-EMSCRIPTEN_KEEPALIVE void hm_active(int active){if(view)view->setApplicationActive(active!=0);}
+// active 1; 0 an interruption (hidden, blur, pagehide); 2 touch-device portrait only.
+EMSCRIPTEN_KEEPALIVE void hm_active(int state){if(view)view->setApplicationActive(state==1,state==2);}
 EMSCRIPTEN_KEEPALIVE void hm_hud_control(int tag){if(view)view->hudControl(tag);}
 EMSCRIPTEN_KEEPALIVE const char* hm_debug_state(){debugText=view?view->debugState():"{}";return debugText.c_str();}
 }

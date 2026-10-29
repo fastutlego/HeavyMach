@@ -546,6 +546,7 @@
       "tests": [
         "Web/tests/browser-smoke.mjs",
         "Web/tests/hud-editor.mjs",
+        "Web/tests/orientation-hold.mjs",
         "Tests/CoreTests.cpp",
         "Tests/GameSessionTests.cpp",
         "Tests/KeyboardInputTests.cpp"

@@ -42,7 +42,8 @@ public:
     bool initRenderer();
     void setSurface(const HostSurface& surface);
     void setAcceleration(const Acceleration& sample){_acceleration=sample;}
-    void setApplicationActive(bool active);
+    // orientationOnly: inactive only because a touch device is in portrait.
+    void setApplicationActive(bool active,bool orientationOnly=false);
     // Browser animation callback; runs at most one original frame per call.
     void animationFrame(double now);
     // 50 Hz accelerometer delegate deadline (separate from the frame timer).
@@ -171,7 +172,7 @@ private:
     heavymach::SaveSlot _hudExampleSlot;
     heavymach::PlayerPassives _hudExamplePassives;
     uint32_t _hudExampleRandom=0;
-    bool _hudEntryHidden=true;
+    bool _hudEntryHidden=true,_orientationHold=false;
     std::string _hudEditorText,_hudPublished;
     heavymach::Vector2 _retainedWorldCamera{};
     bool _active=true,_trace=false,_resumeRequired=false;

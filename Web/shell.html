@@ -185,10 +185,16 @@
   document.addEventListener('webkitfullscreenchange', () => resize());
 
   // Resign/become active: hidden tab, window blur or page hide pause the game.
-  // A phone held in portrait shows the rotate notice; the landscape-only game
-  // is treated as inactive there, like the other interruptions.
+  // A phone or tablet held in portrait shows the rotate notice and holds the
+  // landscape-only game without a pause menu.
   const portrait = window.matchMedia('(orientation: portrait) and (pointer: coarse)');
-  function setActive() { if (ready) Module._hm_active(document.visibilityState === 'visible' && document.hasFocus() && !portrait.matches ? 1 : 0); }
+  // 0: interruption (pause menu, resume by the player). 2: portrait only on a
+  // touch device: the game holds and continues by itself back in landscape.
+  function setActive() {
+    if (!ready) return;
+    const foreground = document.visibilityState === 'visible' && document.hasFocus();
+    Module._hm_active(!foreground ? 0 : portrait.matches ? 2 : 1);
+  }
   document.addEventListener('visibilitychange', setActive);
   portrait.addEventListener('change', setActive);
   window.addEventListener('blur', () => { if (ready) { Module._hm_keyboard_blur(); Module._hm_active(0); } });

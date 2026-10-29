@@ -455,7 +455,23 @@ void GameView::sampleOriginalAcceleration(){
     }
     _tilt.sample(x,y,z);
 }
-void GameView::setApplicationActive(bool active){
+void GameView::setApplicationActive(bool active,bool orientationOnly){
+    // Web-only (2026-10-29 user decision): a phone or tablet passing through
+    // portrait while it is turned only holds the game. Time, input and sound
+    // stop as for any inactive state, but no pause menu opens and returning to
+    // landscape continues. Any other interruption (hidden tab, lost focus,
+    // pagehide) is the iOS resign-active path, also when it arrives during a hold.
+    if(!active&&orientationOnly){
+        if(!_active)return;
+        _orientationHold=true;cancelGameInput();
+        _audio->setApplicationActive(false);
+        if(_glRenderer)_glRenderer->finish();_active=false;return;
+    }
+    if(!active&&_orientationHold){
+        _orientationHold=false;
+        if(_loading.visible())_resumeRequired=true;
+        pauseForInterruption();return;
+    }
     // Resign-active happens before background. The duplicate background call
     // must not issue GL commands after the app has already become inactive.
     if(_active==active)return;
@@ -465,6 +481,7 @@ void GameView::setApplicationActive(bool active){
         _audio->setApplicationActive(false);
         if(_glRenderer)_glRenderer->finish();_active=false;
     }else{
+        _orientationHold=false;
         _active=true;_tilt={};noteInteraction();_audio->setApplicationActive(true);
         const double now=interactionTime();
         _nextTimerDue=now+originalInterval;_nextMotionDue=now+TiltState::interval;
@@ -820,10 +837,10 @@ std::string GameView::debugState(){
     char text[768];
     const char* screen=!_rendererReady?"boot":_session?"game":_showMenu?"menu":"title";
     const auto* p=_session?_session->player():nullptr;auto stage=_session?_session->stage():StagePosition{};
-    std::snprintf(text,sizeof(text),"{\"screen\":\"%s\",\"time\":%.4f,\"canvas\":[%g,%g],\"loading\":%d,\"mission\":%d,\"stage\":%d,\"playerX\":%.2f,\"playerY\":%.2f,\"hp\":%d,\"enemies\":%zu,\"bullets\":%zu,\"paused\":%d,\"gameState\":%d,\"decodes\":%u,\"loadError\":%d,\"aimMode\":%d,\"aimTarget\":%d,\"inputBlocked\":%d,\"keyboardFire\":%d,\"gameMenu\":%d,\"resumeRequired\":%d,\"active\":%d,\"keyboardAimX\":%.2f,\"callbackInterval\":%.4f,\"ticksPerCallback\":%d,\"motion\":%d,\"tilt\":[%.3f,%.3f,%.3f],\"hudEditing\":%d,\"hudCustomized\":%d,\"hudFallback\":%d,\"hudSelected\":%d,\"hudDraftCustomized\":%d}",
+    std::snprintf(text,sizeof(text),"{\"screen\":\"%s\",\"time\":%.4f,\"canvas\":[%g,%g],\"loading\":%d,\"mission\":%d,\"stage\":%d,\"playerX\":%.2f,\"playerY\":%.2f,\"hp\":%d,\"enemies\":%zu,\"bullets\":%zu,\"paused\":%d,\"gameState\":%d,\"decodes\":%u,\"loadError\":%d,\"aimMode\":%d,\"aimTarget\":%d,\"inputBlocked\":%d,\"keyboardFire\":%d,\"gameMenu\":%d,\"resumeRequired\":%d,\"active\":%d,\"keyboardAimX\":%.2f,\"callbackInterval\":%.4f,\"ticksPerCallback\":%d,\"motion\":%d,\"tilt\":[%.3f,%.3f,%.3f],\"hudEditing\":%d,\"hudCustomized\":%d,\"hudFallback\":%d,\"hudSelected\":%d,\"hudDraftCustomized\":%d,\"orientationHold\":%d}",
         screen,_time,_canvasWidth,_canvasHeight,int(_loading.visible()),stage.mission,stage.stage,p?p->position.x:0.f,p?p->position.y:0.f,p?p->hp:0,
         _session?_session->enemyCount():size_t(0),_session?_session->bulletCount():size_t(0),_session?int(_session->world().paused):0,_session?_session->world().gameState:0,_media->decodeCount(),int(!_loadError.empty()),
-        _session?int(_session->aimMode()):int(_preferredAimMode),_session&&_session->aimSnapshot().target?1:0,int(worldInputBlocked()),int(_keyboardFire),int(_gameMenu),int(_resumeRequired),int(_active),_keyboardAim.x,_frameCallbackInterval,_ticksPerCallback,int(_acceleration.available),_acceleration.x,_acceleration.y,_acceleration.z,int(_hudEditing),int(_hudLayout.customized()),int(_hudLayoutFallback),_hudSelected,int(_hudDraft.customized()));
+        _session?int(_session->aimMode()):int(_preferredAimMode),_session&&_session->aimSnapshot().target?1:0,int(worldInputBlocked()),int(_keyboardFire),int(_gameMenu),int(_resumeRequired),int(_active),_keyboardAim.x,_frameCallbackInterval,_ticksPerCallback,int(_acceleration.available),_acceleration.x,_acceleration.y,_acceleration.z,int(_hudEditing),int(_hudLayout.customized()),int(_hudLayoutFallback),_hudSelected,int(_hudDraft.customized()),int(_orientationHold));
     return text;
 }
 }
