@@ -54,7 +54,7 @@ main에 배포한 버전마다 변경 내용과 검사 결과를 정리하고 Gi
 `porting/wasm`에 일반 앱 웹 빌드를 구현했다. 헤드리스 Chrome 자동 검사와 Wasm 코어 검사21개는 통과했다. [이식 문서](web-port-20261028.md).
 
 - [ ] 실제 iPhone Safari·Android Chrome에서 양쪽 가로 방향 틸트, 멀티터치, 소리, 안전영역, 프레임을 확인한다. DeviceMotion 축·부호 변환을 실측과 대조한다.
-- [ ] Safari·Firefox 데스크톱과 실제 스피커 출력을 확인한다.
+- [ ] 데스크톱 Safari 동작 확인(Chrome·ego lite 확인 완료, Firefox 제외 — 2026-10-29 사용자 범위)과 실제 스피커 출력 확인.
 - [ ] 90/120Hz 표시 장치에서 초당 틱 수를 계측한다.
 - [x] 치트 웹 빌드: 만들지 않는다(2026-10-29 사용자 결정). 무기 검증은 iOS·Mac 치트 앱으로 한다.
 - [x] fastutle.com `/game/heavy_mach/` 테스트 배포(2026-10-29, fastutle-site `0be8788`). 배포 주소에서 헤드리스 검사 통과.

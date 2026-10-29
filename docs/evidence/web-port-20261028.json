@@ -307,5 +307,37 @@
    "physical iPad editor",
    "Safari/Firefox desktop"
   ]
+ },
+ "desktop_browsers_20261029": {
+  "scope": "user: Safari, Chrome, ego lite (no Firefox)",
+  "chrome_headless": "browser-smoke.mjs and hud-editor.mjs pass",
+  "ego_lite": {
+   "engine": "Chrome/156 UA",
+   "viewport": [
+    1512,
+    817,
+    2
+   ],
+   "move": [
+    -1040,
+    -957.62
+   ],
+   "jump": [
+    -40.5,
+    -29.72
+   ],
+   "fire_max_bullets": 7,
+   "callback_interval_s": 0.0347,
+   "ticks_per_callback": 2,
+   "combat_ticks_per_second": 57.2,
+   "hud_editor": "drag LEVEL/EXP, TOOLS, APPLY saved positions[1]; test file removed afterwards",
+   "note": "each agent command flips visibility hidden->visible within 1 ms; the game pauses as for a tab switch"
+  },
+  "safari": {
+   "version": "27.0.1",
+   "loaded": true,
+   "safaridriver": "session timed out launching Safari",
+   "apple_events_js": "disabled in Safari settings; state not read"
+  }
  }
 }
