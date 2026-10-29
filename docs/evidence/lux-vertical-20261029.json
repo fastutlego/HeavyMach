@@ -1,0 +1,71 @@
+{
+  "scope": "Same fixed-player setup as lux-formation-20261029. Original X/destinations/speeds/RNG retained. Only initial Y changes. Lane selected to minimize prior spawn rectangle overlap; 2 or at most 4 lanes within terrain/end point and visible top bounds. No full-game or rendered-screen test.",
+  "results": {
+    "0": {
+      "spawn": {
+        "cases": 56,
+        "overlapping_cases": 56,
+        "pairs": 211
+      },
+      "last_entry": {
+        "cases": 56,
+        "overlapping_cases": 56,
+        "pairs": 503
+      },
+      "after_5s": {
+        "cases": 56,
+        "overlapping_cases": 55,
+        "pairs": 551
+      },
+      "after_20s": {
+        "cases": 56,
+        "overlapping_cases": 53,
+        "pairs": 372
+      }
+    },
+    "3": {
+      "spawn": {
+        "cases": 56,
+        "overlapping_cases": 20,
+        "pairs": 108
+      },
+      "last_entry": {
+        "cases": 56,
+        "overlapping_cases": 52,
+        "pairs": 280
+      },
+      "after_5s": {
+        "cases": 56,
+        "overlapping_cases": 54,
+        "pairs": 504
+      },
+      "after_20s": {
+        "cases": 56,
+        "overlapping_cases": 53,
+        "pairs": 374
+      }
+    },
+    "4": {
+      "spawn": {
+        "cases": 56,
+        "overlapping_cases": 13,
+        "pairs": 33
+      },
+      "last_entry": {
+        "cases": 56,
+        "overlapping_cases": 44,
+        "pairs": 137
+      },
+      "after_5s": {
+        "cases": 56,
+        "overlapping_cases": 55,
+        "pairs": 527
+      },
+      "after_20s": {
+        "cases": 56,
+        "overlapping_cases": 53,
+        "pairs": 374
+      }
+    }
+  }
+}

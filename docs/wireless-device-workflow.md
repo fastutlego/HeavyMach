@@ -65,6 +65,35 @@ xcrun xctrace export --input build/wireless-cpu.trace --toc --output build/wirel
 
 기록·내보내기 성공과 trace에 실제 대상·CPU 표본이 있는지 확인한다. 위20초 기록은 연결 검사다. 장시간 발열·안정성 검사로 보고하지 않는다. 프레임 성능 검사는 debugger/Instruments를 떼고 별도로 실행한다.
 
+## 검사 후 앱 종료·홈 화면 복귀
+
+2026-10-29 사용자 요청에 따라 설치·실행·자체 검사의 마지막 단계에 앱 종료와 기기 홈 화면 복귀를 포함한다. 사용자가 실행 상태를 유지하라고 요청하면 앱을 켜 둔다. 여기서 홈 화면은 iPhone·iPad의 앱 아이콘 화면이다.
+
+먼저 검사 결과와 로그·화면·trace를 저장한다. 입력을 해제하고 게임을 일시정지한 뒤, 사용 가능한 기기 UI 도구로 홈으로 이동해 앱을 백그라운드로 보낸다. 일반 앱의 저장 데이터는 유지한다. 저장 완료 여부를 확인할 수 없으면 저장 확인으로 기록하지 않는다.
+
+이번 작업에서 연결한 debugger·Instruments·테스트 실행을 끝낸 다음 대상 앱의 현재 프로세스를 조회한다. launch 결과의 PID와 현재 실행 경로를 대조한다. PID가 바뀌었다면 새 프로세스의 앱 경로를 다시 확인한다.
+
+```sh
+xcrun devicectl device info processes --device <기기-ID> --json-output <실행별-경로>/processes-before-stop.json
+xcrun devicectl device process terminate --device <기기-ID> --pid <현재-확인한-앱-PID> --json-output <실행별-경로>/terminate.json
+xcrun devicectl device info processes --device <기기-ID> --json-output <실행별-경로>/processes-after-stop.json
+```
+
+`terminate`는 기본 종료 신호를 사용한다. 일반 종료 실패 시 오류와 현재 프로세스를 다시 확인하고 대응한다. `--kill`을 기본값으로 쓰지 않는다. 앱을 삭제하거나 사용자 저장을 지우지 않는다. 위 명령 형식은 설치된 Xcode의 `devicectl --help`에서 확인했다.
+
+종료 후 대상 앱이 실행 목록에서 사라졌는지 확인한다. 홈 화면은 사용 가능한 기기 화면 캡처 또는 UI 도구로 따로 확인한다. `devicectl`의 프로세스 종료 응답은 화면 확인을 대신하지 않는다. 홈 이동 도구가 없으면 앱 종료를 먼저 수행하고, 그 결과 실제 홈 화면이 표시됐는지 확인한다. 화면을 읽을 수 없으면 홈 화면 복귀는 미확인으로 남긴다. 홈 화면 캡처는 로컬 검사 자료로만 보관한다.
+
+기기·앱별 결과에 다음을 남긴다.
+
+| 항목 | 기록 |
+|---|---|
+| 설치·실행 | 소스/빌드 식별, 앱 종류, 실제 transport, 설치·실행 결과 |
+| 자체 검사 | 실행한 항목, 통과·실패·미실행, 로그·xcresult 경로 |
+| 종료 | 대상 앱 식별, 종료 결과, 종료 후 프로세스 확인 |
+| 최종 화면 | 홈 화면 확인 결과와 로컬 근거, 또는 확인하지 못한 이유 |
+
+자동 검사 흐름은 실패하더라도 로그를 보존한 뒤 종료 단계를 실행한다. 검사 실패와 종료 실패를 별도로 기록한다. 종료 후 상태 확인이 끝났으면 검증 앱이나 일반 앱을 다시 실행해 두지 않는다.
+
 ## 조사한 스킬과 채택한 방법
 
 설치된 스킬 목록에 Xcode 무선 기기 전용 스킬은 없었다. 외부 후보로 Sentry의 MobileBuildMCP 공식 `mobilebuildmcp`와 `mobilebuildmcp-cli`를 읽었다. 기존 XcodeBuildMCP 저장소 주소는 조사 시 MobileBuildMCP로 연결됐다. 검토한 소스 커밋은 `2998ac77ebbca59544e88a27f34bfb830db9d924`다.

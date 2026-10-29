@@ -499,11 +499,17 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  auto count=[&](){int n=0;for(const auto& e:game->validationEnemies())if(e.name.starts_with("Lux_")){++n;XCTAssertEqual(e.hpMax,765);}return n;};XCTAssertEqual(count(),8);
  for(const auto& sprite:game->sprites())if(sprite.tile.starts_with("Extensions/Lux_"))XCTAssertGreaterThan(sprite.position.x-60,game->canvasWidth());
  auto previousEntry=game->validationEnemies();
+ auto checkFormation=[&]{auto enemies=game->validationEnemies();for(size_t a=0;a<enemies.size();++a){auto sa=heavymach::aircraftSpec(enemies[a].name);if(!enemies[a].name.starts_with("Lux_")||!sa)continue;
+  for(size_t b=0;b<a;++b){auto sb=heavymach::aircraftSpec(enemies[b].name);if(!enemies[b].name.starts_with("Lux_")||!sb)continue;
+   float dx=std::fabs(enemies[a].position.x-enemies[b].position.x),dy=std::fabs(enemies[a].position.y-enemies[b].position.y);
+   XCTAssertTrue(dx>=(sa->width+sb->width)*.5f+10 || dy>=(sa->width*sa->aspect+sb->width*sb->aspect)*.5f+10);
+  }
+ }};checkFormation();
  std::set<std::string> seen;NSUInteger saved=((HMInputTestView*)self.game).gameSaveCalls;size_t maxBullets=0;std::vector<double> work;
  for(int n=0;n<450;++n){auto start=std::chrono::steady_clock::now();frames(self.game,1);if(n>=30)work.push_back(std::chrono::duration<double,std::milli>(std::chrono::steady_clock::now()-start).count());maxBullets=std::max(maxBullets,game->bulletCount());
-  if(n<150){auto currentEntry=game->validationEnemies();for(const auto& enemy:currentEntry)if(enemy.name.starts_with("Lux_")){auto old=std::find_if(previousEntry.begin(),previousEntry.end(),[&](const auto& e){return e.id==enemy.id;});if(old!=previousEntry.end())XCTAssertLessThanOrEqual(std::fabs(enemy.position.x-old->position.x),2.51f);}previousEntry=std::move(currentEntry);}
+  if(n<150){checkFormation();auto currentEntry=game->validationEnemies();for(const auto& enemy:currentEntry)if(enemy.name.starts_with("Lux_")){auto old=std::find_if(previousEntry.begin(),previousEntry.end(),[&](const auto& e){return e.id==enemy.id;});if(old!=previousEntry.end())XCTAssertLessThanOrEqual(std::fabs(enemy.position.x-old->position.x),2.51f);}previousEntry=std::move(currentEntry);}
 #if !TARGET_OS_OSX
-  if(n==30||n==60||n==120){HMGLRenderer* entryGL=[self.game valueForKey:@"glRenderer"];XCTAttachment* entry=[XCTAttachment attachmentWithImage:[entryGL snapshot]];entry.name=[NSString stringWithFormat:@"Lux_Entry_%03d",n];entry.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:entry];}
+  if(n==30||n==60||n==120||n==170||n==200){HMGLRenderer* entryGL=[self.game valueForKey:@"glRenderer"];XCTAttachment* entry=[XCTAttachment attachmentWithImage:[entryGL snapshot]];entry.name=[NSString stringWithFormat:@"Lux_Entry_%03d",n];entry.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:entry];}
 #endif
   for(const auto& sprite:game->sprites())if(sprite.tile.starts_with("Extensions/Lux_"))seen.insert(sprite.tile);}
  XCTAssertEqual(seen.size(),size_t(3));XCTAssertGreaterThan(maxBullets,size_t(10));XCTAssertEqual(count(),8);XCTAssertEqual(((HMInputTestView*)self.game).gameSaveCalls,saved);

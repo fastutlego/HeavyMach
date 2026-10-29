@@ -9,14 +9,26 @@
 5. HeavyMach 최초 정상 플레이 기준 버전은 `v0.9`다. Unity 또는 허브의 게임 플레이 완료를 뜻하지 않는다.
 6. 게임 코드와 함께 빌드 구성·의존성 버전·에셋 해시·검사 근거를 보존한다. 플레이 저장·서명 키·로컬 빌드는 Git에 올리지 않는다.
 
+## main 직접 수정 문서 보존 — 2026-10-29
+
+사용자는 GitHub 웹에서 main의 README·개발자의 변 등 문서를 직접 수정할 수 있다. 이후 develop→main 병합 때 해당 변경을 보존한다.
+
+1. 병합 직전에 `git fetch origin main develop`을 실행하고 원격 두 브랜치의 커밋을 기록한다. 로컬 main만 기준으로 삼지 않는다.
+2. 공통 조상 이후 main과 develop 양쪽의 커밋·변경 파일·본문 차이를 확인한다. README·개발자의 변뿐 아니라 사용자가 수정한 모든 문서를 포함한다.
+3. main의 사용자 변경을 통합할 작업 브랜치에서 보존한다. 동일 문단의 변경은 최신 사용자 원문을 기준으로 조합하며, 판단이 필요한 의미 충돌은 구체적인 두 문장을 확인한다. 한쪽 파일 전체를 일괄 선택해 덮어쓰지 않는다.
+4. 병합 후보의 최종 문서를 origin/main과 대조한다. 자동 병합이 성공해도 사용자 문장·문단 순서·링크가 이전 내용으로 되돌아가지 않았는지 읽는다. 원문 검사 스크립트도 최신 사용자 본문을 기준으로 유지한다.
+5. 반영 직전에 원격 main이 바뀌지 않았는지 다시 fetch한다. 바뀌었으면 그 이후 변경을 추가 대조한다. 관련 문서 검사 후 기존 작업 브랜치→develop→main 경로로 병합한다.
+
+충돌 여부와 최종 본문 보존을 각각 확인한다. 이 절차의 등록만으로 이번 변경을 main에 병합하지 않는다.
+
 ## 현재 태그에서 다시 빌드
 
-최신 릴리스는 v0.15다. v0.10 이후 태그는 게임 자원을 Git/LFS에 포함한다. 별도 폴더에서 이전 버전을 빌드할 수 있다.
+이번 릴리스 태그는 v0.16이다. v0.10 이후 태그는 게임 자원을 Git/LFS에 포함한다. 별도 폴더에서 이전 버전을 빌드할 수 있다.
 
 ```sh
 git fetch origin --tags
-git worktree add --detach ../HeavyMach-v0.15 v0.15
-cd ../HeavyMach-v0.15
+git worktree add --detach ../HeavyMach-v0.16 v0.16
+cd ../HeavyMach-v0.16
 git lfs pull
 python3 tools/verify_build_resources.py
 open HeavyMach.xcworkspace
@@ -81,3 +93,7 @@ HUD 편집과 도구·장식 수정을 feat/hud-layout-editor→develop→main �
 ## v0.15 — 2026-10-29
 
 글자 없는 앱 아이콘, 최신 기능 이미지·설명, 미션 선택 HUD 편집 버튼 제거를 포함한다. 작업 브랜치→develop→main 순서로 병합하고 main 병합 커밋에 태그를 붙인다. 앱 번들 버전은 유지한다. iPhone·iPad 시뮬레이터 각 3개와 native Mac 2개 검사, 실제 두 기기 정식·치트 설치·실행, Apple 4종 CI 빌드가 통과했다. [검사](evidence/icon-and-media-20261029.json).
+
+## v0.16 — 2026-10-29
+
+럭스루나에 X·Y 진입 배치와 실기기 검사, 무선 검사 후 앱 종료 절차를 포함한다. 작업 브랜치→develop→main 순서로 병합하고 main 병합 커밋에 주석 태그 v0.16을 붙인다. 앱 번들 버전은 유지한다. iPad 진입 프레임 검사 실패와 전투 중 재밀집은 [변경 이력](../CHANGELOG.md)에 남긴다. 버전별 릴리스 노트·GitHub 공개 절차의 후속 계획은 [투두](usability-todo.md#hm-release-notes--버전별-릴리스-노트와-github-공개-절차--2026-10-29)에 등록했다.
