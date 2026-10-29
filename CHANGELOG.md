@@ -1,6 +1,6 @@
 # 변경 이력
 
-## 미배포
+## v0.15 — 2026-10-29
 
 - 앱 아이콘의 글자를 제거하고 iPhone·iPad·Mac 정식/치트 앱에 적용. Android PNG 준비.
 - Select Mission의 SET GAME UI 버튼 제거. 전투 일시정지 메뉴에서 HUD 편집.

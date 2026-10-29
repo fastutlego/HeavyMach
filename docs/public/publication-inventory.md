@@ -2,7 +2,7 @@
 
 HeavyMach에 관해 내가 쓴 원문과 기술 설명·수정 과정·이미지를 이 저장소에 모았다. Apps는 기술 설명, Mags는 매거진 인터뷰 형식이다. 두 곳 모두 현재 기능과 시정 과정을 다룬다. SaaS 담당 세션이 이 자료로 원고를 작성하고 서비스에 반영한다.
 
-집필은 이 저장소 **main의 최신 문서**에서 시작한다. 게임 릴리스는 **v0.14**다. 이후 추가한 글과 이미지 설명은 main에 있다.
+집필은 이 저장소 **main의 최신 문서**에서 시작한다. 게임 릴리스는 **v0.15**다. 이후 추가한 글과 이미지 설명은 main에 있다.
 
 ```sh
 python3 tools/document_contract.py plan --task developer_story
@@ -14,7 +14,7 @@ python3 tools/document_contract.py check
 ## 읽는 순서
 
 1. [개발자의 변](../RESTORATION.md)과 [개발 동기 자료](../developer-background.md): 내가 제공한 원문, 연도 정정, 잡지사·필리핀 근무와 개발자 전업, HeavyMach를 선택한 이유.
-2. [README](../../README.md), [기능](features.md), [구현 상태](implementation-status.md): v0.14 게임과 추가 기능, 완료·남은 과제.
+2. [README](../../README.md), [기능](features.md), [구현 상태](implementation-status.md): v0.15 게임과 추가 기능, 완료·남은 과제.
 3. [개발 과정](development-history.md), [트러블슈팅](troubleshooting.md): 분석·비교 순서, 내 질문과 시정 지시, 기술 원인과 결과.
 4. [구조](architecture.md), [설치](build-and-install.md), [검증](validation.md): 기술 구성, 실제 사용 절차, 날짜·기기·조건별 수치.
 5. [미디어 명세](media/gameplay-20261027/media-scenes.json), [문장 스킬](../../.agents/skills/write-project-text/SKILL.md): 장면·캡션·원본 시간과 집필 규칙.
@@ -65,7 +65,7 @@ python3 tools/document_contract.py check
 
 ## 버전과 남은 근거
 
-게임 버전은 v0.14다. 현재 구현과 남은 일은 [구현 상태](implementation-status.md)와 [내부 TODO](../usability-todo.md), 변경 순서는 [작업 이력](../current-status.md)에 있다. 작업 이력의 날짜별 항목은 당시 상태를 담고 있다. [변경 이력](../../CHANGELOG.md)과 [전체 문서 목차](../README.md)로 연결된다.
+게임 버전은 v0.15다. 현재 구현과 남은 일은 [구현 상태](implementation-status.md)와 [내부 TODO](../usability-todo.md), 변경 순서는 [작업 이력](../current-status.md)에 있다. 작업 이력의 날짜별 항목은 당시 상태를 담고 있다. [변경 이력](../../CHANGELOG.md)과 [전체 문서 목차](../README.md)로 연결된다.
 
 빌드 경고는 아직 전수조사하지 않았다. deprecated API 관련이라는 추정을 확인하고 추가 기능 개발과 병행해 수정할 예정이다. 빌드·실행 스크립트는 사례 조사를 마쳤고 구현이 남았다. [스크립트 조사·브랜치 정리](github-followup-20261028.md).
 
@@ -134,4 +134,4 @@ Mags의 답변은 개발자의 변과 제공 원문을 바탕으로 쓴다. 추�
 
 Apps에는 지상 유닛의 파츠·무장과 HUD 그림/터치 위치 공유를 설명할 때 쓴다. Mags에는 내가 지정한 유닛 조건과 화면 배치 요구를 설명하는 장면으로 쓴다. 이 작업에서는 Apps·Mags 본문을 작성하거나 sass.studio를 수정하지 않았다.
 
-새 아이콘은 [1024px PNG](media/app-icon-20261029/icon.png), 생성·파생 파일은 [아이콘 원본 폴더](../../Art/AppIcon/20261029/README.md)에 있다. 현재 공개 게임 태그는 v0.14이며 새 아이콘의 병합·배포 상태는 [현재 상태](../current-status.md)를 확인한다.
+새 아이콘은 [1024px PNG](media/app-icon-20261029/icon.png), 생성·파생 파일은 [아이콘 원본 폴더](../../Art/AppIcon/20261029/README.md)에 있다. 현재 공개 게임 태그는 v0.15이며 새 아이콘의 병합·배포 상태는 [현재 상태](../current-status.md)를 확인한다.
