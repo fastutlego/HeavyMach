@@ -1,7 +1,8 @@
-// HUD layout editor check for the HeavyMach WebAssembly build (v0.14 HUD editor).
-// Enters stage 1-1, opens SET GAME UI from the pause menu, drags LEVEL / EXP,
-// applies, reloads and checks the saved layout, presses a moved HUD button,
-// then RESET LAYOUT + APPLY restores the original layout.
+// HUD layout editor check for the HeavyMach WebAssembly build (v0.15 HUD editor).
+// Mission selection has no editor entry (upstream #23). Enters stage 1-1, opens
+// SET GAME UI from the pause menu, drags LEVEL / EXP, applies, reloads and checks
+// the saved layout, presses a moved HUD button, then opens the editor from the
+// pause menu again: SAMPLE SCENE, RESET LAYOUT + APPLY restores the original layout.
 //
 //   node hud-editor.mjs http://127.0.0.1:8765/ out-dir
 //
@@ -66,10 +67,12 @@ async function enterGame() {
 
 try {
   let g = await enterGame();
-  // Mission selection shows the DOM SET GAME UI entry (HMHUDEditor updateHUDEntry).
+  // Mission selection has no editor entry (HMHUDEditor updateHUDEntry, v0.15).
   const entryOnMission = !!(await domButton('SET GAME UI'));
-  step('mission-entry', { visible: entryOnMission });
-  if (!entryOnMission) throw new Error('SET GAME UI entry missing on mission selection');
+  step('mission-no-entry', { visible: entryOnMission });
+  if (entryOnMission) throw new Error('SET GAME UI entry is shown on mission selection');
+  await page.evaluate(() => Module._hm_hud_control(-1)); await sleep(300);
+  if ((await state()).hudEditing !== 0) throw new Error('editor opened from mission selection');
   await tap(438 + g.center - 240, 26 + g.my);
   let s = await waitFor(s => s.screen === 'game' && !s.loading, 20000, 'game'); await sleep(3000);
   const hudX = (s.canvas[0] - 480) / 2, hudY = (s.canvas[1] - 320) / 2;
@@ -109,11 +112,15 @@ try {
   s = await state(); step('reload', { customized: s.hudCustomized, file: await layoutFile() });
   if (s.hudCustomized !== 1) throw new Error('layout not restored after reload');
 
-  // From the mission selection: SET GAME UI (DOM) -> sample scene -> RESET LAYOUT -> APPLY.
-  await clickDom('SET GAME UI');
-  s = await state(); step('open-from-mission', { hudEditing: s.hudEditing });
-  if (s.hudEditing !== 1) throw new Error('mission-screen SET GAME UI did not open the editor');
-  await sleep(500); await shot('05-sample-scene');
+  // Pause menu again: SET GAME UI -> SAMPLE SCENE -> RESET LAYOUT -> APPLY.
+  await tap(438 + g.center - 240, 26 + g.my);
+  await waitFor(s => s.screen === 'game' && !s.loading, 20000, 'game after reload'); await sleep(3000);
+  await page.keyboard.press('Escape'); await sleep(1200);
+  await tap(hudX + 240, hudY + 190); await sleep(500);
+  s = await state(); step('reopen-from-pause', { hudEditing: s.hudEditing });
+  if (s.hudEditing !== 1) throw new Error('pause-menu SET GAME UI did not reopen the editor');
+  await clickDom('SAMPLE SCENE'); await sleep(500); await shot('05-sample-scene');
+  step('sample-scene', { label: await page.evaluate(() => hmHudState().label) });
   await clickDom('RESET LAYOUT'); await clickDom('APPLY');
   s = await state(); const reset = await layoutFile();
   step('reset', { hudEditing: s.hudEditing, customized: s.hudCustomized, file: reset });

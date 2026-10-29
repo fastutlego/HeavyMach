@@ -75,7 +75,7 @@ void GameView::prepareHUDEditor(){
     _media->resourceScope=scope;_media->releaseScope("hud-ui");
 }
 void GameView::updateHUDEntry(){
-    _hudEntryHidden=_hudEditing||_loading.visible()||_keyboardSettingsOpen||!(((_hudLayoutFallback&&!_gameMenu)&&_session&&_session->world().gameState==0)||(_showMenu&&_menus->isMissionSelection()));
+    _hudEntryHidden=_hudEditing||_loading.visible()||_keyboardSettingsOpen||!(!_showMenu&&_hudLayoutFallback&&!_gameMenu&&_session&&_session->world().gameState==0);
     publishHUDControls();
 }
 void GameView::updateHUDEditorGeometry(){
@@ -121,7 +121,7 @@ void GameView::hudControl(int tag){
     if(tag<0)openHUDEditor();else hudEditorAction(tag);
 }
 void GameView::openHUDEditor(){
-    if(_loading.visible()||_hudEditing||!((_session&&(_gameMenu||_hudLayoutFallback)&&_session->world().gameState==0)||(_showMenu&&_menus->isMissionSelection())))return;
+    if(_loading.visible()||_hudEditing||_showMenu||!(_session&&(_gameMenu||_hudLayoutFallback)&&_session->world().gameState==0))return;
     if(_session&&!_gameMenu){_gameMenu=true;_hud->setMenuVisible(true);}
     cancelGameInput();_hudFromMenu=_showMenu;_hudExample=_hudFromMenu;_hudDraft=_hudLayout;_hudEditing=true;_hudHideGuides=false;_hudDragToken.reset();
     if(_session)_session->setPaused(true);
@@ -131,7 +131,7 @@ void GameView::closeHUDEditor(){
     _hudEditing=false;_hudDragToken.reset();_hudExampleSession.reset();_hudExampleData={};_media->releaseScope("hud-example");
     cancelGameInput();noteInteraction();
     layoutHUDControls();
-    // Leave the mission selector / pause menu exactly where editing began.
+    // Return to the pause menu after editing.
 }
 void GameView::hudEditorAction(int tag){
     if(!_hudEditing)return;
