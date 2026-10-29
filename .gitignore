@@ -52,3 +52,11 @@ account.md
 *.provisionprofile
 *.p8
 *.pfx
+
+# Internal writing research and private project evidence.
+/internal-writing/
+/docs/references/developer-background/*ai-experience*
+/docs/references/developer-background/*gemini*
+/docs/references/developer-background/sass-mutiny-source.txt
+/docs/public/ai-project-experience*
+/docs/evidence/gallery-and-ai-writing-preparation-20261030.json
