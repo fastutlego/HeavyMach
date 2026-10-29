@@ -11,102 +11,102 @@
     {
       "korean": "README.md",
       "english": "README.en.md",
-      "status": "source-exists"
+      "status": "translated"
     },
     {
       "korean": "CHANGELOG.md",
       "english": "CHANGELOG.en.md",
-      "status": "source-exists"
+      "status": "translated"
     },
     {
       "korean": "CREDITS.md",
       "english": "CREDITS.en.md",
-      "status": "source-exists"
+      "status": "translated"
     },
     {
       "korean": "CONTRIBUTING.md",
       "english": "CONTRIBUTING.en.md",
-      "status": "source-exists"
+      "status": "translated"
     },
     {
       "korean": "LICENSE-SCOPE.md",
       "english": "LICENSE-SCOPE.en.md",
-      "status": "source-exists"
+      "status": "translated"
     },
     {
       "korean": "ASSET-LICENSES.md",
       "english": "ASSET-LICENSES.en.md",
-      "status": "source-exists"
+      "status": "translated"
     },
     {
       "korean": "THIRD_PARTY_NOTICES.md",
       "english": "THIRD_PARTY_NOTICES.en.md",
-      "status": "source-exists"
+      "status": "translated"
     },
     {
       "korean": "docs/RESTORATION.md",
       "english": "docs/en/RESTORATION.md",
-      "status": "source-exists"
+      "status": "translated"
     },
     {
       "korean": "docs/public/features.md",
       "english": "docs/en/public/features.md",
-      "status": "source-exists"
+      "status": "translated"
     },
     {
       "korean": "docs/public/implementation-status.md",
       "english": "docs/en/public/implementation-status.md",
-      "status": "source-exists"
+      "status": "translated"
     },
     {
       "korean": "docs/public/build-and-install.md",
       "english": "docs/en/public/build-and-install.md",
-      "status": "source-exists"
+      "status": "translated"
     },
     {
       "korean": "docs/public/gameplay-guide.md",
       "english": "docs/en/public/gameplay-guide.md",
-      "status": "source-exists"
+      "status": "translated"
     },
     {
       "korean": "docs/public/architecture.md",
       "english": "docs/en/public/architecture.md",
-      "status": "source-exists"
+      "status": "translated"
     },
     {
       "korean": "docs/public/development-history.md",
       "english": "docs/en/public/development-history.md",
-      "status": "source-exists"
+      "status": "translated"
     },
     {
       "korean": "docs/public/troubleshooting.md",
       "english": "docs/en/public/troubleshooting.md",
-      "status": "source-exists"
+      "status": "translated"
     },
     {
       "korean": "docs/public/validation.md",
       "english": "docs/en/public/validation.md",
-      "status": "source-exists"
+      "status": "translated"
     },
     {
       "korean": "docs/public/lux-lunae-intent-20261028.md",
       "english": "docs/en/public/lux-lunae-intent-20261028.md",
-      "status": "source-exists"
+      "status": "translated"
     },
     {
       "korean": "docs/public/index.md",
       "english": "docs/en/public/index.md",
-      "status": "public-source-to-write"
+      "status": "translated"
     },
     {
       "korean": "docs/public/design-intent.md",
       "english": "docs/en/public/design-intent.md",
-      "status": "public-source-to-write"
+      "status": "translated"
     },
     {
       "korean": "docs/public/roadmap.md",
       "english": "docs/en/public/roadmap.md",
-      "status": "public-source-to-write"
+      "status": "translated"
     }
   ],
   "excluded": [

@@ -127,4 +127,53 @@ README와 대상 문서의 제목 아래에 `한국어 | English`를 둔다. 영
 
 이전 조사에서는 저장소 문서209개를 집계했다. 그 수는 저장소 규모이며 이번 번역 목표가 아니다. 당시 [전수 목록](evidence/document-localization-inventory-20261029.json)은 조사 기록으로 보존하고, 모든 항목의 번역 제안은 철회한 것으로 표시했다. 실제 번역 대상은 새 공개 문서 목록에서만 읽는다.
 
-이번 수정에서 완료한 것은 범위 확정·계획·목록·TODO·보고서 갱신이다. 영어 원고와 번역 도구 구현은 위 단계에 따라 진행한다.
+2026-10-29에 번역 범위와 위 구현 순서를 정했다.
+
+
+## 작성과 검사 결과 · 2026-10-30
+
+기존 공개 원고17개를 번역하고, 방문자용 목차·추가 기능의 기획 의도·남은 과제를 국영문으로 작성했다. 총20쌍이다. 각 문서 상단에서 같은 문서의 한국어·English를 선택한다. 영어판의 본문 링크는 대응 영어판으로 이어지고 그림·영상은 원본 파일을 함께 사용한다.
+
+현재 기능·설치 안내의 게임 버전을 v0.16, 자원 수를1,504개로 갱신했다. 과거 검사 수치는 당시 값으로 남겼다. 구현 상태표의 끊어진 지상 유닛 절 링크와 트러블슈팅 항목 수를 고쳤다.
+
+| 검사 | 결과 |
+|---|---|
+| 원문·영문 대조 | 20쌍의 문단·표·수치·시제·작업 주체·명령·그림 설명 대조 |
+| 번역 검사기 | 20쌍의 범위·해시·언어 선택·절·표·코드·링크 검사 통과 |
+| 오류 재현 | 누락·원문 변경·오역된 식별자·변경된 명령·숫자·링크·내부 문서 오등록 등16개 통과 |
+| 기존 공개 문서 검사 | 45개 연결 문서, 로컬 링크784개, 저자 원고·원문 해시 통과 |
+| GitHub Markdown | API로 국문 README와 영문20개 렌더 성공. 표·이미지 설명·명시적 절 앵커 확인 |
+| 자원 | 1,504개 SHA-256 일치 |
+| 기존 릴리스 도구 | 회귀 검사17개 통과 |
+| 게임과 개발 기준 | 소스·에셋·프로젝트 설정·정본·정책·스킬·사용자 원문 변경 없음 |
+
+브라우저 직접 클릭·화면 검사는 현재 URL의 Computer Use 제한으로 실행하지 못했다. GitHub Markdown API 결과와 로컬 링크·앵커를 검사했다. 게임 코드는 바꾸지 않아 게임 실행 검사는 다시 하지 않았다.
+
+번역 원문이 바뀌면 검사기가 갱신할 문서를 표시한다. 번역 CI는 대상 공개 원고와 번역 도구가 바뀔 때만 실행한다. 정본·정책·게임 코드 변경을 영어 번역 작업과 묶지 않는다.
+
+[검사 기록](evidence/visitor-english-20261030.json) · [번역 지침·용어집](translations/editorial-guide.md) · [검토한 원문·영문 해시](translations/manifest.json)
+
+### 국문·영문 문서
+
+| 문서 | 한국어 | English |
+|---|---|---|
+| HeavyMach | [한국어](https://github.com/gelb2/HeavyMach/blob/main/README.md) | [English](https://github.com/gelb2/HeavyMach/blob/main/README.en.md) |
+| 변경 이력 | [한국어](https://github.com/gelb2/HeavyMach/blob/main/CHANGELOG.md) | [English](https://github.com/gelb2/HeavyMach/blob/main/CHANGELOG.en.md) |
+| 제작자와 사용 자원 | [한국어](https://github.com/gelb2/HeavyMach/blob/main/CREDITS.md) | [English](https://github.com/gelb2/HeavyMach/blob/main/CREDITS.en.md) |
+| HeavyMach에 기여하기 | [한국어](https://github.com/gelb2/HeavyMach/blob/main/CONTRIBUTING.md) | [English](https://github.com/gelb2/HeavyMach/blob/main/CONTRIBUTING.en.md) |
+| 코드 라이선스 적용 범위 | [한국어](https://github.com/gelb2/HeavyMach/blob/main/LICENSE-SCOPE.md) | [English](https://github.com/gelb2/HeavyMach/blob/main/LICENSE-SCOPE.en.md) |
+| 그림·음원·게임 데이터의 출처와 이용 조건 | [한국어](https://github.com/gelb2/HeavyMach/blob/main/ASSET-LICENSES.md) | [English](https://github.com/gelb2/HeavyMach/blob/main/ASSET-LICENSES.en.md) |
+| 외부 코드와 라이선스 고지 | [한국어](https://github.com/gelb2/HeavyMach/blob/main/THIRD_PARTY_NOTICES.md) | [English](https://github.com/gelb2/HeavyMach/blob/main/THIRD_PARTY_NOTICES.en.md) |
+| 개발자의 변 — HeavyMach를 선택한 이유 | [한국어](https://github.com/gelb2/HeavyMach/blob/main/docs/RESTORATION.md) | [English](https://github.com/gelb2/HeavyMach/blob/main/docs/en/RESTORATION.md) |
+| HeavyMach 기능과 추가 기획 | [한국어](https://github.com/gelb2/HeavyMach/blob/main/docs/public/features.md) | [English](https://github.com/gelb2/HeavyMach/blob/main/docs/en/public/features.md) |
+| 구현 상태 | [한국어](https://github.com/gelb2/HeavyMach/blob/main/docs/public/implementation-status.md) | [English](https://github.com/gelb2/HeavyMach/blob/main/docs/en/public/implementation-status.md) |
+| HeavyMach 빌드와 설치 | [한국어](https://github.com/gelb2/HeavyMach/blob/main/docs/public/build-and-install.md) | [English](https://github.com/gelb2/HeavyMach/blob/main/docs/en/public/build-and-install.md) |
+| HeavyMach 조작 | [한국어](https://github.com/gelb2/HeavyMach/blob/main/docs/public/gameplay-guide.md) | [English](https://github.com/gelb2/HeavyMach/blob/main/docs/en/public/gameplay-guide.md) |
+| HeavyMach 코드 구조 | [한국어](https://github.com/gelb2/HeavyMach/blob/main/docs/public/architecture.md) | [English](https://github.com/gelb2/HeavyMach/blob/main/docs/en/public/architecture.md) |
+| HeavyMach 개발 과정 | [한국어](https://github.com/gelb2/HeavyMach/blob/main/docs/public/development-history.md) | [English](https://github.com/gelb2/HeavyMach/blob/main/docs/en/public/development-history.md) |
+| HeavyMach 트러블슈팅 | [한국어](https://github.com/gelb2/HeavyMach/blob/main/docs/public/troubleshooting.md) | [English](https://github.com/gelb2/HeavyMach/blob/main/docs/en/public/troubleshooting.md) |
+| HeavyMach 검증 결과 | [한국어](https://github.com/gelb2/HeavyMach/blob/main/docs/public/validation.md) | [English](https://github.com/gelb2/HeavyMach/blob/main/docs/en/public/validation.md) |
+| 왜 럭스루나에인가 | [한국어](https://github.com/gelb2/HeavyMach/blob/main/docs/public/lux-lunae-intent-20261028.md) | [English](https://github.com/gelb2/HeavyMach/blob/main/docs/en/public/lux-lunae-intent-20261028.md) |
+| HeavyMach 문서 | [한국어](https://github.com/gelb2/HeavyMach/blob/main/docs/public/index.md) | [English](https://github.com/gelb2/HeavyMach/blob/main/docs/en/public/index.md) |
+| 추가 기능의 기획 의도 | [한국어](https://github.com/gelb2/HeavyMach/blob/main/docs/public/design-intent.md) | [English](https://github.com/gelb2/HeavyMach/blob/main/docs/en/public/design-intent.md) |
+| 남은 과제 | [한국어](https://github.com/gelb2/HeavyMach/blob/main/docs/public/roadmap.md) | [English](https://github.com/gelb2/HeavyMach/blob/main/docs/en/public/roadmap.md) |

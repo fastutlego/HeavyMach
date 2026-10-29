@@ -1,5 +1,9 @@
 # 코드 라이선스 적용 범위
 
+<!-- language-nav:start -->
+[한국어](LICENSE-SCOPE.md) | [English](LICENSE-SCOPE.en.md)
+<!-- language-nav:end -->
+
 The MIT license in `LICENSE` applies to original software contributions made by Jun Young Jee to this restoration, only to the extent of the rights held by that contributor. Third-party code, original-game material, artwork, audio, game data, names and marks are excluded. Their existing rights and licenses are unchanged.
 
 ## MIT 적용 대상

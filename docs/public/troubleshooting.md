@@ -1,5 +1,9 @@
 # HeavyMach 트러블슈팅
 
+<!-- language-nav:start -->
+[한국어](troubleshooting.md) | [English](../en/public/troubleshooting.md)
+<!-- language-nav:end -->
+
 나는 직접 플레이하면서 원작과 다른 움직임·사격·그림·성능을 지적했다. Codex는 자신이 작성한 코드에서 차이를 찾고, 해당 경로를 수정한 뒤 같은 조건으로 검사했다.
 
 ## 1. 사격·피격 때마다 파일 저장
@@ -90,7 +94,7 @@ Codex는 성공했던 Xcode GUI 빌드와 CLI의 서명·팀·기기 상태를 �
 
 나는 다른 사람이 저장소를 받아 빌드할 수 있는지 물었다. 소스가 있어도 로컬에만 있는 그림·음원·맵에 의존하면 clone으로 빌드할 수 없었다.
 
-Codex는 필요한 자원을 Git/LFS에 포함하고 파일별 크기·SHA-256을 기록했다. 별도 GitHub clone에서 일반·치트 빌드와 코어·Simulator 검사를 수행했다. 현재 문서 작업에서 자원 검사기를 다시 실행해 1,482개 해시가 맞는 것을 확인했다. [새 clone 검사](clone-build-20261026.md), [자원 검사 도구](../../tools/verify_build_resources.py)
+Codex는 필요한 자원을 Git/LFS에 포함하고 파일별 크기·SHA-256을 기록했다. 별도 GitHub clone에서 일반·치트 빌드와 코어·Simulator 검사를 수행했다. 당시 문서 작업에서 자원 검사기를 다시 실행해 1,482개 해시가 맞는 것을 확인했다. [새 clone 검사](clone-build-20261026.md), [자원 검사 도구](../../tools/verify_build_resources.py)
 
 ## 15. 자동조준 C 보정의 탄환 변경
 
@@ -116,7 +120,7 @@ Codex가 사진·도면으로 다시 그린 시안을 채택한 뒤에도 나는
 
 코드에 들어간 기능이 문서에서는 미완료로 남거나, 보고서가 여러 주소로 흩어지는 문제가 있었다. 나는 문서·소스·앱이 서로 설명돼야 하고 모든 보고서는 한 사이트에서 찾아야 한다고 지시했다.
 
-나는 HeavyMach를 게임 허브 아래 독립 저장소로 분리하도록 했다. Codex가 저장소를 옮기고 누락 파일을 전수검사했다. 기획·정본·분야 정책·코드·검사 연결은 `document-map.json`과 문서 검사기로 관리한다. 기능 브랜치는 develop에, develop만 main에 병합하고 main 병합 커밋에 태그를 단다. 현재 원고는 v0.12 상태로 갱신했으며 통합 보고서의 목차에서 연결한다. [문서 체계](../document-governance.md), [저장소 관리](../repository-management.md), [현재 상태](implementation-status.md)
+나는 HeavyMach를 게임 허브 아래 독립 저장소로 분리하도록 했다. Codex가 저장소를 옮기고 누락 파일을 전수검사했다. 기획·정본·분야 정책·코드·검사 연결은 `document-map.json`과 문서 검사기로 관리한다. 기능 브랜치는 develop에, develop만 main에 병합하고 main 병합 커밋에 태그를 단다. 당시 원고는 v0.12 상태로 갱신했으며 통합 보고서의 목차에서 연결한다. [문서 체계](../document-governance.md), [저장소 관리](../repository-management.md), [현재 상태](implementation-status.md)
 
 ## 18. 개발자의 변 원고 추가 지시 거부
 

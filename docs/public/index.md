@@ -1,0 +1,40 @@
+# HeavyMach 문서
+
+<!-- language-nav:start -->
+[한국어](index.md) | [English](../en/public/index.md)
+<!-- language-nav:end -->
+
+HeavyMach는 현재 iPhone·iPad·Mac에서 빌드하고 플레이할 수 있다. 게임 버전은 v0.16이다.
+
+## 시작하기
+
+- [소개와 플레이 화면](../../README.md)
+- [빌드와 설치](build-and-install.md): 준비물, 소스·자원 다운로드, Xcode 빌드, 기기 설치와 오류 해결.
+- [조작](gameplay-guide.md): 터치·틸트·키보드, 자동조준, HUD 편집.
+- [구현 상태](implementation-status.md): 제공하는 기능과 기기별 확인 범위.
+
+## 개발 배경과 기획
+
+- [개발자의 변](../RESTORATION.md): 이 게임을 복원한 개인적인 이유.
+- [추가 기능의 기획 의도](design-intent.md): 넓은 화면, 공용 모듈, 자동조준, 새 적과 HUD 편집.
+- [왜 럭스루나에인가](lux-lunae-intent-20261028.md): 두 게임의 의미, 도색과 전투 기획, 승인 도안과 게임 화면.
+- [기능과 세부 구현](features.md): 표적·탄도 계산, 항공기 무장과 배치 수치.
+
+## 구현과 검사
+
+- [코드 구조](architecture.md): workspace, 공용 코어·런타임·자원, 한 프레임의 처리.
+- [개발 과정](development-history.md): 분석·구현·비교 순서와 사용한 도구.
+- [트러블슈팅](troubleshooting.md): 저장·렌더링·음향·시간·좌표·기기·그림에서 고친 문제.
+- [검증 결과](validation.md): 자동 검사, 직접 플레이, 프레임·메모리 측정과 남은 검사.
+- [변경 이력](../../CHANGELOG.md): v0.9~v0.16, 태그·다운로드·버전별 검사.
+- [남은 과제](roadmap.md): 버그 수정, 검사, 편의 기능과 추가 플랫폼.
+
+## 참여와 제작자
+
+- [기여 안내](../../CONTRIBUTING.md)
+- [크레딧](../../CREDITS.md)
+- [코드 라이선스 범위](../../LICENSE-SCOPE.md)
+- [자원 이용 조건](../../ASSET-LICENSES.md)
+- [외부 라이브러리 고지](../../THIRD_PARTY_NOTICES.md)
+
+각 문서 상단의 한국어·English 링크로 같은 문서의 언어를 바꿀 수 있다. 이미지와 영상은 두 언어에서 같은 파일을 사용한다.

@@ -1,5 +1,9 @@
 # 개발자의 변 — HeavyMach를 선택한 이유
 
+<!-- language-nav:start -->
+[한국어](RESTORATION.md) | [English](en/RESTORATION.md)
+<!-- language-nav:end -->
+
 이와 비슷한 프로젝트를 진행한 [mesabloo](https://github.com/Mesabloo/hm-defense)라는 사람이 있었다. 그는 HeavyMach Defense의 에셋을 구하고 소스코드를 밑바닥부터 새로 작성했다. 유닛 간 교전 알고리즘을 구현하다가 멈춘 듯했다. 나는 소스코드를 밑바닥부터 새로 작성해야 했던 그 보다는 시작점이 더 나은 상황이었다.
 
 주말에 잠을 자다가 꿈을 꿨다. 꿈속에서 아이팟터치와 Cydia를 처음 접하던 나를 제3자의 시점으로 보고 있었다. 일어나서 구글에 heavy Mach을 쳐봤다. 구글 검색의 Gemini가 HeavyMach 원본을 받을 수 있는 웹 아카이빙 전문 사이트를 알려줬다. 그게 이 복원 프로젝트의 시작이다.

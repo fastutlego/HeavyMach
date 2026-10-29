@@ -1,5 +1,9 @@
 # 제작자와 사용 자원
 
+<!-- language-nav:start -->
+[한국어](CREDITS.md) | [English](CREDITS.en.md)
+<!-- language-nav:end -->
+
 ## HeavyMach 원작
 
 - 게임 개발: **변해준**
