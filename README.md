@@ -1,5 +1,9 @@
 # HeavyMach
 
+<!-- language-nav:start -->
+[한국어](README.md) | [English](README.en.md)
+<!-- language-nav:end -->
+
 [![Git tag v0.16](docs/public/media/badges/version.svg)](https://github.com/gelb2/HeavyMach/tree/v0.16)
 [![Platforms iOS iPadOS macOS](docs/public/media/badges/platforms.svg)](docs/public/validation.md)
 [![Architecture arm64](docs/public/media/badges/arch.svg)](docs/public/build-and-install.md)
@@ -35,7 +39,7 @@ HeavyMach도 2015년, 2016년 생활을 청산하고 다른 직업을 택하게 
 
 [최신 릴리스](https://github.com/gelb2/HeavyMach/releases/latest) · [전체 버전 이력](CHANGELOG.md)
 
-[설치](docs/public/build-and-install.md) · [조작](docs/public/gameplay-guide.md) · [기능](docs/public/features.md) · [트러블슈팅](docs/public/troubleshooting.md) · [전체 문서](docs/README.md)
+[설치](docs/public/build-and-install.md) · [조작](docs/public/gameplay-guide.md) · [기능](docs/public/features.md) · [트러블슈팅](docs/public/troubleshooting.md) · [전체 문서](docs/public/index.md)
 
 ## 원작의 전투와 조작
 
@@ -130,7 +134,7 @@ HUD의 **A 버튼**으로 자동조준을 켜면 전방의 가까운 적을 선�
 
 원작을 복원하고 플레이할 수 있게 만드는 데 집중해, 소스코드를 빌드할 때 나오는 경고를 아직 전면 조사하고 수정하지 못했다. deprecated API와 관련된 경고로 추정하며, 추가 기능 개발과 병행해 원인을 조사하고 수정할 예정이다.
 
-다운로드부터 자원 준비·빌드·실행까지 묶는 스크립트도 만들 예정이다. Mac 실행과 iPhone·iPad 설치를 선택하고, 필요한 도구와 개발 팀·서명 설정을 안내하는 방식이다. [세부 과제](docs/usability-todo.md)
+다운로드부터 자원 준비·빌드·실행까지 묶는 스크립트도 만들 예정이다. Mac 실행과 iPhone·iPad 설치를 선택하고, 필요한 도구와 개발 팀·서명 설정을 안내하는 방식이다. [세부 과제](docs/public/roadmap.md)
 
 **빌드 설정과 검사 환경**
 
@@ -164,7 +168,7 @@ Xcode에서 본인의 개발 팀을 지정하고 실행 대상을 선택한다. 
 
 Codex는 파일 쓰기를 저장 시점에만 실행하도록 분리했다. 게임 그림은 OpenGL 텍스처로 그리고, 효과음은 OpenAL 버퍼와 소스를 재사용하도록 바꿨다. 화면 확장 뒤 생긴 특수무기 좌표·보스 접근·그림 경계 문제도 같은 방식으로 수정했다.
 
-[트러블슈팅 17건](docs/public/troubleshooting.md) · [분석·구현·검증 과정](docs/public/development-history.md)
+[트러블슈팅 18건](docs/public/troubleshooting.md) · [분석·구현·검증 과정](docs/public/development-history.md)
 
 ## 코드 구조와 버전
 

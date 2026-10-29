@@ -1,0 +1,188 @@
+{
+  "date": "2026-10-30",
+  "branch": "docs/visitor-english",
+  "base_main": "268f0684e158ff8077235621eaef650b84c99099",
+  "pairs": 20,
+  "english_documents": [
+    "README.en.md",
+    "CHANGELOG.en.md",
+    "CREDITS.en.md",
+    "CONTRIBUTING.en.md",
+    "LICENSE-SCOPE.en.md",
+    "ASSET-LICENSES.en.md",
+    "THIRD_PARTY_NOTICES.en.md",
+    "docs/en/RESTORATION.md",
+    "docs/en/public/features.md",
+    "docs/en/public/implementation-status.md",
+    "docs/en/public/build-and-install.md",
+    "docs/en/public/gameplay-guide.md",
+    "docs/en/public/architecture.md",
+    "docs/en/public/development-history.md",
+    "docs/en/public/troubleshooting.md",
+    "docs/en/public/validation.md",
+    "docs/en/public/lux-lunae-intent-20261028.md",
+    "docs/en/public/index.md",
+    "docs/en/public/design-intent.md",
+    "docs/en/public/roadmap.md"
+  ],
+  "translation_tests": 16,
+  "release_tool_regression_tests": 17,
+  "publication_local_links": 784,
+  "resource_hashes": 1504,
+  "protected_path_changes": [],
+  "author_body_sha256": {
+    "docs/RESTORATION.md": "a96acc4e097df4d9515611f9e6fdb4645c649f023f7efa265235ac4beb713330",
+    "docs/public/lux-lunae-intent-20261028.md": "f0809010725138a8e3e4e4516b3ac201b8a752c458e8ce5c59765cd0d096f4f7"
+  },
+  "github_markdown_api": [
+    {
+      "file": "README.md",
+      "tables": 2,
+      "images": 18,
+      "links": 61,
+      "source_anchors_preserved": 0
+    },
+    {
+      "file": "README.en.md",
+      "tables": 2,
+      "images": 18,
+      "links": 61,
+      "source_anchors_preserved": 14
+    },
+    {
+      "file": "CHANGELOG.en.md",
+      "tables": 1,
+      "images": 0,
+      "links": 87,
+      "source_anchors_preserved": 13
+    },
+    {
+      "file": "CREDITS.en.md",
+      "tables": 1,
+      "images": 0,
+      "links": 18,
+      "source_anchors_preserved": 5
+    },
+    {
+      "file": "CONTRIBUTING.en.md",
+      "tables": 0,
+      "images": 0,
+      "links": 7,
+      "source_anchors_preserved": 3
+    },
+    {
+      "file": "LICENSE-SCOPE.en.md",
+      "tables": 1,
+      "images": 0,
+      "links": 8,
+      "source_anchors_preserved": 3
+    },
+    {
+      "file": "ASSET-LICENSES.en.md",
+      "tables": 1,
+      "images": 0,
+      "links": 9,
+      "source_anchors_preserved": 3
+    },
+    {
+      "file": "THIRD_PARTY_NOTICES.en.md",
+      "tables": 2,
+      "images": 0,
+      "links": 21,
+      "source_anchors_preserved": 4
+    },
+    {
+      "file": "docs/en/RESTORATION.md",
+      "tables": 0,
+      "images": 0,
+      "links": 7,
+      "source_anchors_preserved": 2
+    },
+    {
+      "file": "docs/en/public/features.md",
+      "tables": 4,
+      "images": 2,
+      "links": 20,
+      "source_anchors_preserved": 14
+    },
+    {
+      "file": "docs/en/public/implementation-status.md",
+      "tables": 2,
+      "images": 0,
+      "links": 13,
+      "source_anchors_preserved": 5
+    },
+    {
+      "file": "docs/en/public/build-and-install.md",
+      "tables": 2,
+      "images": 0,
+      "links": 10,
+      "source_anchors_preserved": 10
+    },
+    {
+      "file": "docs/en/public/gameplay-guide.md",
+      "tables": 1,
+      "images": 0,
+      "links": 8,
+      "source_anchors_preserved": 6
+    },
+    {
+      "file": "docs/en/public/architecture.md",
+      "tables": 1,
+      "images": 0,
+      "links": 19,
+      "source_anchors_preserved": 7
+    },
+    {
+      "file": "docs/en/public/development-history.md",
+      "tables": 1,
+      "images": 0,
+      "links": 11,
+      "source_anchors_preserved": 9
+    },
+    {
+      "file": "docs/en/public/troubleshooting.md",
+      "tables": 0,
+      "images": 0,
+      "links": 38,
+      "source_anchors_preserved": 19
+    },
+    {
+      "file": "docs/en/public/validation.md",
+      "tables": 2,
+      "images": 0,
+      "links": 14,
+      "source_anchors_preserved": 6
+    },
+    {
+      "file": "docs/en/public/lux-lunae-intent-20261028.md",
+      "tables": 1,
+      "images": 7,
+      "links": 15,
+      "source_anchors_preserved": 17
+    },
+    {
+      "file": "docs/en/public/index.md",
+      "tables": 0,
+      "images": 0,
+      "links": 21,
+      "source_anchors_preserved": 5
+    },
+    {
+      "file": "docs/en/public/design-intent.md",
+      "tables": 0,
+      "images": 0,
+      "links": 11,
+      "source_anchors_preserved": 6
+    },
+    {
+      "file": "docs/en/public/roadmap.md",
+      "tables": 2,
+      "images": 0,
+      "links": 6,
+      "source_anchors_preserved": 4
+    }
+  ],
+  "browser_ui": "Not run: Computer Use rejected the current browser URL. GitHub Markdown API rendering and local link/anchor checks completed.",
+  "game_tests": "Not rerun; game source, resources and project settings unchanged."
+}

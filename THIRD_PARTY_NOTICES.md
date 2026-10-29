@@ -1,5 +1,9 @@
 # 외부 코드와 라이선스 고지
 
+<!-- language-nav:start -->
+[한국어](THIRD_PARTY_NOTICES.md) | [English](THIRD_PARTY_NOTICES.en.md)
+<!-- language-nav:end -->
+
 ## 앱에 연결되는 라이브러리
 
 | 구성요소 | 경로·버전 | 라이선스·고지 |

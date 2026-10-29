@@ -1,5 +1,9 @@
 # 변경 이력
 
+<!-- language-nav:start -->
+[한국어](CHANGELOG.md) | [English](CHANGELOG.en.md)
+<!-- language-nav:end -->
+
 [최신 릴리스](https://github.com/gelb2/HeavyMach/releases/latest) · [GitHub 전체 릴리스](https://github.com/gelb2/HeavyMach/releases)
 
 | 버전 | 태그 기준일 | 주요 변경 |
