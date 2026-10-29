@@ -29,7 +29,7 @@ So I think I did very little. This is also why I feel I have even less reason to
 I have no intention of making money from this restoration. I want to publish the code and assets together so other people can build and play it themselves. I also want to record how it was restored and what was fixed.
 If a stakeholder contacts me, I will take this project down. The nine years and three months HeavyMach's creators gave me exceed the lifespan my creator originally allotted to me.
 
-Money is only needed in this world.
+Money is only needed in this life.
 
 [Full developer's statement](docs/en/RESTORATION.md)
 
