@@ -120,6 +120,10 @@ SaaS·기능 안내의 v0.12 잔여 문구와 조작 안내의 미션 선택 진
 README에 지상 유닛·HUD 편집 화면을 추가하고 SaaS 집필 자료에 최종 캡처 4장의 출처·캡션을 연결했다. `feat/icon-and-project-media`에서 작업했으며 main은 v0.14다. [보고서](public/app-icon-and-media-20261029.md), [검사](evidence/icon-and-media-20261029.json).
 
 
+## 2026-10-29 fastutle.com 웹 갱신
+
+HUD 편집기·Android 기울기 부호·세로 보류가 들어간 빌드(`584c6ea`)를 https://fastutle.com/game/heavy_mach/ 에 배포했다(fastutle-site `8e13936`). 배포 주소의 헤드리스 검사3종이 통과했다. iPhone, iPad 반대 가로, 데스크톱 Safari 내부 확인은 남았다. [이식 문서](web-port-20261028.md#fastutlecom-반영--2026-10-29)
+
 ## 2026-10-29 Android 패드 웹 확인
 
 Lenovo 패드(Android 16, Chrome 156, 120Hz)에서 로컬 빌드를 확인했다. Android Chrome에도 기울기 권한 함수가 있어 iOS 부호가 적용되던 문제를 찾아 Apple 모바일 WebKit만 부호를 유지하도록 고쳤다. 양쪽 가로 방향에서 기울인 쪽으로 이동하는 것을 사용자 조작으로 확인했다. 전체 화면, 120Hz에서 초당59.9틱, 점프·터치 사격, HUD 편집기 터치 저장도 확인했다. 돌리는 도중 세로를 지나면 멈춤 메뉴가 뜨던 동작은 사용자 결정에 따라 세로 보류·가로 자동 재개로 바꿨고 헤드리스와 Android 패드에서 확인했다. [이식 문서](web-port-20261028.md#android-패드--2026-10-29)
