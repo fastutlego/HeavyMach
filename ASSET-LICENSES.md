@@ -1,5 +1,9 @@
 # 그림·음원·게임 데이터의 출처와 이용 조건
 
+<!-- language-nav:start -->
+[한국어](ASSET-LICENSES.md) | [English](ASSET-LICENSES.en.md)
+<!-- language-nav:end -->
+
 코드와 에셋을 함께 제공한다. 저장소를 받아 빌드하고 플레이하는 방법은 빌드 문서에 정리했다. 아래 자료에는 루트의 코드용 MIT가 적용되지 않는다.
 
 ## 자원별 상태

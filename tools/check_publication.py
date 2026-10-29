@@ -4,6 +4,7 @@ import hashlib
 import json
 import re
 from pathlib import Path
+from check_translations import EXPECTED, strip_nav
 from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -16,6 +17,8 @@ FILES = ['docs/public/lux-lunae-intent-20261028.md', 'README.md', 'CONTRIBUTING.
          'docs/public/validation.md', 'docs/public/implementation-status.md',
          'docs/public/github-repository-plan-20261028.md', 'docs/public/github-followup-20261028.md']
 
+FILES += [p for p in EXPECTED if p not in FILES] + list(EXPECTED.values())
+
 # Known rejected copy, checked in every report manuscript as well as reader docs.
 # This catches recurrence; contextual editing still determines what to rewrite.
 REJECTED_COPY = [
@@ -25,6 +28,10 @@ REJECTED_COPY = [
     r'(?:검증했다고 표시|전체 통과로 판정|모든 프레임이16\.67ms 이내라고 표현)하지 않는다',
     r'(?:이번에 줄 단위 의미 동등성을 재검사|모든 미션의 모든 지형에서 명중을 확인)했다는 뜻은 아니다',
 ]
+
+
+EN_REJECTED_COPY = [r'(?i)it is (?:important|worth) (?:to note|noting) that',
+                    r'(?i)(?:this does not constitute|should not be construed as|not a claim of)']
 
 
 def editorial_files(root):
@@ -44,7 +51,8 @@ def check_editorial(root):
         for number, line in enumerate((root / name).read_text().splitlines(), 1):
             if line.lstrip().startswith(('>', '```')):
                 continue
-            if any(re.search(pattern, line) for pattern in REJECTED_COPY):
+            patterns = REJECTED_COPY + (EN_REJECTED_COPY if name in EXPECTED.values() else [])
+            if any(re.search(pattern, line) for pattern in patterns):
                 errors.append(f'{name}:{number}: rejected editorial copy')
     for name in ('README.md', 'docs/public/build-and-install.md',
                  'docs/public/implementation-status.md'):
@@ -76,24 +84,24 @@ def check(root):
             dest = path.parent / unquote(url.path)
             if not dest.exists():
                 errors.append(f'{name}: missing local link {target}')
-    readme_blocks = (root / 'README.md').read_text().split('\n\n')
+    readme_blocks = strip_nav((root / 'README.md').read_text()).split('\n\n')
     if len(readme_blocks) < 2 or not readme_blocks[1].startswith('[!['):
         errors.append('README badges must follow the title')
-    readme_text = (root / 'README.md').read_text()
+    readme_text = strip_nav((root / 'README.md').read_text())
     approved = (root / 'docs/references/developer-background/approved-readme-opening-main-20261029.md').read_text().strip()
     expected = '#' + approved
     if len(readme_blocks) < 3 or readme_blocks[2] != '## HeavyMach를 다시 만든 이유':
         errors.append('README motive heading must follow the badges')
     if expected not in readme_text:
         errors.append('README opening differs from the approved manuscript')
-    restoration_paragraphs = (root / 'docs/RESTORATION.md').read_text().split('\n\n')
+    restoration_paragraphs = strip_nav((root / 'docs/RESTORATION.md').read_text()).split('\n\n')
     shared = restoration_paragraphs[1:4]
     shared += [p for p in restoration_paragraphs if p.startswith('요즘 나는 내게 남은 시간이')]
     if any(p not in expected for p in shared):
         errors.append('README and restoration shared paragraphs differ')
     main_edits = json.loads((root / 'docs/references/developer-background/main-edits-20261029.json').read_text())
     for name, digest in main_edits['files'].items():
-        if hashlib.sha256((root / name).read_bytes()).hexdigest() != digest:
+        if hashlib.sha256(strip_nav((root / name).read_text()).encode()).hexdigest() != digest:
             errors.append(f'Changed author manuscript from main: {name}')
     sources = root / 'docs/references/developer-background'
     manifest = json.loads((sources / 'source-manifest.json').read_text())

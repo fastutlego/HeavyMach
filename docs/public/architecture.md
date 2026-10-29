@@ -1,5 +1,9 @@
 # HeavyMach 코드 구조
 
+<!-- language-nav:start -->
+[한국어](architecture.md) | [English](../en/public/architecture.md)
+<!-- language-nav:end -->
+
 게임 규칙은 C++20 코어에, Apple 플랫폼 연결은 Objective-C++에 구현했다. 하나의 workspace가 공용 모듈과 iOS/iPadOS·Mac 프로젝트의 의존 관계를 관리한다. 앱은 같은 코어와 자원을 사용한다.
 
 ## Workspace와 프로젝트

@@ -1,5 +1,9 @@
 # HeavyMach에 기여하기
 
+<!-- language-nav:start -->
+[한국어](CONTRIBUTING.md) | [English](CONTRIBUTING.en.md)
+<!-- language-nav:end -->
+
 현재 기능과 남은 과제는 [개발 상태](docs/public/implementation-status.md), 실행 방법은 [빌드·설치](docs/public/build-and-install.md)에 있다.
 
 ## 오류 제보

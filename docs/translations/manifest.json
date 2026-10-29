@@ -1,0 +1,295 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-10-30",
+  "scope_file": "docs/public/document-translation-scope.json",
+  "documents": {
+    "README.md": {
+      "english": "README.en.md",
+      "source_sha256": "1aea95604c53f033ce21d12a49736b04dc28d12e08ec327e175ddd94700c2a9f",
+      "english_sha256": "989031b2e08b2d6639781d639d464c8e1e794f61f917576c4bfd347e63c70ee7",
+      "reviewed_numeric_difference": {
+        "source_only": {
+          "7": 1,
+          "9": 1,
+          "3": 1,
+          "6": 4,
+          "4": 1,
+          "2": 2,
+          "5": 1,
+          "0": 1
+        },
+        "english_only": {}
+      },
+      "review_note": "July, nine years/three months, aircraft and clip quantities use English words; source punctuation attaches Korean suffixes to digits. Shared personal paragraphs match the English statement."
+    },
+    "CHANGELOG.md": {
+      "english": "CHANGELOG.en.md",
+      "source_sha256": "9153b804cf80f72918051fd5278932410d6cf959464718fce6add03a40054268",
+      "english_sha256": "7a23077ae8d85273ab6ee4aa04ffb8b71a13bcd6f1e83ac130d5dd4bf8131bee",
+      "reviewed_numeric_difference": {
+        "source_only": {
+          "10": 2,
+          "0": 1,
+          "5": 3,
+          "2": 7,
+          "3": 6,
+          "4": 9,
+          "6": 1,
+          "8": 1,
+          "1": 1,
+          "482": 1
+        },
+        "english_only": {
+          "21": 1,
+          "1,482": 1
+        }
+      },
+      "review_note": "Month/day headings and counts use English words; source 자원1,482개·코어21개 is rendered as 1,482 resources and 21 core tests. Every release URL and historical count retained."
+    },
+    "CREDITS.md": {
+      "english": "CREDITS.en.md",
+      "source_sha256": "d315682146492760c545f9f10da1b09d1fc3189b1d4ed88e43b3db59cda838f3",
+      "english_sha256": "c1bba9c251b186fbb51629081275eb1c3b63bb76e2fb54e0dfce152b14478d4b",
+      "reviewed_numeric_difference": {
+        "source_only": {},
+        "english_only": {}
+      },
+      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match."
+    },
+    "CONTRIBUTING.md": {
+      "english": "CONTRIBUTING.en.md",
+      "source_sha256": "2c7d177a4a497029ce25bf4d95baf89219720755b9b41a10853a0d2cf440e915",
+      "english_sha256": "7ca0470383b88be55949e061146a3aedd7fd6413e3bca314a81d2ec986a99660",
+      "reviewed_numeric_difference": {
+        "source_only": {},
+        "english_only": {}
+      },
+      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match."
+    },
+    "LICENSE-SCOPE.md": {
+      "english": "LICENSE-SCOPE.en.md",
+      "source_sha256": "30f264184cc2b72baf92bdb8005aa8d614883a69216811dc253b66658bac86f2",
+      "english_sha256": "76a540f607105c76cf0ba6bf5dfa96799e7a29a39143551433d078fc3ff24045",
+      "reviewed_numeric_difference": {
+        "source_only": {},
+        "english_only": {}
+      },
+      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match."
+    },
+    "ASSET-LICENSES.md": {
+      "english": "ASSET-LICENSES.en.md",
+      "source_sha256": "d405b053049977918434c97dee7801731ed0c07a1fdcabe0c1d9888f30dc64fd",
+      "english_sha256": "a884cb72aacb03caf4dd1d63e16601dad7d180cd748da255f04fdaaee9c8088d",
+      "reviewed_numeric_difference": {
+        "source_only": {},
+        "english_only": {}
+      },
+      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match."
+    },
+    "THIRD_PARTY_NOTICES.md": {
+      "english": "THIRD_PARTY_NOTICES.en.md",
+      "source_sha256": "2badd0b526fb58f560cabb99498fc39d6f43be70824f19b19aa3e5272bc5fcb8",
+      "english_sha256": "331d272e3d8745f2f3c96dbc314666db8c3281c1fffa76f5de484bd566cb9989",
+      "reviewed_numeric_difference": {
+        "source_only": {},
+        "english_only": {
+          "6": 1
+        }
+      },
+      "review_note": "Korean 제6절 becomes section 6; all license IDs, source revisions and formulas preserved."
+    },
+    "docs/RESTORATION.md": {
+      "english": "docs/en/RESTORATION.md",
+      "source_sha256": "a96acc4e097df4d9515611f9e6fdb4645c649f023f7efa265235ac4beb713330",
+      "english_sha256": "f70e5e77a1fdbd0af15a3eda7d9a2acf85281a3113624a7fb398abd75dc554ac",
+      "reviewed_numeric_difference": {
+        "source_only": {
+          "7": 1,
+          "5": 1,
+          "1": 1
+        },
+        "english_only": {
+          "140": 1
+        }
+      },
+      "review_note": "July, top five, and KRW 140 million translate 7월, 5위권 and 1억4천만 원. Personal statements, Japanese poem and criticism preserved."
+    },
+    "docs/public/features.md": {
+      "english": "docs/en/public/features.md",
+      "source_sha256": "e8e4143f245de43684a51ad9927392367391ac8dfd529cd5b22dda800b7e069f",
+      "english_sha256": "5d727c92e569b8803023b192ce988a3f1d71c4b48de124ad05c4dce0ffe882e0",
+      "reviewed_numeric_difference": {
+        "source_only": {
+          "6": 1,
+          "3": 7,
+          "2": 4,
+          "1": 1,
+          "4": 1
+        },
+        "english_only": {
+          "7": 1
+        }
+      },
+      "review_note": "Counts and durations sometimes use words. Ace Combat 7 and 8 expands 에이스 컴뱃7·8; only the digit preceded by Korean text is omitted by the numeric extractor. All weapon and placement tables compared."
+    },
+    "docs/public/implementation-status.md": {
+      "english": "docs/en/public/implementation-status.md",
+      "source_sha256": "e1b3a1f9b72ba5795d8d63c5b06ad644b116f033359d2e06ec547257c0a7904d",
+      "english_sha256": "d31ac73f04b801fc4c4b4fe3eae1e2730850afd23e5d0fe12fcf12caf3a89cb6",
+      "reviewed_numeric_difference": {
+        "source_only": {
+          "10": 2,
+          "16": 1,
+          "3": 7,
+          "2": 3,
+          "1": 1,
+          "4": 2,
+          "8": 1
+        },
+        "english_only": {
+          "13": 1
+        }
+      },
+      "review_note": "English month/date syntax, word counts and iPad 13-inch spacing differ. Current v0.16 and historical v0.15 tests distinguished."
+    },
+    "docs/public/build-and-install.md": {
+      "english": "docs/en/public/build-and-install.md",
+      "source_sha256": "36ac9678cbc5eded9cf2b9f31c8ad44d2f385d6acb2d5c7279edccfd2be1339a",
+      "english_sha256": "510b324a5c582b0c789cb278cc0fbd5a9dfb8311cfab999e97e4916a4b299b9a",
+      "reviewed_numeric_difference": {
+        "source_only": {
+          "10": 1,
+          "4": 1
+        },
+        "english_only": {}
+      },
+      "review_note": "October and four builds use English words. All fenced commands copied unchanged; current resource count is 1504."
+    },
+    "docs/public/gameplay-guide.md": {
+      "english": "docs/en/public/gameplay-guide.md",
+      "source_sha256": "1a7ca7ccfdb8937078654f0934f6e12a580efb7fed4d1a3773e957afc0cc2291",
+      "english_sha256": "10eee8595b18fe5100a3338101371d1d4db0467e4d2f312157df43ac0231be0d",
+      "reviewed_numeric_difference": {
+        "source_only": {},
+        "english_only": {}
+      },
+      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match."
+    },
+    "docs/public/architecture.md": {
+      "english": "docs/en/public/architecture.md",
+      "source_sha256": "076961af0b7a4df326ae9d4e5e97255dda0d02929beeb72767d01c5efd0652c3",
+      "english_sha256": "2c3655082e3eda3333c2e9961876434f9f3f08559fe2ef228b5d922a005914aa",
+      "reviewed_numeric_difference": {
+        "source_only": {},
+        "english_only": {}
+      },
+      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match."
+    },
+    "docs/public/development-history.md": {
+      "english": "docs/en/public/development-history.md",
+      "source_sha256": "fc8892198bc9076acbdf71283c48b53030f4b59ca3507d5e8c7cacdadd641ab4",
+      "english_sha256": "61be358346f1d8a5d7f590670f5199ecc842b150f0b9353111725574383442eb",
+      "reviewed_numeric_difference": {
+        "source_only": {
+          "7": 1,
+          "0": 1
+        },
+        "english_only": {
+          "3": 1
+        }
+      },
+      "review_note": "July and zero/two ticks use English words. Mission 3-5 is separated from Korean text in English. Operator order, formulas and tool IDs preserved."
+    },
+    "docs/public/troubleshooting.md": {
+      "english": "docs/en/public/troubleshooting.md",
+      "source_sha256": "54f8a2182044027ea9632d44eb9716d2af8fe0cc0e7a7c9ef6c9e7233992765b",
+      "english_sha256": "ba3fd7d1f0cf9cd212f80ffe23171a47203c1442ebf23801eea99b89a145f721",
+      "reviewed_numeric_difference": {
+        "source_only": {
+          "1": 1,
+          "0": 4,
+          "2": 1,
+          "3": 1,
+          "10": 1
+        },
+        "english_only": {}
+      },
+      "review_note": "English words replace counts and months. Historical 1482-resource result retained. Subject attribution, failures and author criticism preserved."
+    },
+    "docs/public/validation.md": {
+      "english": "docs/en/public/validation.md",
+      "source_sha256": "e85c272b96673b11b5ee730fa9176d0c728ee727e7a4fbc3bf81b09991d63446",
+      "english_sha256": "e57428ef97e77fbf7ab4712a7f070df4e35d730edc4b93c05ebf680e11036795",
+      "reviewed_numeric_difference": {
+        "source_only": {
+          "10": 4,
+          "4": 3,
+          "1": 2,
+          "8": 2,
+          "3": 2,
+          "0": 3,
+          "2": 1
+        },
+        "english_only": {
+          "20": 1
+        }
+      },
+      "review_note": "Dates and counts use English words. The two 20ms references are preserved; source 기준20ms attaches digits to Korean text. Historical failures and current v0.16 check separated."
+    },
+    "docs/public/lux-lunae-intent-20261028.md": {
+      "english": "docs/en/public/lux-lunae-intent-20261028.md",
+      "source_sha256": "f0809010725138a8e3e4e4516b3ac201b8a752c458e8ce5c59765cd0d096f4f7",
+      "english_sha256": "a9360a858a4bc63ab96de98d4a6e4d0a3023766f8ad1b0ea5c90c1fb6a5ad760",
+      "reviewed_numeric_difference": {
+        "source_only": {
+          "8": 1,
+          "9": 1,
+          "3": 4,
+          "1": 2,
+          "7": 1,
+          "4": 1,
+          "10": 1,
+          "2": 1,
+          "6": 1,
+          "14": 1
+        },
+        "english_only": {}
+      },
+      "review_note": "Nine years/three months, dates and quantities use words; 1분30초~1분43초 becomes 1:30–1:43. All designs, media and historical first-person judgements retained."
+    },
+    "docs/public/index.md": {
+      "english": "docs/en/public/index.md",
+      "source_sha256": "c7018463c24001943f32d48383039fab4a2f789f907873e0c18853e7fefd13e7",
+      "english_sha256": "a838dc9f524bbf51ba3e4cc237c82da0d9ad97e2b6990d2caa12ba11d8d6fb87",
+      "reviewed_numeric_difference": {
+        "source_only": {},
+        "english_only": {}
+      },
+      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match."
+    },
+    "docs/public/design-intent.md": {
+      "english": "docs/en/public/design-intent.md",
+      "source_sha256": "f765f35a37d0437df537ac5559d0cc8c46c31653bb3ec1121e9bcd49d9ab7317",
+      "english_sha256": "949087c65a6d7669742291b297257563569adbbb19f9f99fe76d86623f0211e1",
+      "reviewed_numeric_difference": {
+        "source_only": {
+          "2": 1,
+          "4": 2,
+          "6": 1
+        },
+        "english_only": {}
+      },
+      "review_note": "Two/four/six unit counts are written as words in English. Weapon and placement values, deliberate turret-height exception and C removal preserved."
+    },
+    "docs/public/roadmap.md": {
+      "english": "docs/en/public/roadmap.md",
+      "source_sha256": "a3f972cbff39eb8c4d8c80d15e8b5ecf0e26de3a1e2bd0fe7861430e25aa0dae",
+      "english_sha256": "7a0d827c7e84c6dbfc5ae536755bc9aa9cd25566d7dd93f01e146e53c14d2abe",
+      "reviewed_numeric_difference": {
+        "source_only": {},
+        "english_only": {}
+      },
+      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match."
+    }
+  }
+}
