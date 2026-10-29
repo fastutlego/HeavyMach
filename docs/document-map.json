@@ -45,7 +45,8 @@
     "docs/public/github-followup-20261028.md",
     "docs/ground-aa-expansion.md",
     "docs/public/hud-improvement-plan-20261028.md",
-    "docs/public/auto-aim-visibility-plan-20261028.md"
+    "docs/public/auto-aim-visibility-plan-20261028.md",
+    "docs/release-notes-plan.md"
   ],
   "base_read": [
     "AGENTS.md",
@@ -470,6 +471,27 @@
         "docs/public/auto-aim-ipad-20261027.md",
         "docs/evidence/auto-aim-ipad-20261027.json",
         "docs/current-status.md"
+      ]
+    },
+    "release": {
+      "label": "릴리스 원고·압축·게시",
+      "read": [
+        "docs/repository-management.md",
+        "docs/release-notes-plan.md",
+        "CHANGELOG.md"
+      ],
+      "sources": [
+        "tools/release.py",
+        "tools/tests/test_release.py",
+        ".github/workflows/documentation.yml"
+      ],
+      "tests": [
+        "tools/tests/test_release.py",
+        "tools/verify_build_resources.py"
+      ],
+      "evidence": [
+        "docs/evidence/release-tool-20261029.json",
+        "docs/evidence/release-history-20261029.json"
       ]
     }
   }
