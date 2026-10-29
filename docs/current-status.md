@@ -120,6 +120,10 @@ SaaS·기능 안내의 v0.12 잔여 문구와 조작 안내의 미션 선택 진
 README에 지상 유닛·HUD 편집 화면을 추가하고 SaaS 집필 자료에 최종 캡처 4장의 출처·캡션을 연결했다. `feat/icon-and-project-media`에서 작업했으며 main은 v0.14다. [보고서](public/app-icon-and-media-20261029.md), [검사](evidence/icon-and-media-20261029.json).
 
 
+## 2026-10-29 데스크톱 Safari 확인
+
+사용자가 Safari의 Apple 이벤트 JavaScript를 허용한 뒤 fastutle.com에서 진입·이동·점프·사격·HUD 편집기 진입/취소·재개를 확인했다. Safari가 30Hz로 콜백을 주는 상태에서 초당60.2틱으로 진행했다. 창 포커스가 없어 검사 중 활성 상태를 함수로 지정했다.
+
 ## 2026-10-29 iPad mini fastutle.com 확인
 
 배포 주소를 iPad mini 6 Safari에서 확인했다. 전투 중 초당60틱, 멈춤 메뉴 SET GAME UI 편집기 진입·취소, 양쪽 가로 방향에서 기울인 쪽으로 이동했다(기울이기는 사용자). 반대 가로에서 iPadOS가 `window.orientation` 0과 portrait-primary를 보고하지만 웹판 처리 결과는 맞았다. iPhone은 남았다. [이식 문서](web-port-20261028.md#ipad-mini--fastutlecom-확인--2026-10-29)

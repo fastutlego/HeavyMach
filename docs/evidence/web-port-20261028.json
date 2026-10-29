@@ -335,9 +335,33 @@
   },
   "safari": {
    "version": "27.0.1",
-   "loaded": true,
-   "safaridriver": "session timed out launching Safari",
-   "apple_events_js": "disabled in Safari settings; state not read"
+   "url": "https://fastutle.com/game/heavy_mach/ (8e13936)",
+   "method": "AppleScript do JavaScript (user enabled Apple Events JavaScript); game driven through Module._hm_pointer/_hm_key",
+   "window": [
+    710,
+    549
+   ],
+   "canvas": [
+    480,
+    360
+   ],
+   "forced_active": "Module._hm_active(1) because the window lost focus while the user typed in another app",
+   "results": {
+    "mission_entry": true,
+    "move": [
+     -1040,
+     -917.44
+    ],
+    "jump": [
+     -40.5,
+     17.24
+    ],
+    "fire_max_bullets": 5,
+    "callback_interval_s": 0.0333,
+    "ticks_per_callback": 2,
+    "combat_ticks_per_second": 60.2,
+    "hud_editor": "opened from pause, CANCEL without layout file, resumed"
+   }
   }
  },
  "android_pad_20261029": {
