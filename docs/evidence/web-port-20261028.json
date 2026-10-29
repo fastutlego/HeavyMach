@@ -396,5 +396,11 @@
    ],
    "result": "pass"
   }
+ },
+ "lv_exp_report_20261029": {
+  "report": "user: LV/EXP at the top looked slightly misaligned on the pad",
+  "cause": "test layout left by the touch HUD-editor check (positions[1]=[0.18474,0.76023])",
+  "action": "removed /persist/HUDLayoutV1-web.json on the pad, reloaded with the default layout",
+  "comparison": "headless web 480x360 vs iOS iPad capture docs/public/media/auto-aim/hud-integrated-ipad.png, 180x60 top-left crop: same plate, number box and EXP bar positions"
  }
 }
