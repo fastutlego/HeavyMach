@@ -22,3 +22,4 @@ jobs:
       - run: python3 tools/document_contract.py check
       - run: python3 tools/check_publication.py
       - run: python3 tools/verify_build_resources.py
+      - run: python3 -m unittest discover -s tools/tests -p "test_release.py"
