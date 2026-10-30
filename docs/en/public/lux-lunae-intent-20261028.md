@@ -26,7 +26,7 @@ In the developer's statement, I wrote that HeavyMach gave me another nine years 
 
 A Korean community post is titled “Our marriage, saved by Death Stranding.” Its author wrote that they lost their two-month-old child and that his wife could not leave home for over a year afterward. Two days after they finished the game together, she took a step outside the front door. Later she reached the elevator, then the ground floor. He ended the post by saying he had sent Hideo Kojima a long email. [Post and attached original](https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202606240116557565)
 
-What I thought about in that account was the change in everyday life after experiencing a game. HeavyMach influenced my choice to become a developer. I changed careers in July 2017. Ace Combat 8 became something whose release I wanted to wait for and experience myself. The two games affected different periods of my life.
+What I thought about in that account was the change in everyday life after experiencing a game. HeavyMach influenced my choice to become a developer. I changed careers in July 2017. Ace Combat 8 gave me a reason to want to stay alive, even for just a few more months. The two games affected different periods of my life.
 
 Restoring HeavyMach and putting Lux Lunae into it brought the roles both games played in my life into one playable game. My memory of Lux Lunae includes not just black aircraft and gold decoration, but the threat and tension of fighting them. So I considered both their appearance and the combat they would create.
 

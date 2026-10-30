@@ -1,6 +1,6 @@
 # HeavyMach 문서
 
-게임 버전은 v0.16이다. [프로젝트 소개와 플레이 화면](../README.md)에서 시작하거나 아래 주제로 바로 이동할 수 있다.
+최신 릴리스 태그는 v0.16이며 Android 일반·치트 앱은 이후 main에 추가했다. [프로젝트 소개와 플레이 화면](../README.md)에서 시작하거나 아래 주제로 바로 이동할 수 있다.
 
 ## 게임과 개발 과정
 
@@ -14,6 +14,8 @@
 | [구조](public/architecture.md) | 코어·Apple 런타임·자원·플랫폼 경계와 모듈화 이유 |
 | [트러블슈팅](public/troubleshooting.md) | 17개 문제의 증상·내 지적·원인·수정·결과 |
 | [Android판 개발 과정](public/android-development-20261030.md) | 개발 기간·공유 코어·전용 구현·Galaxy 검사·업그레이드 오류 수정 |
+| [Android 설치](public/build-and-install.md#android-빌드와-설치) | SDK·NDK 설정, 일반·치트 APK, USB·무선 설치 |
+| [Android 플레이 캡처와 영상](public/android-gameplay-20261030.md) | Galaxy 일반 앱의 이미지 8장·GIF 3개·영상 3개 |
 | [개발 과정](public/development-history.md) | 분석·구현·비교·검증 순서와 도구·스킬 |
 | [검증](public/validation.md) | 기기·조건·빌드별 결과와 남은 검사 |
 | [쉴카·퉁구스카 도안](public/ground-aa-art-20261028.md) | 새 외형·파츠 분해도와 기존 유닛 조립 구조 비교 |
@@ -35,7 +37,8 @@
 | 그래픽·아트 | [렌더링](rendering-policy.md), [VTOL](vtol-expansion.md), [전투기](lux-lunae-plan-20261027.md) |
 | 전투·성장 | [계산](game-calculation-policy.md), [자동조준](auto-aim-plan-20261026.md), [전체 무기 검사](weapon-validation-procedure.md) |
 | 실행·저장 | [시간·음향·생명주기](runtime-policy.md), [Apple 플랫폼](apple-platforms.md), [무선 기기](wireless-device-workflow.md) |
-| 후속 개발 | [투두](usability-todo.md), [Android](android-port-plan-20261026.md) |
+| Android 개발 | [구현과 검사](android-implementation-20261030.md), [이식 계획과 보존 조건](android-port-plan-20261026.md), [빌드·기기 도구](../Android/README.md) |
+| 후속 개발 | [투두](usability-todo.md) |
 
 ```sh
 python3 tools/document_contract.py plan --task documentation

@@ -6,7 +6,7 @@
 [한국어](../../public/features.md) | [English](features.md)
 <!-- language-nav:end -->
 
-The current release, v0.16, includes tank movement, jumping, firing, weapons, parts, upgrades, missions, bosses, result screens and saves. Wider screens, Apple platform support, auto-aim and six aircraft are additions I planned and asked Codex to implement.
+Current main includes tank movement, jumping, firing, weapons, parts, upgrades, missions, bosses, result screens and saves. Wider screens, Apple platform support, auto-aim and six aircraft are additions I planned and asked Codex to implement.
 
 <a id="넓은-화면과-메뉴"></a>
 
@@ -27,6 +27,8 @@ I asked for one workspace managing iPhone, iPad and Mac, with shared game code a
 The cheat app has its own app ID and saves. Starting conditions include mission, all weapons, parts and upgrades, allowing weapon and enemy tests without replaying progression. Keyboard and touch use the game's shared input paths.
 
 [Controls](gameplay-guide.md) · [Architecture](architecture.md) · [Cheat validation](../../validation-mode.md)
+
+The regular and cheat Android apps use the same C++ game rules and resources. They support touch, tilt, keyboard, auto-aim, added enemies and HUD editing. Android screen, input, audio and save connections were implemented separately while preserving existing Apple files. [Android development](../../public/android-development-20261030.md), [installation](build-and-install.md#android-빌드와-설치), [Galaxy gameplay](../../public/android-gameplay-20261030.md).
 
 <a id="자동조준"></a>
 

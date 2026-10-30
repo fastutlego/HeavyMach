@@ -1,6 +1,6 @@
 # HeavyMach 개발 보고
 
-현재 릴리스는 **v0.15**다. 완성분을 develop→main 순서로 병합하고 main에 태그를 붙였다. 자동조준·추가 항공기·쉴카·퉁구스카와 HUD 위치 편집을 포함한다. [GitHub 본문](github.html)에 플레이 이미지8장·GIF2개·MP4 3개를 배치했다.
+최신 릴리스 태그는 **v0.16**이다. Android 일반·치트 앱은 이후 main에 추가했다. 완성분을 develop→main 순서로 병합하고 main에 태그를 붙였다. 자동조준·추가 항공기·쉴카·퉁구스카와 HUD 위치 편집을 포함한다. [GitHub 본문](github.html)에 플레이 이미지8장·GIF2개·MP4 3개를 배치했다.
 
 Codex가 일반 앱과 치트 앱을 아이폰·아이패드에 설치했다. 내가 최신 설치본을 직접 플레이했을 때 프레임 드랍이나 오작동은 보이지 않았다. 과거 계측 수치와 당시 실패는 각 보고서에 남아 있다.
 
@@ -140,7 +140,7 @@ SaaS 담당 세션이 개발 동기·내가 제공한 원문·복원 과정·검
 
 원래 Archive 모음에 Heavy Mach 2, Heavy Mach 2 HD, Mach Defense, Heavy MACH: Defense가 있다. IPA 19개 목록과 네 대표 파일의 다운로드 응답을 확인했다. 중단한 Defense 포크는 로컬에 Android 개발 브랜치와 기존 debug APK가 남아 있으며 이번 조사에서 보존했다.
 
-현재 HeavyMach의 C++ 코어 20개 파일은 수정 없이 Android ARM64 정적 라이브러리로 컴파일됐다. 다음은 기존 GLES·OpenAL 동작을 유지하면서 플랫폼 연결과 메뉴·HUD를 이식하는 작업이다. 일반·치트 APK 생성, 저장·생명주기·전체 무기·실기기 성능 검사까지의 단계와 전용 스킬을 작성했다. Android APK는 아직 만들지 않았다.
+Android 일반·치트 APK를 구현하고 Galaxy에서 유선·무선 설치와 실행을 확인했다. 같은 C++ 게임 코어와 자원을 사용하고 화면·입력·음향·저장 연결을 Android 전용으로 구현했다. 첫 보스 이후 업그레이드 창 뒤로 전투가 계속되던 오류도 수정했다. 코드·개발 문서·일반 앱 플레이 자료는 main에 병합됐다. [Android 개발 과정](https://github.com/gelb2/HeavyMach/blob/main/docs/public/android-development-20261030.md) · [설치](https://github.com/gelb2/HeavyMach/blob/main/Android/README.md) · [Galaxy 플레이](https://github.com/gelb2/HeavyMach/blob/main/docs/public/android-gameplay-20261030.md).
 
 [타이틀·Defense 조사 전문](related-titles.html) · [Android 개발 계획 전문](android-plan.html)
 

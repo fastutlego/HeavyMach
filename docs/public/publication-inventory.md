@@ -65,7 +65,7 @@ python3 tools/document_contract.py check
 
 ## 버전과 남은 근거
 
-게임 버전은 v0.15다. 현재 구현과 남은 일은 [구현 상태](implementation-status.md)와 [내부 TODO](../usability-todo.md), 변경 순서는 [작업 이력](../current-status.md)에 있다. 작업 이력의 날짜별 항목은 당시 상태를 담고 있다. [변경 이력](../../CHANGELOG.md)과 [전체 문서 목차](../README.md)로 연결된다.
+최신 릴리스 태그는 v0.16이며 Android는 이후 main에 추가했다. 현재 구현과 남은 일은 [구현 상태](implementation-status.md)와 [내부 TODO](../usability-todo.md), 변경 순서는 [작업 이력](../current-status.md)에 있다. 작업 이력의 날짜별 항목은 당시 상태를 담고 있다. [변경 이력](../../CHANGELOG.md)과 [전체 문서 목차](../README.md)로 연결된다.
 
 빌드 경고는 아직 전수조사하지 않았다. deprecated API 관련이라는 추정을 확인하고 추가 기능 개발과 병행해 수정할 예정이다. 빌드·실행 스크립트는 사례 조사를 마쳤고 구현이 남았다. [스크립트 조사·브랜치 정리](github-followup-20261028.md).
 
@@ -88,7 +88,7 @@ python3 tools/document_contract.py check
 | 원작에서 이어온 기능 | 틸트 이동·점프·터치 사격, 무기 전환·지원 공격, 강화·미션 진행 | [조작](gameplay-guide.md), 플레이 이미지 02~06 |
 | 내가 요구한 추가 기능 | 화면 확장, 가로 회전, iPad·Mac·키보드, 자동조준, VTOL·전투기·쉴카·퉁구스카·HUD 편집 | [기획 의도·조건·구현](features.md), [공용 모듈](architecture.md), 플레이 이미지 07→01·08 |
 | 개발 중 발견하고 고친 문제 | 발사마다 저장, 렌더링·갱신 주기, 좌표·그림·입력, 임의로 바꾼 기체 외형과 탄도 | [트러블슈팅](troubleshooting.md), [수정 순서](development-history.md) |
-| 아직 남은 기능·검사 | 조준 상태 안내, 튜토리얼, 아이콘, Android, 빌드 경고·실행 스크립트 등 | [상태표](implementation-status.md), [상세 TODO](../usability-todo.md) |
+| 아직 남은 기능·검사 | 조준 상태 안내, 튜토리얼, Android 장시간·태블릿 검사·배포 서명, 빌드 경고·실행 스크립트 등 | [상태표](implementation-status.md), [상세 TODO](../usability-todo.md) |
 
 자동조준은 표적 선택·추적과 포신 각도 조절을 맡는다. 이동·점프·무기 선택·발사는 플레이어가 한다. 탄속·탄도·분산을 바꾸던 C 기능은 삭제했다. 추가 유닛의 기획 조건과 실제 채택 수치는 기능 문서에서 각각 설명한다.
 
@@ -134,13 +134,13 @@ Mags의 답변은 개발자의 변과 제공 원문을 바탕으로 쓴다. 추�
 
 Apps에는 지상 유닛의 파츠·무장과 HUD 그림/터치 위치 공유를 설명할 때 쓴다. Mags에는 내가 지정한 유닛 조건과 화면 배치 요구를 설명하는 장면으로 쓴다. 이 작업에서는 Apps·Mags 본문을 작성하거나 sass.studio를 수정하지 않았다.
 
-새 아이콘은 [1024px PNG](media/app-icon-20261029/icon.png), 생성·파생 파일은 [아이콘 원본 폴더](../../Art/AppIcon/20261029/README.md)에 있다. 현재 공개 게임 태그는 v0.15이며 새 아이콘의 병합·배포 상태는 [현재 상태](../current-status.md)를 확인한다.
+새 아이콘은 [1024px PNG](media/app-icon-20261029/icon.png), 생성·파생 파일은 [아이콘 원본 폴더](../../Art/AppIcon/20261029/README.md)에 있다. 새 아이콘은 v0.15부터 포함됐으며 최신 릴리스는 v0.16이다. 이후 변경은 [현재 상태](../current-status.md)를 확인한다.
 
 ## Android판 · 2026-10-30
 
 [Android 개발 원고](android-development-20261030.md)를 Apps의 플랫폼 확장 설명과 Mags의 개발 과정 문답에 사용한다. 개발 기간, Apple 소스를 바꾸지 말라는 지시, 공유 코어·자원, Android 전용 파일, 빌드·입력·GPU·무선 연결 수정과 직접 플레이에서 발견한 업그레이드 오류를 담았다.
 
-세부 수치는 [구현 기록](../android-implementation-20261030.md), [시간 근거](../evidence/android-development-timeline-20261030.json), [업그레이드 오류 증거](../evidence/android-upgrade-fix-20261030.json)에 있다. [이미지와 캡션](media/android-20261030/scenes.json)은 타이틀·보스 전투·오류 전후 5장이다. Android 자료는 아직 작업 브랜치에 있으며 Apple 릴리스와 구분한다.
+세부 수치는 [구현 기록](../android-implementation-20261030.md), [시간 근거](../evidence/android-development-timeline-20261030.json), [업그레이드 오류 증거](../evidence/android-upgrade-fix-20261030.json)에 있다. [이미지와 캡션](media/android-20261030/scenes.json)은 타이틀·보스 전투·오류 전후 5장이다. Android 구현과 자료는 main에 병합됐다. v0.16 릴리스에는 포함되지 않으며 [미발행 변경 이력](../../CHANGELOG.md#unreleased)에 정리한다.
 
 [개발 범위를 정한 네 가지 판단](android-development-20261030.md#개발-범위를-정한-네-가지-판단)에 부분적인 코어 공유, Apple 파일 변경 금지, 컨텍스트·생명주기 사전 확인, Android 스킬 준비를 실제 코드와 검사 결과에 연결했다. Apps에는 플랫폼 분리와 재사용 방식, Mags에는 내가 작업 범위와 검사 대상을 정한 이유를 설명하는 자료로 사용한다. 수정 빌드 완료 시각과 이후 내 플레이에서 오작동이 보이지 않았다는 확인도 추가했다.
 

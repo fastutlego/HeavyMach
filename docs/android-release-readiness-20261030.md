@@ -10,6 +10,8 @@ Apple 프로젝트는 기존 소스와 자원 경로를 명시한다. Android �
 
 ## 병합 순서
 
+2026-10-30 후속 확인: Android 구현·개발 문서·플레이 자료는 develop을 거쳐 main `9a63578f`에 병합됐다. 아래 병합 순서는 당시 준비 기록이다. 최신 GitHub Release는 v0.16이며 Android 내용은 없다. 현재 공개할 변경 내용은 [CHANGELOG의 미발행 절](../CHANGELOG.md#unreleased)에 모았다. v0.17 태그·릴리스는 아직 발행하지 않았다.
+
 `feat/android-app` → `develop` → `main` 순서로 병합한다. 각 병합 직전 원격 상태를 다시 확인한다. 현재 최신 게임 태그는 v0.16이며 다음 후보는 **v0.17**이다. 이번 요청 범위는 main 병합과 태그 준비다.
 
 ## v0.17 릴리스 노트 초안

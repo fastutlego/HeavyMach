@@ -6,7 +6,7 @@
 [한국어](../../public/roadmap.md) | [English](roadmap.md)
 <!-- language-nav:end -->
 
-This describes game v0.16. I saw no abnormal behavior while playing the installed iPhone and iPad apps. The following fixes and tests remain.
+This describes current main. The latest Apple release is v0.16; Android was added to main afterward. I saw no abnormal behavior while playing the installed iPhone and iPad apps. The following fixes and tests remain.
 
 <a id="버그와-성능"></a>
 
@@ -36,6 +36,8 @@ This describes game v0.16. I saw no abnormal behavior while playing the installe
 <a id="빌드와-플랫폼"></a>
 
 ## Builds and platforms
+
+- Investigate recommending Xcode and Android Studio GUI builds at the top of installation guides. Separate project-specific choices and settings after Git clone/LFS from general IDE instructions covered by external references. [Research task](../../usability-todo.md#hm-gui-install-guide).
 
 - A script connecting download, resource checks, OpenAL preparation, build and launch. Choose Mac launch or iPhone/iPad installation, regular or cheat app, with development-team/signing guidance.
 - Full wireless XCTest/Instruments runs on iPhone and repeated installation/debugging after reboot on both devices.

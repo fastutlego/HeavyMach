@@ -29,3 +29,8 @@
 ## 2026-10-30 Android 플레이
 
 [Galaxy 캡처 8장·GIF 3개·영상 3개](../android-gameplay-20261030.md), [파일 안내](android-gameplay-20261030/README.md).
+
+## 플랫폼별 플레이 녹화
+
+- [iOS 플레이 갤러리](../ios-gameplay-gallery-20261030.md): 이미지 8장·GIF 2개·영상 3개.
+- [Android 플레이 갤러리](../android-gameplay-20261030.md): Galaxy 일반 앱의 이미지 8장·GIF 3개·영상 3개. [원본 시간과 해시](android-gameplay-20261030/scenes.json).

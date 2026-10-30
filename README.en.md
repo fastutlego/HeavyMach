@@ -41,7 +41,7 @@ Money is only needed in this life.
 
 The latest release tag is [v0.16](https://github.com/gelb2/HeavyMach/tree/v0.16). The regular and cheat Android apps were added to main afterward. Use current main to build Android. Regular and cheat validation apps can be installed separately. The cheat app tests the same game with specified missions, weapons and upgrades.
 
-[Latest release](https://github.com/gelb2/HeavyMach/releases/latest) · [Version history](CHANGELOG.en.md)
+[Latest release](https://github.com/gelb2/HeavyMach/releases/latest) · [Version history](CHANGELOG.en.md) · [Android changes](CHANGELOG.en.md#unreleased)
 
 [Apple installation](docs/en/public/build-and-install.md) · [Android installation](docs/en/public/build-and-install.md#android-빌드와-설치) · [Android gameplay](docs/public/android-gameplay-20261030.md) · [Controls](docs/en/public/gameplay-guide.md) · [Features](docs/en/public/features.md) · [Troubleshooting](docs/en/public/troubleshooting.md) · [Documentation](docs/en/public/index.md)
 
@@ -81,7 +81,7 @@ Yak-141, Harrier GR3 and F-35B aircraft were added between existing placements. 
 
 [Added-aircraft combat video — 13 seconds](docs/public/media/gameplay-20261027/07-fighters.mp4) · [Intent, values and missions](docs/en/public/features.md)
 
-HeavyMach influenced my decision to become a developer; Ace Combat 8 gave me a reason to wait for its release. I wanted to bring Lux Lunae's appearance and the threat I felt fighting them into this game. [Why Lux Lunae?](docs/en/public/lux-lunae-intent-20261028.md)
+HeavyMach influenced my decision to become a developer. Ace Combat 8 gave me a reason to want to stay alive, even for just a few more months. I wanted to bring Lux Lunae's appearance and the threat I felt fighting them into this game. [Why Lux Lunae?](docs/en/public/lux-lunae-intent-20261028.md)
 
 <a id="내가-추가한-지상-유닛"></a>
 
@@ -254,7 +254,7 @@ The initial implementation wrote files on every shot and hit, recreated images o
 
 Codex limited file writes to save events. Game graphics changed to OpenGL textures, and sound effects to reused OpenAL buffers and sources. Special-weapon coordinates, boss approach and artwork joins affected by screen expansion were fixed through the same comparisons.
 
-[18 troubleshooting cases](docs/en/public/troubleshooting.md) · [Analysis, implementation and validation](docs/en/public/development-history.md)
+[19 troubleshooting cases](docs/en/public/troubleshooting.md) · [Analysis, implementation and validation](docs/en/public/development-history.md)
 
 <a id="코드-구조와-버전"></a>
 
