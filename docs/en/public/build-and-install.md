@@ -6,7 +6,9 @@
 [한국어](../../public/build-and-install.md) | [English](build-and-install.md)
 <!-- language-nav:end -->
 
-Build the regular app and cheat validation app from HeavyMach v0.16 source. They share the game core and use separate app IDs and saves.
+Build the regular and cheat validation apps for Apple and Android from current main. They share the game core and use separate app IDs and saves.
+
+[Apple requirements](#준비물) · [Android build and installation](#android-빌드와-설치)
 
 <a id="준비물"></a>
 
@@ -30,6 +32,38 @@ git lfs pull
 Images, audio, maps, app icons and image-comparison fixtures are included in the repository. Runtime resources are packaged in `HeavyMachAssets.bundle`.
 
 The repository is public; downloading source does not require a login. `v0.9` is a product-code tag from before resources were added to Git. Use current `main`, which includes resources, for a new build. [v0.16 Releases](https://github.com/gelb2/HeavyMach/releases/tag/v0.16) provides a source-and-resource archive, notices and SHA-256 checksums. After extracting the archive, you can check resources without Git LFS. Choose your own development team in Xcode to build and install the apps.
+
+<a id="android-빌드와-설치"></a>
+
+## Android build and installation
+
+The Android app is on current main. It is not included in the v0.16 release archive; use the Git clone and LFS commands above to download source and resources. It targets arm64-v8a devices running Android 8.0 (API 26) or later. Gameplay was checked on a Galaxy SM-S731N running Android 16.
+
+You need JDK 17, Python 3 and Android SDK Command-line Tools. Install SDK 36, the NDK, CMake and ADB through Android Studio's SDK Manager or these commands:
+
+```sh
+sdkmanager "platform-tools" "platforms;android-36" "build-tools;36.0.0" "ndk;26.3.11579264" "cmake;3.22.1"
+sdkmanager --licenses
+```
+
+Set `ANDROID_HOME` to the SDK path, or open the `Android/` folder in Android Studio and set the SDK location. For command-line use, add the SDK's `platform-tools` and `cmdline-tools/latest/bin` to PATH. Build and install the regular and cheat apps:
+
+```sh
+cd Android
+./gradlew :app:assembleNormalDebug :app:assembleCheatDebug
+adb devices
+adb -s SERIAL install -r app/build/outputs/apk/normal/debug/app-normal-debug.apk
+adb -s SERIAL install -r app/build/outputs/apk/cheat/debug/app-cheat-debug.apk
+```
+
+Enable USB debugging on the phone and authorize the connected computer's RSA key. Replace `SERIAL` with the device ID shown by `adb devices`. Open **Heavy Mach 1** or **HM Validation** from the app list after installation. The two apps use separate saves. Updating an app with the same signing key through `install -r` preserves its save.
+
+| App | APK path, relative to the Android folder |
+|---|---|
+| Regular | `app/build/outputs/apk/normal/debug/app-normal-debug.apk` |
+| Cheat | `app/build/outputs/apk/cheat/debug/app-cheat-debug.apk` |
+
+Current APKs use optimized game code and debug signing. Distribution signing, extended thermal and memory tests, and Android tablet tests remain. On Android 11 or later, use Wireless debugging in Developer options to pair and install. [USB/wireless connection and test tools](../../../Android/README.md), [Development, fixes and device tests](../../public/android-development-20261030.md), [Regular Galaxy app gameplay](../../public/android-gameplay-20261030.md).
 
 <a id="자원-검사"></a>
 

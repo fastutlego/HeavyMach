@@ -67,4 +67,4 @@ The repository became public on October 28, 2026. The unified report site requir
 
 ## Android implementation · 2026-10-30
 
-The [Android development account](../../public/android-development-20261030.md) covers the regular and cheat APKs, Galaxy USB and wireless installation, the shared core, the Android host, tests and fixes. The implementation was developed on `feat/android-app`; existing Apple sources were preserved.
+The [Android development account](../../public/android-development-20261030.md) covers the regular and cheat APKs, Galaxy USB and wireless installation, the shared core, the Android host, tests and fixes. The implementation was developed on `feat/android-app` and merged through develop into main. Existing Apple sources were preserved. Build Android from current main; it is not included in the v0.16 release. [Android installation](build-and-install.md#android-빌드와-설치), [Galaxy gameplay gallery](../../public/android-gameplay-20261030.md).

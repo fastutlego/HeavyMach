@@ -4,7 +4,7 @@
 [한국어](validation.md) | [English](../en/public/validation.md)
 <!-- language-nav:end -->
 
-현재 게임 버전은 v0.16이다. 아래 표에는 각 버전에서 실행한 검사와 당시 측정값을 기록했다. 자동 검사·계측은 Codex가 실행했고, 전체 미션 플레이는 내가 직접 했다.
+최신 릴리스 태그는 v0.16이며 Android 앱은 그 이후 main에 추가했다. [Galaxy 검사와 수정 결과](android-development-20261030.md). 아래 표에는 각 버전에서 실행한 검사와 당시 측정값을 기록했다. 자동 검사·계측은 Codex가 실행했고, 전체 미션 플레이는 내가 직접 했다.
 
 ## 플레이와 기능 검사
 

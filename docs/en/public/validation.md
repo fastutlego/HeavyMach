@@ -6,7 +6,7 @@
 [한국어](../../public/validation.md) | [English](validation.md)
 <!-- language-nav:end -->
 
-The current game version is v0.16. The tables record tests and measurements from their respective versions. Codex ran automated tests and measurements; I played all missions myself.
+The latest release tag is v0.16; the Android app was added to main afterward. [Galaxy tests and fixes](../../public/android-development-20261030.md). The tables record tests and measurements from their respective versions. Codex ran automated tests and measurements; I played all missions myself.
 
 <a id="플레이와-기능-검사"></a>
 

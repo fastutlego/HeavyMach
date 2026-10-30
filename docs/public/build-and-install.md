@@ -4,7 +4,9 @@
 [한국어](build-and-install.md) | [English](../en/public/build-and-install.md)
 <!-- language-nav:end -->
 
-HeavyMach v0.16 소스로 일반 앱과 치트 검증 앱을 빌드하는 방법이다. 두 앱은 같은 게임 코어를 쓰며 별도 앱 ID와 저장 공간을 사용한다.
+현재 main의 Apple·Android 일반 앱과 치트 검증 앱을 빌드하는 방법이다. 두 앱은 같은 게임 코어를 쓰며 별도 앱 ID와 저장 공간을 사용한다.
+
+[Apple 준비물](#준비물) · [Android 빌드와 설치](#android-빌드와-설치)
 
 ## 준비물
 
@@ -24,6 +26,36 @@ git lfs pull
 이미지·음원·맵·앱 아이콘·이미지 비교 자료는 저장소에 포함돼 있다. 앱이 사용하는 자원은 `HeavyMachAssets.bundle`에 포함된다.
 
 공개 저장소이므로 로그인 없이 소스를 내려받을 수 있다. `v0.9`는 자원을 Git에 넣기 전의 제품 코드 태그다. 새로 빌드할 때는 자원이 포함된 현재 `main`을 사용한다. [v0.16 Releases](https://github.com/gelb2/HeavyMach/releases/tag/v0.16)에 소스·자원 압축본, 고지 묶음과 SHA-256 목록을 등록했다. 압축본을 풀면 Git LFS 없이 자원 검사를 시작할 수 있다. 앱은 Xcode에서 본인의 개발 팀을 지정해 빌드하고 설치한다.
+
+## Android 빌드와 설치
+
+Android 앱은 현재 main에 있다. v0.16 릴리스 압축본에는 포함되지 않으므로 위 Git clone·LFS 명령으로 소스와 자원을 받는다. Android 8.0(API 26) 이상, arm64-v8a 기기를 대상으로 하며 Galaxy SM-S731N의 Android 16에서 플레이했다.
+
+JDK 17, Python 3, Android SDK Command-line Tools가 필요하다. Android Studio의 SDK Manager 또는 다음 명령으로 SDK 36·NDK·CMake·ADB를 설치한다.
+
+```sh
+sdkmanager "platform-tools" "platforms;android-36" "build-tools;36.0.0" "ndk;26.3.11579264" "cmake;3.22.1"
+sdkmanager --licenses
+```
+
+SDK 경로를 `ANDROID_HOME`에 지정하거나 Android Studio에서 `Android/` 폴더를 열어 SDK 위치를 설정한다. 명령행에서는 SDK의 `platform-tools`와 `cmdline-tools/latest/bin`을 PATH에 추가한다. 일반 앱과 치트 앱을 빌드하고 설치한다.
+
+```sh
+cd Android
+./gradlew :app:assembleNormalDebug :app:assembleCheatDebug
+adb devices
+adb -s SERIAL install -r app/build/outputs/apk/normal/debug/app-normal-debug.apk
+adb -s SERIAL install -r app/build/outputs/apk/cheat/debug/app-cheat-debug.apk
+```
+
+휴대폰에서 USB 디버깅을 켜고 연결한 컴퓨터의 RSA 키를 허용한다. `SERIAL`은 `adb devices`에 표시되는 기기 ID로 바꾼다. 설치 후 앱 목록에서 **Heavy Mach 1** 또는 **HM Validation**을 연다. 일반·치트 앱은 서로 다른 저장 공간을 사용한다. 같은 서명의 앱을 `install -r`로 갱신하면 기존 저장을 유지한다.
+
+| 앱 | APK 경로 — Android 폴더 기준 |
+|---|---|
+| 일반 | `app/build/outputs/apk/normal/debug/app-normal-debug.apk` |
+| 치트 | `app/build/outputs/apk/cheat/debug/app-cheat-debug.apk` |
+
+현재 APK는 게임 코드를 최적화한 debug 서명본이다. 배포 서명, 장시간 발열·메모리, Android 태블릿 검사는 후속 과제다. Android 11 이상 기기는 개발자 옵션의 무선 디버깅으로 페어링해 설치할 수 있다. [USB·무선 연결과 검사 도구](../../Android/README.md), [개발·오류 수정·기기 검사](android-development-20261030.md), [Galaxy 일반 앱 플레이](android-gameplay-20261030.md).
 
 ## 자원 검사
 
