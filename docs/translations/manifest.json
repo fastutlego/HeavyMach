@@ -296,8 +296,8 @@
     },
     "docs/public/android-ai-experience-20261030.md": {
       "english": "docs/en/public/android-ai-experience-20261030.md",
-      "source_sha256": "9c9fca0e1bd1268bcfff83c1287250e508f551bb3845d99e90228274eb62e7cc",
-      "english_sha256": "38881f3e2530f9dbbc011f5c49d3d45c7bcd6838565f86cafb9256b34a5c965a",
+      "source_sha256": "98a4fec461c2565695a5b2f1ccbb155ed48d8ff17f89dca1d2c4fb0a77b329f0",
+      "english_sha256": "c2535b902bd2df6a748ff05364bd679a760b3c293ecdb73dfdb82f148f8a78c6",
       "reviewed_numeric_difference": {
         "source_only": {
           "10": 1,
@@ -307,7 +307,7 @@
           "500,000": 1
         }
       },
-      "review_note": " Reviewed the Android experience essay, firsthand accounts, qualified hypotheses, public sources, author voice and README link. Private evidence stays outside Git. Reviewed Lysenko history expansion: vernalization versus heritable claims, Vavilov persecution, arrest and prison death, 1948 Party endorsement and institutional purge. Citations and dates match in both languages. Korean hypothesis name follows the author: 신 리셴코주의. Reviewed quotation/paraphrase/research labels and bold emphasis. Author-supplied Korean explanation preserved verbatim apart from Markdown emphasis; the quotation identifies the published English translation."
+      "review_note": " Reviewed the Android experience essay, firsthand accounts, qualified hypotheses, public sources, author voice and README link. Private evidence stays outside Git. Reviewed Lysenko history expansion: vernalization versus heritable claims, Vavilov persecution, arrest and prison death, 1948 Party endorsement and institutional purge. Citations and dates match in both languages. Korean hypothesis name follows the author: 신 리셴코주의. Reviewed quotation/paraphrase/research labels and bold emphasis. Author-supplied Korean explanation preserved verbatim apart from Markdown emphasis; the quotation identifies the published English translation. Added Vavilov methodology and the author-provided interpretation of power and knowledge; paired sources and meaning reviewed."
     }
   }
 }
