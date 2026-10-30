@@ -40,7 +40,7 @@ HeavyMach can be built and played on iPhone, iPad, Mac and Android. The latest r
 - [Development history](development-history.md): analysis, implementation, comparison order and tools.
 - [Troubleshooting](troubleshooting.md): fixes to saves, rendering, audio, timing, coordinates, devices and artwork.
 - [Validation results](validation.md): automated tests, personal play, frame/memory measurements and remaining tests.
-- [Changelog](../../../CHANGELOG.en.md): v0.9–v0.16, tags, downloads and tests by version.
+- [Changelog](../../../CHANGELOG.en.md): unreleased Android changes and v0.9–v0.16 tags, downloads and tests.
 - [Roadmap](roadmap.md): bugs, tests, usability and additional platforms.
 
 <a id="참여와-제작자"></a>

@@ -1,5 +1,22 @@
 # 버그 수정·사용성 개선 과제
 
+<a id="hm-gui-install-guide"></a>
+
+## HM-GUI-INSTALL-GUIDE — IDE GUI 중심 설치·실행 안내 연구 · 2026-10-30
+
+사용자 제안: Git clone과 Git LFS로 소스·자원을 받은 뒤 Xcode·Android Studio를 직접 설치하고 GUI에서 클릭하며 빌드·실행하는 경로를 설치 문서 최상단에 안내한다. 입문자뿐 아니라 숙련자가 앱을 간단히 실행해 보려는 경우도 대상으로 한다. 터미널이 익숙하지 않거나 Codex·Claude가 빌드·실행 지시의 맥락을 파악하지 못하면 IDE 직접 사용을 권장하는 문장이 적합한지 연구한다.
+
+- [ ] Xcode·Android Studio 공식 문서와 공개 게임 저장소의 GUI 실행 안내 사례를 조사한다.
+- [ ] 제안 문구를 README·설치 문서·Android 안내 최상단에 배치할지 검토한다. GUI 실행과 터미널 실행의 선택 동선을 비교한다.
+- [ ] 보편적인 IDE 사용법을 외부 자료로 넘기고 설명을 생략해도 되는 범위를 확인한다. 이 저장소의 workspace/Gradle 폴더, 일반·치트 scheme/variant, SDK·NDK·JDK, 개발 팀·서명·실행 기기 선택 중 꼭 적어야 할 항목을 구분한다.
+- [ ] Git clone·LFS 이후 Xcode와 Android Studio에서 직접 열어 일반·치트 앱을 빌드·실행하는 절차를 검증한다. Apple·Android 제품 코드 변경 없이 수행한다.
+- [ ] 조사 결과에 따라 국문·영문 안내와 참조 링크를 함께 수정한다. 이번에는 연구 과제로 등록하며 설치 안내 문구를 확정하지 않는다.
+
+검토할 문구: “터미널 명령어에 익숙하지 않거나 Codex·Claude가 빌드와 실행 지시의 맥락을 파악하지 못한다면 Xcode·Android Studio에서 직접 빌드하고 실행하는 방법을 권장한다. IDE의 일반적인 빌드·실행 방법은 공개 자료가 많으므로 별도의 설명은 생략한다.”
+
+[현재 설치 문서](public/build-and-install.md) · [Android 빌드·설치](../Android/README.md)
+
+
 ## HM-DOCS-EN — GitHub 방문자용 국문·영문 문서 · 2026-10-29
 
 - [x] 해외 사례를 조사했다. 저장소 전수 목록209개는 조사 기록으로 보존하고 전체 번역 제안은 철회했다.

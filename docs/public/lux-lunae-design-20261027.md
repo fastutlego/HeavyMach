@@ -2,7 +2,7 @@
 
 Codex는 F-22·Su-57·MiG-31을 구현하고 아이폰·아이패드에 치트·정식 앱을 설치했다. 금색 조종석 유리, HP765, 3발 연사와 2발씩 3묶음 발사, 14개 구간의 72대 증원을 적용했다. 나는 설치본에서 기체가 갑자기 나타나는 문제를 발견했다. Codex가 화면 밖에서 비행 진입하도록 고치고, 연사속도 증가는 10%로 낮췄다.
 
-기존 완성분은 develop→main 병합과 **v0.11** 태그 푸시를 끝냈다. 새 전투기 작업은 `feat/lux-lunae-fighters`에서 분리했다. [구현 계획 원문](lux-lunae-plan-20261027.md).
+기존 완성분은 develop→main 병합과 **v0.11** 태그 푸시를 끝냈다. 새 전투기 작업은 `feat/lux-lunae-fighters`에서 분리했다. [구현 계획 원문](../lux-lunae-plan-20261027.md).
 
 ## 도색과 기체 형상
 
@@ -84,10 +84,10 @@ F-22·Su-57은 약0.455초 간격으로3발 발사한다. MiG-31은 약0.455초 
 
 - [F-22 PNG](media/lux-lunae/F22-gold.png), [Su-57 PNG](media/lux-lunae/Su57-gold.png), [MiG-31 PNG](media/lux-lunae/MiG31-gold.png)
 - [내장 imagegen 프롬프트](media/lux-lunae/prompts.json), [참조·파일 해시](media/lux-lunae/manifest.json)
-- [원본 헬기·무기·맵 수치](evidence/lux-lunae-inventory-20261027.txt), [추출 코드](evidence/lux-lunae-inventory-20261027.cpp)
-- [세부 구현 계획](lux-lunae-plan-20261027.md)
+- [원본 헬기·무기·맵 수치](../evidence/lux-lunae-inventory-20261027.txt), [추출 코드](../evidence/lux-lunae-inventory-20261027.cpp)
+- [세부 구현 계획](../lux-lunae-plan-20261027.md)
 
-[금색 유리 편집 프롬프트](media/lux-lunae/gold-prompt.txt), [최종 PNG 해시](media/lux-lunae/gold-manifest.json), [실행 증거](evidence/lux-lunae-implementation-20261027.json).
+[금색 유리 편집 프롬프트](media/lux-lunae/gold-prompt.txt), [최종 PNG 해시](media/lux-lunae/gold-manifest.json), [실행 증거](../evidence/lux-lunae-implementation-20261027.json).
 
 ## 실제 기기 화면과 진입 수정
 
@@ -105,4 +105,4 @@ F-22·Su-57은 약0.455초 간격으로3발 발사한다. MiG-31은 약0.455초 
 
 ![아이폰 보스와 증원 전투](media/lux-lunae/iphone-combat.png)
 
-검사는8대 증원과 보스가 함께 있는 조건이다. 갱신·GL 처리시간은420회 표본으로 기록했다. 측정값은 [실행 기록](evidence/lux-lunae-implementation-20261027.json)에 있다. 사격 구간의 게임 저장 호출은0회였다. 장시간 발열·메모리 추적과 추가 적을 포함한 정식 난이도 전체 캠페인 검사는 남아 있다.
+검사는8대 증원과 보스가 함께 있는 조건이다. 갱신·GL 처리시간은420회 표본으로 기록했다. 측정값은 [실행 기록](../evidence/lux-lunae-implementation-20261027.json)에 있다. 사격 구간의 게임 저장 호출은0회였다. 장시간 발열·메모리 추적과 추가 적을 포함한 정식 난이도 전체 캠페인 검사는 남아 있다.

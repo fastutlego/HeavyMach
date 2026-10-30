@@ -153,3 +153,7 @@ Galaxy에서 이동·점프·20종 무기·자동조준·HUD 편집·백그라�
 ## main 병합 전 Apple 검사
 
 기존 Apple 소스·공용 코어·자원 등 2,166개 파일의 해시가 작업 전과 같았다. Apple 프로젝트와 기존 빌드 설정·도구의 변경은 0개다. 일반·치트 앱을 iOS Simulator와 네이티브 Mac으로 다시 빌드했고 네 빌드가 모두 성공했다. 빌드 의존 파일·링크 목록 164개에서 Android 참조는 0개였다. [검사 결과와 v0.17 준비](../android-release-readiness-20261030.md).
+
+## 공개 위치
+
+Android 코드와 이 문서, Galaxy 플레이 자료는 main에 병합됐다. 최신 릴리스 태그 v0.16에는 Android가 포함되지 않는다. [미발행 변경 이력](../../CHANGELOG.md#unreleased) · [Android 설치](build-and-install.md#android-빌드와-설치) · [플레이 캡처와 영상](android-gameplay-20261030.md).

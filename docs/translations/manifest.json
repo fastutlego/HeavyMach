@@ -5,8 +5,8 @@
   "documents": {
     "README.md": {
       "english": "README.en.md",
-      "source_sha256": "a14881ad04a565d84002e0fcfcaa7278926dd63c3f3e4c49a88d3b684b637c90",
-      "english_sha256": "f7b73699acaa8f2d8430806c8234fac243a27e4e2b2872e445ada3bc0661519a",
+      "source_sha256": "81622a6731ee7958f1a92bdaac32e1832bc7542c7301f23b5f74b4bfd7ee2014",
+      "english_sha256": "4164a709accc4e203ab9be6c4c0a2368a0233d8cbdac5cf72ce9212d098cb7a7",
       "reviewed_numeric_difference": {
         "source_only": {
           "7": 1,
@@ -23,23 +23,23 @@
           "13": 2
         }
       },
-      "review_note": "July, nine years/three months, aircraft and clip quantities use English words; source punctuation attaches Korean suffixes to digits. Shared personal paragraphs match the English statement. User-approved correction: 이승에서나 → in this life. Updated Android availability; personal paragraphs unchanged. Added iOS gallery and four physical-device cheat captures in both languages. Reviewed Android overview, regular Galaxy gameplay images/GIF, OS table, Gradle installation, shared-core paragraph and current-main versus v0.16 distinction; author opening unchanged."
+      "review_note": "July, nine years/three months, aircraft and clip quantities use English words; source punctuation attaches Korean suffixes to digits. Shared personal paragraphs match the English statement. User-approved correction: 이승에서나 → in this life. Updated Android availability; personal paragraphs unchanged. Added iOS gallery and four physical-device cheat captures in both languages. Reviewed Android overview, regular Galaxy gameplay images/GIF, OS table, Gradle installation, shared-core paragraph and current-main versus v0.16 distinction; author opening unchanged. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable."
     },
     "CHANGELOG.md": {
       "english": "CHANGELOG.en.md",
-      "source_sha256": "9153b804cf80f72918051fd5278932410d6cf959464718fce6add03a40054268",
-      "english_sha256": "7a23077ae8d85273ab6ee4aa04ffb8b71a13bcd6f1e83ac130d5dd4bf8131bee",
+      "source_sha256": "7e3123d44e7f5b3a4d8943e21aa045527c2d7747522322b612ff08c9920323eb",
+      "english_sha256": "21e2c4acc8c5027d4d84be380695c42d29575f275794300ca0d974e62499f27c",
       "reviewed_numeric_difference": {
         "source_only": {
-          "10": 2,
-          "0": 1,
-          "5": 3,
           "2": 7,
+          "1": 1,
           "3": 6,
           "4": 9,
-          "6": 1,
+          "5": 3,
           "8": 1,
-          "1": 1,
+          "10": 2,
+          "0": 1,
+          "6": 1,
           "482": 1
         },
         "english_only": {
@@ -47,7 +47,7 @@
           "1,482": 1
         }
       },
-      "review_note": "Month/day headings and counts use English words; source 자원1,482개·코어21개 is rendered as 1,482 resources and 21 core tests. Every release URL and historical count retained."
+      "review_note": "Month/day headings and counts use English words; source 자원1,482개·코어21개 is rendered as 1,482 resources and 21 core tests. Every release URL and historical count retained. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable."
     },
     "CREDITS.md": {
       "english": "CREDITS.en.md",
@@ -119,8 +119,8 @@
     },
     "docs/public/features.md": {
       "english": "docs/en/public/features.md",
-      "source_sha256": "3a2c097e9b1c0410c5ebe4d0c13c7d74d1a437f721d8708bc675c2822807eca5",
-      "english_sha256": "a6692aab11147e374e609b98c1be4df54cebad0c682f00acff29ba51e384883f",
+      "source_sha256": "e17900e5e22a1e2c8d5b206ad210bb7860277ca5b44b962c7490d921bfd50f1b",
+      "english_sha256": "d83d34a771cd51c848b4ba4c20ace1b6e5f2d05737d9178dca6a29a7e32e58a1",
       "reviewed_numeric_difference": {
         "source_only": {
           "6": 1,
@@ -133,7 +133,7 @@
           "7": 1
         }
       },
-      "review_note": "Counts and durations sometimes use words. Ace Combat 7 and 8 expands 에이스 컴뱃7·8; only the digit preceded by Korean text is omitted by the numeric extractor. All weapon and placement tables compared. Updated Android availability; personal paragraphs unchanged."
+      "review_note": "Counts and durations sometimes use words. Ace Combat 7 and 8 expands 에이스 컴뱃7·8; only the digit preceded by Korean text is omitted by the numeric extractor. All weapon and placement tables compared. Updated Android availability; personal paragraphs unchanged. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable."
     },
     "docs/public/implementation-status.md": {
       "english": "docs/en/public/implementation-status.md",
@@ -170,28 +170,28 @@
     },
     "docs/public/gameplay-guide.md": {
       "english": "docs/en/public/gameplay-guide.md",
-      "source_sha256": "1a7ca7ccfdb8937078654f0934f6e12a580efb7fed4d1a3773e957afc0cc2291",
-      "english_sha256": "10eee8595b18fe5100a3338101371d1d4db0467e4d2f312157df43ac0231be0d",
+      "source_sha256": "de59092c09ddd74fc0b693fa7bdc38465bd168b4d71952e16dff3be63b6f65e8",
+      "english_sha256": "5eb5360f870fe05153924ec48700313d8fe32406b25f27ea0a185f59fb93e6d4",
       "reviewed_numeric_difference": {
         "source_only": {},
         "english_only": {}
       },
-      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match."
+      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable."
     },
     "docs/public/architecture.md": {
       "english": "docs/en/public/architecture.md",
-      "source_sha256": "82a01837b286941aded30d271268e1be545275d10ce688644377009c81ee42df",
-      "english_sha256": "537f92e47ec81677d573e6c88ce5f981d0c6e734aaee91dd895d399d31de9264",
+      "source_sha256": "c00d932b501f9c74cf7488fd66bf545b218ba7556001a2fceb9ed82ba6b57aa2",
+      "english_sha256": "9e86c68dc4894911fcb65e941592cd476dab6eb7611f1a7ebdb7618f27096833",
       "reviewed_numeric_difference": {
         "source_only": {},
         "english_only": {}
       },
-      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Reviewed Android Gradle/NDK shared core and Kotlin/JNI/platform-host responsibilities."
+      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Reviewed Android Gradle/NDK shared core and Kotlin/JNI/platform-host responsibilities. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable."
     },
     "docs/public/development-history.md": {
       "english": "docs/en/public/development-history.md",
-      "source_sha256": "f5cc86765a99122805ce339d94ef22b575368f36c08ce3dbd0d6f583bc705024",
-      "english_sha256": "5a3d7e2e210825b5b81d21babbcdaf4edf087b64351b860b33c6c8953b924c24",
+      "source_sha256": "1bbb47c55724bdc6ad279a8d37deccc59aaec60bb736cd37ddcb1dd8ae77308a",
+      "english_sha256": "2e51bce4356db1216c35ecccad18fc70a05e65efd3b2b9ff5a202b82d6601b0e",
       "reviewed_numeric_difference": {
         "source_only": {
           "7": 1,
@@ -201,7 +201,7 @@
           "3": 1
         }
       },
-      "review_note": "July and zero/two ticks use English words. Mission 3-5 is separated from Korean text in English. Operator order, formulas and tool IDs preserved. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Updated Android availability; personal paragraphs unchanged."
+      "review_note": "July and zero/two ticks use English words. Mission 3-5 is separated from Korean text in English. Operator order, formulas and tool IDs preserved. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Updated Android availability; personal paragraphs unchanged. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable."
     },
     "docs/public/troubleshooting.md": {
       "english": "docs/en/public/troubleshooting.md",
@@ -222,8 +222,8 @@
     },
     "docs/public/validation.md": {
       "english": "docs/en/public/validation.md",
-      "source_sha256": "48484f54cef1657f7d94bbd489ac7d20768e6c93ef1655b001607176c6f6d489",
-      "english_sha256": "e0ad410c2c44658a4581375f843d8ae8dc8f6b720be892bcd4a11c023f6188a9",
+      "source_sha256": "fe5cf987a5443da6f1164cc8f62628c413fa161ab6e4a250e5fa3e4b575c820b",
+      "english_sha256": "f5af412d3bdc1330df39a9da05a545efab203e6b988364abfc6df466287c72b8",
       "reviewed_numeric_difference": {
         "source_only": {
           "10": 4,
@@ -238,12 +238,12 @@
           "20": 1
         }
       },
-      "review_note": "Dates and counts use English words. The two 20ms references are preserved; source 기준20ms attaches digits to Korean text. Historical failures and current v0.16 check separated. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Reviewed latest tag versus main Android status and device-results link."
+      "review_note": "Dates and counts use English words. The two 20ms references are preserved; source 기준20ms attaches digits to Korean text. Historical failures and current v0.16 check separated. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Reviewed latest tag versus main Android status and device-results link. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable."
     },
     "docs/public/lux-lunae-intent-20261028.md": {
       "english": "docs/en/public/lux-lunae-intent-20261028.md",
-      "source_sha256": "f0809010725138a8e3e4e4516b3ac201b8a752c458e8ce5c59765cd0d096f4f7",
-      "english_sha256": "a9360a858a4bc63ab96de98d4a6e4d0a3023766f8ad1b0ea5c90c1fb6a5ad760",
+      "source_sha256": "14496bab32400b26c1ffec592d85d69bc1f246143d04098ec955d15322b648e6",
+      "english_sha256": "153b5ac6bd0029109c36ecaafbf86eb8b7ee19873e6f6569d3c00fdb416a0d04",
       "reviewed_numeric_difference": {
         "source_only": {
           "8": 1,
@@ -259,17 +259,17 @@
         },
         "english_only": {}
       },
-      "review_note": "Nine years/three months, dates and quantities use words; 1분30초~1분43초 becomes 1:30–1:43. All designs, media and historical first-person judgements retained."
+      "review_note": "Nine years/three months, dates and quantities use words; 1분30초~1분43초 becomes 1:30–1:43. All designs, media and historical first-person judgements retained. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable."
     },
     "docs/public/index.md": {
       "english": "docs/en/public/index.md",
-      "source_sha256": "9aaa0755b12633f2a19f908f8d2f160da6612e3055a9e773bbf3861496ce7013",
-      "english_sha256": "eef1bbc22c5fb74c6fcbfd3d2b579d25e4a0240ba0348393008fb5b238655c31",
+      "source_sha256": "4b415eff71e3ddb346a02bd74c32502863aecff1aa6ae52471dcf51b796895fe",
+      "english_sha256": "6109ec928e9010e1178ec19a5aa9ccb78891ddb35a21db221108a6a51e30180e",
       "reviewed_numeric_difference": {
         "source_only": {},
         "english_only": {}
       },
-      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match. Reviewed Android availability and installation/development/gallery links; English captions identify Korean-only linked articles."
+      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match. Reviewed Android availability and installation/development/gallery links; English captions identify Korean-only linked articles. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable."
     },
     "docs/public/design-intent.md": {
       "english": "docs/en/public/design-intent.md",
@@ -287,13 +287,13 @@
     },
     "docs/public/roadmap.md": {
       "english": "docs/en/public/roadmap.md",
-      "source_sha256": "1bea11cc3b8f2645c121a5b370e8d18531e0c6d4a1961819f5ec5f0537f1911d",
-      "english_sha256": "0081e5a42535ca21983c06e3e42fe7f149f258e9035f63f149e48e50cc284b6d",
+      "source_sha256": "3191f62e75aa574fdac19c0094dcc2dbd3bcbe44e604af7d375030f5ed7b31ec",
+      "english_sha256": "ee0676ea459c725d3d6c6e62f5ccd116750ba600521ce8287434d258b039b544",
       "reviewed_numeric_difference": {
         "source_only": {},
         "english_only": {}
       },
-      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed."
+      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable."
     }
   }
 }

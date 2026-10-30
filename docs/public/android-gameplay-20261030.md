@@ -71,3 +71,5 @@
 [음향 포함 8초 영상](media/android-gameplay-20261030/boss.mp4)
 
 PNG는 2340×1080, GIF는 768×354·12fps·6초다. MP4는 원본 해상도·재생 속도와 음향을 유지한 8초 구간이다. [장면·시간·해시](media/android-gameplay-20261030/scenes.json), [Android 개발 과정](android-development-20261030.md).
+
+[프로젝트 소개](../../README.md#android-플레이-캡처-모음) · [Android 설치](build-and-install.md#android-빌드와-설치) · [개발 과정과 버그 수정](android-development-20261030.md) · [검증](validation.md#android-검사--2026-10-30)

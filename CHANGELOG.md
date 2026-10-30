@@ -6,6 +6,22 @@
 
 [최신 릴리스](https://github.com/gelb2/HeavyMach/releases/latest) · [GitHub 전체 릴리스](https://github.com/gelb2/HeavyMach/releases)
 
+<a id="unreleased"></a>
+
+## 미발행 — 현재 main
+
+### Android 일반·치트 앱 추가
+
+기존 C++ 게임 코어와 이미지·음원·맵을 사용하는 Android 앱을 추가했다. Kotlin·JNI·Android C++ 호스트로 터치·틸트·키보드, 메뉴·HUD, EGL/GLES 그래픽, OpenAL 음향과 저장을 연결했다. 자동조준, 추가 항공기·지상 유닛, HUD 위치 편집을 제공한다. 앱 중단과 오디오 포커스 상실 시 정지하고 그래픽 컨텍스트가 재생성되면 자원을 복구한다.
+
+- Galaxy SM-S731N에 일반·치트 APK를 USB와 Wi-Fi로 설치했다. 이동·점프·20종 무기 등 31개, USB 분리 후 무선 검사 11개를 통과했다.
+- 첫 보스 이후 2-1 진입 시 업그레이드 창 뒤로 전투가 계속되고 버튼이 반응하지 않던 오류를 수정했다. Galaxy와 에뮬레이터에서 각각 12개 회귀 검사를 통과했다.
+- 수정본으로 직접 플레이한 미션 3-4·3-5의 이미지 8장·GIF 3개·영상 3개를 공개했다. 이어서 플레이한 범위에서 오작동을 발견하지 못했다.
+- Android 구현 당시 기존 Apple 소스·공용 코어·자원·빌드 구성을 유지했다. iOS Simulator와 native Mac의 일반·치트 앱 네 빌드가 통과했다.
+- 현재 APK는 최적화한 debug 서명본이다. 앱 내부 버전은 `0.16-android-dev`이며 최신 릴리스 태그 v0.16에는 Android가 포함되지 않는다. 전체 캠페인 클리어, 장시간 발열·메모리, Android 태블릿·16KB 페이지 실기기와 배포 서명이 남아 있다.
+
+[Android 설치](docs/public/build-and-install.md#android-빌드와-설치) · [개발 과정·공용 모듈·수정 내역](docs/public/android-development-20261030.md) · [Galaxy 플레이 자료](docs/public/android-gameplay-20261030.md) · [검증](docs/public/validation.md#android-검사--2026-10-30)
+
 | 버전 | 태그 기준일 | 주요 변경 |
 |---|---|---|
 | [v0.16](#v016) | 2026-10-29 | 럭스루나에 진입 배치 |

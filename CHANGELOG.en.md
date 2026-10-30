@@ -8,6 +8,24 @@
 
 [Latest release](https://github.com/gelb2/HeavyMach/releases/latest) · [All GitHub releases](https://github.com/gelb2/HeavyMach/releases)
 
+<a id="unreleased"></a>
+
+## Unreleased — current main
+
+<a id="android-일반치트-앱-추가"></a>
+
+### Regular and cheat Android apps
+
+Added Android apps using the existing C++ game core, images, audio and maps. Kotlin, JNI and an Android C++ host connect touch, tilt, keyboard, menus, HUD, EGL/GLES graphics, OpenAL audio and saves. Auto-aim, added aircraft and ground units, and HUD editing are available. App interruption and audio-focus loss pause play; graphics resources are restored when the context is recreated.
+
+- Installed regular and cheat APKs on Galaxy SM-S731N over USB and Wi-Fi. Passed 31 checks covering movement, jumping and 20 weapons, plus 11 wireless checks after disconnecting USB.
+- Fixed combat continuing behind an unresponsive upgrade window when entering 2-1 after the first boss. Passed 12 regression checks on each of Galaxy and emulator.
+- Published 8 images, 3 GIFs and 3 videos from my play of missions 3-4 and 3-5 on the fixed build. I found no malfunctions during my subsequent play.
+- During Android implementation, existing Apple sources, shared core, resources and build configuration were preserved. All four regular/cheat iOS Simulator and native Mac builds passed.
+- Current APKs use optimized code and debug signing. Their internal version is `0.16-android-dev`; the latest release tag, v0.16, does not include Android. Full campaign completion, extended thermal and memory tests, Android tablets, physical 16KB-page devices and distribution signing remain.
+
+[Android installation](docs/en/public/build-and-install.md#android-빌드와-설치) · [Development, shared modules and fixes](docs/public/android-development-20261030.md) · [Galaxy gameplay](docs/public/android-gameplay-20261030.md) · [Validation](docs/en/public/validation.md#android-검사--2026-10-30)
+
 | Version | Tag date | Main changes |
 |---|---|---|
 | [v0.16](#v016) | 2026-10-29 | Lux Lunae entry placement |
