@@ -1,0 +1,74 @@
+{
+  "date": "2026-10-30",
+  "release": {
+    "version": "v0.17",
+    "commit": "a684245729f50a0e4a89d1af70176f00ec384e1a",
+    "stage": "complete",
+    "published": true,
+    "release_id": 428787199,
+    "url": "https://github.com/gelb2/HeavyMach/releases/tag/v0.17"
+  },
+  "manifest": {
+    "schema_version": 1,
+    "version": "v0.17",
+    "commit": "a684245729f50a0e4a89d1af70176f00ec384e1a",
+    "repository": "gelb2/HeavyMach",
+    "notes_sha256": "4ecde8f752021d80e05d8c2736f14356c5b8fea0075e562b5396dd672e596d8f",
+    "artifacts": {
+      "HeavyMach-v0.17-source-with-assets.tar.gz": {
+        "sha256": "02d830da983c32af7921dd0d6ee1f6781caafb01ab8a5f70c4b58be5cdbd2282",
+        "bytes": 365148264
+      },
+      "HeavyMach-v0.17-notices.zip": {
+        "sha256": "b3e079d0b0b64650576dfe431a1ee622633f54009bbb17bba6a1255f307be2be",
+        "bytes": 24844
+      },
+      "SHA256SUMS.txt": {
+        "sha256": "75786e62b50c3bee895e07f4c7d22cc9953a7e5f3293d8d8a48e694a2ad3241f",
+        "bytes": 202
+      }
+    },
+    "checks": {
+      "tracked_files": 2786,
+      "build_assets": 1504,
+      "note_links": [
+        "docs/public/android-development-20261030.md",
+        "docs/public/android-gameplay-20261030.md",
+        "docs/public/build-and-install.md",
+        "docs/public/validation.md"
+      ],
+      "unpacked_hashes": true,
+      "notices_content": true,
+      "lfs_pointers": 0
+    }
+  },
+  "publication_recovery": {
+    "initial_result": {
+      "version": "v0.17",
+      "commit": "a684245729f50a0e4a89d1af70176f00ec384e1a",
+      "stage": "create-draft",
+      "published": false,
+      "error": "Created draft not found"
+    },
+    "observed": "The created draft was absent from the first list lookup and visible on a later lookup. Its exact title, body and empty attachment list matched this publication.",
+    "action": "Recorded the matching draft ID 428787199 in the local receipt and resumed with --resume.",
+    "result": "Three uploaded assets, remote digests, public body and tag matched."
+  },
+  "pull_requests": [
+    58,
+    59
+  ],
+  "main_release_commit": "a684245729f50a0e4a89d1af70176f00ec384e1a",
+  "checks": {
+    "release_diff_from": "68db9e65b8ad2585bf0efa834d9f44d7bd8e3adb",
+    "release_diff_scope": "Documentation and version badge only",
+    "author_restoration_and_lux_manuscripts": "unchanged",
+    "translation_pairs": 20,
+    "publication_check": "passed",
+    "document_contract": "passed",
+    "main_ci": [
+      41025193761,
+      41025193475
+    ]
+  }
+}
