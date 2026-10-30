@@ -156,4 +156,4 @@ Galaxy에서 이동·점프·20종 무기·자동조준·HUD 편집·백그라�
 
 ## 공개 위치
 
-Android 코드와 이 문서, Galaxy 플레이 자료는 main에 병합됐다. 최신 릴리스 태그 v0.16에는 Android가 포함되지 않는다. [미발행 변경 이력](../../CHANGELOG.md#unreleased) · [Android 설치](build-and-install.md#android-빌드와-설치) · [플레이 캡처와 영상](android-gameplay-20261030.md).
+Android 코드와 이 문서, Galaxy 플레이 자료는 main에 병합됐다. v0.17은 Android 일반·치트 앱을 포함한다. [v0.17 변경 이력](../../CHANGELOG.md#v017) · [Android 설치](build-and-install.md#android-빌드와-설치) · [플레이 캡처와 영상](android-gameplay-20261030.md).

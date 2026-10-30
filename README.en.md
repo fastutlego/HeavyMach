@@ -4,7 +4,7 @@
 [한국어](README.md) | [English](README.en.md)
 <!-- language-nav:end -->
 
-[![Git tag v0.16](docs/public/media/badges/version.svg)](https://github.com/gelb2/HeavyMach/tree/v0.16)
+[![Git tag v0.17](docs/public/media/badges/version.svg)](https://github.com/gelb2/HeavyMach/tree/v0.17)
 [![Platforms iOS iPadOS macOS Android](docs/public/media/badges/platforms.svg)](docs/en/public/validation.md)
 [![Architecture arm64](docs/public/media/badges/arch.svg)](docs/en/public/build-and-install.md)
 [![C++20, Objective-C++ and Kotlin](docs/public/media/badges/code.svg)](docs/en/public/architecture.md)
@@ -39,9 +39,9 @@ Money is only needed in this life.
 
 **HeavyMach**, the 2009 side-scrolling tank game, has been rebuilt to run on current iPhone, iPad, Mac and Android devices. Move and jump the tank, switch weapons and fight ground and air enemies. Wider screens, keyboard controls, auto-aim and new aircraft extend the original combat and progression.
 
-The latest release tag is [v0.16](https://github.com/gelb2/HeavyMach/tree/v0.16). The regular and cheat Android apps were added to main afterward. Use current main to build Android. Regular and cheat validation apps can be installed separately. The cheat app tests the same game with specified missions, weapons and upgrades.
+The latest release tag is [v0.17](https://github.com/gelb2/HeavyMach/tree/v0.17). It includes the regular and cheat Android apps. Regular and cheat validation apps can be installed separately. The cheat app tests the same game with specified missions, weapons and upgrades.
 
-[Latest release](https://github.com/gelb2/HeavyMach/releases/latest) · [Version history](CHANGELOG.en.md) · [Android changes](CHANGELOG.en.md#unreleased)
+[Latest release](https://github.com/gelb2/HeavyMach/releases/latest) · [Version history](CHANGELOG.en.md) · [Android changes](CHANGELOG.en.md#v017)
 
 [Apple installation](docs/en/public/build-and-install.md) · [Android installation](docs/en/public/build-and-install.md#android-빌드와-설치) · [Android gameplay](docs/public/android-gameplay-20261030.md) · [Controls](docs/en/public/gameplay-guide.md) · [Features](docs/en/public/features.md) · [Troubleshooting](docs/en/public/troubleshooting.md) · [Documentation](docs/en/public/index.md)
 
@@ -228,7 +228,7 @@ python3 tools/verify_build_resources.py
 open HeavyMach.xcworkspace
 ```
 
-Select your development team and destination in Xcode. iPhone/iPad schemes are `HeavyMachRestored` for the regular app and `HeavyMachValidation` for the cheat app. Mac schemes are `HeavyMachMac` and `HeavyMachMacValidation`. Clone the repository or download the source-and-resource archive from [v0.16 Releases](https://github.com/gelb2/HeavyMach/releases/tag/v0.16), then build and install through Xcode.
+Select your development team and destination in Xcode. iPhone/iPad schemes are `HeavyMachRestored` for the regular app and `HeavyMachValidation` for the cheat app. Mac schemes are `HeavyMachMac` and `HeavyMachMacValidation`. Clone the repository or download the source-and-resource archive from [v0.17 Releases](https://github.com/gelb2/HeavyMach/releases/tag/v0.17), then build and install through Xcode.
 
 [Simulator commands, device installation, signing and troubleshooting](docs/en/public/build-and-install.md)
 

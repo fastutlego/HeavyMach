@@ -4,7 +4,7 @@
 [한국어](roadmap.md) | [English](../en/public/roadmap.md)
 <!-- language-nav:end -->
 
-현재 main 기준이다. Apple 최신 릴리스는 v0.16이며 Android는 이후 main에 추가했다. 나는 설치된 iPhone·iPad 앱을 플레이하며 이상 동작을 보지 못했다. 아래에는 아직 수정하거나 검사할 일을 모았다.
+현재 main 기준이다. v0.17은 Apple 앱과 Android 앱을 포함한다. 나는 설치된 iPhone·iPad 앱을 플레이하며 이상 동작을 보지 못했다. 아래에는 아직 수정하거나 검사할 일을 모았다.
 
 ## 버그와 성능
 

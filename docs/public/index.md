@@ -4,7 +4,7 @@
 [한국어](index.md) | [English](../en/public/index.md)
 <!-- language-nav:end -->
 
-HeavyMach는 iPhone·iPad·Mac·Android에서 빌드하고 플레이할 수 있다. 최신 릴리스 태그는 v0.16이며, Android 앱은 그 이후 main에 추가했다.
+HeavyMach는 iPhone·iPad·Mac·Android에서 빌드하고 플레이할 수 있다. 최신 릴리스 태그는 v0.17이며 Android 일반·치트 앱을 포함한다.
 
 ## 시작하기
 
@@ -32,7 +32,7 @@ HeavyMach는 iPhone·iPad·Mac·Android에서 빌드하고 플레이할 수 있�
 - [개발 과정](development-history.md): 분석·구현·비교 순서와 사용한 도구.
 - [트러블슈팅](troubleshooting.md): 저장·렌더링·음향·시간·좌표·기기·그림에서 고친 문제.
 - [검증 결과](validation.md): 자동 검사, 직접 플레이, 프레임·메모리 측정과 남은 검사.
-- [변경 이력](../../CHANGELOG.md): 미발행 Android 변경과 v0.9~v0.16의 태그·다운로드·검사.
+- [변경 이력](../../CHANGELOG.md): v0.17 Android 출시와 v0.9~v0.17의 태그·다운로드·검사.
 - [남은 과제](roadmap.md): 버그 수정, 검사, 편의 기능과 추가 플랫폼.
 
 ## 참여와 제작자

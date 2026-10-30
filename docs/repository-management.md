@@ -23,12 +23,12 @@
 
 ## 현재 태그에서 다시 빌드
 
-이번 릴리스 태그는 v0.16이다. v0.10 이후 태그는 게임 자원을 Git/LFS에 포함한다. 별도 폴더에서 이전 버전을 빌드할 수 있다.
+이번 릴리스 태그는 v0.17이다. v0.10 이후 태그는 게임 자원을 Git/LFS에 포함한다. 별도 폴더에서 이전 버전을 빌드할 수 있다.
 
 ```sh
 git fetch origin --tags
-git worktree add --detach ../HeavyMach-v0.16 v0.16
-cd ../HeavyMach-v0.16
+git worktree add --detach ../HeavyMach-v0.17 v0.17
+cd ../HeavyMach-v0.17
 git lfs pull
 python3 tools/verify_build_resources.py
 open HeavyMach.xcworkspace
@@ -115,3 +115,7 @@ HeavyMach는 Apple·Android를 같은 저장소에서 관리한다. 최신 사�
 - 작업 전후 보호 파일의 경로·해시와 Git 변경 목록을 검사한다. 문서·계획·지침은 최신 요구에 맞춰 갱신한다.
 
 [구성과 검증 순서](android-port-plan-20261026.md#android-구성안). 기존 파일을 이동하지 않으므로 현재 Apple 빌드·설치 문서의 경로도 유지한다.
+
+## v0.17 — 2026-10-30
+
+Android 일반·치트 앱, 업그레이드 창 오류 수정, Galaxy 플레이 자료를 포함한다. `release/v0.17`→`develop`→`main` 순서로 병합하고 main 병합 커밋에 주석 태그를 붙인다. 기존 앱 내부 버전과 게임 코드는 유지한다. [릴리스](https://github.com/gelb2/HeavyMach/releases/tag/v0.17) · [변경 이력](../CHANGELOG.md#v017).

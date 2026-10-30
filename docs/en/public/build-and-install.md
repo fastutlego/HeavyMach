@@ -31,13 +31,13 @@ git lfs pull
 
 Images, audio, maps, app icons and image-comparison fixtures are included in the repository. Runtime resources are packaged in `HeavyMachAssets.bundle`.
 
-The repository is public; downloading source does not require a login. `v0.9` is a product-code tag from before resources were added to Git. Use current `main`, which includes resources, for a new build. [v0.16 Releases](https://github.com/gelb2/HeavyMach/releases/tag/v0.16) provides a source-and-resource archive, notices and SHA-256 checksums. After extracting the archive, you can check resources without Git LFS. Choose your own development team in Xcode to build and install the apps.
+The repository is public; downloading source does not require a login. `v0.9` is a product-code tag from before resources were added to Git. Use current `main`, which includes resources, for a new build. [v0.17 Releases](https://github.com/gelb2/HeavyMach/releases/tag/v0.17) provides a source-and-resource archive, notices and SHA-256 checksums. After extracting the archive, you can check resources without Git LFS. Choose your own development team in Xcode to build and install the apps.
 
 <a id="android-빌드와-설치"></a>
 
 ## Android build and installation
 
-The Android app is on current main. It is not included in the v0.16 release archive; use the Git clone and LFS commands above to download source and resources. It targets arm64-v8a devices running Android 8.0 (API 26) or later. Gameplay was checked on a Galaxy SM-S731N running Android 16.
+The Android app is included in v0.17. Use the Git clone and LFS commands above or the v0.17 source-and-resource archive. It targets arm64-v8a devices running Android 8.0 (API 26) or later. Gameplay was checked on a Galaxy SM-S731N running Android 16.
 
 You need JDK 17, Python 3 and Android SDK Command-line Tools. Install SDK 36, the NDK, CMake and ADB through Android Studio's SDK Manager or these commands:
 

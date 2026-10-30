@@ -4,7 +4,7 @@
 [한국어](implementation-status.md) | [English](../en/public/implementation-status.md)
 <!-- language-nav:end -->
 
-2026-10-29, 게임 버전 **v0.16** 기준이다. v0.16에서 럭스루나에의 가로·세로 진입 간격을 수정했다. 코어 23개와 iPhone·iPad 기능 각 3개 검사가 통과했다. 다음은 v0.15에서 완료한 내용이다. 글자 없는 앱 아이콘을 적용하고 미션 선택의 SET GAME UI 버튼을 제거했다. HUD 편집은 전투 일시정지 메뉴에서 연다. iPhone·iPad 시뮬레이터 각 3개와 native Mac 2개 검사가 통과했고, 두 기기에 정식·치트 앱을 무선 설치·실행했다. [화면·검사](app-icon-and-media-20261029.md).
+2026-10-30, 게임 버전 **v0.17** 기준이다. Android 일반·치트 앱을 추가했다. v0.16에서 럭스루나에의 가로·세로 진입 간격을 수정했다. 코어 23개와 iPhone·iPad 기능 각 3개 검사가 통과했다. 다음은 v0.15에서 완료한 내용이다. 글자 없는 앱 아이콘을 적용하고 미션 선택의 SET GAME UI 버튼을 제거했다. HUD 편집은 전투 일시정지 메뉴에서 연다. iPhone·iPad 시뮬레이터 각 3개와 native Mac 2개 검사가 통과했고, 두 기기에 정식·치트 앱을 무선 설치·실행했다. [화면·검사](app-icon-and-media-20261029.md).
 
 ## 구현된 기능
 
@@ -32,7 +32,7 @@
 
 README, 기능·조작·설치·구조·트러블슈팅·개발 과정·검증·상태표, 변경 이력과 제작자 안내를 작성했다. 실제 플레이 이미지 8장·GIF 2개·MP4 3개를 연결했다. SaaS 담당 세션이 Apps·Mags를 작성할 수 있게 [집필 자료](publication-inventory.md)를 정리했다.
 
-GitHub 문서와 플레이 미디어는 main에 반영했다. 게임 릴리스 태그는 v0.16이다.
+GitHub 문서와 플레이 미디어는 main에 반영했다. 게임 릴리스 태그는 v0.17이다.
 
 ## 남은 기능과 연구
 
@@ -52,8 +52,8 @@ GitHub 문서와 플레이 미디어는 main에 반영했다. 게임 릴리스 �
 
 ## 배포와 버전
 
-저장소는 2026-10-28 공개했다. 통합 보고 사이트는 소유자 로그인으로 열람한다. Git 태그는 v0.9~v0.16이며, v0.16 Releases에서 소스·자원 압축본을 받을 수 있다. iPhone·iPad·Mac 앱은 Xcode에서 빌드해 설치한다. 새 clone은 Git/LFS 자원으로 빌드한다. v0.9는 자원 등록 이전 태그이므로 당시 코드를 빌드할 때 자원 준비가 추가로 필요하다. [설치](build-and-install.md) · [버전 복원](../repository-management.md)
+저장소는 2026-10-28 공개했다. 통합 보고 사이트는 소유자 로그인으로 열람한다. Git 태그는 v0.9~v0.17이며, v0.17 Releases에서 소스·자원 압축본을 받을 수 있다. iPhone·iPad·Mac 앱은 Xcode에서 빌드해 설치한다. 새 clone은 Git/LFS 자원으로 빌드한다. v0.9는 자원 등록 이전 태그이므로 당시 코드를 빌드할 때 자원 준비가 추가로 필요하다. [설치](build-and-install.md) · [버전 복원](../repository-management.md)
 
 ## Android 구현 · 2026-10-30
 
-일반·치트 APK 구현, Galaxy 유선·무선 설치, 공용 코어와 전용 호스트, 검사와 수정 내역은 [Android 개발 과정](android-development-20261030.md)에 정리했다. `feat/android-app`에서 구현하고 develop을 거쳐 main에 병합했다. 기존 Apple 소스는 유지했다. Android는 현재 main에서 빌드하며 v0.16 릴리스에는 포함되지 않는다. [Android 설치](build-and-install.md#android-빌드와-설치), [Galaxy 플레이 캡처와 영상](android-gameplay-20261030.md).
+일반·치트 APK 구현, Galaxy 유선·무선 설치, 공용 코어와 전용 호스트, 검사와 수정 내역은 [Android 개발 과정](android-development-20261030.md)에 정리했다. `feat/android-app`에서 구현하고 develop을 거쳐 main에 병합했다. 기존 Apple 소스는 유지했다. Android는 v0.17 소스로 빌드한다. [Android 설치](build-and-install.md#android-빌드와-설치), [Galaxy 플레이 캡처와 영상](android-gameplay-20261030.md).
