@@ -6,7 +6,7 @@
 [한국어](../../public/architecture.md) | [English](architecture.md)
 <!-- language-nav:end -->
 
-Game rules are implemented in the C++20 core. Objective-C++ connects them to Apple platforms. One workspace manages the shared modules and the iOS/iPadOS and Mac project dependencies. The apps use the same core and resources.
+Game rules are implemented in the C++20 core. Objective-C++ connects them to Apple platforms. One workspace manages the shared modules and the iOS/iPadOS and Mac project dependencies. The apps use the same core and resources. Android builds the same C++ core with the NDK from its separate Gradle project in `Android/`. Kotlin, JNI and an Android C++ host connect the screen, input, audio and saves. [Shared code and Android implementation](../../public/android-development-20261030.md).
 
 <a id="workspace와-프로젝트"></a>
 

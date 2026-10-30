@@ -4,7 +4,7 @@
 [한국어](architecture.md) | [English](../en/public/architecture.md)
 <!-- language-nav:end -->
 
-게임 규칙은 C++20 코어에, Apple 플랫폼 연결은 Objective-C++에 구현했다. 하나의 workspace가 공용 모듈과 iOS/iPadOS·Mac 프로젝트의 의존 관계를 관리한다. 앱은 같은 코어와 자원을 사용한다.
+게임 규칙은 C++20 코어에, Apple 플랫폼 연결은 Objective-C++에 구현했다. 하나의 workspace가 공용 모듈과 iOS/iPadOS·Mac 프로젝트의 의존 관계를 관리한다. 앱은 같은 코어와 자원을 사용한다. Android는 별도 Gradle 프로젝트인 `Android/`에서 같은 C++ 코어를 NDK로 빌드한다. Kotlin·JNI·Android C++ 호스트가 화면·입력·음향·저장을 연결한다. [공유 코드와 Android 전용 구현](android-development-20261030.md).
 
 ## Workspace와 프로젝트
 

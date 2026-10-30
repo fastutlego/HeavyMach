@@ -4,14 +4,20 @@
 [한국어](index.md) | [English](../en/public/index.md)
 <!-- language-nav:end -->
 
-HeavyMach는 현재 iPhone·iPad·Mac에서 빌드하고 플레이할 수 있다. 게임 버전은 v0.16이다.
+HeavyMach는 iPhone·iPad·Mac·Android에서 빌드하고 플레이할 수 있다. 최신 릴리스 태그는 v0.16이며, Android 앱은 그 이후 main에 추가했다.
 
 ## 시작하기
 
 - [소개와 플레이 화면](../../README.md)
-- [빌드와 설치](build-and-install.md): 준비물, 소스·자원 다운로드, Xcode 빌드, 기기 설치와 오류 해결.
+- [빌드와 설치](build-and-install.md): Apple·Android 준비물, 소스·자원 다운로드, Xcode·Gradle 빌드와 기기 설치.
 - [조작](gameplay-guide.md): 터치·틸트·키보드, 자동조준, HUD 편집.
 - [구현 상태](implementation-status.md): 제공하는 기능과 기기별 확인 범위.
+
+## Android
+
+- [빌드와 설치](build-and-install.md#android-빌드와-설치): SDK 설정, 일반·치트 APK, USB·무선 설치.
+- [개발 과정](android-development-20261030.md): 공용 C++ 코어, Android 전용 구현, 개발 시간, 업그레이드 오류 수정.
+- [Galaxy 플레이 캡처와 영상](android-gameplay-20261030.md): 일반 앱의 미션 3-4·3-5, 이미지 8장·GIF 3개·영상 3개.
 
 ## 개발 배경과 기획
 

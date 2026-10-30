@@ -56,4 +56,4 @@ GitHub 문서와 플레이 미디어는 main에 반영했다. 게임 릴리스 �
 
 ## Android 구현 · 2026-10-30
 
-일반·치트 APK 구현, Galaxy 유선·무선 설치, 공용 코어와 전용 호스트, 검사와 수정 내역은 [Android 개발 과정](android-development-20261030.md)에 정리했다. `feat/android-app`에서 구현했고 기존 Apple 소스는 유지했다.
+일반·치트 APK 구현, Galaxy 유선·무선 설치, 공용 코어와 전용 호스트, 검사와 수정 내역은 [Android 개발 과정](android-development-20261030.md)에 정리했다. `feat/android-app`에서 구현하고 develop을 거쳐 main에 병합했다. 기존 Apple 소스는 유지했다. Android는 현재 main에서 빌드하며 v0.16 릴리스에는 포함되지 않는다. [Android 설치](build-and-install.md#android-빌드와-설치), [Galaxy 플레이 캡처와 영상](android-gameplay-20261030.md).

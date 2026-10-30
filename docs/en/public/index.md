@@ -6,16 +6,22 @@
 [한국어](../../public/index.md) | [English](index.md)
 <!-- language-nav:end -->
 
-HeavyMach can be built and played on current iPhone, iPad and Mac devices. The game version is v0.16.
+HeavyMach can be built and played on iPhone, iPad, Mac and Android. The latest release tag is v0.16; Android was added to main afterward.
 
 <a id="시작하기"></a>
 
 ## Get started
 
 - [Overview and gameplay](../../../README.en.md)
-- [Build and install](build-and-install.md): requirements, source/resources, Xcode builds, device installation and troubleshooting.
+- [Build and install](build-and-install.md): Apple and Android requirements, source/resources, Xcode and Gradle builds, and device installation.
 - [Controls](gameplay-guide.md): touch, tilt, keyboard, auto-aim and HUD editing.
 - [Implementation status](implementation-status.md): available features and device checks.
+
+## Android
+
+- [Build and installation](build-and-install.md#android-빌드와-설치): SDK setup, regular and cheat APKs, USB and wireless installation.
+- [Development account (Korean)](../../public/android-development-20261030.md): shared C++ core, Android implementation, development time and upgrade fix.
+- [Galaxy gameplay gallery (Korean captions)](../../public/android-gameplay-20261030.md): missions 3-4 and 3-5 in the regular app, 8 images, 3 GIFs and 3 videos.
 
 <a id="개발-배경과-기획"></a>
 
