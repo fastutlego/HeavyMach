@@ -35,6 +35,6 @@
 - iPhone 무선 XCTest·Instruments 전체 실행과 두 기기의 재부팅 후 반복 설치·디버깅.
 - Android 일반·치트 APK는 Galaxy에서 실행했다. 전체 캠페인 클리어·장시간 발열·태블릿 실기기·배포 서명을 진행한다. [개발 기록](android-development-20261030.md).
 - 접힌 화면 위쪽에 게임, 아래쪽에 조작부를 두는 배치 연구.
-- 다음 새 버전에서 릴리스 도구의 실제 GitHub 업로드·공개 결과 기록. 기존 v0.9~v0.16 릴리스 정리는 완료했다.
+- 릴리스 초안 생성 직후 목록 조회가 비어 중단되는 경우의 자동 재개. v0.17은 같은 초안을 확인하고 재개해 게시했다. [검사 기록](../evidence/release-v0.17-20261030.json).
 
 [구현 상태](implementation-status.md) · [검증 결과](validation.md) · [변경 이력](../../CHANGELOG.md) · [상세 요구와 작업 기록](../usability-todo.md)

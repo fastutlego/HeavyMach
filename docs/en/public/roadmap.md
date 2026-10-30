@@ -43,6 +43,6 @@ This describes current main. v0.17 includes the Apple and Android apps. I saw no
 - Full wireless XCTest/Instruments runs on iPhone and repeated installation/debugging after reboot on both devices.
 - Android regular and cheat APKs run on Galaxy. Full campaign completion, extended thermal tests, physical tablet tests and distribution signing remain. [Development account](../../public/android-development-20261030.md).
 - Explore folded-screen layouts with the game above and controls below.
-- Record the release tool's actual GitHub upload/publication in the next new version. Existing v0.9–v0.16 releases are organized.
+- Automate recovery when the release list omits a newly created draft. v0.17 was published after verifying and resuming the same draft. [Test record](../../evidence/release-v0.17-20261030.json).
 
 [Implementation status](implementation-status.md) · [Validation](validation.md) · [Changelog](../../../CHANGELOG.en.md) · [Detailed requirements and work records](../../usability-todo.md)
