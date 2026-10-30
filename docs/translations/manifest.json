@@ -296,8 +296,8 @@
     },
     "docs/public/android-ai-experience-20261030.md": {
       "english": "docs/en/public/android-ai-experience-20261030.md",
-      "source_sha256": "b1f5e87eedda230f31d09d71beb687276a841af175175080abea1e002e56eed8",
-      "english_sha256": "cb2e42229e066b36ff47ad15559cf2065c585174f5852978c1df6302688e3ca8",
+      "source_sha256": "9c9fca0e1bd1268bcfff83c1287250e508f551bb3845d99e90228274eb62e7cc",
+      "english_sha256": "38881f3e2530f9dbbc011f5c49d3d45c7bcd6838565f86cafb9256b34a5c965a",
       "reviewed_numeric_difference": {
         "source_only": {
           "10": 1,
@@ -307,7 +307,7 @@
           "500,000": 1
         }
       },
-      "review_note": " Reviewed the Android experience essay, firsthand accounts, qualified hypotheses, public sources, author voice and README link. Private evidence stays outside Git. Reviewed Lysenko history expansion: vernalization versus heritable claims, Vavilov persecution, arrest and prison death, 1948 Party endorsement and institutional purge. Citations and dates match in both languages. Korean hypothesis name follows the author: 신 리셴코주의."
+      "review_note": " Reviewed the Android experience essay, firsthand accounts, qualified hypotheses, public sources, author voice and README link. Private evidence stays outside Git. Reviewed Lysenko history expansion: vernalization versus heritable claims, Vavilov persecution, arrest and prison death, 1948 Party endorsement and institutional purge. Citations and dates match in both languages. Korean hypothesis name follows the author: 신 리셴코주의. Reviewed quotation/paraphrase/research labels and bold emphasis. Author-supplied Korean explanation preserved verbatim apart from Markdown emphasis; the quotation identifies the published English translation."
     }
   }
 }
