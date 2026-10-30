@@ -112,4 +112,4 @@ GitHub contains current features, development history and gameplay media. Next g
 
 ## Android implementation · 2026-10-30
 
-The [Android development account](../../public/android-development-20261030.md) covers the regular and cheat APKs, Galaxy USB and wireless installation, the shared core, the Android host, tests and fixes. The implementation was developed on `feat/android-app` and merged through develop into main. Existing Apple sources were preserved. [Android installation](build-and-install.md#android-빌드와-설치) · [Galaxy gameplay](../../public/android-gameplay-20261030.md) · [Unreleased changes](../../../CHANGELOG.en.md#unreleased).
+The [Android development account](../../public/android-development-20261030.md) covers the regular and cheat APKs, Galaxy USB and wireless installation, the shared core, the Android host, tests and fixes. The implementation was developed on `feat/android-app` and merged through develop into main. Existing Apple sources were preserved. [Android installation](build-and-install.md#android-빌드와-설치) · [Galaxy gameplay](../../public/android-gameplay-20261030.md) · [v0.17 changes](../../../CHANGELOG.en.md#v017).

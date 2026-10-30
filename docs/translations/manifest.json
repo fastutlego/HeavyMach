@@ -189,8 +189,8 @@
     },
     "docs/public/development-history.md": {
       "english": "docs/en/public/development-history.md",
-      "source_sha256": "1bbb47c55724bdc6ad279a8d37deccc59aaec60bb736cd37ddcb1dd8ae77308a",
-      "english_sha256": "2e51bce4356db1216c35ecccad18fc70a05e65efd3b2b9ff5a202b82d6601b0e",
+      "source_sha256": "3e5d4a35a4d6283b53f59a28707f6e39310f3a736ccbc89bb0d52a5eae63af44",
+      "english_sha256": "59449c95a3766c493a3334f7ac95c63717b34185da1c8f7246e54ec98a2877e2",
       "reviewed_numeric_difference": {
         "source_only": {
           "7": 1,
@@ -200,7 +200,7 @@
           "3": 1
         }
       },
-      "review_note": "July and zero/two ticks use English words. Mission 3-5 is separated from Korean text in English. Operator order, formulas and tool IDs preserved. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Updated Android availability; personal paragraphs unchanged. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable."
+      "review_note": "July and zero/two ticks use English words. Mission 3-5 is separated from Korean text in English. Operator order, formulas and tool IDs preserved. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Updated Android availability; personal paragraphs unchanged. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Linked Android history to v0.17 in both languages."
     },
     "docs/public/troubleshooting.md": {
       "english": "docs/en/public/troubleshooting.md",
