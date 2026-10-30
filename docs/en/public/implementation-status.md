@@ -6,7 +6,7 @@
 [한국어](../../public/implementation-status.md) | [English](implementation-status.md)
 <!-- language-nav:end -->
 
-As of October 29, 2026, the game is **v0.16**. This release changed Lux Lunae horizontal and vertical entry spacing. It passed 23 core tests and three functional tests each on iPhone and iPad. The following work was completed in v0.15: text-free app icons and removal of SET GAME UI from mission selection. HUD editing opens from the combat pause menu. Three tests each on iPhone and iPad Simulators and two native Mac tests passed; regular and cheat apps were installed and launched wirelessly on both devices. [Screens and tests](../../public/app-icon-and-media-20261029.md).
+As of October 30, 2026, the game is **v0.17**, which adds regular and cheat Android apps. v0.16 changed Lux Lunae horizontal and vertical entry spacing. It passed 23 core tests and three functional tests each on iPhone and iPad. The following work was completed in v0.15: text-free app icons and removal of SET GAME UI from mission selection. HUD editing opens from the combat pause menu. Three tests each on iPhone and iPad Simulators and two native Mac tests passed; regular and cheat apps were installed and launched wirelessly on both devices. [Screens and tests](../../public/app-icon-and-media-20261029.md).
 
 <a id="구현된-기능"></a>
 
@@ -38,7 +38,7 @@ As of October 29, 2026, the game is **v0.16**. This release changed Lux Lunae ho
 
 The README, features, controls, installation, architecture, troubleshooting, development history, validation, status tables, changelog and credits have been written. Eight gameplay images, two GIFs and three MP4s are linked. [Writing material](../../public/publication-inventory.md) is organized for the SaaS session to prepare Apps and Mags.
 
-GitHub documents and gameplay media have been merged into main. The game release tag is v0.16.
+GitHub documents and gameplay media have been merged into main. The game release tag is v0.17.
 
 <a id="남은-기능과-연구"></a>
 
@@ -61,10 +61,10 @@ Remaining tests cover display timing, long-session heat/memory, physical keyboar
 
 ## Distribution and versions
 
-The repository became public on October 28, 2026. The unified report site requires owner login. Git tags run from v0.9 through v0.16; v0.16 Releases offers a source-and-resource archive. Build and install iPhone, iPad and Mac apps through Xcode. A fresh clone builds using Git/LFS resources. v0.9 predates resource registration and needs additional resource preparation to build that historical code. [Installation](build-and-install.md) · [Version restoration](../../repository-management.md)
+The repository became public on October 28, 2026. The unified report site requires owner login. Git tags run from v0.9 through v0.17; v0.17 Releases offers a source-and-resource archive. Build and install iPhone, iPad and Mac apps through Xcode. A fresh clone builds using Git/LFS resources. v0.9 predates resource registration and needs additional resource preparation to build that historical code. [Installation](build-and-install.md) · [Version restoration](../../repository-management.md)
 
 <a id="android-구현--2026-10-30"></a>
 
 ## Android implementation · 2026-10-30
 
-The [Android development account](../../public/android-development-20261030.md) covers the regular and cheat APKs, Galaxy USB and wireless installation, the shared core, the Android host, tests and fixes. The implementation was developed on `feat/android-app` and merged through develop into main. Existing Apple sources were preserved. Build Android from current main; it is not included in the v0.16 release. [Android installation](build-and-install.md#android-빌드와-설치), [Galaxy gameplay gallery](../../public/android-gameplay-20261030.md).
+The [Android development account](../../public/android-development-20261030.md) covers the regular and cheat APKs, Galaxy USB and wireless installation, the shared core, the Android host, tests and fixes. The implementation was developed on `feat/android-app` and merged through develop into main. Existing Apple sources were preserved. Build Android from the v0.17 source. [Android installation](build-and-install.md#android-빌드와-설치), [Galaxy gameplay gallery](../../public/android-gameplay-20261030.md).

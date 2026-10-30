@@ -6,9 +6,25 @@
 
 [최신 릴리스](https://github.com/gelb2/HeavyMach/releases/latest) · [GitHub 전체 릴리스](https://github.com/gelb2/HeavyMach/releases)
 
+| 버전 | 태그 기준일 | 주요 변경 |
+|---|---|---|
+| [v0.17](#v017) | 2026-10-30 | Android 앱·업그레이드 창 오류 수정 |
+| [v0.16](#v016) | 2026-10-29 | 럭스루나에 진입 배치 |
+| [v0.15](#v015) | 2026-10-29 | 앱 아이콘·HUD 편집 진입 정리 |
+| [v0.14](#v014) | 2026-10-29 | HUD 배치 편집 |
+| [v0.13](#v013) | 2026-10-28 | 쉴카·퉁구스카 |
+| [v0.12](#v012) | 2026-10-27 | 럭스루나에 전투기 |
+| [v0.11](#v011) | 2026-10-27 | 자동조준·전체 화면 도어 |
+| [v0.10](#v010) | 2026-10-27 | Apple 플랫폼·키보드·VTOL |
+| [v0.9](#v09) | 2026-10-26 | iPhone 복원판 |
+
 <a id="unreleased"></a>
 
-## 미발행 — 현재 main
+<a id="v017"></a>
+
+## v0.17 — 2026-10-30
+
+[Release・다운로드](https://github.com/gelb2/HeavyMach/releases/tag/v0.17) · [소스 태그](https://github.com/gelb2/HeavyMach/tree/v0.17) · [이전 버전과 비교](https://github.com/gelb2/HeavyMach/compare/v0.16...v0.17)
 
 ### Android 일반·치트 앱 추가
 
@@ -18,20 +34,11 @@
 - 첫 보스 이후 2-1 진입 시 업그레이드 창 뒤로 전투가 계속되고 버튼이 반응하지 않던 오류를 수정했다. Galaxy와 에뮬레이터에서 각각 12개 회귀 검사를 통과했다.
 - 수정본으로 직접 플레이한 미션 3-4·3-5의 이미지 8장·GIF 3개·영상 3개를 공개했다. 이어서 플레이한 범위에서 오작동을 발견하지 못했다.
 - Android 구현 당시 기존 Apple 소스·공용 코어·자원·빌드 구성을 유지했다. iOS Simulator와 native Mac의 일반·치트 앱 네 빌드가 통과했다.
-- 현재 APK는 최적화한 debug 서명본이다. 앱 내부 버전은 `0.16-android-dev`이며 최신 릴리스 태그 v0.16에는 Android가 포함되지 않는다. 전체 캠페인 클리어, 장시간 발열·메모리, Android 태블릿·16KB 페이지 실기기와 배포 서명이 남아 있다.
+- 현재 APK는 최적화한 debug 서명본이다. 앱 내부 버전은 `0.16-android-dev`를 유지하며 소스 릴리스 태그는 v0.17이다. 전체 캠페인 클리어, 장시간 발열·메모리, Android 태블릿·16KB 페이지 실기기와 배포 서명이 남아 있다.
 
 [Android 설치](docs/public/build-and-install.md#android-빌드와-설치) · [개발 과정·공용 모듈·수정 내역](docs/public/android-development-20261030.md) · [Galaxy 플레이 자료](docs/public/android-gameplay-20261030.md) · [검증](docs/public/validation.md#android-검사--2026-10-30)
 
-| 버전 | 태그 기준일 | 주요 변경 |
-|---|---|---|
-| [v0.16](#v016) | 2026-10-29 | 럭스루나에 진입 배치 |
-| [v0.15](#v015) | 2026-10-29 | 앱 아이콘·HUD 편집 진입 정리 |
-| [v0.14](#v014) | 2026-10-29 | HUD 배치 편집 |
-| [v0.13](#v013) | 2026-10-28 | 쉴카·퉁구스카 |
-| [v0.12](#v012) | 2026-10-27 | 럭스루나에 전투기 |
-| [v0.11](#v011) | 2026-10-27 | 자동조준·전체 화면 도어 |
-| [v0.10](#v010) | 2026-10-27 | Apple 플랫폼·키보드·VTOL |
-| [v0.9](#v09) | 2026-10-26 | iPhone 복원판 |
+[소스·자원 압축본](https://github.com/gelb2/HeavyMach/releases/download/v0.17/HeavyMach-v0.17-source-with-assets.tar.gz) · [고지 ZIP](https://github.com/gelb2/HeavyMach/releases/download/v0.17/HeavyMach-v0.17-notices.zip) · [SHA256SUMS](https://github.com/gelb2/HeavyMach/releases/download/v0.17/SHA256SUMS.txt)
 
 <a id="v016"></a>
 

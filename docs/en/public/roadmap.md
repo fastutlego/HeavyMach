@@ -6,7 +6,7 @@
 [한국어](../../public/roadmap.md) | [English](roadmap.md)
 <!-- language-nav:end -->
 
-This describes current main. The latest Apple release is v0.16; Android was added to main afterward. I saw no abnormal behavior while playing the installed iPhone and iPad apps. The following fixes and tests remain.
+This describes current main. v0.17 includes the Apple and Android apps. I saw no abnormal behavior while playing the installed iPhone and iPad apps. The following fixes and tests remain.
 
 <a id="버그와-성능"></a>
 

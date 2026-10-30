@@ -8,9 +8,25 @@
 
 [Latest release](https://github.com/gelb2/HeavyMach/releases/latest) · [All GitHub releases](https://github.com/gelb2/HeavyMach/releases)
 
+| Version | Tag date | Main changes |
+|---|---|---|
+| [v0.17](#v017) | 2026-10-30 | Android apps and upgrade-window fix |
+| [v0.16](#v016) | 2026-10-29 | Lux Lunae entry placement |
+| [v0.15](#v015) | 2026-10-29 | App icons and HUD editor entry |
+| [v0.14](#v014) | 2026-10-29 | HUD layout editing |
+| [v0.13](#v013) | 2026-10-28 | Shilka and Tunguska |
+| [v0.12](#v012) | 2026-10-27 | Lux Lunae fighters |
+| [v0.11](#v011) | 2026-10-27 | Auto-aim and full-screen doors |
+| [v0.10](#v010) | 2026-10-27 | Apple platforms, keyboard and VTOLs |
+| [v0.9](#v09) | 2026-10-26 | iPhone restoration |
+
 <a id="unreleased"></a>
 
-## Unreleased — current main
+<a id="v017"></a>
+
+## v0.17 — 2026-10-30
+
+[Release and downloads](https://github.com/gelb2/HeavyMach/releases/tag/v0.17) · [Source tag](https://github.com/gelb2/HeavyMach/tree/v0.17) · [Compare with previous version](https://github.com/gelb2/HeavyMach/compare/v0.16...v0.17)
 
 <a id="android-일반치트-앱-추가"></a>
 
@@ -22,20 +38,11 @@ Added Android apps using the existing C++ game core, images, audio and maps. Kot
 - Fixed combat continuing behind an unresponsive upgrade window when entering 2-1 after the first boss. Passed 12 regression checks on each of Galaxy and emulator.
 - Published 8 images, 3 GIFs and 3 videos from my play of missions 3-4 and 3-5 on the fixed build. I found no malfunctions during my subsequent play.
 - During Android implementation, existing Apple sources, shared core, resources and build configuration were preserved. All four regular/cheat iOS Simulator and native Mac builds passed.
-- Current APKs use optimized code and debug signing. Their internal version is `0.16-android-dev`; the latest release tag, v0.16, does not include Android. Full campaign completion, extended thermal and memory tests, Android tablets, physical 16KB-page devices and distribution signing remain.
+- Current APKs use optimized code and debug signing. Their internal app version remains `0.16-android-dev`; the source release tag is v0.17. Full campaign completion, extended thermal and memory tests, Android tablets, physical 16KB-page devices and distribution signing remain.
 
 [Android installation](docs/en/public/build-and-install.md#android-빌드와-설치) · [Development, shared modules and fixes](docs/public/android-development-20261030.md) · [Galaxy gameplay](docs/public/android-gameplay-20261030.md) · [Validation](docs/en/public/validation.md#android-검사--2026-10-30)
 
-| Version | Tag date | Main changes |
-|---|---|---|
-| [v0.16](#v016) | 2026-10-29 | Lux Lunae entry placement |
-| [v0.15](#v015) | 2026-10-29 | App icons and HUD editor entry |
-| [v0.14](#v014) | 2026-10-29 | HUD layout editing |
-| [v0.13](#v013) | 2026-10-28 | Shilka and Tunguska |
-| [v0.12](#v012) | 2026-10-27 | Lux Lunae fighters |
-| [v0.11](#v011) | 2026-10-27 | Auto-aim and full-screen doors |
-| [v0.10](#v010) | 2026-10-27 | Apple platforms, keyboard and VTOLs |
-| [v0.9](#v09) | 2026-10-26 | iPhone restoration |
+[Source and resource archive](https://github.com/gelb2/HeavyMach/releases/download/v0.17/HeavyMach-v0.17-source-with-assets.tar.gz) · [Notices ZIP](https://github.com/gelb2/HeavyMach/releases/download/v0.17/HeavyMach-v0.17-notices.zip) · [SHA256SUMS](https://github.com/gelb2/HeavyMach/releases/download/v0.17/SHA256SUMS.txt)
 
 <a id="v016"></a>
 
