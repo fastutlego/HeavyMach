@@ -58,7 +58,7 @@ Apple 플랫폼 공용 모듈·native Mac·키보드 요구는 2026-10-26 사용
 
 ## Android 후속 계획
 
-2026-10-26 요청으로 [Android APK 개발 계획](android-port-plan-20261026.md)과 [후속 타이틀 조사](related-titles-20261026.md)를 추가했다. 2026-10-30 `feat/android-app`에서 일반·치트 APK를 구현하고 Galaxy USB·무선 설치와 실행을 검사했다. [현재 구현·검사 범위](android-implementation-20261030.md). 관련 업무는 document-map의 android, port-heavymach-android와 debug-heavymach-android 스킬을 읽는다. Android는 기능 브랜치에서 검사 중이며 `develop`·`main`에 병합하지 않았다.
+2026-10-26 요청으로 [Android APK 개발 계획](android-port-plan-20261026.md)과 [후속 타이틀 조사](related-titles-20261026.md)를 추가했다. 2026-10-30 `feat/android-app`에서 일반·치트 APK를 구현하고 Galaxy USB·무선 설치와 실행을 검사했다. [현재 구현·검사 범위](android-implementation-20261030.md). 관련 업무는 document-map의 android, port-heavymach-android와 debug-heavymach-android 스킬을 읽는다. Android 구현과 공개 개발·플레이 문서는 2026-10-30 `feat/android-app`→`develop`→`main`으로 병합했다(main `9a63578f`). 최신 태그 v0.16에는 포함되지 않으며 v0.17은 아직 발행하지 않았다.
 
 ## 개발자의 변과 프로젝트 소개
 

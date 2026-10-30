@@ -5,8 +5,8 @@
   "documents": {
     "README.md": {
       "english": "README.en.md",
-      "source_sha256": "44af21de3ea3fe9b29c9806ff2e1f88acddf9a5509f15ae0568f64137d419011",
-      "english_sha256": "f1717db48094aa7398d7e324a6f4a059374e9d83684b346ab53c74eb680e794c",
+      "source_sha256": "a14881ad04a565d84002e0fcfcaa7278926dd63c3f3e4c49a88d3b684b637c90",
+      "english_sha256": "f7b73699acaa8f2d8430806c8234fac243a27e4e2b2872e445ada3bc0661519a",
       "reviewed_numeric_difference": {
         "source_only": {
           "7": 1,
@@ -23,7 +23,7 @@
           "13": 2
         }
       },
-      "review_note": "July, nine years/three months, aircraft and clip quantities use English words; source punctuation attaches Korean suffixes to digits. Shared personal paragraphs match the English statement. User-approved correction: 이승에서나 → in this life. Updated Android availability; personal paragraphs unchanged. Added iOS gallery and four physical-device cheat captures in both languages."
+      "review_note": "July, nine years/three months, aircraft and clip quantities use English words; source punctuation attaches Korean suffixes to digits. Shared personal paragraphs match the English statement. User-approved correction: 이승에서나 → in this life. Updated Android availability; personal paragraphs unchanged. Added iOS gallery and four physical-device cheat captures in both languages. Reviewed Android overview, regular Galaxy gameplay images/GIF, OS table, Gradle installation, shared-core paragraph and current-main versus v0.16 distinction; author opening unchanged."
     },
     "CHANGELOG.md": {
       "english": "CHANGELOG.en.md",
@@ -137,8 +137,8 @@
     },
     "docs/public/implementation-status.md": {
       "english": "docs/en/public/implementation-status.md",
-      "source_sha256": "49de7e726cb76a182e3b102f80f24763c839d0d83175f813696884f024477182",
-      "english_sha256": "86a13888cc7d06bba0ca66e6bb31bdf3c28b92141e49619fe5fd6fc887aeb3ce",
+      "source_sha256": "78c08ab0a51b99caa83c008ba1787236a268d70988fc993a58ab8ebeaf2fc245",
+      "english_sha256": "db26ec26560b07a087d6b0f6cfd253dc6411b39adb878e7d35293d6663a7983b",
       "reviewed_numeric_difference": {
         "source_only": {
           "10": 2,
@@ -153,12 +153,12 @@
           "13": 1
         }
       },
-      "review_note": "English month/date syntax, word counts and iPad 13-inch spacing differ. Current v0.16 and historical v0.15 tests distinguished. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Updated Android availability; personal paragraphs unchanged."
+      "review_note": "English month/date syntax, word counts and iPad 13-inch spacing differ. Current v0.16 and historical v0.15 tests distinguished. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Updated Android availability; personal paragraphs unchanged. Reviewed Android develop-to-main merge and v0.16 exclusion, matching installation and gallery links."
     },
     "docs/public/build-and-install.md": {
       "english": "docs/en/public/build-and-install.md",
-      "source_sha256": "36ac9678cbc5eded9cf2b9f31c8ad44d2f385d6acb2d5c7279edccfd2be1339a",
-      "english_sha256": "510b324a5c582b0c789cb278cc0fbd5a9dfb8311cfab999e97e4916a4b299b9a",
+      "source_sha256": "0e7197597c290f76fd2b4f2e5a8d51f90cddf9c0170f14102b1e34d648892b95",
+      "english_sha256": "81382ad768382daea737fd180298b5160433e01e9ee4f81da323a18a93b6f716",
       "reviewed_numeric_difference": {
         "source_only": {
           "10": 1,
@@ -166,7 +166,7 @@
         },
         "english_only": {}
       },
-      "review_note": "October and four builds use English words. All fenced commands copied unchanged; current resource count is 1504."
+      "review_note": "October and four builds use English words. All fenced commands copied unchanged; current resource count is 1504. Reviewed Android SDK/NDK/CMake/JDK requirements against Gradle config, identical commands and APK paths, debug signing and current-main scope in both languages."
     },
     "docs/public/gameplay-guide.md": {
       "english": "docs/en/public/gameplay-guide.md",
@@ -180,13 +180,13 @@
     },
     "docs/public/architecture.md": {
       "english": "docs/en/public/architecture.md",
-      "source_sha256": "ea0a62c16d3709ad565d3062fd9fc0e1781dc0c7f4ec11543b502c6f0378a5e0",
-      "english_sha256": "4542e29b261538690a44efb2e1349221eb8d87b5ad4368029d3f359041496dc0",
+      "source_sha256": "82a01837b286941aded30d271268e1be545275d10ce688644377009c81ee42df",
+      "english_sha256": "537f92e47ec81677d573e6c88ce5f981d0c6e734aaee91dd895d399d31de9264",
       "reviewed_numeric_difference": {
         "source_only": {},
         "english_only": {}
       },
-      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed."
+      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Reviewed Android Gradle/NDK shared core and Kotlin/JNI/platform-host responsibilities."
     },
     "docs/public/development-history.md": {
       "english": "docs/en/public/development-history.md",
@@ -222,8 +222,8 @@
     },
     "docs/public/validation.md": {
       "english": "docs/en/public/validation.md",
-      "source_sha256": "65742d53ba3658645360e0ab63c5cd8f88fa0841a133a9089ab61c59d2c7cf1d",
-      "english_sha256": "25a291df431d35b603970872bd64fee2427b52e148c5074a11ad36da36104144",
+      "source_sha256": "48484f54cef1657f7d94bbd489ac7d20768e6c93ef1655b001607176c6f6d489",
+      "english_sha256": "e0ad410c2c44658a4581375f843d8ae8dc8f6b720be892bcd4a11c023f6188a9",
       "reviewed_numeric_difference": {
         "source_only": {
           "10": 4,
@@ -238,7 +238,7 @@
           "20": 1
         }
       },
-      "review_note": "Dates and counts use English words. The two 20ms references are preserved; source 기준20ms attaches digits to Korean text. Historical failures and current v0.16 check separated. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed."
+      "review_note": "Dates and counts use English words. The two 20ms references are preserved; source 기준20ms attaches digits to Korean text. Historical failures and current v0.16 check separated. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Reviewed latest tag versus main Android status and device-results link."
     },
     "docs/public/lux-lunae-intent-20261028.md": {
       "english": "docs/en/public/lux-lunae-intent-20261028.md",
@@ -263,13 +263,13 @@
     },
     "docs/public/index.md": {
       "english": "docs/en/public/index.md",
-      "source_sha256": "c7018463c24001943f32d48383039fab4a2f789f907873e0c18853e7fefd13e7",
-      "english_sha256": "a838dc9f524bbf51ba3e4cc237c82da0d9ad97e2b6990d2caa12ba11d8d6fb87",
+      "source_sha256": "9aaa0755b12633f2a19f908f8d2f160da6612e3055a9e773bbf3861496ce7013",
+      "english_sha256": "eef1bbc22c5fb74c6fcbfd3d2b579d25e4a0240ba0348393008fb5b238655c31",
       "reviewed_numeric_difference": {
         "source_only": {},
         "english_only": {}
       },
-      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match."
+      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match. Reviewed Android availability and installation/development/gallery links; English captions identify Korean-only linked articles."
     },
     "docs/public/design-intent.md": {
       "english": "docs/en/public/design-intent.md",

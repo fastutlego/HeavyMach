@@ -5,9 +5,9 @@
 <!-- language-nav:end -->
 
 [![Git tag v0.16](docs/public/media/badges/version.svg)](https://github.com/gelb2/HeavyMach/tree/v0.16)
-[![Platforms iOS iPadOS macOS](docs/public/media/badges/platforms.svg)](docs/en/public/validation.md)
+[![Platforms iOS iPadOS macOS Android](docs/public/media/badges/platforms.svg)](docs/en/public/validation.md)
 [![Architecture arm64](docs/public/media/badges/arch.svg)](docs/en/public/build-and-install.md)
-[![C++20 and Objective-C++](docs/public/media/badges/code.svg)](docs/en/public/architecture.md)
+[![C++20, Objective-C++ and Kotlin](docs/public/media/badges/code.svg)](docs/en/public/architecture.md)
 [![Code license MIT](docs/public/media/badges/license.svg)](LICENSE-SCOPE.en.md)
 
 <a id="heavymach를-다시-만든-이유"></a>
@@ -37,13 +37,13 @@ Money is only needed in this life.
 
 ## Overview and installation
 
-**HeavyMach**, the 2009 side-scrolling tank game, has been rebuilt to run on current iPhone, iPad and Mac devices. Move and jump the tank, switch weapons and fight ground and air enemies. Wider screens, keyboard controls, auto-aim and new aircraft extend the original combat and progression.
+**HeavyMach**, the 2009 side-scrolling tank game, has been rebuilt to run on current iPhone, iPad, Mac and Android devices. Move and jump the tank, switch weapons and fight ground and air enemies. Wider screens, keyboard controls, auto-aim and new aircraft extend the original combat and progression.
 
-The current game version is [v0.16](https://github.com/gelb2/HeavyMach/tree/v0.16). Regular and cheat validation apps can be installed separately. The cheat app tests the same game with specified missions, weapons and upgrades.
+The latest release tag is [v0.16](https://github.com/gelb2/HeavyMach/tree/v0.16). The regular and cheat Android apps were added to main afterward. Use current main to build Android. Regular and cheat validation apps can be installed separately. The cheat app tests the same game with specified missions, weapons and upgrades.
 
 [Latest release](https://github.com/gelb2/HeavyMach/releases/latest) · [Version history](CHANGELOG.en.md)
 
-[Installation](docs/en/public/build-and-install.md) · [Controls](docs/en/public/gameplay-guide.md) · [Features](docs/en/public/features.md) · [Troubleshooting](docs/en/public/troubleshooting.md) · [Documentation](docs/en/public/index.md)
+[Apple installation](docs/en/public/build-and-install.md) · [Android installation](docs/en/public/build-and-install.md#android-빌드와-설치) · [Android gameplay](docs/public/android-gameplay-20261030.md) · [Controls](docs/en/public/gameplay-guide.md) · [Features](docs/en/public/features.md) · [Troubleshooting](docs/en/public/troubleshooting.md) · [Documentation](docs/en/public/index.md)
 
 <a id="원작의-전투와-조작"></a>
 
@@ -160,6 +160,20 @@ The two recordings I provided contain eight selected images, two GIFs and three 
 
 </details>
 
+<a id="android-플레이-캡처-모음"></a>
+
+## Android gameplay gallery
+
+Missions 3-4 and 3-5, recorded during my play in the regular Galaxy app. Tilt the device to move and touch the screen to fire. Auto-aim, added aircraft and ground units, and HUD layout editing are also available.
+
+![Fighting the aircraft boss in mission 3-5 in the regular Galaxy app.](docs/public/media/android-gameplay-20261030/06-boss.png)
+
+![Fighting the Lux Lunae squadron in the regular Galaxy app](docs/public/media/android-gameplay-20261030/fighters.gif)
+
+[Combat video with audio — 8 seconds](docs/public/media/android-gameplay-20261030/fighters.mp4) · [All Android captures: 8 images, 3 GIFs and 3 videos](docs/public/android-gameplay-20261030.md)
+
+Combat initially continued behind the upgrade window after the first boss. That bug was fixed, and I saw no malfunctions during my subsequent play. [Development time, shared modules, fixes and tests](docs/public/android-development-20261030.md)
+
 <a id="플랫폼과-개발-상태"></a>
 
 ## Platforms and development status
@@ -191,12 +205,17 @@ A script combining download, resource preparation, building and launch is also p
 |---|---|---|
 | iPhone and iPad | iOS/iPadOS 15.0 | iPhone Air and iPad Air 13-inch M2, OS 27.0.1 |
 | Mac | macOS 12.0 | Mac mini M4 Pro, macOS 27.0.1 |
+| Android | Android 8.0 / API 26, arm64-v8a | Galaxy SM-S731N, Android 16 |
 
-Current builds target Apple Silicon arm64. See [validation](docs/en/public/validation.md) for device environments and [installation](docs/en/public/build-and-install.md) for build-tool versions.
+Apple builds target Apple Silicon arm64; Android builds target arm64-v8a. See [validation](docs/en/public/validation.md) for device environments and [installation](docs/en/public/build-and-install.md) for build-tool versions.
 
 <a id="빌드하기"></a>
 
 ## Build
+
+<a id="iphoneipadmac"></a>
+
+### iPhone, iPad and Mac
 
 Use an Apple Silicon Mac, Xcode, CMake 3.20 or later, Python 3 and Git LFS. The repository includes source, game images, audio, maps and build projects.
 
@@ -213,6 +232,20 @@ Select your development team and destination in Xcode. iPhone/iPad schemes are `
 
 [Simulator commands, device installation, signing and troubleshooting](docs/en/public/build-and-install.md)
 
+### Android
+
+After cloning and downloading LFS resources above, prepare JDK 17, Android SDK 36, NDK 26.3.11579264, CMake 3.22.1 and Python 3. Set the SDK location in Android Studio. Enable USB debugging and find the connected device with `adb devices`.
+
+```sh
+cd Android
+./gradlew :app:assembleNormalDebug :app:assembleCheatDebug
+adb -s SERIAL install -r app/build/outputs/apk/normal/debug/app-normal-debug.apk
+```
+
+Replace `SERIAL` with the target device ID. Install the cheat app from `app/build/outputs/apk/cheat/debug/app-cheat-debug.apk` the same way. Current APKs are optimized builds with debug signing.
+
+[SDK setup, APK paths and USB/wireless installation](docs/en/public/build-and-install.md#android-빌드와-설치) · [Android tools and test procedures](Android/README.md)
+
 <a id="개발-중-고친-문제"></a>
 
 ## Problems fixed during development
@@ -227,7 +260,7 @@ Codex limited file writes to save events. Game graphics changed to OpenGL textur
 
 ## Code structure and versions
 
-One workspace manages shared modules, the iOS/iPadOS app and native Mac app. The C++ core, images, audio and maps are shared, with platform-specific window, input and graphics-context connections. Static frameworks provide shared code; `HeavyMachAssets.bundle` supplies resources.
+One workspace manages shared modules, the iOS/iPadOS app and native Mac app. The C++ core, images, audio and maps are shared, with platform-specific window, input and graphics-context connections. On Apple platforms, static frameworks provide shared code and `HeavyMachAssets.bundle` supplies resources. Android uses the Gradle project in `Android/` to build the same C++ core with the NDK. Kotlin, JNI and an Android C++ host connect input, menus, rendering and audio; the APK includes the same game resources.
 
 [Structure and reasons for modularization](docs/en/public/architecture.md) · [Validation](docs/en/public/validation.md) · [Changelog](CHANGELOG.en.md)
 

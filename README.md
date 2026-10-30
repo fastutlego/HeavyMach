@@ -5,9 +5,9 @@
 <!-- language-nav:end -->
 
 [![Git tag v0.16](docs/public/media/badges/version.svg)](https://github.com/gelb2/HeavyMach/tree/v0.16)
-[![Platforms iOS iPadOS macOS](docs/public/media/badges/platforms.svg)](docs/public/validation.md)
+[![Platforms iOS iPadOS macOS Android](docs/public/media/badges/platforms.svg)](docs/public/validation.md)
 [![Architecture arm64](docs/public/media/badges/arch.svg)](docs/public/build-and-install.md)
-[![C++20 and Objective-C++](docs/public/media/badges/code.svg)](docs/public/architecture.md)
+[![C++20, Objective-C++ and Kotlin](docs/public/media/badges/code.svg)](docs/public/architecture.md)
 [![Code license MIT](docs/public/media/badges/license.svg)](LICENSE-SCOPE.md)
 
 ## HeavyMach를 다시 만든 이유
@@ -33,13 +33,13 @@ HeavyMach도 2015년, 2016년 생활을 청산하고 다른 직업을 택하게 
 
 ## 간단한 설명과 설치
 
-2009년의 횡스크롤 전차 게임 **HeavyMach**를 현재의 iPhone·iPad·Mac에서 실행하도록 다시 만들었다. 전차를 움직이고 뛰어오르며, 무기를 바꿔 지상·공중의 적과 싸운다. 원작의 전투와 성장 구조에 넓은 화면, 키보드 조작, 자동조준과 새로운 항공기를 추가했다.
+2009년의 횡스크롤 전차 게임 **HeavyMach**를 현재의 iPhone·iPad·Mac·Android에서 실행하도록 다시 만들었다. 전차를 움직이고 뛰어오르며, 무기를 바꿔 지상·공중의 적과 싸운다. 원작의 전투와 성장 구조에 넓은 화면, 키보드 조작, 자동조준과 새로운 항공기를 추가했다.
 
-현재 게임 버전은 [v0.16](https://github.com/gelb2/HeavyMach/tree/v0.16)다. 일반 앱과 치트 검증 앱을 각각 설치할 수 있다. 치트 앱에서는 미션·무기·강화 조건을 지정해 같은 게임을 검사한다.
+최신 릴리스 태그는 [v0.16](https://github.com/gelb2/HeavyMach/tree/v0.16)이다. Android 일반·치트 앱은 그 이후 main에 추가했다. Android를 빌드하려면 현재 main을 받는다. 일반 앱과 치트 검증 앱을 각각 설치할 수 있다. 치트 앱에서는 미션·무기·강화 조건을 지정해 같은 게임을 검사한다.
 
 [최신 릴리스](https://github.com/gelb2/HeavyMach/releases/latest) · [전체 버전 이력](CHANGELOG.md)
 
-[설치](docs/public/build-and-install.md) · [조작](docs/public/gameplay-guide.md) · [기능](docs/public/features.md) · [트러블슈팅](docs/public/troubleshooting.md) · [전체 문서](docs/public/index.md)
+[Apple 설치](docs/public/build-and-install.md) · [Android 설치](docs/public/build-and-install.md#android-빌드와-설치) · [Android 플레이](docs/public/android-gameplay-20261030.md) · [조작](docs/public/gameplay-guide.md) · [기능](docs/public/features.md) · [트러블슈팅](docs/public/troubleshooting.md) · [전체 문서](docs/public/index.md)
 
 ## 원작의 전투와 조작
 
@@ -142,6 +142,18 @@ HUD의 **A 버튼**으로 자동조준을 켜면 전방의 가까운 적을 선�
 
 </details>
 
+## Android 플레이 캡처 모음
+
+Galaxy의 일반 앱에서 직접 플레이한 미션 3-4와 3-5다. 기기를 기울여 이동하고 화면을 터치해 사격한다. 자동조준, 추가 항공기·지상 유닛, HUD 위치 편집도 사용할 수 있다.
+
+![Galaxy 일반 앱에서 미션 3-5의 항공기형 보스와 교전한다.](docs/public/media/android-gameplay-20261030/06-boss.png)
+
+![Galaxy 일반 앱에서 럭스루나에 편대와 교전하는 장면](docs/public/media/android-gameplay-20261030/fighters.gif)
+
+[음향 포함 교전 영상 — 8초](docs/public/media/android-gameplay-20261030/fighters.mp4) · [전체 Android 캡처 8장·GIF 3개·영상 3개](docs/public/android-gameplay-20261030.md)
+
+첫 보스 이후 업그레이드 창 뒤로 전투가 계속되던 오류를 고쳤다. 수정본으로 이어서 플레이했을 때 오작동은 보이지 않았다. [개발 시간·공용 모듈·수정과 검사](docs/public/android-development-20261030.md)
+
 ## 플랫폼과 개발 상태
 
 화면 확장, iPad·Mac 지원과 키보드 조작도 내가 추가로 요구한 기능이다. 넓은 화면에는 더 많은 월드를 표시하고, 키보드로 이동·점프·조준·발사·무기 전환과 메뉴를 모두 조작할 수 있게 했다. iPad에서는 터치·틸트와 키보드를 함께 지원한다.
@@ -169,10 +181,13 @@ HUD의 **A 버튼**으로 자동조준을 켜면 전방의 가까운 적을 선�
 |---|---|---|
 | iPhone·iPad | iOS/iPadOS 15.0 | iPhone Air·iPad Air 13형 M2, OS 27.0.1 |
 | Mac | macOS 12.0 | Mac mini M4 Pro, macOS 27.0.1 |
+| Android | Android 8.0 / API 26, arm64-v8a | Galaxy SM-S731N, Android 16 |
 
-현재 빌드는 Apple Silicon·arm64 대상이다. 기기별 검사 환경은 [검증 기록](docs/public/validation.md)에 있다. 빌드 도구 버전은 [설치 문서](docs/public/build-and-install.md)에 있다.
+Apple판은 Apple Silicon·arm64, Android판은 arm64-v8a 대상이다. 기기별 검사 환경은 [검증 기록](docs/public/validation.md)에 있다. 빌드 도구 버전은 [설치 문서](docs/public/build-and-install.md)에 있다.
 
 ## 빌드하기
+
+### iPhone·iPad·Mac
 
 Apple Silicon Mac, Xcode, CMake 3.20 이상, Python 3, Git LFS를 사용한다. 소스·게임 이미지·음원·맵·빌드 프로젝트는 이 저장소에 들어 있다.
 
@@ -189,6 +204,20 @@ Xcode에서 본인의 개발 팀을 지정하고 실행 대상을 선택한다. 
 
 [시뮬레이터 명령·기기 설치·서명·오류 해결](docs/public/build-and-install.md)
 
+### Android
+
+위 clone·LFS 다운로드를 마친 뒤 JDK 17, Android SDK 36, NDK 26.3.11579264, CMake 3.22.1과 Python 3를 준비한다. Android Studio에서 SDK 위치를 설정한다. USB 디버깅을 켜고 연결한 기기는 `adb devices`로 확인한다.
+
+```sh
+cd Android
+./gradlew :app:assembleNormalDebug :app:assembleCheatDebug
+adb -s SERIAL install -r app/build/outputs/apk/normal/debug/app-normal-debug.apk
+```
+
+`SERIAL`을 설치할 기기 ID로 바꾼다. 치트 앱은 `app/build/outputs/apk/cheat/debug/app-cheat-debug.apk`를 같은 방식으로 설치한다. 현재 APK는 최적화한 debug 서명본이다.
+
+[SDK 설정·APK 경로·USB/무선 설치](docs/public/build-and-install.md#android-빌드와-설치) · [Android 도구와 검사 절차](Android/README.md)
+
 ## 개발 중 고친 문제
 
 초기 구현에는 사격·피격 때마다 파일을 쓰는 경로, CPU에서 그림을 다시 만드는 렌더링, 음원 재시작 지연이 있었다. 나는 정상적으로 플레이한 기준과 비교해 왜 동작이 달라졌는지 물었고, Codex에 저장·그래픽·음향·시간 계산을 각각 대조하게 했다.
@@ -199,7 +228,7 @@ Codex는 파일 쓰기를 저장 시점에만 실행하도록 분리했다. 게�
 
 ## 코드 구조와 버전
 
-하나의 workspace에서 공용 모듈·iOS/iPadOS 앱·native Mac 앱을 관리한다. C++ 게임 코어와 이미지·음원·맵은 공유하고, 플랫폼별 창·입력·그래픽 컨텍스트를 연결한다. 공용 코드는 정적 framework, 자원은 `HeavyMachAssets.bundle`로 앱에 포함한다.
+하나의 workspace에서 공용 모듈·iOS/iPadOS 앱·native Mac 앱을 관리한다. C++ 게임 코어와 이미지·음원·맵은 공유하고, 플랫폼별 창·입력·그래픽 컨텍스트를 연결한다. Apple 공용 코드는 정적 framework, 자원은 `HeavyMachAssets.bundle`로 앱에 포함한다. Android 앱은 `Android/`의 Gradle 프로젝트에서 같은 C++ 코어를 NDK로 빌드한다. Kotlin·JNI·Android C++ 호스트가 입력·메뉴·렌더링·음향을 연결하며, 같은 게임 자원을 APK에 포함한다.
 
 [구조와 모듈화 이유](docs/public/architecture.md) · [검증](docs/public/validation.md) · [변경 이력](CHANGELOG.md)
 

@@ -19,7 +19,6 @@ JDK 17, Android SDK 36, CMake 3.22.1, NDK 26.3.11579264를 사용한다.
 ```sh
 cd Android
 ./gradlew :app:assembleNormalDebug :app:assembleCheatDebug
-python3 tools/check_isolation.py
 ```
 
 일반 앱: `app/build/outputs/apk/normal/debug/app-normal-debug.apk`
