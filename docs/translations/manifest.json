@@ -286,13 +286,13 @@
     },
     "docs/public/roadmap.md": {
       "english": "docs/en/public/roadmap.md",
-      "source_sha256": "f9bb4c789fe4890774487d2cc0eac5e763d4b6ba1b0eee129b4166b4c4f1e6f8",
-      "english_sha256": "897758a71c5d28ffad4ec97945aae781f2455b2b4d0c6853063561473980c9af",
+      "source_sha256": "fd97f5b8088af88a36582b0570f86d9dba26d61a97620d58b298c1b14a168d2c",
+      "english_sha256": "da629dedfca5eef1330dae945f12984ba235e8a486bd03ce44c866591a8c0eae",
       "reviewed_numeric_difference": {
         "source_only": {},
         "english_only": {}
       },
-      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained."
+      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained. Recorded v0.17 publication and the remaining draft-discovery recovery task."
     }
   }
 }

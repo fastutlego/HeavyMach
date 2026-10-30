@@ -4,7 +4,7 @@
 
 ## 현재 구성
 
-GitHub Releases에는 v0.9~v0.16의 릴리스 노트가 있다. v0.12~v0.16에는 소스·자원 압축본, 고지 묶음과 SHA256SUMS가 있다. README는 최신 태그와 Releases를 연결하고, CHANGELOG는 버전별 변경을 기록한다. 이 구성을 이어간다.
+GitHub Releases에는 v0.9~v0.17의 릴리스 노트가 있다. v0.12~v0.17에는 소스·자원 압축본, 고지 묶음과 SHA256SUMS가 있다. README는 최신 태그와 Releases를 연결하고, CHANGELOG는 버전별 변경을 기록한다. 이 구성을 이어간다.
 
 ## 원고 위치와 내용
 
@@ -84,3 +84,7 @@ python3 -m unittest discover -s tools/tests -p 'test_release.py'
 ```
 
 실제 GitHub에는 v0.16의 게시 사전 검사를 실행해 기존 공개본 수정 차단을 확인했다. 새 Release의 업로드·공개 실검사는 다음 버전 배포 때 수행한다. [도구 검사 기록](evidence/release-tool-20261029.json), [기존 8개 릴리스 정리 기록](evidence/release-history-20261029.json).
+
+## v0.17 실제 게시 — 2026-10-30
+
+`prepare`로 추적 파일 2,786개·자원 1,504개를 압축하고 재추출 대조했다. `publish` 초안 생성 직후 목록 조회가 비어 한 차례 멈췄다. 생성된 초안의 태그·제목·본문·빈 첨부 목록을 대조하고 해당 ID를 실행 기록에 복구한 뒤 `--resume`으로 완료했다. 첨부 3개와 공개 본문·태그·서버 SHA-256을 대조했다. [v0.17 Release](https://github.com/gelb2/HeavyMach/releases/tag/v0.17) · [검사 기록](evidence/release-v0.17-20261030.json).
