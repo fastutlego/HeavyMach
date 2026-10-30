@@ -2,7 +2,7 @@
 
 HeavyMach에 관해 내가 쓴 원문과 기술 설명·수정 과정·이미지를 이 저장소에 모았다. Apps는 기술 설명, Mags는 매거진 인터뷰 형식이다. 두 곳 모두 현재 기능과 시정 과정을 다룬다. SaaS 담당 세션이 이 자료로 원고를 작성하고 서비스에 반영한다.
 
-집필은 이 저장소 **main의 최신 문서**에서 시작한다. Apple 게임 릴리스는 **v0.16**이다. Android 추가 자료는 [개발 원고](android-development-20261030.md)에 있다. 이후 추가한 글과 이미지 설명은 main에 있다.
+집필은 이 저장소 **main의 최신 문서**에서 시작한다. Apple·Android 게임 릴리스는 **v0.17**이다. Android 추가 자료는 [개발 원고](android-development-20261030.md)에 있다. 이후 추가한 글과 이미지 설명은 main에 있다.
 
 ```sh
 python3 tools/document_contract.py plan --task developer_story
@@ -14,7 +14,7 @@ python3 tools/document_contract.py check
 ## 읽는 순서
 
 1. [개발자의 변](../RESTORATION.md)과 [개발 동기 자료](../developer-background.md): 내가 제공한 원문, 연도 정정, 잡지사·필리핀 근무와 개발자 전업, HeavyMach를 선택한 이유.
-2. [README](../../README.md), [기능](features.md), [구현 상태](implementation-status.md): v0.16 게임과 추가 기능, 완료·남은 과제.
+2. [README](../../README.md), [기능](features.md), [구현 상태](implementation-status.md): v0.17 게임과 추가 기능, 완료·남은 과제.
 3. [개발 과정](development-history.md), [트러블슈팅](troubleshooting.md): 분석·비교 순서, 내 질문과 시정 지시, 기술 원인과 결과.
 4. [구조](architecture.md), [설치](build-and-install.md), [검증](validation.md): 기술 구성, 실제 사용 절차, 날짜·기기·조건별 수치.
 5. [미디어 명세](media/gameplay-20261027/media-scenes.json), [문장 스킬](../../.agents/skills/write-project-text/SKILL.md): 장면·캡션·원본 시간과 집필 규칙.
@@ -65,7 +65,7 @@ python3 tools/document_contract.py check
 
 ## 버전과 남은 근거
 
-최신 릴리스 태그는 v0.16이며 Android는 이후 main에 추가했다. 현재 구현과 남은 일은 [구현 상태](implementation-status.md)와 [내부 TODO](../usability-todo.md), 변경 순서는 [작업 이력](../current-status.md)에 있다. 작업 이력의 날짜별 항목은 당시 상태를 담고 있다. [변경 이력](../../CHANGELOG.md)과 [전체 문서 목차](../README.md)로 연결된다.
+최신 릴리스 태그는 v0.17이며 Android 일반·치트 앱을 포함한다. 현재 구현과 남은 일은 [구현 상태](implementation-status.md)와 [내부 TODO](../usability-todo.md), 변경 순서는 [작업 이력](../current-status.md)에 있다. 작업 이력의 날짜별 항목은 당시 상태를 담고 있다. [변경 이력](../../CHANGELOG.md)과 [전체 문서 목차](../README.md)로 연결된다.
 
 빌드 경고는 아직 전수조사하지 않았다. deprecated API 관련이라는 추정을 확인하고 추가 기능 개발과 병행해 수정할 예정이다. 빌드·실행 스크립트는 사례 조사를 마쳤고 구현이 남았다. [스크립트 조사·브랜치 정리](github-followup-20261028.md).
 
@@ -134,13 +134,13 @@ Mags의 답변은 개발자의 변과 제공 원문을 바탕으로 쓴다. 추�
 
 Apps에는 지상 유닛의 파츠·무장과 HUD 그림/터치 위치 공유를 설명할 때 쓴다. Mags에는 내가 지정한 유닛 조건과 화면 배치 요구를 설명하는 장면으로 쓴다. 이 작업에서는 Apps·Mags 본문을 작성하거나 sass.studio를 수정하지 않았다.
 
-새 아이콘은 [1024px PNG](media/app-icon-20261029/icon.png), 생성·파생 파일은 [아이콘 원본 폴더](../../Art/AppIcon/20261029/README.md)에 있다. 새 아이콘은 v0.15부터 포함됐으며 최신 릴리스는 v0.16이다. 이후 변경은 [현재 상태](../current-status.md)를 확인한다.
+새 아이콘은 [1024px PNG](media/app-icon-20261029/icon.png), 생성·파생 파일은 [아이콘 원본 폴더](../../Art/AppIcon/20261029/README.md)에 있다. 새 아이콘은 v0.15부터 포함됐으며 최신 릴리스는 v0.17이다. 이후 변경은 [현재 상태](../current-status.md)를 확인한다.
 
 ## Android판 · 2026-10-30
 
 [Android 개발 원고](android-development-20261030.md)를 Apps의 플랫폼 확장 설명과 Mags의 개발 과정 문답에 사용한다. 개발 기간, Apple 소스를 바꾸지 말라는 지시, 공유 코어·자원, Android 전용 파일, 빌드·입력·GPU·무선 연결 수정과 직접 플레이에서 발견한 업그레이드 오류를 담았다.
 
-세부 수치는 [구현 기록](../android-implementation-20261030.md), [시간 근거](../evidence/android-development-timeline-20261030.json), [업그레이드 오류 증거](../evidence/android-upgrade-fix-20261030.json)에 있다. [이미지와 캡션](media/android-20261030/scenes.json)은 타이틀·보스 전투·오류 전후 5장이다. Android 구현과 자료는 main에 병합됐다. v0.16 릴리스에는 포함되지 않으며 [미발행 변경 이력](../../CHANGELOG.md#unreleased)에 정리한다.
+세부 수치는 [구현 기록](../android-implementation-20261030.md), [시간 근거](../evidence/android-development-timeline-20261030.json), [업그레이드 오류 증거](../evidence/android-upgrade-fix-20261030.json)에 있다. [이미지와 캡션](media/android-20261030/scenes.json)은 타이틀·보스 전투·오류 전후 5장이다. Android 구현과 자료는 main에 병합됐다. v0.17에 포함됐으며 [변경 이력](../../CHANGELOG.md#v017)에 정리했다.
 
 [개발 범위를 정한 네 가지 판단](android-development-20261030.md#개발-범위를-정한-네-가지-판단)에 부분적인 코어 공유, Apple 파일 변경 금지, 컨텍스트·생명주기 사전 확인, Android 스킬 준비를 실제 코드와 검사 결과에 연결했다. Apps에는 플랫폼 분리와 재사용 방식, Mags에는 내가 작업 범위와 검사 대상을 정한 이유를 설명하는 자료로 사용한다. 수정 빌드 완료 시각과 이후 내 플레이에서 오작동이 보이지 않았다는 확인도 추가했다.
 

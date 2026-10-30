@@ -25,11 +25,11 @@ git lfs pull
 
 이미지·음원·맵·앱 아이콘·이미지 비교 자료는 저장소에 포함돼 있다. 앱이 사용하는 자원은 `HeavyMachAssets.bundle`에 포함된다.
 
-공개 저장소이므로 로그인 없이 소스를 내려받을 수 있다. `v0.9`는 자원을 Git에 넣기 전의 제품 코드 태그다. 새로 빌드할 때는 자원이 포함된 현재 `main`을 사용한다. [v0.16 Releases](https://github.com/gelb2/HeavyMach/releases/tag/v0.16)에 소스·자원 압축본, 고지 묶음과 SHA-256 목록을 등록했다. 압축본을 풀면 Git LFS 없이 자원 검사를 시작할 수 있다. 앱은 Xcode에서 본인의 개발 팀을 지정해 빌드하고 설치한다.
+공개 저장소이므로 로그인 없이 소스를 내려받을 수 있다. `v0.9`는 자원을 Git에 넣기 전의 제품 코드 태그다. 새로 빌드할 때는 자원이 포함된 현재 `main`을 사용한다. [v0.17 Releases](https://github.com/gelb2/HeavyMach/releases/tag/v0.17)에 소스·자원 압축본, 고지 묶음과 SHA-256 목록을 등록했다. 압축본을 풀면 Git LFS 없이 자원 검사를 시작할 수 있다. 앱은 Xcode에서 본인의 개발 팀을 지정해 빌드하고 설치한다.
 
 ## Android 빌드와 설치
 
-Android 앱은 현재 main에 있다. v0.16 릴리스 압축본에는 포함되지 않으므로 위 Git clone·LFS 명령으로 소스와 자원을 받는다. Android 8.0(API 26) 이상, arm64-v8a 기기를 대상으로 하며 Galaxy SM-S731N의 Android 16에서 플레이했다.
+Android 앱은 v0.17에 포함됐다. 위 Git clone·LFS 명령이나 v0.17 소스·자원 압축본으로 받는다. Android 8.0(API 26) 이상, arm64-v8a 기기를 대상으로 하며 Galaxy SM-S731N의 Android 16에서 플레이했다.
 
 JDK 17, Python 3, Android SDK Command-line Tools가 필요하다. Android Studio의 SDK Manager 또는 다음 명령으로 SDK 36·NDK·CMake·ADB를 설치한다.
 

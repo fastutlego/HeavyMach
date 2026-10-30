@@ -1,6 +1,6 @@
 # HeavyMach 문서
 
-최신 릴리스 태그는 v0.16이며 Android 일반·치트 앱은 이후 main에 추가했다. [프로젝트 소개와 플레이 화면](../README.md)에서 시작하거나 아래 주제로 바로 이동할 수 있다.
+최신 릴리스 태그는 v0.17이며 Android 일반·치트 앱을 포함한다. [프로젝트 소개와 플레이 화면](../README.md)에서 시작하거나 아래 주제로 바로 이동할 수 있다.
 
 ## 게임과 개발 과정
 
@@ -23,7 +23,7 @@
 | [HUD 개선 계획](public/hud-improvement-plan-20261028.md) | 그림 분할·현재 장면/예시 전투·일시정지/시작 전 편집·입력 |
 | [자동조준 상태 안내](public/auto-aim-visibility-plan-20261028.md) | HUD 편집과 별도인 대상 없음·화면 밖·가림 표시 |
 | [구현 상태](public/implementation-status.md) | 구현·문서 작업·후속 과제 |
-| [변경 이력](../CHANGELOG.md) | v0.9~v0.16의 변경·검사·다운로드와 이전 버전 비교 |
+| [변경 이력](../CHANGELOG.md) | v0.9~v0.17의 변경·검사·다운로드와 이전 버전 비교 |
 | [제작자·자원](../CREDITS.md) | 원작, 기획·구현 역할, 그림·라이브러리 |
 | [저장소 관리](repository-management.md) | develop→main, 태그와 이전 버전 재빌드 |
 
