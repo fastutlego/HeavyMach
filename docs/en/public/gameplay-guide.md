@@ -12,7 +12,7 @@ Hold the device in landscape and select a save slot and mission. The regular app
 
 ## Touch and tilt
 
-Tilt an iPhone or iPad to move the tank forward or backward. Touch a point on the battlefield to aim the barrel and fire. Use the jump button to clear obstacles and the weapon button to change weapons. Both landscape orientations are supported.
+Tilt an iPhone, iPad or Android device to move the tank forward or backward. Touch a point on the battlefield to aim the barrel and fire. Use the jump button to clear obstacles and the weapon button to change weapons. Both landscape orientations are supported.
 
 The menu button pauses combat. Sending the app to the background or locking the device also pauses it; resume manually when you return. Combat pauses after 120 seconds without input.
 

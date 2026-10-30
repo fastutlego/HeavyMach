@@ -78,3 +78,17 @@ The current resource check matched SHA-256 hashes for 1,504 build and test input
 ## Android implementation · 2026-10-30
 
 The [Android development account](../../public/android-development-20261030.md) covers the regular and cheat APKs, Galaxy USB and wireless installation, the shared core, the Android host, tests and fixes. The implementation was developed on `feat/android-app`; existing Apple sources were preserved.
+
+<a id="android-검사--2026-10-30"></a>
+
+## Android tests · 2026-10-30
+
+| Target and conditions | Checked | Result |
+|---|---|---|
+| Galaxy SM-S731N | Movement, jumping, 20 weapons and resume | 31 checks passed |
+| Galaxy after USB disconnection | Wireless installation, launch, termination and home return for regular/cheat apps | 11 checks passed |
+| Galaxy and emulator | Mission entry with a deferred upgrade, selection, confirmation, interruption and resume | 12 checks passed on each |
+| Personal play in the regular Galaxy app | Missions 3-4 and 3-5 played and recorded on the fixed build | No malfunctions observed |
+| Galaxy boss combat, 45 seconds | 2,763 display intervals | P99 in the 17ms bucket; 0 intervals above 33ms |
+
+Full campaign completion, extended thermal and memory tests, Android tablets and physical 16KB-page devices remain. [Implementation and tests](../../android-implementation-20261030.md), [upgrade regression results](../../evidence/android-upgrade-fix-20261030.json), [regular-app gameplay](../../public/android-gameplay-20261030.md).

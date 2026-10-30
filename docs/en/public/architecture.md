@@ -46,6 +46,7 @@ iPhone and iPad use device families 1 and 2 of the same iOS target. Mac runs as 
 
 | Location | Responsibility |
 |---|---|
+| [Android](../../../Android) | Kotlin Activity/JNI, Android C++ host, menus, HUD, EGL, OpenAL, Gradle/NDK builds and device tests |
 | [Sources/Core](../../../Sources/Core) | Movement, world, enemies, projectiles, damage, progression, save format, auto-aim and additional enemies |
 | [Sources/iOS](../../../Sources/iOS) | Game view, HUD, menus, OpenGL and OpenAL. This directory also contains code used by the shared Apple runtime |
 | [Sources/Apple](../../../Sources/Apple) | UIKit/AppKit and graphics-context differences; shared input connections |
@@ -72,7 +73,7 @@ The game updates once per display callback. The time accumulator that ran severa
 
 ## Graphics and coordinates
 
-OpenGL renders the game: OpenGL ES 1.1 on iOS, and desktop OpenGL compatibility on Mac. Textures are prepared at load time. The CPU does not recreate images every frame.
+OpenGL renders the game: OpenGL ES 1.1 on iOS, and desktop OpenGL compatibility on Mac. Android creates an OpenGL ES 1 context through EGL and draws the game with its own renderer. Textures are prepared at load time. The CPU does not recreate images every frame.
 
 The canvas shows more of the world according to the device's aspect ratio. World, camera, UI and physical-pixel coordinates have separate roles. Buttons use the same layout calculation for their artwork and hit areas. Menus retain their central artwork with added side backgrounds. Doors cover the full canvas.
 

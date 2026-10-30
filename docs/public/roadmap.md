@@ -4,7 +4,7 @@
 [한국어](roadmap.md) | [English](../en/public/roadmap.md)
 <!-- language-nav:end -->
 
-게임 v0.16 기준이다. 나는 설치된 iPhone·iPad 앱을 플레이하며 이상 동작을 보지 못했다. 아래에는 아직 수정하거나 검사할 일을 모았다.
+현재 main 기준이다. Apple 최신 릴리스는 v0.16이며 Android는 이후 main에 추가했다. 나는 설치된 iPhone·iPad 앱을 플레이하며 이상 동작을 보지 못했다. 아래에는 아직 수정하거나 검사할 일을 모았다.
 
 ## 버그와 성능
 
@@ -28,6 +28,8 @@
 | 적 AI와 넓은 화면 | 이동·활성 범위의 고정값이 화면 폭 변화에 영향을 받는지 후속 조사한다. |
 
 ## 빌드와 플랫폼
+
+- Xcode·Android Studio의 GUI 빌드·실행을 설치 문서 최상단에서 권장하는 방안을 조사한다. Git clone·LFS 이후 필요한 프로젝트 선택·설정과 외부 자료로 넘길 일반 사용법을 구분한다. [연구 과제](../usability-todo.md#hm-gui-install-guide).
 
 - 다운로드·자원 검사·OpenAL 준비·빌드·실행을 연결하는 스크립트. Mac 실행과 iPhone·iPad 설치, 일반·치트 앱을 선택하고 개발 팀·서명을 안내한다.
 - iPhone 무선 XCTest·Instruments 전체 실행과 두 기기의 재부팅 후 반복 설치·디버깅.

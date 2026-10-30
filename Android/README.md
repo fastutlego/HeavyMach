@@ -2,7 +2,7 @@
 
 기존 C++ 코어와 자원을 읽어 Android 앱을 빌드한다. Kotlin은 Activity·입력·센서·오디오 포커스를 담당한다. Android C++ 호스트가 메뉴·HUD·EGL/GLES·OpenAL을 연결한다.
 
-`feat/android-app`에서 구현했다. Galaxy SM-S731N에 일반·치트 앱을 USB와 Wi-Fi로 설치했다. [구현·검사 결과](../docs/android-implementation-20261030.md).
+`feat/android-app`에서 구현하고 develop을 거쳐 main에 병합했다. 처음 빌드할 때는 [소스·자원·SDK 준비와 설치 안내](../docs/public/build-and-install.md#android-빌드와-설치)를 따른다. Galaxy SM-S731N에 일반·치트 앱을 USB와 Wi-Fi로 설치했다. [구현·검사 결과](../docs/android-implementation-20261030.md).
 
 ## 폴더
 

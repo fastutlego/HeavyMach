@@ -37,7 +37,7 @@ HeavyMach도 2015년, 2016년 생활을 청산하고 다른 직업을 택하게 
 
 최신 릴리스 태그는 [v0.16](https://github.com/gelb2/HeavyMach/tree/v0.16)이다. Android 일반·치트 앱은 그 이후 main에 추가했다. Android를 빌드하려면 현재 main을 받는다. 일반 앱과 치트 검증 앱을 각각 설치할 수 있다. 치트 앱에서는 미션·무기·강화 조건을 지정해 같은 게임을 검사한다.
 
-[최신 릴리스](https://github.com/gelb2/HeavyMach/releases/latest) · [전체 버전 이력](CHANGELOG.md)
+[최신 릴리스](https://github.com/gelb2/HeavyMach/releases/latest) · [전체 버전 이력](CHANGELOG.md) · [Android 추가 내역](CHANGELOG.md#unreleased)
 
 [Apple 설치](docs/public/build-and-install.md) · [Android 설치](docs/public/build-and-install.md#android-빌드와-설치) · [Android 플레이](docs/public/android-gameplay-20261030.md) · [조작](docs/public/gameplay-guide.md) · [기능](docs/public/features.md) · [트러블슈팅](docs/public/troubleshooting.md) · [전체 문서](docs/public/index.md)
 
@@ -71,7 +71,7 @@ Yak-141·Harrier GR3·F-35B는 기존 적 배치 사이에 추가했다. F-22·S
 
 [추가 항공기 전투 영상 — 13초](docs/public/media/gameplay-20261027/07-fighters.mp4) · [기획·수치·등장 미션](docs/public/features.md)
 
-HeavyMach는 내가 개발자가 되는 데 영향을 줬고, 에이스컴뱃 8은 출시를 기다리고 싶은 이유가 됐다. 럭스루나에의 외형과 직접 상대하며 느낀 위협을 이 게임에 담고 싶었다. [왜 럭스루나에인가](docs/public/lux-lunae-intent-20261028.md)
+HeavyMach는 내가 개발자가 되는 데 영향을 줬다. 에이스컴뱃 8은 단 몇달이라도 더 살아있고 싶다는 생각을 가진 이유가 됐다. 럭스루나에의 외형과 직접 상대하며 느낀 위협을 이 게임에 담고 싶었다. [왜 럭스루나에인가](docs/public/lux-lunae-intent-20261028.md)
 
 ## 내가 추가한 지상 유닛
 
@@ -224,7 +224,7 @@ adb -s SERIAL install -r app/build/outputs/apk/normal/debug/app-normal-debug.apk
 
 Codex는 파일 쓰기를 저장 시점에만 실행하도록 분리했다. 게임 그림은 OpenGL 텍스처로 그리고, 효과음은 OpenAL 버퍼와 소스를 재사용하도록 바꿨다. 화면 확장 뒤 생긴 특수무기 좌표·보스 접근·그림 경계 문제도 같은 방식으로 수정했다.
 
-[트러블슈팅 18건](docs/public/troubleshooting.md) · [분석·구현·검증 과정](docs/public/development-history.md)
+[트러블슈팅 19건](docs/public/troubleshooting.md) · [분석·구현·검증 과정](docs/public/development-history.md)
 
 ## 코드 구조와 버전
 

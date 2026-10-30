@@ -38,6 +38,7 @@ iPhone·iPad는 같은 iOS target의 기기군 1·2를 사용하며, Mac은 AppK
 
 | 위치 | 책임 |
 |---|---|
+| [Android](../../Android) | Kotlin Activity·JNI, Android C++ 호스트·메뉴·HUD·EGL·OpenAL, Gradle·NDK 빌드·기기 검사 |
 | [Sources/Core](../../Sources/Core) | 이동·월드·적·탄환·피해·성장·저장 형식·자동조준·추가 적 |
 | [Sources/iOS](../../Sources/iOS) | 게임 뷰·HUD·메뉴·OpenGL·OpenAL. Apple 공용 런타임에 포함되는 코드도 이 경로에 있음 |
 | [Sources/Apple](../../Sources/Apple) | UIKit/AppKit 및 그래픽 컨텍스트 차이, 공용 입력 연결 |
@@ -60,7 +61,7 @@ iPhone·iPad는 같은 iOS target의 기기군 1·2를 사용하며, Mac은 AppK
 
 ## 그래픽과 좌표
 
-게임 그림은 OpenGL로 그린다. iOS는 OpenGL ES 1.1 경로, Mac은 desktop OpenGL 호환 경로를 사용한다. 텍스처는 로드 때 준비하고 매 프레임 CPU에서 이미지를 재생성하지 않는다.
+게임 그림은 OpenGL로 그린다. iOS는 OpenGL ES 1.1 경로, Mac은 desktop OpenGL 호환 경로를 사용한다. Android는 EGL로 OpenGL ES 1 컨텍스트를 만들고 별도 렌더러에서 게임 그림을 그린다. 텍스처는 로드 때 준비하고 매 프레임 CPU에서 이미지를 재생성하지 않는다.
 
 캔버스는 기기 비율에 따라 더 넓은 월드를 표시한다. 월드 좌표, 카메라 좌표, UI 좌표, 실제 픽셀을 구분한다. 버튼은 그림과 입력 영역을 같은 배치 계산으로 옮긴다. 메뉴의 중앙 에셋은 유지하고 좌우 배경을 덧붙였으며, 도어는 전체 캔버스를 덮는다.
 

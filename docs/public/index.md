@@ -32,7 +32,7 @@ HeavyMach는 iPhone·iPad·Mac·Android에서 빌드하고 플레이할 수 있�
 - [개발 과정](development-history.md): 분석·구현·비교 순서와 사용한 도구.
 - [트러블슈팅](troubleshooting.md): 저장·렌더링·음향·시간·좌표·기기·그림에서 고친 문제.
 - [검증 결과](validation.md): 자동 검사, 직접 플레이, 프레임·메모리 측정과 남은 검사.
-- [변경 이력](../../CHANGELOG.md): v0.9~v0.16, 태그·다운로드·버전별 검사.
+- [변경 이력](../../CHANGELOG.md): 미발행 Android 변경과 v0.9~v0.16의 태그·다운로드·검사.
 - [남은 과제](roadmap.md): 버그 수정, 검사, 편의 기능과 추가 플랫폼.
 
 ## 참여와 제작자
