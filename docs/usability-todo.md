@@ -1,5 +1,13 @@
 # 버그 수정·사용성 개선 과제
 
+## 웹 PR 통합과 데스크톱 검토 — 2026-10-31
+
+- 웹 업그레이드 정지·IndexedDB 실패 복구·HUD 비동기 저장·WebGL 복구 수정과 회귀 검사 완료. [결과](evidence/pr24-web-fixes-20261031.json).
+- 기여자의 19개 커밋·작성자 기록 보존. README·CREDITS·CHANGELOG의 국영문에 fastutlego와 PR #24 연결.
+- Tauri와 Electron을 저장·웹뷰·WebGL·음향·입력·메모리·배포 관점에서 비교하고 기존 보고서에 추가한다. 데스크톱 제품 빌드는 별도 작업이다.
+- Apple의 미사용 경험치가 남은 미션 진입을 검사한다. 기존 HMGameView의 강제 정지 해제문은 웹과 같은 형태이며 이번 PR에서 수정하지 않았다.
+
+
 <a id="hm-gui-install-guide"></a>
 
 ## HM-GUI-INSTALL-GUIDE — IDE GUI 중심 설치·실행 안내 연구 · 2026-10-30

@@ -227,6 +227,8 @@ adb -s SERIAL install -r app/build/outputs/apk/normal/debug/app-normal-debug.apk
 
 웹 빌드는 Emscripten으로 만든다. `emcmake cmake -S Web -B build/web && cmake --build build/web` 뒤 `build/web/dist`를 정적 서버로 연다. [웹 빌드 문서](docs/web-port-20261028.md)
 
+웹판은 [fastutlego](https://github.com/fastutlego)가 기여했다. [PR #24](https://github.com/gelb2/HeavyMach/pull/24)에 WebAssembly 실행부, WebGL2 렌더링, 입력·음향·저장과 브라우저 검사가 포함된다.
+
 ## 개발 중 고친 문제
 
 초기 구현에는 사격·피격 때마다 파일을 쓰는 경로, CPU에서 그림을 다시 만드는 렌더링, 음원 재시작 지연이 있었다. 나는 정상적으로 플레이한 기준과 비교해 왜 동작이 달라졌는지 물었고, Codex에 저장·그래픽·음향·시간 계산을 각각 대조하게 했다.
