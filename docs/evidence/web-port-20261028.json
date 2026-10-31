@@ -489,5 +489,22 @@
     "browser-smoke.mjs": "pass on rerun (first run timed out waiting for title while downloading assets)"
    }
   }
+ },
+ "rebase_20261031": {
+  "onto": "upstream develop 2f82c85 (v0.17)",
+  "commits_replayed": 18,
+  "dropped": "9e170e3 merge of develop (v0.15)",
+  "web_code_vs_before": "identical (Sources/Web, Web)",
+  "checks": {
+   "web_build": "pass",
+   "browser-smoke.mjs": "pass",
+   "hud-editor.mjs": "pass",
+   "orientation-hold.mjs": "pass",
+   "core_ctest": "24/24 (macOS native, Xcode 26.6 SDK; CommandLineTools SDK fails to link on this Mac)",
+   "build_resources": "PASS 1504",
+   "document_contract": "PASS",
+   "check_publication": "PASS"
+  },
+  "backup_branch": "backup/porting-wasm-pre-rebase-20261031 (local)"
  }
 }

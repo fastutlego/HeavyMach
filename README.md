@@ -170,7 +170,7 @@ Galaxy의 일반 앱에서 직접 플레이한 미션 3-4와 3-5다. 기기를 �
 | iPad | 화면 비율에 맞춘 캔버스, 터치·틸트·키보드 병용 | iPad Air 13형 M2 설치·입력·전투 검사, 내 플레이 |
 | Mac | AppKit 앱, 창·전체 화면, 키보드 조작 | Mac mini 실행·33개 검사, 개발 서명 앱 누수 0건 |
 | Android | 공용 C++ 코어를 사용하는 일반·치트 앱 | Galaxy 유선·무선 설치·플레이 확인. [설치](Android/README.md) · [개발 과정과 화면](docs/public/android-development-20261030.md) |
-| 웹 | WebAssembly·WebGL2, 마우스·키보드·터치 (`porting/wasm`) | 헤드리스 Chrome 자동 검사, 휴대폰 실기기 미확인 |
+| 웹 | WebAssembly·WebGL2, 마우스·키보드·터치·기울기 (`porting/wasm`) | Chrome·Safari·ego lite, iPad mini Safari·Android 패드 Chrome 확인. [웹 이식 문서](docs/web-port-20261028.md) |
 
 설치한 iPhone·iPad 앱을 직접 플레이했을 때 프레임 드랍이나 오작동은 보이지 않았다. 기기별 자동 검사에는 표시시간 기준 실패가 남아 있다. [측정 조건과 결과](docs/public/validation.md)
 

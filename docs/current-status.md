@@ -1,5 +1,9 @@
 # 2026-10-25 문서·코드·앱 일치 체계 점검 및 보완
 
+## 2026-10-31 웹 브랜치 v0.17 기준 rebase
+
+`porting/wasm`을 원저장소 develop v0.17 위로 rebase해 PR #24 충돌을 해소했다. 웹 코드는 그대로이고 다시 빌드한 웹의 헤드리스 검사3종과 코어 검사24개가 통과했다. [이식 문서](web-port-20261028.md#원저장소-v017-기준-rebase--2026-10-31)
+
 ## 2026-10-30 fastutle-site 경로 변경
 
 fastutle-site가 사이트 원본을 `site/` 아래로 옮겼다(fastutle-site PR #7). 웹 빌드는 이제 `site/game/heavy_mach/`에 복사하고, 게임 경로 헤더는 `site/_headers`에 있다. 루트 `game/`에 넣으면 Cloudflare 빌드가 실패하고 그 뒤 main 배포가 모두 멈춘다. 배포 주소 https://fastutle.com/game/heavy_mach/ 는 그대로다. [이식 문서](web-port-20261028.md#사이트-테스트-배치)
