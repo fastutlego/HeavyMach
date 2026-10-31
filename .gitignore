@@ -63,4 +63,3 @@ account.md
 
 # Web test dependencies.
 Web/tests/node_modules/
-Web/tests/package-lock.json

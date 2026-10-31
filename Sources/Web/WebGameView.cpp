@@ -36,6 +36,7 @@ EM_JS(void,hm_set_overlay,(const char* id,const char* text,int visible),{
 });
 EM_JS(void,hm_open_url,(const char* url),{try{window.open(UTF8ToString(url),'_blank','noopener');}catch(e){}});
 EM_JS(void,hm_sync_save,(),{if(Module.hmSyncSave)Module.hmSyncSave();});
+EM_JS(void,hm_sync_hud_save,(),{Module.hmSyncSave(ok=>Module._hm_hud_save_result(ok?1:0));});
 EM_JS(int,hm_trace_enabled,(),{try{return new URLSearchParams(location.search).get('trace')==='1'?1:0;}catch(e){return 0;}});
 
 namespace hmweb {
@@ -116,6 +117,29 @@ bool GameView::initRenderer(){
     return true;
 }
 
+void GameView::loseRenderer(){
+    // The GL objects are already invalid; stop callbacks before any new draw.
+    _rendererReady=false;
+    setApplicationActive(false);
+    _media->setGlRenderer(nullptr);_media->textureRenderer=nullptr;
+    _glRenderer.reset();
+}
+bool GameView::restoreRenderer(){
+    _glRenderer=std::make_unique<GLRenderer>();
+    if(!_glRenderer->init())return false;
+    _media->textureRenderer=_glRenderer.get();
+    // Menus, HUD, session, save, RNG and modal state survive the GPU reset.
+    _rendererReady=true;updateCanvasGeometry();
+    _lastFrameCallback=0;_frameCallbackInterval=0;
+    return true;
+}
+void GameView::hudSaveResult(bool success){
+    if(!_hudSaving)return;
+    _hudSaving=false;
+    if(!success){refreshHUDEditorLabel("Could not save. Try APPLY again.");publishHUDControls();return;}
+    ++_hudLayoutWrites;_hudLayout=_hudDraft;closeHUDEditor();
+}
+
 void GameView::persistSave(){
     if(!_loadError.empty())return;
     try{
@@ -154,9 +178,8 @@ void GameView::startSlot(int slot,int mode,int mission,int stage){
         _session->setAimMode(_preferredAimMode);
         _showMenu=false;
         _hud->setGameStart(_time);consumeGameEvents();
-        // GameMain.setScreen_Game0x3a1c unpauses after setMission/setSurvival,
-        // even when openMap's addExp(0) opens an upgrade from leftover EXP.
-        _session->setPaused(false);updateCanvasGeometry();
+        // openMap can open an upgrade from pending EXP. Keep its modal pause.
+        _session->setPaused(_session->player()&&_session->player()->upgradeStep!=0);updateCanvasGeometry();
         noteInteraction();if(_resumeRequired){pauseForInterruption();_session->prepareInitialPausedFrame();}
     }catch(const std::exception& error){_loadError=error.what();}
 }
@@ -267,7 +290,7 @@ void GameView::gameButton(int identifier,int state){
     switch(identifier){
         case 100:
             cancelGameInput();_gameMenu=true;_hud->setMenuVisible(true);_session->setPaused(true);_media->sound("UI_Click");break;
-        case 101:_resumeRequired=false;_tilt={};noteInteraction();_gameMenu=false;_hud->setMenuVisible(false);_session->setPaused(world.gameState!=0);_media->sound("UI_Click");break;
+        case 101:if(_session->player()&&_session->player()->upgradeStep!=0)return;_resumeRequired=false;_tilt={};noteInteraction();_gameMenu=false;_hud->setMenuVisible(false);_session->setPaused(world.gameState!=0);_media->sound("UI_Click");break;
         case 102:_resumeRequired=false;_session->setPaused(false);_gameMenu=false;_hud->setMenuVisible(false);_media->sound("UI_Click");persistSave();requestScreen(3);break;
         case 103:
             if(world.paused){
@@ -277,8 +300,8 @@ void GameView::gameButton(int identifier,int state){
             }break;
         case 104:if(_gameMenu&&world.gameState==0){openHUDEditor();_media->sound("UI_Click");}break;
         case 1100:_session->cycleWeapon();_media->sound("Game_ChangeWeapon");break; // 0x17c4c: release, then sfxID4.
-        case 1200:case 1201:case 1202:_session->selectUpgrade(identifier-1200);break;
-        case 1300:_resumeRequired=false;_session->confirmUpgrade();break;
+        case 1200:case 1201:case 1202:if(!_session->player()||_session->player()->upgradeStep!=1)return;_session->selectUpgrade(identifier-1200);break;
+        case 1300:if(!_session->player()||_session->player()->upgradeStep!=1)return;_resumeRequired=false;_session->confirmUpgrade();break;
     }
     consumeGameEvents();
 }

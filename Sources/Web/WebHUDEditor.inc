@@ -134,7 +134,7 @@ void GameView::closeHUDEditor(){
     // Return to the pause menu after editing.
 }
 void GameView::hudEditorAction(int tag){
-    if(!_hudEditing)return;
+    if(!_hudEditing||_hudSaving)return;
     switch(tag){
       case 0:_hudDraft.positions={};_hudDragToken.reset();break;
       case 1:closeHUDEditor();return;
@@ -154,8 +154,8 @@ void GameView::hudEditorAction(int tag){
             {std::ofstream file(temporary,std::ios::binary|std::ios::trunc);file.write(json.data(),std::streamsize(json.size()));written=bool(file);}
             std::error_code error;if(written)std::filesystem::rename(temporary,path,error);
             if(!written||error){refreshHUDEditorLabel("Could not save. Try APPLY again.");publishHUDControls();return;}
-            hm_sync_save();
-            ++_hudLayoutWrites;_hudLayout=_hudDraft;
+            _hudSaving=true;refreshHUDEditorLabel("Saving...");publishHUDControls();
+            hm_sync_hud_save();return;
         }
         closeHUDEditor();return;
       }
@@ -166,7 +166,7 @@ void GameView::hudEditorAction(int tag){
     layoutHUDControls();
 }
 bool GameView::hudEditorKey(unsigned code,bool pressed){
-    if(!pressed)return true;
+    if(!pressed||_hudSaving)return true;
     if(code==0x29){closeHUDEditor();return true;}
     if(code==0x2b){do{_hudSelected=(_hudSelected+1)%heavymach::hud::groupCount;}while(_hudSelected==heavymach::hud::cheat);_hudHideGuides=false;layoutHUDControls();return true;}
     auto c=currentHUDLayout();auto r=c.group(_hudSelected).visualBounds;double dx=code==0x4f?1:code==0x50?-1:0,dy=code==0x52?1:code==0x51?-1:0;
@@ -174,6 +174,7 @@ bool GameView::hudEditorKey(unsigned code,bool pressed){
     return true;
 }
 void GameView::hudEditorPoint(Point p,int state,long token){
+    if(_hudSaving)return;
     auto c=currentHUDLayout();
     if(state==0&&!_hudDragToken){
         int hit=-1;

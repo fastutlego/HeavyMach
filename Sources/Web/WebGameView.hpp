@@ -40,6 +40,9 @@ class GameView {
 public:
     GameView(std::string assetRoot,std::string saveDirectory);
     bool initRenderer();
+    void loseRenderer();
+    bool restoreRenderer();
+    void hudSaveResult(bool success);
     void setSurface(const HostSurface& surface);
     void setAcceleration(const Acceleration& sample){_acceleration=sample;}
     // orientationOnly: inactive only because a touch device is in portrait.
@@ -178,6 +181,6 @@ private:
     bool _active=true,_trace=false,_resumeRequired=false;
     double _lastInteraction=0;
     int _traceSecond=0;
-    bool _rendererReady=false;
+    bool _rendererReady=false,_hudSaving=false;
 };
 }

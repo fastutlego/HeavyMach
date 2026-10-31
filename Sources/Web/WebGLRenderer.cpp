@@ -66,6 +66,18 @@ GLuint compile(GLenum type,const char* source,std::string& error){
 
 void GLRenderer::recordError(const std::string& message){lastError_=message;std::fprintf(stderr,"HMGLRenderer: %s\n",message.c_str());}
 
+GLRenderer::~GLRenderer(){
+    // During context loss these calls also release Emscripten's JS handle table.
+    // The browser has already discarded the GPU storage in that case.
+    for(const auto& [key,tex]:textures_)if(tex.id)glDeleteTextures(1,&tex.id);
+    if(sceneTexture_)glDeleteTextures(1,&sceneTexture_);
+    if(sceneFBO_)glDeleteFramebuffers(1,&sceneFBO_);
+    if(sceneBuffer_)glDeleteRenderbuffers(1,&sceneBuffer_);
+    if(vbo_)glDeleteBuffers(1,&vbo_);
+    if(vao_)glDeleteVertexArrays(1,&vao_);
+    if(program_)glDeleteProgram(program_);
+}
+
 bool GLRenderer::init(){
     vendor_=glString(GL_VENDOR);renderer_=glString(GL_RENDERER);version_=glString(GL_VERSION);
     std::string error;

@@ -19,6 +19,7 @@ namespace hmweb {
 class GLRenderer {
 public:
     // Requires a current WebGL2 context. Returns false when GL setup fails.
+    ~GLRenderer();
     bool init();
     // Resize between frames. Invalid/unsupported sizes leave the previous canvas intact.
     bool setLogicalSize(double width,double height);
